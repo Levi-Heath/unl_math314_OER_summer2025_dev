@@ -5,14 +5,16 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="my-great-book">
-    <title>My Great Book</title>
-    <subtitle>An example to get you started</subtitle>
+    <title>Linear Algebra</title>
+    <subtitle>Based on Crichton Ogle's This is Linear Algebra</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+    <xi:include href="./linearSystems/ch-overview.ptx" />
+    <xi:include href="./linearTransformations/ch-overview.ptx" />
+    <xi:include href="./ch-2-title.ptx" />
 
 
     <!-- Include backmatter -->

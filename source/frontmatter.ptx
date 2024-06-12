@@ -6,9 +6,9 @@
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
   <titlepage>
     <author>
-      <personname>You</personname>
-      <department>Your department</department>
-      <institution>Your institution</institution>
+      <personname>ADD AUTHORS</personname>
+      <department>DEPARTMENT</department>
+      <institution>INSTITUTION</institution>
     </author>
     <date>
       <today />
