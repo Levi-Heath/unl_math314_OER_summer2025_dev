@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="Chapter-Preliminaries" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Preliminaries</title>
+
+  <objectives>
+        <ul>
+            <li>
+                <p>
+                    Perform basic operations, including addition, scalar multiplication, and dot product, on vectors in <m>\RR^n</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Perform basic operations, including addition and scalar multiplication, on geometric representations of vectors in <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Transition seamlessly between algebraic and geometric representations of vectors in <m>\mathbb{R}^2</m> or <m>\mathbb{R}^3</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Determine the angle between vectors and test for orthogonality.
+                </p>
+            </li> 
+            <li>
+                <p>
+                    Project one vector onto another.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compute and interpret the cross product of two vectors in <m>\mathbb{R}^3</m>.
+                </p>
+            </li> 
+            <li>
+                <p>
+                    Transition seamlessly between parametric and non-parametric forms of the equation of a line in <m>\mathbb{R}^2</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Transition seamlessly between parametric and vector forms of the equation of a line in <m>\mathbb{R}^n</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Determine the equation of a plane in <m>\mathbb{R}^3</m> meeting given characteristics.
+                </p>
+            </li>
+        </ul>
+</objectives>
+
+  <!-- include sections --> 
+  <xi:include href="Section-A-Brief-Introduction-to-Real-Space" />
+</chapter>

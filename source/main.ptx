@@ -12,7 +12,7 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./linearSystems/ch-overview.ptx" />
+    <xi:include href="./ch-prelim/Chapter-Preliminaries.ptx" />
     <xi:include href="./linearTransformations/ch-overview.ptx" />
     <xi:include href="./ch-2-title.ptx" />
 

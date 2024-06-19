@@ -1,5 +1,5 @@
 # 
-#  Converts common .tex syntax to .ptx syntax
+#  Ad Hoc Converter for common .tex syntax to .ptx syntax
 #
 #  Levi Heath
 #  Dept. of Math. 
