@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="Section-Introduction-to-Vectors" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction to Vectors</title>
+
+  <subsection xml:id="Subsection-What-is-a-Vector">
+    <title>What is a Vector?</title>
+    <p>
+      A <term>scalar</term> is a quantity that has size, often called  magnitude, but no direction.  
+      For example, temperature, mass and speed are scalars.  
+      In this course, scalars will typically be real numbers, but we will also see complex numbers on a few occasions.
+    </p>
+    <p>
+      A <term>vector</term> has magnitude and direction.  
+      For example, velocity is a vector because it tells us how fast the object is traveling and also the direction of travel.
+    </p>
+    <p>
+      If an object is traveling along a number line, the direction of travel is given by the sign of its velocity (positive or negative), while the speed is given by the absolute value of the velocity.  
+      If the object is traveling in a plane or in space, direction of travel can be described by an arrow, while the speed can be represented by the length of the arrow.  
+      Graphically speaking, vectors in <m>\R^2</m> and <m>\R^3</m> look like this:
+    </p>
+    <sidebyside>
+      <image width="50%">
+        <shortdescription>Vector in the real plane.</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+            \draw[\lt-\gt] (-4,0)--(4,0);
+            \draw[\lt-\gt] (0,-4)--(0,4);
+            \draw[line width=2pt,blue,-stealth](1,2)--(-1,3);
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+      <image width="50%">
+        <shortdescription>Vector in 3-dimensional real space.</shortdescription>
+        <latex-image>
+          \tdplotsetmaincoords{70}{130}
+          \begin{tikzpicture}
+            \draw[-\gt](-2,0,0)--(5,0,0) node[below left]{$y$};
+            \draw[-\gt](0,-2,0)--(0,5,0) node[below left]{$z$};
+            \draw[-\gt](0,0,-2)--(0,0,5) node[below left]{$x$};
+            \draw[-\gt, line width=2pt,blue, -stealth](2,1,3)--(3,2,-2);
+            \draw[dashed](2,1,3)--(2,0,3);
+            \draw[dashed](2,0,0)--(2,0,3);
+            \draw[dashed](0,0,3)--(2,0,3);
+            \draw[dashed](3,2,-2)--(3,0,-2);
+            \draw[dashed](3,0,0)--(3,0,-2);
+            \draw[dashed](0,0,-2)--(3,0,-2);
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </sidebyside>
+
+    <p>
+      A vector can be denoted by a lower-case letter with an arrow over the top (like this: <m>\overrightarrow{u}</m> ), or a bold lower-case letter (like this: <m>\mathbf{u}</m>).
+    </p>
+
+    <p>
+      The magnitude, or length, of a vector is denoted by double absolute value brackets.  
+      For example, the magnitude of <m>\mathbf{u}</m>, is denoted by <m>\norm{\mathbf{u}}</m>.  
+      A vector of zero length and no direction is called the <term>zero vector.</term> We denote the zero vector by <m>\overrightarrow{0}</m> or <m>\mathbf{0}</m>.  
+      Going forward, we will use the terms magnitude of a vector and length of a vector interchangeably.
+    </p>
+
+    <p>
+      Sometimes it is convenient to refer to a vector by naming  the endpoints of the arrow.  
+      In the figure below, point <m>A</m> is the <term>tail</term>, and point <m>B</m> is the <term>head</term> of the vector.
+    </p>  
+
+    <image width="50%">
+      <shortdescription>Vector starting at a point A and ending at a point B.</shortdescription>
+      <latex-image>
+        \begin{tikzpicture}
+          \draw[line width=2pt,-stealth](-1,0)node[below left]{$A$}--(2,1)node[below right]{$B$};
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+
+    <p>
+      We refer to this vector as <m>\overrightarrow{AB}</m>.
+    </p>
+  </subsection>
+
+  <subsection xml:id="Subsection-Vectors-in-Standard-Position">
+    <title>Vectors in Standard Position</title>
+  
+    <p>
+      Vectors that point in the same direction and have the same length are said to be <term>equivalent</term>.  
+      For example, vectors  <m>\mathbf{u}</m>, <m>\mathbf{v}</m> and <m>\mathbf{w}</m> in the figure below are equivalent.  
+      We write <m>\mathbf{u}=\mathbf{v}=\mathbf{w}</m>.
+    </p>
+
+
+    <image width="80%">
+        <shortdescription>Three equal vectors in the real plane with different starting points and ending points.</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+            \draw[thin,gray!40] (-1,-1) grid (7,4);
+              \draw[\lt-\gt] (-1,0)--(7,0);
+              \draw[\lt-\gt] (0,-1)--(0,4);
+            \draw[line width=1pt,-stealth](3,0)--(5,1)node[above left]{$\mathbf{u}$};
+            \draw[line width=1pt,-stealth](4,2)--(6,3)node[above left]{$\mathbf{v}$};
+            \draw[line width=1pt,-stealth](1,2)--(3,3)node[above left]{$\mathbf{w}$};
+          \end{tikzpicture}
+        </latex-image>
+    </image> 
+
+    <p>
+      For the purpose of developing standard, convenient notation, we observe that every vector is equivalent to some vector whose tail is at the origin.  
+      Vectors with tails at the origin are said to be in <term> standard position</term>.  
+      We will refer to each vector in standard position by the coordinates of its head.   
+      For example, a vector in standard position whose head is located at the point <m>(2, 1)</m> will be referred to as <m>\begin{bmatrix}2\\1\end{bmatrix}</m>.
+    </p>  
+
+    <image width="80%">
+        <shortdescription>The vectors w, v, u, and their corresponding vector in standard position.</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+            \draw[thin,gray!40] (-1,-1) grid (7,4);
+              \draw[\lt-\gt] (-1,0)--(7,0);
+              \draw[\lt-\gt] (0,-1)--(0,4);
+            \draw[line width=1pt,-stealth](3,0)--(5,1)node[above left]{$\mathbf{u}$};
+            \draw[line width=1pt,-stealth](4,2)--(6,3)node[above left]{$\mathbf{v}$};
+            \draw[line width=1pt,-stealth](1,2)--(3,3)node[above left]{$\mathbf{w}$};
+            \draw[line width=2pt,red,-stealth](0,0)--(2,1) node[above right]{$\begin{bmatrix}2\\1\end{bmatrix}$};
+          \end{tikzpicture}
+        </latex-image>
+    </image>
+
+
+    <p>
+      Vectors <m>\mathbf{u}, \mathbf{v}</m> and <m>\mathbf{w}</m> in the figure are equivalent to vector <m>\begin{bmatrix}2\\1\end{bmatrix}</m>.  We write <m>\mathbf{u}=\mathbf{v}=\mathbf{w}=\begin{bmatrix}2\\1\end{bmatrix}</m>.  Number <m>2</m> is called the <term>first component</term> of the vector (or the <m>x</m>-component) while number <m>1</m> is the <term>second component</term> (or the <m>y</m>-component).  The form <m>\begin{bmatrix}2\\1\end{bmatrix}</m> is called the <term>component form</term>. 
+    </p> 
+
+    <p>
+      Vector <m>\begin{bmatrix}2\\1\end{bmatrix}</m> is an example of a <term>column vector</term>.  Occasionally, we will find that representing this vector as a <term>row vector</term> <m>[2, 1]</m> is more convenient.
+    </p>
+
+    <p>
+      Column (or row) representation of vectors in component form allows us to go beyond the physical and geometric definition, and think of vectors more abstractly as arrays of numbers.
+    </p>
+
+    <p>
+      Our next goal is to find a process for writing any vector in the coordinate plane in component form.  
+    </p>
+
+    <example xml:id="init-headminustail">
+      <p>
+        Consider vector <m>\mathbf{v}</m> shown below.  We will express <m>\mathbf{v}</m> in component form.
+      </p>
+
+      <image width="80%">
+        <shortdescription>The vector v in the real plane.</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+            \draw[thin,gray!40] (-1,-2) grid (5,4);
+            \draw[\lt-\gt] (-1,0)--(5,0);
+            \draw[\lt-\gt] (0,-2)--(0,4);
+            
+            \draw[line width=1pt,-stealth](2, -1)--(4, 2)node[above left]{$\mathbf{v}$};
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+
+      <p>
+        Note that the vector has a ``run" of <m>2</m> and a ``rise" of <m>3</m>.  If we construct a vector with tail at the origin, a ``run" of <m>2</m> and a ``rise" of <m>3</m>, we will have a vector in standard position equivalent to vector <m>\mathbf{v}</m>.
+      </p>
+
+      <image width="80%">
+        <shortdescription>The vector v in the real plane plotted in its original and standard positions.</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+            \draw[thin,gray!40] (-1,-2) grid (5,4);
+            \draw[\lt-\gt] (-1,0)--(5,0);
+            \draw[\lt-\gt] (0,-2)--(0,4);
+        
+            \draw[line width=1pt,-stealth](2, -1)--(4, 2)node[above left]{$\mathbf{v}$};
+            
+            \draw[line width=2pt,red,-stealth](0,0)--(2,3) node[above left]{$\begin{bmatrix}2\\3\end{bmatrix}$};
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+
+      <p>
+        The component form for the vector we constructed is <m>\begin{bmatrix}2\\3\end{bmatrix}</m>.  
+        This gives us <m>\mathbf{v}=\begin{bmatrix}2\\3\end{bmatrix}</m>.
+      </p>
+    </example>
+
+    <p>
+      The approach we used in Example <xref ref="init-headminustail"/> is applicable to specific vectors that can easily be visualized.  
+      What we need now is an algebraic approach that can be generalized to higher dimensions and more abstract situations.  
+    </p>
+
+    <p>
+      Let's return to vector <m>\mathbf{v}</m> of Example \ref{init:headminustail}. Suppose we were to slide vector <m>\mathbf{v}</m> into standard position. Consider what would happen to the tail of <m>\mathbf{v}</m> as we do so.
+    </p>
+
+    <image width="80%">
+      <shortdescription></shortdescription>
+      <latex-image>
+        \begin{tikzpicture}
+          \draw[thin,gray!40] (-1,-2) grid (5,4);
+          \draw[\lt-\gt] (-1,0)--(5,0);
+          \draw[\lt-\gt] (0,-2)--(0,4);
+              
+          \draw[line width=1pt,-stealth](2, -1)--(4, 2)node[above right]{$\mathbf{v}$};
+          \fill[black] (2,-1)node[below right]{$(2,-1)$} circle (0.1cm);
+            
+          \draw[line width=0.5pt,-stealth, dashed, red](1.9, -1.2)--(0.1,-1.2);
+          \node[red] at (1, -1.5)   (a) {$-2$};
+            
+    
+          \draw[line width=0.5pt,-stealth, dashed, red](-0.2, -1.1)--(-0.2, -0.1);
+          \node[red] at (-0.6, -0.7)   (b) {$+1$};
+            
+          \fill[red] (0,0)node[above left]{$(0,0)$} circle (0.1cm);           
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+
+    <p>
+      What happens to the tail of the vector has to happen to the head
+    </p>
+
+
+    <image width="80%">
+      <shortdescription></shortdescription>
+      <latex-image>
+        \begin{tikzpicture}
+          \draw[thin,gray!40] (-1,-2) grid (5,4);
+          \draw[\lt-\gt] (-1,0)--(5,0);
+          \draw[\lt-\gt] (0,-2)--(0,4);
+      
+          \draw[line width=1pt,-stealth](2, -1)--(4, 2);
+          \fill[black] (2,-1)node[below right]{$(2,-1)$} circle (0.1cm);
+          \fill[black] (4,2)node[below right]{$(4,2)$} circle (0.1cm);
+          
+          \draw[line width=0.5pt,-stealth, dashed, red](1.9, -1.2)--(0.1,-1.2);
+          \node[red] at (1, -1.5)   (a) {$-2$};
+          \draw[line width=0.5pt,-stealth, dashed, red](-0.2, -1.1)--(-0.2, -0.1);
+          \node[red] at (-0.6, -0.7)   (b) {$+1$};
+          
+            \draw[line width=0.5pt,-stealth, dashed, red](3.7, 1.8)--(2,1.8);
+          \node[red] at (3, 1.5)   (a) {$-2$};
+          \draw[line width=0.5pt,-stealth, dashed, red](2.2, 2.1)--(2.2, 2.9);
+          \node[red] at (2.6, 2.4)   (b) {$+1$};
+          
+          \fill[red] (0,0)node[above left]{$(0,0)$} circle (0.1cm);
+          \fill[red] (2,3)node[above left]{$(2,3)$} circle (0.1cm);
+          
+          \draw[line width=2pt,red,-stealth](0,0)--(2,3);
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+
+    <p>
+      We subtracted <m>2</m> from the <m>x</m>-coordinate and added <m>1</m> to the <m>y</m>-coordinate of the tail. To find the new location of the head we subtract <m>2</m> from the <m>x</m>-coordinate of the head, and add <m>1</m> to the <m>y</m>-coordinate of the head.  This gives us  <m>(4-2, 2+1)</m>.  So, the new location of the head is <m>(2, 3)</m>, and <m>\mathbf{v}=\begin{bmatrix}2\\3\end{bmatrix}</m>.
+    </p>
+
+    <p>
+      If you look back at what we did you will find that the components of <m>\mathbf{v}</m> were computed by subtracting the coordinates of the tail from the coordinates of the head
+      <me>
+          \mathbf{v}=\begin{bmatrix}4-2\\ 2-(-1)\end{bmatrix}=\begin{bmatrix}2\\3\end{bmatrix}
+      </me>
+      The following diagram summarizes and generalizes our findings.
+    </p>
+
+    <image width="80%">
+      <shortdescription></shortdescription>
+      <latex-image>
+        \begin{tikzpicture}
+          \draw[line width=1pt,-stealth](2, 1)--(4, 4);
+          \fill[black] (2,1)node[below right]{$A(a_1, a_2)$} circle (0.1cm);
+          \fill[black] (4,4)node[below right]{$B(b_1, b_2)$} circle (0.1cm);
+          
+          \draw[line width=0.5pt,-stealth, dashed, red](1.9, 1.2)--(0.2,1.2);
+          \node[red] at (1, 1.5)   (a) {$-a_1$};
+          \draw[line width=0.5pt,-stealth, dashed, red](0.2, 1)--(0.2, 0.1);
+          \node[red] at (-0.4, 0.6)   (b) {$-a_2$};
+          
+          \draw[line width=0.5pt,-stealth, dashed, red](3.8, 4.2)--(2.2,4.2);
+          \node[red] at (3, 4.5)   (a) {$-a_1$};
+          \draw[line width=0.5pt,-stealth, dashed, red](2.2, 4)--(2.2, 3.1);
+          \node[red] at (1.6, 3.6)   (b) {$-a_2$};
+    
+          \fill[blue] (0,0)node[below left]{$A'(0,0)$} circle (0.1cm);
+          \fill[blue] (2,3)node[below left]{$B'(b_1-a_1, b_2-a_2)$} circle (0.1cm);
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+
+    <p>
+      Let <m>\overrightarrow{AB}</m> be a vector in <m>\R^2</m>, with tail at point <m>A(a_1, a_2)</m> and head at point <m>B(b_1, b_2)</m>. 
+      As we slide <m>\overrightarrow{AB}</m> into standard position by moving point <m>A</m> to the origin, point <m>B</m> travels along with point <m>A</m> by undergoing the same horizontal and vertical shifts.  We now have an equivalent vector <m>\overrightarrow{A'B'}</m> in standard position.  The diagram suggests the following formula.
+    </p>
+
+    <identity xml:id="form-headminustailr2">
+      <title><q>Head - Tail</q> Formula in <m>\R^2</m></title>
+      <statement>
+        <p>
+          Suppose a vector's tail is at point <m>A(a_1, a_2)</m> and the vector's head is at <m>B(b_1, b_2)</m>, then
+          <men xml:id="headtailr2">
+            \overrightarrow{AB}=\begin{bmatrix}b_1-a_1\\ b_2-a_2\end{bmatrix}
+          </men>
+        </p>
+      </statement>
+    </identity>
+  </subsection>
+
+  <subsection xml:id="Subsection-Vectors-in-3d">
+    <title>Vectors in <m>\R^3</m></title>
+    
+    <p>
+      Definitions of standard position and component form for vectors in <m>\R^3</m> are analogous to their counterparts for vectors in <m>\R^2</m>.  For example, vector <m>\overrightarrow{OP}</m> in the figure below, is in standard position and can be written in component form as <m>\overrightarrow{OP}=\begin{bmatrix}6\\10\\7\end{bmatrix}</m>.
+    </p>
+
+    <image>
+      <shortdescription></shortdescription>
+      <latex-image>
+        \begin{tikzpicture}[x=0.5cm,y=0.5cm,z=0.3cm]
+          <!-- The axes -->
+          \draw[-\gt] (xyz cs:x=-13.5) -- (xyz cs:x=13.5) node[above] {$y$};
+          \draw[-\gt] (xyz cs:y=-13.5) -- (xyz cs:y=13.5) node[right] {$z$};
+          \draw[-\gt] (xyz cs:z=13.5)--(xyz cs:z=-13.5) node[below] {$x$} ;
+          <!-- The thin ticks -->
+          \foreach \coo in {-13,-12,...,13}
+          {
+            \draw (\coo,-1.5pt) -- (\coo,1.5pt);
+            \draw (-1.5pt,\coo) -- (1.5pt,\coo);
+            \draw (xyz cs:y=-0.15pt,z=\coo) -- (xyz cs:y=0.15pt,z=\coo);
+          }
+
+          <!-- Dashed lines for the points P -->
+          \draw[dashed,red] 
+            (xyz cs:z=-6) -- 
+            +(0,7) coordinate (u) -- 
+            (xyz cs:y=7) -- 
+            +(10,0) -- 
+            ++(xyz cs:x=10,z=-6) coordinate (v) --
+            +(0,-7) coordinate (w) --
+            cycle;
+          \draw[dashed,red] (u) -- (v);
+          \draw[dashed,red] (10,7) -- (10,0) -- (w);
+
+          <!-- Dots and labels for P -->
+          \node[fill,circle,inner sep=1.5pt,label={right:$P(6,10,7)$}] at (v) {};
+          \node[fill,circle,inner sep=1.5pt,label={above left:$O$}] at (0,0,0) {};
+
+          \draw[line width=2pt,-stealth, red](0,0,0)--(v);
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+
+    <p>
+      If a vector is not in standard position but the location of its head and tail are known, a three-dimensional version of the ``Head - Tail" formula can be used to express the vector in component form.
+    </p>
+
+    <identity xml:id="form-headminustailr3">
+      <title><q>Head - Tail</q> Formula in <m>\R^3</m></title>
+      <statement>
+        <p>
+          Suppose a vector's tail is at point <m>A(a_1, a_2, a_3)</m> and the vector's head is at <m>B(b_1, b_2, b_3)</m>, then 
+          <men xml:id="headtailr3">
+            \overrightarrow{AB}=\begin{bmatrix}b_1-a_1\\ b_2-a_2\\b_3-a_3\end{bmatrix}
+          </men>
+        </p>
+      </statement>
+    </identity>
+  </subsection>
+
+  <subsection xml:id="Subsection-Vectors-in-Real-Space">
+    <title>Vectors in <m>\R^n</m></title>
+    
+    <p>
+      We cannot see <m>\R^n</m> for <m>n\gt3</m>, but we can conceptualize it by generalizing what we know about <m>\R^2</m> and <m>\R^3</m>.  A vector <m>\mathbf{v}</m> in standard position whose head is located at <m>(v_1, v_2, \ldots ,v_n)</m> can be written in component form as <m>\mathbf{v}=\begin{bmatrix}v_1\\ v_2\\ \vdots \\v_n\end{bmatrix}</m>.  
+    </p>
+
+    <p>
+      Recall that we defined the <term>zero vector</term> as a vector that has length <m>0</m> and no direction.  In component form, the zero vector is a vector all of whose components are <m>0</m>.
+    </p> 
+
+    <p>
+      We conclude this section by stating the generalized ``Head -  Tail" formula.
+    </p>
+    
+    <identity xml:id="form-headminustailrn">
+      <title><q>Head - Tail</q> Formula in <m>\R^n</m></title>
+      <statement>
+        <p>
+          Suppose a vector's tail is at point <m>A(a_1, a_2, \ldots ,a_n)</m> and the vector's head is at <m>B(b_1, b_2, \ldots ,b_n)</m>, then 
+          <men xml:id="form-headtailrn">
+            \overrightarrow{AB}=\begin{bmatrix}b_1-a_1\\ b_2-a_2\\ \vdots \\b_n-a_n\end{bmatrix}
+          </men>
+        </p>
+      </statement>
+    </identity>
+  </subsection>
+
+
+  <subsection xml:id="Subsection-Practice-Problems">
+    <title>Practice Problems</title>
+    <exercises>
+      <exercisegroup>
+        <introduction>
+          <p>
+            Sketch each pair of vectors described below.  Express each vector in component form. 
+          </p>
+        </introduction>
+      
+        <exercise xml:id="prob-componentform1">
+          <statement>
+            <p>
+              Vector <m>\mathbf{v}</m> has a tail at <m>(-2,4)</m> and a head at <m>(4,5)</m>. Vector <m>\mathbf{w}</m> has a tail at <m>(8,-5)</m> and a head at <m>(6,7)</m>.
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <me>
+                \mathbf{v}=\begin{bmatrix} 6\\ 1\end{bmatrix},\quad\mathbf{w}=\begin{bmatrix} -2\\ 12\end{bmatrix}
+              </me>
+            </p>
+          </answer>
+        </exercise>
+        <exercise xml:id="prob-componentform2">
+          <statement>
+            <p>
+              Vector <m>\mathbf{v}</m> has a tail at <m>(2,4,5)</m> and a head at <m>(-2,4,8)</m>. Vector <m>\mathbf{w}</m> has a tail at <m>(-3,4,5)</m> and a head at <m>(7,7,8)</m>.
+            </p>
+        </statement>
+          <answer>
+            <p>
+              <me>
+                \mathbf{v}=\begin{bmatrix} -4\\ 0\\ 3\end{bmatrix},\quad\mathbf{w}=\begin{bmatrix} 10\\ 3\\ 3\end{bmatrix}
+              </me>
+            </p>
+          </answer>
+        </exercise>
+      </exercisegroup>
+
+      <exercise xml:id="prob-compformgivenlength">
+          <statement>
+            <p>
+              Express vector <m>\mathbf{v}</m> shown in the figure  in component form if the magnitude (length) of <m>\mathbf{v}</m> is <m>5</m>.
+            </p>
+            <image width="80%">
+              <shortdescription></shortdescription>
+              <latex-image>
+                \begin{tikzpicture}
+                  <!-- %\draw[thin,gray!40] (-1,-1) grid (4,4); -->
+                  \draw[\lt-\gt] (-1,0)--(5,0);
+                  \draw[\lt-\gt] (0,-1)--(0,4);
+                  \draw[line width=1pt,-stealth](0, 0)--(4,3)node[above left]{$\mathbf{v}$};
+                  \draw[line width=0.5pt, dashed](4, 0)node[below]{$4$}--(4,3);
+                  <!-- %\draw[line width=2pt,red,-stealth](0,0) -
+                    - (2,3) node[above left]{$[2,3]$}; -->
+                \end{tikzpicture}
+              </latex-image>
+            </image>
+        </statement>
+        <answer>
+          <p>
+            <me>
+              \mathbf{v}=\begin{bmatrix} 4\\ 3\end{bmatrix}
+            </me>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise xml:id="prob-compformpractice">
+          <statement>
+            <p>
+              Let <m>A(-2, 3)</m>, <m>B(3, 1)</m> and <m>C(-1, -1)</m>.  Find point <m>D</m> such that <m>\overrightarrow{AB}=\overrightarrow{CD}</m>.
+            </p>
+        </statement>
+          <answer>
+            <p>
+              <me>
+                D(4, -3)
+              </me>
+            </p>
+          </answer>
+      </exercise>
+    </exercises>
+  </subsection>
+</section>

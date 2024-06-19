@@ -54,5 +54,10 @@
 </objectives>
 
   <!-- include sections --> 
-  <xi:include href="Section-A-Brief-Introduction-to-Real-Space" />
+  <xi:include href="Section-A-Brief-Introduction-to-Real-Space.ptx"/>
+  <xi:include href="Section-Introduction-to-Vectors.ptx"/>
+  <xi:include href="Section-Length-of-a-Vector.ptx"/>
+  <xi:include href="Section-Vector-Arithmetic.ptx"/>
+  <xi:include href="Section-Standard-Unit-Vectors-in-Real-Space.ptx"/>
+  <xi:include href="Section-Unit-Vector-in-the-Direction-of-a-Given-Vector.ptx"/>
 </chapter>

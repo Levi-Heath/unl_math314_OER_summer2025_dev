@@ -60,7 +60,7 @@ def replace_syntax_in_file(file_path):
     # Read the content of the file
     with open(file_path, 'r', encoding='utf-8') as file:
         content = file.read()
-    
+
     # Replace LaTeX macros to match more common syntax
     modified_content = content.replace(r'\RR','\R').replace(r'\vec','\mathbf').replace(r'\dotp','\cdot')
 
@@ -76,6 +76,7 @@ def replace_syntax_in_file(file_path):
     modified_content = replace_multiple_wrappings(modified_content,text_wrappings)
 
     # Replace definition- and theorem-like environments
+    # would have probably been better form to define a function here and loop over required changes
     modified_content = modified_content.replace(r'\begin{definition}', '<definition>\n    <statement>\n        <p>').replace(r'\end{definition}', '        </p>\n    </statement>\n</definition>')
     modified_content = modified_content.replace(r'\begin{theorem}', '<theorem>\n    <statement>\n        <p>').replace(r'\end{theorem}', '        </p>\n    </statement>\n</theorem>')
     modified_content = modified_content.replace(r'\begin{corollary}', '<corollary>\n    <statement>\n        <p>').replace(r'\end{corollary}', '        </p>\n    </statement>\n</corollary>')
@@ -84,13 +85,37 @@ def replace_syntax_in_file(file_path):
     modified_content = modified_content.replace(r'\begin{proposition}', '<proposition>\n    <statement>\n        <p>').replace(r'\end{proposition}', '        </p>\n    </statement>\n</proposition>')
     modified_content = modified_content.replace(r'\begin{claim}', '<claim>\n    <statement>\n        <p>').replace(r'\end{claim}', '        </p>\n    </statement>\n</claim>')
     modified_content = modified_content.replace(r'\begin{fact}', '<fact>\n    <statement>\n        <p>').replace(r'\end{fact}', '        </p>\n    </statement>\n</fact>')
+    modified_content = modified_content.replace(r'\begin{formula}', '<identity>\n    <statement>\n        <p>').replace(r'\end{formula}', '        </p>\n    </statement>\n</identity>')
+
+    # Replace proof environments
     modified_content = modified_content.replace(r'\begin{proof}', '<proof>\n    <p>').replace(r'\end{proof}', '    </p>\n</proof>')
+
+    # Replace example environments
+    modified_content = modified_content.replace(r'\begin{example}', '<example>\n    <p>').replace(r'\end{example}', '    </p>\n</example>')
+    modified_content = modified_content.replace(r'\begin{exploration}', '<exploration>\n    <p>').replace(r'\end{exploration}', '    </p>\n</exploration>')
 
     # Replace ordered and unordered lists
     modified_content = modified_content.replace(
         r'\begin{itemize}', '<ul>').replace(r'\end{itemize}', '</ul>').replace(
             r'\item','<li>\n    <p>\n    </p>\n</li>').replace(
                 r'\begin{enumerate}', '<ol>').replace(r'\end{enumerate}', '</ol>')
+
+    # Add <image><latex-image>...</latex-image></image> wrap around tikz figures
+    modified_content = modified_content.replace(
+        r'\begin{tikzpicture}','<image>\n   <shortdescription></shortdescription>\n    <latex-image>\n      \begin{tikzpicture}').replace(
+            r'\end{tikzpicture}','    \end{tikzpicture}\n    </latex-image>\n</image>')
+
+    # Replace Practice Problem environments
+    modified_content = modified_content.replace(
+        r'\subsection*{Practice Problems}','<subsection xml:id="Subsection-Practice-Problems">\n    <title>Practice Problems</title>\n    <exercises xml:id="Practice-Problems">\n  </exercises>\n</subsection>')
+    modified_content = modified_content.replace(
+        r'\begin{problem}','<exercise xml:id="prob-">\n    <statement>\n       <p>\n       </p>\n  </statement>\n').replace(
+            r'\end{problem}', '    <answer>\n      <p>\n       </p>\n    </answer>\n</exercise>')
+
+    # Add preamble and last_line
+    preamble = '<?xml version="1.0" encoding="UTF-8"?>\n\n<section xml:id="Section-TITLE" xmlns:xi="http://www.w3.org/2001/XInclude">\n  <title>TITLE</title>'
+    last_line = '\n</section>'
+    modified_content = preamble + modified_content + last_line
 
     # Create the new file name with .ptx extension
     base_name = os.path.splitext(file_path)[0]
@@ -110,7 +135,3 @@ directory = "input/"
 LaTeX_Files = os.listdir(directory)
 for file in LaTeX_Files:
     replace_syntax_in_file(directory + file)
-
-
-
-

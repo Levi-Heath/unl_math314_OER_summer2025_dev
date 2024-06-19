@@ -6,16 +6,13 @@
 
   <book xml:id="my-great-book">
     <title>Linear Algebra</title>
-    <subtitle>Based on Crichton Ogle's This is Linear Algebra</subtitle>
+    <subtitle>Based on Anna Davis's and Paul Zachlin's Linear Algebra: An Interactice Introduction</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
     <xi:include href="./ch-prelim/Chapter-Preliminaries.ptx" />
-    <xi:include href="./linearTransformations/ch-overview.ptx" />
-    <xi:include href="./ch-2-title.ptx" />
-
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

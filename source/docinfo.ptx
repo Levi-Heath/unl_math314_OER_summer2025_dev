@@ -42,11 +42,11 @@
     \usetikzlibrary{shapes,decorations,shadows,fadings,patterns} 
     \usetikzlibrary{decorations.markings}
     \usetikzlibrary{shapes.geometric}
-    <!--\tikzstyle geometryDiagrams=[ultra thick,color=blue!50!black]-->
+    \tikzstyle geometryDiagrams=[ultra thick,color=blue!50!black]
   </latex-image-preamble>
 
   <!-- It is possible to rename elements: -->
-  <rename element="indentity" xml:lang="en-US">Formula</rename>
+  <rename element="identity">Formula</rename>
 
   <!-- Specify the default type of cross reference: -->
   <!-- <cross-references text="type-global" /> -->
