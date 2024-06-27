@@ -3,6 +3,10 @@
 <chapter xml:id="Chapter-Preliminaries" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Preliminaries</title>
 
+  <p>
+    After completing this chapter, students should be able to do the following.
+  </p>
+  
   <objectives>
         <ul>
             <li>
@@ -60,4 +64,10 @@
   <xi:include href="Section-Vector-Arithmetic.ptx"/>
   <xi:include href="Section-Standard-Unit-Vectors-in-Real-Space.ptx"/>
   <xi:include href="Section-Unit-Vector-in-the-Direction-of-a-Given-Vector.ptx"/>
+  <xi:include href="Section-Dot-Product-and-its-Properties.ptx"/>
+  <xi:include href="Section-Dot-Product-and-Angle.ptx"/>
+  <xi:include href="Section-Orthogonal-Projections.ptx"/>
+  <xi:include href="Section-Cross-Product-and-its-Properties.ptx"/>
+  <xi:include href="Section-Parametric-Equations-of-Lines.ptx"/>
+  <xi:include href="Section-Planes-in-3d.ptx"/>
 </chapter>

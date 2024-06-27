@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="Section-Orthogonal-Projections" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Orthogonal Projections</title>
+    
+    <p>
+        Given a line <m>l</m> and a vector <m>\mathbf{v}</m> emanating from a point on <m>l</m>, it is sometimes convenient to express <m>\mathbf{v}</m> as the sum of a vector <m>\mathbf{v}_{\parallel}</m>, parallel to <m>l</m>, and a vector <m>\mathbf{v}_{\perp}</m>, perpendicular to <m>l</m>.  If you have taken a physics course, you may have seen a force vector decomposed into the sum of two components: one parallel and one perpendicular to the direction of motion.
+    </p>
+    
+    <image width="70%">
+        <shortdescription></shortdescription>
+        <latex-image>
+            \begin{tikzpicture}[scale=.8]
+                \draw[line width=2pt,red,-stealth](3.6, 0.8)--(2,4);
+                \node[red] at (3.5, 2.2)   (a) {\(\mathbf{v}_{\perp}\)};
+                \node[red] at (1.5, -0.95)   (b) {\(\mathbf{v}_{\parallel}\)};
+                \node[] at (5, 1)   (c) {\(l\)};
+                \node[blue] at (-0.8, 1.9)   (d) {\(\mathbf{v}=\mathbf{v}_{\perp}+\mathbf{v}_{\parallel}\)};
+                \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
+                \draw[line width=2pt,blue,-stealth](-2, -2)--(2,4);
+                \draw[line width=2pt,red,-stealth](-2, -2)--(3.6, 0.8);
+            \end{tikzpicture}
+        </latex-image>
+    </image>
+
+    <p>
+        Suppose <m>\mathbf{d}</m> is a direction vector for <m>l</m>.  
+        Then <m>\mathbf{v}_{\parallel}=k\mathbf{d}</m> for some scalar <m>k</m>.  Our goal is to find <m>k</m>.  
+        <md>
+            <mrow> \mathbf{v}\cdot\mathbf{d}\amp=(\mathbf{v}_{\parallel}+\mathbf{v}_{\perp})\cdot\mathbf{d} </mrow>
+            <mrow> \amp=(k\mathbf{d}+\mathbf{v}_{\perp})\cdot\mathbf{d} </mrow>
+            <mrow> \amp=k\mathbf{d}\cdot\mathbf{d}+\mathbf{v}_{\perp}\cdot\mathbf{d} </mrow>
+            <mrow> \amp=k\norm{\mathbf{d}}^2+0 </mrow>
+            <mrow> \amp=k\norm{\mathbf{d}}^2 </mrow>
+        </md>
+        We conclude that 
+        <me>
+            k=\frac{\mathbf{v}\cdot\mathbf{d}}{\norm{\mathbf{d}}^2}
+        </me>
+        and 
+        <me>
+            \mathbf{v}_{\parallel}=k\mathbf{d}=\left(\frac{\mathbf{v}\cdot\mathbf{d}}{\norm{\mathbf{d}}^2}\right)\mathbf{d}
+        </me>
+        The vector <m>\mathbf{v}_{\parallel}=\left(\frac{\mathbf{v}\cdot\mathbf{d}}{\norm{\mathbf{d}}^2}\right)\mathbf{d}</m> is called the <term>projection of <m>\mathbf{v}</m> onto <m>\mathbf{d}</m></term>. 
+        In our discussion, <m>\mathbf{d}</m> is a direction vector for line <m>l</m>.  
+        So, we can also say that <m>\mathbf{v}_{\parallel}</m> is the <term>projection of <m>\mathbf{v}</m> onto <m>l</m></term>.
+    </p>
+
+    <p>
+        To find <m>\mathbf{v}_{\perp}</m>, observe that <m>\mathbf{v}_{\perp}=\mathbf{v}-\mathbf{v}_{\parallel}</m>.
+    </p>
+
+
+    <definition xml:id="def-projection">
+        <statement>
+            <p>
+                Let <m>\mathbf{v}</m> be a vector, and let <m>\mathbf{d}</m> be a non-zero vector.  The <term>projection of <m>\mathbf{v}</m> onto <m>\mathbf{d}</m></term> is given by 
+                <me>
+                    \text{proj}_{\mathbf{d}}\mathbf{v}=\left(\frac{\mathbf{v}\cdot\mathbf{d}}{\norm{\mathbf{d}}^2}\right)\mathbf{d}
+                </me>
+            </p>
+        </statement>
+    </definition>
+
+    <example xml:id="ex-projection1">
+        <p>
+            Find the projection of <m>\mathbf{v}</m>, shown below, onto the line given by <m>y=\frac{1}{2}x-1</m>.
+        </p>
+        <image width="70%">
+            <shortdescription></shortdescription>
+            <latex-image>
+                \begin{tikzpicture}[scale=.7]
+                    \draw[thin,gray!40] (-3,-3) grid (5,5);
+                    \draw[\lt-\gt] (-3,0)--(5,0);
+                    \draw[\lt-\gt] (0,-3)--(0,5);
+                    \draw[red, dashed] (2,4)--(3.6, 0.8); 
+                    \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
+                    \draw[line width=2pt,blue,-stealth](-2, -2)--(2,4);
+                    \draw[line width=2pt,red,-stealth](-2, -2)--(3.6, 0.8);
+                    \node[blue] at (-0.5, 1.5)   (a) {\(\mathbf{v}\)};
+                    \node[red] at (1.9, -0.9)   (b) {\(\mathbf{v}_{\parallel}\)};
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            We begin by finding vectors <m>\mathbf{v}</m> and <m>\mathbf{d}</m>. The tail of <m>\mathbf{v}</m> is located at <m>(-2, -2)</m>, and the head of <m>\mathbf{v}</m> is at <m>(2, 4)</m>.  Using the ``head-tail" formula we get 
+            <me>
+                \mathbf{v}=\begin{bmatrix}2-(-2)\\4-(-2)\end{bmatrix}=\begin{bmatrix}4\\6\end{bmatrix}
+            </me>
+            The direction vector for the line <m>y=\frac{1}{2}x-1</m> is 
+            <me>
+                \mathbf{d}=\begin{bmatrix}2\\1\end{bmatrix}
+            </me>
+            We find that <m>\mathbf{v}\cdot\mathbf{d}=14</m> and <m>\norm{\mathbf{d}}^2=5</m>.
+            Thus 
+            <me>
+                \text{proj}_{\mathbf{d}}\mathbf{v}=\left(\frac{\mathbf{v}\cdot\mathbf{d}}{\norm{\mathbf{d}}^2}\right)\mathbf{d}=\frac{14}{5}\begin{bmatrix}2\\1\end{bmatrix}=\begin{bmatrix}28/5\\14/5\end{bmatrix}
+            </me>
+        </p>
+    </example>
+
+    <subsection xml:id="Subsection-Distance-from-a-Point-to-a-Line">
+        <title>Distance from a Point to a Line</title>
+        
+        <p>
+            The shortest distance from a point to a line is the length of the perpendicular line segment dropped from the point to the line.  Vector projection formula will help us find the length of such a perpendicular.
+        </p>
+
+        <example xml:id="ex-distancefrompttoline">
+            <p>
+                Let <m>A(2, -1, 1)</m> be a point in <m>\R^3</m>.  Suppose line <m>l</m> is given by parametric equations 
+                <me>
+                    x=t+3
+                </me>
+                <me>
+                    y=-t+1
+                </me>
+                <me>
+                    z=t-2
+                </me>
+            </p>
+            <image width="60%">
+                <shortdescription></shortdescription>
+                <latex-image>
+                    \begin{tikzpicture}[scale=.6]
+                        \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
+                        \node[] at (5, 0.8)   (a) {\(l\)};
+                        \fill (2, 4)node[above, right]{\(A(2, -1, 1)\)} circle (1mm);
+                    \end{tikzpicture}
+                </latex-image>
+            </image>
+            <p>
+                Find the distance from <m>A</m> to <m>l</m>.
+            </p>
+            <p>
+                We will first construct a vector <m>\mathbf{v}</m> by picking an arbitrary point <m>B</m> on <m>l</m> to be the tail of <m>\mathbf{v}</m> and using point <m>A</m> as the head of <m>\mathbf{v}</m>.  An easy point to choose on line <m>l</m> is the point <m>(3, 1, -2)</m> that corresponds to <m>t=0</m>.  Now we have 
+                <me>
+                    \mathbf{v}=\overrightarrow{BA}=\begin{bmatrix}2-3\\-1-1\\1-(-2)\end{bmatrix}=\begin{bmatrix}-1\\-2\\3\end{bmatrix}
+                </me>
+            </p>
+            <image width="60%">
+                <shortdescription></shortdescription>
+                <latex-image>
+                    \begin{tikzpicture}[scale=.6]
+                        \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
+                        \node[] at (5, 0.8)   (a) {\(l\)};
+                        \draw[line width=2pt,blue,-stealth](-2, -2)--(2,4);
+                        \fill (-2, -2) circle (1mm);
+                        \fill (2, 4)node[below, right]{\(A(2, -1, 1)\)} circle (1mm);
+                        \node[] at (-1, -2.5)   (b) {\(B(3, 1, -2)\)};
+                        \node[blue] at (0, 2)   (c) {\(\mathbf{v}\)};
+                    \end{tikzpicture}
+                </latex-image>
+            </image>
+            <p>
+                The line has a direction vector 
+                <me>
+                    \mathbf{d}=\begin{bmatrix}1\\-1\\1\end{bmatrix}
+                </me>
+                We will now find the projection of <m>\overrightarrow{BA}</m> onto <m>l</m>  
+                <me>
+                    \text{proj}_{\mathbf{d}} \overrightarrow{BA}=\left(\frac{\mathbf{v}\cdot\mathbf{d}}{\norm{\mathbf{d}}^2}\right)\mathbf{d}=\frac{4}{3}\begin{bmatrix}1\\-1\\1\end{bmatrix}=\begin{bmatrix}4/3\\-4/3\\4/3\end{bmatrix}
+                </me>
+            </p>
+            <image width="60%">
+                <shortdescription></shortdescription>
+                <latex-image>
+                    \begin{tikzpicture}[scale=.6]
+                        \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
+                        \node[] at (5, 0.8)   (a) {\(l\)};
+                        \node[] at (-1, -2.5)   (b) {\(B(3, 1, -2)\)};
+                        \node[blue] at (0, 2)   (c) {\(\mathbf{v}\)};
+                        \node[red] at (1.3, -1.3)   (d) {\(\text{proj}_{\mathbf{d}}\overrightarrow{BA}\)};
+                        \draw[line width=2pt,blue,-stealth](-2, -2)--(2,4);
+                        \draw[line width=2pt,red,-stealth](-2, -2)--(3.6, 0.8);
+                        \draw[red, dashed] (2,4)--(3.6, 0.8); 
+                        \fill (-2, -2)  circle (1mm);
+                        \fill (2, 4)node[above, right]{\(A(2, -1, 1)\)} circle (1mm);
+                    \end{tikzpicture}
+                </latex-image>
+            </image>
+            <p>
+                Next, we find <m>\mathbf{v}_{\perp}</m>.
+                <me>
+                    \mathbf{v}_{\perp}=\mathbf{v}-\mathbf{v}_{\parallel}=\begin{bmatrix}-1\\-2\\3\end{bmatrix}-\begin{bmatrix}4/3\\-4/3\\4/3\end{bmatrix}=\begin{bmatrix}-7/3\\-2/3\\5/3\end{bmatrix}
+                </me>
+            </p>
+            <image>
+                <shortdescription></shortdescription>
+                <latex-image>
+                    \begin{tikzpicture}[scale=.6]
+                        \draw[line width=2pt,red,-stealth](3.6, 0.8)--(2,4);
+                        \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
+                        \node[] at (5, 0.8)   (a) {\(l\)};
+                        \node[] at (-1, -2.5)   (b) {\(B(3, 1, -2)\)};
+                        \node[blue] at (0, 2)   (c) {\(\mathbf{v}\)};
+                        \node[red] at (1.3, -1.3)   (d)
+                        {\(\text{proj}_{\mathbf{d}}\overrightarrow{BA}\)};
+                        \node[red] at (3.6, 2.3)   (e) {\(\mathbf{v}_{\perp}\)};
+                        \draw[line width=2pt,blue,-stealth](-2, -2)--(2,4);
+                        \draw[line width=2pt,red,-stealth](-2, -2)--(3.6, 0.8);
+                        \fill (-2, -2)  circle (1mm);
+                        \fill (2, 4)node[above, right]{\(A(2, -1, 1)\)} circle (1mm);
+                    \end{tikzpicture}
+                </latex-image>
+            </image>
+            <p>
+                Finally, to find the distance between point <m>A</m> and line <m>l</m>, we find the magnitude of <m>\mathbf{v}_{\perp}</m>.
+                <me>
+                    \norm{\mathbf{v}_{\perp}}=\frac{1}{3}\sqrt{49+4+25}=\frac{\sqrt{78}}{3}
+                </me>
+            </p>
+        </example>
+    </subsection>
+
+    <subsection xml:id="Subsection-Practice-Problems">
+        <title>Practice Problems</title>
+        <exercises>
+            <exercisegroup>
+                <introduction>
+                    <p>
+                        Find <m>\text{proj}_{\mathbf{d}}\mathbf{v}</m>.
+                    </p>
+                </introduction>
+            
+                <exercise xml:id="prob-proj1a">
+                    <statement>
+                       <p>
+                            If <m>\mathbf{d}=\begin{bmatrix}-1\\3\end{bmatrix}</m> and <m>\mathbf{v}=\begin{bmatrix}1\\4\end{bmatrix}</m> then
+                            <me>
+                                \text{proj}_{\mathbf{d}}\mathbf{v}=\begin{bmatrix}\answer{-1.1}\\\answer{3.3}\end{bmatrix}
+                            </me>
+                       </p>
+                    </statement>
+                </exercise>
+                    
+                <exercise xml:id="prob-proj1b">
+                    <statement>
+                        <p>
+                            If <m>\mathbf{d}=\begin{bmatrix}0\\2\\1\end{bmatrix}</m> and <m>\mathbf{v}=\begin{bmatrix}-1\\-4\\2\end{bmatrix}</m> then  
+                            <me>
+                                \text{proj}_{\mathbf{d}}\mathbf{v}=\begin{bmatrix}\answer{0}\\\answer{-2.4}\\\answer{-1.2}\end{bmatrix}
+                            </me>
+                       </p>
+                  </statement>
+                </exercise>
+            </exercisegroup>
+            
+            <exercise xml:id="prob-proj2">
+                <statement>
+                    <p>
+                        Find the projection of vector <m>\mathbf{v}</m> onto line <m>l</m>. (If entering answers in decimal form, round to the nearest one hundredth.)
+                   </p>
+                   <image width="60%">
+                        <shortdescription></shortdescription>
+                        <latex-image>
+                            \begin{tikzpicture}[scale=.6]
+                                \draw[thin,gray!40] (-2,-2) grid (9,4);
+                                \draw[\lt-\gt] (-2,0)--(9,0);
+                                \draw[\lt-\gt] (0,-2)--(0,4);
+                                \node[blue] at (6, 1)   (a) {\(\mathbf{v}\)};
+                                \node[] at (-2.4, 1)   (b) {\(l\)};
+                                \draw [-,line width=1pt]  (-2,0.8)--(9, -1.4);
+                                \draw[line width=2pt,blue,-stealth](7, -1)--(4,3);
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </statement>
+                <answer>
+                    <p>
+                        <me>
+                            \begin{bmatrix}-95/26\\ 19/26\end{bmatrix}
+                        </me>
+                    </p>
+                </answer>
+            </exercise>
+            
+            <exercise xml:id="prob-distpttoline">
+                <statement>
+                    <p> Find the distance between point <m>A</m> and line <m>l</m>. </p>
+                    <image width="70%">
+                        <shortdescription></shortdescription>
+                        <latex-image>
+                            \begin{tikzpicture}[scale=.7]
+                                \draw[thin,gray!40] (0,-2) grid (9,4);
+                                \draw[-\gt] (0,0)--(9,0);
+                                \draw[\lt-\gt] (0,-2)--(0,4);
+                                \fill (7,2)node[above, right]{\(A\)} circle (1mm);
+                                \node[] at (2.6, -2)   (b) {\(l\)};
+                                \draw [-,line width=1pt]  (3,-2)--(6, 4);
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </statement>
+                <answer>
+                    <p> <m>\sqrt{3.2}</m> </p>
+                </answer>
+            </exercise>
+            
+            <exercise xml:id="prob-proj3">
+                <statement>
+                    <p>
+                        Show that <m>\text{proj}_{\mathbf{d}}\mathbf{v}</m> does not depend on the length of <m>\mathbf{d}</m> by proving that <m>\text{proj}_{\mathbf{d}}\mathbf{v}=\text{proj}_{k\mathbf{d}}\mathbf{v}</m> for <m>k\neq 0</m>.  What does this result mean geometrically?  Illustrate your response with a diagram.
+                    </p>
+                </statement>
+            </exercise>
+            
+            <exercise xml:id="prob-circletangenttoline">
+                <statement>
+                    <p>
+                        Find the radius of a circle centered at <m>(4, 2)</m> if the line <m>y=\frac{3}{2}x+3</m> is tangent to the circle.  Enter your response as a fraction.
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <me>
+                            r=\sqrt{196/13}
+                        </me>
+                        The graph below shows the line <m>y=\frac{3}{2}x+3</m> together with a circle of radius <m>1</m>.  
+                        Change the value of <m>r</m> to the radius you have found to visualize the correct answer.
+                    </p>
+                    <figure>
+                        <caption>
+                            A larger version of this activity is available  
+                            <url href="https://www.geogebra.org/calculator/bngnjxee" visual="https://www.geogebra.org/calculator/bngnjxee">here</url>.
+                        </caption>
+                        <interactive xml:id="geogebra-circletangenttoline" platform="geogebra" width="100%" aspect="4:3">
+                            <slate xml:id="circletangenttoline" surface="geogebra" material="bngnjxee" aspect="4:3" />
+                        </interactive>
+                    </figure>
+                </answer>
+            </exercise>
+        </exercises>
+    </subsection>
+</section>

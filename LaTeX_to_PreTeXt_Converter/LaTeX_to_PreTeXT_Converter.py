@@ -3,6 +3,8 @@
 Created on Mon Jun 10 16:54:21 2024
 
 @author: Levi Heath, lheath2@unl.edu, UNL
+
+For educational use only.
 """
 
 import os
@@ -34,6 +36,26 @@ def replace_dollar_signs(content):
     
     return modified_content
 
+def backtrack_math_mode_for_tikz(text):
+# Define the pattern to match the text between \begin{tikzpicture} and \end{tikzpicture}
+    tikz_pattern = re.compile(r'(\\begin\{tikzpicture\})(.*?)(\\end\{tikzpicture\})', re.DOTALL)
+    
+    # Define the replacement function for <m> and </m> within the matched tikzpicture block
+    def replace_m_tags(match):
+        begin_tikz = match.group(1)
+        tikz_content = match.group(2)
+        end_tikz = match.group(3)
+        
+        # Replace <m> with \( and </m> with \)
+        modified_content = tikz_content.replace('<m>', r'\(').replace('</m>', r'\)')
+        
+        return f"{begin_tikz}{modified_content}{end_tikz}"
+    
+    # Use re.sub to apply the replacement function to each matched block
+    modified_content = re.sub(tikz_pattern, replace_m_tags, text)
+    
+    return modified_content
+
 def replace_wrapping(text,LaTeX_Wrapping,PreTeXt_Wrapping):
     # Define the pattern to match \LaTeX_Wrapping{...}
     pattern = r'\\' + LaTeX_Wrapping + '\{(.*?)\}'
@@ -46,6 +68,7 @@ def replace_wrapping(text,LaTeX_Wrapping,PreTeXt_Wrapping):
     modified_text = re.sub(pattern, replacement, text)
     # output
     return modified_text
+
 def replace_multiple_wrappings(text,text_array):
     # format of text_array should be a vector of tuples with first element of tuple the LaTeX_Wrapping and the second element must be the PreTeXt_Wrapping
     # initialize variable
@@ -54,6 +77,23 @@ def replace_multiple_wrappings(text,text_array):
     for text_tuple in text_array:
         modified_text = replace_wrapping(modified_text,text_tuple[0],text_tuple[1])
     # output
+    return modified_text
+
+def replace_ref(text):
+    # Define the pattern to match \ref{...}
+    pattern = r'\\ref\{(.*?)\}'
+    
+    # Define the replacement function
+    def replacement(match):
+        # Extract the text between the braces
+        inner_text = match.group(1)
+        # Replace any ':' with '-'
+        modified_inner_text = inner_text.replace(':', '-')
+        return f'<xref ref="{modified_inner_text}"/>'
+    
+    # Use re.sub to replace all matches of the pattern
+    modified_text = re.sub(pattern, replacement, text)
+    
     return modified_text
 
 def replace_syntax_in_file(file_path):
@@ -65,15 +105,20 @@ def replace_syntax_in_file(file_path):
     modified_content = content.replace(r'\RR','\R').replace(r'\vec','\mathbf').replace(r'\dotp','\cdot')
 
     # Replace &,<,> with \amp,\lt,\gt
-    modified_content = modified_content.replace(r'&','\amp').replace(r'<','\lt').replace(r'>','\gt')
+    modified_content = modified_content.replace(r'&','\\amp').replace(r'<','\lt').replace(r'>','\gt')
     
     # Replace math environments
     modified_content = replace_dollar_signs(modified_content)
+    modified_content = backtrack_math_mode_for_tikz(modified_content)
     modified_content = modified_content.replace(r'\begin{equation*}','<me>').replace(r'\end{equation*}','</me>')
+    modified_content = modified_content.replace(r'\begin{equation}','<men>').replace(r'\end{equation}','</men>')
+    modified_content = modified_content.replace(r'\begin{align*}','<md>').replace(r'\end{align*}','</md>')
+    modified_content = modified_content.replace(r'\begin{align}','<mdn>').replace(r'\end{align}','</mdn>')
 
-    # Replace text wrappings such as \textit{} and \dfn{}
-    text_wrappings = [["dfn","term"],["textit","em"]]
+    # Replace text wrappings such as \textit{}, \dfn{}, \title{}
+    text_wrappings = [["dfn","term"],["textit","em"],["title","title"]]
     modified_content = replace_multiple_wrappings(modified_content,text_wrappings)
+    modified_content = replace_ref(modified_content)
 
     # Replace definition- and theorem-like environments
     # would have probably been better form to define a function here and loop over required changes
@@ -102,7 +147,7 @@ def replace_syntax_in_file(file_path):
 
     # Add <image><latex-image>...</latex-image></image> wrap around tikz figures
     modified_content = modified_content.replace(
-        r'\begin{tikzpicture}','<image>\n   <shortdescription></shortdescription>\n    <latex-image>\n      \begin{tikzpicture}').replace(
+        r'\begin{tikzpicture}','<image width="100%">\n   <shortdescription></shortdescription>\n    <latex-image>\n      \\begin{tikzpicture}').replace(
             r'\end{tikzpicture}','    \end{tikzpicture}\n    </latex-image>\n</image>')
 
     # Replace Practice Problem environments
@@ -113,7 +158,7 @@ def replace_syntax_in_file(file_path):
             r'\end{problem}', '    <answer>\n      <p>\n       </p>\n    </answer>\n</exercise>')
 
     # Add preamble and last_line
-    preamble = '<?xml version="1.0" encoding="UTF-8"?>\n\n<section xml:id="Section-TITLE" xmlns:xi="http://www.w3.org/2001/XInclude">\n  <title>TITLE</title>'
+    preamble = '<?xml version="1.0" encoding="UTF-8"?>\n\n<section xml:id="Section-TITLE" xmlns:xi="http://www.w3.org/2001/XInclude">\n'
     last_line = '\n</section>'
     modified_content = preamble + modified_content + last_line
 

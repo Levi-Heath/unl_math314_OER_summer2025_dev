@@ -36,367 +36,248 @@
       In other words, <m>\mathbf{u}\cdot\mathbf{v}=\mathbf{v}\cdot\mathbf{u}</m>.  
       This and other properties of the dot product are stated below.
     </p>
+
+    <theorem xml:id="th-dotproductproperties">
+      <statement>
+        <p>
+          The following properties hold for vectors <m>\mathbf{u}</m>, <m>\mathbf{v}</m> and <m>\mathbf{w}</m> in <m>\R^n</m> and scalar <m>k</m> in <m>\R</m>.
+          <ol>
+            <li xml:id="item-commutative">
+              <p> <m>\mathbf{u}\cdot\mathbf{v}=\mathbf{v}\cdot\mathbf{u}</m> </p>
+            </li>
+            <li xml:id="item-distributive">
+              <p> <m>(\mathbf{u}+\mathbf{v})\cdot \mathbf{w}=\mathbf{u}\cdot \mathbf{w}+\mathbf{v}\cdot \mathbf{w}</m> </p>
+            </li>
+            <li xml:id="item-distributive-again"> 
+              <p> <m>\mathbf{u}\cdot (\mathbf{v}+\mathbf{w})=\mathbf{u}\cdot\mathbf{v}+\mathbf{u}\cdot \mathbf{w}</m> </p>
+            </li>
+            <li xml:id="item-scalar">
+              <p> <m>(k\mathbf{u})\cdot \mathbf{v}=k(\mathbf{u}\cdot\mathbf{v})=\mathbf{u}\cdot (k\mathbf{v})</m> </p>
+            </li>
+            <li xml:id="item-positive">
+              <p> <m>\mathbf{u}\cdot\mathbf{u}\geq 0</m>, and <m>\mathbf{u}\cdot\mathbf{u}=0</m> if and only if <m>\mathbf{u}={\bf 0}</m>. </p>
+            </li>
+            <li xml:id="item-norm"> 
+              <p> <m>\norm{\mathbf{u}}^2=\mathbf{u}\cdot\mathbf{u}</m> </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          We will prove Property <xref ref="item-distributive"/>.  The remaining properties are left as exercises.
+          <md>
+            <mrow> \left(\mathbf{u}+\mathbf{v}\right)\cdot \mathbf{w}\amp=\left(\begin{bmatrix} u_1\\ u_2\\ \vdots\\ u_n \end{bmatrix}+\begin{bmatrix} v_1\\ v_2\\ \vdots\\ v_n \end{bmatrix}\right)\cdot \begin{bmatrix}w_1\\w_2\\\vdots\\w_n\end{bmatrix}=\begin{bmatrix}
+              u_1+v_1\\
+              u_2+v_2\\
+              \vdots\\
+              u_n+v_n
+              \end{bmatrix}\cdot \begin{bmatrix}w_1\\w_2\\\vdots\\w_n\end{bmatrix} 
+            </mrow>
+            <mrow> \amp=(u_1+v_1)w_1 + (u_2+v_2)w_2 + \ldots + (u_n+v_n)w_n </mrow>
+            <mrow> \amp=u_1w_1 + v_1w_1 + u_2w_2+v_2w_2 + \ldots + u_nw_n+v_nw_n </mrow>
+            <mrow> \amp=(u_1w_1 + u_2w_2\ldots + u_nw_n) + (v_1w_1 + v_2w_2 + \ldots + v_nw_n) </mrow>
+            <mrow> \amp=\begin{bmatrix} u_1\\ u_2\\ \vdots\\ u_n \end{bmatrix}
+              \cdot\begin{bmatrix}w_1\\w_2\\\vdots\\w_n\end{bmatrix}
+              +\begin{bmatrix} v_1\\ v_2\\ \vdots\\ v_n \end{bmatrix}
+              \cdot \begin{bmatrix}w_1\\w_2\\\vdots\\w_n\end{bmatrix}
+              =\mathbf{u}\cdot\mathbf{w}+\mathbf{v}\cdot\mathbf{w} 
+            </mrow>
+          </md>
+        </p>
+      </proof>
+    </theorem>
     
+    <p>
+      We will illustrate Property <xref ref="item-norm"/> with an example.
+    </p>
+    
+    <example xml:id="ex-exprop6">
+      <p>
+        Let <m>\mathbf{u}=\begin{bmatrix}-2\\3\end{bmatrix}</m>.  Use <m>\mathbf{u}</m> to illustrate Property <xref ref="item-norm"/> of Theore <xref ref="th-dotproductproperties"/>.
+        <me>
+          \norm{\mathbf{u}}^2=(-2)^2+3^2=(-2)(-2)+(3)(3)=\begin{bmatrix}-2\\3\end{bmatrix}\cdot\begin{bmatrix}-2\\3\end{bmatrix}=\mathbf{u}\cdot\mathbf{u}
+        </me>
+      </p>
+    </example>
+    
+    <p>
+      If we take the square root of both sides of the equation in Property <xref ref="item-norm"/>, we get an alternative way to think of the length of a vector (<xref ref="Section-Length-of-a-Vector"/>).
+    </p>
+    
+    <corollary xml:id="cor-length_via_dotprod">
+      <title>Length of a Vector</title>
+      <statement>
+        <p>
+          Let <m>\mathbf{v}</m> be a vector in <m>\R^n</m>, then the <term>length</term>, or the <term>magnitude</term>, of <m>\mathbf{v}</m> is given by
+          <men xml:id="eq-norm_dotp">
+            \norm{\mathbf{v}}=\sqrt{\mathbf{v} \cdot \mathbf{v}}
+          </men>
+        </p>
+      </statement>
+    </corollary>
   </subsection>
 
-
-<theorem xml:id="th-dotproductproperties">
-  <statement>
-    <p>
-      The following properties hold for vectors <m>\mathbf{u}</m>, <m>\mathbf{v}</m> and <m>\mathbf{w}</m> in <m>\R^n</m> and scalar <m>k</m> in <m>\R</m>.
-      <ol>
-        <li xml:id="item-commutative">
-          <p> <m>\mathbf{u}\cdot\mathbf{v}=\mathbf{v}\cdot\mathbf{u}</m> </p>
-        </li>
-    
-   
-  <li>
-    <p>
-    </p>
-</li>\label{item:distributive} <m>(\mathbf{u}+\mathbf{v})\cdot \mathbf{w}=\mathbf{u}\cdot \mathbf{w}+\mathbf{v}\cdot \mathbf{w}</m>
-   
-  <li>
-    <p>
-    </p>
-</li>\label{item:distributive-again} <m>\mathbf{u}\cdot (\mathbf{v}+\mathbf{w})=\mathbf{u}\cdot\mathbf{v}+\mathbf{u}\cdot \mathbf{w}</m>
-   
-  <li>
-    <p>
-    </p>
-</li>\label{item:scalar} <m>(k\mathbf{u})\cdot \mathbf{v}=k(\mathbf{u}\cdot\mathbf{v})=\mathbf{u}\cdot (k\mathbf{v})</m>
-   
-  <li>
-    <p>
-    </p>
-</li> \label{item:positive} <m>\mathbf{u}\cdot\mathbf{u}\geq 0</m>, and <m>\mathbf{u}\cdot\mathbf{u}=0</m> if and only if <m>\mathbf{u}={\bf 0}</m>.
-   
-  <li>
-    <p>
-    </p>
-</li> \label{item:norm}
-    <m>\norm{\mathbf{u}}^2=\mathbf{u}\cdot\mathbf{u}</m>
-  </ol>
-        </p>
-    </statement>
-</theorem>
-
-We will prove Property ~\ref{item:distributive}.  The remaining properties are left as exercises.
-
-<proof>
-    <p>[Proof of Property~\ref{item:distributive}:]
-
-\begin{align*}
-\left(\mathbf{u}+\mathbf{v}\right)\cdot \mathbf{w}\amp=\left(\begin{bmatrix} u_1\\ u_2\\ \vdots\\ u_n \end{bmatrix}+\begin{bmatrix} v_1\\ v_2\\ \vdots\\ v_n \end{bmatrix}\right)\cdot \begin{bmatrix}w_1\\w_2\\\vdots\\w_n\end{bmatrix}=\begin{bmatrix}
-u_1+v_1\\
-u_2+v_2\\
-\vdots\\
-u_n+v_n
-\end{bmatrix}\cdot \begin{bmatrix}w_1\\w_2\\\vdots\\w_n\end{bmatrix}\\
-\amp=(u_1+v_1)w_1+
-(u_2+v_2)w_2+
-\ldots+
-(u_n+v_n)w_n\\
-\amp=u_1w_1+v_1w_1+
-u_2w_2+v_2w_2+
-\ldots+
-u_nw_n+v_nw_n\\
-\amp=(u_1w_1+
-u_2w_2\ldots+u_nw_n)+(v_1w_1+v_2w_2+
-\ldots
-+v_nw_n)\\
-\amp=\begin{bmatrix}
-u_1\\
-u_2\\
-\vdots\\
-u_n
-\end{bmatrix}\cdot\begin{bmatrix}w_1\\w_2\\\vdots\\w_n\end{bmatrix}+\begin{bmatrix}
-v_1\\
-v_2\\
-\vdots\\
-v_n
-\end{bmatrix}\cdot \begin{bmatrix}w_1\\w_2\\\vdots\\w_n\end{bmatrix}
-=\mathbf{u}\cdot\mathbf{w}+\mathbf{v}\cdot\mathbf{w}
-\end{align*}
-    </p>
-</proof>
-
-We will illustrate Property~\ref{item:norm} with an example.
-<example>
-    <p>\label{ex:exprop6}
-  Let <m>\mathbf{u}=\begin{bmatrix}-2\\3\end{bmatrix}</m>.  Use <m>\mathbf{u}</m> to illustrate Property~\ref{item:norm} of Theorem~\ref{th:dotproductproperties}.
-  \begin{explanation}
-  
-  
-<me>
-    \norm{\mathbf{u}}^2=(-2)^2+3^2=(-2)(-2)+(3)(3)=\begin{bmatrix}-2\\3\end{bmatrix}\cdot\begin{bmatrix}-2\\3\end{bmatrix}=\mathbf{u}\cdot\mathbf{u}
-</me>
-
-  \end{explanation}
-    </p>
-</example>
-
-If we take the square root of both sides of the equation in Property~\ref{item:norm}, we get an alternative way to think of the \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VEC-0020/main}{length of a vector}.
-
-<corollary>
-    <statement>
-        <p>[Length of a Vector]\label{cor:length_via_dotprod}
-    Let <m>\mathbf{v}</m> be a vector in <m>\R^n</m>, then the <term>length</term>, or the <term>magnitude</term>, of <m>\mathbf{v}</m> is given by
-<me> \label{eq:norm_dotp} 
-\norm{\mathbf{v}}=\sqrt{\mathbf{v} \cdot \mathbf{v}}
-</me>
-        </p>
-    </statement>
-</corollary>
-
-<subsection xml:id="Subsection-Practice-Problems">
+  <subsection xml:id="Subsection-Practice-Problems">
     <title>Practice Problems</title>
-    <exercises xml:id="Practice-Problems">
-  </exercises>
-</subsection>
+    <exercises>
+      
+      <exercise xml:id="prob-dotproduct1">
+        <statement>
+          <p>
+            Find the dot product of <m>\mathbf{u}</m> and <m>\mathbf{v}</m> if
+            <me>
+                \mathbf{u}=\begin{bmatrix}-1\\-2\\5\\4\end{bmatrix},\quad \mathbf{v}=\begin{bmatrix}2\\-2\\-3\\1\end{bmatrix}
+            </me>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <me> \mathbf{u} \cdot \mathbf{v} = -9 </me>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise xml:id="prob-dotproduct2">
+        <statement>
+          <p>
+            Find the dot product of <m>\mathbf{u}</m> and <m>\mathbf{v}</m> if   
+            <me>
+                \mathbf{u}=\begin{bmatrix}1\\1/2\end{bmatrix},\quad \mathbf{v}=\begin{bmatrix}-2\\4\end{bmatrix}
+            </me>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <me> \mathbf{u} \cdot \mathbf{v} = 0 </me>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise xml:id="prob-dotproductprop6">
+        <statement>
+          <p>
+            Use vector <m>\mathbf{u}=\begin{bmatrix}2\\5\\-7\end{bmatrix}</m> to illustrate Property <xref ref="item-norm"/> of Theorem <xref ref="th-dotproductproperties"/>.
+          </p>
+        </statement>
+      </exercise>
+      
+      <exercise xml:id="prob-th-dotprductproperties">
+          <statement>
+             <p>
+              Prove Properties <xref ref="item-commutative"/>, <xref ref="item-distributive-again"/>, <xref ref="item-scalar"/>, <xref ref="item-positive"/>, and <xref ref="item-norm"/> of Theorem <xref ref="th-dotproductproperties"/>.
+             </p>
+        </statement>
+      </exercise>
+      
+      <exercise xml:id="prob-perpvectors1">
+        <statement>
+          <p>
+            From the given list of vector pairs, identify ALL pairs of vectors that lie on perpendicular lines.
+            <ul>
+              <li>
+                <p> <m>\mathbf{u}=\begin{bmatrix}1\\\frac{1}{2}\end{bmatrix}</m>, <m>\mathbf{v}=\begin{bmatrix}-2\\4\end{bmatrix}</m> </p>
+              </li>
+              <li>
+                <p> <m>\mathbf{u}=\begin{bmatrix}-1\\\frac{1}{2}\end{bmatrix}</m>, <m>\mathbf{v}=\begin{bmatrix}-2\\4\end{bmatrix}</m> </p>
+              </li>
+              <li>
+                <p> <m>\mathbf{u}=\begin{bmatrix}1\\\frac{1}{2}\end{bmatrix}</m>, <m>\mathbf{v}=\begin{bmatrix}1\\-2\end{bmatrix}</m> </p>
+              </li>
+              <li>
+                <p> <m>\mathbf{u}=\begin{bmatrix}-1\\-\frac{1}{2}\end{bmatrix}</m>, <m>\mathbf{v}=\begin{bmatrix}-2\\4\end{bmatrix}</m> </p>
+              </li>
+            </ul>
+            Also compute <m>\mathbf{u}\cdot\mathbf{v}</m> for each pair.  What do you observe?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            You may want to draw a picture and think about what you know about slopes of perpendicular lines.
+          </p>
+        </hint>
+      </exercise>
 
-<exercise xml:id="prob-">
-    <statement>
-       <p>
-       </p>
-  </statement>
-\label{prob:dotproduct1}
-Find the dot product of <m>\mathbf{u}</m> and <m>\mathbf{v}</m> if
-  
-<me>
-    \mathbf{u}=\begin{bmatrix}-1\\-2\\5\\4\end{bmatrix},\quad \mathbf{v}=\begin{bmatrix}2\\-2\\-3\\1\end{bmatrix}
-</me>
-
-  Answer:
-  
-<me>
-    \mathbf{u} \cdot \mathbf{v} = \answer{-9}
-</me>
-
-    <answer>
-      <p>
-       </p>
-    </answer>
-</exercise>
-
-<exercise xml:id="prob-">
-    <statement>
-       <p>
-       </p>
-  </statement>
-\label{prob:dotproduct2}
-Find the dot product of <m>\mathbf{u}</m> and <m>\mathbf{v}</m> if 
-  
-<me>
-    \mathbf{u}=\begin{bmatrix}1\\1/2\end{bmatrix},\quad \mathbf{v}=\begin{bmatrix}-2\\4\end{bmatrix}
-</me>
-
-  Answer:
-  
-  
-<me>
-    \mathbf{u} \cdot \mathbf{v} = \answer{0}
-</me>
-
-    <answer>
-      <p>
-       </p>
-    </answer>
-</exercise>
-
-<exercise xml:id="prob-">
-    <statement>
-       <p>
-       </p>
-  </statement>
-\label{prob:dotproductprop6}
-  Use vector <m>\mathbf{u}=\begin{bmatrix}2\\5\\-7\end{bmatrix}</m> to
-  illustrate Property~\ref{item:norm} of Theorem~\ref{th:dotproductproperties}.
-    <answer>
-      <p>
-       </p>
-    </answer>
-</exercise>
-
-<exercise xml:id="prob-">
-    <statement>
-       <p>
-       </p>
-  </statement>
-\label{prob:th:dotprductproperties}
-  Prove Properties~\ref{item:commutative}, \ref{item:distributive-again}, \ref{item:scalar}, \ref{item:positive} and \ref{item:norm} of Theorem~\ref{th:dotproductproperties}.
-    <answer>
-      <p>
-       </p>
-    </answer>
-</exercise>
-
-<exercise xml:id="prob-">
-    <statement>
-       <p>
-       </p>
-  </statement>
-\label{prob:perpvectors1}
-From the given list of vector pairs, identify ALL pairs of vectors that lie on perpendicular lines.
-\begin{hint}
-You may want to draw a picture and think about what you know about slopes of perpendicular lines.
-\end{hint}
-\begin{selectAll}
-  \choice[correct]{<m>\mathbf{u}=\begin{bmatrix}1\\\frac{1}{2}\end{bmatrix}</m>, <m>\mathbf{v}=\begin{bmatrix}-2\\4\end{bmatrix}</m>}
-  \choice{<m>\mathbf{u}=\begin{bmatrix}-1\\\frac{1}{2}\end{bmatrix}</m>, <m>\mathbf{v}=\begin{bmatrix}-2\\4\end{bmatrix}</m>}
-  \choice[correct]{<m>\mathbf{u}=\begin{bmatrix}1\\\frac{1}{2}\end{bmatrix}</m>, <m>\mathbf{v}=\begin{bmatrix}1\\-2\end{bmatrix}</m>}
-  \choice[correct]{<m>\mathbf{u}=\begin{bmatrix}-1\\-\frac{1}{2}\end{bmatrix}</m>, <m>\mathbf{v}=\begin{bmatrix}-2\\4\end{bmatrix}</m>}
-\end{selectAll}
-Compute <m>\mathbf{u}\cdot\mathbf{v}</m> for each pair.  What do you observe? 
-    <answer>
-      <p>
-       </p>
-    </answer>
-</exercise>
-
-<exercise xml:id="prob-">
-    <statement>
-       <p>
-       </p>
-  </statement>
-%\label{prob:perpvectors2}
- For each problem below
- <ol>
- <li>
-    <p>
-    </p>
-</li> 
- Find the value of <m>x</m> that will make vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m> perpendicular. 
-  \begin{hint} Think of the <m>x</m>-component as the ``run" and the <m>y</m>-component as the ``rise", then use what you know about slopes of perpendicular lines.
-  \end{hint}
-  <li>
-    <p>
-    </p>
-</li> Find <m>\mathbf{u}\cdot\mathbf{v}</m>.
-  </ol>
-  
- 
-  <exercise xml:id="prob-">
-    <statement>
-       <p>
-       </p>
-  </statement>
-\label{prob:perpvectors2a}
-    
-<me>
-    \mathbf{u} = \begin{bmatrix}1\\2\end{bmatrix},\quad \mathbf{v}=\begin{bmatrix}2\\x\end{bmatrix}
-</me>
-
-    
-    Answer:  
-    
-<me>
-    x = \answer{-1}
-</me>
-
-    
-<me>
-    \mathbf{u}\cdot\mathbf{v}=\answer{0}
-</me>
-
-      <answer>
-      <p>
-       </p>
-    </answer>
-</exercise>
-
-  <exercise xml:id="prob-">
-    <statement>
-       <p>
-       </p>
-  </statement>
-\label{prob:perpvectors2b}
-    
-<me>
-    \mathbf{u} = \begin{bmatrix}5\\2\end{bmatrix},\quad \mathbf{v}=\begin{bmatrix}x\\-4\end{bmatrix}
-</me>
-
-    Answer:
-    
-<me>
-    x = \answer{8/5}
-</me>
-
-    
-<me>
-    \mathbf{u}\cdot\mathbf{v}=\answer{0}
-</me>
-
-      <answer>
-      <p>
-       </p>
-    </answer>
-</exercise>
-
-  <exercise xml:id="prob-">
-    <statement>
-       <p>
-       </p>
-  </statement>
-\label{prob:perpvectors2c}
-    
-<me>
-    \mathbf{u} = \begin{bmatrix} 4\\-3\end{bmatrix},\quad \mathbf{v} =\begin{bmatrix}6\\x\end{bmatrix}
-</me>
- 
-    Answer:
-    
-<me>
-    x = \answer{8}
-</me>
-
-    
-<me>
-    \mathbf{u}\cdot\mathbf{v}=\answer{0}
-</me>
-
-      <answer>
-      <p>
-       </p>
-    </answer>
-</exercise>
-    <answer>
-      <p>
-       </p>
-    </answer>
-</exercise>
-
-<exercise xml:id="prob-">
-    <statement>
-       <p>
-       </p>
-  </statement>
-\label{prob:perpvectors3}
-  <ol>
-    <li>
-    <p>
-    </p>
-</li> Vector <m>\mathbf{u}</m> that lies on the line <m>y=mx</m>, has the form <m>\mathbf{u}=k\begin{bmatrix}1\\m\end{bmatrix}</m>.  Assuming that <m>m\neq 0</m>, find the general form for a vector <m>\mathbf{v}</m> that lies on a line perpendicular to <m>y=mx</m>.
-      \begin{hint}
-        What do you know about the slopes of perpendicular
-        lines?
-      \end{hint}
-    <li>
-    <p>
-    </p>
-</li> Find <m>\mathbf{u}\cdot \mathbf{v}</m>.
-    <li>
-    <p>
-    </p>
-</li> Formulate a conjecture about the dot product of perpendicular vectors.
-  </ol>
-    <answer>
-      <p>
-       </p>
-    </answer>
-</exercise>
-
-
-\end{document}
-
-
+      <exercisegroup>
+        <introduction>
+          <p>
+            For each problem below
+            <ol>
+              <li>
+                <p> Find the value of <m>x</m> that will make vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m> perpendicular. </p>
+                <p> <em>Hint:</em> Think of the <m>x</m>-component as the ``run" and the <m>y</m>-component as the ``rise", then use what you know about slopes of perpendicular lines. </p>
+              </li> 
+              <li>
+                <p> Find <m>\mathbf{u}\cdot\mathbf{v}</m>. </p>
+              </li>
+            </ol>
+          </p>
+        </introduction>
+        
+      
+        <exercise xml:id="prob-perpvectors2a">
+          <statement>
+            <p>
+              <me> \mathbf{u} = \begin{bmatrix}1\\2\end{bmatrix},\quad \mathbf{v}=\begin{bmatrix}2\\x\end{bmatrix} </me>
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <me> x = -1 </me>
+              <me> \mathbf{u}\cdot\mathbf{v}=0 </me>
+            </p>
+          </answer>
+        </exercise>
+        
+        <exercise xml:id="prob-perpvectors2b">
+          <statement>
+            <p>
+              <me> \mathbf{u} = \begin{bmatrix}5\\2\end{bmatrix},\quad \mathbf{v}=\begin{bmatrix}x\\-4\end{bmatrix} </me>
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <me> x = 8/5 </me>
+              <me> \mathbf{u}\cdot\mathbf{v}=0 </me>
+            </p>
+          </answer>
+        </exercise>
+        
+        <exercise xml:id="prob-perpvectors2c">
+          <statement>
+            <p>
+              <me> \mathbf{u} = \begin{bmatrix} 4\\-3\end{bmatrix},\quad \mathbf{v} =\begin{bmatrix}6\\x\end{bmatrix} </me>
+            </p>
+          </statement> 
+          <answer>
+            <p>
+              <me> x = 8 </me>
+              <me> \mathbf{u}\cdot\mathbf{v}=0 </me>
+            </p>
+          </answer>
+        </exercise>
+      </exercisegroup>
+      
+      <exercise xml:id="prob-perpvectors3">
+        <statement>
+          <p>
+            <ol>
+              <li>
+                <p> Vector <m>\mathbf{u}</m> that lies on the line <m>y=mx</m>, has the form <m>\mathbf{u}=k\begin{bmatrix}1\\m\end{bmatrix}</m>.  Assuming that <m>m\neq 0</m>, find the general form for a vector <m>\mathbf{v}</m> that lies on a line perpendicular to <m>y=mx</m>. </p>
+              </li>
+              <li>
+                <p> Find <m>\mathbf{u}\cdot \mathbf{v}</m>. </p>
+              </li> 
+              <li>
+                <p> Formulate a conjecture about the dot product of perpendicular vectors. </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+        <hint>
+          <p> What do you know about the slopes of perpendicular lines? </p>
+        </hint>
+      </exercise>
+    </exercises>
+  </subsection>
 </section>
