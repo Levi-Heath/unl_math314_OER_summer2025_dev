@@ -96,6 +96,108 @@ def replace_ref(text):
     
     return modified_text
 
+def replace_geogebra(text):
+    # Define the pattern to match the specific LaTeX block
+    pattern = re.compile(
+        r'\\begin\{onlineOnly\}\s*\\begin\{center\}\s*\\geogebra\{(.*?)\}\{(.*?)\}\{(.*?)\}\s*\\end\{center\}\s*\\end\{onlineOnly\}'
+    )
+    
+    # Define the replacement function
+    def replacement(match):
+        geogebraID = match.group(1)
+        ratio = match.group(2) + ":" + match.group(3)
+        
+        return (
+            f'<figure>\n'
+            f'  <caption>\n'
+            f'    A larger version of this activity is available \n'
+            f'    <url href="https://www.geogebra.org/calculator/{geogebraID}" visual="geogebra.org">here</url>.\n'
+            f'  </caption>\n'
+            f'  <interactive xml:id="geogebra-ADD-LINK_ID" platform="geogebra" width="100%" aspect="{ratio}">\n'
+            f'    <slate xml:id="ADD-LINK_ID" surface="geogebra" material="{geogebraID}" aspect="{ratio}" />\n'
+            f'  </interactive>\n'
+            f'</figure>'
+        )
+    
+    # Use re.sub to replace all matches of the pattern
+    modified_text = re.sub(pattern, replacement, text)
+    
+    return modified_text
+    
+def replace_subsection(text):
+    # Define the pattern to match the specific LaTeX block
+    pattern = re.compile(r'\\subsection\*\{(.*?)\}')
+    
+    # Define the replacement function
+    def replacement(match):
+        example_text = match.group(1)
+        xml_id = "Subsection-" + example_text.replace(' ', '-')
+        return (f'<subsection xml:id="{xml_id}">\n    <title>{example_text}</title>\n</subsection>')
+    
+    # Use re.sub to replace all matches of the pattern
+    modified_text = re.sub(pattern, replacement, text)
+    
+    return modified_text
+
+def replace_url(text):
+    # Define the pattern to match the specific LaTeX block
+    pattern = re.compile(r'\\href\{(.*?)\}\{(.*?)\}')
+
+    # Define the replacement function
+    def replacement(match):
+        url = match.group(1)
+        url_text = match.group(2)
+        return(f'<url href="{url}">{url_text}</url>')
+
+    # Use re.sub to replace all matches of the pattern
+    modified_text = re.sub(pattern, replacement, text)
+    
+    return modified_text
+
+def replace_youtube(text):
+    # Define the pattern to match the specific LaTeX block
+    pattern = re.compile(r'\\youtube\{(.*?)\}')
+
+    # Define the replacement function
+    def replacement(match):
+        videoID = match.group(1)
+        return(
+            f'<video youtube="videoID" play-at="select"/>'
+        )
+
+    # Use re.sub to replace all matches of the pattern
+    modified_text = re.sub(pattern, replacement, text)
+    
+    return modified_text
+
+def replace_item(text):
+    # Define the pattern to match the specific LaTeX block
+    pattern = re.compile(r'\\item(.*?)')
+
+    # Define the replacement function
+    def replacement(match):
+        item = match.group(1)
+        if '\label' in item:
+            search = re.search(r'\\label\{(.*?)\}', item)
+            label = search.group(1).replace(":","-").replace(" ","-")
+            return(
+                f'<li xml:id="{label}">\n'
+                f'  <p> {item} </p>'
+                f'</li>'
+            )
+        else:
+            return(
+                f'<li>\n'
+                f'  <p> {item} </p>'
+                f'</li>'
+            )
+
+    # Use re.sub to replace all matches of the pattern
+    modified_text = re.sub(pattern, replacement, text)
+    
+    return modified_text
+
+# function to open files, replace LaTeX syntax with PreTeXt syntax, and save files
 def replace_syntax_in_file(file_path):
     # Read the content of the file
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -105,7 +207,7 @@ def replace_syntax_in_file(file_path):
     modified_content = content.replace(r'\RR','\R').replace(r'\vec','\mathbf').replace(r'\dotp','\cdot')
 
     # Replace &,<,> with \amp,\lt,\gt
-    modified_content = modified_content.replace(r'&','\\amp').replace(r'<','\lt').replace(r'>','\gt')
+    modified_content = modified_content.replace(r'&','\\amp ').replace(r'<','\lt ').replace(r'>','\gt ')
     
     # Replace math environments
     modified_content = replace_dollar_signs(modified_content)
@@ -116,7 +218,7 @@ def replace_syntax_in_file(file_path):
     modified_content = modified_content.replace(r'\begin{align}','<mdn>').replace(r'\end{align}','</mdn>')
 
     # Replace text wrappings such as \textit{}, \dfn{}, \title{}
-    text_wrappings = [["dfn","term"],["textit","em"],["title","title"]]
+    text_wrappings = [["dfn","term"],["textit","em"],["emph","em"],["title","title"]]
     modified_content = replace_multiple_wrappings(modified_content,text_wrappings)
     modified_content = replace_ref(modified_content)
 
@@ -142,8 +244,8 @@ def replace_syntax_in_file(file_path):
     # Replace ordered and unordered lists
     modified_content = modified_content.replace(
         r'\begin{itemize}', '<ul>').replace(r'\end{itemize}', '</ul>').replace(
-            r'\item','<li>\n    <p>\n    </p>\n</li>').replace(
                 r'\begin{enumerate}', '<ol>').replace(r'\end{enumerate}', '</ol>')
+    modified_content = replace_item(modified_content)
 
     # Add <image><latex-image>...</latex-image></image> wrap around tikz figures
     modified_content = modified_content.replace(
@@ -156,6 +258,18 @@ def replace_syntax_in_file(file_path):
     modified_content = modified_content.replace(
         r'\begin{problem}','<exercise xml:id="prob-">\n    <statement>\n       <p>\n       </p>\n  </statement>\n').replace(
             r'\end{problem}', '    <answer>\n      <p>\n       </p>\n    </answer>\n</exercise>')
+
+    # Replace Geogebra inclusions
+    modified_content = replace_geogebra(modified_content)
+
+    # Replace \subsection*{}
+    modified_content = replace_subsection(modified_content)
+
+    # Replace \href{}{}
+    modified_content = replace_url(modified_content)
+
+    # Replace \youtube{}
+    modified_content = replace_youtube(modified_content)
 
     # Add preamble and last_line
     preamble = '<?xml version="1.0" encoding="UTF-8"?>\n\n<section xml:id="Section-TITLE" xmlns:xi="http://www.w3.org/2001/XInclude">\n'

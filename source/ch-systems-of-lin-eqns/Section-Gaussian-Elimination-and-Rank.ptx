@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="Section-TITLE" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Gaussian Elimination and Rank</title> 
+<section xml:id="Section-Gaussian-Elimination-and-Rank" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Gaussian Elimination and Rank</title>
 
-    <subsection xml:id="Subsection-Row-Echelon-and-Reduced-Row-Echelon-Forms">
-        <title>Row Echelon and Reduced Row Echelon Forms</title>
+<subsection xml:id="Subsection-Row-Echelon-and-Reduced-Row-Echelon-Forms">
+    <title>Row Echelon and Reduced Row Echelon Forms</title>
 
+    <p>
+In <url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0020/main">Augmented Matrix Notation and Elementary Row Operations</url>, we learned to write linear systems in <term>augmented matrix</term> form and use elementary row operations to transform an augmented matrix to <term>row-echelon form</term> and the <term>reduced row-echelon form</term> in order to solve linear systems.  
+</p>
 
-    </subsection>
-
-In \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0020/main}{Augmented Matrix Notation and Elementary Row Operations}, we learned to write linear systems in <term>augmented matrix</term> form and use elementary row operations to transform an augmented matrix to <term>row-echelon form</term> and the <term>reduced row-echelon form</term> in order to solve linear systems.  
-
+<p>
 Recall that a matrix (or augmented matrix) is in <term>row-echelon form</term> if:
 <ul>
 <li>
@@ -617,9 +617,12 @@ The following video shows how to arrive at the same reduced row-echelon form for
 
 The video highlights the fact that regardless of what sequence of elementary row operations we take to arrive at the reduced row-echelon form, the end result is the same.  
 
+</subsection>
 
 
-\subsection*{Rank}
+<subsection xml:id="Subsection-Rank">
+    <title>Rank</title>
+</subsection>
 
 As stated in Theorem <xref ref="th-uniquenessofrref"/>, the reduced row-echelon form of a matrix <m>A</m> is uniquely determined by <m>A</m>. That is, no matter which series of row operations is used to transform <m>A</m> to its reduced row-echelon matrix, the result will always be the same matrix. In contrast, this is not true for row-echelon matrices: different sequences of row operations can transform the same matrix <m>A</m> to different row-echelon matrices. However, it is true that the number <m>r</m> of nonzero rows must be the same in each of these row-echelon matrices, as we will see in Theorem <xref ref="th-dimofrowA"/>. Hence, the number <m>r</m> depends only on <m>A</m> and not on the way in which <m>A</m> is carried to row-echelon form.  
 

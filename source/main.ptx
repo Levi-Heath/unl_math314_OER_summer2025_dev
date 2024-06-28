@@ -12,7 +12,8 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-prelim/Chapter-Preliminaries.ptx" />
+    <xi:include href="./ch-prelims/Chapter-Preliminaries.ptx" />
+    <xi:include href="./ch-systems-of-lin-eqns/Chapter-Systems-of-Linear-Equations.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

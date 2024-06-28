@@ -21,8 +21,8 @@
                 The purpose of this problem is to formalize what you may already know (perhaps under a different name) about <term>elementary row operations</term> as means of solving systems of linear equations.  Consider the system
                 <me>
                     \begin{matrix}
-                    2x\amp -\amp y\amp=\amp-4\\
-                    3x \amp +\amp 2y\amp= \amp 1 
+                    2x\amp   -\amp   y\amp  =\amp  -4\\
+                    3x \amp   +\amp   2y\amp  = \amp   1 
                     \end{matrix}
                 </me>
                 We will begin by adding twice the first row to the second row, and replacing the second row with the sum. 
@@ -31,8 +31,8 @@
                 </me>
                 <me>
                     \begin{matrix}
-                    2x\amp -\ampy\amp=\amp-4\\
-                    7x \amp +\amp0y\amp= \amp\answer{-7}  
+                    2x\amp   -\amp   y\amp  =\amp   -4\\
+                    7x \amp   +\amp   0y\amp  = \amp   -7  
                     \end{matrix}
                 </me>
         
@@ -46,8 +46,8 @@
         
                 <me>
                     \begin{matrix}
-                    2x\amp -\ampy\amp=\amp-4\\
-                    x \amp \amp\amp= \amp\answer{-1}
+                    2x\amp   - \amp   y\amp  =\amp  -4\\
+                    x \amp   \amp  \amp  = \amp   -1
                     \end{matrix}
                 </me>
         
@@ -61,8 +61,8 @@
         
                 <me>
                     \begin{matrix}
-                    0x\amp -\ampy\amp=\amp\answer{-2}\\
-                    x \amp \amp\amp= \amp-1 \\
+                    0x\amp   -\amp   y\amp  =\amp   -2\\
+                    x \amp   \amp  \amp  = \amp  -1 \\
                     \end{matrix}
                 </me>
         
@@ -75,8 +75,8 @@
         
                 <me>
                     \begin{matrix}
-                    \amp \ampy\amp=\amp2\\
-                    x \amp \amp\amp= \amp-1
+                    \amp    \amp   y\amp  =\amp  2\\
+                    x \amp   \amp  \amp  = \amp  -1
                     \end{matrix}
                 </me>
         
@@ -91,8 +91,8 @@
         
                 <me>
                     \begin{matrix}
-                    x \amp \amp\amp= \amp-1\\
-                    \amp \ampy\amp=\amp2      
+                    x \amp   \amp  \amp  = \amp  -1\\
+                    \amp    \amp   y\amp  =\amp  2      
                     \end{matrix}
                 </me>
         
@@ -159,9 +159,9 @@
                 Solve the system of equations using elementary row operations.
                 <me>
                     \begin{array}{ccccccc}
-                    3x \amp -\ampy\amp+\ampz\amp= \amp0 \\
-                    2x\amp +\ampy\amp+\amp2z\amp=\amp2\\
-                    x\amp +\amp4y\amp-\amp2z\amp=\amp11
+                    3x \amp   - \amp   y\amp  +\amp  z\amp  = \amp  0 \\
+                    2x\amp   + \amp   y\amp  +\amp  2z\amp  =\amp  2\\
+                    x\amp   +\amp  4y\amp  -\amp  2z\amp  =\amp  11
                     \end{array}
                 </me>
             </p>
@@ -172,9 +172,9 @@
         
         <me>
             \begin{array}{ccccccc}
-              x \amp \amp\amp\amp\amp= \amp a \\
-             \amp \ampy\amp\amp\amp=\amp b\\
-             \amp \amp\amp\amp z\amp=\amp c
+              x \amp   \amp  \amp  \amp  \amp  = \amp   a \\
+             \amp    \amp   y\amp  \amp  \amp  =\amp   b\\
+             \amp   \amp  \amp  \amp   z\amp  =\amp   c
             \end{array}
         </me>
         
@@ -188,9 +188,9 @@
         \\
          \end{array}
          \begin{array}{ccccccc}
-              0x \amp -\amp13y\amp+\amp7z\amp= \amp-33 \\
-             0x\amp -\amp7y\amp+\amp6z\amp=\amp-20\\
-             x\amp +\amp4y\amp-\amp2z\amp=\amp11
+              0x \amp   -\amp  13y\amp  +\amp  7z\amp  = \amp  -33 \\
+             0x\amp   -\amp  7y\amp  +\amp  6z\amp  =\amp  -20\\
+             x\amp   +\amp  4y\amp  -\amp  2z\amp  =\amp  11
             \end{array}
         </me>
         
@@ -204,9 +204,9 @@
         \\
          \end{array}
          \begin{array}{ccccccc}
-              0x \amp+ \ampy\amp-\amp5z\amp= \amp7 \\
-             0x\amp -\amp7y\amp+\amp6z\amp=\amp-20\\
-             x\amp +\amp4y\amp-\amp2z\amp=\amp11
+              0x \amp  +  \amp   y\amp  -\amp  5z\amp  = \amp  7 \\
+             0x\amp   -\amp  7y\amp  +\amp  6z\amp  =\amp  -20\\
+             x\amp   +\amp  4y\amp  -\amp  2z\amp  =\amp  11
             \end{array}
         </me>
         
@@ -221,9 +221,9 @@
         \xrightarrow{R_3-4R_1}\\
          \end{array}
          \begin{array}{ccccccc}
-              0x \amp +\ampy\amp-\amp5z\amp= \amp7 \\
-             0x\amp +\amp0y\amp-\amp29z\amp=\amp29\\
-             x\amp +\amp0y\amp+\amp18z\amp=\amp-17
+              0x \amp   + \amp   y\amp  -\amp  5z\amp  = \amp  7 \\
+             0x\amp   +\amp  0y\amp  -\amp  29z\amp  =\amp  29\\
+             x\amp   +\amp  0y\amp  +\amp  18z\amp  =\amp  -17
             \end{array}
         </me>
         
@@ -239,9 +239,9 @@
         \\
          \end{array}
          \begin{array}{ccccccc}
-              0x \amp +\ampy\amp-\amp5z\amp= \amp7 \\
-             0x\amp +\amp0y\amp+\ampz\amp=\amp-1\\
-             x\amp +\amp0y\amp+\amp18z\amp=\amp-17
+              0x \amp   + \amp   y\amp  -\amp  5z\amp  = \amp  7 \\
+             0x\amp   +\amp  0y\amp  +\amp  z\amp  =\amp  -1\\
+             x\amp   +\amp  0y\amp  +\amp  18z\amp  =\amp  -17
             \end{array}
         </me>
         
@@ -256,9 +256,9 @@
         \xrightarrow{R_3-18R_2}\\
          \end{array}
          \begin{array}{ccccccc}
-              0x \amp +\ampy\amp+\amp0z\amp= \amp2 \\
-             0x\amp +\amp0y\amp+\ampz\amp=\amp-1\\
-             x\amp +\amp0y\amp+\amp0z\amp=\amp1
+              0x \amp   + \amp   y\amp  +\amp  0z\amp  = \amp  2 \\
+             0x\amp   +\amp  0y\amp  +\amp  z\amp  =\amp  -1\\
+             x\amp   +\amp  0y\amp  +\amp  0z\amp  =\amp  1
             \end{array}
         </me>
         
@@ -268,9 +268,9 @@
         
         <me>
             \begin{array}{ccccccc}
-             x\amp +\amp0y\amp+\amp0z\amp=\amp1\\
-             0x \amp +\ampy\amp+\amp0z\amp= \amp2 \\
-             0x\amp +\amp0y\amp+\ampz\amp=\amp-1
+             x\amp   +\amp  0y\amp  +\amp  0z\amp  =\amp  1\\
+             0x \amp   + \amp   y\amp  +\amp  0z\amp  = \amp  2 \\
+             0x\amp   +\amp  0y\amp  +\amp  z\amp  =\amp  -1
              \end{array}
         </me>
         
@@ -278,9 +278,9 @@
          
         <me>
             \begin{array}{ccccccc}
-             x\amp \amp\amp\amp\amp=\amp1\\
-              \amp \ampy\amp\amp\amp= \amp2 \\
-             \amp\amp\amp\ampz\amp=\amp-1
+             x\amp   \amp  \amp  \amp  \amp  =\amp  1\\
+              \amp    \amp   y\amp  \amp  \amp  = \amp  2 \\
+             \amp  \amp  \amp  \amp  z\amp  =\amp  -1
              \end{array}
         </me>
             
@@ -294,9 +294,9 @@
         At this point you may be wondering whether it will always be possible to take a system of three equations and three unknowns and use elementary row operations to transform it to a system of the form
         <me>
             \begin{array}{ccccccc}
-              x \amp \amp\amp\amp\amp= \ampa \\
-             \amp \ampy\amp\amp\amp=\ampb\\
-             \amp \amp\amp\ampz\amp=\ampc
+              x \amp   \amp  \amp  \amp  \amp  = \amp  a \\
+             \amp    \amp   y\amp  \amp  \amp  = \amp   b\\
+             \amp   \amp  \amp  \amp  z\amp  =\amp  c
             \end{array}
         </me>
         The short answer to this question is NO.  The existence of an equivalent system of this form implies that the original system has a unique solution <m>(a, b, c)</m>.  However, it is possible for a system to have no solutions or to have infinitely many solutions.  We will study these different possibilities from an algebraic perspective in subsequent sections.  For now, we will attempt to gain insight into existence and uniqueness of solutions through geometry.     
@@ -310,8 +310,8 @@
             Exploration Problem <xref ref="init-systwoeqs1"/> offers an example of a linear system of two equations and two unknowns (variables) with a unique solution.  
             <me>
                 \begin{array}{ccccc}
-                2x\amp -\ampy\amp=\amp-4\\
-                3x \amp +\amp2y\amp= \amp1 
+                2x\amp   - \amp   y\amp  =\amp  -4\\
+                3x \amp   +\amp  2y\amp  = \amp  1 
                 \end{array}
             </me>
             Geometrically, the graph of each equation is a line in <m>\R^2</m>.  The point <m>(-1, 2)</m> is a solution to both equations, so it must lie on both lines.
@@ -402,8 +402,8 @@
             
             <me>
                 \begin{array}{ccccc}
-                  -2x \amp +\ampy\amp= \amp3 \\
-                 4x\amp -\amp2y\amp=\amp5
+                  -2x \amp   + \amp   y\amp  = \amp  3 \\
+                 4x\amp   -\amp  2y\amp  =\amp  5
                 \end{array}
             </me>
                 </p>
@@ -414,8 +414,8 @@
             
             <me>
                 \begin{array}{cccccc}
-                  -2x \amp +\ampy\amp= \amp3\amp \\
-                 0x\amp -\amp0y\amp=\amp11\amp\quad\leftarrow\mbox{Never true}
+                  -2x \amp   + \amp   y\amp  = \amp  3\amp   \\
+                 0x\amp   -\amp  0y\amp  =\amp  11\amp  \quad\leftarrow\mbox{Never true}
                 \end{array}
             </me>
             
@@ -445,8 +445,8 @@
             
             <me>
                 \begin{array}{ccccc}
-                  4x \amp +\amp3y\amp= \amp2 \\
-                 x\amp +\amp\frac{3}{4}y\amp=\amp\frac{1}{2}
+                  4x \amp   +\amp  3y\amp  = \amp  2 \\
+                 x\amp   +\amp  \frac{3}{4}y\amp  =\amp  \frac{1}{2}
                 \end{array}
             </me>
             </p>
@@ -456,8 +456,8 @@
             To eliminate <m>x</m> from the second equation, we subtract one quarter of the first equation from the second.  This gives us
             <me>
                 \begin{array}{cccccc}
-                  4x \amp +\amp3y\amp= \amp2\amp \\
-                 0x\amp +\amp0y\amp=\amp0\amp\quad\leftarrow\mbox{Always true}
+                  4x \amp   +\amp  3y\amp  = \amp  2\amp   \\
+                 0x\amp   +\amp  0y\amp  =\amp  0\amp  \quad\leftarrow\mbox{Always true}
                 \end{array}
             </me>
             Unlike the situation in Example <xref ref="ex-systwoeqs2"/>, any combination of <m>x</m> and <m>y</m> satisfies the second equation.  So, any ordered pair <m>(x, y)</m> that satisfies the first equation will satisfy the second equation.  Thus, the solution set for this system is the same as the set of all solutions of <m>4x+3y=2</m>.  
@@ -563,9 +563,9 @@
             In Example <xref ref="ex-threeeqthreevars1"/> we solved the following linear system of three equations and three unknowns
             <me>
                 \begin{array}{ccccccc}
-                  3x \amp -\ampy\amp+\ampz\amp= \amp0 \\
-                 2x\amp +\ampy\amp+\amp2z\amp=\amp2\\
-                 x\amp +\amp4y\amp-\amp2z\amp=\amp11
+                  3x \amp   - \amp   y\amp  +\amp  z\amp  = \amp  0 \\
+                 2x\amp   + \amp   y\amp  +\amp  2z\amp  =\amp  2\\
+                 x\amp   +\amp  4y\amp  -\amp  2z\amp  =\amp  11
                 \end{array}
             </me>
             We found that the system has a unique solution <m>(1, 2, -1)</m>.  The graph of each equation is a plane.  The three planes intersect at a single point, as shown in the figure.
@@ -702,7 +702,7 @@
     <subsection xml:id="Subsection-General-Systems-of-Linear-Equations">
         <title>General Systems of Linear Equations</title>
 
-        <definition xml:id="def:lineq">
+        <definition xml:id="def-lineq">
             <statement>
                 <p>
         A <term>linear equation</term> in variables <m>x_1, \ldots, x_n</m> is an equation that can be written in the form
@@ -724,10 +724,10 @@
             A linear system of <m>m</m> equations and <m>n</m> unknowns is typically written as follows
             <me>
                 \begin{array}{ccccccccc}
-                  a_{11}x_1 \amp+ \ampa_{12}x_2\amp+\amp\ldots\amp+\ampa_{1n}x_n\amp= \ampb_1 \\
-                 a_{21}x_1 \amp+ \ampa_{22}x_2\amp+\amp\ldots\amp+\ampa_{2n}x_n\amp= \ampb_2 \\
-                 \amp\amp\amp\amp\vdots\amp\amp\amp\amp \\
-                 a_{m1}x_1 \amp+ \ampa_{m2}x_2\amp+\amp\ldots\amp+\ampa_{mn}x_n\amp= \ampb_m
+                  a_{11}x_1 \amp  + \amp  a_{12}x_2\amp  +\amp  \ldots\amp  +\amp  a_{1n}x_n\amp  =  \amp   b_1 \\
+                 a_{21}x_1 \amp  + \amp  a_{22}x_2\amp  +\amp  \ldots\amp  +\amp  a_{2n}x_n\amp  =  \amp   b_2 \\
+                 \amp  \amp  \amp  \amp  \vdots\amp  \amp  \amp  \amp   \\
+                 a_{m1}x_1 \amp  + \amp  a_{m2}x_2\amp  +\amp  \ldots\amp  +\amp  a_{mn}x_n\amp  =  \amp   b_m
                 \end{array}
             </me>
             </p>
@@ -825,8 +825,8 @@
                        <p>
                         <me>
                             \begin{array}{ccccc}
-                              x \amp +\amp3y\amp= \amp4 \\
-                             x\amp -\amp2y\amp=\amp-6
+                              x \amp   +\amp  3y\amp  = \amp  4 \\
+                             x\amp   -\amp  2y\amp  =\amp  -6
                             \end{array}
                         </me>
                        </p>
@@ -845,8 +845,8 @@
                        <p>
                         <me>
                             \begin{array}{ccccc}
-                              -3x \amp +\amp2y\amp= \amp7 \\
-                             6x\amp -\amp4y\amp=\amp5
+                              -3x \amp   +\amp  2y\amp  = \amp  7 \\
+                             6x\amp   -\amp  4y\amp  =\amp  5
                             \end{array}
                         </me>
                        </p>
@@ -859,9 +859,9 @@
                        <p>
                         <me>
                             \begin{array}{ccccccc}
-                              x \amp -\amp2y\amp+\ampz\amp= \amp0 \\
-                             3x\amp -\amp2y\amp+\amp4z\amp=\amp2\\
-                             2x\amp -\ampy\amp+\amp2z\amp=\amp3
+                              x \amp   -\amp  2y\amp  +\amp  z\amp  = \amp  0 \\
+                             3x\amp   -\amp  2y\amp  +\amp  4z\amp  =\amp  2\\
+                             2x\amp   - \amp   y\amp  +\amp  2z\amp  =\amp  3
                             \end{array}
                         </me>
                        </p>
@@ -883,8 +883,8 @@
                         Consider the following system of equations.  
                         <me>
                             \begin{array}{ccccc}
-                            kx \amp +\amp8y\amp= \amp4 \\
-                            2x\amp +\ampky\amp=\amp-2
+                            kx \amp   +\amp  8y\amp  = \amp  4 \\
+                            2x\amp   +\amp  ky\amp  =\amp  -2
                             \end{array}
                         </me>
                     </p>
@@ -935,8 +935,8 @@
                     Suppose the following system was obtained from system <m>(A)</m> by adding twice the second row of <m>(A)</m> to the first row.
             <me>
                 \begin{array}{ccccc}
-                  8x \amp+ \amp3y\amp= \amp11\\
-                  3x\amp+ \amp2y\amp=\amp5      
+                  8x \amp  + \amp  3y\amp  = \amp  11\\
+                  3x\amp  + \amp  2y\amp  =\amp  5      
                 \end{array}
             </me>
             
@@ -947,8 +947,8 @@
                   <p>
                     <me>
                         \begin{array}{ccccc}
-                          \answer{2}x \amp+ \amp\answer{-1}y\amp= \amp\answer{1}\\
-                          3x\amp+ \amp2y\amp=\amp5      
+                           2x \amp  + \amp   -1y \amp  = \amp   1\\
+                          3x\amp  + \amp   2y\amp  =\amp   5      
                         \end{array}
                     </me>
                    </p>
@@ -999,8 +999,8 @@
                     Begin by carrying the first system to 
             <me>
                 \begin{array}{ccccc}
-                  x \amp \amp\amp= \amp3\\
-                  \amp \ampy\amp=\amp1      
+                  x \amp   \amp  \amp  = \amp   3\\
+                  \amp   \amp   y\amp  =\amp   1      
                 \end{array}
             </me>
             
@@ -1009,15 +1009,15 @@
               </hint>
             </exercise>
             
-            <exercise xml:id="prob-prob:equivsystems1">
+            <exercise xml:id="prob-prob-equivsystems1">
                 <statement>
                    <p>
                     Consider the system of equations
             
             <me>
                 \begin{array}{ccccc}
-                  ax \amp+ \ampby\amp= \ampe\\
-                  cx\amp+ \ampdy\amp=\ampf      
+                  ax \amp  + \amp   by\amp  = \amp   e\\
+                  cx\amp   + \amp   dy\amp  =\amp   f      
                 \end{array}
             </me>
             

@@ -14,7 +14,9 @@
 
 \section*{Additional Exercises for Ch 2: Systems of Linear Equations}
 
-\subsection*{Review Exercises}
+<subsection xml:id="Subsection-Review-Exercises">
+    <title>Review Exercises</title>
+</subsection>
 
 <exercise xml:id="prob-">
     <statement>
@@ -1511,7 +1513,9 @@ unique solution.
     </answer>
 </exercise>
 
-\subsection*{Challenge Exercises}
+<subsection xml:id="Subsection-Challenge-Exercises">
+    <title>Challenge Exercises</title>
+</subsection>
 
 <exercise xml:id="prob-">
     <statement>
@@ -1923,7 +1927,9 @@ These equations are linear in the new variables <m>x_{1} = x^{2}</m>, <m>x_{2} =
 </exercise>
 
 
-\subsection*{Octave Exercises}
+<subsection xml:id="Subsection-Octave-Exercises">
+    <title>Octave Exercises</title>
+</subsection>
 <exercise xml:id="prob-">
     <statement>
        <p>
