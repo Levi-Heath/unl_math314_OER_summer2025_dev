@@ -181,7 +181,7 @@ def replace_example(text):
 def replace_exercise(text):
     # Define the pattern to match the exercise environment with optional label and answer
     pattern = re.compile(
-        r'\\begin\{exercise\}(?:\\label\{(.*?)\})?\s*(.*?)(?:Answer:\s*(.*?))?\s*\\end\{exercise\}',
+        r'\\begin\{problem\}(?:\\label\{(.*?)\})?\s*(.*?)(?:Answer:\s*(.*?))?\s*\\end\{problem\}',
         re.DOTALL
     )
     
@@ -225,9 +225,9 @@ def replace_exercise(text):
     # Replace nested exercises with exercisegroup
     def replace_nested_exercises(text):
         nested_pattern = re.compile(
-            r'\\begin\{exercise\}\s*'
-            r'((?:\\begin\{exercise\}.*?\\end\{exercise\}\s*)+?)'
-            r'\\end\{exercise\}',
+            r'\\begin\{problem\}\s*'
+            r'((?:\\begin\{problem\}.*?\\end\{problem\}\s*)+?)'
+            r'\\end\{problem\}',
             re.DOTALL
         )
         
@@ -245,6 +245,40 @@ def replace_exercise(text):
     text = re.sub(pattern, replacement, text)
     
     return text
+
+# function for replacing \begin{multipleChoice}... and \begin{selectAll}...
+def replace_choices(text):
+    # Define the pattern to match the selectAll and multipleChoice environments
+    pattern = re.compile(
+        r'\\begin\{(selectAll|multipleChoice)\}\s*(.*?)\s*\\end\{\1\}',
+        re.DOTALL
+    )
+    
+    # Define the replacement function
+    def replacement(match):
+        env_type = match.group(1)
+        choices_text = match.group(2).strip()
+        
+        # Define the pattern to match individual choices
+        choice_pattern = re.compile(
+            r'\\choice(\[correct\])?\{(.*?)\}',
+            re.DOTALL
+        )
+        
+        # Replace individual choices
+        def choice_replacement(choice_match):
+            correct = ' correct="yes"' if choice_match.group(1) else ''
+            choice_text = choice_match.group(2).strip()
+            return f'    <choice{correct}>\n        <p> {choice_text} </p>\n    </choice>'
+        
+        replaced_choices = re.sub(choice_pattern, choice_replacement, choices_text)
+        
+        return f'<choices>\n{replaced_choices}\n</choices>'
+    
+    # Use re.sub to replace all matches of the pattern
+    modified_text = re.sub(pattern, replacement, text)
+    
+    return modified_text
 
 # replaces \ref{example:tag} with <xref ref="example-tag"/>
 def replace_ref(text):
@@ -480,12 +514,13 @@ def replace_syntax_in_file(file_path):
             r'\end{tikzpicture}','    \end{tikzpicture}\n    </latex-image>\n</image>')
 
     # Replace exercise environments
-    #modified_content = replace_exercise(modified_content)
+    modified_content = replace_exercise(modified_content)
+    modified_content = replace_choices(modified_content)
     #modified_content = modified_content.replace(
     #    r'\subsection*{Practice Problems}','<subsection xml:id="Subsection-Practice-Problems">\n    <title>Practice Problems</title>\n    <exercises xml:id="Practice-Problems">\n  </exercises>\n</subsection>')
-    modified_content = modified_content.replace(
-        r'\begin{problem}','<exercise xml:id="prob-">\n    <statement>\n       <p>\n       </p>\n  </statement>\n').replace(
-            r'\end{problem}', '    <answer>\n      <p>\n       </p>\n    </answer>\n</exercise>')
+    #modified_content = modified_content.replace(
+    #    r'\begin{problem}','<exercise xml:id="prob-">\n    <statement>\n       <p>\n       </p>\n  </statement>\n').replace(
+    #        r'\end{problem}', '    <answer>\n      <p>\n       </p>\n    </answer>\n</exercise>')
 
     # Replace \answer{...} with ...
     modified_content = replace_answer(modified_content)

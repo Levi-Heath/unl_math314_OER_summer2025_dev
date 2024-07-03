@@ -35,7 +35,7 @@
   <!-- include sections --> 
   <xi:include href="Section-Introduction-to-Systems-of-Linear-Equations.ptx"/>
   <xi:include href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.ptx"/>
-  <!-- <xi:include href="Section-Gaussian-Elimination-and-Rank.ptx"/> -->
+  <xi:include href="Section-Gaussian-Elimination-and-Rank.ptx"/>
   <xi:include href="Section-Iterative-Methods-for-Solving-Linear-Systems.ptx"/>
   <!-- <xi:include href="Section-Additional-Exercises.ptx"/> -->
 </chapter>
