@@ -28,7 +28,7 @@
             </p>
             
             <p>
-            In <url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0010/main">Introduction to Systems of Linear Equations</url> we discussed why applying elementary row operations to a linear system results in an equivalent system - a linear system with the same solution set.
+            In <xref ref="Section-Introduction-to-Systems-of-Linear-Equations"/> we discussed why applying elementary row operations to a linear system results in an equivalent system - a linear system with the same solution set.
             </p>
             
             <p>
@@ -155,7 +155,7 @@
             </p>
             
             <p>
-            Observe that throughout the entire process, variables <m>x</m>, <m>y</m>, <m>z</m> and <m>w</m> remained in place; only the coefficients in front of the variables and the entries on the right changed.  Let's try to recreate this process without writing down the variables.  We can capture the original system in (<xref ref="eq-sys20originalsystem1"/>) as follows:
+            Observe that throughout the entire process, variables <m>x</m>, <m>y</m>, <m>z</m> and <m>w</m> remained in place; only the coefficients in front of the variables and the entries on the right changed.  Let's try to recreate this process without writing down the variables.  We can capture the original system in <xref ref="eq-sys20originalsystem1"/> as follows:
             
             <me>
                 \left[\begin{array}{cccc|c}  
@@ -238,13 +238,13 @@
              1\amp 0\amp 0\amp 0\amp -1\\0\amp 1\amp 0\amp 0\amp -1\\0\amp 0\amp 1\amp 0\amp 2\\0\amp 0\amp 0\amp 1\amp 1
              \end{array}\right]</men>
              
-             The last augmented matrix corresponds to systems in (<xref ref="eq-sys20rref1"/>) and (<xref ref="eq-sys20rrefnozeros"/>), and we can easily see the solution.   
+             The last augmented matrix corresponds to systems in <xref ref="eq-sys20rref1"/> and <xref ref="eq-sys20rrefnozeros"/>, and we can easily see the solution.   
                 </p>
                 </answer>
             </exploration>
             
             <p>
-            Exploration <xref ref="init-augmentedmatrixex"/> introduced us to some vocabulary terms.  Let's formalize our definitions.  Every linear system 
+            <xref ref="init-augmentedmatrixex"/> introduced us to some vocabulary terms.  Let's formalize our definitions.  Every linear system 
             <me>
                 \begin{array}{ccccccccc}
                   a_{11}x_1 \amp + \amp a_{12}x_2\amp +\amp \ldots\amp +\amp a_{1n}x_n\amp = \amp b_1 \\
@@ -282,7 +282,7 @@
                -x_1\amp  +\amp x_2\amp +\amp 4x_3\amp =\amp 1
                 \end{array}
             </me>
-            Recall that in Exploration <xref ref="init-augmentedmatrixex"/> we converted the given system to an augmented matrix form, then performed elementary row operations until we arrived at a ``convenient" form.  We then converted the ``convenient" augmented matrix back to a system of equations and identified the solution.  The term ``convenient" is open to interpretation.  In this problem we will explore two ``convenient" forms.  Each one will lead to a definition.  
+            Recall that in <xref ref="init-augmentedmatrixex"/> we converted the given system to an augmented matrix form, then performed elementary row operations until we arrived at a ``convenient" form.  We then converted the ``convenient" augmented matrix back to a system of equations and identified the solution.  The term ``convenient" is open to interpretation.  In this problem we will explore two ``convenient" forms.  Each one will lead to a definition.  
             <mdn>
                 <mrow number="no"> 
                     \amp \left[\begin{array}{ccc|c}  
@@ -329,7 +329,7 @@
                 </mrow> 
              </mdn>
             
-            The augmented matrix in (<xref ref="eq-sys20reducedrowechelon"/>) has the same convenient form as the one in (<xref ref="eq-sys20rref"/>).  This augmented matrix corresponds to the system
+            The augmented matrix in <xref ref="eq-sys20reducedrowechelon"/> has the same convenient form as the one in <xref ref="eq-sys20rref"/>.  This augmented matrix corresponds to the system
             <me>
                 \begin{array}{ccccccc}
                   x_1 \amp  \amp \amp \amp \amp = \amp 1/2 \\
@@ -341,7 +341,7 @@
             </p>
             
             <p>
-            While the augmented matrix in (<xref ref="eq-sys20reducedrowechelon"/>) was certainly ``convenient", we could have converted back to the equation format a little earlier.  Let's take a look at the augmented matrix in (<xref ref="eq-sys20rowechelon"/>).  Converting (<xref ref="eq-sys20rowechelon"/>) to a system of equations gives us
+            While the augmented matrix in <xref ref="eq-sys20reducedrowechelon"/> was certainly ``convenient", we could have converted back to the equation format a little earlier.  Let's take a look at the augmented matrix in <xref ref="eq-sys20rowechelon"/>.  Converting <xref ref="eq-sys20rowechelon"/> to a system of equations gives us
             <me>
                 \begin{array}{ccccccc}
                   x_1 \amp - \amp x_2\amp -\amp 3x_3\amp = \amp 1\\
@@ -362,7 +362,7 @@
             </exploration>
             
             <p>
-            Observe that the coefficient matrices in (<xref ref="eq-sys20rref"/>) and (<xref ref="eq-sys20reducedrowechelon"/>) have the same format: 1's along the diagonal, zeros above and below the 1's.  The other ``convenient" format, exhibited by the coefficient matrix in (<xref ref="eq-sys20rowechelon"/>),  also has zeros below the diagonal, but not all of the diagonal entries are 1's and some of the entries above the diagonal are not zero.  Each of these formats gives rise to a definition.  These definitions are the topic of the next section.
+            Observe that the coefficient matrices in <xref ref="eq-sys20rref"/> and <xref ref="eq-sys20reducedrowechelon"/> have the same format: 1's along the diagonal, zeros above and below the 1's.  The other ``convenient" format, exhibited by the coefficient matrix in <xref ref="eq-sys20rowechelon"/>,  also has zeros below the diagonal, but not all of the diagonal entries are 1's and some of the entries above the diagonal are not zero.  Each of these formats gives rise to a definition.  These definitions are the topic of the next section.
             </p>
     </subsection>
 
@@ -404,7 +404,7 @@
         </definition>
         
         <p>
-        The term row-echelon form can be applied to matrices whether or not they are augmented matrices (matrices with the vertical bar). For example, both the coefficient matrix and the augmented matrix in (<xref ref="eq-sys20rowechelon"/>) are in row-echelon form.  Note that the leading entries form a staircase pattern. All entries below the leading entries are zero, but the entries above the leading entries are not all zero.
+        The term row-echelon form can be applied to matrices whether or not they are augmented matrices (matrices with the vertical bar). For example, both the coefficient matrix and the augmented matrix in <xref ref="eq-sys20rowechelon"/> are in row-echelon form.  Note that the leading entries form a staircase pattern. All entries below the leading entries are zero, but the entries above the leading entries are not all zero.
         </p>
         
         <p>
@@ -420,7 +420,7 @@
          
          
         <p>
-        The difference between the coefficient matrix in  (<xref ref="eq-sys20rowechelon"/>) and the coefficient matrix in (<xref ref="eq-sys20reducedrowechelon"/>) is that the leading entries of the  matrix in (<xref ref="eq-sys20reducedrowechelon"/>) are all 1's, and the matrix has zeros above each leading 1.  This motivates our next definition.
+        The difference between the coefficient matrix in  <xref ref="eq-sys20rowechelon"/> and the coefficient matrix in <xref ref="eq-sys20reducedrowechelon"/> is that the leading entries of the  matrix in <xref ref="eq-sys20reducedrowechelon"/> are all 1's, and the matrix has zeros above each leading 1.  This motivates our next definition.
         </p>
         
         <definition xml:id="def-rref">
@@ -532,7 +532,7 @@
          \end{array}\right]
         </me>
         
-         Our final matrix may not be quite as nice as the one in (<xref ref="eq-sys20reducedrowechelon"/>), but it is in reduced row-echelon form.  Our next step is to convert our augmented matrix back to a system of equations.  We have:
+         Our final matrix may not be quite as nice as the one in <xref ref="eq-sys20reducedrowechelon"/>, but it is in reduced row-echelon form.  Our next step is to convert our augmented matrix back to a system of equations.  We have:
          
         <me>
             \begin{array}{ccccccccc}
@@ -567,13 +567,13 @@
             <mrow> z\amp =7-3t </mrow>
             <mrow> w\amp =t </mrow>
          </md>
-         is a set of parametric equations that describes a line in <m>\R^4</m>.  (See Formula <xref ref="form-paramlinend"/>)  This means that the three hyperplanes given by the equations in the system intersect in a line, producing infinitely many solutions to the system.
+         is a set of parametric equations that describes a line in <m>\R^4</m>.  (See <xref ref="form-paramlinend"/>  This means that the three hyperplanes given by the equations in the system intersect in a line, producing infinitely many solutions to the system.
             </p>
             </answer>
         </example>
         
         <p>
-        Observe that in Example <xref ref="ex-freevar1"/>, variables <m>x</m>, <m>y</m> and <m>z</m> correspond to the leading <m>1's</m> in the reduced row-echelon.  We say that <m>x</m>, <m>y</m> and <m>z</m> are the <term>leading variables</term>.  Variable <m>w</m> is not a leading variable; we refer to it as a <term>free variable</term> and assign a <term>parameter</term> <m>t</m> to it.
+        Observe that in <xref ref="ex-freevar1"/>, variables <m>x</m>, <m>y</m> and <m>z</m> correspond to the leading <m>1's</m> in the reduced row-echelon.  We say that <m>x</m>, <m>y</m> and <m>z</m> are the <term>leading variables</term>.  Variable <m>w</m> is not a leading variable; we refer to it as a <term>free variable</term> and assign a <term>parameter</term> <m>t</m> to it.
         </p>
         
         <example xml:id="ex-nosolutionssys">
@@ -618,7 +618,7 @@
         
         <observation xml:id="ob-inconsistent">
             <p>
-                Note that the last row of the reduced row-echelon form in (<xref ref="eq-sys20nosolutionsys"/>) looks like this
+                Note that the last row of the reduced row-echelon form in <xref ref="eq-sys20nosolutionsys"/> looks like this
         <me>
             \left[\begin{array}{ccc|c}  
          0\amp 0\amp 0\amp 1
@@ -686,7 +686,7 @@
             \end{array}
         </me>
         
-         Unlike the last equation in (<xref ref="eq-sys20nosolutions"/>), the last equation in this system has infinitely many solutions because all values of <m>x</m>, <m>y</m> and <m>z</m> satisfy it.  Since the last equation contributes nothing, we will remove it and rewrite the system as
+         Unlike the last equation in <xref ref="eq-sys20nosolutions"/>, the last equation in this system has infinitely many solutions because all values of <m>x</m>, <m>y</m> and <m>z</m> satisfy it.  Since the last equation contributes nothing, we will remove it and rewrite the system as
          
         <me>
             \begin{array}{ccccc}
@@ -869,7 +869,7 @@
             <exercise xml:id="prob-rrefnosolutionssys">
                 <statement>
                    <p>
-                    Fill in the steps that lead to the reduced row-echelon form in Example <xref ref="ex-nosolutionssys"/>.
+                    Fill in the steps that lead to the reduced row-echelon form in <xref ref="ex-nosolutionssys"/>.
                    </p>
               </statement>
             </exercise>
@@ -877,7 +877,7 @@
             <exercise xml:id="prob-rreffinfmanysolutionsys">
                 <statement>
                    <p>
-                    Fill in the steps that lead to the reduced row-echelon form in Example <xref ref="ex-rrefinfmanysolutionssys"/>.
+                    Fill in the steps that lead to the reduced row-echelon form in <xref ref="ex-rrefinfmanysolutionssys"/>.
                    </p>
               </statement>
             </exercise>

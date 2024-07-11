@@ -55,19 +55,19 @@
       <me>
         \norm{\mathbf{u}-\mathbf{v}}^2=\norm{\mathbf{u}}^2+\norm{\mathbf{v}}^2-2\norm{\mathbf{u}}\norm{\mathbf{v}}\cos\theta
       </me>
-      By Theorem <xref ref="th-dotproductproperties"/> <xref ref="item-norm"/>,
+      By <xref ref="th-dotproductproperties"/> <xref ref="item-norm"/>,
       <me>
         (\mathbf{u}-\mathbf{v})\cdot (\mathbf{u}-\mathbf{v})=\mathbf{u}\cdot \mathbf{u}+\mathbf{v}\cdot \mathbf{v}-2\norm{\mathbf{u}}\norm{\mathbf{v}}\cos\theta
       </me>
-      By Theorem <xref ref="th-dotproductproperties"/> <xref ref="item-distributive-again"/>,
+      By <xref ref="th-dotproductproperties"/> <xref ref="item-distributive-again"/>,
       <me>
         (\mathbf{u}-\mathbf{v})\cdot \mathbf{u}-(\mathbf{u}-\mathbf{v})\cdot \mathbf{v}=\mathbf{u}\cdot \mathbf{u}+\mathbf{v}\cdot \mathbf{v}-2\norm{\mathbf{u}}\norm{\mathbf{v}}\cos\theta
       </me>
-      By Theorem <xref ref="th-dotproductpropert ies"/> <xref ref="item-distributive"/>,
+      By <xref ref="th-dotproductpropert ies"/> <xref ref="item-distributive"/>,
       <me>
         \mathbf{u}\cdot \mathbf{u}-\mathbf{v}\cdot\mathbf{u}-\mathbf{u}\cdot\mathbf{v}+\mathbf{v}\cdot \mathbf{v}=\mathbf{u}\cdot \mathbf{u}+\mathbf{v}\cdot \mathbf{v}-2\norm{\mathbf{u}}\norm{\mathbf{v}}\cos\theta
       </me>
-      By Theorem <xref ref="th-dotproductpropert ies"/><xref ref="item-commutative"/> of \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VEC-0050/main}{Dot Product and its Properties}
+      By <xref ref="th-dotproductproperties"/> <xref ref="item-commutative"/> of <xref ref="Section-Dot-Product-and-its-Properties"/>,
       <md>
         <mrow> -2(\mathbf{u}\cdot \mathbf{v})=\amp-2\norm{\mathbf{u}}\norm{\mathbf{v}}\cos\theta </mrow>
         <mrow> \mathbf{u}\cdot \mathbf{v}=\amp\norm{\mathbf{u}}\norm{\mathbf{v}}\cos\theta </mrow>
@@ -81,7 +81,7 @@
       Find the included angle between vectors <m>\mathbf{u}=\begin{bmatrix}2\\-1\\4\end{bmatrix}</m> and <m>\mathbf{v}=\begin{bmatrix}1\\2\\-3\end{bmatrix}</m>. 
     </p>
     <p>  
-      By Theorem <xref ref="th-dotproductcosine"/>, <m>\cos \theta=\frac{\mathbf{u}\cdot \mathbf{v}}{\norm{\mathbf{u}}\norm{\mathbf{v}}}</m>.  
+      By <xref ref="th-dotproductcosine"/>, <m>\cos \theta=\frac{\mathbf{u}\cdot \mathbf{v}}{\norm{\mathbf{u}}\norm{\mathbf{v}}}</m>.  
       <me>
         \mathbf{u}\cdot\mathbf{v}=2-2-12=-12
       </me>
@@ -115,7 +115,7 @@
 </definition>
 
 <p>
-  We can use Theorem <xref ref="th-dotproductcosine"/> to show that two non-zero <term>orthogonal</term> vectors of <m>\R^n</m> are simply <term>perpendicular</term> vectors (the included angle is <m>90^{\circ}</m>).  To see this, suppose that <m>\mathbf{u}\cdot\mathbf{v}=0</m> for nonzero vectors <m>\mathbf{u},\mathbf{v}</m>.  Then from Theorem <xref ref="th-dotproductcosine"/> we have
+  We can use <xref ref="th-dotproductcosine"/> to show that two non-zero <term>orthogonal</term> vectors of <m>\R^n</m> are simply <term>perpendicular</term> vectors (the included angle is <m>90^{\circ}</m>).  To see this, suppose that <m>\mathbf{u}\cdot\mathbf{v}=0</m> for nonzero vectors <m>\mathbf{u},\mathbf{v}</m>.  Then from <xref ref="th-dotproductcosine"/> we have
   <me>
       0=\norm{\mathbf{u}}\norm{\mathbf{v}}\cos\theta.
   </me>
@@ -208,7 +208,7 @@
       <statement>
         <p>
           Find the value of <m>x</m> for which the vector <m>\begin{bmatrix}x\\-4\end{bmatrix}</m> is parallel to the vector <m>\begin{bmatrix}3\\2\end{bmatrix}</m>. 
-          What is the measure of the included angle, <m>\theta</m>? Find the measure of the included angle using Theorem <xref ref="ex-anglebetweenvectors"/>.  
+          What is the measure of the included angle, <m>\theta</m>? Find the measure of the included angle using <xref ref="ex-anglebetweenvectors"/>.  
           Do the two results agree?
         </p>
       </statement>

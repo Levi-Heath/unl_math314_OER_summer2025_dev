@@ -187,12 +187,12 @@
     </example>
 
     <p>
-      The approach we used in Example <xref ref="init-headminustail"/> is applicable to specific vectors that can easily be visualized.  
+      The approach we used in <xref ref="init-headminustail"/> is applicable to specific vectors that can easily be visualized.  
       What we need now is an algebraic approach that can be generalized to higher dimensions and more abstract situations.  
     </p>
 
     <p>
-      Let's return to vector <m>\mathbf{v}</m> of Example \ref{init:headminustail}. Suppose we were to slide vector <m>\mathbf{v}</m> into standard position. Consider what would happen to the tail of <m>\mathbf{v}</m> as we do so.
+      Let's return to vector <m>\mathbf{v}</m> of <xref ref="init-headminustail"/>. Suppose we were to slide vector <m>\mathbf{v}</m> into standard position. Consider what would happen to the tail of <m>\mathbf{v}</m> as we do so.
     </p>
 
     <image width="80%">

@@ -76,13 +76,13 @@ We create an augmented matrix corresponding to the system and apply row operatio
  \end{array}
 </me>
 
- <men>\label{eq:ref1}
+ <men xml:id="eq-ref1">
  \left[\begin{array}{ccc|c}  
  1\amp 2\amp -3\amp 1\\0\amp 12\amp -18\amp 6\\0\amp 0\amp -2\amp 2
  \end{array}\right]
 </men>
 
-Note that the elementary row operations that lead to (<xref ref="eq-ref1"/>) were not prescribed.  We may employ row-operations in a different manner and obtain a different matrix in row-echelon form.  For example, suppose for some reason we had begun by switching the first and third rows.
+Note that the elementary row operations that lead to <xref ref="eq-ref1"/> were not prescribed.  We may employ row-operations in a different manner and obtain a different matrix in row-echelon form.  For example, suppose for some reason we had begun by switching the first and third rows.
 
 
 <me>
@@ -128,15 +128,15 @@ Next we would reduce this matrix to row-echelon form, perhaps in this way:
 
 </me>
 
-<men>\label{eq:ref2}
+<men xml:id="eq-ref2">
  \left[\begin{array}{ccc|c}  
  1\amp -2\amp 1\amp 1\\0\amp -8\amp 2\amp 6\\0\amp 0\amp -3\amp 3
  \end{array}\right]
 </men>
 
-The augmented matrices in (<xref ref="eq-ref1"/>) and (<xref ref="eq-ref2"/>) are clearly not the same, but both are in row-echelon form.
+The augmented matrices in <xref ref="eq-ref1"/> and <xref ref="eq-ref2"/> are clearly not the same, but both are in row-echelon form.
 
-If we write the systems of equations corresponding to (<xref ref="eq-ref1"/>) and (<xref ref="eq-ref2"/>), we can employ back substitution to solve them.  The matrix in (<xref ref="eq-ref1"/>) corresponds to
+If we write the systems of equations corresponding to <xref ref="eq-ref1"/> and <xref ref="eq-ref2"/>, we can employ back substitution to solve them.  The matrix in <xref ref="eq-ref1"/> corresponds to
 
 <me>
     \begin{array}{ccccccccc}
@@ -147,7 +147,7 @@ If we write the systems of equations corresponding to (<xref ref="eq-ref1"/>) an
 </me>
 
     
-The matrix in (<xref ref="eq-ref2"/>) corresponds to    
+The matrix in <xref ref="eq-ref2"/> corresponds to    
 
 <me>
     \begin{array}{ccccccccc}
@@ -185,7 +185,7 @@ Because both systems are equivalent to the original system, it is not surprising
 </exploration>
 
 <p>
-It is clear from Exploration <xref ref="init-gaussianelim1"/> that a row-echelon form corresponding to a matrix is not unique.  But what about the reduced row-echelon form?
+It is clear from <xref ref="init-gaussianelim1"/> that a row-echelon form corresponding to a matrix is not unique.  But what about the reduced row-echelon form?
 </p>
 
 <exploration xml:id="init-gaussianelim2">
@@ -201,7 +201,7 @@ It is clear from Exploration <xref ref="init-gaussianelim1"/> that a row-echelon
 </me>
 
     
-Following the steps we took to get (<xref ref="eq-ref1"/>), but taking the process a little further, we get the reduced row-echelon form.
+Following the steps we took to get <xref ref="eq-ref1"/>, but taking the process a little further, we get the reduced row-echelon form.
 
 <me>
     \left[\begin{array}{ccc|c}  
@@ -243,7 +243,7 @@ Following the steps we took to get (<xref ref="eq-ref1"/>), but taking the proce
  \end{array}
 </me>
 
-<men>\label{eq:rref3}  \color{blue}
+<men xml:id="eq-rref3">  \color{blue}
  \left[\begin{array}{ccc|c}  
  1\amp 2\amp 0\amp -2\\0\amp 1\amp 0\amp -1\\0\amp 0\amp 1\amp -1
  \end{array}\right]
@@ -256,7 +256,7 @@ Following the steps we took to get (<xref ref="eq-ref1"/>), but taking the proce
   \left[\begin{array}{ccc|c}  
  1\amp 0\amp 0\amp 0\\0\amp 1\amp 0\amp -1\\0\amp 0\amp 1\amp -1
  \end{array}\right]</men>
-Do you think it is possible to start with (<xref ref="eq-ref2"/>) and obtain the same reduced row-echelon form?  Try to justify your response.  If possible, find the elementary row operations that take (<xref ref="eq-ref2"/>) to the reduced row-echelon form in (<xref ref="eq-rref3"/>).
+Do you think it is possible to start with <xref ref="eq-ref2"/> and obtain the same reduced row-echelon form?  Try to justify your response.  If possible, find the elementary row operations that take <xref ref="eq-ref2"/> to the reduced row-echelon form in <xref ref="eq-rref3"/>.
 
 
 <me>
@@ -305,12 +305,12 @@ Do you think it is possible to start with (<xref ref="eq-ref2"/>) and obtain the
  1\amp 0\amp 0\amp 0\\0\amp 1\amp 0\amp -1\\0\amp 0\amp 1\amp -1
  \end{array}\right]
 </me>
-You will be asked to fill in the elementary row operations in Practice Problem <xref ref="prob-same_rref"/>.
+You will be asked to fill in the elementary row operations in <xref ref="prob-same_rref"/>.
     </p>
 </exploration>
 
 <p>
-Our observations in Exploration <xref ref="init-gaussianelim2"/> are summarized in the following diagram.
+Our observations in <xref ref="init-gaussianelim2"/> are summarized in the following diagram.
 </p>
 
 <image width="100%">
@@ -359,7 +359,7 @@ A proof of this result can be found in <xref ref="ref-Yuster"/>.
 
 <p>
 The reduced row-echelon form of a matrix is an instance of a row-echelon form of the matrix.  While a given matrix may have multiple row-echelon forms, all row-echelon forms will share one characteristic: the number of nonzero rows in a row-echelon form of the given matrix will be the same.
-We will prove this result in Theorem <xref ref="th-samenumberofnonzerorows"/>.
+We will prove this result in <xref ref="th-samenumberofnonzerorows"/>.
 </p>
 </subsection>
 
@@ -375,7 +375,10 @@ We will prove this result in Theorem <xref ref="th-samenumberofnonzerorows"/>.
     </statement>
 </definition>
 
-As we saw in the previous section, it is possible to follow different sequences of row operations to arrive at various row-echelon forms.  However, it was not clear whether it is <em>always possible</em> to find a row-echelon form.  The following algorithm takes any matrix (or augmented matrix) and transforms it into row-echelon form:
+<p>
+    As we saw in the previous section, it is possible to follow different sequences of row operations to arrive at various row-echelon forms.  However, it was not clear whether it is <em>always possible</em> to find a row-echelon form.  The following algorithm takes any matrix (or augmented matrix) and transforms it into row-echelon form:
+</p>
+
 <algorithm xml:id="alg-gaussian">
     <title>Gaussian Algorithm</title>
     <statement>
@@ -426,7 +429,7 @@ Gaussian Algorithm guarantees that every matrix will have a row-echelon form.
             Following Step 2, we choose the first entry, <m>2</m>, as our pivot.  We then perform step 3, using the top row to get zeros in all entries below the <m>2</m>.
 
 <me>
-    \begin{bmatrix} \fbox{<m>2</m>}\amp 4\\1\amp 2\\-1\amp 1\\3\amp 5\end{bmatrix}
+    \begin{bmatrix} \fbox{\(2\)}\amp 4\\1\amp 2\\-1\amp 1\\3\amp 5\end{bmatrix}
   \begin{array}{c}
   \\
   \xrightarrow{R_2-(1/2)R_1}\\
@@ -441,9 +444,9 @@ The first row is now complete, and we repeat the process on the rows below it. W
 
 
 <me>
-    \begin{bmatrix}2\amp 4\\0\amp 0\\0\amp \fbox{<m>3</m>}\\0\amp -1\end{bmatrix}
+    \begin{bmatrix}2\amp 4\\0\amp 0\\0\amp \fbox{\(3\)}\\0\amp -1\end{bmatrix}
 \xrightarrow{R_2\leftrightarrow R_3}\\
-\begin{bmatrix}2\amp 4\\0\amp \fbox{<m>3</m>}\\0\amp 0\\0\amp -1\end{bmatrix}
+\begin{bmatrix}2\amp 4\\0\amp \fbox{\(3\)}\\0\amp 0\\0\amp -1\end{bmatrix}
   \begin{array}{c}
  \\
 \\
@@ -471,7 +474,7 @@ This time the algorithm terminates since row 3 and row 4 are zero rows.
 </definition>
 
 <p>
-Given a matrix in row-echelon form, it is easy to bring it the reduced row-echelon form.  For example, continuing with Example <xref ref="ex-non-augmented"/>, we can start where we left off and compute <m>\mbox{rref}(A)</m>.  From our earlier computations we have:
+Given a matrix in row-echelon form, it is easy to bring it the reduced row-echelon form.  For example, continuing with <xref ref="ex-non-augmented"/>, we can start where we left off and compute <m>\mbox{rref}(A)</m>.  From our earlier computations we have:
 
 
 <me>
@@ -537,7 +540,7 @@ The following modification to the Gaussian Algorithm produces the reduced row-ec
             <md>
                 <mrow> 
                     \amp \left[\begin{array}{ccc|c}  
-                    \fbox{<m>3</m>}\amp 1\amp 7\amp 7\\5\amp 3\amp 9\amp 13\\2\amp 1\amp 4\amp 5
+                    \fbox{\(3\)}\amp 1\amp 7\amp 7\\5\amp 3\amp 9\amp 13\\2\amp 1\amp 4\amp 5
                     \end{array}\right] 
                 </mrow>
                 <mrow> 
@@ -547,7 +550,7 @@ The following modification to the Gaussian Algorithm produces the reduced row-ec
                   \\
                    \end{array}
                    \amp \left[\begin{array}{ccc|c}  
-                   \fbox{<m>1</m>}\amp 1/3\amp 7/3\amp 7/3\\5\amp 3\amp 9\amp 13\\2\amp 1\amp 4\amp 5
+                   \fbox{\(1\)}\amp 1/3\amp 7/3\amp 7/3\\5\amp 3\amp 9\amp 13\\2\amp 1\amp 4\amp 5
                    \end{array}\right] 
                 </mrow>
                 <mrow> 
@@ -557,7 +560,7 @@ The following modification to the Gaussian Algorithm produces the reduced row-ec
                    \\
                    \end{array}
                    \amp \left[\begin{array}{ccc|c}  
-                    \fbox{<m>1</m>}\amp 1/3\amp 7/3\amp 7/3\\0\amp 4/3\amp -8/3\amp 4/3\\2\amp 1\amp 4\amp 5
+                    \fbox{\(1\)}\amp 1/3\amp 7/3\amp 7/3\\0\amp 4/3\amp -8/3\amp 4/3\\2\amp 1\amp 4\amp 5
                     \end{array}\right]
                 </mrow>
                 <mrow>  
@@ -566,7 +569,7 @@ The following modification to the Gaussian Algorithm produces the reduced row-ec
                   \\
                    \xrightarrow{R_3-2R_1}\\
                   \end{array}\amp \left[\begin{array}{ccc|c}  
-                   1\amp 1/3\amp 7/3\amp 7/3\\0\amp \fbox{<m>4/3</m>}\amp -8/3\amp 4/3\\0\amp 1/3\amp -2/3\amp 1/3
+                   1\amp 1/3\amp 7/3\amp 7/3\\0\amp \fbox{\(4/3\)}\amp -8/3\amp 4/3\\0\amp 1/3\amp -2/3\amp 1/3
                    \end{array}\right] 
                 </mrow>
                 <mrow>  
@@ -576,7 +579,7 @@ The following modification to the Gaussian Algorithm produces the reduced row-ec
                     \\
                     \end{array}
                     \amp \left[\begin{array}{ccc|c}  
-                     1\amp 1/3\amp 7/3\amp 7/3\\0\amp \fbox{<m>1</m>}\amp -2\amp 1\\0\amp 1/3\amp -2/3\amp 1/3
+                     1\amp 1/3\amp 7/3\amp 7/3\\0\amp \fbox{\(1\)}\amp -2\amp 1\\0\amp 1/3\amp -2/3\amp 1/3
                      \end{array}\right] 
                 </mrow>
                 <mrow>  
@@ -586,7 +589,7 @@ The following modification to the Gaussian Algorithm produces the reduced row-ec
                      \xrightarrow{R_3-\frac{1}{3}R_2}\\
                     \end{array}
                     \amp \left[\begin{array}{ccc|c}  
-                     1\amp 1/3\amp 7/3\amp 7/3\\0\amp \fbox{<m>1</m>}\amp -2\amp 1\\0\amp 0\amp 0\amp 0
+                     1\amp 1/3\amp 7/3\amp 7/3\\0\amp \fbox{\(1\)}\amp -2\amp 1\\0\amp 0\amp 0\amp 0
                      \end{array}\right] 
                 </mrow>
                 <mrow> \begin{array}{c}
@@ -621,7 +624,7 @@ The following modification to the Gaussian Algorithm produces the reduced row-ec
 <p>
 The Gauss-Jordan Algorithm guarantees the existence of the reduced row-echelon form for all matrices.  
 When doing computations by hand, however, the algorithm may not always be the optimal method of finding a row-echelon form or the reduced row-echelon form because the procedure often leads to fractions early in the process. 
-The following video shows how to arrive at the same reduced row-echelon form for the matrix in Example <xref ref="ex-gaussjordanalg"/> without doing any fraction arithmetic.  You will see that we still employ row operations, but in a different order.
+The following video shows how to arrive at the same reduced row-echelon form for the matrix in <xref ref="ex-gaussjordanalg"/> without doing any fraction arithmetic.  You will see that we still employ row operations, but in a different order.
 </p>
 
 <video youtube="videoID" play-at="select"/>
@@ -639,12 +642,12 @@ The video highlights the fact that regardless of what sequence of elementary row
     </p>
 
 <p>
-    As stated in Theorem <xref ref="th-uniquenessofrref"/>, the reduced row-echelon form of a matrix <m>A</m> is uniquely determined by <m>A</m>. That is, no matter which series of row operations is used to transform <m>A</m> to its reduced row-echelon matrix, the result will always be the same matrix. In contrast, this is not true for row-echelon matrices: different sequences of row operations can transform the same matrix <m>A</m> to different row-echelon matrices. However, it is true that the number <m>r</m> of nonzero rows must be the same in each of these row-echelon matrices, as we will see in Theorem <xref ref="th-dimofrowA"/>. Hence, the number <m>r</m> depends only on <m>A</m> and not on the way in which <m>A</m> is carried to row-echelon form.  
+    As stated in <xref ref="th-uniquenessofrref"/>, the reduced row-echelon form of a matrix <m>A</m> is uniquely determined by <m>A</m>. That is, no matter which series of row operations is used to transform <m>A</m> to its reduced row-echelon matrix, the result will always be the same matrix. In contrast, this is not true for row-echelon matrices: different sequences of row operations can transform the same matrix <m>A</m> to different row-echelon matrices. However, it is true that the number <m>r</m> of nonzero rows must be the same in each of these row-echelon matrices, as we will see in Theorem <xref ref="th-dimofrowA"/>. Hence, the number <m>r</m> depends only on <m>A</m> and not on the way in which <m>A</m> is carried to row-echelon form.  
 </p>
 
 <example xml:id="ex-rowechofA">
     <p>
-        Matrices (<xref ref="eq-ref1"/>) and (<xref ref="eq-ref2"/>) of Exploration <xref ref="init-gaussianelim1"/> are both row-echelon forms of <m>A</m>.  Both matrices have three nonzero rows.  The same is true for <m>\mbox{rref}(A)</m>.
+        Matrices <xref ref="eq-ref1"/> and <xref ref="eq-ref2"/> of <xref ref="init-gaussianelim1"/> are both row-echelon forms of <m>A</m>.  Both matrices have three nonzero rows.  The same is true for <m>\mbox{rref}(A)</m>.
     </p>
 </example>
 
@@ -725,7 +728,7 @@ Because the row-echelon form has two nonzero rows, <m>\mbox{rank}(A) = 2</m>.
 </theorem>
 
 <p>
-Theorem <xref ref="th-rankandsolutions"/> shows that, for any system of linear equations, exactly three possibilities exist:
+<xref ref="th-rankandsolutions"/> shows that, for any system of linear equations, exactly three possibilities exist:
 
 <ol>
 <li>
@@ -737,7 +740,7 @@ Theorem <xref ref="th-rankandsolutions"/> shows that, for any system of linear e
 </li>
 
 <li>
-      <p> No solution.  This occurs when a row <m>\left[\begin{array}{cccc|c}  0\amp 0\amp \ldots \amp 0\amp 1 \end{array}\right]</m> appears in the row-echelon form. Such a row corresponds to an equation with no solutions. (See Example <xref ref="ex-nosolutionssys"/>.) </p>
+      <p> No solution.  This occurs when a row <m>\left[\begin{array}{cccc|c}  0\amp 0\amp \ldots \amp 0\amp 1 \end{array}\right]</m> appears in the row-echelon form. Such a row corresponds to an equation with no solutions. (See <xref ref="ex-nosolutionssys"/>.) </p>
 </li>
 </ol>
 </p>
@@ -752,7 +755,7 @@ Theorem <xref ref="th-rankandsolutions"/> shows that, for any system of linear e
 <exercise xml:id="prob-same-rref">
     <statement>
         <p>
-            Show that applying Gauss-Jordan elimination to the matrix in Exploration <xref ref="init-gaussianelim2"/> yields the same reduced row-echelon form as the matrix we obtained in Exploration <xref ref="init-gaussianelim1"/>.
+            Show that applying Gauss-Jordan elimination to the matrix in <xref ref="init-gaussianelim2"/> yields the same reduced row-echelon form as the matrix we obtained in <xref ref="init-gaussianelim1"/>.
         </p>
     </statement>
 </exercise>
@@ -1224,7 +1227,8 @@ Theorem <xref ref="th-rankandsolutions"/> shows that, for any system of linear e
     </biblio>
     <biblio xml:id="ref-Yuster">
         <p> Thomas Yuster, The Reduced Row Echelon Form of a Matrix is Unique: a
-            Simple Proof, Mathematics Magazine, vol. 57, no. 2 (Mar. 1984), pp. 93-94. </p>
+            Simple Proof, Mathematics Magazine, vol. 57, no. 2 (Mar. 1984), pp. 93-94. 
+        </p>
     </biblio>
 </references>
 </subsection>

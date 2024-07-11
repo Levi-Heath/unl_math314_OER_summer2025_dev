@@ -148,7 +148,7 @@
     </exploration>
   
     <p>
-      Explorations  <xref ref="init-scalarmult"/> and <xref ref="init-negscalarmult"/> give rise to the following definition of scalar multiplication.
+      <xref ref="init-scalarmult"/> and <xref ref="init-negscalarmult"/> give rise to the following definition of scalar multiplication.
     </p>
 
     <definition xml:id="def-scalarmult">
@@ -383,7 +383,7 @@
     </exploration>
 
     <p>
-      Exploration <xref href="init-vectoradd"/> motivates the following definition.
+      <xref ref="init-vectoradd"/> motivates the following definition.
     </p>
     
     <definition xml:id="def-vectoradd">
@@ -594,10 +594,9 @@
       </statement>
       <proof>
         <p>
-          We will prove Properties <xref ref="item-inversevectoradd"/> and <xref ref="item-distvectoradd"/>.  Proofs of the remaining properties are left to the reader.
+          We will prove <xref ref="item-inversevectoradd"/> and <xref ref="item-distvectoradd"/>.  Proofs of the remaining properties are left to the reader.
         </p>
         <p>
-          <title>Proof of Property <xref ref="item-inversevectoradd"/></title>
           For any vector <m>\mathbf{u}=\begin{bmatrix} u_1\\ u_2\\ \vdots\\ u_n \end{bmatrix}</m> in <m>\R^n</m>, let 
           <me>
             -\mathbf{u}=(-1)\mathbf{u}=\begin{bmatrix}
@@ -610,7 +609,7 @@
           Then <m>\mathbf{u}+(-\mathbf{u})=\mathbf{0}</m>.
         </p>
         <p>
-          <title>Proof of Property <xref ref="item-distvectoradd"/></title> 
+          Now to prove <xref ref="item-distvectoradd"/>:
           <me>    
             k(\mathbf{u}+\mathbf{v})=k\left(\begin{bmatrix}
               u_1\\
@@ -743,7 +742,7 @@
       <exercise xml:id="prob-vecpropproof1">
         <statement>
           <p>
-            Prove Properties <xref ref="item-commvectoradd"/>-<xref ref="item-identityvectoradd"/> of Theorem <xref ref="th-vecproperties"/>.
+            Prove <xref ref="item-commvectoradd"/>-<xref ref="item-identityvectoradd"/> of <xref ref="th-vecproperties"/>.
           </p>
         </statement>
       </exercise>
@@ -751,7 +750,7 @@
       <exercise xml:id="prob-vecpropproof2">
         <statement>
           <p>
-            Prove Properties <xref ref="item-distvectoradd2"/>-<xref ref="item-onevectorscalarmult"/> of Theorem <xref ref="th-vecproperties"/>.
+            Prove <xref ref="item-distvectoradd2"/>-<xref ref="item-onevectorscalarmult"/> of <xref ref="th-vecproperties"/>.
           </p>
         </statement>
       </exercise>

@@ -41,7 +41,7 @@
     </latex-image>
 </image>
           
-<definition xref="def-normalvectoplane">
+<definition xml:id="def-normalvectoplane">
   <title>Normal Vector</title>
   <statement>
         <p>
@@ -126,7 +126,7 @@
 </image>
 
 <p>
-  Let <m>\mathbf{n}=\begin{bmatrix}a\\b\\c\end{bmatrix}</m>.  By ``head-tail" formula (Formula <xref ref="form-headminustailr3"/>), we have: <m>\overrightarrow{P_{0}P} = \begin{bmatrix}
+  Let <m>\mathbf{n}=\begin{bmatrix}a\\b\\c\end{bmatrix}</m>.  By ``head-tail" formula (<xref ref="form-headminustailr3"/>), we have: <m>\overrightarrow{P_{0}P} = \begin{bmatrix}
     x - x_{0}\\
     y - y_{0}\\
     z - z_{0}
@@ -190,14 +190,10 @@ This simplifies to <m>3x - y + 2z = 10</m>.
 </example>
 
 <p>
-  As demonstrated in Example <xref ref="ex-planewithnormalvector"/>, we can distribute coefficients <m>a</m>, <m>b</m> and <m>c</m>  of equation (<xref ref="eq-plane"/>) as follows:
-</p>
-
+  As demonstrated in <xref ref="ex-planewithnormalvector"/>, we can distribute coefficients <m>a</m>, <m>b</m> and <m>c</m>  of <xref ref="eq-plane"/> as follows:
 <me>
     ax-ax_0+by-by_0+cz-cz_0=0
 </me>
-
-<p>
 Setting <m>d = ax_{0} + by_{0} + cz_{0}</m>, shows that every plane with a normal vector <m>\mathbf{n} =
 \begin{bmatrix}
 a\\
@@ -205,7 +201,7 @@ b\\
 c
 \end{bmatrix}</m>
  has a linear equation of the form
-<men> \label{eq:eqofline} 
+<men xml:id="eq-eqofline"> 
 ax + by + cz = d
 </men>
 for some constant <m>d</m>. Conversely, the graph of this equation is a plane with <m>\mathbf{n} =
@@ -226,7 +222,7 @@ The plane with equation <m>2x -3y = 6</m> has a normal vector <m>\mathbf{n} =
 2\\
 -3\\
 0
-\end{bmatrix}</m>. Because the two planes are parallel, <m>\mathbf{n}</m> serves as a normal for the plane we seek, so the equation is <m>2x - 3y = d</m> for some <m>d</m> by (<xref ref="eq-eqofline"/>). Insisting that <m>P_{0}(3, -1, 2)</m> lies on the plane determines <m>d</m>; that is, <m>d = 2 \cdot 3 - 3(-1) = 9</m>. Hence, the equation is <m>2x - 3y = 9</m>.
+\end{bmatrix}</m>. Because the two planes are parallel, <m>\mathbf{n}</m> serves as a normal for the plane we seek, so the equation is <m>2x - 3y = d</m> for some <m>d</m> by <xref ref="eq-eqofline"/>. Insisting that <m>P_{0}(3, -1, 2)</m> lies on the plane determines <m>d</m>; that is, <m>d = 2 \cdot 3 - 3(-1) = 9</m>. Hence, the equation is <m>2x - 3y = 9</m>.
 </p>
 <figure>
   <caption>

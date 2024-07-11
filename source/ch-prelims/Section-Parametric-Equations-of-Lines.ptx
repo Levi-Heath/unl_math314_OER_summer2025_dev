@@ -52,7 +52,7 @@
         
         <exploration xml:id="init-paramline2dpart2">
             <p>
-                In Exploration <xref ref="init-paramline2d"/> we considered equations
+                In <xref ref="init-paramline2d"/> we considered equations
                 <md>
                     <mrow> x\amp=2t-1 </mrow>
                     <mrow> y\amp=-3t+6 </mrow>
@@ -113,7 +113,7 @@
                     <mrow> x\amp=2t-1 </mrow>
                     <mrow> y\amp=-3t+6 </mrow>
                 </md>
-                Consider the table of values we constructed in Exploration <xref ref="init-paramline2d"/>.
+                Consider the table of values we constructed in <xref ref="init-paramline2d"/>.
                 <me>
                     \begin{array}{|c|c|c|}  
                     \hline t\amp x \amp y\\ 
@@ -152,7 +152,7 @@
                 Next, let's turn our attention to constants <m>-1</m> and <m>6</m>.  They are the values of <m>x</m> and <m>y</m> when <m>t=0</m>, and correspond to the point <m>(-1, 6)</m>.  
             </p>
             <p>
-                Recall that in Exploration <xref ref="init-paramline2d"/> we said that the given parametric equations describe the position of a ladybug crawling in the coordinate plane.  If we are concerned with the position of the ladybug at time <m>t</m>, the point <m>(-1, 6)</m> is very important - this is where the bug is located when <m>t=0</m>.  But, if we are using parametric equations simply to describe the line <m>y=-\frac{3}{2}x+\frac{9}{2}</m>, without regard for when the bug is located at each point, then the point <m>(-1, 6)</m> is not any more special than any other point on the line.  In fact, we can use any other point on this line to find another set of parametric equations that describe the same line.  In Practice Problem <xref ref="prob-paramnotunique"/> you will be asked to show that equations
+                Recall that in <xref ref="init-paramline2d"/> we said that the given parametric equations describe the position of a ladybug crawling in the coordinate plane.  If we are concerned with the position of the ladybug at time <m>t</m>, the point <m>(-1, 6)</m> is very important - this is where the bug is located when <m>t=0</m>.  But, if we are using parametric equations simply to describe the line <m>y=-\frac{3}{2}x+\frac{9}{2}</m>, without regard for when the bug is located at each point, then the point <m>(-1, 6)</m> is not any more special than any other point on the line.  In fact, we can use any other point on this line to find another set of parametric equations that describe the same line.  In <xref ref="prob-paramnotunique"/> you will be asked to show that equations
                 <md>
                     <mrow> x\amp=2t+1 </mrow>
                     <mrow> y\amp=-3t+3 </mrow>
@@ -162,7 +162,7 @@
         </exploration>
 
         <p>
-            We can generalize our observations in Exploration <xref ref="init-paramline2dpart3"/> as follows.
+            We can generalize our observations in <xref ref="init-paramline2dpart3"/> as follows.
         </p>
         
         <identity xml:id="form-paramline2d">
@@ -270,7 +270,7 @@
         </exploration>
         
         <p>
-            We can generalize our observations in Exploration <xref ref="init-paramline3d"/> as follows.
+            We can generalize our observations in <xref ref="init-paramline3d"/> as follows.
         </p>
         
         <identity xml:id="form-paramline3d">
@@ -291,7 +291,7 @@
                 Find a set of parametric equations for a line in <m>\R^3</m> that passes through <m>(1, -2, 4)</m> and <m>(-3, 1, 1)</m>.
             </p>
             <p>
-                We need a point and a direction vector.  To find the direction vector we will use the ``head-tail" formula (Formula <xref ref="form-headminustailrn"/>) to find the vector whose tail is at <m>(1, -2, 4)</m> and whose head is at <m>(-3, 1, 1)</m>.  The direction vector is
+                We need a point and a direction vector.  To find the direction vector we will use the ``head-tail" formula (<xref ref="form-headminustailrn"/>) to find the vector whose tail is at <m>(1, -2, 4)</m> and whose head is at <m>(-3, 1, 1)</m>.  The direction vector is
                 <me>
                     \begin{bmatrix}-3-1\\1-(-2)\\1-4\end{bmatrix}=\begin{bmatrix}-4\\3\\-3\end{bmatrix}
                 </me>
@@ -331,7 +331,7 @@
         <title>From Parametric Equations to Vector Equations</title>
 
         <p>
-            Consider again the parametric equations from Exploration <xref ref="init-paramline2d"/>.
+            Consider again the parametric equations from <xref ref="init-paramline2d"/>.
             <md>
                 <mrow> x\amp=2t-1 </mrow>
                 <mrow> y\amp=-3t+6 </mrow>
@@ -408,7 +408,7 @@
             <exercise xml:id="prob-paramnotunique">
                 <statement>
                     <p>
-                        In Explorations <xref ref="init-paramline2d"/>, <xref ref="init-paramline2dpart2"/> and <xref ref="init-paramline2dpart3"/> you encountered a set of parametric equations
+                        In <xref ref="init-paramline2d"/>, <xref ref="init-paramline2dpart2"/> and <xref ref="init-paramline2dpart3"/> you encountered a set of parametric equations
                         <md>
                             <mrow> x\amp=2t-1 </mrow>
                             <mrow> y\amp=-3t+6 </mrow>
