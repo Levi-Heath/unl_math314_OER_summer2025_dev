@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="Chapter-Big-Ideas-about-Vectors" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Big Ideas about Vectors</title>
+
+  <p>
+    After completing this chapter, students should be able to do the following.
+  </p>
+  
+  <objectives>
+        <ul>
+            <li>
+                <p>
+                    Express vectors as linear combinations of other vectors in <m> \mathbb{R}^n </m> in both algebraic and geometric settings.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Interpret a system of linear equations as an expression of one vector as a linear combination of other vectors in <m> \mathbb{R}^n </m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Describe the span of a set of vectors in <m> \mathbb{R}^n </m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Determine linear independence / dependence of a set of vectors in <m> \mathbb{R}^n </m>.
+                </p>
+            </li> 
+            
+        </ul>
+</objectives>
+
+  <!-- include sections --> 
+  <xi:include href="Section-Span.ptx"/>
+  
+</chapter>
