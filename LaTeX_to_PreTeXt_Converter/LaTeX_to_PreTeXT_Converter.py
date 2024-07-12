@@ -269,7 +269,13 @@ def replace_choices(text):
         def choice_replacement(choice_match):
             correct = ' correct="yes"' if choice_match.group(1) else ''
             choice_text = choice_match.group(2).strip()
-            return f'    <choice{correct}>\n        <p> {choice_text} </p>\n    </choice>'
+            return( 
+                f'  <choice{correct}>\n'
+                f'      <statement>\n'
+                f'          <p> {choice_text} </p>\n'
+                f'      </statement>\n'
+                f'  </choice>'
+            )
         
         replaced_choices = re.sub(choice_pattern, choice_replacement, choices_text)
         
