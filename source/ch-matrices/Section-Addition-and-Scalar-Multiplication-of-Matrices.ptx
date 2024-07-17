@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="Section-Addition-and-Scalar-Multiplication-of-Matrices" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Addition and Scalar Multiplication of Matrices</title>
+
+
+
+<subsection xml:id="Subsection-Introduction-to-Matrices">
+    <title>Introduction to Matrices</title>
+
+<p>
+A <term>matrix</term> is a rectangular array of numbers. The plural form of <term>matrix</term> is <term>matrices</term>. You have encountered matrices before in the context of augmented matrices and coefficient matrices associate with linear systems.
+</p>
+
+<p>
+Consider the matrix
+<me>
+    M=\begin{bmatrix}
+1 \amp  2 \amp  3 \amp  4 \\
+5 \amp  2 \amp  8 \amp  7 \\
+6 \amp  -9 \amp  1 \amp  2
+\end{bmatrix}
+</me>
+</p>
+
+<p>
+The <term>dimension of a matrix</term> is defined as <m>m\times n</m> where <m>m</m> is the
+number of rows and <m>n</m> is the number of columns. The above matrix is a 
+<m>3\times 4</m> matrix because there are three rows and four columns.  
+</p>
+
+<p>
+A <term>column vector</term> in <m>\R^n</m> is an <m>n\times 1</m> matrix.  A <term>row vector</term> in <m>\R^n</m> is a <m>1\times n</m> matrix.  
+</p>
+
+<p>
+The individual <term>entries</term> in the matrix are identified according to their position. The <m>( i, j)</m>-entry of a matrix is the entry 
+in the <m>i^{th}</m> row and <m>j^{th}</m> column. For example, in matrix <m>M</m> above,  <m>8</m> is called the <m>(2,3)</m>-entry because it is in the second row and the third column. 
+</p>
+
+<p>
+We denote the entry in the <m>i^{th}</m> row  and the <m>j^{th}</m> column of matrix <m>A</m> by <m>a_{ij}</m>, and write <m>A</m> in terms of its entries
+as 
+<me>
+    A= \begin{bmatrix} a_{ij} \end{bmatrix}=\begin{bmatrix}
+           a_{11} \amp  a_{12}\amp \dots\amp a_{1j}\amp \dots\amp a_{1n}\\
+           a_{21}\amp a_{22} \amp \dots\amp a_{2j}\amp \dots \amp a_{2n}\\
+		\vdots \amp  \vdots\amp \amp \vdots\amp \amp \vdots\\
+        a_{i1}\amp a_{i2}\amp \dots \amp a_{ij}\amp \dots \amp a_{in}\\
+        \vdots \amp  \vdots\amp \amp \vdots\amp \amp \vdots\\
+		a_{m1}\amp a_{m2}\amp \dots \amp a_{mj}\amp \dots \amp a_{mn}
+         \end{bmatrix}
+</me>
+
+Occasionally it will be convenient to talk about columns and rows of a matrix <m>A</m> as vectors.  We will use the following notation:
+
+<me>
+    A=\begin{bmatrix}|\amp |\amp \amp |\\\mathbf{c}_1\amp  \mathbf{c}_2 \amp \ldots \amp  \mathbf{c}_n\\|\amp |\amp \amp |\end{bmatrix}\quad\text{or}\quad A=\begin{bmatrix}\mathbf{c}_1\amp  \mathbf{c}_2 \amp \ldots \amp  \mathbf{c}_n\end{bmatrix}
+</me>
+
+
+
+<me>
+    A=\begin{bmatrix}
+- \amp  \mathbf{r}_1 \amp  - \\ - \amp  \mathbf{r}_2 \amp  - \\ \amp  \vdots \amp  \\ - \amp  \mathbf{r}_m \amp  -
+\end{bmatrix}\quad\text{or}\quad A=\begin{bmatrix}\mathbf{r}_1\\\mathbf{r}_2\\\vdots\\\mathbf{r}_m\end{bmatrix}
+</me>
+</p>
+
+
+<p>
+A matrix is called a <term>square matrix</term> if it has the same number of rows and columns.
+If <m>B=\begin{bmatrix}b_{ij}\end{bmatrix}</m> is an <m>n \times n</m> square matrix, the entries of the form <m>b_{ii}</m> are said to lie on the <term>main diagonal</term>.  For example, if 
+<me>
+    B=\begin{bmatrix}1\amp 2\amp 3\\4\amp 5\amp 6\\7\amp 4\amp 9\end{bmatrix}
+</me>
+
+then the main diagonal consists of entries <m>b_{11}=1</m>, <m>b_{22}=5</m> and <m>b_{33}=9</m>.
+</p>
+
+<p>
+There are various operations which are done on matrices of appropriate 
+sizes. Matrices can be added to and subtracted from other matrices,
+multiplied by a scalar, and multiplied by other matrices. We will
+never divide a matrix by another matrix, but we will see later how multiplication by a matrix inverse (if an inverse exists) plays a similar role to division. 
+</p>
+
+<p>
+In doing arithmetic with matrices, we often define the action by what
+happens in terms of the entries (or components) of the
+matrices. Before looking at these operations in depth, consider a few
+general definitions.
+</p>
+
+
+
+<definition xml:id="def-zeromatrix">
+    <title>The Zero Matrix</title>
+    <statement>
+        <p>
+            The <m>m\times n</m> <term>zero matrix</term> is the <m>m\times n</m> matrix
+having every entry equal to zero. The zero matrix is
+denoted by <m>O</m>.
+        </p>
+    </statement>
+</definition>
+
+<definition xml:id="def-equalityofmatrices">
+    <title>Equality of Matrices</title>
+    <statement>
+        <p>
+            Let <m>A=\begin{bmatrix} a_{ij}\end{bmatrix}</m> and <m>B=\begin{bmatrix} b_{ij}\end{bmatrix}</m> be two <m>m \times n</m> matrices. Then <m>A=B</m> means
+that <m>a_{ij}=b_{ij}</m> for all <m>1\leq i\leq m</m> and 
+<m>1\leq j\leq n</m>.
+        </p>
+    </statement>
+</definition>
+</subsection>
+
+
+
+
+
+
+
+
+
+
+<subsection xml:id="Subsection-Addition-of-Matrices">
+    <title>Addition of Matrices</title>
+
+<p>
+Given two matrices of the same dimensions, we can add them together by adding their corresponding entries.
+</p>
+
+<definition xml:id="def-additionofmatrices">
+    <title>Addition of Matrices</title>
+    <statement>
+        <p>
+            Let <m>A=\begin{bmatrix} a_{ij}\end{bmatrix} </m> and <m>B=\begin{bmatrix} b_{ij}\end{bmatrix}</m> be two
+<m>m\times n</m> matrices. Then the <term>sum of matrices</term> <m>A</m> and <m>B</m>, denoted by <m>A+B</m>,  is an <m>m \times n</m>
+matrix  given by 
+
+<me>
+    A+B=\begin{bmatrix}a_{ij}+b_{ij}\end{bmatrix}
+</me>
+        </p>
+    </statement>
+</definition>
+
+<example xml:id="ex-samesizematrixaddition">
+    <statement>
+        <p>
+            Find the sum of <m>A</m> and <m>B</m>, if possible.
+<me>
+A = \begin{bmatrix}
+1 \amp  2 \amp  3 \\
+1 \amp  0 \amp  4
+\end{bmatrix},
+B = \begin{bmatrix}
+5 \amp  2 \amp  3 \\
+-6 \amp  2 \amp  1
+\end{bmatrix}
+</me>
+       </p>
+    </statement>
+    <answer>
+        <p>
+            Notice that both <m>A</m> and <m>B</m> are of size <m>2 \times 3</m>. 
+Since <m>A</m> and <m>B</m> are of the same size, addition is possible. 
+<md>
+<mrow> A + B \amp = \begin{bmatrix}
+1 \amp  2 \amp  3 \\
+1 \amp  0 \amp  4
+\end{bmatrix}
++
+\begin{bmatrix}
+5 \amp  2 \amp  3 \\
+-6 \amp  2 \amp  1
+\end{bmatrix} </mrow>
+<mrow> \amp =
+\begin{bmatrix}
+1+5 \amp  2+2 \amp  3+3 \\
+1+ -6 \amp  0+2 \amp  4+1
+\end{bmatrix} </mrow>
+<mrow> \amp =
+\begin{bmatrix}
+6 \amp  4 \amp  6 \\
+-5 \amp  2 \amp  5
+\end{bmatrix} </mrow>
+</md>
+       </p>
+    </answer>
+</example>
+
+<p>
+Going forward, whenever we write <m>A+B</m> it will be assumed that the two matrices are of equal size and addition is possible.
+</p> 
+
+<theorem xml:id="th-propertiesofaddition">
+    <title>Properties of Matrix Addition</title>
+    <statement>
+        <p>
+            Let <m>A,B</m> and <m>C</m> be matrices. Then the following properties hold. 
+
+<ol>
+<li xml:id="item-mataddcomm">
+  <p> Commutative Law of Addition:
+
+<me>
+    A+B=B+A
+</me>
+</p>
+</li>
+  
+
+
+<li xml:id="item-mataddass">
+  <p> Associative Law of Addition:
+<me>
+    \left( A+B\right) +C=A+\left( B+C\right) 
+</me>
+</p>
+</li>
+
+
+<li xml:id="item-mataddid">
+  <p> Additive Identity: There exists a zero matrix such that
+<me>
+    A+O=A
+</me>
+</p>
+</li>
+
+
+<li xml:id="item-mataddinv">
+  <p> Additive Inverse: There exists a matrix, <m>-A</m>, such that
+<me>
+    A+\left( -A\right) =O 
+</me>
+</p>
+</li>
+
+</ol>
+        </p>
+    </statement>
+    <proof>
+        <p>
+            We will prove Properties <xref ref="item-mataddcomm"/> and <xref ref="item-mataddinv"/>.  The remaining properties are left as exercises.  
+        </p>   
+            <p>[Proof of <xref ref="item-mataddcomm"/>:]
+                The <m>(i,j)</m>-entry of <m>A+B</m> is given by
+                
+                <me>
+                    a_{ij}+b_{ij}
+                </me>
+                
+                
+                The <m>(i,j)</m>-entry of <m>B+A</m> is given by
+                
+                <me>
+                    b_{ij}+a_{ij}
+                </me>
+                
+                
+                Since <m>a_{ij}+b_{ij}=b_{ij}+a_{ij}</m>, for all <m>i</m>, <m>j</m>, we conclude that <m>A+B=B+A</m>.
+                    </p>
+               
+                    <p>[Proof of <xref ref="item-mataddinv"/>:]
+                Let <m>-A</m> be defined by
+                
+                <me>
+                    -A=\begin{bmatrix}-a_{ij}\end{bmatrix}
+                </me>
+                
+                Then <m>A+(-A)=O</m>.
+                    </p>
+    </proof>
+</theorem>
+
+
+<p>
+You will recognize the zero matrix of <xref ref="th-propertiesofaddition"/><xref ref="item-mataddid"/> as the zero matrix of <xref ref="def-zeromatrix"/>. 
+</p>
+</subsection>
+
+
+
+
+
+
+
+
+
+<subsection xml:id="Subsection-Scalar-Multiplication-of-Matrices">
+    <title>Scalar Multiplication of Matrices</title>
+
+<p>
+When a matrix is multiplied by a scalar, the new matrix is obtained by multiplying every entry of the original matrix
+by the given scalar. 
+</p>
+
+<definition xml:id="def-scalarmultofmatrices">
+    <title>Scalar Multiplication of Matrices</title>
+    <statement>
+        <p>
+            If <m>A=\begin{bmatrix} a_{ij}\end{bmatrix} </m> and <m>k</m> is a scalar,
+then <m>kA=\begin{bmatrix} ka_{ij}\end{bmatrix}</m>.
+        </p>
+    </statement>
+</definition>
+
+<example xml:id="ex-effectofscalarmult">
+    <statement>
+        <p>
+            Find <m>7A</m> if
+<me>
+    A=\begin{bmatrix}
+2 \amp  0 \\
+1 \amp  -4
+\end{bmatrix}
+</me>
+       </p>
+    </statement>
+
+    <answer>
+        <p>
+            By Definition <xref ref="def-scalarmultofmatrices"/>, we multiply each entry of <m>A</m> by <m>7</m>. Therefore,
+<me>
+    7A = 
+7\begin{bmatrix}
+2 \amp  0 \\
+1 \amp  -4
+\end{bmatrix} =
+\begin{bmatrix}
+7(2) \amp  7(0) \\
+7(1) \amp  7(-4)
+\end{bmatrix} =
+\begin{bmatrix}
+14 \amp  0 \\
+7 \amp  -28
+\end{bmatrix}
+</me>
+       </p>
+    </answer>
+</example>
+
+
+<theorem xml:id="th-propertiesscalarmult">
+    <title>Properties of Scalar Multiplication</title>
+    <statement>
+        <p>
+            Let <m>A, B</m> be matrices, and <m>k, p</m> be scalars. Then, the following properties properties of scalar multiplication hold.
+<ol>
+<li xml:id="item-scalardistmatadd">
+<p> 
+Distributive Law over Matrix Addition:
+<me>
+k \left( A+B\right) =k A+ kB  
+</me>
+</p>
+</li>
+
+<li xml:id="item-matdistscalaradd">
+  <p>Distributive Law over Scalar Addition:
+<me>
+\left( k +p \right) A= k A+p A
+</me>
+</p>
+</li>
+
+<li xml:id="item-scalarmatmultass">
+  <p> Associative Law for Scalar Multiplication:
+<me>
+k \left( p A\right) = \left( k p \right) A 
+</me> </p>
+</li>
+
+<li xml:id="item-matmult1">
+  <p> Multiplication by <m>1</m>:
+<me>
+1A=A  
+</me> </p>
+</li>
+</ol>
+        </p>
+    </statement>
+
+</theorem>
+
+<p>
+The proof of this theorem is similar to the proof of Theorem <xref ref="th-propertiesofaddition"/> and is left as an exercise.
+</p> 
+</subsection>
+
+
+
+
+
+
+<subsection xml:id="Subsection-Practice-Problems">
+    <title>Practice Problems</title>
+
+<exercises>
+<exercise xml:id="prob-matrixops1">
+    <statement>
+        <p>
+            If 
+<me>
+    A=\begin{bmatrix}2\amp -1\\3\amp 4\end{bmatrix}\quad\text{and}\quad B=\begin{bmatrix}3\amp 0\\-2\amp 1\end{bmatrix}
+</me>
+
+then what is the matrix <m>2(A+B)</m>?
+</p>
+</statement>
+
+<answer>
+<p>
+    <me>
+2(A+B) = \begin{bmatrix}10\amp -2\\2\amp 10\end{bmatrix}
+    </me>
+</p>
+</answer>
+</exercise>
+
+
+
+    <exercise xml:id="prob-matrixops2">
+        <statement>
+            <p>
+                If 
+    <me>
+        A=\begin{bmatrix}2\amp -1\\3\amp 4\end{bmatrix}\quad\text{and}\quad B=\begin{bmatrix}3\amp 0\\-2\amp 1\end{bmatrix}
+    </me>
+    
+    then what is the matrix <m>3A-2B</m>?
+</p>
+    </statement>
+    
+    <answer>
+<p>
+        <me>
+    3A-2B=\begin{bmatrix}0\amp -3\\13\amp 10\end{bmatrix}
+        </me>
+ </p>
+    </answer>
+</exercise>
+
+
+
+
+<exercise xml:id="prob-proofmataddass">
+    <statement>
+        <p>
+            Prove properties <xref ref="item-mataddass"/> and  <xref ref="item-mataddid"/> of Theorem <xref ref="th-propertiesofaddition"/>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="prob-proofpropertiesscalarmult">
+    <statement>
+        <p>
+            Prove Theorem <xref ref="th-propertiesscalarmult"/>.
+        </p>
+    </statement>
+</exercise>
+</exercises>
+</subsection>
+</section>

@@ -176,15 +176,15 @@ For <xref ref="item-spanintro2"/>, we need to solve the following vector equatio
 
 
 <p>
-In part <xref ref="item-spanintro1"/> of Example <xref ref="ex-spanintro"/> we expressed <m>\mathbf{u}</m> as a linear combination of <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>, and concluded that <m>\mathbf{u}</m> lies in the plane determined by <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>.  We say that <m>\mathbf{u}</m> is <term>in the span</term> of <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>.  In fact, every vector in the plane determined by <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m> is in the span of <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>.  We say that <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m> <term>span the plane</term>.
+In <xref ref="item-spanintro1"/> of <xref ref="ex-spanintro"/> we expressed <m>\mathbf{u}</m> as a linear combination of <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>, and concluded that <m>\mathbf{u}</m> lies in the plane determined by <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>.  We say that <m>\mathbf{u}</m> is <term>in the span</term> of <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>.  In fact, every vector in the plane determined by <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m> is in the span of <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>.  We say that <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m> <term>span the plane</term>.
 </p>
 
 <p>
-In contrast, vector <m>\mathbf{w}</m> of part <xref ref="item-spanintro2"/> of Example <xref ref="ex-spanintro"/> is not a linear combination of <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>.  We say that <m>\mathbf{w}</m> is not in the span of <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>.
+In contrast, vector <m>\mathbf{w}</m> of <xref ref="item-spanintro2"/> of <xref ref="ex-spanintro"/> is not a linear combination of <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>.  We say that <m>\mathbf{w}</m> is not in the span of <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>.
 </p>
 
 <p>
-The following video takes another look at Example <xref ref="ex-spanintro"/> using our new vocabulary.
+The following video takes another look at <xref ref="ex-spanintro"/> using our new vocabulary.
 </p>
 
 <video youtube="videoID" play-at="select"/>
@@ -472,7 +472,7 @@ Because Procedure <xref ref="pro-lincombgeo"/> can be applied to vectors that li
 </statement>
   
    <choices>
-    <choice>¨
+    <choice>
         <statement>
         <p> Plane in <m>\R^3</m> </p>
         </statement>

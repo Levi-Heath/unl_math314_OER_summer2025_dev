@@ -34,6 +34,8 @@
 </objectives>
 
   <!-- include sections --> 
-  <xi:include href="Section-Span.ptx"/>
+<xi:include href="Section-Linear-Combinations-of-Vectors.ptx"/>
+<xi:include href="Section-Span.ptx"/>
+<xi:include href="Section-Linear-Independence.ptx"/>
   
 </chapter>

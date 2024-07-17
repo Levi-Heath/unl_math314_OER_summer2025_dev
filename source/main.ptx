@@ -15,6 +15,7 @@
     <xi:include href="./ch-prelims/Chapter-Preliminaries.ptx" />
     <xi:include href="./ch-systems-of-lin-eqns/Chapter-Systems-of-Linear-Equations.ptx" />
     <xi:include href="./ch-big-ideas-about-vectors/Chapter-Big-Ideas-about-Vectors.ptx" />
+    <xi:include href="./ch-matrices/Chapter-Matrices.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
