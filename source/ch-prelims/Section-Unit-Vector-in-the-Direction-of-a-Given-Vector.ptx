@@ -82,7 +82,7 @@
     <me>
         \norm{\mathbf{v}}=\sqrt{4+9+1+1}=\sqrt{15}
     </me>
-    By Theorem <xref ref="th-unit"/>, 
+    By <xref ref="th-unit"/>, 
     <me>
         \mathbf{u}=\begin{bmatrix}2/\sqrt{15}\\-3/\sqrt{15}\\1/\sqrt{15}\\0\\1/\sqrt{15}\end{bmatrix}=\frac{1}{\sqrt{15}}\begin{bmatrix}2\\-3\\1\\0\\1\end{bmatrix}
     </me>

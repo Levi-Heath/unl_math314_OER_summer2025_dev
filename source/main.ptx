@@ -6,7 +6,7 @@
 
   <book xml:id="my-great-book">
     <title>Linear Algebra</title>
-    <subtitle>Based on Anna Davis's and Paul Zachlin's Linear Algebra: An Interactice Introduction</subtitle>
+    <subtitle>Based on Anna Davis's and Paul Zachlin's Linear Algebra: An Interactive Introduction</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />

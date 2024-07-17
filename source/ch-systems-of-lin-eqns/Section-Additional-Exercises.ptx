@@ -1936,7 +1936,7 @@ These equations are linear in the new variables <m>x_{1} = x^{2}</m>, <m>x_{2} =
        </p>
   </statement>
 \label{oct:rref}
-Use Octave to check your work on Problems <xref ref="prb-2.18"/> to <xref ref="prb-2.38"/>.  The command <m>\mbox{rref}(A)</m> is an easy way to obtain the reduced row echelon form of a matrix.  It is more challenging to go through the steps of Gaussian elimination, but it can be done.
+Use Octave to check your work on <xref ref="prb-2.18"/> to <xref ref="prb-2.38"/>.  The command <m>\mbox{rref}(A)</m> is an easy way to obtain the reduced row echelon form of a matrix.  It is more challenging to go through the steps of Gaussian elimination, but it can be done.
 
 To use Octave, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.  The code does the first two steps of <xref ref="prb-2.18"/>.  See if you can add one more command which will put the matrix into row echelon form.
 
@@ -1960,7 +1960,7 @@ A(3,:)=-1/2*A(1,:)+A(3,:)
        </p>
   </statement>
 \label{oct:rank}
-Use Octave to check your work on Problems <xref ref="prb-2.44"/> to <xref ref="prb-2.54"/>.  The command <m>\mbox{rank}(A)</m> is an easy way to obtain the rank of a matrix.  Of course, you can also use <m>\mbox{rref}(A)</m> and you obtain even more information!  Problem <xref ref="prb-2.44"/> is entered in the code below.  
+Use Octave to check your work on <xref ref="prb-2.44"/> to <xref ref="prb-2.54"/>.  The command <m>\mbox{rank}(A)</m> is an easy way to obtain the rank of a matrix.  Of course, you can also use <m>\mbox{rref}(A)</m> and you obtain even more information! <xref ref="prb-2.44"/> is entered in the code below.  
 
 To use Octave, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
 

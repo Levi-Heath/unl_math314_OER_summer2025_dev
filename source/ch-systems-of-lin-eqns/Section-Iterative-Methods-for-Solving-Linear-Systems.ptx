@@ -59,7 +59,7 @@ Iterative methods have become more important as computers have become more ubiqu
 </p>
 
 <p>
-In this section we will explore two different iterative methods for solving a system of linear equations.  Exploration <xref ref="exp-gauss-seidel2x2"/> was a geometric representation of the <term>Gauss-Seidel</term> method for a system of two equations with two unknowns.  We will show how this may be implemented numerically to approximate the solution to a system of equations.  However, we first  explore a related method known as <term>Jacobi's method</term>.
+In this section we will explore two different iterative methods for solving a system of linear equations. <xref ref="exp-gauss-seidel2x2"/> was a geometric representation of the <term>Gauss-Seidel</term> method for a system of two equations with two unknowns.  We will show how this may be implemented numerically to approximate the solution to a system of equations.  However, we first  explore a related method known as <term>Jacobi's method</term>.
 </p>
 
 <subsection xml:id="Subsection-Jacobis-method">
@@ -74,7 +74,7 @@ To use <term>Jacobi's method</term> for solving a linear system of <m>n</m> equa
 </p>
 
 <p>
-Let's return to the system of equations from Exploration <xref ref="exp-gauss-seidel2x2"/>.  To use Jacobi's method to approximate the solution to the system, we solve for a different variable in each of the two equations.  This gives us two formulas, one for each unknown.  We begin with our initial guess <m>\mathbf{v}_0</m>, and use these formulas to compute the next iteration <m>\mathbf{v}_1</m>.  Taking the vector <m>\mathbf{v}_1</m>, and we again apply these formulas to compute the next iteration to arrive at <m>\mathbf{v}_2</m>.
+Let's return to the system of equations from <xref ref="exp-gauss-seidel2x2"/>.  To use Jacobi's method to approximate the solution to the system, we solve for a different variable in each of the two equations.  This gives us two formulas, one for each unknown.  We begin with our initial guess <m>\mathbf{v}_0</m>, and use these formulas to compute the next iteration <m>\mathbf{v}_1</m>.  Taking the vector <m>\mathbf{v}_1</m>, and we again apply these formulas to compute the next iteration to arrive at <m>\mathbf{v}_2</m>.
 <me>\begin{array}{ccccc}
       5x\amp -\amp2y\amp=\amp10\\
       x \amp +\amp3y\amp= \amp36 
@@ -258,7 +258,7 @@ Notice how much more efficient the Gauss-Seidel method is than Jacobi's method. 
 <subsection xml:id="Subsection-Convergence-of-Iterative-Methods">
     <title>Convergence of Iterative Methods</title>
 <p>
-We observed in Exploration <xref ref="exp-gauss-seidel2x2"/> that the Gauss-Seidel method converged for the linear system <xref ref="eq-diagdom1"/>.  However, when we switched the order of the equations, writing the same linear system using <xref ref="eq-diagdom2"/>, the method failed to converge.  
+We observed in <xref ref="exp-gauss-seidel2x2"/> that the Gauss-Seidel method converged for the linear system <xref ref="eq-diagdom1"/>.  However, when we switched the order of the equations, writing the same linear system using <xref ref="eq-diagdom2"/>, the method failed to converge.  
 </p>
 
 <p>
@@ -306,7 +306,7 @@ For each of the linear systems examined above, determine whether or not the coef
 <ol>
     <li>
     <p>
-        In Example~<xref ref="ex-3x3iterative"/> we considered the linear system 
+        In <xref ref="ex-3x3iterative"/> we considered the linear system 
     
 <me>
     \begin{array}{ccccccc}
@@ -333,7 +333,7 @@ For each of the linear systems examined above, determine whether or not the coef
 </li> 
     <li>
     <p>
-        In Exploration~<xref ref="exp-gauss-seidel2x2"/> we considered the linear system 
+        In <xref ref="exp-gauss-seidel2x2"/> we considered the linear system 
   
 <me>
     \begin{array}{ccccc}
@@ -358,7 +358,7 @@ For each of the linear systems examined above, determine whether or not the coef
 </li>     
     <li>
     <p>
-        Later in the same Exploration~<xref ref="exp-gauss-seidel2x2"/>, we switched the order of the equations, giving us the linear system 
+        Later in the same <xref ref="exp-gauss-seidel2x2"/>, we switched the order of the equations, giving us the linear system 
   
 <me>
     \begin{array}{ccccc}
@@ -403,7 +403,7 @@ The proof of this theorem at this point in the course would take us too far astr
 </p>
 
 <p>
-Note that the converse of this theorem is false.  Sometimes these iterative methods converge even though the coefficient matrices are not strictly diagonally dominant.  Practice Problem <xref ref="prob-systems-iterative"/> gives two examples where both methods converge to the solution even though the coefficient matrices are not strictly diagonally dominant.  
+Note that the converse of this theorem is false.  Sometimes these iterative methods converge even though the coefficient matrices are not strictly diagonally dominant. <xref ref="prob-systems-iterative"/> gives two examples where both methods converge to the solution even though the coefficient matrices are not strictly diagonally dominant.  
 We say that strict diagonal dominance is <term>sufficient</term> to guarantee convergence, but it is not a <term>necessary</term> condition for convergence.
 </p>
 </subsection>
@@ -491,7 +491,7 @@ We say that strict diagonal dominance is <term>sufficient</term> to guarantee co
         The lines, <m>x+3y=1</m> and <m>4x-y=3.</m> intersect at <m>x=\frac{10}{13},y=\frac{1}{13}</m>.  Use Jacobi's method and the Gauss-Seidel method with an initial guess of <m>x=0,y=0</m> to find an approximate solution where each coordinate is within 0.1 of the exact solution.  Write the coefficient matrix so it is strictly diagonally dominant in order to ensure convergence.
        </p>
        <p>
-        Problem <xref ref="prb-2.1"/> comes from the end of Chapter 1 of Ken Kuttler's <url href="https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017"><em>A First Course in Linear Algebra</em></url>.
+        <xref ref="prb-2.1"/> comes from the end of Chapter 1 of Ken Kuttler's <url href="https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017"><em>A First Course in Linear Algebra</em></url>.
        </p>
   </statement>
 </exercise>

@@ -6,9 +6,29 @@
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
   <titlepage>
     <author>
-      <personname>ADD AUTHORS</personname>
-      <department>DEPARTMENT</department>
-      <institution>INSTITUTION</institution>
+      <personname>Anna Davis</personname>
+      <department>Department of Mathematics</department>
+      <institution>Ohio Dominican University</institution>
+    </author>
+    <author>
+      <personname>Paul Zachlin</personname>
+      <department>Department of Mathematics</department>
+      <institution>Lakeland Community College</institution>
+    </author>
+    <author>
+      <personname>Allan Donsig</personname>
+      <department>Department of Mathematics</department>
+      <institution>University of Nebraska-Lincoln</institution>
+    </author>
+    <author>
+      <personname>Levi Heath</personname>
+      <department>Department of Mathematics</department>
+      <institution>University of Nebraska-Lincoln</institution>
+    </author>
+    <author>
+      <personname>Mikkel Munkholm</personname>
+      <department>Department of Mathematics</department>
+      <institution>University of Nebraska-Lincoln</institution>
     </author>
     <date>
       <today />

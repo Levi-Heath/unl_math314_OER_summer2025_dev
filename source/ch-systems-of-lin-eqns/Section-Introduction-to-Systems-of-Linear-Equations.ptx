@@ -13,7 +13,7 @@
         <title>Algebra of Linear Systems</title>
         
         <p>
-            When you were first introduced to systems of equations, you learned to solve for one variable in terms of the other(s), then substitute.  Here, we will introduce another method.  This alternative method involves adding multiples of one equation to another equation in order to eliminate one of the variables.  This method will form the foundation for an algorithm we will develop for solving linear systems and performing other computations related to systems.  Exploration <xref ref="init-systwoeqs1"/> illustrates how the second method works.
+            When you were first introduced to systems of equations, you learned to solve for one variable in terms of the other(s), then substitute.  Here, we will introduce another method.  This alternative method involves adding multiples of one equation to another equation in order to eliminate one of the variables.  This method will form the foundation for an algorithm we will develop for solving linear systems and performing other computations related to systems. <xref ref="init-systwoeqs1"/> illustrates how the second method works.
         </p>
 
         <exploration xml:id="init-systwoeqs1">
@@ -102,7 +102,7 @@
         </exploration>
 
         <p>
-            In Exploration <xref ref="init-systwoeqs1"/> we introduced elementary row operations and the notation associated with them. We now make these definitions formal.
+            In <xref ref="init-systwoeqs1"/> we introduced elementary row operations and the notation associated with them. We now make these definitions formal.
         </p>
 
         <definition xml:id="def-elemrowops">
@@ -146,11 +146,11 @@
         </definition>
 
         <p>
-            As we applied elementary row operations to the system in Exploration <xref ref="init-systwoeqs1"/>, the system changed, but a quick check will convince you that all six systems have the same solution: <m>(-1, 2)</m>.  The six systems are said to be <term>equivalent</term>.  
+            As we applied elementary row operations to the system in <xref ref="init-systwoeqs1"/>, the system changed, but a quick check will convince you that all six systems have the same solution: <m>(-1, 2)</m>.  The six systems are said to be <term>equivalent</term>.  
         </p>
 
         <p>
-            It turns out that if a system of equations is transformed into another system through a sequence of elementary row operations, the new system will be equivalent to the original system, in other words, both systems will have the same solution(s).  We will formalize this statement as Theorem <xref ref="th-elemRowOpsEquivSys"/> at the end of this section.
+            It turns out that if a system of equations is transformed into another system through a sequence of elementary row operations, the new system will be equivalent to the original system, in other words, both systems will have the same solution(s).  We will formalize this statement as <xref ref="th-elemRowOpsEquivSys"/> at the end of this section.
         </p>
 
         <example xml:id="ex-threeeqthreevars1">
@@ -307,7 +307,7 @@
         <title>Geometry of Linear Systems in Two Variables</title>
         
         <p>
-            Exploration Problem <xref ref="init-systwoeqs1"/> offers an example of a linear system of two equations and two unknowns (variables) with a unique solution.  
+            <xref ref="init-systwoeqs1"/> offers an example of a linear system of two equations and two unknowns (variables) with a unique solution.  
             <me>
                 \begin{array}{ccccc}
                 2x\amp   - \amp   y\amp  =\amp  -4\\
@@ -460,7 +460,7 @@
                  0x\amp   +\amp  0y\amp  =\amp  0\amp  \quad\leftarrow\mbox{Always true}
                 \end{array}
             </me>
-            Unlike the situation in Example <xref ref="ex-systwoeqs2"/>, any combination of <m>x</m> and <m>y</m> satisfies the second equation.  So, any ordered pair <m>(x, y)</m> that satisfies the first equation will satisfy the second equation.  Thus, the solution set for this system is the same as the set of all solutions of <m>4x+3y=2</m>.  
+            Unlike the situation in <xref ref="ex-systwoeqs2"/>, any combination of <m>x</m> and <m>y</m> satisfies the second equation.  So, any ordered pair <m>(x, y)</m> that satisfies the first equation will satisfy the second equation.  Thus, the solution set for this system is the same as the set of all solutions of <m>4x+3y=2</m>.  
             </p>
             
             <p>
@@ -560,7 +560,7 @@
         <title>Geometry of Linear Systems in Three Variables</title>
 
         <p>
-            In Example <xref ref="ex-threeeqthreevars1"/> we solved the following linear system of three equations and three unknowns
+            In <xref ref="ex-threeeqthreevars1"/> we solved the following linear system of three equations and three unknowns
             <me>
                 \begin{array}{ccccccc}
                   3x \amp   - \amp   y\amp  +\amp  z\amp  = \amp  0 \\
@@ -924,7 +924,7 @@
             <exercise xml:id="prob-nonzeroprovision">
                 <statement>
                    <p>
-                    Why is there a non-zero provision in Part <xref ref="item-constantmult"/> of Definition <xref ref="def-elemrowops"/>?  Why is there not a non-zero provision in Part <xref ref="item-addrow"/>?
+                    Why is there a non-zero provision in <xref ref="item-constantmult"/> of <xref ref="def-elemrowops"/>?  Why is there not a non-zero provision in <xref ref="item-addrow"/>?
                    </p>
               </statement>
             </exercise>
