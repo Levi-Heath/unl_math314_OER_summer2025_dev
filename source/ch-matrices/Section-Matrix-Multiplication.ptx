@@ -227,7 +227,7 @@ In terms of components, if the <m>i^{th}</m> row of <m>A</m> is
 </me>
 
 then the <m>(i,j)</m>-entry of <m>AB</m> is given by
-<men>\label{eq:ijentrymatrixproduct}a_{i1}b_{1j}+a_{i2}b_{2j}+\dots +a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}
+<men xml:id="ijentrymatrixproduct">a_{i1}b_{1j}+a_{i2}b_{2j}+\dots +a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}
 </men>
 </p>
 
@@ -428,7 +428,7 @@ Next we list several important properties of matrix multiplication. These proper
         <p>
             The following hold for matrices <m>A,B,</m> and <m>C</m> and for scalar <m>c</m>,
 <ol>
-<li xml:id="item-matrixproperties1">
+<li xml:id="matrixproperties1">
   <p> \label{item:matrixproperties1} Left Distributive Property
 
 <me>
@@ -436,15 +436,16 @@ Next we list several important properties of matrix multiplication. These proper
 </me> </p>
 </li>
 
-<li xml:id="item-matrixproperties2">
+<li xml:id="matrixproperties2">
   <p> Right Distributive Property:
 
-<me> </p>
-</li>
+<me> 
     \left( B+C\right) A=BA+CA
 </me>
+</p>
+</li>
 
-<li xml:id="item-matrixproperties3">
+<li xml:id="matrixproperties3">
   <p>  Associativity:
 
 <me>
@@ -452,7 +453,7 @@ Next we list several important properties of matrix multiplication. These proper
 </me> </p>
 </li>
 
-<li xml:id="item-matrixproperties4">
+<li xml:id="matrixproperties4">
   <p> Matrix multiplication behaves well with scalar multiplication:
 
 <me>
@@ -460,7 +461,7 @@ Next we list several important properties of matrix multiplication. These proper
 </me> </p>
 </li>
 
-<li xml:id="item-identitymatrix">
+<li xml:id="identitymatrix">
   <p> Multiplicative Identity:
 
 <me>
@@ -475,7 +476,7 @@ Next we list several important properties of matrix multiplication. These proper
 
 <proof>
     <p>
-We prove <xref ref="item-matrixproperties1"/> using the expression in (<xref ref="eq-ijentrymatrixproduct"/>) for the <m>(i,j)</m>-entry of a matrix product. (The proof of <xref ref="item-matrixproperties2"/> is similar.) The <m>(i,j)</m>-entry of <m>A(B+C)</m> is given by
+We prove <xref ref="matrixproperties1"/> using the expression in (<xref ref="ijentrymatrixproduct"/>) for the <m>(i,j)</m>-entry of a matrix product. (The proof of <xref ref="matrixproperties2"/> is similar.) The <m>(i,j)</m>-entry of <m>A(B+C)</m> is given by
 
 
 <me>
@@ -489,17 +490,17 @@ Thus <m>A(B+C) =AB+AC</m>.
 </p>
 
 <p>
-For <xref ref="item-matrixproperties4"/>,
+For <xref ref="matrixproperties4"/>,
 
 <me>
     c\left(\sum_{k}a_{ik}b_{kj}\right) = \sum_{k}\left(c a_{ik}\right)b_{kj} = \sum_{k}a_{ik} \left(b_{kj} c\right).
 </me>
 
-For <xref ref="item-identitymatrix"/>, the <m>(i,j)</m>-entry of the product <m>AI</m> is given by the dot product of the <m>i^{th}</m> row of <m>A</m> with the standard unit vector <m>\mathbf{e}_j</m>.  Clearly, this dot product is <m>a_{ij}</m>.  Because the <m>(i,j)</m>-entry of the product <m>AI</m> is equal to the <m>(i,j)</m>-entry <m>A</m>, we conclude that <m>AI=A</m>.  The proof that <m>IA=A</m> is similar.
+For <xref ref="identitymatrix"/>, the <m>(i,j)</m>-entry of the product <m>AI</m> is given by the dot product of the <m>i^{th}</m> row of <m>A</m> with the standard unit vector <m>\mathbf{e}_j</m>.  Clearly, this dot product is <m>a_{ij}</m>.  Because the <m>(i,j)</m>-entry of the product <m>AI</m> is equal to the <m>(i,j)</m>-entry <m>A</m>, we conclude that <m>AI=A</m>.  The proof that <m>IA=A</m> is similar.
 </p>
 
 <p>
-Note that we skipped the proof of <xref ref="item-matrixproperties3"/>, which is quite cumbersome using sigma notation.  We will easily tackle this proof later in the course when we cover <url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/LTR-0030/main">Composition of Linear Transformations</url>.
+Note that we skipped the proof of <xref ref="matrixproperties3"/>, which is quite cumbersome using sigma notation.  We will easily tackle this proof later in the course when we cover <url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/LTR-0030/main">Composition of Linear Transformations</url>.
     </p>
 </proof>
 </subsection>
@@ -508,10 +509,13 @@ Note that we skipped the proof of <xref ref="item-matrixproperties3"/>, which is
 
 
 
+
+
+
 <subsection xml:id="Subsection-Practice-Problems">
     <title>Practice Problems</title>
 
-
+<exercises>
 <exercise xml:id="prob-matprodundefined">
     <statement>
         <p>
@@ -534,10 +538,18 @@ Note that we skipped the proof of <xref ref="item-matrixproperties3"/>, which is
             Express the given product as a linear combination of the columns of the matrix.
 
 <me>
-    \begin{bmatrix}1\amp 2\amp 3\amp 4\\5\amp 6\amp 7\amp 8\end{bmatrix}\begin{bmatrix}-2\\3\\-5\\7\end{bmatrix}=-2\begin{bmatrix}1\\5\end{bmatrix}+3\begin{bmatrix}2\\6\end{bmatrix}+-5\begin{bmatrix}3\\7\end{bmatrix}+7\begin{bmatrix}4\\8\end{bmatrix}
+    \begin{bmatrix}1\amp 2\amp 3\amp 4\\5\amp 6\amp 7\amp 8\end{bmatrix}\begin{bmatrix}-2\\3\\-5\\7\end{bmatrix}.
 </me>
         </p>
     </statement>
+
+<answer>
+    <p>
+<me>
+    \begin{bmatrix}1\amp 2\amp 3\amp 4\\5\amp 6\amp 7\amp 8\end{bmatrix}\begin{bmatrix}-2\\3\\-5\\7\end{bmatrix}=-2\begin{bmatrix}1\\5\end{bmatrix}+3\begin{bmatrix}2\\6\end{bmatrix}+-5\begin{bmatrix}3\\7\end{bmatrix}+7\begin{bmatrix}4\\8\end{bmatrix}
+</me>
+    </p>
+</answer>
 </exercise>
 
 
@@ -547,7 +559,7 @@ Note that we skipped the proof of <xref ref="item-matrixproperties3"/>, which is
 <exercisegroup xml:id="prob-matproddim">
 <introduction>
     <p>
-        Predict the dimensions of each product. 
+        Predict the dimensions of each product.
     </p>
 </introduction>
 
@@ -557,22 +569,32 @@ Note that we skipped the proof of <xref ref="item-matrixproperties3"/>, which is
             <me>
     \begin{bmatrix}1\amp 2\amp 3\end{bmatrix}\begin{bmatrix}4\\5\\6\end{bmatrix}
 </me>
+</p>
+</statement>
 
-Dimensions of product: <m>1\times 1</m>
-        </p>
-    </statement>
+<answer>
+<p>
+Dimensions of product: <m>1\times 1</m>.
+</p>
+</answer>
 </exercise>
 
 <exercise>
     <statement>
-        <p>
-            <me>
+ <p>
+ <me>
     \begin{bmatrix}1\amp 2\\3\amp 4\\5\amp 6\end{bmatrix}\begin{bmatrix}1\amp 2\amp 3\amp 4\\5\amp 6\amp 7\amp 8\end{bmatrix}
 </me>
+</p>
+</statement>
 
+<answer>
+    <p>
 Dimensions of product: <m>3\times 4</m>
-        </p>
-    </statement>
+</p>
+</answer>
+        
+
 </exercise>
 </exercisegroup>
 
@@ -590,33 +612,48 @@ Dimensions of product: <m>3\times 4</m>
     <statement>
         <p>
             <me>
-    \begin{bmatrix}1\amp 3\amp -2\amp 1\\-2\amp 1\amp 0\amp 4\end{bmatrix}\begin{bmatrix}4\\-2\\1\\1\end{bmatrix}=\begin{bmatrix}-3\\-6\end{bmatrix}
+    \begin{bmatrix}1\amp 3\amp -2\amp 1\\-2\amp 1\amp 0\amp 4\end{bmatrix}\begin{bmatrix}4\\-2\\1\\1\end{bmatrix}
 </me>
         </p>
     </statement>
+    <answer>
+        <p>
+    <me>\begin{bmatrix}-3\\-6\end{bmatrix}</me>
+    </p>
+    </answer>
 </exercise>
 
 <exercise>
     <statement>
         <p>
             <me>
-    \begin{bmatrix}1\amp 2\amp 3\end{bmatrix}\begin{bmatrix}-1\amp 2\amp -3\amp 1\\1\amp 1\amp -1\amp -2\\0\amp 1\amp 2\amp 1\end{bmatrix}=\begin{bmatrix}1\amp 7\amp 1\amp 0\end{bmatrix}
+    \begin{bmatrix}1\amp 2\amp 3\end{bmatrix}\begin{bmatrix}-1\amp 2\amp -3\amp 1\\1\amp 1\amp -1\amp -2\\0\amp 1\amp 2\amp 1\end{bmatrix}
 </me>
         </p>
     </statement>
+    <answer>
+        <p>
+    <me>\begin{bmatrix}1\amp 7\amp 1\amp 0\end{bmatrix}</me>
+    </p>
+    </answer>
 </exercise>
 
 <exercise>
     <statement>
         <p>
             <me>
-    \begin{bmatrix}1\amp 2\\-1\amp 0\\2\amp 3\\-4\amp -1\end{bmatrix}\begin{bmatrix}-1\amp 1\\2\amp -3\end{bmatrix}=\begin{bmatrix}3\amp -5\\1\amp -1\\4\amp -7\\2\amp -1\end{bmatrix}
-
+    \begin{bmatrix}1\amp 2\\-1\amp 0\\2\amp 3\\-4\amp -1\end{bmatrix}\begin{bmatrix}-1\amp 1\\2\amp -3\end{bmatrix}
 </me>
         </p>
     </statement>
+    <answer>
+        <p>
+    <me>\begin{bmatrix}3\amp -5\\1\amp -1\\4\amp -7\\2\amp -1\end{bmatrix}</me>
+    </p>
+    </answer>
 </exercise>
 </exercisegroup>
+</exercises>
 </subsection>
 
 

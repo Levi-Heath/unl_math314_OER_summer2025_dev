@@ -26,39 +26,36 @@
             <statement>
                 <p>
                     What is the span of these vectors?
+            <ol marker="a">
+                <li>
+                    <p>
+                        A line.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                    All of <m>\mathbb{R}^2</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                    A parallelogram.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                    A parallelipiped.
+                    </p>
+                </li>
+
+            </ol>
                 </p>
             </statement>
-            
-                <choices>
-                <choice>
-                    <statement>
-                        <p>
-                        A line
-                        </p>
-                    </statement>
-                </choice>
-                <choice correct="yes">
-                    <statement>
-                        <p>
-                        <m>\R^2 </m>.
-                        </p>
-                    </statement>
-                </choice>
-                <choice>
-                    <statement>
-                        <p>
-                        A parallelogram.
-                        </p>
-                    </statement>
-                </choice>
-                <choice>
-                    <statement>
-                        <p>
-                        A parallelepiped.
-                        </p>
-                    </statement>
-                </choice>
-                </choices>
+            <answer>
+                <p>
+                Option b: All of <m>\mathbb{R}^2</m>
+                </p>
+            </answer>
             </problem>
 
                 <p> 
@@ -72,65 +69,67 @@
             <statement>
                <p>
             Which of the following is true?
-               </p>
-            </statement>
+            <ol marker="a">
+                <li>
+                    <p>
+                <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}\right)</m> is a line.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}\right)=\R^2</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}\right)</m> is a parallelogram.
+                    </p>
+                </li>
 
-                <choices>
-                    <choice>
-                    <statement>
-                        <p>
-                            <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)</m>}
-                        </p>
-                    </statement>
-                    </choice>
-                    <choice correct="yes">
-                    <statement>
-                        <p>
-                            <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}\right)</m> is a line
-                        </p>
-                    </statement>
-                    </choice>
-                    
-                    <choice>
-                    <statement>
-                        <p>
-                            <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}\right)=\R^2</m>}
-                        </p>
-                    </statement>
-                    </choice>
-                    <choice>
-                    <statement>
-                        <p>
-                            <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}\right)</m> is a parallelogram.
-                        </p>
-                    </statement>
-                    </choice>
-                </choices>
+            </ol>
+            </p>
+            </statement>
+            <answer>
+            <p>
+            Option b: <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}\right)</m> is a line.
+            </p>
+            </answer>
                 </problem>
 
+
+
+
+
             <problem>
+                
             <statement>
                 <p>
                 Removing <m>\begin{bmatrix}2\\1\end{bmatrix}</m> from <m>\left\{\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right\}</m> does what?
+            
+                <ol marker="a">
+                    <li>
+                        <p>
+                    It changes the span.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                   It does not change the span.
+                        </p>
+                    </li>
+                </ol>
                 </p>
-            </statement>
-                
-                <choices>
-                    <choice correct="yes">
-                    <statement>
-                        <p>
-                        changed the span
-                        </p>
-                    </statement>
-                    </choice>
-                    <choice correct="yes">
-                    <statement>
-                        <p>
-                        did not change the span
-                        </p>
-                    </statement>
-                    </choice>
-                </choices>
+                </statement>
+            <answer>
+                <p>
+            Option a: It does change the span.
+                </p>
+            </answer>
             </problem>
 
 
@@ -143,64 +142,68 @@
             <statement>
                 <p>
                     Which of the following is true?
+            <ol marker="a">
+            <li>
+                <p>
+            <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix} 2\\1\end{bmatrix}\right)\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)</m>.
                 </p>
+            </li>
+
+            <li>
+            <p>
+            <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)</m> is a line.
+            </p>
+            </li>
+
+            <li>
+                <p>
+            <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)</m> is the right side of the coordinate plane.        
+                </p>
+            </li>
+
+            <li>
+                <p>
+            <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)</m> is a parallelogram.       
+                </p>
+            </li>
+            </ol>
+            </p>
             </statement>
 
-                <choices>
-                    <choice correct="yes">
-                    <statement>
-                        <p>
-                            <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}\right)</m> is a parallelogram.
-                        </p>
-                    </statement>
-                    </choice>
-                    <choice>
-                    <statement>
-                        <p>
-                            <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)</m> is a line
-                        </p>
-                    </statement>
-                    </choice>
-                    <choice>
-                    <statement>
-                        <p>
-                            <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)</m> is the right side of the coordinate plane.
-                        </p>
-                    </statement>
-                    </choice>
-                    <choice>
-                    <statement>
-                        <p>
-                            <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)</m> is a parallelogram.
-                        </p>
-                    </statement>
-                    </choice>
-                </choices>
+            <answer>
+                <p>
+            Option a: <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix} 2\\1\end{bmatrix}\right)\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)</m>.
+                </p>
+            </answer>
             </problem>
+
+
 
         <problem>
         <statement>
              <p>
             Removing <m>\begin{bmatrix}-4\\2\end{bmatrix}</m> from <m>\left\{\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right\}</m> does what?
-             </p>
+             
+        <ol marker="a">
+        <li>
+            <p>
+        It changes the span.
+            </p>
+        </li>
+        <li>
+            <p>
+        It does not change the span.
+            </p>
+        </li>
+        
+        </ol>
+        </p>
         </statement>
-
-            <choices>
-                <choice correct="yes">
-                <statement>
-                    <p>
-                    changed the span
-                    </p>
-                </statement>
-                </choice>
-                <choice correct="yes">
-                <statement>
-                    <p>
-                    did not change the span
-                    </p>
-                </statement>
-                </choice>
-            </choices>
+        <answer>
+            <p>
+        Option b: It does change the span.
+            </p>
+        </answer>
         </problem>
         </exploration>
 
@@ -249,6 +252,9 @@
             The following Exploration delves into what happens when a vector in a given set is a linear combination of the other vectors.
         </p>
 
+
+
+
         <exploration xml:id="exp-redundantVecs2">
             <p>
                 Consider the set of vectors
@@ -259,14 +265,46 @@
                 RIGHT-CLICK and DRAG to rotate the interactive graph.
                 <figure>
                     <caption> A larger version of this activity is available <url href="https://www.geogebra.org/calculator/x72vbsaw" visual="geogebra.org">here</url>. </caption>
-                    <interactive xml:id="geogebra-ADD-LINK_ID" platform="geogebra" width="100%" aspect="400:400">
-                    <slate xml:id="ADD-LINK_ID" surface="geogebra" material="x72vbsaw" aspect="400:400" />
+                    <interactive xml:id="geogebra-Span-Triple_Vector" platform="geogebra" width="100%" aspect="400:400">
+                    <slate xml:id="Span-Triple_Vector" surface="geogebra" material="x72vbsaw" aspect="400:400" />
                     </interactive>
                 </figure>
-                <m>\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)</m> is \wordChoice{\choice{A line}, \choice[correct]{A plane}, \choice{<m>\R^3</m>}, \choice{A parallelepiped}}
+            </p>
+
+        <problem>
+            <statement>
+         <p>
+                    <m>\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)</m> is 
+            <ol marker="a">
+            <li>
+                <p>
+            A line.
+                </p>
+            </li>
+            <li>
+                <p>
+            A plane.
+                </p>
+            </li>
+            <li>
+                <p>
+            All of <m>\R^3</m>
+                </p>
+            </li>
+        </ol>
+                </p>
+            </statement>
+        </problem>
+        <answer>
+        <p>
+        Option b: A plane.
+        </p>
+        </answer>
+
+        <p>
 Can we remove one of the vectors from the set without changing the span?  Observe that we can write <m>\begin{bmatrix}4\\4\\-1\end{bmatrix}</m> as a linear combination of the other two vectors
-                <men>
-\label{eq:redundant}\begin{bmatrix}4\\4\\-1\end{bmatrix}=2\begin{bmatrix}1\\2\\-1\end{bmatrix}+1\begin{bmatrix}2\\0\\1\end{bmatrix}
+                <men xml:id="eq-redundant">
+\begin{bmatrix}4\\4\\-1\end{bmatrix}=2\begin{bmatrix}1\\2\\-1\end{bmatrix}+1\begin{bmatrix}2\\0\\1\end{bmatrix}
                 </men>
  This means that we can write any vector in <m>\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)</m> as a linear combination of only <m>\begin{bmatrix}1\\2\\-1\end{bmatrix}</m> and <m>\begin{bmatrix}2\\0\\1\end{bmatrix}</m> by replacing <m>\begin{bmatrix}4\\4\\-1\end{bmatrix}</m> with the expression in (<xref ref="eq-redundant"/>). For example, 
                 <me>
@@ -277,7 +315,7 @@ We have
     \mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix}\right)
                 </me>
  We conclude that vector <m>\begin{bmatrix}4\\4\\-1\end{bmatrix}</m> is redundant.  Can each of the other two vectors in the set 
-                <m>\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}</m> be considered redundant?  You will address this question in Practice Problem <xref ref="prob-redundant1"/>.
+                <m>\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}</m> be considered redundant? You will address this later in the practice problems.  <!--You will address this question in <xref ref="prob-redundant1"/>-->.
             </p>
         </exploration>
 
@@ -285,6 +323,10 @@ We have
  Collections of vectors that do not contain redundant vectors are very important in linear algebra.  We will refer to such collections as <term>linearly independent</term>.  Collections of vectors that contain redundant vectors will be called <term>linearly dependent</term>.  The following section offers a definition that will allow us to easily determine linear dependence and independence of vectors.
         </p>
     </subsection>
+
+
+
+
 
 
     <subsection xml:id="Subsection-Linear-Independence">
@@ -334,7 +376,7 @@ It turns out that these questions are equivalent.  In other words, if the answer
         <example xml:id="ex-linind">
             <statement>
                 <p>
-            What can we say about the following sets of vectors in light of Remark <xref ref="remark-LinIndEquiv"/>?
+            What can we say about the following sets of vectors in light of Remark <xref ref="LinIndEquiv"/>?
                     <ol>
                         <li xml:id="item-linindpart1">
                             <p>
@@ -360,9 +402,9 @@ It turns out that these questions are equivalent.  In other words, if the answer
             <answer>
  <p>           
 We will start by addressing linear independence for <xref ref="item-linindpart1"/>.  To do so, we will solve the vector equation
-                    <mdn xml:id="linrelationpart1">
+                    <men xml:id="linrelationpart1">
 c_1\begin{bmatrix}2\\-3\end{bmatrix}+c_2 \begin{bmatrix}0\\3\end{bmatrix}+c_3\begin{bmatrix}1\\-1\end{bmatrix}+c_4\begin{bmatrix}1\\-2\end{bmatrix}=\mathbf{0}
-                    </mdn>
+                    </men>
  Clearly <m>c_1=c_2=c_3=c_4=0</m> is a solution to the equation.  The question is whether another solution exists.
 The vector equation translates into the following system:
                     <me>
@@ -379,7 +421,7 @@ The vector equation translates into the following system:
  1\amp 0\amp 1/2\amp 1/2\amp 0\\0\amp 1\amp 1/6\amp -1/6\amp 0
  \end{array}\right]
                     </me>
- This shows that (<xref ref="eq-linrelationpart1"/>) has infinitely many solutions:  
+ This shows that (<xref ref="linrelationpart1"/>) has infinitely many solutions:  
                     <me>
     c_1=-\frac{1}{2}s-\frac{1}{2}t,\quad c_2=-\frac{1}{6}s+\frac{1}{6}t,\quad c_3=s,\quad c_4=t
                     </me>
@@ -391,7 +433,7 @@ The vector equation translates into the following system:
 </p>
 
 <p> 
- Observe that (<xref ref="eq-ex1"/>) allows us to solve for one of the vectors and express it as a linear combination of the others. For example, 
+ Observe that (<xref ref="ex1"/>) allows us to solve for one of the vectors and express it as a linear combination of the others. For example, 
                     <men xml:id="ex1lincomb">
     \begin{bmatrix}2\\-3\end{bmatrix}=0 \begin{bmatrix}0\\3\end{bmatrix}+\begin{bmatrix}1\\-1\end{bmatrix}+\begin{bmatrix}1\\-2\end{bmatrix}
                     </men>
@@ -400,11 +442,11 @@ This would not be possible if a nontrivial solution to the equation
     c_1\begin{bmatrix}2\\-3\end{bmatrix}+c_2 \begin{bmatrix}0\\3\end{bmatrix}+c_3\begin{bmatrix}1\\-1\end{bmatrix}+c_4\begin{bmatrix}1\\-2\end{bmatrix}=\mathbf{0}
                     </me>
 did not exist.
-Using the linear combination in (<xref ref="eq-ex1lincomb"/>) and the argument of Exploration <xref ref="exp-redundantVecs2"/>, we conclude that <m>\begin{bmatrix}2\\-3\end{bmatrix}</m> is redundant in 
+Using the linear combination in (<xref ref="ex1lincomb"/>) and the argument of  <xref ref="exp-redundantVecs2"/>, we conclude that <m>\begin{bmatrix}2\\-3\end{bmatrix}</m> is redundant in 
                     <me>
     \left\{\begin{bmatrix}2\\-3\end{bmatrix}, \begin{bmatrix}0\\3\end{bmatrix},\begin{bmatrix}1\\-1\end{bmatrix},\begin{bmatrix}1\\-2\end{bmatrix}\right\}
                     </me>
-We find that the answer to all questions in Remark <xref ref="remark-LinIndEquiv"/> is ``YES".
+We find that the answer to all questions in Remark <xref ref="LinIndEquiv"/> is ``YES".
 </p>
 
 <p>
@@ -423,7 +465,7 @@ For part <xref ref="item-linindpart2"/> To address linear independence, we need 
 
  This shows that <m>c_1=c_2=0</m> is the only solution.  Therefore the two vectors are linearly independent.
  Furthermore, we cannot write one of the vectors as a linear combination of the other.  (Do you see that the only way this would be possible with a set of two vectors is if they were scalar multiples of each other?)
-Finally, we observe that removing either vector would change the span from a plane in <m>\R^3</m> to a line in <m>\R^3</m>, so the answer to all three questions in Remark <xref ref="remark-LinIndEquiv"/> is ``NO".
+Finally, we observe that removing either vector would change the span from a plane in <m>\R^3</m> to a line in <m>\R^3</m>, so the answer to all three questions in Remark <xref ref="LinIndEquiv"/> is ``NO".
  </p>
             </answer>
 
@@ -561,7 +603,7 @@ Theorem <xref ref="th-lindeplincombofother"/> gives us a convenient ways of look
 Two vectors are linearly dependent if and only if one is a scalar multiple of the other.  Two nonzero linearly dependent vectors may look like this:
             </p>
 
-                <image width="100%">
+                <image width="60%">
                     <shortdescription>Two vectors drawn</shortdescription>
                     <latex-image>
       \begin{tikzpicture}[scale=0.8]
@@ -574,7 +616,7 @@ Two vectors are linearly dependent if and only if one is a scalar multiple of th
 or like this:
 </p> 
 
-                <image width="100%">
+                <image width="30%">
                     <shortdescription>
                         One vector flipped
                     </shortdescription>
@@ -589,7 +631,7 @@ or like this:
 <p>
 Two linearly independent vectors will look like this:
 </p>
-                <image width="100%">
+                <image width="30%">
                     <shortdescription>
                         One vector rotated
                     </shortdescription>
@@ -615,7 +657,7 @@ Two linearly independent vectors will look like this:
                         <p>
                             (Linearly Dependent Vectors) The three vectors are scalar multiples of each other.
                         </p>
-                        <image width="100%">
+                        <image width="65%">
                             <shortdescription>
                             </shortdescription>
                             <latex-image>
@@ -632,7 +674,7 @@ Two linearly independent vectors will look like this:
                         <p>
                             (Linearly Dependent Vectors) Two of the vectors are scalar multiples of each other.
                         </p>
-                        <image width="100%">
+                        <image width="65%">
                             <shortdescription>
                             </shortdescription>
                             <latex-image>
@@ -650,7 +692,7 @@ Two linearly independent vectors will look like this:
                             (Linearly Dependent Vectors) One vector can be viewed as the diagonal of a parallelogram determined by scalar multiples of the other two vectors.
                             All three vectors lie in the same plane.
                         </p>
-                            <image width="100%">
+                            <image width="80%">
                                 <shortdescription>
                                 </shortdescription>
                                 <latex-image>
@@ -1113,7 +1155,7 @@ Two linearly independent vectors will look like this:
 
         <exercise>
         <statement>
-            <image width="100%">
+            <image width="50%">
                 <shortdescription>
                 Example with three vectors
                 </shortdescription>
@@ -1161,7 +1203,7 @@ Two linearly independent vectors will look like this:
 
         <exercise xml:id="prob-linindmultchoice10">
         <statement>
-                <image width="100%">
+                <image width="60%">
                     <shortdescription>
                     Example with two vectors
                     </shortdescription>

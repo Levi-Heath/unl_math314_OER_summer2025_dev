@@ -140,8 +140,8 @@ Block multiplication has theoretical uses, as we shall see later. It is also use
 <subsection xml:id="Subsection-Practice-Problems">
     <title>Practice Problems</title>
 
-
-<exercise xml:id="prob-blockmatmult1">
+<exercises>
+<exercise xml:id="blockmatmult1">
     <statement>
         <p>
             Compute <m>AB</m>, using the indicated block partitioning.
@@ -178,7 +178,7 @@ AB = \left[ \begin{array}{rr|r}
     </answer>
 </exercise>
 
-<exercisegroup xml:id="prob-block-powers">
+<exercisegroup xml:id="block-powers">
     <introduction>
         <p>
             In each case give formulas for all powers <m>A, A^{2}, A^{3}, \dots</m> of <m>A</m> using the block decomposition indicated.
@@ -189,26 +189,27 @@ AB = \left[ \begin{array}{rr|r}
 <exercise>
 <statement>
 <p> 
-<m>A = \left[ \begin{array}{r|rr}
-1 \amp  0 \amp  0 \\ </p>
-</li>
+<me>A = \left[ \begin{array}{r|rr}
+1 \amp  0 \amp  0 \\
 \hline
 1 \amp  1  \amp  -1\\
 1 \amp  -1 \amp  1
 \end{array} \right]
-</m>
+</me>
+</p>
 </statement>
 
 <answer>
 <p>
-<m>
+<me>
 A^{2k} = \left[ \begin{array}{rc|rr}
 1 \amp  -2k \amp  0 \amp  0 \\
 0 \amp  1 \amp  0 \amp  0 \\
 \hline
 0 \amp  0 \amp  1 \amp  0 \\
 0 \amp  0 \amp  0 \amp  1
-\end{array} \right]</m> for <m>k = 0, 1, 2, \dots</m>
+\end{array} \right], \quad \text{for} \ k = 0, 1, 2, \dots
+</me>
 </p>
 </answer>
 </exercise>
@@ -216,25 +217,27 @@ A^{2k} = \left[ \begin{array}{rc|rr}
 <exercise>
     <statement>
     <p> 
-    <m> A = \left[ \begin{array}{rr|rr}
+    <me> A = \left[ \begin{array}{rr|rr}
         1 \amp  -1 \amp  2 \amp  -1 \\
-        0 \amp  1 \amp  0 \amp  0 \\ </p>
-        </li>
+        0 \amp  1 \amp  0 \amp  0 \\
         \hline
         0 \amp  0 \amp  -1 \amp  1 \\
         0 \amp  0 \amp  0 \amp  1
         \end{array} \right]
-        </m>
+        </me>
+    </p>
     </statement>
 
 <answer>
-<m>A^{2k + 1} = A^{2k}A = \left[ \begin{array}{rc|rr}
+<p>
+<me>A^{2k + 1} = A^{2k}A = \left[ \begin{array}{rc|rr}
 1 \amp  -(2k + 1) \amp  2 \amp  -1 \\
 0 \amp  1 \amp  0 \amp  0 \\
 \hline
 0 \amp  0 \amp  -1 \amp  1 \\
 0 \amp  0 \amp  0 \amp  1
-\end{array} \right]</m> for <m>k = 0, 1, 2, \dots</m>
+\end{array} \right], \quad \text{for} \ k = 0, 1, 2, \dots</me>
+</p>
 </answer>
 </exercise>
 </exercisegroup>
@@ -251,22 +254,22 @@ A^{2k} = \left[ \begin{array}{rc|rr}
 <li>
       <p> <m>\left[ \begin{array}{rr}
 I \amp  X \\
--Y \amp  I </p>
-</li>
+-Y \amp  I 
 \end{array} \right] \left[ \begin{array}{rr}
 I \amp  0 \\
 Y \amp  I
 \end{array} \right]
 </m>
+</p>
 </li>
 
 <li>
       <p> 
 <m>\left[ \begin{array}{cc}
 I \amp  X \\
-0 \amp  -I </p>
-</li>
-\end{array} \right]^{n}, \quad \geq 1</m>
+0 \amp  -I 
+\end{array} \right]^{n}, \quad \text{any} \ n \geq 1
+</m>
 </p>
 </li>
 
@@ -274,29 +277,32 @@ I \amp  X \\
       <p>
 <m>\left[ \begin{array}{cc}
 0 \amp  X \\
-I \amp  0 </p>
-</li>
-\end{array} \right]^{n}, \quad any \geq 1
+I \amp  0 
+\end{array} \right]^{n}, \quad \text{any} \  n \geq 1
 </m>
 </p>
 </li>
+
 </ol>
 </p>
 </statement>
 
 <answer>
-<m>\left[ \begin{array}{cc}
+<p>
+<me>\left[ \begin{array}{cc}
 X^{m} \amp  0 \\
 0 \amp  X^{m}
-\end{array} \right]</m> if <m>n = 2m</m>;
-<m>\left[ \begin{array}{cc}
+\end{array} \right] \quad \text{if} \ n = 2m; \quad \
+\left[ \begin{array}{cc}
 0 \amp  X^{m + 1} \\
 X^{m} \amp  0
-\end{array} \right]</m> if <m>n = 2m + 1</m>
-        </p>
+\end{array} \right], \quad \text{if} \ n = 2m + 1.
+ </me>
+ </p>
     </answer>
 </exercise>
-
+</exercises>
 
 </subsection>
+
 </section>

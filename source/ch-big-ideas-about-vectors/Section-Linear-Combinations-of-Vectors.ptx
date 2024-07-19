@@ -103,13 +103,13 @@ Let <m>\mathbf{w}=\begin{bmatrix}1\\2\end{bmatrix}</m> and <m>\mathbf{v}=\begin{
 <problem>
 <statement>
     <p>
-    Use the same vectors <m>\mathbf{w}</m> and <m>\mathbf{v}</m> as in the previous part.  Do you think it is possible to express any vector in <m>\R^2</m> as a linear combination of <m>\mathbf{w}</m> and <m>\mathbf{v}</m>?  \wordChoice{\choice[correct]{Yes}, \choice{No}}    
+    Use the same vectors <m>\mathbf{w}</m> and <m>\mathbf{v}</m> as in the previous part.  Do you think it is possible to express any vector in <m>\R^2</m> as a linear combination of <m>\mathbf{w}</m> and <m>\mathbf{v}</m>?    
     </p>
 </statement>
 
 <answer>
     <p>
-    <me> k_1=1,\quad k_2=3 </me>
+    <me> \text{Yes} </me>
     </p>
 </answer>
 </problem>
@@ -118,13 +118,13 @@ Let <m>\mathbf{w}=\begin{bmatrix}1\\2\end{bmatrix}</m> and <m>\mathbf{v}=\begin{
 <problem>
     <statement>
         <p>
-    Let <m>\mathbf{w}=\begin{bmatrix}4\\2\end{bmatrix}</m> and <m>\mathbf{v}=\begin{bmatrix}-2\\-1\end{bmatrix}</m>.  Do you think it is possible to express any vector in <m>\R^2</m> as a linear combination of <m>\mathbf{w}</m> and <m>\mathbf{v}</m>?  \wordChoice{\choice{Yes}, \choice[correct]{No}} 
+    Let <m>\mathbf{w}=\begin{bmatrix}4\\2\end{bmatrix}</m> and <m>\mathbf{v}=\begin{bmatrix}-2\\-1\end{bmatrix}</m>.  Do you think it is possible to express any vector in <m>\R^2</m> as a linear combination of <m>\mathbf{w}</m> and <m>\mathbf{v}</m>. Argue why/why not and write? 
         </p>
     </statement>
 
 <answer>
     <p>
-    <me> k_1=-1,\quad k_2=-2 </me>  
+    <me> \text{No} </me>  
     </p>
 </answer>
     </problem>
@@ -164,6 +164,9 @@ RIGHT-CLICK and DRAG the left panel to rotate the image.
 <subsection xml:id="Subsection-Geometry-of-Linear-Combinations">
     <title>Geometry of Linear Combinations</title>
 
+<p>
+We now explore how to geometrically examine linear combinations, starting with an example.
+</p>
 
 <example xml:id="ex-lincombparallelogrammethod">
     <statement>
@@ -178,7 +181,7 @@ RIGHT-CLICK and DRAG the left panel to rotate the image.
             We are looking for <m>\begin{bmatrix}3\\-4\end{bmatrix}</m> to be the diagonal of a parallelogram determined by scalar multiples of <m>\begin{bmatrix}-1\\3\end{bmatrix}</m> and <m>\begin{bmatrix}-4\\2\end{bmatrix}</m>.  
 
 
-<image width="100%">
+<image width="80%">
    <shortdescription>The three vectors drawn in the real plane.</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.8]
@@ -200,7 +203,7 @@ RIGHT-CLICK and DRAG the left panel to rotate the image.
 Because a scalar multiple of a vector can point in the same direction as the vector or in the opposite direction, we will start by drawing straight lines determined by the two vectors.
 
 
-<image width="100%">
+<image width="80%">
    <shortdescription>Scaling the vectors from before</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.8]
@@ -226,7 +229,7 @@ Because a scalar multiple of a vector can point in the same direction as the vec
 The two lines that we drew will contain the sides of the parallelogram we are looking for.  To find the other two sides we will draw lines parallel to <m>\begin{bmatrix}-1\\3\end{bmatrix}</m> and <m>\begin{bmatrix}-4\\2\end{bmatrix}</m> through the head of vector <m>\begin{bmatrix}3\\-4\end{bmatrix}</m>.
 
 
-<image width="100%">
+<image width="80%">
    <shortdescription>Paralell lines added to second step</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.8]
@@ -251,7 +254,7 @@ The two lines that we drew will contain the sides of the parallelogram we are lo
 Now the parallelogram is clearly visible.
 
 
-<image width="100%">
+<image width="80%">
    <shortdescription>Parallelogram drawn</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.8]
@@ -277,7 +280,7 @@ Now the parallelogram is clearly visible.
 The last remaining task is to identify the sides of the parallelogram as scalar multiples of <m>\begin{bmatrix}-1\\3\end{bmatrix}</m> and <m>\begin{bmatrix}-4\\2\end{bmatrix}</m>.  We do this by identifying vectors <m>\begin{bmatrix}1\\-3\end{bmatrix}</m> and <m>\begin{bmatrix}2\\-1\end{bmatrix}</m> as the vectors that determine the parallelogram.
 
 
-<image width="100%">
+<image width="80%">
    <shortdescription>Two sidepoints added</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.8]
@@ -314,7 +317,7 @@ Now we can write <m>\begin{bmatrix}3\\-4\end{bmatrix}</m> as a linear combinatio
 </example>
 
 <p>
-The method we used in Example <xref ref="ex-lincombparallelogrammethod"/> to express the given vector as a linear combination of two other vectors is sufficiently useful that we summarize the steps.
+The method we used in <xref ref="ex-lincombparallelogrammethod"/> to express the given vector as a linear combination of two other vectors is sufficiently useful that we summarize the steps.
 </p>
 
 
@@ -383,7 +386,7 @@ The method we used in Example <xref ref="ex-lincombparallelogrammethod"/> to exp
 
 <exploration xml:id="exp-proc4">
     <p>
-        This GeoGebra interactive will allow you to go through the steps given in Procedure <xref ref="pro-lincombgeo"/> for a combination of vectors of your choice.  To use the interactive
+        This GeoGebra interactive will allow you to go through the steps given in <xref ref="pro-lincombgeo"/> for a combination of vectors of your choice.  To use the interactive
 <ol>
     <li>
       <p> Enter components of vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m>. </p>
@@ -392,7 +395,7 @@ The method we used in Example <xref ref="ex-lincombparallelogrammethod"/> to exp
       <p> Enter components of vector <m>\mathbf{w}</m> that you want to express as a linear combination of <m>\mathbf{u}</m> and <m>\mathbf{v}</m>. </p>
 </li>
     <li>
-      <p> Use the navigation bar to go through the steps of Procedure <xref ref="pro-lincombgeo"/> </p>
+      <p> Use the navigation bar to go through the steps of <xref ref="pro-lincombgeo"/> </p>
 </li>
 </ol>
 
@@ -419,7 +422,7 @@ The method we used in Example <xref ref="ex-lincombparallelogrammethod"/> to exp
     <title>From Geometry to Algebra of Linear Combinations</title>
 </subsection>
 <p>
-One of the stipulations in Procedure <xref ref="pro-lincombgeo"/> is that vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m> should be non-collinear.  You can use the interactive in Exploration <xref ref="exp-proc4"/> to investigate what happens when <m>\mathbf{u}</m> and <m>\mathbf{v}</m> are collinear.  The following example examines what happens from a geometric as well as an algebraic standpoint.
+One of the stipulations in <xref ref="pro-lincombgeo"/> is that vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m> should be non-collinear.  You can use the interactive in <xref ref="exp-proc4"/> to investigate what happens when <m>\mathbf{u}</m> and <m>\mathbf{v}</m> are collinear.  The following example examines what happens from a geometric as well as an algebraic standpoint.
 </p>
 
 <example xml:id="ex-lincombgeometry2">
@@ -477,7 +480,7 @@ a-2b\amp =2
 
 When you try to solve this system, you will find that the system is inconsistent.  Thus, <m>\begin{bmatrix}3\\2\end{bmatrix}</m> cannot be written as a linear combination of <m>\begin{bmatrix}-3\\1\end{bmatrix}</m> and <m>\begin{bmatrix}6\\-2\end{bmatrix}</m>.
 
-We know that there is no way to express <m>\begin{bmatrix}3\\2\end{bmatrix}</m> as a linear combination of vectors <m>\begin{bmatrix}-3\\1\end{bmatrix}</m> and <m>\begin{bmatrix}6\\-2\end{bmatrix}</m>.  What would happen if we tried to apply Procedure <xref ref="pro-lincombgeo"/> to these vectors?  You can use the GeoGebra interactive in Exploration <xref ref="exp-proc4"/> to find out.
+We know that there is no way to express <m>\begin{bmatrix}3\\2\end{bmatrix}</m> as a linear combination of vectors <m>\begin{bmatrix}-3\\1\end{bmatrix}</m> and <m>\begin{bmatrix}6\\-2\end{bmatrix}</m>.  What would happen if we tried to apply <xref ref="pro-lincombgeo"/> to these vectors?  You can use the GeoGebra interactive in <xref ref="exp-proc4"/> to find out.
        </p>
     </answer>
 </example>
@@ -608,6 +611,9 @@ This translates into the following system of equations:
 
 
 
+
+
+
 <subsection xml:id="Subsection-Practice-Problems">
     <title>Practice Problems</title>
 
@@ -647,7 +653,7 @@ System of linear equations:
 <exercise xml:id="prob-lincombtwovectors2">
     <statement>
         <p>
-            Use Procedure <xref ref="pro-lincombgeo"/> to express <m>\begin{bmatrix}-3\\0\end{bmatrix}</m> as a linear combination of <m>\begin{bmatrix}2\\4\end{bmatrix}</m> and <m>\begin{bmatrix}-1\\1\end{bmatrix}</m>.
+            Use <xref ref="pro-lincombgeo"/> to express <m>\begin{bmatrix}-3\\0\end{bmatrix}</m> as a linear combination of <m>\begin{bmatrix}2\\4\end{bmatrix}</m> and <m>\begin{bmatrix}-1\\1\end{bmatrix}</m>.
 
 Linear Combination:
 
@@ -673,7 +679,7 @@ Linear Combination:
 <exercise>
     <statement>
         <p>
-We have seen Procedure <xref ref="pro-lincombgeo"/> applied to vectors in <m>\R^2</m>.  The same process can, in certain cases be applied to vectors in <m>\R^3</m>.  In both parts of this problem you will be asked to follow the steps in Procedure <xref ref="pro-lincombgeo"/> to express one vector as a linear combination of two given vectors.  Then you will be asked to identify the condition which makes it possible to do so.
+We have seen <xref ref="pro-lincombgeo"/> applied to vectors in <m>\R^2</m>.  The same process can, in certain cases be applied to vectors in <m>\R^3</m>.  In both parts of this problem you will be asked to follow the steps in <xref ref="pro-lincombgeo"/> to express one vector as a linear combination of two given vectors.  Then you will be asked to identify the condition which makes it possible to do so.
         </p>
 
 <p>
@@ -723,7 +729,7 @@ RIGHT-CLICK and DRAG to rotate the image.
  <exercise>
 <statement>
       <p> 
-        Use the navigation bar at the bottom of the interactive window to view construction steps of Procedure <xref ref="pro-lincombgeo"/> applied to vectors <m>\mathbf{u}</m>, <m>\mathbf{v}</m> and <m>\mathbf{w}</m>.  (Right-click and drag to rotate the image.)  Use the final image to 
+        Use the navigation bar at the bottom of the interactive window to view construction steps of <xref ref="pro-lincombgeo"/> applied to vectors <m>\mathbf{u}</m>, <m>\mathbf{v}</m> and <m>\mathbf{w}</m>.  (Right-click and drag to rotate the image.)  Use the final image to 
  express <m>w</m> as a linear combination of <m>v</m> (blue) and <m>u</m> (red).
       </p>
 </statement>

@@ -389,7 +389,7 @@ k \left( p A\right) = \left( k p \right) A
 </theorem>
 
 <p>
-The proof of this theorem is similar to the proof of Theorem <xref ref="th-propertiesofaddition"/> and is left as an exercise.
+The proof of this theorem is similar to the proof of <xref ref="th-propertiesofaddition"/> and is left as an exercise.
 </p> 
 </subsection>
 
@@ -452,7 +452,7 @@ then what is the matrix <m>2(A+B)</m>?
 <exercise xml:id="prob-proofmataddass">
     <statement>
         <p>
-            Prove properties <xref ref="item-mataddass"/> and  <xref ref="item-mataddid"/> of Theorem <xref ref="th-propertiesofaddition"/>.
+            Prove properties <xref ref="item-mataddass"/> and  <xref ref="item-mataddid"/> of <xref ref="th-propertiesofaddition"/>.
         </p>
     </statement>
 </exercise>
@@ -460,7 +460,7 @@ then what is the matrix <m>2(A+B)</m>?
 <exercise xml:id="prob-proofpropertiesscalarmult">
     <statement>
         <p>
-            Prove Theorem <xref ref="th-propertiesscalarmult"/>.
+            Prove <xref ref="th-propertiesscalarmult"/>.
         </p>
     </statement>
 </exercise>

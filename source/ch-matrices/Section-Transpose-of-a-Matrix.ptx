@@ -66,7 +66,7 @@ The <m>( i, j)</m>-entry of <m>A</m> becomes the
 
 
 
-<example xml:id="ex-transposematrix">
+<problem xml:id="ex-transposematrix">
     <statement>
         <p>
             Calculate <m>A^T</m> for the following matrix
@@ -93,7 +93,7 @@ A^T =
 Note that <m>A</m> is a <m>2 \times 3</m> matrix, while <m>A^T</m> is a <m>3 \times 2</m> matrix. The columns of <m>A</m> are the rows of <m>A^T</m>, and the rows of <m>A</m> are the columns of <m>A^T</m>.
        </p>
     </answer>
-</example>
+</problem>
 
 
 
@@ -133,7 +133,7 @@ We will prove <xref ref="item-matrixtranspose1"/>.  The remaining properties are
 
 
 <proof>
-    <p>[Proof of ~<xref ref="item-matrixtranspose1"/>:]
+    <p>[Proof of <xref ref="item-matrixtranspose1"/>:]
 Note that <m>A</m> and <m>B</m> have compatible dimensions, so that <m>AB</m> is defined and has dimensions <m>m\times p</m>.  Thus, <m>(AB)^T</m> has dimensions <m>p\times m</m>.  On the right side of the equality, <m>A^T</m> has dimensions <m>n\times m</m>, and <m>B^T</m> has dimensions <m>p\times n</m>.  Therefore <m>B^TA^T</m> is defined and has dimensions <m>p\times m</m>.  Now we know that <m>(AB)^T</m> and <m>B^TA^T</m> have the same dimensions.
     </p>
 
@@ -257,11 +257,11 @@ A special case of a symmetric matrix is a <term>diagonal matrix</term>.  A diago
     <title>Practice Problems</title>
 
 
-
+<exercises>
 <exercise xml:id="prob-transpropsproofs">
     <statement>
         <p>
-            Prove Properties <xref ref="item-transoftrans"/>, <xref ref="item-matrixtranspose2"/> and <xref ref="item-matrixtranspose3"/> of Theorem <xref ref="th-transposeproperties"/>.
+            Prove Properties <xref ref="item-transoftrans"/>, <xref ref="item-matrixtranspose2"/> and <xref ref="item-matrixtranspose3"/> of <xref ref="th-transposeproperties"/>.
         </p>
     </statement>
 </exercise>
@@ -318,7 +318,7 @@ A special case of a symmetric matrix is a <term>diagonal matrix</term>.  A diago
 <exercise xml:id="prob-symmetricclassification2">
     <statement>
         <p>
-            <me>
+<me>
     \begin{bmatrix}
 0 \amp  1 \amp  -3\\
 -1 \amp  0 \amp  -2\\
@@ -352,7 +352,7 @@ A special case of a symmetric matrix is a <term>diagonal matrix</term>.  A diago
 <exercise xml:id="prob-symmetricclassification3">
     <statement>
         <p>
-            <me>
+ <me>
     \begin{bmatrix}
 1 \amp  1 \amp  3\\
 1 \amp  -1 \amp  2\\
@@ -380,8 +380,6 @@ A special case of a symmetric matrix is a <term>diagonal matrix</term>.  A diago
       </statement>
   </choice>
 </choices>
-        </p>
-    </statement>
 </exercise>
 </exercisegroup>
 
@@ -402,7 +400,7 @@ Make a conjecture about the main diagonal entries of a skew symmetric matrix.  P
         </p>
     </statement>
 </exercise>
-
+</exercises>
 
 
 </subsection>

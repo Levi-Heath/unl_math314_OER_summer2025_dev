@@ -69,5 +69,8 @@
 
   <!-- include sections --> 
  <xi:include href="Section-Addition-and-Scalar-Multiplication-of-Matrices.ptx"/>
-  
+ <xi:include href="Section-Matrix-Multiplication.ptx"/>
+ <xi:include href="Section-Block-Matrix-Multiplication.ptx"/>
+ <xi:include href="Section-Transpose-of-a-Matrix.ptx"/>
+ <xi:include href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.ptx"/>
 </chapter>

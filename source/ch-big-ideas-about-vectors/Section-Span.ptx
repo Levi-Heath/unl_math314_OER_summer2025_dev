@@ -95,7 +95,7 @@ for some scalars <m>a_1, a_2, \ldots ,a_n</m>.
   Observe that because vector <m>\mathbf{u}</m> is a linear combination of <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>, <m>\mathbf{u}</m> is the diagonal of a parallelogram whose sides are scalar multiples of <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>. As such, <m>\mathbf{u}</m> lies in the same plane as <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>, as illustrated below.
 </p>
 
-<image width="100%">
+<image width="80%">
    <shortdescription>Span of two vectors graphed</shortdescription>
     <latex-image>
     \tdplotsetmaincoords{70}{130}
@@ -152,7 +152,7 @@ For <xref ref="item-spanintro2"/>, we need to solve the following vector equatio
  
  
 
-<image width="100%">
+<image width="80%">
    <shortdescription>Three vectors graphed without span</shortdescription>
     <latex-image>
         \tdplotsetmaincoords{70}{130}
@@ -227,7 +227,7 @@ and we say that vectors <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m> <
             The span of <m>\begin{bmatrix}-3\\1\end{bmatrix}</m> is the set of all linear combinations of <m>\begin{bmatrix}-3\\1\end{bmatrix}</m>.  Since we are looking for linear combinations of only one vector, we are really looking for all of its scalar multiples.  So, the span will be the set of all vectors of the form <m>\mathbf{v}=a\begin{bmatrix}-3\\1\end{bmatrix}</m>.  All such vectors lie on the line determined by <m>\begin{bmatrix}-3\\1\end{bmatrix}</m>.
         </p>
 
-<image width="100%">
+<image width="80%">
    <shortdescription>Vector and its span graphed</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.8]
@@ -264,7 +264,7 @@ and we say that vectors <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m> <
             First, observe that <m>\begin{bmatrix}2\\2\end{bmatrix}</m> and <m>\begin{bmatrix}-1\\0\end{bmatrix}</m> are not scalar multiples of each other.  
         </p>
 
-<image width="100%">
+<image width="80%">
    <shortdescription>Two vectors graphed</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.8]
@@ -281,7 +281,7 @@ and we say that vectors <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m> <
 
 
 <p>  
-Geometrically, we can use Procedure <xref ref="pro-lincombgeo"/> to express any vector of <m>\R^2</m> as a linear combination of <m>\begin{bmatrix}2\\2\end{bmatrix}</m> and  <m>\begin{bmatrix}-1\\0\end{bmatrix}</m>, indicating that the two vectors span all of <m>\R^2</m>.
+Geometrically, we can use <xref ref="pro-lincombgeo"/> to express any vector of <m>\R^2</m> as a linear combination of <m>\begin{bmatrix}2\\2\end{bmatrix}</m> and  <m>\begin{bmatrix}-1\\0\end{bmatrix}</m>, indicating that the two vectors span all of <m>\R^2</m>.
 </p>
 
 <p>
@@ -347,7 +347,7 @@ We conclude that
             First, observe that <m>\begin{bmatrix}5\\0\\4\end{bmatrix}, \begin{bmatrix}0\\4\\2\end{bmatrix}</m> are not scalar multiples of each other.  
         </p>
 
-<image width="100%">
+<image width="80%">
    <shortdescription>Two relevant vectors drawn</shortdescription>
     <latex-image>
         \tdplotsetmaincoords{70}{130}
@@ -375,7 +375,7 @@ Geometrically, we can interpret all such linear combinations as diagonals of par
 </p>
 
 
-<image width="100%">
+<image width="80%">
    <shortdescription>Span of previous two vectors drawn</shortdescription>
     <latex-image>
         \tdplotsetmaincoords{70}{130}
@@ -392,7 +392,7 @@ Geometrically, we can interpret all such linear combinations as diagonals of par
 </image>
 
 <p>
-Because Procedure <xref ref="pro-lincombgeo"/> can be applied to vectors that lie in <m>p</m> just as easily as it can be applied to vectors of <m>\R^2</m>, we conclude that every vector in <m>p</m> can be expressed as a linear combination of <m>\begin{bmatrix}5\\0\\4\end{bmatrix}</m> and  <m>\begin{bmatrix}0\\4\\2\end{bmatrix}</m>.  Thus, 
+Because <xref ref="pro-lincombgeo"/> can be applied to vectors that lie in <m>p</m> just as easily as it can be applied to vectors of <m>\R^2</m>, we conclude that every vector in <m>p</m> can be expressed as a linear combination of <m>\begin{bmatrix}5\\0\\4\end{bmatrix}</m> and  <m>\begin{bmatrix}0\\4\\2\end{bmatrix}</m>.  Thus, 
 
 
 <me>
