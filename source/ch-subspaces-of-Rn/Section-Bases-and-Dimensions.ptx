@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="Section-Bases-and-Dimension" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Bases and Dimension</title>
+
+
+
+  
+
+
+
+
+
+<p>
+Recall that a <term>basis</term> of a subspace <m>V</m> of <m>\R^n</m> is a subset of <m>V</m> that is linearly independent and spans <m>V</m>.  A basis allows us to uniquely express every element of <m>V</m> as a linear combination of the elements of the basis.  Several questions may come to mind at this time.  Does every subspace of <m>\R^n</m> have a basis?  We know that bases are not unique.  If there is more than one basis, what, if anything, do they have in common?
+</p>
+
+
+<subsection xml:id="Subsection-Exploring-Dimension">
+    <title>Exploring Dimension</title>
+
+<exploration xml:id="init-dimensionintro">
+<p>
+        How would you describe 
+
+<me>
+    V=\mbox{span}\left(\begin{bmatrix}1\\-2\\3\end{bmatrix}, \begin{bmatrix}-2\\4\\-6\end{bmatrix}\right)?
+</me>
+
+If you answered that <m>V</m> is a line in <m>\R^3</m>, you are correct.  While the two vectors span the line, it is not necessary to have both of them in the spanning set to describe the line. 
+</p>
+
+<problem>
+<statement>
+    <p>
+What is the minimum number of vectors needed to span a line?   
+    </p>
+</statement>
+
+<answer>
+    <p>
+  <m>1</m>.  
+    </p>
+</answer>
+</problem>
+ 
+<p>
+Observe also that the vectors in the given spanning set are not linearly independent, so they do not form a basis for <m>V</m>.  
+</p>
+
+
+<problem>
+    <statement>
+        <p>
+How many vectors would a basis for <m>V</m> have?
+        </p>
+    </statement>
+
+<answer>
+    <p>
+<m>1</m>.
+    </p>
+</answer>
+</problem>
+
+<p>
+Now consider another subspace of <m>\R^3</m>:
+
+<me>
+    W=\mbox{span}\left(\begin{bmatrix}1\\0\\2\end{bmatrix}, \begin{bmatrix}0\\-3\\0\end{bmatrix}\right)
+</me>
+
+Geometrically, <m>W</m> is a plane in <m>\R^3</m>.  Note that the vectors in the spanning set are linearly independent.  Can we remove one of the vectors and have the remaining vector span the plane?  
+</p>
+
+
+
+<problem>
+    <statement>
+        <p>
+What is the minimum number of vectors needed to span a plane? How many vectors would a basis need for a plane?
+        </p>
+    </statement>
+
+<answer>
+    <p>
+<m>2</m>
+    </p>
+</answer>
+</problem>
+</exploration>
+
+
+<p>
+Our observations in <xref ref="init-dimensionintro"/> hint at the idea of dimension.  We know that a line is a one-dimensional object, a plane is a two-dimensional object, and the space we reside in is three-dimensional.  
+</p>
+
+<p>
+Based on our observations in <xref ref="init-dimensionintro"/>, it makes sense for us to define dimension of a vector space (or a subspace) as the minimum number of vectors required to span the space (subspace).  We can accomplish this by defining dimension as the number of elements in a basis.
+We have to proceed carefully because we don't want the dimension to depend on our choice of a basis.  So, before we state our definition, we need to make sure that every basis for a given vector space (or subspace) has the same number of elements.
+</p>
+
+<theorem xml:id="th-dimwelldefined">
+
+    <statement>
+        <p>
+            Suppose <m>\mathcal{B}=\{\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_t\}</m> and <m>\mathcal{C}=\{\mathbf{w}_1, \mathbf{w}_2,\ldots ,\mathbf{w}_s\}</m> be two bases of <m>\R^n</m> (or a subspace <m>V</m> of <m>\R^n</m>).  Then <m>s=t</m>.
+        </p>
+    </statement>
+
+<proof>
+    <p>
+Suppose <m>s\neq t</m>.  Without loss of generality, assume that <m>s\gt t</m>.  Because <m>\mathcal{B}</m> spans <m>V</m>, every <m>\mathbf{w}_i</m> of <m>\mathcal{C}</m> can be written as a linear combination of elements of <m>\mathcal{B}</m>:
+
+<me>
+    \mathbf{w}_i=a_{1i}\mathbf{v}_1+a_{2i}\mathbf{v}_{2}+\ldots +a_{ti}\mathbf{v}_t
+</me>
+
+
+Consider the vector equation
+<men xml:id="sizeofbases">
+b_1\mathbf{w}_1+b_2\mathbf{w}_2+\ldots +b_s\mathbf{w}_s=\mathbf{0}
+</men>
+
+By substitution, we have:
+<md>
+    <mrow> \amp b_1\mathbf{w}_1+b_2\mathbf{w}_2+\ldots +b_s\mathbf{w}_s= </mrow>
+    <mrow>  =\amp b_1(a_{11}\mathbf{v}_1+a_{21}\mathbf{v}_{2}+\ldots +a_{t1}\mathbf{v}_t)+b_2(a_{12}\mathbf{v}_1+a_{22}\mathbf{v}_{2}+\ldots +a_{t2}\mathbf{v}_t)+\ldots </mrow>
+    <mrow> \amp +b_s(a_{1s}\mathbf{v}_1+a_{2s}\mathbf{v}_{2}+\ldots +a_{ts}\mathbf{v}_t) </mrow>
+    <mrow> =\amp (b_1a_{11}+b_2a_{12}+\ldots +b_sa_{1s})\mathbf{v}_1
++(b_1a_{21}+b_2a_{22}+\ldots +b_sa_{2s})\mathbf{v}_2+
+\ldots \\
+\amp +(b_1a_{t1}+b_2a_{t2}+\ldots +b_sa_{ts})\mathbf{v}_t </mrow>
+<mrow> =\amp \mathbf{0} </mrow>
+</md>
+
+Because <m>\mathbf{v}_j</m>'s are linearly independent, we must have
+
+<me>
+    b_1a_{j1}+b_2a_{j2}+\ldots +b_sa_{js}=0
+</me>
+
+For all <m>1\leq j\leq t</m>.
+This gives us a system of <m>t</m> equations and <m>s</m> unknowns.  We can write the system as a matrix equation.
+
+<me>
+    \begin{bmatrix}a_{11}\amp a_{12}\amp \ldots \amp a_{1s}\\a_{21}\amp a_{22}\amp \ldots \amp a_{2s}\\\vdots\amp \vdots\amp \ddots\amp \vdots\\a_{t1}\amp a_{t2}\amp \ldots\amp a_{ts}\end{bmatrix}\begin{bmatrix}b_1\\b_2\\\vdots\\b_s\end{bmatrix}=\mathbf{0}
+</me>
+
+
+Recall our assumption that <m>s\gt t</m>.  By <xref ref="th-rankandsolutions"/>, we know that the system has infinitely many solutions.  This shows that <xref ref="sizeofbases"/> has a nontrivial solution.  But this shows that <m>\{\mathbf{w}_1, \mathbf{w}_2,\ldots ,\mathbf{w}_s\}</m> is linearly dependent and contradicts our assumption that <m>\mathcal{C}</m> is a basis of <m>V</m>.  We conclude that <m>s=t</m>.
+    </p>
+</proof>
+</theorem>
+
+
+
+
+<definition xml:id="def-dimension">
+
+    <statement>
+        <p>
+            Let <m>V</m> be a subspace of <m>\R^n</m>.  The <term>dimension</term> of <m>V</m> is the number, <m>m</m>, of elements in any basis of <m>V</m>.  We write
+
+<me>
+    \mbox{dim}(V)=m
+</me>
+        </p>
+    </statement>
+</definition>
+
+<example xml:id="ex-basisofrn">
+    <p>
+        We know that vectors <m>\mathbf{e}_1, \ldots ,\mathbf{e}_n</m> form a basis of <m>\R^n</m>.  Therefore <m>\mbox{dim}(\R^n)=n</m>.
+    </p>
+</example>
+
+<p>
+The following section will guarantee that dimension is defined for every subspace of <m>\R^n</m>.
+</p>
+</subsection>
+
+
+
+
+
+
+
+
+
+
+
+<subsection xml:id="Subsection-Every-Subspace-of-Rn-has-a-Basis">
+    <title>Every Subspace of <m>\R^n</m> has a Basis</title>
+
+
+<lemma xml:id="lemma-atmostnlinindinrn">
+
+    <statement>
+        <p>
+            If a linearly independent subset of <m>\R^n</m> contains <m>m</m> vectors, then <m>m\leq n</m>.
+        </p>
+    </statement>
+
+<proof>
+    <p>
+See  <xref ref="prob-atmostnlinindinrnproof"/>.
+    </p>
+</proof>
+</lemma>
+
+<lemma xml:id="lemma-expandinglinindset">
+
+    <statement>
+        <p>
+            Let <m>\{\mathbf{v}_1,\ldots ,\mathbf{v}_k\}</m> be a linearly independent subset of <m>\R^n</m>.  If <m>\mathbf{u}</m> is not in <m>\mbox{span}(\mathbf{v}_1,\ldots ,\mathbf{v}_k)</m>, then <m>\{\mathbf{u},\mathbf{v}_1,\ldots ,\mathbf{v}_k\}</m> is linearly independent.
+        </p>
+    </statement>
+<proof>
+    <p>
+Consider the equation
+<mdn xml:id="expandinglinindset"> 
+a\mathbf{u}+a_1\mathbf{v}_1+\ldots +a_k\mathbf{v}_k=\mathbf{0}
+</mdn>
+
+We need to show that <m>a=a_1=\ldots =a_k=0</m>.  Suppose <m>a\neq 0</m>, then <m>\mathbf{u}=\frac{-a_1}{a}\mathbf{v}_1+\ldots +\frac{-a_k}{a}\mathbf{v}_k</m>.  But this contradicts the assumption that <m>\mathbf{u}</m> is not in the span of <m>\mathbf{v}_1,\ldots ,\mathbf{v}_k</m>.  So, <m>a=0</m>.  But <m>a_1=\ldots =a_k=0</m> because <m>\mathbf{v}_1,\ldots ,\mathbf{v}_k</m> are linearly independent.
+
+This means that (<xref ref="expandinglinindset"/>) has only the trivial solution, and <m>\{\mathbf{u},\mathbf{v}_1,\ldots ,\mathbf{v}_k\}</m> is linearly independent.
+    </p>
+</proof>
+</lemma>
+
+
+
+
+<theorem xml:id="th-expandtobasis">
+
+    <statement>
+        <p>
+            Let <m>V</m> be a subspace of <m>\R^n</m>.  Any linearly independent subset of <m>V</m> can be expanded to a basis of <m>V</m>.
+        </p>
+    </statement>
+</theorem>
+<proof>
+    <p>
+Suppose that <m>X=\{\mathbf{v}_1,\ldots ,\mathbf{v}_k\}</m> is a linearly independent subset of <m>V</m>. If <m>\mbox{span}(X) = V</m> then <m>X</m> is already a basis of <m>V</m>. If <m>\mbox{span}(X) \neq V</m>, choose <m>\mathbf{u}_1</m> in <m>V</m> such that <m>\mathbf{u}_1</m> is not in <m>\mbox{span}(X)</m>. The set <m>\{\mathbf{u}_1, \mathbf{v}_1,\ldots ,\mathbf{v}_k\}</m> is linearly independent by <xref ref="lemma-expandinglinindset"/>. 
+
+If <m>\mbox{span}(\mathbf{u}_1, \mathbf{v}_1,\ldots ,\mathbf{v}_k) = V</m> we are done; otherwise choose <m>\mathbf{u}_{2} \in V</m> such that <m>\mathbf{u}_{2}</m> is not in <m>\mbox{span}(\mathbf{u}_1, \mathbf{v}_1,\ldots ,\mathbf{v}_k)</m>. Then <m>\{\mathbf{u}_1,\mathbf{u}_2, \mathbf{v}_1,\ldots ,\mathbf{v}_k\}</m> is linearly independent, and the process continues. We claim that a basis of <m>V</m> will be reached eventually. If no basis of <m>V</m> is ever reached, the process creates arbitrarily large independent sets in <m>\R^n</m>. But this is impossible by <xref ref="lemma-atmostnlinindinrn"/>.
+    </p>
+</proof>
+</subsection>
+
+
+
+<subsection xml:id="Subsection-Practice-Problems">
+    <title>Practice Problems</title>
+
+<exercises>
+
+<exercisegroup>
+<introduction>
+    <p>
+For each given set <m>S</m> of vectors, find <m>\mbox{dim}(\mbox{span}(S))</m>.
+    </p>
+</introduction>
+
+<hint>
+<p>
+Use <xref ref="th-linindandrank"/> of VEC-0110.
+</p>
+</hint>
+
+<exercise xml:id="prob-finddimension1">
+    <statement>
+        <p>
+            <me>
+    S=\left\{\begin{bmatrix}1\\1\\0\\1\end{bmatrix}, \begin{bmatrix}0\\1\\1\\1\end{bmatrix}, \begin{bmatrix}1\\0\\1\\1\end{bmatrix}, \begin{bmatrix}1\\1\\0\\1\end{bmatrix} \right\}
+</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <m>\mbox{dim}(\mbox{span}(S))=3</m>
+        </p>
+    </answer>
+</exercise>
+
+<exercise xml:id="prob-finddimension2">
+    <statement>
+        <p>
+            <me>
+    S=\left\{\begin{bmatrix}3\\-2\\1\\1\end{bmatrix}, \begin{bmatrix}2\\3\\3\\-2\end{bmatrix}, \begin{bmatrix}1\\-5\\-2\\3\end{bmatrix}\right\}
+</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <m>\mbox{dim}(\mbox{span}(S))=2</m>
+        </p>
+    </answer>
+</exercise>
+
+<exercise xml:id="prob-finddimension3">
+    <statement>
+        <p>
+            <me>
+    S=\left\{\begin{bmatrix}1\\1\\-3\end{bmatrix}, \begin{bmatrix}-3\\2\\1\end{bmatrix}, \begin{bmatrix}5\\-2\\4\end{bmatrix}\right\}
+</me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <m>\mbox{dim}(\mbox{span}(S))=3</m>
+        </p>
+    </answer>
+</exercise>
+</exercisegroup>
+
+<exercise xml:id="prob-atmostnlinindinrnproof">
+    <statement>
+        <p>
+            Prove <xref ref="lemma-atmostnlinindinrn"/>.
+        </p>
+    </statement>
+
+<hint>
+<p>
+Look at the proof of <xref ref="th-dimwelldefined"/>.
+</p>
+</hint>
+</exercise>
+
+
+
+<exercise xml:id="prob-matrixtimesbasisvectors">
+    <statement>
+        <p>
+            Let <m>\mathcal{B}=\{\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3\}</m> be a basis of <m>\R^3</m>.  Suppose <m>A</m> is a nonsingular <m>3\times 3 </m> matrix.  Show that <m>\mathcal{C}=\{A\mathbf{v}_1, A\mathbf{v}_2, A\mathbf{v}_3\}</m> is also a basis of <m>\R^3</m>. 
+        </p>
+    </statement>
+
+<hint>
+To show that <m>\mathcal{C}</m> spans <m>\R^3</m>, express <m>A^{-1}\mathbf{v}</m> as a linear combination of <m>\mathbf{v}_1</m>, <m>\mathbf{v}_2</m> and <m>\mathbf{v}_3</m>.
+</hint>
+</exercise>
+</exercises>
+</subsection>
+
+
+<subsection xml:id="Subsection-Exercise-Source">
+    <title>Exercise Source</title>
+
+The exercise <xref ref="prob-matrixtimesbasisvectors"/> is adopted from Keith Nicholson's Example 5.2.12  \href{https://open.umn.edu/opentextbooks/textbooks/linear-algebra-with-applications}<em>Linear Algebra with Applications</em>. (CC-BY-NC-SA)
+
+W. Keith Nicholson, <em>Linear Algebra with Applications</em>, Lyryx 2018, Open Edition, p 277.
+</subsection>
+
+
+</section>

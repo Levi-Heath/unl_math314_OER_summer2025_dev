@@ -1,7 +1,9 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
- \title{LU Factorization} \license{CC BY-NC-SA 4.0}
+ \title{Bases and Dimension} \license{CC BY-NC-SA 4.0}
+
+
 
 \begin{document}
 \begin{abstract}
@@ -10,564 +12,162 @@
 \maketitle
 
 \begin{onlineOnly}
-\section*{$LU$ factorization}
+\section*{Bases and Dimension}
 \end{onlineOnly}
 
-\begin{exploration}\label{init:LUfactorization}
-Consider the equation:
-$$\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}\begin{bmatrix}2&-1&2\\0&4&-1\\0&0&3\end{bmatrix}\vec{x}=\begin{bmatrix}1\\8\\5\end{bmatrix}$$
-This equation is unusual in that it involves two matrices on the left-hand side.  If we multiply the matrices together, we get
-$$\begin{bmatrix}2&-1&2\\6&1&5\\-4&10&-3\end{bmatrix}\vec{x}=\begin{bmatrix}1\\8\\5\end{bmatrix}$$
-Gaussian elimination yields:
-$$\left[\begin{array}{ccc|c}
-2&-1&2&1\\6&1&5&8\\-4&10&-3&5
-\end{array}\right]
-\quad\rightsquigarrow\quad
-\left[\begin{array}{ccc|c}
- 1&0&0&2\\0&1&0&1\\0&0&1&-1
-\end{array}\right]
-$$
-We conclude that
-$$\vec{x}=\begin{bmatrix}2\\1\\-1\end{bmatrix}.$$
+Recall that a \dfn{basis} of a subspace $V$ of $\RR^n$ is a subset of $V$ that is linearly independent and spans $V$.  A basis allows us to uniquely express every element of $V$ as a linear combination of the elements of the basis.  Several questions may come to mind at this time.  Does every subspace of $\RR^n$ have a basis?  We know that bases are not unique.  If there is more than one basis, what, if anything, do they have in common?
 
-Now that we know the answer, we will turn to the original question and consider the advantages of the format of the original problem.  Observe that the two matrices have a distinct pattern.  The matrix on the left has zeros above the main diagonal, while the matrix on the right has zeros below the main diagonal.  Matrices that follow such a pattern are called \dfn{lower triangular} and \dfn{upper triangular} matrices, respectively.
+\subsection*{Exploring Dimension}
+\begin{exploration}\label{init:dimensionintro}
+How would you describe 
+$$V=\mbox{span}\left(\begin{bmatrix}1\\-2\\3\end{bmatrix}, \begin{bmatrix}-2\\4\\-6\end{bmatrix}\right)?$$
+If you answered that $V$ is a line in $\RR^3$, you are correct.  While the two vectors span the line, it is not necessary to have both of them in the spanning set to describe the line. 
 
-Let $\vec{y}=\begin{bmatrix}2&-1&2\\0&4&-1\\0&0&3\end{bmatrix}\vec{x}$.  Then we can write the original equation as
-$$\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}\left(\begin{bmatrix}2&-1&2\\0&4&-1\\0&0&3\end{bmatrix}\vec{x}\right)=\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}\vec{y}=\begin{bmatrix}1\\8\\5\end{bmatrix}$$
-The equation 
-$$\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}\vec{y}=\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}\begin{bmatrix}y_1\\y_2\\y_3\end{bmatrix}=\begin{bmatrix}1\\8\\5\end{bmatrix}$$ 
-corresponds to the system
-$$\begin{matrix}
-	 y_1&&&=&1\\
-	   3y_1 & +y_2&&= &8 \\
-      -2y_1&+2y_2&+y_3&=&5
-    \end{matrix}$$
-    
-This system can be easily solved by substitution, giving us
-$$y_1=1$$
-$$3(1)+y_2=8 \rightsquigarrow y_2=5$$
-$$-2(1)+2(5)+y_3=5 \rightsquigarrow y_3=-3$$
-So,
-$$\vec{y}=\begin{bmatrix}y_1\\y_2\\y_3\end{bmatrix}=\begin{bmatrix}1\\5\\-3\end{bmatrix}$$
-    
-Recall that we let $\vec{y}=\begin{bmatrix}2&-1&2\\0&4&-1\\0&0&3\end{bmatrix}\vec{x}$.  
-The equation
-$$\begin{bmatrix}2&-1&2\\0&4&-1\\0&0&3\end{bmatrix}\vec{x}=\begin{bmatrix}1\\5\\-3\end{bmatrix}$$
-corresponds to the system
-$$\begin{matrix}
-	 2x_1& -&x_2&+&2x_3&=&1\\
-	   & &4x_2&-&x_3&= &5 \\
-      & &&&3x_3&=&-3
-    \end{matrix}$$
-    which can be easily solved by back-substitution:
-    $$x_3=\answer{-1}$$
-    $$x_2=\answer{1}$$
-    $$x_1=\answer{2}$$
-    
-    Thus, $\vec{x}=\begin{bmatrix}2\\1\\-1\end{bmatrix}$.  Observe that this is the same answer that we obtained in the beginning of the problem using Gaussian elimination.  
+What is the minimum number of vectors needed to span a line?  
+
+Answer: $\answer{1}$.
+
+Observe also that the vectors in the given spanning set are not linearly independent, so they do not form a basis for $V$.  How many vectors would a basis for $V$ have?
+
+Answer: $\answer{1}$.
+
+Now consider another subspace of $\RR^3$:
+$$W=\mbox{span}\left(\begin{bmatrix}1\\0\\2\end{bmatrix}, \begin{bmatrix}0\\-3\\0\end{bmatrix}\right)$$
+Geometrically, $W$ is a plane in $\RR^3$.  Note that the vectors in the spanning set are linearly independent.  Can we remove one of the vectors and have the remaining vector span the plane?  
+
+What is the minimum number of vectors needed to span a plane?
+
+Answer: $\answer{2}$.
+
+How many vectors would a basis for a plane have?
+
+Answer: $\answer{2}$.
 \end{exploration}
 
-Given a matrix equation such as 
-$$\begin{bmatrix}2&-1&2\\6&1&5\\-4&10&-3\end{bmatrix}\vec{x}=\begin{bmatrix}1\\8\\5\end{bmatrix}$$
-of Exploration \ref{init:LUfactorization}, often in practice we express the matrix on the left as a product of an upper triangular matrix $U$ and a lower triangular matrix $L$ and use substitution to solve the equation instead of using Gaussian elimination to find the solution.  In Exploration \ref{init:LUfactorization}, 
+Our observations in Exploration \ref{init:dimensionintro} hint at the idea of dimension.  We know that a line is a one-dimensional object, a plane is a two-dimensional object, and the space we reside in is three-dimensional.  
 
-$$\begin{bmatrix}2&-1&2\\6&1&5\\-4&10&-3\end{bmatrix}=LU=\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}\begin{bmatrix}2&-1&2\\0&4&-1\\0&0&3\end{bmatrix}$$
+Based on our observations in Exploration \ref{init:dimensionintro}, it makes sense for us to define dimension of a vector space (or a subspace) as the minimum number of vectors required to span the space (subspace).  We can accomplish this by defining dimension as the number of elements in a basis.
 
-The process of taking a matrix $A$ and expressing it as a product $A=LU$ of a lower triangular matrix $L$ and an upper triangular matrix $U$ is called \dfn{$LU$ factorization}.
-%An $LU$ factorization of a matrix $A$ is when we express the given matrix as the
-%product
-%$$A=LU$$
-%where  $L$ is a lower triangular square matrix and $U$ is an upper triangular matrix.  
-We also adopt the (common) convention that $L$ is a matrix with a diagonal consisting entirely of $1$'s, which is often called a \dfn{lower unit triangular} matrix.
+We have to proceed carefully because we don't want the dimension to depend on our choice of a basis.  So, before we state our definition, we need to make sure that every basis for a given vector space (or subspace) has the same number of elements.
 
-Not every matrix has an $LU$ factorization, but we will see that we can correct for that.
+\begin{theorem}\label{th:dimwelldefined}
+Suppose $\mathcal{B}=\{\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_t\}$ and $\mathcal{C}=\{\vec{w}_1, \vec{w}_2,\ldots ,\vec{w}_s\}$ be two bases of $\RR^n$ (or a subspace $V$ of $\RR^n$).  Then $s=t$.
+\end{theorem}
+\begin{proof}
+Suppose $s\neq t$.  Without loss of generality, assume that $s>t$.  Because $\mathcal{B}$ spans $V$, every $\vec{w}_i$ of $\mathcal{C}$ can be written as a linear combination of elements of $\mathcal{B}$:
+$$\vec{w}_i=a_{1i}\vec{v}_1+a_{2i}\vec{v}_{2}+\ldots +a_{ti}\vec{v}_t$$
 
-\begin{example}\label{ex:usingLU}
-Consider the system
-$$\begin{array}{ccccccccc}
-        & &12x_2&-&18x_3&= &6 \\
-	 x_1 &+ &2x_2&-&3x_3&= &1\\
-      x_1&- &2x_2&+&x_3&=&1
-    \end{array}.$$
-We can express this system as the matrix equation $A\vec{x}=\vec{b}$, and we get $$\begin{bmatrix}0&12&-18\\1&2&-3\\1&-2&1\end{bmatrix}\vec{x}=\begin{bmatrix}6\\1\\1\end{bmatrix}.$$
+Consider the vector equation
+\begin{align}\label{eq:sizeofbases}
+b_1\vec{w}_1+b_2\vec{w}_2+\ldots +b_s\vec{w}_s=\vec{0}
+\end{align}
 
-Unfortunately, for reasons we will explain below, it is not possible to find an $LU$ factorization of this coefficient matrix.  However, if we simply swap the first two equations:
-$$\begin{array}{ccccccccc}
-	 x_1 &+ &2x_2&-&3x_3&= &1\\
-	  & &12x_2&-&18x_3&= &6 \\
-      x_1&- &2x_2&+&x_3&=&1
-    \end{array},$$
-we are able to find an $LU$ factorization of the coefficient matrix.
-\[
-\begin{bmatrix}
-1 & 2 & -3 \\
-0 & 12 & -18 \\
-1 & -2 & 1\end{bmatrix}
-=
-\begin{bmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-1  & -1/3  & 1
-\end{bmatrix} 
-\begin{bmatrix}
-1 & 2 & -3 \\
-0 & 12  & -18 \\
-0 & 0 & -2
-\end{bmatrix}
-\]
-(How we actually come up with an  $LU$ factorization of $A$ will be discussed after this example.)
+By substitution, we have:
+\begin{align*}
+    &b_1\vec{w}_1+b_2\vec{w}_2+\ldots +b_s\vec{w}_s=\\ \\
+     =&b_1(a_{11}\vec{v}_1+a_{21}\vec{v}_{2}+\ldots +a_{t1}\vec{v}_t)+b_2(a_{12}\vec{v}_1+a_{22}\vec{v}_{2}+\ldots +a_{t2}\vec{v}_t)+\ldots\\
+     &+b_s(a_{1s}\vec{v}_1+a_{2s}\vec{v}_{2}+\ldots +a_{ts}\vec{v}_t)\\ \\
+     =&(b_1a_{11}+b_2a_{12}+\ldots +b_sa_{1s})\vec{v}_1
++(b_1a_{21}+b_2a_{22}+\ldots +b_sa_{2s})\vec{v}_2+
+\ldots \\
+&+(b_1a_{t1}+b_2a_{t2}+\ldots +b_sa_{ts})\vec{v}_t\\ \\
+=&\vec{0}
+\end{align*}
 
-To understand how an $LU$ factorization can be used, it is helpful to think of this system of equations as a matrix equation.
-$$A\vec{x}=\vec{b}$$
-$$(LU)\vec{x}=\vec{b}$$
-$$L(U\vec{x})=\vec{b}$$
-So if we let $\vec{y}=U\vec{x}$ and also write $\vec{y}=\begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix}$, then we are able to solve for $ y_1, y_2, \text{ and } y_3$ using \emph{forward-substitution}.
-$$L\vec{y}=\vec{b}$$
-\[
-\begin{bmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-1  & -1/3  & 1
-\end{bmatrix} 
-\begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix}
-=
-\begin{bmatrix} 1 \\ 6 \\ 1 \end{bmatrix}
-\]
-See if you can do it!
-$$y_1=\answer{1},\quad y_2=\answer{6},\quad y_3=\answer{2}$$
-Once we have the values of $\vec{y}$, since $\vec{y}=U\vec{x}$, all that remains is to solve the following matrix equation using back-substitution.
-$$U\vec{x}=\vec{y}$$
+Because $\vec{v}_j$'s are linearly independent, we must have
+$$b_1a_{j1}+b_2a_{j2}+\ldots +b_sa_{js}=0$$
+For all $1\leq j\leq t$.
+This gives us a system of $t$ equations and $s$ unknowns.  We can write the system as a matrix equation.
+$$\begin{bmatrix}a_{11}&a_{12}&\ldots &a_{1s}\\a_{21}&a_{22}&\ldots &a_{2s}\\\vdots&\vdots&\ddots&\vdots\\a_{t1}&a_{t2}&\ldots&a_{ts}\end{bmatrix}\begin{bmatrix}b_1\\b_2\\\vdots\\b_s\end{bmatrix}=\vec{0}$$
 
-\begin{expandable}
-$$\begin{bmatrix}
-1 & 2 & -3 \\
-0 & 12  & -18 \\
-0 & 0 & -2
-\end{bmatrix} 
-\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}
-=
-\begin{bmatrix} 1 \\ 6 \\ 2 \end{bmatrix}$$
-
-
-By now you are quite used to solving this kind of problem...
-$$x_1=\answer{0},\quad x_2=\answer{-1},\quad x_3=\answer{-1}$$
-\end{expandable}
-\end{example}
-
-
-\subsection*{Finding an $LU$ factorization by Inspection}
-
-\begin{example}\label{ex:LU1}
-Find an $LU$ factorization of $A=
-\begin{bmatrix}
-1 & 2 & 0 & 2 \\
-1 & 3 & 2 & 1 \\
-2 & 3 & 4 & 0
-\end{bmatrix}
-.$
-\end{example}
-
-One way to find the $LU$ factorization%
- is to simply look for it directly.
-We need
-\[
-\begin{bmatrix}
-1 & 2 & 0 & 2 \\
-1 & 3 & 2 & 1 \\
-2 & 3 & 4 & 0
-\end{bmatrix}
-=
-\begin{bmatrix}
-1 & 0 & 0 \\
-x & 1 & 0 \\
-y & z & 1
-\end{bmatrix} 
-\begin{bmatrix}
-a & d & h & j \\
-0 & b & e & i \\
-0 & 0 & c & f
-\end{bmatrix}
-\]
-By multiplying the latter matrices we get
-\[
-\begin{bmatrix}
-a & d & h & j \\
-xa & xd+b & xh+e & xj+i \\
-ya & yd+zb & yh+ze+c & yj+iz+f
-\end{bmatrix}
-\]
-and from this, it is a simple exercise to determine each of the unknowns. For example, from the first
-column, we get $a=1$ and then $x=1,y=2.$ 
-
-% Now go to the second column. You need $
-% d=2,xd+b=3$ so $b=1,yd+zb=3$ so $z=-1.$ From the third column, $h=0,e=2,c=6.$
-% Now from the fourth column, $j=2,i=-1,f=-5.$ 
-
-See if you can continue to determine the entire $LU$
-factorization of $A$.
-\[
-\begin{bmatrix}
-1 & 2 & 0 & 2 \\
-1 & 3 & 2 & 1 \\
-2 & 3 & 4 & 0
-\end{bmatrix}
-=
-\begin{bmatrix}
-1 & 0 & 0 \\
-1 & 1 & 0 \\
-2 & \answer{-1} & 1
-\end{bmatrix} 
-\begin{bmatrix}
-1 & \answer{2} & \answer{0} & \answer{2} \\
-0 & \answer{1} & \answer{2} & \answer{-1} \\
-0 & 0 & \answer{6} & \answer{-5}
-\end{bmatrix}
-\]
-
-\subsection*{Finding an $LU$ factorization by the Multiplier Method}
-
-In the following example we demonstrate a method for computing an $LU$ factorization known as the multiplier method.
-
-\begin{example}\label{ex:multiplierLU}
-Find an $LU$ factorization for
-\[
-\begin{bmatrix}
-1 & 2 & 3 \\
-2 & 3 & 1 \\
--2 & 3 & -2
-\end{bmatrix} 
-\]
-
-\begin{explanation}
-Write the matrix as the following product.
-\[
-\begin{bmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1
-\end{bmatrix} 
-\begin{bmatrix}
-1 & 2 & 3 \\
-2 & 3 & 1 \\
--2 & 3 & -2
-\end{bmatrix} 
-\]
-In the matrix on the right, we begin with the left row and zero
-out the entries below the top using the row operation which involves adding a multiple of a row to another row. You do this and also update the matrix on the left so that the product will be unchanged. 
-
-Here is the first step.  We take $-2$ times the top row and add to the second. Then take $2$ times the top row and add to the second in the matrix on the left.  This gives us
-\[
-\begin{bmatrix}
-1 & 0 & 0 \\
-2 & 1 & 0 \\
-0 & 0 & 1
-\end{bmatrix} 
-\begin{bmatrix}
-1 & 2 & 3 \\
-0 & -1 & -5 \\
--2 & 3 & -2
-\end{bmatrix} 
-\]
-
-The next step is to take $2$ times the top row and add to the bottom in the matrix on the right. To ensure that the product is unchanged, we place a $-2$ in the bottom left corner in the matrix on the left. Thus the second step yields
-\[
-\begin{bmatrix}
-1 & 0 & 0 \\
-2 & 1 & 0 \\
--2 & 0 & 1
-\end{bmatrix} 
-\begin{bmatrix}
-1 & 2 & 3 \\
-0 & -1 & -5 \\
-0 & 7 & 4
-\end{bmatrix} 
-\]
-
-For our final step, we take $7$ times the middle row on right and add to bottom row. Updating the matrix on the left in the manner we did earlier, we get
-\[
-\begin{bmatrix}
-1 & 0 & 0 \\
-2 & 1 & 0 \\
--2 & -7 & 1
-\end{bmatrix} 
-\begin{bmatrix}
-1 & 2 & 3 \\
-0 & -1 & -5 \\
-0 & 0 & -31
-\end{bmatrix} 
-\]
-At this point, we can stop. We have an $LU$ factorization of the original matrix.  We can always multiply the matrices to check, if we wish.
-\end{explanation}
-\end{example}
-
-Notice that when we perform the multiplier method, we are making repeated use of a certain type of elementary row operation, namely, we are adding a scalar multiple of one row to a row below it.  The reason this helps to create an $LU$ factorization depends upon the fact that the elementary matrices corresponding to such operations are lower triangular.  To understand how this works, we begin with a lemma. 
-
-\begin{lemma}\label{lem:multipliermethodtriangularmatrices}
-Let $L$ be a lower (upper) triangular matrix $m\times m$
-which has ones down the main diagonal. Then $L^{-1}$ also is a lower (upper)
-triangular matrix which has ones down the main diagonal. In the case that $L$
-is of the form
-\begin{equation}\label{4nove1h}
-L=
-\begin{bmatrix}
-1 &  &  &  \\
-a_{1} & 1 &  &  \\
-\vdots &  & \ddots &  \\
-a_{n} &  &  & 1
-\end{bmatrix}, 
-\end{equation}
-where all entries are zero except for the left column and main diagonal, it
-is also the case that $L^{-1}$ is obtained from $L$ by simply multiplying each entry below the main diagonal in $L$ by $-1$. The same is true if the single nonzero column is in another position.
-\end{lemma}
-
-\begin{proof}Consider the usual setup for finding the inverse $\begin{bmatrix}
-L &|& I
-\end{bmatrix}$.  Each row operation used on $L$ to transform this matrix to reduced row echelon form changes only the entries in $I$ below the main diagonal. Whether we have the special case of $L$ given in \ref{4nove1h} where the nonzero nondiagonal entries are in the left column, or if the single
-nonzero column is in another position, it is clear that multiplication by $-1$ as described in the lemma gives us $L^{-1}$.
+Recall our assumption that $s>t$.  By Theorem \ref{th:rankandsolutions}, we know that the system has infinitely many solutions.  This shows that equation (\ref{eq:sizeofbases}) has a nontrivial solution.  But this shows that $\{\vec{w}_1, \vec{w}_2,\ldots ,\vec{w}_s\}$ is linearly dependent and contradicts our assumption that $\mathcal{C}$ is a basis of $V$.  We conclude that $s=t$.
 \end{proof}
 
-For a simple illustration of the lemma, observe:
-\begin{equation*}
-\left[\begin{array}{ccc|ccc}
-1 & 0 & 0 & 1 & 0 & 0 \\
-0 & 1 & 0 & 0 & 1 & 0 \\
-0 & a & 1 & 0 & 0 & 1
-\end{array}\right]
-\rightsquigarrow 
-\left[\begin{array}{ccc|ccc}
-1 & 0 & 0 & 1 & 0 & 0 \\
-0 & 1 & 0 & 0 & 1 & 0 \\
-0 & 0 & 1 & 0 & -a & 1
-\end{array}\right]
-\end{equation*}
 
-Now let $A$ be an $m\times n$ matrix, say
-\begin{equation*}
-A=
-\begin{bmatrix}
-a_{11} & a_{12} & \cdots & a_{1n} \\
-a_{21} & a_{22} & \cdots & a_{2n} \\
-\vdots & \vdots &  & \vdots \\
-a_{m1} & a_{m2} & \cdots & a_{mn}
-\end{bmatrix},
-\end{equation*}
-and assume $A$ can be row reduced to an upper triangular form using only row
-operation 3. Thus, in particular, $a_{11}\neq 0$. Multiply on the left by 
-\begin{equation*}
-E_{1}=
-\begin{bmatrix}
-1 & 0 & \cdots & 0 \\
--
-\frac{a_{21}}{a_{11}} & 1 & \cdots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
--\frac{a_{m1}}{a_{11}} & 0 & \cdots & 1
-\end{bmatrix}
-\end{equation*}
-This is the product of elementary matrices which make modifications in the
-first column only. It is equivalent to taking $-a_{21}/a_{11}$ times the
-first row and adding to the second. Then taking $-a_{31}/a_{11}$ times the
-first row and adding to the third and so forth. The quotients in the first
-column of the above matrix are the multipliers. Thus the result is of the
-form
-\begin{equation*}
-E_{1}A=
-\begin{bmatrix}
-a_{11} & a_{12} & \cdots & a_{1n}^{\prime } \\
-0 & a_{22}^{\prime } & \cdots & a_{2n}^{\prime } \\
-\vdots & \vdots &  & \vdots \\
-0 & a_{m2}^{\prime } & \cdots & a_{mn}^{\prime }
-\end{bmatrix}
-\end{equation*}
-By assumption, $a_{22}^{\prime }\neq 0$ and so it is possible to use this
-entry to zero out all the entries below it in the matrix on the right by
-multiplication by a matrix of the form 
-\begin{equation*}
-E_{2}=
-\begin{bmatrix}
-1 & \vec{0} \\
-\vec{0} & E
-\end{bmatrix}
-\end{equation*}
-where $E$ is an $( m-1)\times ( m-1)$
-matrix of the form
-\begin{equation*}
-E=\begin{bmatrix}
-1 & 0 & \cdots & 0 \\
--\frac{a_{32}^{\prime }}{a_{22}^{\prime }} & 1 & \cdots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
--\frac{a_{m2}^{\prime }}{a_{22}^{\prime }} & 0 & \cdots & 1
-\end{bmatrix}
-\end{equation*}
-Again, the entries in the first column below the 1 are the multipliers.
-Continuing this way, zeroing out the entries below the diagonal entries, finally leads us to
-\begin{equation*}
-E_{m-1}E_{m-2}\cdots E_{1}A=U
-\end{equation*}
-where $U$ is upper triangular. Each $E_{j}$ has all ones down the main diagonal and is lower triangular. Now we can multiply both sides by the inverses of the $E_{j}$ in the reverse order. This yields
-\begin{equation*}
-A=E_{1}^{-1}E_{2}^{-1}\cdots E_{m-1}^{-1}U
-\end{equation*}
+\begin{definition}\label{def:dimension}
+Let $V$ be a subspace of $\RR^n$.  The \dfn{dimension} of $V$ is the number, $m$, of elements in any basis of $V$.  We write
+$$\mbox{dim}(V)=m$$
+\end{definition}
 
-By Lemma \ref{lem:multipliermethodtriangularmatrices}, this implies that the product of those $E_{j}^{-1}$
-is a lower triangular matrix having all ones down the main diagonal.
+\begin{example}\label{ex:basisofrn}
+We know that vectors $\vec{e}_1, \ldots ,\vec{e}_n$ form a basis of $\RR^n$.  Therefore $\mbox{dim}(\RR^n)=n$.
+\end{example}
 
-The above discussion and lemma explain how the multiplier
-method works. The expressions
-\begin{equation*}
--\frac{a_{21}}{a_{11}},-\frac{a_{31}}{a_{11}},\cdots, -\frac{a_{m1}}{a_{11}},
-\end{equation*}
-which we obtained in building $E_{1}$, and which we denote respectively by $M_{21},\cdots ,M_{m1}$ to save notation, are the multipliers.
-\index{multipliers} Therefore, according to the lemma, to find $E_{1}^{-1}$ we simply write
-\begin{equation*}
-\begin{bmatrix}
-1 & 0 & \cdots & 0 \\
--M_{21} & 1 & \cdots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
--M_{m1} & 0 & \cdots & 1
-\end{bmatrix}
-\end{equation*}
-Similar considerations apply to the other $E_{j}^{-1}.$ Thus $L$ is a
-product of the form
-\begin{equation*}
-\begin{bmatrix}
-1 & 0 & \cdots & 0 \\
--M_{21} & 1 & \cdots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
--M_{m1} & 0 & \cdots & 1
-\end{bmatrix}
-\cdots 
-\begin{bmatrix}
-1 & 0 & \cdots & 0 \\
-0 & 1 & \cdots & 0 \\
-\vdots & 0 & \ddots & \vdots \\
-0 & \cdots & -M_{m(m-1)} & 1
-\end{bmatrix}, 
-\end{equation*}
-where each factor has at most one nonzero column, the position of which moves from left to right as we scan the above product of matrices from left to right. It follows from what we know  about the effect of multiplying on the left by an elementary matrix that the above product is of the form
-\begin{equation*}
-\begin{bmatrix}
-1 & 0 & \cdots & 0 & 0 \\
--M_{21} & 1 & \cdots & 0 & 0 \\
-\vdots & -M_{32} & \ddots & \vdots & \vdots \\
--M_{(M-1)1} & \vdots & \cdots & 1 & 0 \\
--M_{M1} & -M_{M2} & \cdots & -M_{MM-1} & 1
-\end{bmatrix}
-\end{equation*}
+The following section will guarantee that dimension is defined for every subspace of $\RR^n$.
 
-To sum up the procedure, beginning at the left column and moving toward the right, you
-simply insert, into the corresponding position in the identity matrix, $-1$
-times the multiplier which was used to zero out an entry in that position
-below the main diagonal in $A,$ while retaining the main diagonal which
-consists entirely of ones. This will give us $L$ as we create $U$ using row operation 3.
+\subsection*{Every Subspace of $\RR^n$ has a Basis}
+%We know that $\RR^n$ has a standard basis with $n$ elements.  Therefore all bases of $\RR^n$ have $n$ elements.  Now we turn our attention to subspaces of $\RR^n$.  
 
-We now return to Example \ref{ex:usingLU}, to understand why we could not use the multiplier method to find an $LU$ factorization of the coefficient matrix.  Suppose we had written 
-$$\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}0&12&-18\\1&2&-3\\1&-2&1\end{bmatrix}.$$
-Our first step of Gaussian elimination would require a row swap to get a nonzero entry into the top left corner (we swapped rows 1 and 2 in Example \ref{ex:usingLU}).  Unfortunately, the elementary matrix that accomplishes this, $P=\begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}$ is NOT lower triangular.  So we cannot apply Lemma \ref{lem:multipliermethodtriangularmatrices} to generate a lower triangular $L$.
+\begin{lemma}\label{lemma:atmostnlinindinrn}
+If a linearly independent subset of $\RR^n$ contains $m$ vectors, then $m\leq n$.
+\end{lemma}
+\begin{proof}
+See Practice Problem \ref{prob:atmostnlinindinrnproof}.
+\end{proof}
 
-If the elementary matrices used to reduce our matrix to row-echelon form are all lower triangular, then we can find an $LU$ factorization.  But what about the general case?
+\begin{lemma}\label{lemma:expandinglinindset}
+Let $\{\vec{v}_1,\ldots ,\vec{v}_k\}$ be a linearly independent subset of $\RR^n$.  If $\vec{u}$ is not in $\mbox{span}(\vec{v}_1,\ldots ,\vec{v}_k)$, then $\{\vec{u},\vec{v}_1,\ldots ,\vec{v}_k\}$ is linearly independent.
+\end{lemma}
+\begin{proof}
+Consider the equation
+\begin{align}\label{eq:expandinglinindset}a\vec{u}+a_1\vec{v}_1+\ldots +a_k\vec{v}_k=\vec{0}\end{align}
+We need to show that $a=a_1=\ldots =a_k=0$.  Suppose $a\neq 0$, then $\vec{u}=\frac{-a_1}{a}\vec{v}_1+\ldots +\frac{-a_k}{a}\vec{v}_k$.  But this contradicts the assumption that $\vec{u}$ is not in the span of $\vec{v}_1,\ldots ,\vec{v}_k$.  So, $a=0$.  But $a_1=\ldots =a_k=0$ because $\vec{v}_1,\ldots ,\vec{v}_k$ are linearly independent.
 
-\begin{theorem}\label{th:LUPA}
-Suppose an $m \times n$ matrix $A$ is transformed to a row-echelon matrix $U$ using Gaussian elimination. Let $P_1, P_2, \ldots, P_s$ be the elementary matrices corresponding (in order) to the row interchanges used,
-and write $P=P_s \cdots P_2 P_1$. (If no interchanges are used take $P = I_M$.) Then:
-\begin{enumerate}
-\item $PA$ is the matrix obtained from $A$ by doing these interchanges (in order) to A.
-\item $PA$ has an $LU$ factorization.
-\end{enumerate}
+This means that (\ref{eq:expandinglinindset}) has only the trivial solution, and $\{\vec{u},\vec{v}_1,\ldots ,\vec{v}_k\}$ is linearly independent.
+\end{proof}
+
+\begin{theorem}\label{th:expandtobasis}
+Let $V$ be a subspace of $\RR^n$.  Any linearly independent subset of $V$ can be expanded to a basis of $V$.
 \end{theorem}
+\begin{proof}
+Suppose that $X=\{\vec{v}_1,\ldots ,\vec{v}_k\}$ is a linearly independent subset of $V$. If $\mbox{span}(X) = V$ then $X$ is already a basis of $V$. If $\mbox{span}(X) \neq V$, choose $\vec{u}_1$ in $V$ such that $\vec{u}_1$ is not in $\mbox{span}(X)$. The set $\{\vec{u}_1, \vec{v}_1,\ldots ,\vec{v}_k\}$ is linearly independent by Lemma \ref{lemma:expandinglinindset}. 
 
-For a proof of the above theorem, the reader is referred to [Nicholson].
-
-The matrix $P$ in the above theorem is called a \dfn{permutation matrix}.  These matrices have other important applications, as we will see later.
-
+If $\mbox{span}(\vec{u}_1, \vec{v}_1,\ldots ,\vec{v}_k) = V$ we are done; otherwise choose $\vec{u}_{2} \in V$ such that $\vec{u}_{2}$ is not in $\mbox{span}(\vec{u}_1, \vec{v}_1,\ldots ,\vec{v}_k)$. Then $\{\vec{u}_1,\vec{u}_2, \vec{v}_1,\ldots ,\vec{v}_k\}$ is linearly independent, and the process continues. We claim that a basis of $V$ will be reached eventually. If no basis of $V$ is ever reached, the process creates arbitrarily large independent sets in $\RR^n$. But this is impossible by Lemma \ref{lemma:atmostnlinindinrn}.
+\end{proof}
 
 \section*{Practice Problems}
+\emph{Problems \ref{prob:finddimension1}-\ref{prob:finddimension3}}
+For each given set $S$ of vectors, find $\mbox{dim}(\mbox{span}(S))$.
+\begin{hint}
+Use Theorem \ref{th:linindandrank} of VEC-0110.
+\end{hint}
 
-\begin{problem}\label{prob:LU1}
-Use the given $LU$ factorization of the coefficient matrix to solve the system of equations.
-$$\begin{array}{ccccccc}
-      x & +&2y&+&3z&= &5 \\
-	 2x&+&3y&+&z&=&6\\
-     3x& +&5y&+&4z&=&11
-    \end{array}$$
-Observe that an $LU$ factorization of the coefficient matrix is
-\[
-\begin{bmatrix}
-1 & 2 & 3 \\
-2 & 3 & 1 \\
-3 & 5 & 4\end{bmatrix}
-=
-\begin{bmatrix}
-1 & 0 & 0 \\
-2 & 1 & 0 \\
-3 & 1 & 1
-\end{bmatrix} 
-\begin{bmatrix}
-1 & 2 & 3 \\
-0 & -1 & -5 \\
-0 & 0 & 0
-\end{bmatrix}
-\]
+\begin{problem}\label{prob:finddimension1}
+$$S=\left\{\begin{bmatrix}1\\1\\0\\1\end{bmatrix}, \begin{bmatrix}0\\1\\1\\1\end{bmatrix}, \begin{bmatrix}1\\0\\1\\1\end{bmatrix}, \begin{bmatrix}1\\1\\0\\1\end{bmatrix} \right\}$$
+Answer: $\mbox{dim}(\mbox{span}(S))=\answer{3}$
 \end{problem}
 
-\emph{Problems \ref{prob:LU2a}-\ref{prob:LU2b}}
-Find the $LU$ factorization of the coefficient matrix and use it to solve the system of equations.
-
-\begin{problem}\label{prob:LU2a}
-
-$$
-\begin{array}{ccccc}
-      x& +&2y&=&5\\
-      2x & +&3y&= &6 
-    \end{array}
-$$
-$$L=\begin{bmatrix}\answer{1}&0\\\answer{2}&\answer{1}\end{bmatrix},\quad U=\begin{bmatrix}\answer{1}&\answer{2}\\0&\answer{-1}\end{bmatrix}$$
-$$x=\answer{-3}, y=\answer{4}$$
+\begin{problem}\label{prob:finddimension2}
+$$S=\left\{\begin{bmatrix}3\\-2\\1\\1\end{bmatrix}, \begin{bmatrix}2\\3\\3\\-2\end{bmatrix}, \begin{bmatrix}1\\-5\\-2\\3\end{bmatrix}\right\}$$
+Answer: $\mbox{dim}(\mbox{span}(S))=\answer{2}$
 \end{problem}
 
-\begin{problem}\label{prob:LU2b}
-$$\begin{array}{ccccccc}
-      x & +&2y&+&z&= &1 \\
-	 & &y&+&3z&=&2\\
-     2x& +&3y&&&=&6
-    \end{array}$$
-    $$L=\begin{bmatrix}\answer{1}&0&0\\\answer{0}&\answer{1}&0\\\answer{2}&\answer{-1}&\answer{1}\end{bmatrix},\quad U=\begin{bmatrix} \answer{1}&\answer{2}&\answer{1}\\0&\answer{1}&\answer{3}\\0&0&\answer{1}\end{bmatrix}$$
-    $$x=\answer{27},y=\answer{-16}, z=\answer{6}$$
+\begin{problem}\label{prob:finddimension3}
+$$S=\left\{\begin{bmatrix}1\\1\\-3\end{bmatrix}, \begin{bmatrix}-3\\2\\1\end{bmatrix}, \begin{bmatrix}5\\-2\\4\end{bmatrix}\right\}$$
+Answer: $\mbox{dim}(\mbox{span}(S))=\answer{3}$
 \end{problem}
 
-%\begin{problem}
-%\begin{equation*}
-%\begin{array}{c}
-%x+2y+3z=5 \\
-%2x+3y+z=6 \\
-%x-y+z=2
-%\end{array}
-%\end{equation*}
-%\end{problem}
 
-
-\begin{problem}\label{prob:LU4}
-Is there only one $LU$ factorization for a given matrix?
-
-\begin{hint}Consider the equation
-$$
-\begin{bmatrix}0 & 1 \\0 & 1\end{bmatrix}=\begin{bmatrix}1& 0 \\1 & 1\end{bmatrix} \begin{bmatrix}0 & 1 \\0 & 0\end{bmatrix}
-$$
-
-Look for all possible $LU$ factorizations.
+\begin{problem}\label{prob:atmostnlinindinrnproof}
+Prove Lemma \ref{lemma:atmostnlinindinrn}.
+\begin{hint}
+Look at the proof of Theorem \ref{th:dimwelldefined}.
 \end{hint}
 \end{problem}
 
-\begin{problem}\label{prob:LU5}
-Can you show that every permutation matrix is invertible?  If so, What does the inverse of a permutation matrix look like? (Recall that a permutation matrix is matrix $P$ of Theorem \ref{th:LUPA}.)
+\begin{problem}\label{prob:matrixtimesbasisvectors} 
+Let $\mathcal{B}=\{\vec{v}_1, \vec{v}_2, \vec{v}_3\}$ be a basis of $\RR^3$.  Suppose $A$ is a nonsingular $3\times 3 $ matrix.  Show that $\mathcal{C}=\{A\vec{v}_1, A\vec{v}_2, A\vec{v}_3\}$ is also a basis of $\RR^3$. 
+\begin{hint}
+To show that $\mathcal{C}$ spans $\RR^3$, express $A^{-1}\vec{v}$ as a linear combination of $\vec{v}_1$, $\vec{v}_2$ and $\vec{v}_3$.
+\end{hint}
+
 \end{problem}
 
-\section*{Text Source}
-The text in this section is an adaptation of Section 2.2 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra}. (CC-BY)
 
-Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, p. 99-106.
 
-\section*{Bibliography}
+\section*{Exercise Source}
+Practice Problem \ref{prob:matrixtimesbasisvectors} is adopted from Keith Nicholson's Example 5.2.12  \href{https://open.umn.edu/opentextbooks/textbooks/linear-algebra-with-applications}{\it Linear Algebra with Applications}. (CC-BY-NC-SA)
 
-[Nicholson] W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2018, Open Edition, pp. 123--127.
+W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2018, Open Edition, p 277.
 
 \end{document}
