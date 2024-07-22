@@ -36,17 +36,26 @@
   </titlepage>
 
   <colophon>
-
     <website>
-      <url href="https://pretextbook.org">My Website</url>
+      <url href="https://mathbooks.unl.edu/" visual="mathbooks.unl.edu"/>
     </website>
-
+    <credit>
+      <role>Cover Photo</role>
+      <entity>
+        <pubtitle>Calatrava's beautiful structure at Guillemins railway station, Liege, Belgium</pubtitle> by Elena Tatiana Chis available <url href="https://commons.wikimedia.org/w/index.php?curid=60548229" visual="here"/>.
+      </entity>
+    </credit>
     <copyright>
-      <year>2020<ndash />2023</year>
-      <holder>You</holder>
-      <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
+      <shortlicense>
+        This work is published under a <url href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" visual="CC-BY-SA 4.0"/> license.
       </shortlicense>
     </copyright>
   </colophon>
+  
+  <acknowledgement>
+    <p>
+      This text is based on Anna Davis's and Paul Zachlin's <pubtitle>Linear Algebra: An Interactive Introduction</pubtitle>, which is freely available online via <url href="https://sites.google.com/view/lin-alg-interactive-intro/">this link</url>.
+    </p>
+  </acknowledgement>
 </frontmatter>
 
