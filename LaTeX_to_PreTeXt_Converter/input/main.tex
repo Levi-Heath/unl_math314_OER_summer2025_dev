@@ -1,384 +1,573 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
-\title{The Inverse of a Matrix} \license{CC BY-NC-SA 4.0}
+ \title{LU Factorization} \license{CC BY-NC-SA 4.0}
 
 \begin{document}
 \begin{abstract}
- 
+
 \end{abstract}
 \maketitle
-\section*{The Inverse of a Matrix}
-\subsection*{Definition and Properties of Matrix Inverses}
-Consider the equation $2x=6$.  It takes little time to recognize that the solution to this equation is $x=3$.  In fact, the solution is so obvious that we do not think about the algebraic steps necessary to find it.  Let's take a look at these steps in detail.
-$$2x=6$$
-$$\frac{1}{2}\times (2x)=\frac{1}{2}\times 6$$
-$$(\frac{1}{2}\times 2)x=3$$
-$$1x=3$$
-$$x=3$$
-This process utilizes many properties of real-number multiplication.  In particular, we make use of existence of \dfn{multiplicative inverses}.  Every non-zero real number $a$  has a multiplicative inverse $a^{-1}=\frac{1}{a}$ with the property that $\frac{1}{a}\times a=a\times \frac{1}{a}=1$.  We say that $1$ is the \dfn{multiplicative identity} because $a\times 1=1\times a=a$.
 
-Given a matrix equation $A\vec{x}=\vec{b}$, we would like to follow a process similar to the one above to solve this matrix equation for $\vec{x}$.  
+\begin{onlineOnly}
+\section*{$LU$ factorization}
+\end{onlineOnly}
 
-Observe that the role of the multiplicative identity for $n\times n$ square matrices is filled by $I_n$ because $AI_n=I_nA=A$. Given an $n\times n$ matrix $A$, a multiplicative inverse of $A$ would have to be some $n\times n$ matrix $B$ such that
-$$BA=AB=I_n$$
-Assuming that such an inverse $B$ exists, this is what the process of solving the equation $A\vec{x}=\vec{b}$ would look like:
+\begin{exploration}\label{init:LUfactorization}
+Consider the equation:
+$$\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}\begin{bmatrix}2&-1&2\\0&4&-1\\0&0&3\end{bmatrix}\vec{x}=\begin{bmatrix}1\\8\\5\end{bmatrix}$$
+This equation is unusual in that it involves two matrices on the left-hand side.  If we multiply the matrices together, we get
+$$\begin{bmatrix}2&-1&2\\6&1&5\\-4&10&-3\end{bmatrix}\vec{x}=\begin{bmatrix}1\\8\\5\end{bmatrix}$$
+Gaussian elimination yields:
+$$\left[\begin{array}{ccc|c}
+2&-1&2&1\\6&1&5&8\\-4&10&-3&5
+\end{array}\right]
+\quad\rightsquigarrow\quad
+\left[\begin{array}{ccc|c}
+ 1&0&0&2\\0&1&0&1\\0&0&1&-1
+\end{array}\right]
+$$
+We conclude that
+$$\vec{x}=\begin{bmatrix}2\\1\\-1\end{bmatrix}.$$
+
+Now that we know the answer, we will turn to the original question and consider the advantages of the format of the original problem.  Observe that the two matrices have a distinct pattern.  The matrix on the left has zeros above the main diagonal, while the matrix on the right has zeros below the main diagonal.  Matrices that follow such a pattern are called \dfn{lower triangular} and \dfn{upper triangular} matrices, respectively.
+
+Let $\vec{y}=\begin{bmatrix}2&-1&2\\0&4&-1\\0&0&3\end{bmatrix}\vec{x}$.  Then we can write the original equation as
+$$\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}\left(\begin{bmatrix}2&-1&2\\0&4&-1\\0&0&3\end{bmatrix}\vec{x}\right)=\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}\vec{y}=\begin{bmatrix}1\\8\\5\end{bmatrix}$$
+The equation 
+$$\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}\vec{y}=\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}\begin{bmatrix}y_1\\y_2\\y_3\end{bmatrix}=\begin{bmatrix}1\\8\\5\end{bmatrix}$$ 
+corresponds to the system
+$$\begin{matrix}
+	 y_1&&&=&1\\
+	   3y_1 & +y_2&&= &8 \\
+      -2y_1&+2y_2&+y_3&=&5
+    \end{matrix}$$
+    
+This system can be easily solved by substitution, giving us
+$$y_1=1$$
+$$3(1)+y_2=8 \rightsquigarrow y_2=5$$
+$$-2(1)+2(5)+y_3=5 \rightsquigarrow y_3=-3$$
+So,
+$$\vec{y}=\begin{bmatrix}y_1\\y_2\\y_3\end{bmatrix}=\begin{bmatrix}1\\5\\-3\end{bmatrix}$$
+    
+Recall that we let $\vec{y}=\begin{bmatrix}2&-1&2\\0&4&-1\\0&0&3\end{bmatrix}\vec{x}$.  
+The equation
+$$\begin{bmatrix}2&-1&2\\0&4&-1\\0&0&3\end{bmatrix}\vec{x}=\begin{bmatrix}1\\5\\-3\end{bmatrix}$$
+corresponds to the system
+$$\begin{matrix}
+	 2x_1& -&x_2&+&2x_3&=&1\\
+	   & &4x_2&-&x_3&= &5 \\
+      & &&&3x_3&=&-3
+    \end{matrix}$$
+    which can be easily solved by back-substitution:
+    $$x_3=\answer{-1}$$
+    $$x_2=\answer{1}$$
+    $$x_1=\answer{2}$$
+    
+    Thus, $\vec{x}=\begin{bmatrix}2\\1\\-1\end{bmatrix}$.  Observe that this is the same answer that we obtained in the beginning of the problem using Gaussian elimination.  
+\end{exploration}
+
+Given a matrix equation such as 
+$$\begin{bmatrix}2&-1&2\\6&1&5\\-4&10&-3\end{bmatrix}\vec{x}=\begin{bmatrix}1\\8\\5\end{bmatrix}$$
+of Exploration \ref{init:LUfactorization}, often in practice we express the matrix on the left as a product of an upper triangular matrix $U$ and a lower triangular matrix $L$ and use substitution to solve the equation instead of using Gaussian elimination to find the solution.  In Exploration \ref{init:LUfactorization}, 
+
+$$\begin{bmatrix}2&-1&2\\6&1&5\\-4&10&-3\end{bmatrix}=LU=\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}\begin{bmatrix}2&-1&2\\0&4&-1\\0&0&3\end{bmatrix}$$
+
+The process of taking a matrix $A$ and expressing it as a product $A=LU$ of a lower triangular matrix $L$ and an upper triangular matrix $U$ is called \dfn{$LU$ factorization}.
+%An $LU$ factorization of a matrix $A$ is when we express the given matrix as the
+%product
+%$$A=LU$$
+%where  $L$ is a lower triangular square matrix and $U$ is an upper triangular matrix.  
+We also adopt the (common) convention that $L$ is a matrix with a diagonal consisting entirely of $1$'s, which is often called a \dfn{lower unit triangular} matrix.
+
+Not every matrix has an $LU$ factorization, but we will see that we can correct for that.
+
+\begin{example}\label{ex:usingLU}
+Consider the system
+$$\begin{array}{ccccccccc}
+        & &12x_2&-&18x_3&= &6 \\
+	 x_1 &+ &2x_2&-&3x_3&= &1\\
+      x_1&- &2x_2&+&x_3&=&1
+    \end{array}.$$
+We can express this system as the matrix equation $A\vec{x}=\vec{b}$, and we get $$\begin{bmatrix}0&12&-18\\1&2&-3\\1&-2&1\end{bmatrix}\vec{x}=\begin{bmatrix}6\\1\\1\end{bmatrix}.$$
+
+Unfortunately, for reasons we will explain below, it is not possible to find an $LU$ factorization of this coefficient matrix.  However, if we simply swap the first two equations:
+$$\begin{array}{ccccccccc}
+	 x_1 &+ &2x_2&-&3x_3&= &1\\
+	  & &12x_2&-&18x_3&= &6 \\
+      x_1&- &2x_2&+&x_3&=&1
+    \end{array},$$
+we are able to find an $LU$ factorization of the coefficient matrix.
+\[
+\begin{bmatrix}
+1 & 2 & -3 \\
+0 & 12 & -18 \\
+1 & -2 & 1\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+1  & -1/3  & 1
+\end{bmatrix} 
+\begin{bmatrix}
+1 & 2 & -3 \\
+0 & 12  & -18 \\
+0 & 0 & -2
+\end{bmatrix}
+\]
+(How we actually come up with an  $LU$ factorization of $A$ will be discussed after this example.)
+
+To understand how an $LU$ factorization can be used, it is helpful to think of this system of equations as a matrix equation.
 $$A\vec{x}=\vec{b}$$
-$$B(A\vec{x})=B\vec{b}$$
-$$(BA)\vec{x}=B\vec{b}$$
-$$I\vec{x}=B\vec{b}$$
-$$\vec{x}=B\vec{b}$$
+$$(LU)\vec{x}=\vec{b}$$
+$$L(U\vec{x})=\vec{b}$$
+So if we let $\vec{y}=U\vec{x}$ and also write $\vec{y}=\begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix}$, then we are able to solve for $ y_1, y_2, \text{ and } y_3$ using \emph{forward-substitution}.
+$$L\vec{y}=\vec{b}$$
+\[
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+1  & -1/3  & 1
+\end{bmatrix} 
+\begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix}
+=
+\begin{bmatrix} 1 \\ 6 \\ 1 \end{bmatrix}
+\]
+See if you can do it!
+$$y_1=\answer{1},\quad y_2=\answer{6},\quad y_3=\answer{2}$$
+Once we have the values of $\vec{y}$, since $\vec{y}=U\vec{x}$, all that remains is to solve the following matrix equation using back-substitution.
+$$U\vec{x}=\vec{y}$$
 
-\begin{definition}\label{def:matinverse}
-Let $A$ be an $n\times n$ matrix.  An $n\times n$ matrix $B$ is called an \dfn{inverse} of $A$ if 
-$$AB=BA=I$$
-where $I$ is an $n\times n$ identity matrix.  If such an inverse matrix exists, we say that $A$ is \dfn{invertible}.  If an inverse does not exist, we say that $A$ is not invertible.
-\end{definition}
-It follows directly from the way the definition is stated that if $B$ is an inverse of $A$, then $A$ is an inverse of $B$. We say that $A$ and $B$ are inverses of each other.
+\begin{expandable}
+$$\begin{bmatrix}
+1 & 2 & -3 \\
+0 & 12  & -18 \\
+0 & 0 & -2
+\end{bmatrix} 
+\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}
+=
+\begin{bmatrix} 1 \\ 6 \\ 2 \end{bmatrix}$$
 
-The following theorem shows that matrix inverses are unique.
 
-\begin{theorem}\label{th:matinverseunique} Suppose $A$ is an invertible matrix, and $B$ is an inverse of $A$.  Then $B$ is unique.
-\end{theorem}
-\begin{proof}
-Because $B$ is an inverse of $A$, we have:
-$$AB=BA=I$$
-Suppose there exists another $n\times n$ matrix $C$ such that 
-$$AC=CA=I$$
-Then
-$$C(AB)=CI$$
-$$(CA)B=C$$
-$$IB=C$$
-$$B=C$$
-\end{proof}
-Now that we know that a matrix $A$ cannot have more than one inverse, we can safely refer to the inverse of $A$ as $A^{-1}$.
-
-\begin{example}\label{ex:inverse1} Let $$A=\begin{bmatrix}1 & -1\\-5 & 2\end{bmatrix}\quad\text{and}\quad B=\begin{bmatrix}-2/3 & -1/3\\-5/3 & -1/3\end{bmatrix}$$ Verify that $A$ and $B$ are inverses of each other.
-\begin{explanation} We will show that $AB=BA=I$.
-
-$$
-AB=\begin{bmatrix}1 & -1\\-5 & 2\end{bmatrix}\begin{bmatrix}-2/3 & -1/3\\-5/3 & -1/3\end{bmatrix}
-=\begin{bmatrix}-2/3+5/3 & -1/3+1/3\\10/3-10/3 & 5/3-2/3\end{bmatrix}=\begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}
-$$
-
-$$
-BA=\begin{bmatrix}-2/3 & -1/3\\-5/3 & -1/3\end{bmatrix}\begin{bmatrix}1 & -1\\-5 & 2\end{bmatrix}
-=\begin{bmatrix}-2/3+5/3 & 2/3-2/3\\-5/3+5/3 & 5/3-2/3\end{bmatrix}=\begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}
-$$
-\end{explanation}
+By now you are quite used to solving this kind of problem...
+$$x_1=\answer{0},\quad x_2=\answer{-1},\quad x_3=\answer{-1}$$
+\end{expandable}
 \end{example}
 
-\begin{example}\label{ex:inverse2} Use what we found in Example \ref{ex:inverse1} to solve the matrix equation:
-$$\begin{bmatrix}1 & -1\\-5 & 2\end{bmatrix}\vec{x}=\begin{bmatrix}-3\\1\end{bmatrix}$$
+
+\subsection*{Finding an $LU$ factorization by Inspection}
+
+\begin{example}\label{ex:LU1}
+Find an $LU$ factorization of $A=
+\begin{bmatrix}
+1 & 2 & 0 & 2 \\
+1 & 3 & 2 & 1 \\
+2 & 3 & 4 & 0
+\end{bmatrix}
+.$
+\end{example}
+
+One way to find the $LU$ factorization%
+ is to simply look for it directly.
+We need
+\[
+\begin{bmatrix}
+1 & 2 & 0 & 2 \\
+1 & 3 & 2 & 1 \\
+2 & 3 & 4 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 & 0 \\
+x & 1 & 0 \\
+y & z & 1
+\end{bmatrix} 
+\begin{bmatrix}
+a & d & h & j \\
+0 & b & e & i \\
+0 & 0 & c & f
+\end{bmatrix}
+\]
+By multiplying the latter matrices we get
+\[
+\begin{bmatrix}
+a & d & h & j \\
+xa & xd+b & xh+e & xj+i \\
+ya & yd+zb & yh+ze+c & yj+iz+f
+\end{bmatrix}
+\]
+and from this, it is a simple exercise to determine each of the unknowns. For example, from the first
+column, we get $a=1$ and then $x=1,y=2.$ 
+
+% Now go to the second column. You need $
+% d=2,xd+b=3$ so $b=1,yd+zb=3$ so $z=-1.$ From the third column, $h=0,e=2,c=6.$
+% Now from the fourth column, $j=2,i=-1,f=-5.$ 
+
+See if you can continue to determine the entire $LU$
+factorization of $A$.
+\[
+\begin{bmatrix}
+1 & 2 & 0 & 2 \\
+1 & 3 & 2 & 1 \\
+2 & 3 & 4 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+2 & \answer{-1} & 1
+\end{bmatrix} 
+\begin{bmatrix}
+1 & \answer{2} & \answer{0} & \answer{2} \\
+0 & \answer{1} & \answer{2} & \answer{-1} \\
+0 & 0 & \answer{6} & \answer{-5}
+\end{bmatrix}
+\]
+
+\subsection*{Finding an $LU$ factorization by the Multiplier Method}
+
+In the following example we demonstrate a method for computing an $LU$ factorization known as the multiplier method.
+
+\begin{example}\label{ex:multiplierLU}
+Find an $LU$ factorization for
+\[
+\begin{bmatrix}
+1 & 2 & 3 \\
+2 & 3 & 1 \\
+-2 & 3 & -2
+\end{bmatrix} 
+\]
+
 \begin{explanation}
-We multiply both sides of the equation by the inverse of $\begin{bmatrix}1 & -1\\-5 & 2\end{bmatrix}$.
-$$\begin{bmatrix}-2/3 & -1/3\\-5/3 & -1/3\end{bmatrix}\begin{bmatrix}1 & -1\\-5 & 2\end{bmatrix}\vec{x}=\begin{bmatrix}-2/3 & -1/3\\-5/3 & -1/3\end{bmatrix}\begin{bmatrix}-3\\1\end{bmatrix}$$
-$$\vec{x}=\begin{bmatrix}5/3\\14/3\end{bmatrix}$$
+Write the matrix as the following product.
+\[
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix} 
+\begin{bmatrix}
+1 & 2 & 3 \\
+2 & 3 & 1 \\
+-2 & 3 & -2
+\end{bmatrix} 
+\]
+In the matrix on the right, we begin with the left row and zero
+out the entries below the top using the row operation which involves adding a multiple of a row to another row. You do this and also update the matrix on the left so that the product will be unchanged. 
+
+Here is the first step.  We take $-2$ times the top row and add to the second. Then take $2$ times the top row and add to the second in the matrix on the left.  This gives us
+\[
+\begin{bmatrix}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix} 
+\begin{bmatrix}
+1 & 2 & 3 \\
+0 & -1 & -5 \\
+-2 & 3 & -2
+\end{bmatrix} 
+\]
+
+The next step is to take $2$ times the top row and add to the bottom in the matrix on the right. To ensure that the product is unchanged, we place a $-2$ in the bottom left corner in the matrix on the left. Thus the second step yields
+\[
+\begin{bmatrix}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+-2 & 0 & 1
+\end{bmatrix} 
+\begin{bmatrix}
+1 & 2 & 3 \\
+0 & -1 & -5 \\
+0 & 7 & 4
+\end{bmatrix} 
+\]
+
+For our final step, we take $7$ times the middle row on right and add to bottom row. Updating the matrix on the left in the manner we did earlier, we get
+\[
+\begin{bmatrix}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+-2 & -7 & 1
+\end{bmatrix} 
+\begin{bmatrix}
+1 & 2 & 3 \\
+0 & -1 & -5 \\
+0 & 0 & -31
+\end{bmatrix} 
+\]
+At this point, we can stop. We have an $LU$ factorization of the original matrix.  We can always multiply the matrices to check, if we wish.
 \end{explanation}
 \end{example}
 
-We now prove several useful properties of matrix inverses.
+Notice that when we perform the multiplier method, we are making repeated use of a certain type of elementary row operation, namely, we are adding a scalar multiple of one row to a row below it.  The reason this helps to create an $LU$ factorization depends upon the fact that the elementary matrices corresponding to such operations are lower triangular.  To understand how this works, we begin with a lemma. 
 
-\begin{theorem}\label{th:invprop} The following properties are stated for square matrices of appropriate sizes.
+\begin{lemma}\label{lem:multipliermethodtriangularmatrices}
+Let $L$ be a lower (upper) triangular matrix $m\times m$
+which has ones down the main diagonal. Then $L^{-1}$ also is a lower (upper)
+triangular matrix which has ones down the main diagonal. In the case that $L$
+is of the form
+\begin{equation}\label{4nove1h}
+L=
+\begin{bmatrix}
+1 &  &  &  \\
+a_{1} & 1 &  &  \\
+\vdots &  & \ddots &  \\
+a_{n} &  &  & 1
+\end{bmatrix}, 
+\end{equation}
+where all entries are zero except for the left column and main diagonal, it
+is also the case that $L^{-1}$ is obtained from $L$ by simply multiplying each entry below the main diagonal in $L$ by $-1$. The same is true if the single nonzero column is in another position.
+\end{lemma}
+
+\begin{proof}Consider the usual setup for finding the inverse $\begin{bmatrix}
+L &|& I
+\end{bmatrix}$.  Each row operation used on $L$ to transform this matrix to reduced row echelon form changes only the entries in $I$ below the main diagonal. Whether we have the special case of $L$ given in \ref{4nove1h} where the nonzero nondiagonal entries are in the left column, or if the single
+nonzero column is in another position, it is clear that multiplication by $-1$ as described in the lemma gives us $L^{-1}$.
+\end{proof}
+
+For a simple illustration of the lemma, observe:
+\begin{equation*}
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 0 & 1 & 0 \\
+0 & a & 1 & 0 & 0 & 1
+\end{array}\right]
+\rightsquigarrow 
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 0 & 1 & 0 \\
+0 & 0 & 1 & 0 & -a & 1
+\end{array}\right]
+\end{equation*}
+
+Now let $A$ be an $m\times n$ matrix, say
+\begin{equation*}
+A=
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots &  & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix},
+\end{equation*}
+and assume $A$ can be row reduced to an upper triangular form using only row
+operation 3. Thus, in particular, $a_{11}\neq 0$. Multiply on the left by 
+\begin{equation*}
+E_{1}=
+\begin{bmatrix}
+1 & 0 & \cdots & 0 \\
+-
+\frac{a_{21}}{a_{11}} & 1 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+-\frac{a_{m1}}{a_{11}} & 0 & \cdots & 1
+\end{bmatrix}
+\end{equation*}
+This is the product of elementary matrices which make modifications in the
+first column only. It is equivalent to taking $-a_{21}/a_{11}$ times the
+first row and adding to the second. Then taking $-a_{31}/a_{11}$ times the
+first row and adding to the third and so forth. The quotients in the first
+column of the above matrix are the multipliers. Thus the result is of the
+form
+\begin{equation*}
+E_{1}A=
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n}^{\prime } \\
+0 & a_{22}^{\prime } & \cdots & a_{2n}^{\prime } \\
+\vdots & \vdots &  & \vdots \\
+0 & a_{m2}^{\prime } & \cdots & a_{mn}^{\prime }
+\end{bmatrix}
+\end{equation*}
+By assumption, $a_{22}^{\prime }\neq 0$ and so it is possible to use this
+entry to zero out all the entries below it in the matrix on the right by
+multiplication by a matrix of the form 
+\begin{equation*}
+E_{2}=
+\begin{bmatrix}
+1 & \vec{0} \\
+\vec{0} & E
+\end{bmatrix}
+\end{equation*}
+where $E$ is an $( m-1)\times ( m-1)$
+matrix of the form
+\begin{equation*}
+E=\begin{bmatrix}
+1 & 0 & \cdots & 0 \\
+-\frac{a_{32}^{\prime }}{a_{22}^{\prime }} & 1 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+-\frac{a_{m2}^{\prime }}{a_{22}^{\prime }} & 0 & \cdots & 1
+\end{bmatrix}
+\end{equation*}
+Again, the entries in the first column below the 1 are the multipliers.
+Continuing this way, zeroing out the entries below the diagonal entries, finally leads us to
+\begin{equation*}
+E_{m-1}E_{m-2}\cdots E_{1}A=U
+\end{equation*}
+where $U$ is upper triangular. Each $E_{j}$ has all ones down the main diagonal and is lower triangular. Now we can multiply both sides by the inverses of the $E_{j}$ in the reverse order. This yields
+\begin{equation*}
+A=E_{1}^{-1}E_{2}^{-1}\cdots E_{m-1}^{-1}U
+\end{equation*}
+
+By Lemma \ref{lem:multipliermethodtriangularmatrices}, this implies that the product of those $E_{j}^{-1}$
+is a lower triangular matrix having all ones down the main diagonal.
+
+The above discussion and lemma explain how the multiplier
+method works. The expressions
+\begin{equation*}
+-\frac{a_{21}}{a_{11}},-\frac{a_{31}}{a_{11}},\cdots, -\frac{a_{m1}}{a_{11}},
+\end{equation*}
+which we obtained in building $E_{1}$, and which we denote respectively by $M_{21},\cdots ,M_{m1}$ to save notation, are the multipliers.
+\index{multipliers} Therefore, according to the lemma, to find $E_{1}^{-1}$ we simply write
+\begin{equation*}
+\begin{bmatrix}
+1 & 0 & \cdots & 0 \\
+-M_{21} & 1 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+-M_{m1} & 0 & \cdots & 1
+\end{bmatrix}
+\end{equation*}
+Similar considerations apply to the other $E_{j}^{-1}.$ Thus $L$ is a
+product of the form
+\begin{equation*}
+\begin{bmatrix}
+1 & 0 & \cdots & 0 \\
+-M_{21} & 1 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+-M_{m1} & 0 & \cdots & 1
+\end{bmatrix}
+\cdots 
+\begin{bmatrix}
+1 & 0 & \cdots & 0 \\
+0 & 1 & \cdots & 0 \\
+\vdots & 0 & \ddots & \vdots \\
+0 & \cdots & -M_{m(m-1)} & 1
+\end{bmatrix}, 
+\end{equation*}
+where each factor has at most one nonzero column, the position of which moves from left to right as we scan the above product of matrices from left to right. It follows from what we know  about the effect of multiplying on the left by an elementary matrix that the above product is of the form
+\begin{equation*}
+\begin{bmatrix}
+1 & 0 & \cdots & 0 & 0 \\
+-M_{21} & 1 & \cdots & 0 & 0 \\
+\vdots & -M_{32} & \ddots & \vdots & \vdots \\
+-M_{(M-1)1} & \vdots & \cdots & 1 & 0 \\
+-M_{M1} & -M_{M2} & \cdots & -M_{MM-1} & 1
+\end{bmatrix}
+\end{equation*}
+
+To sum up the procedure, beginning at the left column and moving toward the right, you
+simply insert, into the corresponding position in the identity matrix, $-1$
+times the multiplier which was used to zero out an entry in that position
+below the main diagonal in $A,$ while retaining the main diagonal which
+consists entirely of ones. This will give us $L$ as we create $U$ using row operation 3.
+
+We now return to Example \ref{ex:usingLU}, to understand why we could not use the multiplier method to find an $LU$ factorization of the coefficient matrix.  Suppose we had written 
+$$\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}0&12&-18\\1&2&-3\\1&-2&1\end{bmatrix}.$$
+Our first step of Gaussian elimination would require a row swap to get a nonzero entry into the top left corner (we swapped rows 1 and 2 in Example \ref{ex:usingLU}).  Unfortunately, the elementary matrix that accomplishes this, $P=\begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}$ is NOT lower triangular.  So we cannot apply Lemma \ref{lem:multipliermethodtriangularmatrices} to generate a lower triangular $L$.
+
+If the elementary matrices used to reduce our matrix to row-echelon form are all lower triangular, then we can find an $LU$ factorization.  But what about the general case?
+
+\begin{theorem}\label{th:LUPA}
+Suppose an $m \times n$ matrix $A$ is transformed to a row-echelon matrix $U$ using Gaussian elimination. Let $P_1, P_2, \ldots, P_s$ be the elementary matrices corresponding (in order) to the row interchanges used,
+and write $P=P_s \cdots P_2 P_1$. (If no interchanges are used take $P = I_M$.) Then:
 \begin{enumerate}
-\item \label{item:inverseofid} $I^{-1}=I$
-\item \label{item:inverseofinverse} For an invertible matrix $A$, $(A^{-1})^{-1}=A$.
-\item \label{item:inverseofproduct} If $A$ and $B$ are invertible matrices, then $(AB)$ is invertible and $(AB)^{-1}=B^{-1}A^{-1}$ (Shoes and socks rule).
-\item \label{item:inversekA} If $A$ is an invertible matrix and $k$ is a non-zero number, then $(kA)^{-1}=\frac{1}{k}A^{-1}$.
-\item \label{item:inversetranspose} If $A$ is an invertible matrix, then $A^T$ is also invertible, and $(A^T)^{-1}=(A^{-1})^T$.
+\item $PA$ is the matrix obtained from $A$ by doing these interchanges (in order) to A.
+\item $PA$ has an $LU$ factorization.
 \end{enumerate}
 \end{theorem}
-We will prove \ref{item:inverseofproduct}.  The remaining properties are left as exercises.
-\begin{proof}[Proof of Property~\ref{item:inverseofproduct}:]
-We will check to see if $B^{-1}A^{-1}$ is the inverse of $AB$.
-$$(B^{-1}A^{-1})(AB)=B^{-1}(A^{-1}A)B=B^{-1}IB=B^{-1}B=I$$
-$$(AB)(B^{-1}A^{-1})=A(BB^{-1})A^{-1}=AIA^{-1}=AA^{-1}=I$$
-Thus $(AB)$ is invertible and $(AB)^{-1}=B^{-1}A^{-1}$.
-\end{proof}
 
-\subsection*{Computing the Inverse}
-We now turn to the question of how to find the inverse of a square matrix, or determine that the inverse does not exist.  
+For a proof of the above theorem, the reader is referred to [Nicholson].
 
-Given a square matrix $A$, we are looking for a square matrix $B$ such that $$AB=I\quad\text{and}\quad BA=I$$
-We will start by attempting to satisfy $AB=I$.
-Let $\vec{v}_1,\ldots,\vec{v}_n$ be the columns of $B$, then
-$$A\begin{bmatrix}
-           | & |& &|\\
-		\vec{v}_1 & \vec{v}_2 &\dots &\vec{v}_n\\
-		|&| & &|
-         \end{bmatrix}=\begin{bmatrix}
-           | & |& &|\\
-		\vec{e}_1 & \vec{e}_2 &\dots &\vec{e}_n\\
-		|&| & &|
-         \end{bmatrix}$$
-where each $\vec{e}_i$ is a standard unit vector of $\RR^n$.   This gives us a system of equations $A\vec{v}_i=\vec{e}_i$ for each $1\leq i\leq n$.  If each $A\vec{v}_i=\vec{e}_i$ has a unique solution, then finding these solutions will give us the columns of the desired matrix $B$.  
-
-First, suppose that $\mbox{rref}(A)=I$, then we can use elementary row operations to carry each $[A|\vec{e}_i]$ to its reduced row-echelon form.
-$$[A|\vec{e}_i]\rightsquigarrow [I|\vec{v}_i]$$
-Observe that the row operations that carry $A$ to $I$ will be the same for each $A\vec{v}_i=\vec{e}_i$.  We can, therefore, combine the process of solving $n$ systems of equations into a single process
-$$[A|I]\rightsquigarrow [I|B]$$
-Each $\vec{v}_i$ is a unique solution of $A\vec{v}_i=\vec{e}_i$, and we conclude that $$B=\begin{bmatrix}
-           | & |& &|\\
-		\vec{v}_1 & \vec{v}_2 &\dots &\vec{v}_n\\
-		|&| & &|
-         \end{bmatrix}$$ is a solution to $AB=I$.  
- 
-By Problem \ref{prob:elemrowopsreverse}, we can reverse the elementary row operations to obtain
-$$[I|B]\rightsquigarrow [A|I]$$
-But the same row operations would also give us
-$$[B|I]\rightsquigarrow [I|A]$$
-We conclude that $BA=I$, and $B=A^{-1}$.
-         
-Next, suppose that $\mbox{rref}(A)\neq I$.  Then $\mbox{rref}(A)$ must contain a row of zeros.  Because one of the rows of $A$ was completely wiped out by elementary row operations, one of the rows of $A$ must be a linear combination of the other rows.  Suppose row $p$ is a linear combination of the other rows.  Then row $p$ can be carried to a row of zeros. But then the system $A\vec{v}_p=\vec{e}_p$ is inconsistent.  This is because $\vec{e}_p$ has a $1$ as the $p^{th}$ entry and zeros everywhere else.  The $1$ in the $p^{th}$ spot will not be affected by elementary row operations, and the $p^{th}$ row will eventually look like this
-$$[0\ldots 0|1]$$
-This shows that a matrix $B$ such that $AB=I$ does not exist, and $A$ does not have an inverse.
-
-We have just proved the following theorem.
-
-\begin{theorem}[Row-reduction Method for Computing the Inverse of a Matrix]\label{th:matrixinverse}
-Let $A$ be a square matrix.  If it is possible to use elementary row operations to carry the augmented matrix $[A|I]$ to $[I|B]$, then $B=A^{-1}$.  If such a reduction is not possible, then $A$ does not have an inverse.
-\end{theorem}
-
-\begin{corollary}\label{cor:rrefI}
-A square matrix $A$ has an inverse if and only if $\mbox{rref}(A)=I$.
-\end{corollary}
-
-\begin{example}\label{ex:inverse3} Find $A^{-1}$ or demonstrate that $A^{-1}$ does not exist.
-$$A=\begin{bmatrix}1&-1&2\\1&1&1\\1&3&-1\end{bmatrix}$$
-\begin{explanation}
-We start with the augmented matrix
-$$\left[\begin{array}{ccc|ccc}  
- 1&-1&2&1&0&0\\1&1&1&0&1&0\\1&3&-1&0&0&1
- \end{array}\right]
-  \begin{array}{c}
- \\
- \xrightarrow{R_2-R_1}\\
- \xrightarrow{R_3-R_1}
- \end{array}$$
- 
-  $$\left[\begin{array}{ccc|ccc}  
- 1&-1&2&1&0&0\\0&2&-1&-1&1&0\\0&4&-3&-1&0&1
- \end{array}\right]
-  \begin{array}{c}
- \\
- \\
- \xrightarrow{R_3-2R_2}
- \end{array}$$
- 
- $$\left[\begin{array}{ccc|ccc}  
- 1&-1&2&1&0&0\\0&2&-1&-1&1&0\\0&0&-1&1&-2&1
- \end{array}\right]
- \begin{array}{c}
- \\
- \\
- \xrightarrow{(-1)R_3}
- \end{array}$$
- 
- $$\left[\begin{array}{ccc|ccc}  
- 1&-1&2&1&0&0\\0&2&-1&-1&1&0\\0&0&1&-1&2&-1
- \end{array}\right]
- \begin{array}{c}
- \xrightarrow{R_1-2R_3}\\
- \xrightarrow{R_2+R_3}\\
-\\
- \end{array}$$
- 
- $$\left[\begin{array}{ccc|ccc}  
- 1&-1&0&3&-4&2\\0&2&0&-2&3&-1\\0&0&1&-1&2&-1
- \end{array}\right]
-  \begin{array}{c}
- \\
- \xrightarrow{\frac{1}{2}R_2}\\
-\\
- \end{array}$$
- 
- $$\left[\begin{array}{ccc|ccc}  
- 1&-1&0&3&-4&2\\0&1&0&-1&3/2&-1/2\\0&0&1&-1&2&-1
- \end{array}\right]
- \begin{array}{c}
- \xrightarrow{R_1+R_2}\\
- \\
-\\
- \end{array}$$
- 
- $$\left[\begin{array}{ccc|ccc}  
- 1&0&0&2&-5/2&3/2\\0&1&0&-1&3/2&-1/2\\0&0&1&-1&2&-1
- \end{array}\right]$$
- 
- We conclude that
- 
-$$A^{-1}=\begin{bmatrix}2&-5/2&3/2\\-1&3/2&-1/2\\-1&2&-1\end{bmatrix}$$
-\end{explanation}
-
-\end{example}
-
-\begin{example}\label{ex:findinverse2} Find $A^{-1}$ or demonstrate that $A$ is not invertible.
-$$A=\begin{bmatrix}2&3&-1\\0&2&1\\4&4&-3\end{bmatrix}$$
-\begin{explanation}
-We start with the augmented matrix
-$$\left[\begin{array}{ccc|ccc}  
- 2&3&-1&1&0&0\\0&2&1&0&1&0\\4&4&-3&0&0&1
- \end{array}\right]
- \begin{array}{c}
- \xrightarrow{\frac{1}{2}R_1}\\
- \xrightarrow{\frac{1}{2}R_2}\\
-\\
- \end{array}$$
-
- $$\left[\begin{array}{ccc|ccc}  
- 1&3/2&-1/2&1/2&0&0\\0&1&1/2&0&1/2&0\\4&4&-3&0&0&1
- \end{array}\right]
- \begin{array}{c}
- \\
- \\
-\xrightarrow{R_3-4R_1}
- \end{array}$$
-
- $$\left[\begin{array}{ccc|ccc}  
- 1&3/2&-1/2&1/2&0&0\\0&1&1/2&0&1/2&0\\0&-2&-1&-2&0&1
- \end{array}\right]
- \begin{array}{c}
- \\
- \\
-\xrightarrow{R_3+2R_2}
- \end{array}$$
- 
- $$\left[\begin{array}{ccc|ccc}  
- 1&3/2&-1/2&1/2&0&0\\0&1&1/2&0&1/2&0\\0&0&0&-2&1&1
- \end{array}\right]$$
- At this point we see that the left-hand side cannot be turned into $I$ through elementary row operations. We conclude that $A^{-1}$ does not exist.
-\end{explanation}
-\end{example}
-\begin{remark}
-Recall that a square matrix whose reduced row-echelon form is the identity matrix is called \dfn{nonsingular}. (Definition \ref{def:nonsingularmatrix})
-According to Corollary \ref{cor:rrefI}, a matrix is invertible if and only if it is nonsingular.  For this reason many linear algebra texts use the terms \dfn{invertible} and \dfn{nonsingular} as synonyms.
-\end{remark}
-
-\subsection*{Inverse of a $2\times 2$ Matrix}
-We will conclude this section by discussing the inverse of a nonsingular $2\times 2$ matrix.   
-Let $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ be a nonsingular matrix.  We can find $A^{-1}$ by using the row reduction method described above, that is, by computing the reduced row-echelon form of $[A|I]$.  Row reduction yields the following:
-
-$$\left[\begin{array}{cc|cc}  
- a&b&1&0\\c&d&0&1
- \end{array}\right]\rightsquigarrow\left[\begin{array}{cc|cc}  
- 1&0&d/(ad-bc)&-b/(ad-bc)\\0&1&-c/(ad-bc)&a/(ad-bc)
- \end{array}\right]$$
- Note that the denominator of each term in the inverse matrix is the same.  Factoring it out, gives us the following formula for $A^{-1}$.
-
-\begin{formula}\label{form:detinverse}
-$$A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$$
-\end{formula}
-
-Clearly, the expression for $A^{-1}$ is defined, if and only if $ad-bc\neq 0$.  So, what happens when $ad-bc=0$?  In Practice Problem \ref{prob:inverseformula} you will be asked to fill in the steps of the row reduction procedure that produces this formula, and show that if $ad-bc=0$ then $A$ does not have an inverse. 
+The matrix $P$ in the above theorem is called a \dfn{permutation matrix}.  These matrices have other important applications, as we will see later.
 
 
 \section*{Practice Problems}
 
-\begin{problem}\label{prob:owninverse}
-Verify that the matrix $\begin{bmatrix} 2 & -1\\3 & -2\end{bmatrix}$ is its own inverse.
+\begin{problem}\label{prob:LU1}
+Use the given $LU$ factorization of the coefficient matrix to solve the system of equations.
+$$\begin{array}{ccccccc}
+      x & +&2y&+&3z&= &5 \\
+	 2x&+&3y&+&z&=&6\\
+     3x& +&5y&+&4z&=&11
+    \end{array}$$
+Observe that an $LU$ factorization of the coefficient matrix is
+\[
+\begin{bmatrix}
+1 & 2 & 3 \\
+2 & 3 & 1 \\
+3 & 5 & 4\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+3 & 1 & 1
+\end{bmatrix} 
+\begin{bmatrix}
+1 & 2 & 3 \\
+0 & -1 & -5 \\
+0 & 0 & 0
+\end{bmatrix}
+\]
 \end{problem}
 
-\begin{problem}\label{prob:inverseofsingularmatrix}
-Use the row-reduction method for computing matrix inverses to explain why the given matrix does not have an inverse.
-$$\begin{bmatrix}1&1&1\\2&2&2\\3&3&3\end{bmatrix}$$
+\emph{Problems \ref{prob:LU2a}-\ref{prob:LU2b}}
+Find the $LU$ factorization of the coefficient matrix and use it to solve the system of equations.
+
+\begin{problem}\label{prob:LU2a}
+
+$$
+\begin{array}{ccccc}
+      x& +&2y&=&5\\
+      2x & +&3y&= &6 
+    \end{array}
+$$
+$$L=\begin{bmatrix}\answer{1}&0\\\answer{2}&\answer{1}\end{bmatrix},\quad U=\begin{bmatrix}\answer{1}&\answer{2}\\0&\answer{-1}\end{bmatrix}$$
+$$x=\answer{-3}, y=\answer{4}$$
 \end{problem}
 
-\begin{problem}\label{prob:inversesofeachother} Let $$A=\begin{bmatrix}1&-1&2\\2&1&1\\-3&1&0\end{bmatrix}\quad\text{and}\quad B=\begin{bmatrix}-1/12&1/6&-1/4\\-1/4&1/2&1/4\\5/12&1/6&1/4\end{bmatrix}$$ Are $A$ and $B$ inverses of each other?
-
-\begin{multipleChoice}
-  \choice[correct]{Yes, $A$ and $B$ are inverses.}
-  \choice{No, $A$ and $B$ are not inverses.}
-\end{multipleChoice}
+\begin{problem}\label{prob:LU2b}
+$$\begin{array}{ccccccc}
+      x & +&2y&+&z&= &1 \\
+	 & &y&+&3z&=&2\\
+     2x& +&3y&&&=&6
+    \end{array}$$
+    $$L=\begin{bmatrix}\answer{1}&0&0\\\answer{0}&\answer{1}&0\\\answer{2}&\answer{-1}&\answer{1}\end{bmatrix},\quad U=\begin{bmatrix} \answer{1}&\answer{2}&\answer{1}\\0&\answer{1}&\answer{3}\\0&0&\answer{1}\end{bmatrix}$$
+    $$x=\answer{27},y=\answer{-16}, z=\answer{6}$$
 \end{problem}
 
+%\begin{problem}
+%\begin{equation*}
+%\begin{array}{c}
+%x+2y+3z=5 \\
+%2x+3y+z=6 \\
+%x-y+z=2
+%\end{array}
+%\end{equation*}
+%\end{problem}
 
 
-\begin{problem}\label{prob:oroveinverseofid}
-Prove Properties \ref{item:inverseofid} and \ref{item:inverseofinverse} of Theorem \ref{th:invprop}.
-\end{problem}
+\begin{problem}\label{prob:LU4}
+Is there only one $LU$ factorization for a given matrix?
 
-\begin{problem}\label{prob:proveinverseka}
-Prove Properties \ref{item:inversekA} and \ref{item:inversetranspose} of Theorem \ref{th:invprop}.
-\end{problem}
+\begin{hint}Consider the equation
+$$
+\begin{bmatrix}0 & 1 \\0 & 1\end{bmatrix}=\begin{bmatrix}1& 0 \\1 & 1\end{bmatrix} \begin{bmatrix}0 & 1 \\0 & 0\end{bmatrix}
+$$
 
-\begin{problem}\label{prob:illustratematinverse} Use the following invertible matrices to illustrate Properties \ref{item:inverseofinverse}, \ref{item:inverseofproduct}, \ref{item:inversekA} and \ref{item:inversetranspose} of Theorem \ref{th:invprop}.
-$$A=\begin{bmatrix}2&0\\4&-3\end{bmatrix}\quad\text{and}\quad B=\begin{bmatrix}2&-1\\1&5\end{bmatrix}$$
-\end{problem}
-
-\begin{problem}\label{prob:solvesysbyinverses}
-In Example \ref{ex:inverse3} we found the inverse of $$A=\begin{bmatrix}1&-1&2\\1&1&1\\1&3&-1\end{bmatrix}$$
-
-Use $A^{-1}$ to solve the equation
-$$A\vec{x}=\begin{bmatrix}3\\-2\\4\end{bmatrix}$$
-Answer:
-$$\vec{x}=\begin{bmatrix}\answer{17}\\\answer{-8}\\\answer{-11}\end{bmatrix}$$
-
-\end{problem}
-
-\begin{problem}\label{prob:findinverse1}
-Find the inverse of each matrix by using the row-reduction procedure.  
-
-  $$A=\begin{bmatrix}1&-1&2\\-1&0&0\\1&-2&3\end{bmatrix}$$
-  $$A^{-1}=\begin{bmatrix}\answer{0} & \answer{-1} & \answer{0} \\ \answer{3} & \answer{1} & \answer{-2}\\ \answer{2} & \answer{1} & \answer{-1}\end{bmatrix}$$
-
-\end{problem}
-
-
-\begin{problem}\label{prob:inverseformula}
-Use the row-reduction method to prove Formula \ref{form:detinverse} for a nonsingular matrix.  Show that if $ad-bc=0$ then $A$ does not have an inverse.
-\begin{hint}After going through the row reduction, try it again, considering the possibility that $a=0$.
+Look for all possible $LU$ factorizations.
 \end{hint}
 \end{problem}
 
-
-\begin{problem}\label{prob:useformforinv}
-Use Formula \ref{form:detinverse} to find the inverse of $$A=\begin{bmatrix}2&-3\\1&5\end{bmatrix}$$
-Use $A^{-1}$ to solve the equation
-$$A\vec{x}=\begin{bmatrix}-3\\2\end{bmatrix}$$
-Answer:
-$$\vec{x}=\begin{bmatrix}\answer{-9/13}\\\answer{7/13}\end{bmatrix}$$
-
+\begin{problem}\label{prob:LU5}
+Can you show that every permutation matrix is invertible?  If so, What does the inverse of a permutation matrix look like? (Recall that a permutation matrix is matrix $P$ of Theorem \ref{th:LUPA}.)
 \end{problem}
 
-\begin{problem}
-For each matrix below refer to  Formula \ref{form:detinverse} to find the value of $x$ for which the matrix is not invertible.  
-\begin{problem}\label{prob:notinv1}
-$$\begin{bmatrix}1&2\\4&x\end{bmatrix}$$
-Answer: $x=\answer{8}$
-\end{problem}
-\begin{problem}\label{prob:notinv2}
-$$\begin{bmatrix}3&2\\3&x\end{bmatrix}$$
-Answer: $x=\answer{2}$
-\end{problem}
-\begin{problem}\label{prob:notinv3}
-$$\begin{bmatrix}5&4\\-5&x\end{bmatrix}$$
-Answer: $x=\answer{-4}$
-\end{problem}
-\end{problem}
+\section*{Text Source}
+The text in this section is an adaptation of Section 2.2 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra}. (CC-BY)
 
+Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, p. 99-106.
 
+\section*{Bibliography}
 
-\begin{problem}\label{prob:cancelprop}
-Suppose $AB=AC$ and $A$ is an invertible $n\times n$ matrix. Does it
-follow that $B=C?$ Explain why or why not.
-\end{problem}
-
-\begin{problem}\label{prob:cancelpropsingular}
-Suppose $AB=AC$ and $A$ is a non-invertible $n\times n$ matrix. Does it
-follow that $B=C?$ Explain why or why not.
-\end{problem}
-
-
-\begin{problem}\label{prob:Asquaredid}
-Give an example of a matrix $A$ such that $A^{2}=I$ and yet $A\neq I$
-and $A\neq -I.$
-\end{problem}
-
-\begin{problem}\label{prob:invofsymm}
-Suppose $A$ is a symmetric, invertible matrix.  Does it follow that $A^{-1}$ is symmetric?  What if we change ``symmetric" to ``skew symmetric"?  (See Definition \ref{def:symmetricandskewsymmetric}.)
-\end{problem}
-
-\begin{problem}\label{prob:sumofinvertible} Suppose $A$ and $B$ are invertible $n\times n$ matrices.  Does it follow that $(A+B)$ is invertible?
-\end{problem}
+[Nicholson] W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2018, Open Edition, pp. 123--127.
 
 \end{document}

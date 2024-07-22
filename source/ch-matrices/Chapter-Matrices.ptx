@@ -74,7 +74,8 @@
  <xi:include href="Section-Transpose-of-a-Matrix.ptx"/>
  <xi:include href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.ptx"/>
  <xi:include href="Section-Homogeneous-Linear-Systems.ptx"/>
- <xi:include href="Section-Elementary-Matrices.ptx"/>
  <xi:include href="Section-The-Inverse-of-a-Matrix.ptx"/>
+ <xi:include href="Section-Elementary-Matrices.ptx"/>
+ <xi:include href="Section-LU-Factorization.ptx"/>
 </chapter>
 
