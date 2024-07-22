@@ -103,8 +103,6 @@
 
   <subsection xml:id="Subsection-Orthogonal-Vectors">
     <title>Orthogonal Vectors</title>
-    
-  </subsection>
 
 <definition xml:id="def-orthovectors">
   <statement>
@@ -131,6 +129,7 @@
     However, we will not use the word <term>perpendicular</term> when the zero vector is involved, as it is not possible to talk about an ``included angle''.
   </p>
 </remark>
+</subsection>
 
 <subsection xml:id="Subsection-Practice-Problems">
   <title>Practice Problems</title>
