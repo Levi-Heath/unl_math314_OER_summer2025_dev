@@ -47,5 +47,6 @@
 <xi:include href="Section-Rn-and-Subspaces-of-Rn.ptx"/>
 <xi:include href="Section-Introduction-to-Bases.ptx"/>
 <xi:include href="Section-Bases-and-Dimensions.ptx"/>
+<!--<xi:include href="Section-Subspaces-Associated-with-Matrices.ptx"/>-->
 </chapter>
 
