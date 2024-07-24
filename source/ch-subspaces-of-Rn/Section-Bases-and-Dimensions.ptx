@@ -219,13 +219,18 @@ See  <xref ref="prob-atmostnlinindinrnproof"/>.
 <proof>
     <p>
 Consider the equation
-<mdn xml:id="expandinglinindset"> 
+<men xml:id="expandinglinindset"> 
 a\mathbf{u}+a_1\mathbf{v}_1+\ldots +a_k\mathbf{v}_k=\mathbf{0}
-</mdn>
+</men>
 
-We need to show that <m>a=a_1=\ldots =a_k=0</m>.  Suppose <m>a\neq 0</m>, then <m>\mathbf{u}=\frac{-a_1}{a}\mathbf{v}_1+\ldots +\frac{-a_k}{a}\mathbf{v}_k</m>.  But this contradicts the assumption that <m>\mathbf{u}</m> is not in the span of <m>\mathbf{v}_1,\ldots ,\mathbf{v}_k</m>.  So, <m>a=0</m>.  But <m>a_1=\ldots =a_k=0</m> because <m>\mathbf{v}_1,\ldots ,\mathbf{v}_k</m> are linearly independent.
+We need to show that <m>a=a_1=\ldots =a_k=0</m>.  Suppose <m>a\neq 0</m>, then 
+<me>
+    \mathbf{u}=\frac{-a_1}{a}\mathbf{v}_1+\ldots +\frac{-a_k}{a}\mathbf{v}_k.
+</me>.
 
-This means that (<xref ref="expandinglinindset"/>) has only the trivial solution, and <m>\{\mathbf{u},\mathbf{v}_1,\ldots ,\mathbf{v}_k\}</m> is linearly independent.
+But this contradicts the assumption that <m>\mathbf{u}</m> is not in the span of <m>\mathbf{v}_1,\ldots ,\mathbf{v}_k</m>.  So, <m>a=0</m>.  But <m>a_1=\ldots =a_k=0</m> because <m>\mathbf{v}_1,\ldots ,\mathbf{v}_k</m> are linearly independent.
+
+This means that <xref ref="expandinglinindset"/> has only the trivial solution, and <m>\{\mathbf{u},\mathbf{v}_1,\ldots ,\mathbf{v}_k\}</m> is linearly independent.
     </p>
 </proof>
 </lemma>
