@@ -62,7 +62,7 @@ In this section we will focus on vectors in <m>\R^2</m> and <m>\R^3</m>.
     A larger version of this activity is available 
     <url href="https://www.geogebra.org/calculator/md3srgdg" visual="geogebra.org">here</url>.
   </caption>
-  <interactive xml:id="geogebra-vector-span-2d" platform="geogebra" width="100%" aspect="800:600">
+  <interactive xml:id="geogebra-vector-span-2d" platform="geogebra" width="150%" aspect="800:600">
     <slate xml:id="vector-span-2d" surface="geogebra" material="md3srgdg" aspect="800:600" />
   </interactive>
 </figure>
@@ -150,7 +150,7 @@ RIGHT-CLICK and DRAG the left panel to rotate the image.
     A larger version of this activity is available 
     <url href="https://www.geogebra.org/calculator/zvzxujp2" visual="geogebra.org">here</url>.
   </caption>
-  <interactive xml:id="geogebra-span-vector-3d" platform="geogebra" width="100%" aspect="900:800">
+  <interactive xml:id="geogebra-span-vector-3d" platform="geogebra" width="150%" aspect="900:800">
     <slate xml:id="span-vector-3d" surface="geogebra" material="zvzxujp2" aspect="900:800" />
   </interactive>
 </figure>
@@ -406,7 +406,7 @@ The method we used in <xref ref="ex-lincombparallelogrammethod"/> to express the
     A larger version of this activity is available 
     <url href="https://www.geogebra.org/calculator/u77b52k8" visual="geogebra.org">here</url>.
   </caption>
-  <interactive xml:id="geogebra-Linear-Comb-Vectors" platform="geogebra" width="100%" aspect="800:600">
+  <interactive xml:id="geogebra-Linear-Comb-Vectors" platform="geogebra" width="150%" aspect="800:600">
     <slate xml:id="Linear-Comb-Vectors" surface="geogebra" material="u77b52k8" aspect="800:600" />
   </interactive>
 </figure>
@@ -474,8 +474,8 @@ We can also address this question algebraically.  To express <m>\begin{bmatrix}3
 
 This gives us a system of equations
 <md>
--3a+6b\amp =3\\
-a-2b\amp =2
+    <mrow> -3a+6b\amp =3 </mrow>
+    <mrow> a-2b\amp =2 </mrow>
 </md>
 
 When you try to solve this system, you will find that the system is inconsistent.  Thus, <m>\begin{bmatrix}3\\2\end{bmatrix}</m> cannot be written as a linear combination of <m>\begin{bmatrix}-3\\1\end{bmatrix}</m> and <m>\begin{bmatrix}6\\-2\end{bmatrix}</m>.
@@ -505,8 +505,8 @@ We know that there is no way to express <m>\begin{bmatrix}3\\2\end{bmatrix}</m> 
 
 This amounts to solving a system of linear equations
 <md>
-2a+2b\amp =2\\
-a-2b\amp =4
+    <mrow> 2a+2b\amp =2 </mrow>
+    <mrow> a-2b\amp =4 </mrow>
 </md>
 Use your favorite method to solve this system. (Hint: adding the second equation to the first will work well for this system.) You will find that <m>a=2</m> and <m>b=-1</m>.  Now we can write <m>\begin{bmatrix}2\\4\end{bmatrix}</m> as a linear combination of <m>\begin{bmatrix}2\\1\end{bmatrix}</m> and <m>\begin{bmatrix}2\\-2\end{bmatrix}</m> as follows:
 
@@ -558,9 +558,9 @@ Geometrically speaking, this means that the vector <m>\begin{bmatrix}2\\4\end{bm
 
 This translates into a system of equations
 <md>
-a+3b\amp =7\\
--2a\amp =4\\
-a-b\amp =-5
+    <mrow> a+3b\amp =7 </mrow>
+    <mrow> -2a\amp =4 </mrow>
+    <mrow> a-b\amp =-5 </mrow>
 </md>
 Solve this system for <m>a</m> and <m>b</m>, and enter your answers below:
 
