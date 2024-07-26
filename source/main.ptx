@@ -17,6 +17,7 @@
     <xi:include href="./ch-matrices/Chapter-Matrices.ptx" />
     <xi:include href="./ch-subspaces-of-Rn/Chapter-Subspaces-of-Rn.ptx" />
     <xi:include href="./ch-linear-transformations/Chapter-Linear-Transformations.ptx" />
+    <xi:include href="./ch-the-determinant/Chapter-The-Determinant.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
