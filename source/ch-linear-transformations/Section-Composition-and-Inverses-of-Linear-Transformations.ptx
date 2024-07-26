@@ -12,16 +12,11 @@
  
 
 
+<p>
+Note to Student:  In this section we will often use <m>U</m>, <m>V</m> and <m>W</m> to denote subspaces of <m>\R^n</m>, or any other finite-dimensional vector space, such as those we study later on.
+</p>
 
-Note to Student:  In this section we will often use <m>U</m>, <m>V</m> and <m>W</m> to denote subspaces of <m>\R^n</m>, or any other finite-dimensional vector space, such as those we study in <url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/XLAChapter_vecSpaces/main">Vector Spaces</url>. 
 
-<subsection xml:id="Subsection-Composition-and-Inverses-of-Linear-Transformations">
-    <title>Composition and Inverses of Linear Transformations</title>
-</subsection>
-
-<subsection xml:id="Subsection-Composition-of-Linear-Transformations">
-    <title>Composition of Linear Transformations</title>
-</subsection>
 <definition xml:id="def-compoflintrans">
 
     <statement>
@@ -39,19 +34,16 @@ Note to Student:  In this section we will often use <m>U</m>, <m>V</m> and <m>W<
     <statement>
         <p>
             Define 
-<me>
-    T:\R^2\rightarrow \R^2 \quad\text{by}\quad T\left(\begin{bmatrix}u_1\\u_2\end{bmatrix}\right)=\begin{bmatrix}u_1+u_2\\3u_1+3u_2\end{bmatrix}
-</me>
-
-
-
-<me>
-    S:\R^2\rightarrow \R^2 \quad\text{by}\quad S\left(\begin{bmatrix}v_1\\v_2\end{bmatrix}\right)=\begin{bmatrix}3v_1-v_2\\-3v_1+v_2\end{bmatrix}
-</me>
+<md>
+<mrow>    \amp T:\R^2\rightarrow \R^2 \quad\text{by}\quad T\left(\begin{bmatrix}u_1\\u_2\end{bmatrix}\right)=\begin{bmatrix}u_1+u_2\\3u_1+3u_2\end{bmatrix}  </mrow> 
+<mrow>    \amp S:\R^2\rightarrow \R^2 \quad\text{by}\quad S\left(\begin{bmatrix}v_1\\v_2\end{bmatrix}\right)=\begin{bmatrix}3v_1-v_2\\-3v_1+v_2\end{bmatrix} </mrow>
+</md>
 
 (You should be able to verify that both transformations are linear.)  Examine the effect of <m>S\circ T</m> on vectors of <m>\R^2</m>.
        </p>
     </statement>
+
+
     <answer>
         <p>
             From the computational standpoint, the situation is simple.
@@ -61,22 +53,23 @@ Note to Student:  In this section we will often use <m>U</m>, <m>V</m> and <m>W<
 \amp =\mathbf{0}
 </md>
 This means that <m>S\circ T</m> maps all vectors of <m>\R^2</m> to <m>\mathbf{0}</m>.  
+</p>
 
-In addition to the computational approach, it is also useful to visualize what happens geometrically.
-
-First, observe that 
+<p>
+In addition to the computational approach, it is also useful to visualize what happens geometrically. First, observe that 
 <me>
     T\left(\begin{bmatrix}u_1\\u_2\end{bmatrix}\right)=\begin{bmatrix}u_1+u_2\\3u_1+3u_2\end{bmatrix}=(u_1+u_2)\begin{bmatrix}1\\3\end{bmatrix}
 </me>
-  Therefore the image of any vector of <m>\R^2</m> under <m>T</m> lies on the line determined by the vector <m>\begin{bmatrix}1\\3\end{bmatrix}</m>.  
+  Therefore the image of any vector of <m>\R^2</m> under <m>T</m> lies on the line determined by the vector <m>[1,3]</m>.  
 
-Even though <m>S</m> is defined on all of <m>\R^2</m>, we are only interested in the action of <m>S</m> on vectors along the line determined by <m>\begin{bmatrix}1\\3\end{bmatrix}</m>.  Our computations showed that all such vectors map to <m>\mathbf{0}</m>.
+Even though <m>S</m> is defined on all of <m>\R^2</m>, we are only interested in the action of <m>S</m> on vectors along the line determined by <m>[1,3]</m>.  Our computations showed that all such vectors map to <m>\mathbf{0}</m>.
 
 The actions of individual transformations, as well as the composite transformation are shown below.
+</p> 
 
-\begin{center}
-<image width="100%">
-   <shortdescription></shortdescription>
+
+<image width="65%">
+   <shortdescription>Composition of functions diagram</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.7]
 
@@ -104,10 +97,15 @@ The actions of individual transformations, as well as the composite transformati
     \end{tikzpicture}
     </latex-image>
 </image>
-\end{center}
-       </p>
     </answer>
 </example>
+
+
+
+
+
+
+
 
 <theorem xml:id="th-complinear">
 
@@ -116,28 +114,32 @@ The actions of individual transformations, as well as the composite transformati
             The composition of two linear transformations is linear.
         </p>
     </statement>
-</theorem>
+
 <proof>
     <p>
 Let <m>T:U\rightarrow V</m> and <m>S:V\rightarrow W</m> be linear transformations. We will show that <m>S\circ T</m> is linear.  For all vectors <m>\mathbf{u}_1</m> and <m>\mathbf{u}_2</m> of <m>U</m> and scalars <m>a</m> and <m>b</m> we have:
 <md>
-(S\circ T)(a\mathbf{u}_1+b\mathbf{u}_2)\amp =S(T(a\mathbf{u}_1+b\mathbf{u}_2))\\
-\amp =S(aT(\mathbf{u}_1)+bT(\mathbf{u}_2))\\
-\amp =aS(T(\mathbf{u}_1))+bS(T(\mathbf{u}_2))\\
-\amp =a(S\circ T)(\mathbf{u}_1)+b(S\circ T)(\mathbf{u}_2)
+<mrow> (S\circ T)(a\mathbf{u}_1+b\mathbf{u}_2)\amp =S(T(a\mathbf{u}_1+b\mathbf{u}_2)) </mrow>
+<mrow> \amp =S(aT(\mathbf{u}_1)+bT(\mathbf{u}_2)) </mrow>
+<mrow> \amp =aS(T(\mathbf{u}_1))+bS(T(\mathbf{u}_2)) </mrow>
+<mrow> \amp =a(S\circ T)(\mathbf{u}_1)+b(S\circ T)(\mathbf{u}_2)  </mrow>
 </md>
     </p>
 </proof>
+</theorem>
+
+
+
 
 <theorem xml:id="th-compoflintransass">
 
     <statement>
         <p>
             Composition of linear transformations is associative.  In other words, for linear transformations  <m>T</m>, <m>S</m> and <m>R</m>
+        </p>
 
-\begin{center}
-<image width="100%">
-   <shortdescription></shortdescription>
+<image width="50%">
+   <shortdescription>Associativity drawn</shortdescription>
     <latex-image>
       \begin{tikzpicture}
 \node{
@@ -149,26 +151,34 @@ U\rar{T}\arrow[black, bend right]{rrr}[black,swap]{R\circ S\circ T}  \amp  V \ra
     </latex-image>
 </image>
 
-\end{center}
-
+<p>
 We have <m>(R\circ S)\circ T=R\circ (S\circ T)</m>.
         </p>
     </statement>
-</theorem>
+
 <proof>
     <p> For all <m>\mathbf{u}</m> in <m>U</m> we have:
 <md>
-((R\circ S)\circ T)(\mathbf{u})\amp =(R\circ S)(T(\mathbf{u}))=R(S(T(\mathbf{u})))\\
-\amp =R((S\circ T)(\mathbf{u}))=(R\circ (S\circ T))(\mathbf{u})
+<mrow> ((R\circ S)\circ T)(\mathbf{u})\amp =(R\circ S)(T(\mathbf{u}))=R(S(T(\mathbf{u}))) </mrow>
+<mrow> \amp =R((S\circ T)(\mathbf{u}))=(R\circ (S\circ T))(\mathbf{u}) </mrow>
 </md>
     </p>
 </proof>
+</theorem>
+
+
+
+
+
+
+
 
 <subsection xml:id="Subsection-Composition-and-Matrix-Multiplication">
     <title>Composition and Matrix Multiplication</title>
-</subsection>
 
+<p>
 In this section we will consider linear transformations of <m>\R^n</m> and their standard matrices.  
+</p>
 
 <theorem xml:id="th-standardmatcompoflintrans">
 
@@ -177,7 +187,7 @@ In this section we will consider linear transformations of <m>\R^n</m> and their
             Let <m>T:\R^n\rightarrow \R^m</m> and <m>S:\R^m\rightarrow \R^p</m> be linear transformations with standard matrices <m>M_T</m> and <m>M_S</m>, respectively.  Then the composite transformation <m>S\circ T:\R^n\rightarrow \R^p</m> has a standard matrix given by the product <m>M_SM_T</m>.
         </p>
     </statement>
-</theorem>
+
 <proof>
     <p>
 For all <m>\mathbf{v}</m> in <m>\R^n</m> we have:
@@ -188,12 +198,15 @@ For all <m>\mathbf{v}</m> in <m>\R^n</m> we have:
 
     </p>
 </proof>
+</theorem>
+
+
+
 
 <example xml:id="ex-standardmatofcomp">
     <statement>
         <p>
-            In Example <xref ref="ex-transcomp"/>, we discussed a composite transformation <m>S\circ T:\R^2\rightarrow \R^2</m>
-given by:
+            <xref ref="ex-transcomp"/>, we discussed a composite transformation <m>S\circ T:\R^2\rightarrow \R^2</m> given by:
 
 <me>
     T\left(\begin{bmatrix}u_1\\u_2\end{bmatrix}\right)=\begin{bmatrix}u_1+u_2\\3u_1+3u_2\end{bmatrix}\quad \text{and} \quad
@@ -223,9 +236,13 @@ The standard matrix for <m>S\circ T</m> is the product
     </answer>
 </example>
 
-We conclude this section by revisiting the associative property of matrix multiplication.  At the time matrix multiplication was introduced, we skipped the cumbersome proof that for appropriately sized matrices <m>A</m>, <m>B</m> and <m>C</m>, we have <m>(AB)C=A(BC)</m>. (See Theorem <xref ref="th-propertiesofmatrixmultiplication"/>.)  We are now in a position to prove this result with ease.  
+<p>
+We conclude this section by revisiting the associative property of matrix multiplication.  At the time matrix multiplication was introduced, we skipped the cumbersome proof that for appropriately sized matrices <m>A</m>, <m>B</m> and <m>C</m>, we have <m>(AB)C=A(BC)</m>. (See <xref ref="th-propertiesofmatrixmultiplication"/>.)  We are now in a position to prove this result with ease.  
 
 Every matrix induces a linear transformation.  The product of two matrices can be interpreted as a composition of transformations.  Since function composition is associative, so is matrix multiplication. We formalize this observation as a theorem.
+</p>
+
+
 
 <theorem xml:id="th-associativematrixmult">
     <title>Associativity of Matrix Multiplication</title>
@@ -239,10 +256,13 @@ Every matrix induces a linear transformation.  The product of two matrices can b
         </p>
     </statement>
 </theorem>
+</subsection>
+
+
+
 
 <subsection xml:id="Subsection-Inverses-of-Linear-Transformations">
     <title>Inverses of Linear Transformations</title>
-</subsection>
 
 <exploration xml:id="ep-inverse">
     <p>
@@ -254,7 +274,7 @@ Every matrix induces a linear transformation.  The product of two matrices can b
 
 
 <me>
-    (T\circ S)(\mathbf{v})=T(S(\mathbf{v}))=T(\frac{1}{2}\mathbf{v})=(2)\left(\frac{1}{2}\right)\mathbf{v}=\mathbf{v}
+    (T\circ S)(\mathbf{v})=T(S(\mathbf{v}))=T \left (\frac{1}{2}\mathbf{v} \right )=(2)\left(\frac{1}{2}\right)\mathbf{v}=\mathbf{v}
 </me>
 
 Both composite transformations return the original vector <m>\mathbf{v}</m>.  In other words, <m>S\circ T=\id_{\R^2}</m> and <m>T\circ S=\id_{\R^2}</m>.  We say that <m>S</m> is an <term>inverse</term> of <m>T</m>, and <m>T</m> is an inverse of <m>S</m>.
@@ -273,27 +293,46 @@ Both composite transformations return the original vector <m>\mathbf{v}</m>.  In
 <example xml:id="ex-inverseverify">
     <statement>
         <p>
-            Let <m>T:\R^2\rightarrow \R^2</m> be a transformation defined by <m>T\left(\begin{bmatrix}x\\y\end{bmatrix}\right)=\begin{bmatrix}x+y\\x-y\end{bmatrix}</m>. (How would you verify that <m>T</m> is linear?)  Show that <m>S:\R^2\rightarrow \R^2</m> given by <m>S\left(\begin{bmatrix}x\\y\end{bmatrix}\right)=\begin{bmatrix}0.5x+0.5y\\0.5x-0.5y\end{bmatrix}</m> is an inverse of <m>T</m>.
+            Let <m>T:\R^2\rightarrow \R^2</m> be a transformation defined by 
+            <me>
+                T\left(\begin{bmatrix}x\\y\end{bmatrix}\right)=\begin{bmatrix}x+y\\x-y\end{bmatrix}
+            </me>. 
+            
+            (How would you verify that <m>T</m> is linear?)  Show that <m>S:\R^2\rightarrow \R^2</m> given by 
+            <me>
+            S\left(\begin{bmatrix}x\\y\end{bmatrix}\right)=\begin{bmatrix}0.5x+0.5y\\0.5x-0.5y\end{bmatrix}
+            </me> 
+            
+            is an inverse of <m>T</m>.
        </p>
     </statement>
     <answer>
         <p>
             We will show that <m>S\circ T=\id_{\R^2}</m>.  
 <md>
-(S\circ T)\left(\begin{bmatrix}x\\y\end{bmatrix}\right)\amp =S\left(T\left(\begin{bmatrix}x\\y\end{bmatrix}\right)\right)=S\left(\begin{bmatrix}x+y\\x-y\end{bmatrix}\right)\\
-\amp =\begin{bmatrix}0.5(x+y)+0.5(x-y)\\0.5(x+y)-0.5(x-y)\end{bmatrix}
-=\begin{bmatrix}x\\y\end{bmatrix}
+<mrow> (S\circ T)\left(\begin{bmatrix}x\\y\end{bmatrix}\right)\amp =S\left(T\left(\begin{bmatrix}x\\y\end{bmatrix}\right)\right)=S\left(\begin{bmatrix}x+y\\x-y\end{bmatrix}\right) </mrow>
+<mrow> \amp =\begin{bmatrix}0.5(x+y)+0.5(x-y)\\0.5(x+y)-0.5(x-y)\end{bmatrix} </mrow>
+<mrow> \amp =\begin{bmatrix}x\\y\end{bmatrix} </mrow>
 </md>
 We leave it to the reader to verify that <m>T\circ S=\id_{\R^2}</m>.
        </p>
     </answer>
 </example>
+</subsection>
+
+
+
+
+
+
+
 
 <subsection xml:id="Subsection-Linearity-of-Inverses-of-Linear-Transformations">
     <title>Linearity of Inverses of Linear Transformations</title>
-</subsection>
 
-Definition <xref ref="def-inverseoflintrans"/> does not specifically require an inverse <m>S</m> of a linear transformation <m>T</m> to be linear, but it turns out that the requirement that <m>S\circ T=\id_V</m> and <m>T\circ S=\id_W</m> is sufficient to guarantee that <m>S</m> is linear.  
+<p>
+Now, <xref ref="def-inverseoflintrans"/> does not specifically require an inverse <m>S</m> of a linear transformation <m>T</m> to be linear, but it turns out that the requirement that <m>S\circ T=\id_V</m> and <m>T\circ S=\id_W</m> is sufficient to guarantee that <m>S</m> is linear.  
+</p> 
 
 <theorem xml:id="th-inverseislinear">
 
@@ -302,30 +341,33 @@ Definition <xref ref="def-inverseoflintrans"/> does not specifically require an 
             Suppose <m>T:V\rightarrow W</m> is an invertible linear transformation.  Let <m>S</m> be an inverse of <m>T</m>.  Then <m>S</m> is  linear.
         </p>
     </statement>
-</theorem>
+
 
 <proof>
-    <p> The proof of this result is left to the reader. (See Practice Problem <xref ref="prob-inverseislinear"/>)
-%Let <m>\mathbf{w}_1</m> and <m>\mathbf{w}_2</m> be vectors in <m>W</m> such that <m>\mathbf{w}_1=T(\mathbf{v}_1)</m> and <m>T(\mathbf{w}_2)=\mathbf{v}_2</m> for some <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m> in <m>V</m>. Let <m>k_1</m> and <m>k_2</m> be scalars.
-%<md>
-%S(k_1\mathbf{w}_1+k_2\mathbf{w}_2)\amp =S(k_1T(\mathbf{v}_1)+k_2T(\mathbf{v}_2))\\
-%\amp =S(T(k_1\mathbf{v}_1+k_2\mathbf{v}_2))\\
-%\amp =(S\circ T)(k_1\mathbf{v}_1+k_2\mathbf{v}_2)\\
-%\amp =k_1\mathbf{v}_1+k_2\mathbf{v}_2\\
-%\amp =k_1S(\mathbf{w}_1)+k_2S(\mathbf{w}_2)
-%</md>
-%Therefore <m>S</m> is linear.
+    <p> 
+    The proof of this result is left to the reader. (See  <xref ref="prob-inverseislinear"/>)
     </p>
 </proof>
-
-
-<subsection xml:id="Subsection-Linear-Transformations-of-<m>\R^n</m>-and-the-Standard-Matrix-of-the-Inverse-Transformation">
-    <title>Linear Transformations of <m>\R^n</m> and the Standard Matrix of the Inverse Transformation</title>
+</theorem>
 </subsection>
 
-Every linear transformation <m>T:\R^n\rightarrow\R^m</m> is a matrix transformation. (See Theorem <xref ref="th-matlin"/>.)  If <m>T</m> has an inverse <m>S</m>, then by Theorem <xref ref="th-inverseislinear"/>, <m>S</m> is also a matrix transformation.  Let  <m>M_T</m> and <m>M_S</m> denote the standard matrices of <m>T</m> and <m>S</m>, respectively.  We see that <m>S\circ T=\id_{\R^n}</m> and <m>T\circ S=\id_{\R^m}</m> if and only if <m>M_SM_T=I_{n}</m> and <m>M_TM_S=I_{m}</m>.  In other words, <m>T</m> and <m>S</m> are inverse transformations if and only if <m>M_T</m> and <m>M_S</m> are matrix inverses.
 
+
+
+
+
+
+<subsection xml:id="Subsection-Linear-Transformations-of-Rn-and-the-Standard-Matrix-of-the-Inverse-Transformation">
+    <title>Linear Transformations of <m>\R^n</m> and the Standard Matrix of the Inverse Transformation</title>
+
+<p>
+Every linear transformation <m>T:\R^n\rightarrow\R^m</m> is a matrix transformation. (See <xref ref="th-matlin"/>.)  If <m>T</m> has an inverse <m>S</m>, then by <xref ref="th-inverseislinear"/>, <m>S</m> is also a matrix transformation.  Let  <m>M_T</m> and <m>M_S</m> denote the standard matrices of <m>T</m> and <m>S</m>, respectively.  We see that <m>S\circ T=\id_{\R^n}</m> and <m>T\circ S=\id_{\R^m}</m> if and only if <m>M_SM_T=I_{n}</m> and <m>M_TM_S=I_{m}</m>.  In other words, <m>T</m> and <m>S</m> are inverse transformations if and only if <m>M_T</m> and <m>M_S</m> are matrix inverses.
+</p>
+
+<p>
 Note that if <m>S</m> is an inverse of <m>T</m>, then <m>M_T</m> and <m>M_S</m> are square matrices, and <m>n=m</m>. 
+</p>
+
 
 <theorem xml:id="th-existunique">
 
@@ -334,22 +376,26 @@ Note that if <m>S</m> is an inverse of <m>T</m>, then <m>M_T</m> and <m>M_S</m> 
             Let <m>T:\R^n\rightarrow \R^n</m> be a linear transformation, and let <m>M</m> be the standard matrix of <m>T</m>.
   <ol>
   <li xml:id="item-exists">
-  <p> \label{item:exists} (Existence of Inverses.)  <m>T</m> is invertible if and only if <m>M</m> is invertible.  If <m>T</m> is invertible, then the inverse is induced by <m>M^{-1}</m>. </p>
+  <p> (Existence of Inverses.)  <m>T</m> is invertible if and only if <m>M</m> is invertible.  If <m>T</m> is invertible, then the inverse is induced by <m>M^{-1}</m>. </p>
 </li>
   <li xml:id="item-unique">
-  <p> \label{item:unique} (Uniqueness of Inverses.)  If <m>S</m> is an inverse of <m>T</m>, then <m>S</m> is unique. </p>
+  <p> (Uniqueness of Inverses.)  If <m>S</m> is an inverse of <m>T</m>, then <m>S</m> is unique. </p>
 </li>
   </ol>
         </p>
     </statement>
-</theorem>
+
 <proof>
     <p>
-Part <xref ref="item-exists"/> follows directly from the preceding discussion.  Part <xref ref="item-unique"/> follows from uniqueness of matrix inverses. (Theorem <xref ref="th-matinverseunique"/>.)
+Part <xref ref="item-exists"/> follows directly from the preceding discussion.  Part <xref ref="item-unique"/> follows from uniqueness of matrix inverses. ( <xref ref="th-matinverseunique"/>.)
     </p>
 </proof>
+</theorem>
 
-Please note that Theorem <xref ref="th-existunique"/> is only applicable in the context of linear transformations of <m>\R^n</m> and their standard matrices.  The following example provides us with motivation to investigate inverses further, which we will do in <url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/LTR-0035/main">Existence of the Inverse of a Linear Transformation</url>.
+<p> 
+Please note that <xref ref="th-existunique"/> is only applicable in the context of linear transformations of <m>\R^n</m> and their standard matrices.  The following example provides us with motivation to investigate inverses further, which we will do in the next section.
+</p>
+
 
 <exploration xml:id="init-subtosub">
     <p>
@@ -368,20 +414,34 @@ by
     T\left(\begin{bmatrix}1\\0\\0\end{bmatrix}\right)=\begin{bmatrix}1\\1\end{bmatrix}\quad \text{and} \quad T\left(\begin{bmatrix}1\\1\\1\end{bmatrix}\right)=\begin{bmatrix}0\\1\end{bmatrix}
 </me>
 
-Observe that <m>\left\{\begin{bmatrix}1\\0\\0\end{bmatrix}, \begin{bmatrix}1\\1\\1\end{bmatrix}\right\}</m> is a basis of <m>V</m> (why?). The information about the images of the basis vectors is sufficient to define a linear transformation.  This is because every vector <m>\mathbf{v}</m> in <m>V</m> can be expressed as a linear combination of the basis elements.  The image, <m>T(\mathbf{v})</m>, can be found by applying the linearity properties.
+Observe that
+<me>
+\left\{\begin{bmatrix}1\\0\\0\end{bmatrix}, \begin{bmatrix}1\\1\\1\end{bmatrix}\right\}
+</me> 
+
+is a basis of <m>V</m> (why?). The information about the images of the basis vectors is sufficient to define a linear transformation.  This is because every vector <m>\mathbf{v}</m> in <m>V</m> can be expressed as a linear combination of the basis elements.  The image, <m>T(\mathbf{v})</m>, can be found by applying the linearity properties.
 At this point we know what transformation <m>T</m> does, but it is still unclear what the matrix of this linear transformation is.
-
 Geometrically speaking, the domain of <m>T</m> is a plane in <m>\R^3</m> and its codomain is <m>\R^2</m>.  
+</p>
 
+<p>
 Does <m>T</m> have an inverse?  We are not in a position to answer this question right now because Theorem <xref ref="th-existunique"/> does not apply to this situation.
     </p>
 </exploration>
-Exploration <xref ref="init-subtosub"/> highlights the necessity of further discussion of inverses and of matrices associated with linear transformations.  In Example <xref ref="ex-subtosub"/>, we will prove that <m>T</m> has an inverse, and in Example <xref ref="ex-inversematrixoftransform"/>, we will address the issue of matrices associated with <m>T</m> and its inverse.
 
-
-<subsection xml:id="Subsection-Practice-Problems">
-    <title>Practice Problems</title>
+<p>
+To summarize, <xref ref="init-subtosub"/> highlights the necessity of further discussion of inverses and of matrices associated with linear transformations.  In <xref ref="subtosub"/>, we will prove that <m>T</m> has an inverse, and in <xref ref="ex-inversematrixoftransform"/>, we will address the issue of matrices associated with <m>T</m> and its inverse.
+</p>
 </subsection>
+
+
+
+
+
+
+
+
+<exercises>
 <exercise xml:id="prob-geometryoflintrans1">
     <statement>
         <p>
@@ -391,10 +451,13 @@ Exploration <xref ref="init-subtosub"/> highlights the necessity of further disc
     M_T=\begin{bmatrix}2\amp -4\\1\amp 2\end{bmatrix}\quad\text{and}\quad M_S=\begin{bmatrix}1\amp -1\\2\amp 1\end{bmatrix}
 </me>
 
-respectively.  Describe the actions of <m>T</m>, <m>S</m>, and <m>S\circ T</m> geometrically, as in Example <xref ref="ex-transcomp"/>.
+respectively.  Describe the actions of <m>T</m>, <m>S</m>, and <m>S\circ T</m> geometrically, as in <xref ref="ex-transcomp"/>.
         </p>
     </statement>
 </exercise>
+
+
+
 <exercise xml:id="prob-geometryoflintrans2">
     <statement>
         <p>
@@ -404,17 +467,21 @@ respectively.  Describe the actions of <m>T</m>, <m>S</m>, and <m>S\circ T</m> g
     M_T=\begin{bmatrix}1\amp 0\amp -1\\2\amp 1\amp 0\end{bmatrix}\quad\text{and}\quad M_S=\begin{bmatrix}-1\amp 2\\1\amp -2\end{bmatrix}
 </me>
 
-respectively.  Describe the actions of <m>T</m>, <m>S</m>, and <m>S\circ T</m> geometrically, as in Example <xref ref="ex-transcomp"/>.
+respectively.  Describe the actions of <m>T</m>, <m>S</m>, and <m>S\circ T</m> geometrically, as in <xref ref="ex-transcomp"/>.
         </p>
     </statement>
 </exercise>
+
+
 <exercise xml:id="prob-completeinverseverify">
     <statement>
         <p>
-            Complete the Explanation of Example <xref ref="ex-inverseverify"/> by verifying that <m>T\circ S=\id_{\R^2}</m>.
+            Complete the Explanation of <xref ref="ex-inverseverify"/> by verifying that <m>T\circ S=\id_{\R^2}</m>.
         </p>
     </statement>
 </exercise>
+
+
 <exercise xml:id="prob-candidateforinv">
     <statement>
         <p>
@@ -424,15 +491,20 @@ respectively.  Describe the actions of <m>T</m>, <m>S</m>, and <m>S\circ T</m> g
     T\left(\begin{bmatrix}x\\y\end{bmatrix}\right)=\begin{bmatrix}2x-5y\\-x+3y\end{bmatrix}
 </me>
 
-Propose a candidate for the inverse of <m>T</m> and verify your choice using Definition <xref ref="def-inverseoflintrans"/>.
+Propose a candidate for the inverse of <m>T</m> and verify your choice using <xref ref="def-inverseoflintrans"/>.
+</p>
+</statement>
 
-
+<answer>
+<p>
 <me>
     T^{-1}\left(\begin{bmatrix}x\\y\end{bmatrix}\right)=\begin{bmatrix}3x+5y\\x+2y\end{bmatrix}
 </me>
-        </p>
-    </statement>
+</p>
+</answer>
 </exercise>
+
+
 <exercise xml:id="prob-noinversetrans">
     <statement>
         <p>
@@ -444,13 +516,17 @@ Propose a candidate for the inverse of <m>T</m> and verify your choice using Def
         </p>
     </statement>
 </exercise>
+
+
 <exercise xml:id="prob-inverseislinear">
     <statement>
         <p>
-            Prove Theorem <xref ref="th-inverseislinear"/>.
+            Prove <xref ref="th-inverseislinear"/>.
         </p>
     </statement>
 </exercise>
+
+
 <exercise xml:id="prob-compofinvisinvofcomp">
     <statement>
         <p>
@@ -460,5 +536,5 @@ Propose a candidate for the inverse of <m>T</m> and verify your choice using Def
 </exercise>
 
 
-
+</exercises>
 </section>
