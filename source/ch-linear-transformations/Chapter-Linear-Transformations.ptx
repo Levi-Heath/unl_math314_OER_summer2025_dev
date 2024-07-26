@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="Chapter-Linear-Transformations" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -45,5 +44,9 @@
 
   <!-- include sections --> 
 <!--<xi:include href="Section-Addition-and-Scalar-Multiplication-of-Matrices.ptx"/>-->
+<xi:include href="Section-Matrix-Transformations.ptx"/>
+<xi:include href="Section-Introduction-to-Linear-Transformations.ptx"/>
+<xi:include href="Section-Standard_matrix-of-a-Linear-Transformation-from-Rn-to-Rm.ptx"/>
+<xi:include href="Section-Composition-and-Inverses-of-Linear-Transformations.ptx"/>
 </chapter>
 

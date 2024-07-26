@@ -51,10 +51,15 @@ We will now consider functions that map <m>\R^n</m> into <m>\R^m</m>.  We will r
     <title>Examples of Matrix Transformations</title>
 
 <p>
-Consider the matrix <m>A=\begin{bmatrix}1\amp 0.5\\0\amp 1\end{bmatrix}</m>.  The product of <m>A</m> with a <m>2\times 1</m> vector is a <m>2\times 1</m> vector.  We can define a transformation <m>T:\R^2\longrightarrow\R^2</m> by <m>T(\mathbf{x})=A\mathbf{x}</m>.  This transformation can be applied to every vector of <m>\R^2</m>. We will look at what it does to five vectors.  
+Consider the matrix
+<me>
+A=\begin{bmatrix}1\amp 0.5\\0\amp 1\end{bmatrix}.
+</me>
+
+The product of <m>A</m> with a <m>2\times 1</m> vector is a <m>2\times 1</m> vector.  We can define a transformation <m>T:\R^2\longrightarrow\R^2</m> by <m>T(\mathbf{x})=A\mathbf{x}</m>.  This transformation can be applied to every vector of <m>\R^2</m>. We will look at what it does to five vectors.  
 </p>
 
-<image width="80%">
+<image width="55%">
    <shortdescription>Vectors graphed</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.7]
@@ -65,14 +70,13 @@ Consider the matrix <m>A=\begin{bmatrix}1\amp 0.5\\0\amp 1\end{bmatrix}</m>.  Th
 \draw[line width=1.5pt,-stealth, red](0,0)--(2,0)node[above left]{\(\mathbf{v}_4\)};
 \draw[line width=1.5pt,-stealth, blue](0,0)--(2,1)node[above left]{\(\mathbf{v}_3\)};
 \draw[line width=1.5pt,-stealth, gray](0,0)--(1,2)node[above left]{\(\mathbf{v}_2\)};
-\draw[line width=1.5pt,-stealth, orange](0,0)--(0,3)node[above left]{\(\mathbf{v}_1\)};  
-\node[] at (1, -2.5)   (b) {Vectors \(\mathbf{v}_1,\dots,\mathbf{v}_5\).}; 
+\draw[line width=1.5pt,-stealth, orange](0,0)--(0,3)node[above left]{\(\mathbf{v}_1\)};   
           \end{tikzpicture}
     </latex-image>
 </image>
 
 
-   <image width="80%">
+   <image width="40%">
    <shortdescription> T and arrow drawn </shortdescription>
     <latex-image>
       \begin{tikzpicture}
@@ -83,7 +87,7 @@ Consider the matrix <m>A=\begin{bmatrix}1\amp 0.5\\0\amp 1\end{bmatrix}</m>.  Th
     </latex-image>
 </image>
 
-<image width="80%">
+<image width="55%">
    <shortdescription> T acted on vectors graphed </shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.7]
@@ -95,7 +99,6 @@ Consider the matrix <m>A=\begin{bmatrix}1\amp 0.5\\0\amp 1\end{bmatrix}</m>.  Th
 \draw[line width=1.5pt,-stealth, blue](0,0)--(2.5,1)node[above right]{\(T(\mathbf{v}_3)\)};
 \draw[line width=1.5pt,-stealth, gray](0,0)--(2,2)node[above right]{\(T(\mathbf{v}_2)\)};
 \draw[line width=1.5pt,-stealth, orange](0,0)--(1.5,3)node[above right]{\(T(\mathbf{v}_1)\)};  
-\node[] at (1, -2.5)   (b) {Images of \(\mathbf{v}_1,\dots,\mathbf{v}_5\).}; 
           \end{tikzpicture}
     </latex-image>
 </image>
@@ -105,7 +108,7 @@ Even after looking at a handful of vectors it is often difficult to tell what th
 </p>
 
 
-<image width="80%">
+<image width="55%">
    <shortdescription>Grid of points graphed</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.8]
@@ -138,7 +141,7 @@ Even after looking at a handful of vectors it is often difficult to tell what th
     </latex-image>
 </image>
    
-<image width="80%">
+<image width="55%">
    <shortdescription></shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.8]
@@ -228,7 +231,7 @@ Try each of the following matrices to determine what each transformation accompl
 <problem>
 <statement>
 <p>
-Match the description of each transformation with the matrix that induces it.
+Match the description of each transformation described below with a the matrix <m> M_1, M_2, \ldots , M_8 </m> that induces it.
 <ol>
     <li>
         <p>
@@ -348,7 +351,11 @@ A <m>2\times 2</m> matrix induces a transformation from <m>\R^2</m> into <m>\R^2
 <example xml:id="ex-matrixTrans1">
     <statement>
         <p>
-            Let <m>A=\begin{bmatrix}1\amp 2\amp -1\\3\amp 2\amp -2\end{bmatrix}</m>.  Define a transformation 
+            Let
+            <me>
+            A=\begin{bmatrix}1\amp 2\amp -1\\3\amp 2\amp -2\end{bmatrix}
+            </me>.  
+    Define a transformation 
     <m>T:\R^3\longrightarrow\R^2</m> by 
     <m>T(\mathbf{x})=A\mathbf{x}</m>.  Find all vectors in the domain that map to <m>\mathbf{0}</m>.
        </p>
@@ -396,7 +403,7 @@ A <m>2\times 2</m> matrix induces a transformation from <m>\R^2</m> into <m>\R^2
     <title>Linearity of Matrix Transformations</title>
 
 <p>
-Restating <xref ref="item-matrixproperties1"/> and <xref ref="item-matrixproperties4"/> of Section <!--<url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0020/main">Matrix Multiplication</url>--> in terms of matrix-vector multiplication gives us
+Restating <xref ref="matrixproperties1"/> and <xref ref="matrixproperties4"/> of Section <!--<url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0020/main">Matrix Multiplication</url>--> in terms of matrix-vector multiplication gives us
 <men xml:id="linearityConstant">
 k(A\mathbf{v}) = A(k\mathbf{v})
 </men> 
@@ -416,9 +423,14 @@ T(\mathbf{v}+\mathbf{w})=T(\mathbf{v})+T(\mathbf{w})
 </p>
 
 <p>
-In general, any transformation that satisfies (<xref ref="matrixTransProp1"/>) and (<xref ref="matrixTransProp2"/>) is called a <term>linear transformation</term>.  As we have just seen, all matrix transformations are linear.
+In general, any transformation that satisfies <xref ref="matrixTransProp1"/> and <xref ref="matrixTransProp2"/> is called a <term>linear transformation</term>.  As we have just seen, all matrix transformations are linear.
 We will study linear transformations in depth later in this chapter.
 </p>
+</subsection>
+
+
+
+
 
 <subsection xml:id="Subsection-Where-did-i-go">
     <title>Where did <m>\mathbf{i}</m> Go?</title>
@@ -467,6 +479,7 @@ Find the following products:
 </me>
 </p>
 </answer>
+</problem>
 
 <p>
 Let <m>T:\R^3\longrightarrow\R^3</m> be a matrix transformation induced by <m>A</m>, then we can say that <m>T</m> maps <m>\mathbf{i}</m>, <m>\mathbf{j}</m> and <m>\mathbf{k}</m> to the first, second and third columns of <m>A</m>, respectively. 
@@ -553,7 +566,7 @@ Why is it that knowing the images of standard unit vectors under a matrix transf
 </example>
 
 <p>
-Now, <xref ref="ex-imageOfBasisVectors"/> illustrates that a matrix transformation <m>T:\R^n\longrightarrow\R^m</m> is <term>completely determined</term> by where it maps the standard unit vectors.  This is true because we can express every vector <m>\mathbf{v}</m> in <m>\R^n</m> as a linear combination of the standard unit vectors, then use (<xref ref="eq-matrixTransProp1"/>) and (<xref ref="eq-matrixTransProp2"/>) to find the image of <m>\mathbf{v}</m>.  %The following GeoGebra interactive illustrates this point.
+Now, <xref ref="ex-imageOfBasisVectors"/> illustrates that a matrix transformation <m>T:\R^n\longrightarrow\R^m</m> is <term>completely determined</term> by where it maps the standard unit vectors.  This is true because we can express every vector <m>\mathbf{v}</m> in <m>\R^n</m> as a linear combination of the standard unit vectors, then use (<xref ref="matrixTransProp1"/>) and (<xref ref="matrixTransProp2"/>) to find the image of <m>\mathbf{v}</m>.  %The following GeoGebra interactive illustrates this point.
 </p>
 </subsection>
 
@@ -564,10 +577,13 @@ Now, <xref ref="ex-imageOfBasisVectors"/> illustrates that a matrix transformati
 
 
 
-<subsection xml:id="Subsection-Practice-Problems">
-    <title>Practice Problems</title>
+
+
+
+
 
 <exercises>
+
 <exercise xml:id="exp-linCombStUnitVectors">
     <statement>
         <p>
@@ -587,7 +603,7 @@ Now, <xref ref="ex-imageOfBasisVectors"/> illustrates that a matrix transformati
     A larger version of this activity is available 
     <url href="https://www.geogebra.org/calculator/nhs3wnqd" visual="geogebra.org">here</url>.
   </caption>
-  <interactive xml:id="geogebra-ADD-LINK_ID" platform="geogebra" width="100%" aspect="950:700">
+  <interactive xml:id="geogebra-ADD-LINK_ID" platform="geogebra" width="150%" aspect="950:700">
     <slate xml:id="ADD-LINK_ID" surface="geogebra" material="nhs3wnqd" aspect="950:700" />
   </interactive>
 </figure>
@@ -660,5 +676,4 @@ A line in <m>\R^n</m> can be expressed as <m>\mathbf{x}(t)=\mathbf{v}t+\mathbf{v
 </exercise>
 
 </exercises>
-</subsection>
 </section>

@@ -1,0 +1,1222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="Section-Introduction-to-Linear-Transformations" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Introduction to Linear Transformations</title>
+
+
+
+ 
+
+
+<p>
+We start by reviewing the definition of a function.
+</p>
+
+
+
+<definition xml:id="def-function">
+
+    <statement>
+        <p>
+            Let <m>V</m> and <m>W</m> be sets.  A <term>function</term> <m>f</m> from <m>V</m> into <m>W</m>, denoted by 
+
+<me>
+    f:V\rightarrow W
+</me>
+
+assigns to each element <m>x</m> of <m>V</m>, an element <m>y=f(x)</m> of <m>W</m>. 
+</p> 
+
+<p>
+The set <m>V</m> is called the <term>domain</term> of <m>f</m>, and the set <m>W</m> is called the <term>codomain</term>.
+</p>
+
+<p>
+If <m>y=f(x)</m>, we say that <m>x</m> <term>maps to</term> <m>y</m>, and <m>y</m> is the <term>image</term> of <m>x</m>.
+</p>
+
+<p>
+The collection of images of all points of <m>V</m> is called the <term>image</term> of <m>V</m> under <m>f</m>, or the <term>image</term> of <m>f</m>.  (It is also known as the <term> range</term> of <m>f</m>.)
+</p>
+    </statement>
+</definition>
+
+<p>
+In algebra and calculus you worked with functions <m>f:\R\rightarrow\R</m> whose domain and codomain were each the set of all real numbers.  In linear algebra, we call our functions <term>transformations</term>.  The domain and codomain of a transformation are <term>vector spaces</term>.  
+</p>
+
+
+<exploration xml:id="init-lintransintro">
+    <p>
+        In this exercise we will introduce a very special type of transformation by contrasting the effects of two transformations on vectors of <m>\R^2</m>.  We will see that some transformations have ``nice" properties, while others do not.  Define <m>T_1</m> and <m>T_2</m> as follows:
+
+<me>
+    T_1:\R^2\rightarrow\R^2; \quad   T_1\left(\begin{bmatrix}
+    x\\
+    y
+    \end{bmatrix}\right)=\begin{bmatrix}
+    x-y\\
+    x
+    \end{bmatrix}
+</me>
+
+
+
+<me>
+    T_2:\R^2\rightarrow\R^2; \quad    T_2\left(\begin{bmatrix}
+    x\\
+    y
+    \end{bmatrix}\right)=\begin{bmatrix}
+    -x+y+1\\
+    y-2
+    \end{bmatrix}
+</me>
+
+
+Each of these transformations takes a vector in <m>\R^2</m>, and maps it to another vector in <m>\R^2</m>.  To see if you understand how these transformations are defined, see if you can determine what these transformations do to the vector <m>\begin{bmatrix}
+4\\
+3
+\end{bmatrix}</m>. 
+</p>
+
+
+<problem>
+<statement>
+    <p>
+Compute the following two images:
+<me>
+    T_1\left(\begin{bmatrix}
+    4\\
+    3
+    \end{bmatrix}\right) \quad \text{and} \quad  
+    T_2\left(\begin{bmatrix}
+4\\
+3
+\end{bmatrix}\right)
+</me>
+
+    </p>
+</statement>
+
+<answer>
+<p>
+    <me>
+        T_1\left(\begin{bmatrix}
+        4\\
+        3
+        \end{bmatrix}\right)=\begin{bmatrix}
+        1\\
+        4
+        \end{bmatrix} \quad \text{and} \quad
+        T_2\left(\begin{bmatrix}
+        4\\
+        3
+        \end{bmatrix}\right)=\begin{bmatrix}
+        0\\
+        1\end{bmatrix}.
+        </me>     
+</p>
+</answer>
+</problem>
+
+<p>
+Now, let's take the vector <m>[4,3]</m> and multiply it by a scalar, say <m>7</m>.
+
+<me>
+    7\begin{bmatrix}
+4\\
+3
+\end{bmatrix} = \begin{bmatrix}
+28\\
+21
+\end{bmatrix}.
+</me>
+
+
+Now let's compare how <m>T_1</m> and <m>T_2</m> ``handle" this product.  Starting with <m>T_1</m>, we compute:
+
+
+<me>
+    
+T_1\left(7\begin{bmatrix}
+4\\
+3
+\end{bmatrix}\right)=T_1\left(\begin{bmatrix}
+28\\
+21
+\end{bmatrix}\right)=\begin{bmatrix}
+7\\
+28
+\end{bmatrix} 
+</me>
+
+
+Observe that multiplying the original vector by <m>7</m>, then applying <m>T_1</m>, has the same effect as applying <m>T_1</m> to the original vector, then multiplying the image by <m>7</m>.  In other words,
+
+
+<me>
+    
+T_1\left(7\begin{bmatrix}
+4\\
+3
+\end{bmatrix}\right)=\begin{bmatrix}
+7\\
+28
+\end{bmatrix}=7\begin{bmatrix}
+1\\
+4
+\end{bmatrix}=7T_1\left(\begin{bmatrix}
+4\\
+3
+\end{bmatrix}\right)
+</me>
+
+
+Diagrammatically, this can be represented as follows.
+</p>
+
+
+ <image width="65%">
+   <shortdescription>T with domain and codomain pictured</shortdescription>
+    <latex-image>
+      \begin{tikzpicture} 
+      
+    \fill[blue, opacity=0.3] (1,1) rectangle (4,6);
+   \fill[red, opacity=0.2] (7,1) rectangle (12,6);
+   
+   \node[] at (2.5, 6.3)  (p2)    {Domain of \(T_1\)};
+   \node[] at (9.5, 6.3)  (r3)    {Codomain of \(T_1\)};
+   
+      \node[] at (2.5, 5)  (a)    {\(\begin{bmatrix}4\\3\end{bmatrix}\)};
+     \node[] at (2.5, 2)  (b)    {\(7\begin{bmatrix}4\\3\end{bmatrix}\)};
+     
+    
+    \node[] at (10, 5)  (c)    {\(T\left(\begin{bmatrix}4\\3\end{bmatrix}\right)\)};
+     \node[] at (9.5, 2)  (d)    {\(T\left(7\begin{bmatrix}4\\3\end{bmatrix}\right)=7T\left(\begin{bmatrix}4\\3\end{bmatrix}\right)\)};
+     \node[] at (10, 2.2)  (e) {};
+     
+    
+     \draw [-\gt ,line width=1pt,-stealth, red]  (a.east)to(c.west);
+     \draw [-\gt ,line width=1pt,-stealth, blue]  (b.east)to(d.west);
+     
+     \draw [-\gt ,line width=1pt,-stealth, blue]  (a.south)to(b.north);
+     \draw [-\gt ,line width=1pt,-stealth,red]  (c.south)to(e.north);
+     
+
+      \end{tikzpicture}
+    </latex-image>
+</image>
+
+
+
+
+<p>
+You should try to verify that this property does not hold for transformation <m>T_2</m>.  In other words,
+
+
+<me>
+    
+T_2\left(7\begin{bmatrix}
+4\\
+3
+\end{bmatrix}\right)\neq 7T_2\left(\begin{bmatrix}
+4\\
+3
+\end{bmatrix}\right).
+</me>
+
+There is nothing special about the number <m>7</m>, and it is not hard to prove that for any scalar <m>k</m> and vector <m>\mathbf{u}</m> of <m>\R^2</m>, <m>T_1</m> satisfies
+<men xml:id="lin1">
+kT_1(\mathbf{u})= T_1(k\mathbf{u}).
+</men>
+
+It turns out that <m>T_1</m> satisfies another important property. For all vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m> of <m>\R^2</m> we have:
+<men xml:id="lin2">
+T_1(\mathbf{u}+\mathbf{v}) = T_1(\mathbf{u})+T_1(\mathbf{v})
+</men>
+We leave it to the reader to illustrate this property with a specific example (see <xref ref="prob-sum"/>).  We will show that <m>T_1</m> satisfies <xref ref="lin2"/> in general.
+
+Let <me>
+\mathbf{u}=\begin{bmatrix}
+u_1\\
+u_2
+\end{bmatrix} \quad \text{and} \mathbf{v}=\begin{bmatrix}
+v_1\\
+v_2
+\end{bmatrix}.
+</me>
+
+then
+<md>
+<mrow> T_1(\mathbf{u}+\mathbf{v})\amp =T_1\left(\begin{bmatrix}
+u_1\\
+u_2
+\end{bmatrix}+\begin{bmatrix}
+v_1\\
+v_2
+\end{bmatrix}\right) </mrow> 
+
+<mrow> \amp =T_1\left(\begin{bmatrix}
+u_1+v_1\\
+u_2+v_2
+\end{bmatrix}\right) </mrow> 
+
+<mrow> \amp =\begin{bmatrix}
+u_1+v_1-u_2-v_2\\
+u_1+v_1
+\end{bmatrix} </mrow>
+
+<mrow> \amp =\begin{bmatrix}
+u_1-u_2\\
+u_1
+\end{bmatrix}+\begin{bmatrix}
+v_1-v_2\\
+v_1
+\end{bmatrix} </mrow> 
+<mrow> \amp=T_1\left(\begin{bmatrix}
+u_1\\
+u_2
+\end{bmatrix}\right)+T_1\left(\begin{bmatrix}
+v_1\\
+v_2
+\end{bmatrix}\right) </mrow>
+<mrow> \amp =T_1(\mathbf{u})+T_1(\mathbf{v})
+</mrow>
+</md>
+
+It turns out that <m>T_2</m> fails to satisfy this property.  Can you prove that this is the case?  Remember that to prove that a property DOES NOT hold, it suffices to find a counter-example.  See if you can find vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m> such that 
+<men xml:id="t2">
+T_2(\mathbf{u}+\mathbf{v}) \neq T_2(\mathbf{u})+T_2(\mathbf{v}).
+</men>
+
+See <xref ref="prob-prob2"/> for more on this.
+    </p>
+</exploration>
+
+
+<p>
+Transformations satisfying <xref ref="lin1"/> and <xref ref="lin2"/>, like <m>T_1</m>, are called <term>linear transformations</term>. Transformations like <m>T_2</m> are not linear.
+ You have already encountered several linear transformations in the form of matrix transformations 
+</p>
+
+  <definition xml:id="def-lin">
+
+    <statement>
+        <p>
+            A transformation <m>T:\R^n\rightarrow \R^m</m> is called a <term> linear transformation</term> if the following are true for all vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m> in <m>\R^n</m>, and scalars <m>k</m>.
+<men xml:id="lintrans1">
+T(k\mathbf{u})= kT(\mathbf{u})
+</men>
+<men xml:id="lintrans2">
+T(\mathbf{u}+\mathbf{v})= T(\mathbf{u})+T(\mathbf{v})
+</men>
+        </p>
+    </statement>
+</definition>
+
+<p>
+Equations <xref ref="lintrans1"/> and <xref ref="lintrans2"/> of the above definition can be illustrated diagrammatically as follows.
+</p> 
+
+
+ <image width="65%">
+   <shortdescription>Linearity drawn as function diagram</shortdescription>
+    <latex-image>
+      \begin{tikzpicture} 
+      
+    \fill[blue, opacity=0.3] (1,1) rectangle (4,5);
+   \fill[red, opacity=0.2] (7,1) rectangle (10,5);
+   
+   \node[] at (2.5, 5.3)  (p2)    {Domain of \(T\)};
+   \node[] at (8.5, 5.3)  (r3)    {Codomain of \(T\)};
+   
+      \node[] at (2.5, 4.5)  (a)    {\(\mathbf{v}\)};
+     \node[] at (2.5, 1.5)  (b)    {\(k\mathbf{v}\)};
+     
+    
+    \node[] at (9, 4.5)  (c)    {\(T(\mathbf{v})\)};
+     \node[] at (8.5, 1.5)  (d)    {\(T(k\mathbf{v})=kT(\mathbf{v})\)};
+     \node[] at (9, 1.6)  (e) {};
+     
+    
+     \draw [-\gt ,line width=1pt,-stealth, red]  (a.east)to(c.west);
+     \draw [-\gt ,line width=1pt,-stealth, blue]  (b.east)to(d.west);
+     
+     \draw [-\gt ,line width=1pt,-stealth, blue]  (a.south)to(b.north);
+     \draw [-\gt ,line width=1pt,-stealth,red]  (c.south)to(e.north);
+     
+      \end{tikzpicture}
+    </latex-image>
+</image>
+
+
+ <image width="65%">
+   <shortdescription>Continuation of above</shortdescription>
+    <latex-image>
+      \begin{tikzpicture} 
+      
+    \fill[blue, opacity=0.3] (1,1) rectangle (4,6);
+   \fill[red, opacity=0.2] (7,1) rectangle (12,6);
+   
+   \node[] at (2.5, 6.3)  (p2)    {Domain of \(T\)};
+   \node[] at (9.5, 6.3)  (r3)    {Codomain of \(T\)};
+   
+      \node[] at (2.5, 5)  (a)    {\(\mathbf{u}, \mathbf{v}\)};
+     \node[] at (2.5, 2)  (b)    {\(\mathbf{u}+\mathbf{v}\)};
+     
+    
+    \node[] at (10.5, 5)  (c)    {\(T(\mathbf{u}),T(\mathbf{v})\)};
+     \node[] at (9.5, 2)  (d)    {\(T(\mathbf{u}+\mathbf{v})=T(\mathbf{u})+T(\mathbf{v})\)};
+     \node[] at (10.5, 2.2)  (e) {};
+     
+    
+     \draw [-\gt ,line width=1pt,-stealth, red]  (a.east)to(c.west);
+     \draw [-\gt ,line width=1pt,-stealth, blue]  (b.east)to(d.west);
+     
+     \draw [-\gt ,line width=1pt,-stealth, blue]  (a.south)to(b.north);
+     \draw [-\gt ,line width=1pt,-stealth,red]  (c.south)to(e.north);
+     
+
+      \end{tikzpicture}
+    </latex-image>
+</image>
+
+
+<remark xml:id="combinedLinearDef">
+<statement>
+    <p>
+       The properties <xref ref="lintrans1"/> and <xref ref="lintrans2"/> are often combined into a single property, namely 
+        <men xml:id="lintranscombinedprop">
+            T(k_1\mathbf{u}+k_2\mathbf{v})= k_1T(\mathbf{u})+k_2T(\mathbf{v})
+        </men>
+    </p>
+</statement>
+</remark>
+
+<example xml:id="ex-lintransfirst">
+    <statement>
+        <p>
+            Suppose <m>T:\R^2\rightarrow \R^3</m> is a linear transformation such that 
+
+<me>
+    T\left(\begin{bmatrix}1\\2\end{bmatrix}\right)=\begin{bmatrix}-1\\0\\3\end{bmatrix}\quad\text{and}\quad T\left(\begin{bmatrix}0\\-1\end{bmatrix}\right)=\begin{bmatrix}2\\-1\\0\end{bmatrix}
+</me>
+
+Find each of the following:
+<ol>
+    <li xml:id="lintransfirsta">
+  <p>
+    <me>
+    T\left(\begin{bmatrix}2\\5\end{bmatrix}\right)=T\left(2\begin{bmatrix}1\\2\end{bmatrix}-\begin{bmatrix}0\\-1\end{bmatrix}\right)
+    </me> 
+  </p>
+</li>
+    <li xml:id="lintransfirstb">
+  <p> 
+    <me>
+    T\left(\begin{bmatrix}1\\1\end{bmatrix}\right)
+    </me>
+</p>
+</li>
+</ol>
+       </p>
+    </statement>
+
+    <answer>
+        <p>
+            <xref ref="lintransfirsta"/>: Because <m>T</m> is a linear transformation, it satisfies <xref ref="lintranscombinedprop"/>.  We compute:
+<md>
+    <mrow> T\left(\begin{bmatrix}2\\5\end{bmatrix}\right)\amp =T\left(2\begin{bmatrix}1\\2\end{bmatrix}-\begin{bmatrix}0\\-1\end{bmatrix}\right) </mrow> 
+    <mrow> \amp =2T\left(\begin{bmatrix}1\\2\end{bmatrix}\right)-T\left(\begin{bmatrix}0\\-1\end{bmatrix}\right)  </mrow>
+    <mrow> \amp =2\begin{bmatrix}-1\\0\\3\end{bmatrix}-\begin{bmatrix}2\\-1\\0\end{bmatrix}   </mrow>
+    <mrow> \amp =\begin{bmatrix}-2\\0\\6\end{bmatrix}-\begin{bmatrix}2\\-1\\0\end{bmatrix}=\begin{bmatrix}-4\\1\\6\end{bmatrix}.  </mrow>
+</md>
+
+<xref ref="lintransfirstb"/> Observe that <m>\begin{bmatrix}1\\1\end{bmatrix}=\begin{bmatrix}1\\2\end{bmatrix}+\begin{bmatrix}0\\-1\end{bmatrix}</m>.  By <xref ref="lintranscombinedprop"/> we have:
+<md>
+    <mrow> T\left(\begin{bmatrix}1\\1\end{bmatrix}\right)\amp =T\left(\begin{bmatrix}1\\2\end{bmatrix}+\begin{bmatrix}0\\-1\end{bmatrix}\right) </mrow>
+    <mrow> \amp =T\left(\begin{bmatrix}1\\2\end{bmatrix}\right)+T\left(\begin{bmatrix}0\\-1\end{bmatrix}\right) </mrow> 
+    <mrow> \amp =\begin{bmatrix}-1\\0\\3\end{bmatrix}+\begin{bmatrix}2\\-1\\0\end{bmatrix}=\begin{bmatrix}1\\-1\\3\end{bmatrix}. </mrow>
+</md>
+       </p>
+    </answer>
+</example>
+
+
+
+
+<observation xml:id="basisIsSufficient">
+<statement>
+<p>
+In <xref ref="ex-lintransfirst"/> we were given the images of two vectors, <m>[1,2]</m> and <m>[0,-1]</m>, under a linear transformation <m>T</m>. 
+</p>
+
+<p>
+Based on this information, we were able to determine the images of two additional vectors: <m>[2,5]</m> and <m>[1,1]</m>. 
+The reason we were able to determine <m>T([2,5])</m> and <m>T([1,1])</m> is because <m>[2,5]</m> and <m>[1,1]</m> can be written as unique linear combinations of <m>[1,2]</m> and <m>[0,-1]</m>.
+</p>
+</statement> 
+
+<problem>
+<statement>
+<p>
+    Can every vector of <m>\R^2</m> be written as a linear combination of <m>[]1,2</m> and <m>[0,-1]</m>?  
+</p>
+</statement>
+
+<answer>
+    <p>
+Yes.
+    </p>
+</answer>
+</problem>
+
+<problem>
+<statement>
+<p>
+Is the information provided in <xref ref="ex-lintransfirst"/> sufficient to determine the image of every vector in <m>\R^2</m> under <m>T</m>?
+</p>
+</statement>
+
+<answer>
+    <p>
+Yes.
+    </p>
+</answer>
+</problem>
+</observation>
+
+
+
+<example xml:id="ex-lineartrans1">
+    <statement>
+        <p>
+            Suppose <m>T:\R^2\rightarrow\R^2</m> is a transformation such that 
+
+<me>
+    T\left(\begin{bmatrix}
+2\\
+1
+\end{bmatrix}\right)=\begin{bmatrix}
+3\\
+2
+\end{bmatrix},\,\,\,T\left(\begin{bmatrix}
+-1\\
+0
+\end{bmatrix}\right)=\begin{bmatrix}
+1\\
+1
+\end{bmatrix},\,\,\,T\left(\begin{bmatrix}
+-1\\
+1
+\end{bmatrix}\right)=\begin{bmatrix}
+2\\
+-4
+\end{bmatrix}
+</me>
+
+Determine whether <m>T</m> is a linear transformation.
+       </p>
+    </statement>
+
+    <answer>
+        <p>
+            Observe that
+
+<me>
+    \begin{bmatrix}
+-1\\
+1
+\end{bmatrix}=\begin{bmatrix}
+2\\
+1
+\end{bmatrix}+3\begin{bmatrix}
+-1\\
+0
+\end{bmatrix}
+</me>
+
+If <m>T</m> were a linear transformation, then we would have: 
+<me>
+    T\left(\begin{bmatrix}
+-1\\
+1
+\end{bmatrix}\right)=T\left(\begin{bmatrix}
+2\\
+1
+\end{bmatrix}+3\begin{bmatrix}
+-1\\
+0
+\end{bmatrix}\right)=\begin{bmatrix}
+3\\
+2
+\end{bmatrix}+3\begin{bmatrix}
+1\\
+1
+\end{bmatrix}=\begin{bmatrix}
+6\\
+5
+\end{bmatrix}
+</me>
+
+But according to the given,
+
+<me>
+    T\left(\begin{bmatrix}-1\\1\end{bmatrix}\right)=\begin{bmatrix}2\\-4\end{bmatrix}
+</me>
+
+Since <m>\begin{bmatrix}
+6\\
+5
+\end{bmatrix}\neq \begin{bmatrix}
+2\\
+-4
+\end{bmatrix}</m>
+we conclude that transformation <m>T</m> is not linear.
+       </p>
+    </answer>
+</example>
+
+<p> 
+In  <xref ref="init-lintransintro"/> we introduced a transformation <m>T_2</m> which turned out to be non-linear.  It took some work to show that <m>T_2</m> is not linear.  The following theorem would have made our work easier.
+</p> 
+
+
+
+
+<theorem xml:id="th-zerotozero">
+
+    <statement>
+        <p>
+            Let <m>T:\R^n\rightarrow \R^m</m> be a linear transformation.  Then 
+<ol>
+<li xml:id="item-zerotozero">
+  <p> 
+<m>T(\mathbf{0})=\mathbf{0}</m>.  In other words, linear transformations map the zero vector to the zero vector.
+</p>
+</li>
+
+<li xml:id="item-linetoline">
+  <p> 
+<m>T</m> maps any line in <m>\R^n</m> to a line (or the zero vector) in <m>\R^m</m>.
+</p>
+</li>
+</ol>
+        </p>
+    </statement>
+
+<proof>
+    <p>
+To prove <xref ref="item-zerotozero"/>, let <m>\mathbf{v}</m> be any vector in <m>\R^n</m>.  By linearity of <m>T</m>, we have:
+
+<me>
+    T(\mathbf{0})=T(\mathbf{v}-\mathbf{v})=T(\mathbf{v})-T(\mathbf{v})=\mathbf{0}
+</me>
+
+
+Part <xref ref="item-linetoline"/> will become evident after the next section by combinining observations there with <xref ref="prb-linesToLines"/>.
+    </p>
+</proof>
+</theorem>
+
+
+<example xml:id="ex-zerotozero">
+    <statement>
+        <p>
+            Use <xref ref="th-zerotozero"/> to show that transformation <m>T_2</m> of <xref ref="init-lintransintro"/> is not linear.
+       </p>
+    </statement>
+    <answer>
+        <p>
+            Recall that <m>T_2:\R^2\rightarrow\R^2</m> was defined by
+
+<me>
+    T_2\left(\begin{bmatrix}
+x\\
+y
+\end{bmatrix}\right)=\begin{bmatrix}
+-x+y+1\\
+y-2
+\end{bmatrix}
+</me>
+
+We evaluate <m>T_2</m> at <m>\mathbf{0}</m>:
+
+<me>
+    T_2(\mathbf{0})=\begin{bmatrix}
+-0+0+1\\
+0-2
+\end{bmatrix}=\begin{bmatrix}1\\-2\end{bmatrix}\neq\mathbf{0}
+</me>
+
+Since <m>T_2(\mathbf{0})\neq\mathbf{0}</m>, <m>T_2</m> is not linear.
+       </p>
+    </answer>
+</example>
+
+
+
+<subsection xml:id="Subsection-Linear-Transformations-Induced-by-Matrices">
+    <title>Linear Transformations Induced by Matrices</title>
+
+<p> 
+Recall that a transformation <m>T:\R^n\rightarrow\R^m</m> defined by <m>T(\mathbf{v})=A\mathbf{v}</m>, where <m>A</m> is some <m>m\times n</m> matrix, is called a matrix transformation (or transformation induced by <m>A</m>).  As we had discovered in the precedng sectiion, all matrix transformations are linear.  We now formalize this result as a theorem.
+</p>
+
+ <theorem xml:id="th-matrixtran">
+
+    <statement>
+        <p>
+            Let <m>A</m> be an <m>m\times n</m> matrix.  Define <m>T:\R^n\rightarrow\R^m</m> by <m>T(\mathbf{v})=A\mathbf{v}</m>.  Then <m>T</m> is a linear transformation.
+        </p>
+    </statement>
+
+
+<proof>
+    <p>  Let <m>\mathbf{u}</m> and <m>\mathbf{v}</m> be vectors in <m>\R^n</m>, and let <m>k</m> be a scalar.  By properties of matrix multiplication we have:
+
+<me>
+    T(\mathbf{u}+\mathbf{v})=A(\mathbf{u}+\mathbf{v})=A\mathbf{u}+A\mathbf{v}=T(\mathbf{u})+T(\mathbf{v})
+</me>
+
+
+<me>
+    T(k\mathbf{u})=A(k\mathbf{u})=kA\mathbf{u}=kT(\mathbf{u})
+</me>
+
+Therefore <m>T</m> is a linear transformation.
+    </p>
+</proof>
+</theorem>
+
+
+<example xml:id="ex-lineartrans2">
+    <statement>
+        <p>
+            Let <m>T:\R^n\rightarrow\R^m</m> be a linear transformation induced by 
+<me>
+    A=\begin{bmatrix}
+2\amp 0\\
+1\amp 4\\
+0\amp 1
+\end{bmatrix}
+</me>
+
+<ol>
+<li xml:id="item-exlineartrans2a">
+  <p> 
+Find <m>n</m> and <m>m</m>.
+</p>
+</li>
+<li xml:id="item-exlineartrans2d">
+  <p> 
+Find the image of <m>T</m>.
+</p>
+</li>
+</ol>
+       </p>
+    </statement>
+
+    <answer>
+        <p>
+            <xref ref="item-exlineartrans2a"/> <m>A</m> is a <m>3\times 2</m> matrix, so for the expression <m>T(\mathbf{x})=A\mathbf{x}</m> to make sense, <m>\mathbf{x}</m> has to be a <m>2\times 1</m> vector.  Thus, the domain of <m>T</m> is <m>\R^2</m> (<m>n=2</m>).  The product <m>A\mathbf{x}</m> is a <m>3\times 1</m> vector.  The codomain of <m>T</m> is <m>\R^3</m> (<m>m=3</m>).
+
+<xref ref="item-exlineartrans2d"/>  By <xref ref="def-function"/>, the image of <m>T</m> consists of images of all individual vectors in <m>\R^2</m> under <m>T</m>.  Every vector <m>\mathbf{v}</m>  in <m>\R^2</m> can be written as <m>\mathbf{v}=a\mathbf{i}+b\mathbf{j}</m> for some real numbers  <m>a</m> and <m>b</m>.  Consider the image of <m>\mathbf{v}</m>
+
+<me>
+    T(\mathbf{v})=T(a\mathbf{i}+b\mathbf{j})=aT(\mathbf{i})+bT(\mathbf{j})=a\begin{bmatrix}2\\1\\0\end{bmatrix}+b\begin{bmatrix}0\\4\\1\end{bmatrix}
+</me>
+
+This shows that the range, or the image, of <m>T</m> consists of all linear combinations of the columns of <m>A</m>.  In other words, the image of <m>T</m> is the span of vectors <m>\begin{bmatrix}2\\1\\0\end{bmatrix}</m> and <m>\begin{bmatrix}0\\4\\1\end{bmatrix}</m>. The two vectors are not scalar multiples of each other, therefore they span a plane in <m>\R^3</m>.
+       </p>
+    </answer>
+</example>
+ 
+
+
+<example xml:id="ex-lineartrans3">
+    <statement>
+        <p>
+            Let <m>T:\R^n\rightarrow\R^m</m> be a linear transformation induced by
+
+<me>
+    A=\begin{bmatrix}
+-2\amp 1\amp 3\\
+4\amp -2\amp -6
+\end{bmatrix}
+</me>
+
+<ol>
+<li xml:id="item-lintrans3a">
+  <p> 
+Find <m>n</m> and <m>m</m>. 
+</p>
+</li>
+<li xml:id="item-lintrans3b">
+  <p>
+Find and draw the image of <m>T</m>.
+</p>
+</li>
+</ol>
+       </p>
+    </statement>
+    <answer>
+        <p>
+           For part <xref ref="item-lintrans3a"/>: <m> n=3 </m> and <m> m = 2 </m>.
+        </p> 
+    
+<p> 
+For <xref ref="item-lintrans3b"/>: To find the image of <m>T</m>, we will take a slightly different approach from what we did in <xref ref="ex-lineartrans2"/><xref ref="item-exlineartrans2d"/>.
+
+Let <m>\mathbf{v}=[a,b,c]]</m> be an arbitrary vector of <m>\R^3</m>. The image of <m>\mathbf{v}</m> is given by
+<md>
+<mrow> T(\mathbf{v})=\begin{bmatrix}
+-2\amp 1\amp 3\\
+4\amp -2\amp -6
+\end{bmatrix}\begin{bmatrix}a\\b\\c\end{bmatrix}\amp =a\begin{bmatrix}-2\\4\end{bmatrix}+b\begin{bmatrix}1\\-2\end{bmatrix}+c\begin{bmatrix}3\\-6\end{bmatrix} </mrow>
+<mrow> \amp =(a(-2)+b+c(3))\begin{bmatrix}1\\-2\end{bmatrix} </mrow>
+</md>
+
+This shows that the image of every vector in <m>\R^3</m> is a scalar multiple of <m>\begin{bmatrix}1\\-2\end{bmatrix}</m>.  This means that the image of <m>T</m> is a line in <m>\R^2</m>.
+</p>
+
+<image width="65%">
+   <shortdescription>Line generated is graphed</shortdescription>
+    <latex-image>
+      \begin{tikzpicture}[scale=.8]
+
+  \draw[-\gt ] (0,0)--(3,0);
+  \draw[-\gt ] (0,0)--(0,3);
+  \draw[-\gt ] (0,0)--(-1.5,-1);
+
+  
+  \draw[\lt -\gt ] (4,2)--(8,2);
+  \draw[\lt -\gt ] (5,-1)--(5,3);
+  \draw[line width=2pt,blue](4.5,3)--(6.5,-1) node[above, right]{Image of \(T\)};
+  
+  \draw [-\gt ,line width=1pt,-stealth]  (2,-1) to[out=-60, in=240] (4.5, -1);
+   \node[] at (3.25, -1)   (b) {\(T\)};
+     \end{tikzpicture}
+    </latex-image>
+</image>
+ 
+    </answer>
+</example>
+</subsection>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<subsection xml:id="Subsection-Linear-Transformations-of-Subspaces-of-Rn">
+    <title>Linear Transformations of Subspaces of <m>\R^n</m></title>
+
+<p> 
+ <xref ref="def-lin"/> defines a linear transformation as a map from <m>\R^n</m> into <m>\R^m</m>.  We will now make this definition more general by allowing the domain and the codomain of the transformation to be subspaces of <m>\R^n</m> and <m>\R^m</m>.  Eventually, a linear transformation will be defined as a mapping between vector spaces.
+</p>
+
+<definition xml:id="def-lin2">
+
+    <statement>
+        <p>
+            Let <m>V</m> and <m>W</m> be subspaces of <m>\R^n</m> and <m>\R^m</m>.  Let <m>T:V\rightarrow W</m> be a transformation. We call <m>T</m> <term> linear transformation</term> if for all vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m> in <m>V</m>, and scalars <m>k</m>, the following two rules hold:
+
+
+<me>
+    T(k\mathbf{u})= kT(\mathbf{u})
+</me>
+
+
+<me>
+    T(\mathbf{u}+\mathbf{v})= T(\mathbf{u})+T(\mathbf{v})
+</me>
+        </p>
+    </statement>
+</definition>
+
+<example xml:id="ex-subspacetransex1">
+    <statement>
+        <p>
+            Let <m>V</m> be a subspace of <m>\R^3</m> consisting of all vectors in the <m>xy</m>-plane.  Let <m>W</m> be a subspace of <m>\R^3</m> consisting of all vectors along the <m>z</m>-axis.  (Do a quick verification that <m>V</m> and <m>W</m> are subspaces of <m>\R^3</m>.)  Define a transformation <m>T:V\rightarrow W</m> by 
+
+<me>
+    T\left(\begin{bmatrix}a\\b\\0\end{bmatrix}\right)=\begin{bmatrix}0\\0\\a+b\end{bmatrix}
+</me>
+
+Show that <m>T</m> is a linear transformation, and describe its action geometrically.
+       </p>
+    </statement>
+
+    <answer>
+        <p>
+            Consider two arbitrary elements <m>[a_1, b_1, 0]</m> and <m>[a_2, b_2, 0]</m> of <m>V</m>.
+<md>
+<mrow> T\left(\begin{bmatrix}a_1\\b_1\\0\end{bmatrix}+ \begin{bmatrix}a_2\\b_2\\0\end{bmatrix}\right)\amp =T\left(\begin{bmatrix}a_1+a_2\\b_1+b_2\\0\end{bmatrix}\right) </mrow> 
+<mrow> \amp =\begin{bmatrix}0\\0\\(a_1+a_2)+(b_1+b_2)\end{bmatrix} </mrow>
+<mrow> \amp =\begin{bmatrix}0\\0\\(a_1+b_1)+(a_2+b_2)\end{bmatrix} </mrow>
+<mrow> \amp =\begin{bmatrix}0\\0\\a_1+b_1\end{bmatrix}+\begin{bmatrix}0\\0\\a_2+b_2\end{bmatrix} </mrow>
+<mrow> \amp =T\left(\begin{bmatrix}a_1\\b_1\\0\end{bmatrix}\right)+ T\left(\begin{bmatrix}a_2\\b_2\\0\end{bmatrix}\right) </mrow>
+</md>
+Verification of the fact that
+<me>
+T\left(k\begin{bmatrix}a_1\\b_1\\0\end{bmatrix}\right)=kT\left(\begin{bmatrix}a_1\\b_1\\0\end{bmatrix}\right)
+</me>
+is similar, and we omit the details.
+</p>
+
+<p>
+We have shown that <m>T</m> is a linear transformation.  <m>T</m> maps all vectors in the <m>xy</m>-plane to the <m>z</m>-axis.  The following diagram helps us visualize the action of <m>T</m> on a specific vector.
+</p> 
+
+
+
+<image width="65%">
+   <shortdescription> [1,2,0] acted on by T </shortdescription>
+    <latex-image>
+      \begin{tikzpicture}[scale=.8]
+
+  \draw[-\gt ] (0,0)--(3,0);
+  \draw[-\gt ] (0,0)--(0,3);
+  \draw[-\gt ] (0,0)--(-1.5,-1);
+
+\filldraw[blue, opacity=0.3](1.5,-1)--(4.5,1)--(-1.5,1)--(-4.5,-1)--cycle;
+  
+\draw[line width=1pt,red,-stealth](0,0)--(2,-0.5) node[below right]{\(\begin{bmatrix}1\\2\\0\end{bmatrix}\)};
+
+  
+ \draw[-\gt ] (6,0)--(9,0);
+  \draw[-\gt ] (6,0)--(4.5,-1);
+  
+  \draw[line width=2pt,blue](6,-1)--(6,3) node[above, right]{Image of \(T\)};
+  \draw[line width=2pt,red,-stealth](6,0)--(6,1.5) node[right]{\(T\left(\begin{bmatrix}1\\2\\0\end{bmatrix}\right)=\begin{bmatrix}0\\0\\3\end{bmatrix}\)};
+  \draw [-\gt ,line width=1pt,-stealth]  (2.5,2) to[out=30, in=150] (5, 2);
+   \node[] at (3.75, 3)   (b) {\(T\)};
+     \end{tikzpicture}
+    </latex-image>
+</image>
+
+<p>
+We can investigate further.  Recall that <m>T</m> is defined by 
+<me>
+    T\left(\begin{bmatrix}a\\b\\0\end{bmatrix}\right)=\begin{bmatrix}0\\0\\a+b\end{bmatrix}
+</me>
+
+Next, we ask you to consider the diagram below and try solve the following problem.
+</p>
+
+
+<image width="65%">
+   <shortdescription></shortdescription>
+    <latex-image>
+      \begin{tikzpicture}[scale=.8]
+
+  \draw[-\gt ] (0,0)--(3,0);
+  \draw[-\gt ] (0,0)--(0,3);
+  \draw[-\gt ] (0,0)--(-1.5,-1);
+\draw[-] (4.5,1)--(-4.5,-1);
+\filldraw[blue, opacity=0.3](4.5,1)--(-1.5,1)--(-4.5,-1)--cycle;
+\filldraw[orange, opacity=0.3](1.5,-1)--(4.5,1)--(-4.5,-1)--cycle;
+   \draw[-\gt ] (6,0)--(9,0);
+  
+  \draw[-\gt ] (6,0)--(4.5,-1);
+  \draw[line width=2pt,blue](6,-1)--(6,3) node[above, right]{Image of \(T\)};
+  \draw [-\gt ,line width=1pt,-stealth]  (2.5,2) to[out=30, in=150] (5, 2);
+   \node[] at (3.75, 3)   (b) {\(T\)};
+     \end{tikzpicture}
+    </latex-image>
+</image>
+
+
+<problem>
+<statement>
+<p>
+Choose the proper answer for each of the statements below.
+    <ol>
+        <li>
+            <p>
+                Is the image of the line <m>y=-x</m> under <m>T</m> a line, a plane, the zero vector or all of <m>\R^3</m>?
+            </p>
+        </li>
+        <li>
+            <p>
+        is the image of the orange part of the domain (the front triangle) the positive <m>z</m>-axis, the negative <m>z</m>-axis, the zero vector or the entire <m>z</m>-axis? 
+            </p>
+        </li>
+        <li>
+            <p>
+        is the image of the purple part of the domain (the back triangle) the positive <m>z</m>-axis, the negative <m>z</m>-axis, the zero vector or the entire <m>z</m>-axis?
+            </p>
+        </li>
+    </ol>
+</p>
+</statement>
+
+<answer>
+    <p>
+        <ol>
+            <li>
+                <p>
+                    The image of the line <m>y=-x</m> under <m>T</m> is the the zero vector.
+                </p>
+            </li>
+            <li>
+                <p>
+        The image of the orange part of the domain (the front triangle) is the positive <m>z</m>-axis.
+                </p>
+            </li>
+            <li>
+                <p>
+        The image of the purple part of the domain (the back triangle) is the negative <m>z</m>-axis.
+                </p>
+            </li>
+        </ol>
+    </p>
+</answer>
+</problem>
+</answer>
+</example>
+
+
+<p>
+We conclude this section by introducing two simple but important transformations.
+</p>
+
+
+<definition xml:id="def-idtransonrn">
+
+    <statement>
+        <p>
+            The <term>identity transformation</term> on <m>V</m>, denoted by <m>\id_V</m>, is a transformation that maps each element of <m>V</m> to itself.
+
+In other words,
+
+<me>
+    \id_V:V\rightarrow V
+</me>
+ is a transformation such that 
+<me>
+    \id_V(\mathbf{v})=\mathbf{v}\quad\text{for all}\quad \mathbf{v} \in V
+</me>
+        </p>
+    </statement>
+</definition>
+
+
+
+<definition xml:id="def-zerotransonrn">
+
+    <statement>
+        <p>
+            The <term>zero transformation</term>, <m>Z</m>, maps every element of the domain to the zero vector.
+
+In other words,
+
+<me>
+    Z:V\rightarrow W
+</me>
+ is a transformation such that 
+<me>
+    Z(\mathbf{v})=\mathbf{0}\quad\text{for all}\quad \mathbf{v} \in V
+</me>
+        </p>
+    </statement>
+</definition>
+
+
+
+
+<theorem xml:id="th-idlintrans">
+
+    <statement>
+        <p>
+            The identity transformation is linear.
+        </p>
+    </statement>
+
+<proof>
+    <p>
+Left to the reader. (See<xref ref="prob-idtrans"/>)
+    </p>
+</proof>
+</theorem>
+
+
+<theorem xml:id="th-zerolintrans">
+
+    <statement>
+        <p>
+            The zero transformation is linear.
+        </p>
+    </statement>
+
+<proof>
+    <p>
+Left to the reader.  (See <xref ref="prob-zerotrans"/>)
+    </p>
+</proof>
+</theorem>
+</subsection>
+
+
+
+
+
+
+<exercises>
+
+<exercise xml:id="prob-sum">
+    <statement>
+        <p>
+            Show that <xref ref="lin2"/> of <xref ref="init-lintransintro"/> holds for vectors <m>\begin{bmatrix}3\\4\end{bmatrix}</m> and <m>\begin{bmatrix}-2\\1\end{bmatrix}</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="prob-prob2">
+    <statement>
+        <p>
+            Use a counter-example to prove <xref ref="t2"/> of <xref ref="init-lintransintro"/>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="prob-imageoflincomb">
+    <statement>
+        <p>
+            Suppose <m>T:\R^{10}\rightarrow\R^2</m> is a linear transformation such that <m>T(\mathbf{u})=[2,-1]</m> and <m>T(\mathbf{v})=[-5,3]]</m>.  Find the image of <m>3\mathbf{u}-\mathbf{v}</m>.
+        </p>
+    </statement>
+
+    <answer>
+<p>
+<me>
+    T(3\mathbf{u}-\mathbf{v})=\begin{bmatrix}11\\-6\end{bmatrix}
+</me>
+        </p>
+    </answer>
+</exercise>
+
+
+<exercise xml:id="prob-notlinear">
+    <statement>
+        <p>
+            Let <m>\mathbf{u}</m> be a fixed vector.  Define <m>T_{\mathbf{u}}:\R^2\rightarrow\R^2</m>, by <m>T_{\mathbf{u}}(\mathbf{x})=\mathbf{u}-\mathbf{x}</m>.
+  <ol>
+  <li>
+      <p> Describe the effect of this transformation by sketching <m><alert>x</alert></m> and <m>T_{\mathbf{u}}(<alert>x</alert>)</m> for at least four vectors <m><alert>x</alert></m> and a fixed vector <m>\mathbf{u}</m> of your choice. </p>
+</li>
+  <li>
+      <p> Is <m>T_{\mathbf{u}}</m> a linear transformation? </p>
+</li>
+  </ol>
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="prob-projectiontrans">
+    <statement>
+        <p>
+            Define <m>P_{xy}:\R^3\rightarrow\R^2</m>, by
+<me>P_{xy}\left(\begin{bmatrix}
+x\\
+y\\
+z
+\end{bmatrix} \right)=\begin{bmatrix}
+x\\
+y\\
+0
+\end{bmatrix}.
+</me>  
+
+This transformation is called an <term>{orthogonal projection</term>} onto the <m>xy</m>-plane.  Show that <m>P_{xy}</m> is a linear transformation.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="prob-imagesofijk">
+    <statement>
+        <p>
+            Suppose a linear transformation <m>T:\R^3\rightarrow\R^3</m> maps 
+            <me><alert>i</alert> \ \text{to} \ \begin{bmatrix}2\\-1\\0\end{bmatrix}, \quad \  <alert>j</alert> \ \text{to} \  to \begin{bmatrix}-2\\4\\1\end{bmatrix}, \quad \text{and} \quad
+                 <alert>k</alert> \ \text{to} \ \begin{bmatrix}3\\0\\-5\end{bmatrix}.
+            </me> 
+        Find the image of <m>\begin{bmatrix}1\\1\\-2\end{bmatrix}</m> under <m>T</m>.
+        </p>
+    </statement>
+
+    <answer>
+        <p>
+<me>
+    T\left(\begin{bmatrix}1\\1\\-2\end{bmatrix}\right)=\begin{bmatrix}-6\\3\\11\end{bmatrix}
+</me>
+        </p>
+    </answer>
+</exercise>
+
+<exercise xml:id="prob-idtrans">
+    <statement>
+        <p>
+            Prove <xref ref="th-idlintrans"/>
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="prob-zerotrans">
+    <statement>
+        <p>
+            Prove <xref ref="th-zerolintrans"/>
+        </p>
+    </statement>
+</exercise>
+
+
+<exercisegroup> 
+<introduction>
+    <p>
+For each matrix <m>A</m> below, find the domain and the codomain of the linear transformation <m>T:\R^n\rightarrow\R^m</m> induced by <m>A</m>; find and draw the image of <m>T</m>. (Hint: See <xref ref="ex-lineartrans3"/>.)
+    </p>
+</introduction>
+
+<exercise xml:id="domaincodomain1">
+    <statement>
+        <p>
+<me>
+    A=\begin{bmatrix}0\amp 0\\1\amp 1\\2\amp 0\end{bmatrix}
+</me>
+       </p>
+    </statement>
+
+<answer>
+<p>
+  Domain: <m>\R^n</m>, where <m>n=2</m>.
+</p>
+<p>
+  Codomain: <m>\R^m</m>, where <m>m=3</m>.
+</p>
+</answer>
+</exercise>    
+
+
+
+  <exercise xml:id="prob-domaincodomain2">
+    <statement>
+        <p>
+            <me>
+    A=\begin{bmatrix}3\amp -1\\-3\amp 1\end{bmatrix}
+</me>
+        </p>
+    </statement>
+</exercise>
+</exercisegroup>
+
+
+</exercises>
+</section>

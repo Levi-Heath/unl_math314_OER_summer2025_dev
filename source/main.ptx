@@ -16,7 +16,7 @@
     <xi:include href="./ch-big-ideas-about-vectors/Chapter-Big-Ideas-about-Vectors.ptx" />
     <xi:include href="./ch-matrices/Chapter-Matrices.ptx" />
     <xi:include href="./ch-subspaces-of-Rn/Chapter-Subspaces-of-Rn.ptx" />
-    <!--<xi:include href="./ch-linear-transformations/Chapter-Linear-Transformations.ptx" />-->
+    <xi:include href="./ch-linear-transformations/Chapter-Linear-Transformations.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
