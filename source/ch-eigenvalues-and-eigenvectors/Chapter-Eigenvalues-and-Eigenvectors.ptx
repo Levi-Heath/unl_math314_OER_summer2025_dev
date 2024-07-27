@@ -44,6 +44,6 @@
 
   <!-- include sections --> 
 <!--<xi:include href="Section-Addition-and-Scalar-Multiplication-of-Matrices.ptx"/>-->
-<!--<xi:include href="Section-Matrix-Transformations.ptx"/>-->
+<xi:include href="Section-Similar-Matrices-and-their-Properties.ptx"/>
 
 </chapter>

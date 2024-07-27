@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="Section-Similar-Matrices-and-Their-Properties" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Similar Matrices and Their Properties</title>
+
+
+
+ 
+
+
+
+
+
+
+<p>
+Let <m>A</m> and <m>B</m> be <m>n \times n</m> matrices.  Then the products <m>AB</m> and <m>BA</m> are both <m>n \times n</m> matrices.  In most cases the products <m>AB</m> and <m>BA</m> are not equal.
+
+However, for some pairs of <m>n \times n</m> matrices <m>A</m> and <m>B</m>, we are able to find an invertible matrix <m>P</m> such that <m>PB = AP</m>.  This leads to the following definition.
+</p>
+
+
+<definition xml:id="def-similar">
+
+    <statement>
+        <p>
+            If <m>A</m> and <m>B</m> are <m>n \times n</m> matrices, we say that <m>A</m> and <m>B</m> are <term>similar</term>, if <m>B = P^{-1}AP</m> for some invertible matrix <m>P</m>.  In this case we write <m>A \sim B</m>.
+        </p>
+    </statement>
+</definition>
+
+<p> 
+The following theorem shows that <term>similarity</term> (<m>\sim</m>) satisfies <term>reflexive</term>, <term>symmetric</term>, and <term>transitive</term> properties.
+</p>
+
+
+<theorem xml:id="th-similarityequivalence">
+
+    <statement>
+        <p>
+            Similarity is an <term>equivalence relation</term>, i.e. for <m>n \times n</m> matrices <m>A,B,</m> and <m>C</m>,
+<ol>
+<li xml:id="item-reflexive">
+  <p> <m>A \sim A</m> (reflexive) </p>
+</li>
+<li xml:id="item-symmetric">
+  <p> If <m>A \sim B</m>, then <m>B \sim A</m> (symmetric) </p>
+</li>
+<li xml:id="item-transitive">
+  <p> If <m>A \sim B</m> and <m>B \sim C</m>, then <m>A \sim C</m> (transitive) </p>
+</li>
+</ol>
+        </p>
+    </statement>
+
+
+<proof>
+    <p>
+<xref ref="item-reflexive"/>: It is clear that <m>A\sim A</m> (let <m>P=I</m>).
+
+<xref ref="item-symmetric"/>
+If <m>A\sim B,</m> then for some invertible matrix <m>P</m>,
+<me>
+A=P^{-1}BP
+</me>
+and so
+<me>
+PAP^{-1}=B
+</me>
+But then
+<me>
+\left( P^{-1}\right) ^{-1}AP^{-1}=B
+</me>
+which shows that <m>B\sim A</m>.
+
+<xref ref="item-transitive"/>
+Now suppose <m>A\sim B</m> and <m>B\sim C</m>. Then there exist invertible matrices
+<m>P,Q</m> such that
+<me>
+A=P^{-1}BP,\ B=Q^{-1}CQ
+</me>
+Then,
+<me>
+A=P^{-1} \left( Q^{-1}CQ \right)P=\left( QP\right) ^{-1}C\left( QP\right)
+</me>
+showing that <m>A</m> is similar to <m>C</m>.
+    </p>
+</proof>
+</theorem>
+
+
+
+<p>
+Any relation satisfying the reflexive, symmetric and transitive properties is called an  <term>equivalence relation</term>. <xref ref="th-similarityequivalence"/> proves that similarity between matrices is an <term>equivalence relation</term>. <xref ref="prob-lessthan"/> gives a good example of a relation that is NOT an equivalence relation.
+
+As we will see later, similar matrices share many properties. 
+ Before proceeding to explore these properties, we pause to introduce a simple matrix function that we will continue to use throughout the course.  Another important quantity we can compute is called the <term>trace</term> of a matrix.
+</p>
+
+<definition xml:id="def-trace">
+
+    <statement>
+        <p>
+            The <term>trace</term> of an <m>n \times n</m> matrix <m>A</m>, abbreviated <m>\mbox{tr} A</m>, is defined to be the sum of the main diagonal elements of <m>A</m>.  In other words, if <m> A = [a_{ij}]</m>, then 
+<me>
+    \mbox{tr}(A) = a_{11} + a_{22} + \dots + a_{nn}
+</me>
+  We may also write <m>\mbox{tr}(A) =\sum_{i=1}^n a_{ii}</m>.
+        </p>
+    </statement>
+</definition>
+
+<remark>
+<statement>
+<p>
+It is easy to see that <m>\mbox{tr}(A + B) = \mbox{tr} A + \mbox{tr} B</m> and that <m>\mbox{tr}(cA) = c \mbox{ tr}(A)</m> holds for all <m>n \times n</m> matrices <m>A</m> and <m>B</m> and all scalars <m>c</m>. The following fact is more surprising.
+</p>
+</statement>
+</remark>
+
+
+<theorem xml:id="th-trAB-trBA">
+
+    <statement>
+        <p>
+            Let <m>A</m> and <m>B</m> be <m>n \times n</m> matrices. Then <m>\mbox{tr}(AB) = \mbox{tr}(BA)</m>.
+        </p>
+    </statement>
+
+
+<proof>
+    <p>
+Write <m>A = [a_{ij}]</m> and <m>B = [b_{ij}]</m>. For each <m>i</m>, the <m>(i, i)</m>-entry <m>d_{i}</m> of the matrix <m>AB</m> is given as follows:
+<me>d_{i} = a_{i1}b_{1i} + a_{i2}b_{2i} + \dots + a_{in}b_{ni} = \sum_{j}a_{ij}b_{ji}.</me>
+
+Hence
+<me>
+\mbox{tr}(AB) = d_1 + d_2 + \dots + d_n = \sum_{i}d_i = \sum_{i}\left(\sum_{j}a_{ij}b_{ji}\right).
+</me>
+Similarly we have
+<me>
+\mbox{tr}(BA) = \sum_{i}\left(\sum_{j}b_{ij}a_{ji}\right).
+</me>
+
+Since these two double sums are the same, we have proven the theorem.
+    </p>
+</proof>
+</theorem>
+
+<p>
+The following theorem lists a number of properties shared by similar matrices.
+</p>
+
+<theorem xml:id="th-properties-similar">
+
+    <statement>
+        <p>
+            If <m>A</m> and <m>B</m> are <m>n\times n</m> matrices and <m>A\sim B</m>, then
+<ol>
+<li xml:id="th-properties-similar-det">
+  <p> <m>\det(A) = \det(B)</m>, </p>
+</li>
+<li xml:id="th-properties-similar-rank">
+  <p>  <m>\mbox{rank}(A) = \mbox{rank}(B)</m>, </p>
+</li>
+<li xml:id="th-properties-similar-trace">
+  <p>  <m>\mbox{tr}(A)= \mbox{tr}(B)</m>, </p>
+</li>
+<li xml:id="th-properties-similar-char-poly">
+  <p> <m>A</m> and <m>B</m> have the same characteristic equations, and </p>
+</li>
+<li xml:id="th-properties-similar-eig">
+  <p>  <m>A</m> and <m>B</m> have the same eigenvalues. </p>
+</li>
+</ol>
+        </p>
+    </statement>
+
+
+<proof>
+    <p>
+Let <m>B = P^{-1}AP</m> for some invertible matrix <m>P</m>. 
+    </p>
+
+    <p> 
+For <xref ref="th-properties-similar-det"/>, <m>\det B = \det(P^{-1}) \det A \det P = \det A</m> because <m>\det(P^{-1}) = 1/ \det P</m> (see <xref ref="th-detofinverse"/>).
+    </p>
+
+    <p>
+Similarly, for <xref ref="th-properties-similar-rank"/>, <m>\mbox{rank} B = \mbox{rank}(P^{-1}AP) = \mbox{rank} A</m>, because multiplication by an invertible matrix cannot change the rank.  To see this, note that any invertible matrix is a product of elementary matrices.  Multiplying by elementary matrices is equivalent to performing elementary row (column) operations on <m>A</m>, which does not change the row (column) space, nor the rank.  It follows that similar matrices have the same rank. 
+    </p> 
+
+    <p> 
+For <xref ref="th-properties-similar-trace"/>, we make use of <xref ref="th-trAB-trBA"/>:
+<me>
+\mbox{tr} (P^{-1}AP) = \mbox{tr}[P^{-1}(AP)] = \mbox{tr}[(AP)P^{-1}] = \mbox{tr} A.
+</me>
+As for <xref ref="th-properties-similar-char-poly"/>,
+<md>
+<mrow> \det(B-\lambda I) \amp = \det \{P^{-1}AP-\lambda(P^{-1}P)\} </mrow>
+    <mrow> \amp = \det \{ P^{-1}(A-\lambda I)P\} </mrow>
+        <mrow>\amp = \det (A-\lambda I), </mrow>
+</md> 
+
+so <m>A</m> and <m>B</m> have the same characteristic equation.
+</p>
+
+    <p>
+Finally, <xref ref="th-properties-similar-char-poly"/> implies <xref ref="th-properties-similar-eig"/> because the eigenvalues of a matrix are the roots of its characteristic polynomial.
+    </p>
+</proof>
+</theorem>
+
+
+
+<remark xml:id="fivePropSim">
+<statement> 
+<p>
+Sharing the five properties in <xref ref="th-properties-similar"/> does not guarantee that two matrices are similar. The matrices
+<me>A = \begin{bmatrix}
+1 \amp  1 \\
+0 \amp  1
+\end{bmatrix} \quad \text{and} \quad I = \begin{bmatrix}
+1 \amp  0 \\
+0 \amp  1
+\end{bmatrix}</me> have the same determinant, rank, trace, characteristic polynomial, and eigenvalues, but they are not similar because <m>P^{-1}IP = I</m> for any invertible matrix <m>P</m>.
+</p>
+</statement>
+</remark>
+
+<p> 
+Even though the properties in <xref ref="th-properties-similar"/> cannot be used to show two matrices are similar, these properties come in handy for showing that two matrices are NOT similar.
+</p>
+
+
+<example xml:id="ex-areTheySimilar">
+    <statement>
+        <p>
+            Are the matrices <m>A =
+\begin{bmatrix}
+2 \amp  1 \\
+1 \amp  -1
+\end{bmatrix}</m> and <m>B =
+\begin{bmatrix}
+3 \amp  0 \\
+1 \amp  -1
+\end{bmatrix}</m> similar?
+       </p>
+    </statement>
+    <answer>
+        <p>
+            A quick check shows us <m>\det A = \det B</m>, and both matrices are seen to be invertible, so they have the same rank.  However, <m>\mbox{tr} A = 1</m> and <m>\mbox{tr} B = 2</m>, so the matrices are not similar.
+       </p>
+    </answer>
+</example>
+
+<p> 
+The next theorem shows that similarity is preserved under inverses, transposes, and powers:
+</p>
+
+
+<theorem xml:id="th-other-properties-similar">
+
+    <statement>
+        <p>
+            If <m>A</m> and <m>B</m> are <m>n\times n</m> matrices and <m>A\sim B</m>, then
+<ol>
+<li xml:id="th-properties-similar-inverse">
+  <p> <m>A^{-1} \sim B^{-1}</m>, </p>
+</li>
+<li xml:id="th-properties-similar-transpose">
+  <p> <m>A^T \sim B^T</m>, and </p>
+</li>
+<li xml:id="th-properties-similar-powers">
+  <p> <m>A^k \sim B^k</m> for all integers <m>k \geq 1</m>. </p>
+</li>
+</ol>
+        </p>
+    </statement>
+
+
+<proof>
+    <p>
+See <xref ref="prob-similarproperties"/>.
+    </p>
+</proof>
+</theorem>
+
+
+
+
+
+
+
+<exercises>
+
+<exercise xml:id="prob-lessthan">
+    <statement>
+        <p>
+            At the beginning of this section we mentioned that similarity of <m>n \times n</m> matrices is an <term>equivalence relation</term>.
+
+An equivalence relation is a binary relation <m>R</m> on elements of a set <m>S</m> that has the following properties:
+<ul>
+<li>
+      <p> The reflexive property:  <m>x R x</m> for every <m>x \in S</m> </p>
+</li>
+<li>
+      <p> The symmetric property:  If <m>x R y</m>, then <m>y R x</m> for every <m>x,y \in S</m> </p>
+</li>
+<li>
+      <p> The transitive property:  If <m>x R y</m> and <m>y R z</m>, then <m>x R z</m> for every <m>x,y,z \in S</m> </p>
+</li>
+</ul>
+
+Let <m>S</m> be the set of all positive integers.  We can show that the relation ``less than'' (symbolized by <m>\lt </m>) is NOT an equivalence relation on this set.  To see this, note that ``less than'' is not reflexive, because <m>s\lt s</m> is not true for any positive integer <m>s</m>.
+<ol>
+    <li>
+          <p> Is the relation ``less than'' symmetric? </p>
+    </li>
+    <li>
+          <p> Is the relation ``less than'' transitive? </p>
+    </li>
+    </ol>
+
+</p>
+</statement>
+
+<answer>
+<p>
+The relation "less than" not symmetric, but it is transitive.
+</p>
+</answer>     
+</exercise>
+
+
+
+<exercise xml:id="prob-lessthan3">
+    <statement>
+        <p>
+            Another relation between matrices we have studied in this course is that two matrices can be ``row equivalent''.  Is the relation ``row equivalent'' 
+<ol>
+    <li>
+      <p> reflexive? </p>
+</li>
+    <li>
+      <p> symmetric?  </p>
+</li>
+    <li>
+      <p> transitive?  </p>
+</li>
+</ol>
+        </p>
+    </statement>
+
+<answer>
+    <p>
+The relation is reflexive, symmetric and transitive.
+    </p>
+</answer>
+</exercise>
+
+<exercisegroup>
+<introduction>
+    <p>
+ By computing the trace, determinant, and rank, show that <m>A</m> and <m>B</m> are <em>not</em> similar in each case. 
+    </p>
+</introduction>
+   
+<exercise xml:id="notsimilar-a">      
+<statement>
+    <p>
+<me>A = \begin{bmatrix}
+	1 \amp  2 \\
+	2 \amp  1
+\end{bmatrix}, \quad B =
+\begin{bmatrix}
+	1 \amp  1\\
+	-1 \amp  1
+\end{bmatrix}.</me>
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="notsimilar-b">
+    <statement>
+        <p>
+            <me> A =
+\begin{bmatrix}
+3 \amp  1 \\
+2 \amp  -1
+\end{bmatrix}, \quad B =
+\begin{bmatrix}
+1 \amp  1 \\
+2 \amp  1
+\end{bmatrix}.</me>
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="notsimilar-c">
+    <statement>
+        <p>
+            <me>A =
+\begin{bmatrix}
+3 \amp  1 \\
+-1 \amp  2
+\end{bmatrix}, \quad B =
+\begin{bmatrix}
+2 \amp  -1 \\
+3 \amp  2
+\end{bmatrix}</me>
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="prob-notsimilar-d">
+    <statement>
+        <p>
+            <me>A =
+\begin{bmatrix}
+2 \amp  1 \amp  1 \\
+1 \amp  0 \amp  1 \\
+1 \amp  1 \amp  0
+\end{bmatrix}, \quad B =
+\begin{bmatrix}
+ 1 \amp  -2 \amp  1 \\
+-2 \amp  4 \amp  -2 \\
+-3 \amp  6 \amp  -3
+\end{bmatrix}.</me>
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="prob-notsimilar-e">
+    <statement>
+        <p>
+            <me>A =
+\begin{bmatrix}
+1 \amp  2 \amp  -3 \\
+1 \amp  -1 \amp  2 \\
+0 \amp  3 \amp  -5
+\end{bmatrix}, \quad B =
+\begin{bmatrix}
+-2 \amp  1 \amp  3 \\
+ 6 \amp  -3 \amp  -9 \\
+ 0 \amp  0 \amp  0
+\end{bmatrix}.</me>
+        </p>
+    </statement>
+</exercise>
+</exercisegroup>
+
+
+
+<exercise xml:id="prob-notsimilar-4x4">
+    <statement>
+        <p>
+            Show that <me>\begin{bmatrix}
+1 \amp  2 \amp  -1 \amp   0 \\
+2 \amp  0 \amp   1 \amp   1 \\
+1 \amp  1 \amp   0 \amp  -1 \\
+4 \amp  3 \amp  0 \amp  0
+\end{bmatrix} \quad \text{and} \quad 
+\begin{bmatrix}
+  1 \amp  -1 \amp   3 \amp   0 \\
+ -1 \amp   0 \amp   1 \amp   1 \\
+  0 \amp  -1 \amp   4 \amp   1 \\
+  5 \amp  -1 \amp  -1 \amp  -4
+\end{bmatrix}</me> 
+
+are <em>not</em> similar.
+        </p>
+    </statement>
+</exercise>
+
+
+
+
+
+
+
+
+
+
+<exercise xml:id="prob-similarproperties">
+    <statement>
+        <p>
+            Prove  <xref ref="th-other-properties-similar"/>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="prob-similarproperties-invertible">
+    <statement>
+        <p>
+            If <m>A</m> is invertible, show that <m>AB</m> is similar to <m>BA</m> for all <m>B</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="prob-similarproperties-rI">
+    <statement>
+        <p>
+            Show that the only matrix similar to a scalar matrix <m>A = rI</m>, where <m>r</m> is any number, is <m>A</m> itself.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="prob-similarproperties-ev">
+    <statement>
+        <p>
+            Let <m>\lambda</m> be an eigenvalue of <m>A</m> with corresponding eigenvector <m>\mathbf{x}</m>. If <m>B = P^{-1}AP</m> is similar to <m>A</m>, show that <m>P^{-1}\mathbf{x}</m> is an eigenvector of <m>B</m> corresponding to <m>\lambda</m>.
+        </p>
+    </statement>
+</exercise>
+</exercises>
+
+</section>

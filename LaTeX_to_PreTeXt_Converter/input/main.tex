@@ -1,243 +1,320 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
-\title{Properties of the Determinant} \license{CC BY-NC-SA 4.0}
+\title{Similar Matrices and Their Properties} \license{CC BY-NC-SA 4.0}
+
 
 \begin{document}
-
 \begin{abstract}
- \end{abstract}
+\end{abstract}
 \maketitle
 
-\section*{Properties of the Determinant}
-We begin by summarizing the properties of determinants we introduced in previous sections.
+\section*{Similar Matrices and Their Properties}
 
-\begin{summary}
-\begin{itemize}
-\item The determinant of the identity matrix is equal to 1. (Lemma \ref{lemma:detofid})
-\item The determinant of a triangular matrix is equal to the product of the main diagonal entries. (Lemma \ref{lemma:triangulardet})
-\item The determinant of the transpose is equal to the determinant of the matrix. (Theorem \ref{th:detoftrans})
-\item If a matrix contains a row of zeros, then its determinant is equal to 0. (Lemma \ref{lemma:det0lemma})
-\item If two rows of a matrix are the same, then the determinant of the matrix is equal to 0.  (Lemma \ref{lemma:det0lemma})
-\item If one row of a matrix is a scalar multiple of another row, then the determinant of the matrix is equal to 0. (Lemma \ref{lemma:det0lemma})
+Let $A$ and $B$ be $n \times n$ matrices.  Then the products $AB$ and $BA$ are both $n \times n$ matrices.  In most cases the products $AB$ and $BA$ are not equal.
 
-\item
-If $B$ is obtained from $A$ by interchanging two different rows, then $$\det{B}=-\det{A}$$
-\item 
-If $B$ is obtained from $A$ by multiplying one of the rows of $A$ by a non-zero constant $k$.  Then $$\det{B}=k\det{A}$$
-\item 
-If $B$ is obtained from $A$ by adding a multiple of one row of $A$ to another row, then
-$$\det{B}=\det{A}$$
-\end{itemize}
-(The last three properties comprise Theorem \ref{th:elemrowopsanddet})
-\end{summary}
+However, for some pairs of $n \times n$ matrices $A$ and $B$, we are able to find an invertible matrix $P$ such that $PB = AP$.  This leads to the following definition.
 
-In this section we will prove the following important results:
+\begin{definition}\label{def:similar}
+If $A$ and $B$ are $n \times n$ matrices, we say that $A$ and $B$ are \dfn{similar}, if $B = P^{-1}AP$ for some invertible matrix $P$.  In this case we write $A \sim B$.
+\end{definition}
+
+%As we will see, matrices that are similar share many properties. 
+
+
+%%Note that we also have $A \sim B$ if  $B = QAQ^{-1}$ where $Q$ is invertible (write $P^{-1} = Q$).
+ 
+The following theorem shows that \dfn{similarity} ($\sim$) satisfies \dfn{reflexive}, \dfn{symmetric}, and \dfn{transitive} properties.  %The first three properties contained in the following theorem are important enough in mathematics to receive a name.  We say that any relation which is \dfn{reflexive}, \dfn{symmetric}, and \dfn{transitive}, is called an \dfn{equivalence relation}.
+
+\begin{theorem}\label{th:similarityequivalence}
+Similarity is an \dfn{equivalence relation}, i.e. for $n \times n$ matrices $A,B,$ and $C$,
 \begin{enumerate}
-\item A square matrix is singular if and only if its determinant is equal to 0.
-\item The determinant of a product is the product of the determinants.
+\item\label{item:reflexive} $A \sim A$ (reflexive)
+\item\label{item:symmetric} If $A \sim B$, then $B \sim A$ (symmetric)
+\item\label{item:transitive} If $A \sim B$ and $B \sim C$, then $A \sim C$ (transitive)
 \end{enumerate}
-To get us started, we need the following lemma.
-\begin{lemma}\label{lemma:detelemproduct} Let $A$ be a square matrix, and let $E$ be an elementary matrix, then
-$$\det{EA}=\det{E}\det{A}$$
-\end{lemma}
-\begin{proof} Recall that if $E$ is obtained from $I$ using an elementary row operation, then the same elementary row operation carries $A$ to $EA$.  There are three types of elementary row operations and three types of elementary matrices, so we will have to consider three cases.
-
-Case 1.  Suppose $E$ is obtained from $I$ by interchanging two rows, then
-$$\det{E}=-1\quad\text{and}\quad \det{EA}=-\det{A}$$
-so
-$$\det{EA}=\det{E}\det{A}$$
-
-Case 2.  Suppose $E$ is obtained from $I$ by multiplying one of the rows of $I$ by a non-zero constant $k$, then
-$$\det{E}=k\quad\text{and}\quad \det{EA}=k\det{A}$$
-so
-$$\det{EA}=\det{E}\det{A}$$
-
-Case 3.  Suppose $E$ is obtained from $I$ by adding a scalar multiple of one row to another row, then
-$$\det{E}=1\quad\text{and}\quad \det{EA}=\det{A}$$
-so
-$$\det{EA}=\det{E}\det{A}$$
-\end{proof}
-\subsection*{Invertibility and the Determinant}
-Recall that we first introduced determinants in the context of invertibility of $2\times 2$ matrices. Specifically, we found that $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ is invertible if and only if $\det{A}\neq 0$.  (A logically equivalent statement is: $A$ is singular if and only if $\det{A}=0$.)   We are now in the position to prove this result for all square matrices.
-
-\begin{theorem}\label{th:detofsingularmatrix}
-A square matrix $A$ is singular if and only if $\det{A}=0$.
 \end{theorem}
+
 \begin{proof}
-Let $A$ be a square matrix.  To determine whether $A$ is singular we need to find $\mbox{rref}(A)$.  In \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0060/main}{Elementary Matrices} we found that there exist elementary matrices $E_1,\ldots ,E_k$ such that 
-$$E_k\ldots E_2E_1A=\mbox{rref}(A)$$
-so
-$$\det{(E_k\ldots E_2E_1A)}=\det{\big(\mbox{rref}(A)\big)}$$
-By repeated application of Lemma \ref{lemma:detelemproduct}, we find that 
-$$\det{E_k}\ldots \det{E_2}\det{E_1}\det{A}=\det{\big(\mbox{rref}(A)\big)}$$
-Suppose that $A$ is singular, then $\mbox{rref}(A)\neq I$.  But then $\mbox{rref}(A)$ contains a row of zeros, and $\det{\big(\mbox{rref}(A)\big)}=0$. (Lemma \ref{lemma:det0lemma})  Since determinants of elementary matrices are non-zero, we conclude that $\det{A}=0$.
+\ref{item:reflexive} It is clear that $A\sim A$ (let $P=I$).
 
-Conversely, suppose $\det{A}=0$, then
-$$\det{\big(\mbox{rref}(A)\big)}=\det{E_k}\ldots \det{E_2}\det{E_1}\det{A}=0$$
-But then $\mbox{rref}(A)\neq I$, so $A$ is singular.
+\ref{item:symmetric}
+If $A\sim B,$ then for some invertible matrix $P$,
+\begin{equation*}
+A=P^{-1}BP
+\end{equation*}
+and so
+\begin{equation*}
+PAP^{-1}=B
+\end{equation*}
+But then
+\begin{equation*}
+\left( P^{-1}\right) ^{-1}AP^{-1}=B
+\end{equation*}
+which shows that $B\sim A$.
+
+\ref{item:transitive}
+Now suppose $A\sim B$ and $B\sim C$. Then there exist invertible matrices
+$P,Q$ such that
+\begin{equation*}
+A=P^{-1}BP,\ B=Q^{-1}CQ
+\end{equation*}
+Then,
+\begin{equation*}
+A=P^{-1} \left( Q^{-1}CQ \right)P=\left( QP\right) ^{-1}C\left( QP\right)
+\end{equation*}
+showing that $A$ is similar to $C$.
 \end{proof}
-\begin{example}\label{ex:invanddet} Determine whether $A$ is an invertible matrix without using elementary row operations.
 
-$$A=\begin{bmatrix}3&4&-8\\1&8&-10\\1&-2&1\end{bmatrix}$$
+Any relation satisfying the reflexive, symmetric and transitive properties is called an  \dfn{equivalence relation}.  Theorem \ref{th:similarityequivalence} proves that similarity between matrices is an \dfn{equivalence relation}.  Practice Problem \ref{prob:lessthan} gives a good example of a relation that is NOT an equivalence relation.
+
+As we will see later, similar matrices share many properties. 
+ Before proceeding to explore these properties, we pause to introduce a simple matrix function that we will continue to use throughout the course.  %Given a square matrix $A$, we have learned how to compute the determinant $\det(A)$.  Another important quantity we can compute is called the \dfn{trace} of a matrix.
+
+\begin{definition}\label{def:trace}
+The \dfn{trace} of an $n \times n$ matrix $A$, abbreviated $\mbox{tr} A$, is defined to be the sum of the main diagonal elements of $A$.  In other words, if $ A = [a_{ij}]$, then $$\mbox{tr}(A) = a_{11} + a_{22} + \dots + a_{nn}$$  We may also write $\mbox{tr}(A) =\sum_{i=1}^n a_{ii}$.
+\end{definition}
+
+It is easy to see that $\mbox{tr}(A + B) = \mbox{tr} A + \mbox{tr} B$ and that $\mbox{tr}(cA) = c \mbox{ tr}(A)$ holds for all $n \times n$ matrices $A$ and $B$ and all scalars $c$. The following fact is more surprising.
+
+\begin{theorem}\label{th:trAB=trBA}
+Let $A$ and $B$ be $n \times n$ matrices. Then $\mbox{tr}(AB) = \mbox{tr}(BA)$.
+\end{theorem}
+
+\begin{proof}
+Write $A = [a_{ij}]$ and $B = [b_{ij}]$. For each $i$, the $(i, i)$-entry $d_{i}$ of the matrix $AB$ is given as follows: $d_{i} = a_{i1}b_{1i} + a_{i2}b_{2i} + \dots + a_{in}b_{ni} = \sum_{j}a_{ij}b_{ji}$. Hence
+\begin{equation*}
+\mbox{tr}(AB) = d_1 + d_2 + \dots + d_n = \sum_{i}d_i = \sum_{i}\left(\sum_{j}a_{ij}b_{ji}\right)
+\end{equation*}
+Similarly we have $\mbox{tr}(BA) = \sum_{i}\left(\sum_{j}b_{ij}a_{ji}\right)$. Since these two double sums are the same, we have proven the theorem.
+\end{proof}
+
+The following theorem lists a number of properties shared by similar matrices.
+
+\begin{theorem}\label{th:properties_similar}
+If $A$ and $B$ are $n\times n$ matrices and $A\sim B$, then
+\begin{enumerate}
+\item\label{th:properties_similar_det} $\det(A) = \det(B)$,
+\item\label{th:properties_similar_rank} $\mbox{rank}(A) = \mbox{rank}(B)$,
+\item\label{th:properties_similar_trace} $\mbox{tr}(A)= \mbox{tr}(B)$,
+\item\label{th:properties_similar_char_poly} $A$ and $B$ have the same characteristic equations, and
+\item\label{th:properties_similar_eig} $A$ and $B$ have the same eigenvalues.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Let $B = P^{-1}AP$ for some invertible matrix $P$. 
+
+For \ref{th:properties_similar_det}, $\det B = \det(P^{-1}) \det A \det P = \det A$ because $\det(P^{-1}) = 1/ \det P$ (Theorem \ref{th:detofinverse}). %and determinants commute (see \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0040/main}{Properties of the Determinant}).
+
+Similarly, for \ref{th:properties_similar_rank} $\mbox{rank} B = \mbox{rank}(P^{-1}AP) = \mbox{rank} A$, because multiplication by an invertible matrix cannot change the rank.  To see this, note that any invertible matrix is a product of elementary matrices.  Multiplying by elementary matrices is equivalent to performing elementary row (column) operations on $A$, which does not change the row (column) space, nor the rank.  It follows that similar matrices have the same rank. 
+
+For \ref{th:properties_similar_trace}, we make use of Theorem~\ref{th:trAB=trBA}:
+\begin{equation*}
+\mbox{tr} (P^{-1}AP) = \mbox{tr}[P^{-1}(AP)] = \mbox{tr}[(AP)P^{-1}] = \mbox{tr} A.
+\end{equation*}
+As for \ref{th:properties_similar_char_poly},
+\begin{align*}
+\det(B-\lambda I) &= \det \{P^{-1}AP-\lambda(P^{-1}P)\} \\
+&= \det \{ P^{-1}(A-\lambda I)P\} \\
+&= \det (A-\lambda I),
+\end{align*} so $A$ and $B$ have the same characteristic equation.
+Finally, \ref{th:properties_similar_char_poly} implies \ref{th:properties_similar_eig} because the eigenvalues of a matrix are the roots of its characteristic polynomial.
+\end{proof}
+
+\begin{remark}\label{rem:fivePropSim}
+Sharing the five properties in Theorem~\ref{th:properties_similar} does not guarantee that two matrices are similar. The matrices
+$A = \begin{bmatrix}
+1 & 1 \\
+0 & 1
+\end{bmatrix}$ and $I = \begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}$ have the same determinant, rank, trace, characteristic polynomial, and eigenvalues, but they are not similar because $P^{-1}IP = I$ for any invertible matrix $P$.
+\end{remark}
+
+Even though the properties in Theorem~\ref{th:properties_similar} cannot be used to show two matrices are similar, these properties come in handy for showing that two matrices are NOT similar.
+
+\begin{example}\label{ex:areTheySimilar}
+Are the matrices $A =
+\begin{bmatrix}
+2 & 1 \\
+1 & -1
+\end{bmatrix}$ and $B =
+\begin{bmatrix}
+3 & 0 \\
+1 & -1
+\end{bmatrix}$ similar?
 \begin{explanation}
-Compute the determinant of $A$.  You will find that $\det{A}=0$.  By Theorem \ref{th:detofsingularmatrix} we conclude that $A$ is not invertible.
+A quick check shows us $\det A = \det B$, and both matrices are seen to be invertible, so they have the same rank.  However, $\mbox{tr} A = 1$ and $\mbox{tr} B = 2$, so the matrices are not similar.
 \end{explanation}
 \end{example}
 
-\subsection*{Determinant of a Product}
-\begin{theorem}\label{th:detofproduct}
-Let $A$ and $B$ be square matrices, then
-$$\det{AB}=\det{A}\det{B}$$
+The next theorem shows that similarity is preserved under inverses, transposes, and powers:
+
+\begin{theorem}\label{th:other_properties_similar}
+If $A$ and $B$ are $n\times n$ matrices and $A\sim B$, then
+\begin{enumerate}
+\item\label{th:properties_similar_inverse} $A^{-1} \sim B^{-1}$,
+\item\label{th:properties_similar_transpose} $A^T \sim B^T$, and
+\item\label{th:properties_similar_powers} $A^k \sim B^k$ for all integers $k \geq 1$.
+\end{enumerate}
 \end{theorem}
+
 \begin{proof}
-Suppose $A$ is invertible, then $A$ can be written as a product of elementary matrices. (Theorem \ref{th:elemmatrices}) 
-$$A=E_1E_2\ldots E_k$$
-Then, by repeated application of Lemma \ref{lemma:detelemproduct}, we get
-\begin{align*}\det{AB}&=\det{(E_1E_2\ldots E_kB)}\\
-&=\det{E_1}\det{E_2}\ldots \det{E_k}\det{B}\\
-&=\det{(E_1E_2\ldots E_k)}\det{B}\\
-&=\det{A}\det{B}
-\end{align*}
-Now suppose that $A$ is not invertible.  Then $AB$ is also not invertible. %Needs proof
-So, $\det{A}=0$ and $\det{AB}=0$.  Thus  $\det{AB}=0=\det{A}\det{B}$.
+See Practice Problem~\ref{prob:similarproperties}.
 \end{proof}
-The following theorem is a nice consequence of Theorem \ref{th:detofproduct}.  We leave the proof to the reader. (Practice Problem \ref{prob:proofdetofinverse})
-\begin{theorem}\label{th:detofinverse} Let $A$ be a nonsingular matrix, then
-$$\det{A^{-1}}=\frac{1}{\det{A}}$$
-\end{theorem}
-
-% \subsection*{Determinant of the Transpose}
-% In Practice Problem \ref{prob:dettranspose} you proved that $\det{A^T}=\det{A}$.  Your proof most likely relied on the fact that cofactor expansion along the first row produces the same result as cofactor expansion along the first column.  (Theorem \ref{th:rowcolexpequivalence}).  We will now take another look at this result and prove it without the assumption that the two cofactor expansions produce the same outcome.
-% \begin{exploration}\label{init:detoftranspose}
-% In this problem we will take a look at the determinants of transposes of elementary matrices.  Recall that an elementary matrix is obtained from the identity matrix by means of one elementary row operation.  Consider the following examples of elementary matrices.
-% $$E_1=\begin{bmatrix}1&0&0&0\\0&0&0&1\\0&0&1&0\\0&1&0&0\end{bmatrix}\quad E_2=\begin{bmatrix}1&0&0&0\\0&1&0&0\\0&0&5&0\\0&0&0&1\end{bmatrix}\quad E_3=\begin{bmatrix}1&0&4&0\\0&1&0&0\\0&0&1&0\\0&0&0&1\end{bmatrix}$$
-% On your own, write out the transpose of each matrix.  You should observe that $E_1^T=E_1$ and $E_2^T=E_2$.  
-
-% Now consider $E_3^T$
-% $$E_3^T=\begin{bmatrix}1&0&0&0\\0&1&0&0\\4&0&1&0\\0&0&0&1\end{bmatrix}$$
-% Clearly $E_3^T\neq E_3$, but what is really important is that $E_3^T$ is also an elementary matrix.  While $E_3$ was obtained from the identity by adding 4 times the third row to the first row, $E_3^T$ was obtained from the identity by adding 4 times the first row to the third row.  By Theorem \ref{th:elemrowopsanddet}\ref{item:addmultotherrowdet}, we know that $\det{E_3^T}=\det{I}=\det{E_3}$.
-
-% So, for all three matrices we have $\det{E_i^T}=\det{E_i}$.
-% \end{exploration}
-
-%  We can generalize our observations in Exploration \ref{init:detoftranspose} as follows:
-% \begin{enumerate}
-% \item If $E$ is an elementary matrix obtained from the identity by switching of two rows, then $E^T=E$.
-% \item If $E$ is an elementary matrix obtained from the identity by multiplying one row by a non-zero constant, then $E^T=E$.
-% \item If $E$ is an elementary matrix obtained from the identity by adding a multiple of one row to another row, then $\det{E^T}=\det{E}$.
-% \end{enumerate}
-
-
-% We will now combine the three parts of our generalization into a lemma.
-% %The discussion above proves the following Lemma, which, in turn, is a step toward proving Theorem \ref{th:detoftrans}.
-
-% \begin{lemma}\label{lemma:detofelementarymat}
-% Let $E$ be an elementary matrix, then
-% $$\det{E^T}=\det{E}$$
-% \end{lemma}
-
-% \begin{proof}
-% We will need to consider three cases.
-
-% Case 1.  Suppose $E$ is obtained from the identity by switching rows $p$ and $q$.  Then $E$ is the same as the identity matrix, except that $(p,p)$ and $(q, q)$ entries of $E$ are zero, and $E$ has a 1 in $(q, p)$ and $(p, q)$ spots.  When the transpose is taken, 1's and 0's along the diagonal stay in place, while the $(p,q)$-entry becomes the $(q, p)$-entry and the $(q,p)$-entry becomes the $(p,q)$-entry.  This shows that $E=E^T$, and $\det{E^T}=\det{E}$.
-
-% Case 2.  Suppose $E$ is obtained from the identity by multiplying one of the rows by a non-zero constant.  Observe that $E$ is a diagonal matrix, so $E^T=E$ and $\det{E^T}=\det{E}$.
-
-% Case 3.  Suppose $E$ is obtained from the identity by adding a $k$ times row $q$ to row $p$.  Then $E$ is the same as the identity matrix, except that the $(p,q)$-entry of $E$ is $k$.  If we take the transpose of $E$, then $k$ will become the $(q,p)$-entry of the transpose.  This means that $E^T$ can be obtained from the identity by adding $k$ times row $p$ to row $q$.  This means that $\det{E^T}=\det{I}=\det{E}$.
-% \end{proof}
-
-% We are now ready to prove the main result of this section.
-
-% \begin{theorem}\label{th:detoftrans}
-% Let $A$ be a square matrix, then
-% $$\det{A^T}=\det{A}$$
-% \end{theorem}
-
-% \begin{proof}
-% Suppose that $A$ is singular, then $A^T$ is also singular. (Theorem \ref{th:invprop} and Theorem \ref{th:transposeproperties}) Thus, $\det{A}=0=\det{A^T}$.
-
-% Suppose $A$ is nonsingular.  Then $A$ is can be written as a product of elementary matrices (Theorem \ref{th:elemmatrices})
-% $$A=E_1E_2\ldots E_k$$
-% By Theorem \ref{th:transposeproperties}
-% $$A^T=E_k^T\ldots E_2^TE_1^T$$
-% By Lemma \ref{lemma:detofelementarymat}, $\det{E_i^T}=\det{E_i}$ for $1\leq i\leq k$.
-
-% \begin{align*}
-% \det{A^T}&=\det{(E_k^T\ldots E_2^TE_1^T)}\\
-% &=\det{E_k^T}\ldots \det{E_2^T}\det{E_1^T}\\
-% &=\det{E_k}\ldots \det{E_2}\det{E_1}\\
-% &=\det{E_1}\det{E_2}\ldots\det{E_k}\\
-% &=\det{(E_1E_2\ldots E_k)}\\
-% &=\det{A}
-% \end{align*}
-% \end{proof}
-
 
 \section*{Practice Problems}
-\begin{problem}
-Without doing written computations, determine whether the given matrix is singular. 
-  \begin{problem}\label{prob:singmatrixdet1a}
-  $$A=\begin{bmatrix}0&0&-3\\2&3&-1\\0&0&10\end{bmatrix}$$
-  \begin{multipleChoice}
- \choice[correct]{$A$ is singular}
- \choice{$A$ is nonsingular}
-  \end{multipleChoice}
-  \end{problem}
 
-\begin{problem}\label{prob:singmatrixdet1b}
-  $$A=\begin{bmatrix}2&-3&-1\\0&4&5\\0&0&-3\\\end{bmatrix}$$
-  \begin{multipleChoice}
- \choice{$A$ is singular}
- \choice[correct]{$A$ is nonsingular}
-  \end{multipleChoice}
-  \end{problem}
+\begin{problem}\label{prob:lessthan}
+At the beginning of this section we mentioned that similarity of $n \times n$ matrices is an \dfn{equivalence relation}.
 
+An equivalence relation is a binary relation $R$ on elements of a set $S$ that has the following properties:
+\begin{itemize}
+\item The reflexive property:  $x R x$ for every $x \in S$
+\item The symmetric property:  If $x R y$, then $y R x$ for every $x,y \in S$
+\item The transitive property:  If $x R y$ and $y R z$, then $x R z$ for every $x,y,z \in S$
+\end{itemize}
+
+Let $S$ be the set of all positive integers.  We can show that the relation ``less than'' (symbolized by $<$) is NOT an equivalence relation on this set.  To see this, note that ``less than'' is not reflexive, because $s<s$ is not true for any positive integer $s$.
+
+\begin{enumerate}
+\item
+Is the relation ``less than'' symmetric? \wordChoice{\choice{Yes}\choice[correct]{No}}
+\item
+Is the relation ``less than'' transitive? \wordChoice{\choice[correct]{Yes}\choice{No}}
+\end{enumerate}
 \end{problem}
 
-\begin{problem}\label{prob:singmatrixdet2} Show that all matrices of the form
-$$\begin{bmatrix}x&x+1&x+2\\x+3&x+4&x+5\\x+6&x+7&x+8\end{bmatrix}$$
-are singular.
-\end{problem}
+\begin{problem}\label{prob:lessthan3}
+Another relation between matrices we have studied in this course is that two matrices can be ``row equivalent''.  Is the relation ``row equivalent'' 
+\begin{enumerate}
+    \item reflexive? \wordChoice{\choice[correct]{Yes}\choice{No}}
+    \item symmetric? \wordChoice{\choice[correct]{Yes}\choice{No}}
+    \item transitive? \wordChoice{\choice[correct]{Yes}\choice{No}}
+\end{enumerate}
 
-\begin{problem}\label{prob:singmatrixdet3}
-Find values of $x$ for which the given matrix is singular.
-$$\begin{bmatrix}2-x&1\\5&6-x\end{bmatrix}$$
-List values of $x$ in an increasing order.
-
-Answer:
-$$x=\answer{1}\quad x=\answer{7}$$
 \end{problem}
 
 \begin{problem}
-Suppose $A$ and $B$ are $2\times 2$ matrices such that $\det{A}=2$ and $\det{B}=\frac{1}{3}$.  Find each of the following.
-  \begin{problem}\label{prob:detproduct1a}
-  $\det{AB^{-1}}=\answer{6}$
-  \end{problem}
-  
-   \begin{problem}\label{prob:detproduct1b}
-  $\det{(AB)^{-1}}=\answer{3/2}$
-  \end{problem}
-  
-   \begin{problem}\label{prob:detproduct1c}
-  $\det{2AB}=\answer{8/3}$
-  \end{problem}
+By computing the trace, determinant, and rank, show that $A$ and $B$ are \textit{not} similar in each case.
+
+\begin{problem}\label{prob:notsimilar_a}
+$A = \begin{bmatrix}
+	1 & 2 \\
+	2 & 1
+\end{bmatrix}$, $B =
+\begin{bmatrix}
+	1 & 1\\
+	-1 & 1
+\end{bmatrix}$
 \end{problem}
 
-\begin{problem}\label{prob:dettruefalse}
-Prove or give a counterexample.
-   $$\det{(A+B)}=\det{(A^T+B^T)}$$
-  
+\begin{problem}\label{prob:notsimilar_b}
+$A =
+\begin{bmatrix}
+3 & 1 \\
+2 & -1
+\end{bmatrix}$, $B =
+\begin{bmatrix}
+1 & 1 \\
+2 & 1
+\end{bmatrix}$
 \end{problem}
 
-\begin{problem}\label{prob:proofdetofinverse}
-Prove Theorem \ref{th:detofinverse}.
+\begin{problem}\label{prob:notsimilar_c}
+$A =
+\begin{bmatrix}
+3 & 1 \\
+-1 & 2
+\end{bmatrix}$, $B =
+\begin{bmatrix}
+2 & -1 \\
+3 & 2
+\end{bmatrix}$
 \end{problem}
 
-\begin{problem}\label{prob:detinvertible1}
-Suppose $A$ is an invertible matrix such that $$A^{-1}=A^T$$
-Find $\det{A}$ if we know that $\det{A}<0$.
-
-Answer: $\det{A}=\answer{-1}$
+\begin{problem}\label{prob:notsimilar_d}
+$A =
+\begin{bmatrix}
+2 & 1 & 1 \\
+1 & 0 & 1 \\
+1 & 1 & 0
+\end{bmatrix}$, $B =
+\begin{bmatrix}
+ 1 & -2 & 1 \\
+-2 & 4 & -2 \\
+-3 & 6 & -3
+\end{bmatrix}$
 \end{problem}
-\end{document} 
+
+\begin{problem}\label{prob:notsimilar_e}
+$A =
+\begin{bmatrix}
+1 & 2 & -3 \\
+1 & -1 & 2 \\
+0 & 3 & -5
+\end{bmatrix}$, $B =
+\begin{bmatrix}
+-2 & 1 & 3 \\
+ 6 & -3 & -9 \\
+ 0 & 0 & 0
+\end{bmatrix}$
+\end{problem}
+
+\end{problem}
+
+%\setcounter{enumi}{1}
+%\item  traces $= 2$, ranks $= 2$, but $\det A = -5$, $\det B = -1$
+
+%\setcounter{enumi}{3}
+%\item  ranks $= 2$, determinants $= 7$, but $\mbox{tr} A = 5$, $\mbox{tr} B = 4$
+
+%\setcounter{enumi}{5}
+%\item  traces $= -5$, determinants $= 0$, but $\mbox{rank} A = 2$, $\mbox{rank} B = 1$
+
+
+
+\begin{problem}\label{prob:notsimilar_4x4}
+Show that $\begin{bmatrix}
+1 & 2 & -1 &  0 \\
+2 & 0 &  1 &  1 \\
+1 & 1 &  0 & -1 \\
+4 & 3 & 0 & 0
+\end{bmatrix}$ and $
+\begin{bmatrix}
+  1 & -1 &  3 &  0 \\
+ -1 &  0 &  1 &  1 \\
+  0 & -1 &  4 &  1 \\
+  5 & -1 & -1 & -4
+\end{bmatrix}$ are \textit{not} similar.
+\end{problem}
+
+\begin{problem}\label{prob:similarproperties}
+Prove Theorem \ref{th:other_properties_similar}
+\end{problem}
+
+\begin{problem}\label{prob:similarproperties_invertible}
+If $A$ is invertible, show that $AB$ is similar to $BA$ for all $B$.
+\end{problem}
+
+\begin{problem}\label{prob:similarproperties_rI}
+Show that the only matrix similar to a scalar matrix $A = rI$, $r\in\RR$, is $A$ itself.
+\end{problem}
+
+\begin{problem}\label{prob:similarproperties_ev}
+Let $\lambda$ be an eigenvalue of $A$ with corresponding eigenvector $\vec{x}$. If $B = P^{-1}AP$ is similar to $A$, show that $P^{-1}\vec{x}$ is an eigenvector of $B$ corresponding to $\lambda$.
+\end{problem}
+
+
+
+\section*{Text Source}
+The text in this section is a compilation of material from Section 7.2.1 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra} (CC-BY) and Section 5.5 of Keith Nicholson's \href{https://open.umn.edu/opentextbooks/textbooks/linear-algebra-with-applications}{\it Linear Algebra with Applications} (CC-BY-NC-SA).
+
+Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, p. 362-364.
+
+Many of the Practice Problems are Exercises from 
+W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2018, Open Edition, pp. 298-310.
+
+\end{document}
