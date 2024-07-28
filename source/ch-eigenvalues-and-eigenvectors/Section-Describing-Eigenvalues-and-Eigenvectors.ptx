@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="Section-Describing-Eigenvalues-and-Eigenvectors" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Describing Eigenvalues and Eigenvectors</title>
+
+
+
+  
+<p>
+At several places in this course it has been valuable to restrict ourselves to square matrices, and we do so again when discussing eigenvalues and eigenvectors.  
+
+In <xref ref="th-matrixtran"/>, we proved that any <m>n \times n</m>  matrix induces a linear transformation from <m>\R^n</m> to itself.  For our first few examples, let us consider the case <m>n = 2</m>. 
+</p>
+
+<exploration xml:id="init-eignintro">
+    <p>
+        Let 
+    <me>
+    A=\begin{bmatrix} 2\amp  1\\ 1\amp 2\end{bmatrix}.
+    </me>. 
+    
+    The following animation helps us to visualize the matrix transformation associated with <m>A</m>.  Given a vector <m>\mathbf{x}</m> in <m>\R^2</m>, its image, <m>A\mathbf{x}</m>, is also in <m>\R^2</m>.  Advance the slider to see the images of the given vectors.
+    </p>
+
+<figure>
+  <caption>
+    A larger version of this activity is available 
+    <url href="https://www.geogebra.org/calculator/ub4kqvmz" visual="geogebra.org">here</url>.
+  </caption>
+  <interactive xml:id="geogebra-ADD-LINK_ID" platform="geogebra" width="100%" aspect="800:600">
+    <slate xml:id="ADD-LINK_ID" surface="geogebra" material="ub4kqvmz" aspect="800:600" />
+  </interactive>
+</figure>
+
+<p>
+  For many vectors, <m>A\mathbf{x}</m> does not point in the same direction as <m>\mathbf{x}</m>.  This is the case for all of the gray vectors in the animation, as we can see that <m>A\mathbf{x}</m> points in a different direction than <m>\mathbf{x}</m>.  But if we look at the red vectors (vectors parallel to <m>[[-1,1]</m>), we notice that they appear unchanged in magnitude and direction.  Such vectors are sometimes called <term>fixed vectors</term> of <m>A</m>.
+
+Looking next at the blue vectors (vectors parallel to <m>[1,1]</m>), we observe that the magnitudes of the vectors are changed, but the direction in which the blue vectors point is unchanged by this linear transformation.
+    </p>
+</exploration>
+
+
+<p>
+In <xref ref="init-eignintro"/> we found that certain vectors do not change direction under the linear transformation induced by matrix <m>A</m>.  Such vectors are examples of <term>eigenvectors</term> of <m>A</m>. 
+
+In general, any nonzero vector whose image under a matrix transformation is parallel to the original vector is called an <term>eigenvector</term> of the matrix that induced the transformation.  The following definition captures this idea algebraically.
+</p> 
+
+
+<definition xml:id="def-eigen">
+
+    <statement>
+        <p>
+            Let <m>A</m> be an <m>n \times n</m> matrix.  We say that a non-zero vector <m>\mathbf{x}</m> is an <term>eigenvector</term> of <m>A</m> if 
+<me>
+    A\mathbf{x} = \lambda \mathbf{x},
+</me>
+
+for some scalar <m>\lambda</m>.
+We say that <m>\lambda</m> is an <term>eigenvalue</term> of <m>A</m> associated with the eigenvector <m>\mathbf{x}</m>.
+        </p>
+    </statement>
+</definition>
+
+<p>
+Let's revisit <xref ref="init-eignintro"/> in light of <xref ref="def-eigen"/>.  In the exploration, we observed visually that vectors parallel to <m>[1,1]</m> were eigenvectors associated with 
+ <me>
+    A=\begin{bmatrix} 2\amp  1\\ 1\amp 2 \end{bmatrix},
+</me>
+
+as these vectors changed length but remained parallel to the original vector under the linear transformation induced by <m>A</m>.  To verify this algebraically, observe that all vectors parallel to <m>[1,1]</m> can be written in the form <m>[a,a]</m>, <m>(a\neq 0)</m>.  We compute 
+
+
+<me>
+    \begin{bmatrix} 2\amp  1\\ 1\amp 2 \end{bmatrix} \begin{bmatrix} a\\ a \end{bmatrix} =
+\begin{bmatrix} 3a\\ 3a \end{bmatrix}= 3 \begin{bmatrix} a\\ a \end{bmatrix}
+</me>
+
+This shows that any non-zero scalar multiple of <m>[1,1]</m> is an eigenvector of <m>A</m> which has a corresponding eigenvalue of 3.
+</p> 
+
+
+
+<image width="55%">
+   <shortdescription>Eigenvalue property drawn</shortdescription>
+    <latex-image>
+      \begin{tikzpicture}
+
+  \draw[\lt -\gt ] (-4,0)--(4,0);
+  \draw[\lt -\gt ] (0,-4)--(0,4);
+  
+ \draw[line width=1pt,-stealth, blue](0, 0)--(1, 1);
+ \draw[line width=1pt,-stealth, blue](0, 0)--(2, 2);
+ \draw[line width=1pt,-stealth, blue](0, 0)--(3, 3);
+ \draw[line width=1pt,-stealth, blue](0, 0)--(-1, -1);
+ \draw[line width=1pt,-stealth, blue](0, 0)--(-2, -2);
+ \draw[line width=1pt,-stealth, blue](0, 0)--(-3, -3);
+
+
+  \node[blue] at (3, 3.5)   (a) {\(\begin{bmatrix}2\amp 1\\1\amp 2\end{bmatrix}\begin{bmatrix}a\\a\end{bmatrix}=3\begin{bmatrix}a\\a\end{bmatrix}\)};
+
+     \end{tikzpicture}
+    </latex-image>
+</image>
+
+<p> 
+<term>Fixed vectors</term> of <xref ref="init-eignintro"/> are also eigenvectors. 
+For example,  
+
+<me>
+    \begin{bmatrix} 2\amp  1\\ 1\amp 2 \end{bmatrix} \begin{bmatrix} 1\\ -1 \end{bmatrix} =
+\begin{bmatrix} 1\\ -1 \end{bmatrix}= 1 \begin{bmatrix} 1\\ -1 \end{bmatrix}
+</me>
+
+This shows that <m>[1,-1]</m> is a fixed vector and an eigenvector of <m>A</m> which has a corresponding eigenvalue of <m>1</m>.
+</p> 
+
+<p> 
+The above discussion leads us to the following result.
+</p> 
+
+
+<theorem xml:id="th-eigenScalarMult">
+
+    <statement>
+        <p>
+            If <m>\mathbf{x}</m> is an eigenvector of matrix <m>A</m> and <m>\lambda</m> is the corresponding eigenvalue, then every scalar multiple of <m>\mathbf{x}</m> is also an eigenvector of <m>A</m> 
+ and <m>\lambda</m> is the corresponding eigenvalue.
+        </p>
+    </statement>
+
+<proof>
+    <p>
+See<xref ref="prob-eigenScalarMult"/>
+    </p>
+</proof>
+</theorem>
+
+<observation xml:id="obs-finerPointsOfEigDe">
+<statement>
+<p>
+A couple of finer points of  <xref ref="def-eigen"/> require clarification.
+  <ul>
+  <li>
+      <p> The definition requires that eigenvectors be non-zero.  Imagine what would happen if we allowed <m>\mathbf{x}=\mathbf{0}</m> to be an eigenvector of <m>A</m>. Clearly <m>A\mathbf{0}=\lambda\mathbf{0}</m> for all scalars <m>\lambda</m>.  This means that every number would be an eigenvalue of every matrix.  Because eigenvalues are supposed to capture certain information about the matrix, allowing every number to be an eigenvalue of every matrix would defeat the purpose. </p>
+</li>
+  <li>
+      <p> Until now, we had talked about  eigenvectors as vectors whose images under a matrix transformation are parallel to the original vectors.  But the algebraic definition allows non-zero vectors that map to zero to be considered eigenvectors.  (What would an eigenvalue of such an eigenvector be?)  The zero vector has no direction, so we cannot say that the image of such an eigenvector is parallel to the original vector.  However, <xref ref="ex-eigen"/> will illustrate this point. </p>
+</li>
+  </ul>
+</p>
+</statement>
+</observation>
+
+
+
+<example xml:id="ex-eigen">
+    <statement>
+        <p>
+            Let 
+            <me>
+            P=\begin{bmatrix} 1\amp  0\\ 0\amp 0\end{bmatrix}.
+            </me> 
+        
+        Note that <m>P</m> takes a vector in <m>\R^2</m> and projects it onto the <m>x</m>-axis, as we learned in <xref ref="prob-standardmatrix3"/>.  Which vectors in <m>\R^2</m> would be the eigenvectors, and what are the corresponding eigenvalues?
+       </p>
+    </statement>
+
+    <answer>
+        <p>
+            Since <m>P\mathbf{x}</m> is the projection of <m>\mathbf{x}</m> onto the <m>x</m>-axis, in many cases <m>P\mathbf{x}</m> and <m>\mathbf{x}</m> are not parallel.  Notice, however, that all of the red vectors located along the <m>x</m>-axis in the diagram are fixed by <m>P</m>. So, for any of the red vectors we have <m>P\mathbf{x}=\mathbf{x}=1\mathbf{x}</m>, which means that each of the red vectors is an eigenvector of <m>P</m> with the corresponding eigenvalue of <m>1</m>.
+        </p> 
+
+<image width="55%">
+   <shortdescription>Two eigenvectors graphed</shortdescription>
+    <latex-image>
+      \begin{tikzpicture}
+
+  \draw[\lt -\gt ] (-4,0)--(4,0);
+  \draw[\lt -\gt ] (0,-4)--(0,4);
+  
+ \draw[line width=1pt,-stealth, blue](0, 0)--(0, 1);
+ \draw[line width=1pt,-stealth, blue](0, 0)--(0, 2);
+ \draw[line width=1pt,-stealth, blue](0, 0)--(0, 3);
+ \draw[line width=1pt,-stealth, blue](0, 0)--(0, -1);
+ \draw[line width=1pt,-stealth, blue](0, 0)--(0, -2);
+ \draw[line width=1pt,-stealth, blue](0, 0)--(0, -3);
+
+
+\draw[line width=0.5pt,dashed, black](1.707,1.707)--(1.707,0);
+\draw[line width=6pt,-stealth, black!30!white](0,0)--(1.707,0);
+\draw[line width=2pt,-stealth, black](0, 0)--(1.707,1.707);
+
+
+\draw[line width=0.5pt,dashed, black](-2.5,-1)--(-2.5,0);
+\draw[line width=6pt,-stealth, black!30!white](0,0)--(-2.5,0);
+\draw[line width=2pt,-stealth, black](0, 0)--(-2.5,-1);
+
+\draw[line width=1pt,-stealth, red](0, 0)--(-3,0);
+\draw[line width=1pt,-stealth, red](0, 0)--(-2,0);
+\draw[line width=1pt,-stealth, red](0, 0)--(-1,0);
+\draw[line width=1pt,-stealth, red](0, 0)--(3,0);
+\draw[line width=1pt,-stealth, red](0, 0)--(2,0);
+\draw[line width=1pt,-stealth, red](0, 0)--(1,0);
+ 
+ 
+ \node[red] at (3.5, 0.7)   (a) {\(\begin{bmatrix}1\amp 0\\0\amp 0\end{bmatrix}\mathbf{x}=1\mathbf{x}\)};
+ 
+ \node[blue] at (1.2, 3)   (a) {\(\begin{bmatrix}1\amp 0\\0\amp 0\end{bmatrix}\mathbf{x}=0\mathbf{x}\)};
+
+ \node[black] at (2.2, -1)   (a) {\(\begin{bmatrix}1\amp 0\\0\amp 0\end{bmatrix}\begin{bmatrix}x_1\\x_2\end{bmatrix}=\begin{bmatrix}x_1\\0\end{bmatrix}\)};
+     \end{tikzpicture}
+    </latex-image>
+</image>
+
+<p>
+The blue vectors along the y-axis are also eigenvectors.  To see this, note that each of the blue vectors is of the form <m>\mathbf{x}=[0,x_2]</m>.  But then 
+<me>
+    P\mathbf{x}=\begin{bmatrix}1\amp 0\\0\amp 0\end{bmatrix}\begin{bmatrix}0\\x_2\end{bmatrix}=\begin{bmatrix}0\\0\end{bmatrix}=0\begin{bmatrix}0\\x_2\end{bmatrix}=0\mathbf{x}.
+</me>
+
+So each of the blue vectors is an eigenvector of <m>P</m> with the corresponding eigenvalue of <m>0</m>.
+       </p>
+    </answer>
+</example>
+
+
+
+
+<exploration xml:id="exp-eigenvectors">
+    <p>
+        Let <me>
+            A=\begin{bmatrix}1\amp 6\\1\amp 0\end{bmatrix}.
+            </me> 
+    The GeoGebra interactive below shows the action of <m>A</m> on several vectors.  (Move the slider to <m>s=1</m> to see the result of the transformation induced by <m>A</m>.)  
+    </p>
+
+<figure>
+  <caption>
+    A larger version of this activity is available 
+    <url href="https://www.geogebra.org/calculator/vd3fydmg" visual="geogebra.org">here</url>.
+  </caption>
+  <interactive xml:id="geogebra-Eigenvector-Test" platform="geogebra" width="100%" aspect="900:600">
+    <slate xml:id="Eigenvector-Test" surface="geogebra" material="vd3fydmg" aspect="900:600" />
+  </interactive>
+</figure>
+
+<problem>
+<statement>
+<p> 
+Note that vectors <m>\mathbf{x}_1=\begin{bmatrix}3\\1\end{bmatrix}</m> and <m>\mathbf{x}_2=\begin{bmatrix}-2\\1\end{bmatrix}</m> (and their scalar multiples) remain positioned along the same lines even as they change magnitude and direction.  This indicates that <m>\mathbf{x}_1</m> and <m>\mathbf{x}_2</m>, along with all of their scalar multiples, are eigenvectors of <m>A</m>.  What are the eigenvalues associated with these eigenvectors?
+</p> 
+</statement>
+
+<hint>
+<p>
+The interactive shows the result of multiplication by <m>A</m>. Consider one eigenvector at a time.  Multiplication by what scalar would yield the same result?
+</p>
+</hint>
+
+<answer>
+<p>
+Eigenvalue associated with <m>\mathbf{x}_1</m> is <m>\lambda_1=3</m>.
+</p> 
+
+<p> 
+Eigenvalue associated with <m>\mathbf{x}_2</m> is <m>\lambda_2=-2</m>.
+</p> 
+</answer>
+</problem>
+</exploration>
+
+<p>
+A natural question is this: does every square matrix have eigenvalues and eigenvectors?  We will address this question in later sections and there discover that the answer to this question is ``yes", provided that we permit eigenvalues and entries of eigenvectors to be complex numbers.  The next example is one that requires complex numbers.
+</p> 
+
+
+<example xml:id="ex-eigsrotation">
+    <p>
+        Let <me>M=\begin{bmatrix}
+\frac{\sqrt{2}}{2} \amp  -\frac{\sqrt{2}}{2}\\
+\frac{\sqrt{2}}{2} \amp  \frac{\sqrt{2}}{2}.
+
+
+\end{bmatrix}</me>  Note that <m>M</m> takes any vector <m>\mathbf{x}</m> in <m>\R^2</m> and rotates it <m>45^{\circ}</m>, as we saw in <xref ref="ex-rotate45"/>.  
+        </p> 
+
+
+\begin{center}
+<image width="65%">
+   <shortdescription>Rotations graphed</shortdescription>
+    <latex-image>
+      \begin{tikzpicture}
+
+  \draw[\lt -\gt ] (-1.5,0)--(1.5,0);
+  \draw[\lt -\gt ] (0,-1.5)--(0,1.5);
+  
+ \draw[line width=1pt,-stealth, blue](0, 0)--(1,0);
+ \draw[line width=1pt,-stealth, blue!60!white](0, 0)--(0.924,0.383);
+ \draw[line width=1pt,-stealth, blue!40!white](0, 0)--(0.707,0.707);
+ \draw[line width=1pt,-stealth, blue!20!white](0, 0)--(0.383,0.924);
+ \draw[line width=1pt,-stealth, red!20!white](0, 0)--(0,1);
+ 
+ \draw[line width=1pt,-stealth, red!40!white](0, 0)--(-0.383,0.924);
+\draw[line width=1pt,-stealth, red!60!white](0, 0)--(-0.707,0.707);
+\draw[line width=1pt,-stealth, red!70!white](0, 0)--(-0.924, 0.383);
+\draw[line width=1pt,-stealth, red](0, 0)--(-1,0);
+
+\draw[line width=1pt,-stealth, red!90!blue](0, 0)--(-0.924,-0.383);
+\draw[line width=1pt,-stealth, red!80!blue](0, 0)--(-0.707,-0.707);
+\draw[line width=1pt,-stealth, red!70!blue](0, 0)--(-0.383,-0.924);
+\draw[line width=1pt,-stealth, red!60!blue](0, 0)--(0,-1);
+
+\draw[line width=1pt,-stealth, red!50!blue](0, 0)--(0.383,-0.924);
+\draw[line width=1pt,-stealth, red!40!blue](0, 0)--(0.707,-0.707);
+\draw[line width=1pt,-stealth, red!30!blue](0, 0)--(0.924,-0.383);
+\fill[blue] (1,0) circle (0.06cm);
+
+\draw [-\gt ,line width=0.5pt,-stealth]  (1.2,0.1) to[out=95, in=-45] (0.85, 0.85);
+     \end{tikzpicture}
+
+    </latex-image>
+</image>
+ <image width="65%">
+   <shortdescription>Continuation of above</shortdescription>
+    <latex-image>
+      \begin{tikzpicture}
+  \draw[\lt -\gt ] (-1.5,0)--(1.5,0);
+  \draw[\lt -\gt ] (0,-1.5)--(0,1.5);
+  
+ \draw[line width=1pt,-stealth, red!40!blue](0, 0)--(1,0);
+ \draw[line width=1pt,-stealth, red!30!blue](0, 0)--(0.924,0.383);
+ \draw[line width=1pt,-stealth, blue](0, 0)--(0.707,0.707);
+ \draw[line width=1pt,-stealth, blue!60!white](0, 0)--(0.383,0.924);
+ \draw[line width=1pt,-stealth, blue!40!white](0, 0)--(0,1);
+ 
+ \draw[line width=1pt,-stealth, blue!20!white](0, 0)--(-0.383,0.924);
+\draw[line width=1pt,-stealth, red!20!white](0, 0)--(-0.707,0.707);
+\draw[line width=1pt,-stealth, red!40!white](0, 0)--(-0.924, 0.383);
+\draw[line width=1pt,-stealth, red!60!white](0, 0)--(-1,0);
+
+\draw[line width=1pt,-stealth, red!70!white](0, 0)--(-0.924,-0.383);
+\draw[line width=1pt,-stealth, red](0, 0)--(-0.707,-0.707);
+\draw[line width=1pt,-stealth, red!90!blue](0, 0)--(-0.383,-0.924);
+\draw[line width=1pt,-stealth, red!80!blue](0, 0)--(0,-1);
+
+\draw[line width=1pt,-stealth, red!70!blue](0, 0)--(0.383,-0.924);
+\draw[line width=1pt,-stealth, red!60!blue](0, 0)--(0.707,-0.707);
+\draw[line width=1pt,-stealth, red!50!blue](0, 0)--(0.924,-0.383);
+
+\fill[blue] (0.707,0.707) circle (0.06cm);
+     \end{tikzpicture}
+    </latex-image>
+</image>
+
+
+<p> 
+Since <m>M</m> rotates every vector in <m>\R^2</m>, <em>every</em> nonzero vector changes direction, so there are no eigenvectors in the plane.  It turns out that <m>M</m> does have eigenvectors and eigenvalues, but in order to find them we need to work with vectors whose entries are complex numbers.  Since these vectors are not in <m>\R^2</m>, we cannot see them.  
+</p> 
+
+<p> 
+To follow the computation below, you need to recall that the imaginary unit <m>i</m> is defined to by <m>i^2=-1</m>.
+</p>
+
+<p>
+Consider the vector 
+<me>
+\begin{bmatrix} \frac{\sqrt{2}}{2}\\ \frac{\sqrt{2}}{2} i \end{bmatrix}.
+</me>
+
+We compute:
+
+<me>
+    \begin{bmatrix}
+\frac{\sqrt{2}}{2} \amp  -\frac{\sqrt{2}}{2}\\
+\frac{\sqrt{2}}{2} \amp  \frac{\sqrt{2}}{2}
+\end{bmatrix} \begin{bmatrix} \frac{\sqrt{2}}{2}\\ \frac{\sqrt{2}}{2} i \end{bmatrix} =
+\begin{bmatrix} \frac{1}{2}-\frac{1}{2} i\\ \frac{1}{2}+ \frac{1}{2} i \end{bmatrix}= \left (\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}i \right ) \begin{bmatrix} \frac{\sqrt{2}}{2}\\ \frac{\sqrt{2}}{2} i \end{bmatrix},
+</me>
+
+so <m>\begin{bmatrix} \frac{\sqrt{2}}{2}\\ \frac{\sqrt{2}}{2} i \end{bmatrix}</m> is an eigenvector of <m>M</m>.  Its corresponding eigenvalue is <m>\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}i</m>.
+    </p>
+</example>
+
+<p> 
+We will continue to work with complex numbers as we study eigenvalues and eigenvectors.
+</p> 
+
+
+
+
+<remark>
+<statement>
+<p>
+The first in-depth study of eigenvalues can probably be attributed to Fourier as he studied partial differential equations early in the nineteenth century, and in particular when he studied what is known as the heat equation. [Trefethen and  Embree]  By the twentieth century mathematicians understood the connections between differential equations and eigenvalues. Systems of differential equations are often best represented by matrices, especially in the context of using computers to find numerical solutions. Most algorithms to solve these systems work by iterating some process, and eigenvalues along with their corresponding eigenvectors indicate what will happen to such a process after many repetitions.
+</p>
+
+<!--
+<p>
+The most famous modern example of a large-scale eigenvalue problem is the Google PageRank algorithm, which helped set Google apart from its competitors as a search engine.  Some of the relevant mathematics can be learned by working through the paper, <url href="https://doi.org/10.1137/050623280">``The \<m>25,000,000,000 Eigenvector, The Linear Algebra Behind Google''</url>, by Kurt Bryan and Tanya Leise.  
+</p> 
+-->
+
+</statement>
+</remark>
+
+
+
+
+
+
+
+
+<exercises>
+
+<exercisegroup>
+<introduction>
+    <p>
+        Let 
+    <me>C=\begin{bmatrix} 2 \amp  1 \amp  1\\ 1 \amp  2 \amp  1\\ 1 \amp  1 \amp  2\end{bmatrix}.</me>  
+    </p>
+</introduction>
+
+<exercise xml:id="prob-checkeig1">
+    <statement>
+        <p>
+            Show that <me>\begin{bmatrix} 1\\1\\1 \end{bmatrix}</me> is an eigenvector of <m>C</m>.  What is its corresponding eigenvalue?
+
+        </p>
+    </statement>
+
+<answer>
+    <p>
+    <me>4.</me>    
+    </p>
+</answer>
+</exercise>
+
+ <exercise xml:id="prob-checkeig2">
+    <statement>
+        <p>
+            Show that <me>\begin{bmatrix} 1\\-1\\0 \end{bmatrix}</me> is an eigenvector of <m>C</m>.  What is its corresponding eigenvalue?
+        </p>
+    </statement>
+
+    <answer>
+        <p>
+        <me>1.</me>    
+        </p>
+    </answer>
+</exercise>
+
+ <exercise xml:id="prob-checkeig3">
+    <statement>
+        <p>
+            Show that <me>\begin{bmatrix} 1\\1\\-2 \end{bmatrix}</me> is an eigenvector of <m>C</m>.  What is its corresponding eigenvalue?
+        </p>
+    </statement>
+
+    <answer>
+        <p>
+        <me>1.</me>    
+        </p>
+    </answer>
+</exercise>
+</exercisegroup>
+
+
+<exercise xml:id="prob-eigprojmatrix">
+    <statement>
+        <p>
+            Let <me>Q=\begin{bmatrix} 0\amp  0\\ 0\amp 1\end{bmatrix}.</me>  Note that <m>Q</m> takes any vector in <m>\R^2</m> and projects it onto the <m>y</m>-axis, as we learned in <xref ref="prob-standardmatrix4"/>.  Which vectors in <m>\R^2</m> would be eigenvectors, and what are the corresponding eigenvalues?
+        </p>
+    </statement>
+</exercise>
+
+ 
+<exercise xml:id="ex-eigsrotation2">
+    <statement>
+        <p>
+            Returning to <xref ref="ex-eigsrotation"/>, let 
+        <me>M=\begin{bmatrix}
+\frac{\sqrt{2}}{2} \amp  -\frac{\sqrt{2}}{2}\\
+\frac{\sqrt{2}}{2} \amp  \frac{\sqrt{2}}{2}
+\end{bmatrix}.</me>
+    
+Show that <m>\begin{bmatrix} \frac{\sqrt{2}}{2}\\ -\frac{\sqrt{2}}{2} i \end{bmatrix}</m> is an eigenvector of <m>M</m>.  What is its corresponding eigenvalue?
+</p>
+</statement>
+
+    <answer>
+        <p>
+        <me>\frac{\sqrt{2}{2}}+\frac{\sqrt{2}{2}}i.</me>    
+        </p>
+    </answer>
+       
+</exercise>
+
+
+<exercise xml:id="prob-eigenvalgeometry">
+    <statement>
+        <p>
+            Arguing geometrically, identify the linear transformation whose standard matrix has eigenvalues <m>\lambda_1=1</m> and <m>\lambda_2=-1</m>.
+        </p>
+    </statement>
+
+<choices>
+  <choice>
+      <statement>
+          <p> Vertical Shear. </p>
+      </statement>
+  </choice>
+    <choice>
+      <statement>
+          <p> Horizontal Shear. </p>
+      </statement>
+  </choice>
+    <choice>
+      <statement>
+          <p> Counterclockwise Rotation through a <m>90^\circ</m> angle. </p>
+      </statement>
+  </choice>
+    <choice correct="yes">
+      <statement>
+          <p> Reflection About the line <m>y=mx</m>. </p>
+      </statement>
+  </choice>
+    <choice>
+      <statement>
+          <p> Horizontal Stretch. </p>
+      </statement>
+  </choice>
+    <choice>
+      <statement>
+          <p> Vertical Stretch. </p>
+      </statement>
+  </choice>
+</choices>
+</exercise>
+
+
+
+
+<exercise xml:id="prob-eigvalvectorsofdiagmat">
+    <statement>
+        <p>
+            Let 
+        <me>
+        A=\begin{bmatrix} 3\amp 0\amp 0\\0\amp 3\amp 0\\0\amp 0\amp 3\end{bmatrix}.
+        </me>
+        
+        Can you find an eigenvector and its corresponding eigenvalue?  Can you find another ``eigenpair''?  Can you find all of the eigenvectors of <m>A</m>?
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="prob-rotmatrixrealeig1">
+    <statement>
+        <p>
+            The rotation matrix in <xref ref="ex-eigsrotation"/> has complex eigenvectors and eigenvalues.  Think geometrically to find an example of a (non-identity) rotation matrix with real eigenvectors and eigenvalues.  
+Enter degree measure between 0 and 360.
+        </p> 
+    </statement>
+
+    <answer>
+        <p>
+            Rotation through <m>180</m> degrees.
+        </p>
+    </answer>
+</exercise>
+
+<exercise xml:id="prob-eigenmultchoice1">
+    <statement>
+        <p>
+            Can an eigenvalue have multiple eigenvectors associated with it? 
+        </p>
+    </statement>
+
+<choices>
+  <choice correct="yes">
+      <statement>
+          <p> Yes. </p>
+      </statement>
+  </choice>
+    <choice>
+      <statement>
+          <p> No. </p>
+      </statement>
+  </choice>
+</choices>
+</exercise> 
+
+<exercise xml:id="prob-eigenmultchoice2">
+<statement>
+<p>
+ Can an eigenvector have multiple eigenvalues associated with it?
+</p>
+</statement> 
+
+ <choices>
+  <choice>
+      <statement>
+          <p> Yes </p>
+      </statement>
+  </choice>
+    <choice correct="yes">
+      <statement>
+          <p> No </p>
+      </statement>
+  </choice>
+</choices>
+</exercise>
+
+<exercise xml:id="prob-eigenScalarMult">
+    <statement>
+        <p>
+            Prove <xref ref="th-eigenScalarMult"/>.
+        </p>
+    </statement>
+</exercise>
+
+</exercises>
+</section>
