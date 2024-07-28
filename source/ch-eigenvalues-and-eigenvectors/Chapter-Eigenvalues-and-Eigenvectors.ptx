@@ -46,5 +46,6 @@
 <!--<xi:include href="Section-Addition-and-Scalar-Multiplication-of-Matrices.ptx"/>-->
 <xi:include href="Section-Similar-Matrices-and-their-Properties.ptx"/>
 <xi:include href="Section-Describing-Eigenvalues-and-Eigenvectors.ptx"/>
+<xi:include href="Section-The-Characteristic-Equation.ptx"/>
 
 </chapter>
