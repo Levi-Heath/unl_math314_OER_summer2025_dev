@@ -44,7 +44,8 @@
 
   <!-- include sections --> 
 <!--<xi:include href="Section-Addition-and-Scalar-Multiplication-of-Matrices.ptx"/>-->
-<!--<xi:include href="Section-Matrix-Transformations.ptx"/>-->
+<xi:include href="Section-Abstract-Vector-Spaces.ptx"/>
+<xi:include href="Section-of-the-Inverse-of-a-Linear-Transformation.ptx"/>
 
 </chapter>
 

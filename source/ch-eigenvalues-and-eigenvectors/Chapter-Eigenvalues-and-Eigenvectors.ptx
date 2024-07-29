@@ -47,5 +47,6 @@
 <xi:include href="Section-Similar-Matrices-and-their-Properties.ptx"/>
 <xi:include href="Section-Describing-Eigenvalues-and-Eigenvectors.ptx"/>
 <xi:include href="Section-The-Characteristic-Equation.ptx"/>
+<xi:include href="Section-Diagonalizable-Matrices-and-Multiplicity.ptx"/>
 
 </chapter>
