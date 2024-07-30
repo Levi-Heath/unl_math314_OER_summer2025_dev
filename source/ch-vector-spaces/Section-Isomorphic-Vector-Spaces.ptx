@@ -11,12 +11,12 @@
 
 
 <p>
-A vector space is defined as a collection of objects together with operations of addition and scalar multiplication that follow certain rules (<xref ref="def-vectorspacegeneral"/>).  In our study of abstract vector spaces, we have encountered spaces that appeared very different from each other.  Just how different are they?  Does <m>\mathbb{L}</m>, a vector space whose elements have the form <m>mx+b</m>, have anything in common with <m>\R^2</m>?  Is <m>\mathbb{P}^3</m> fundamentally different from <m>\mathbb{M}_{2,2}</m>?
+A vector space is defined as a collection of objects together with operations of addition and scalar multiplication that follow certain rules <xref ref="def-vectorspacegeneral"/>.  In our study of abstract vector spaces, we have encountered spaces that appeared very different from each other.  Just how different are they?  Does <m>\mathbb{L}</m>, a vector space whose elements have the form <m>mx+b</m>, have anything in common with <m>\R^2</m>?  Is <m>\mathbb{P}^3</m> fundamentally different from <m>\mathbb{M}_{2,2}</m>?
 </p> 
 
 <p>
 To answer these questions, we will have to look beyond the superficial appearance of the elements of a vector space and delve into its structure.  The ``structure" of a vector space is determined by how the elements of the vector space interact with each other through the operations of addition and scalar multiplication.  
-</<p>
+</p>
     
 
 <p>
@@ -35,7 +35,7 @@ or multiply each one by a scalar
 k(mx+b)=kmx+kb\quad\text{and}\quad t(qx+c)=tqx+tc.
 </men>
 
-But suppose we get tired of having to write  <m>x</m> down every time.  Could we leave off the <m>x</m> and represent <m>mx+b</m> by  <m>\begin{bmatrix}m\\b\end{bmatrix}</m>?  If we do this, expressions (<xref ref="eq-iso1"/>), (<xref ref="eq-iso2"/>) and (<xref ref="eq-iso3"/>) would be mimicked by the following expressions involving vectors of <m>\R^2</m>:
+But suppose we get tired of having to write  <m>x</m> down every time.  Could we leave off the <m>x</m> and represent <m>mx+b</m> by  <m>[m,b]</m>?  If we do this, expressions <xref ref="eq-iso1"/>, <xref ref="eq-iso2"/> and <xref ref="eq-iso3"/> would be mimicked by the following expressions involving vectors of <m>\R^2</m>:
 
 <me>
     \begin{bmatrix}m\\b\end{bmatrix}\quad\text{and}\quad\begin{bmatrix}q\\c\end{bmatrix},
@@ -214,7 +214,7 @@ Find <m>p_1(x)+p_2(x)</m>.
 <p>
     Which transition in the above calculation requires linearity?
 </p>
-</problem>
+</statement>
 
   <choices>
   <choice>
@@ -251,7 +251,11 @@ Invertible linear transformations, such as transformation <m>T</m> of <xref ref=
 
     <statement>
         <p>
-            Let <m>V</m> and <m>W</m> be vector spaces.  If there exists an invertible linear transformation <m>T:V\rightarrow W</m> we say that <m>V</m> and <m>W</m> are <term>isomorphic</term> and write <m>V\cong W</m>.  The invertible linear transformation <m>T</m> is called an <term>isomorphism</term>.
+            Let <m>V</m> and <m>W</m> be vector spaces.  If there exists an invertible linear transformation <m>T:V\rightarrow W</m> we say that <m>V</m> and <m>W</m> are <term>isomorphic</term> and write <m>V\cong W</m>. 
+        </p>
+        
+        <p>
+        The invertible linear transformation <m>T</m> is called an <term>isomorphism</term>.
         </p>
     </statement>
 </definition>
@@ -292,51 +296,58 @@ It is worth pointing out that if <m>T:V\rightarrow W</m> is an isomorphism, then
 
 We will first show that <m>T</m> is a linear transformation,  then verify that <m>T</m> is invertible.
 <md>
-    T\left(k\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right)\amp =T\left(\begin{bmatrix}ka\amp kb\\kc\amp kd\end{bmatrix}\right)\\
-    \amp =ka+kbx+kcx^2+kdx^3=k(a+bx+cx^2+dx^3)\\
-    \amp =kT\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right)
+<mrow>    T\left(k\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right)\amp =T\left(\begin{bmatrix}ka\amp kb\\kc\amp kd\end{bmatrix}\right) </mrow> 
+<mrow>    \amp =ka+kbx+kcx^2+kdx^3=k(a+bx+cx^2+dx^3) </mrow>
+<mrow>    \amp =kT\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right) </mrow>
 </md>
 
+and
 <md>
-    T\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}+\begin{bmatrix}m\amp n\\p\amp q\end{bmatrix}\right)\amp =T\left(\begin{bmatrix}a+m\amp b+n\\c+p\amp d+q\end{bmatrix}\right)\\
-    \amp =(a+m)+(b+n)x+(c+p)x^2+(d+q)x^3\\
-    \amp =(a+bx+cx^2+dx^3)+(m+nx+px^2+qx^3)\\
-    \amp =T\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right)+T\left(\begin{bmatrix}m\amp n\\p\amp q\end{bmatrix}\right)
+<mrow>    T\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}+\begin{bmatrix}m\amp n\\p\amp q\end{bmatrix}\right)\amp =T\left(\begin{bmatrix}a+m\amp b+n\\c+p\amp d+q\end{bmatrix}\right) </mrow>
+<mrow>    \amp =(a+m)+(b+n)x+(c+p)x^2+(d+q)x^3 </mrow>
+<mrow>   \amp =(a+bx+cx^2+dx^3)+(m+nx+px^2+qx^3) </mrow>
+<mrow>   \amp =T\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right)+T\left(\begin{bmatrix}m\amp n\\p\amp q\end{bmatrix}\right) </mrow>
 </md>
 We can show that <m>T</m> is one-to-one and onto, and therefore has an inverse.  We can also observe directly that <m>T^{-1}</m> is given by 
 
 <me>
-    T^{-1}(a+bx+cx^2+dx^3)=\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}
+    T^{-1}(a+bx+cx^2+dx^3)=\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}.
 </me>
 
 We conclude that <m>T</m> is an isomorphism, and <m>\mathbb{M}_{2,2}\cong\mathbb{P}^3</m>.
        </p>
     </answer>
 </example>
-Isomorphism <m>T</m> in Example <xref ref="ex-isomorphexample1"/> establishes the fact that <m>\mathbb{M}_{2,2}\cong\mathbb{P}^3</m>. However, there is nothing special about <m>T</m>, as there are many other isomorphisms from <m>\mathbb{M}_{2,2}</m> to <m>\mathbb{P}^3</m>.  Just for fun, try to verify that each of the following is an isomorphism.
-
-<men>\label{eq:justforfuniso1}\tau_1:\mathbb{M}_{2,2}\rightarrow\mathbb{P}^3</men>
-
-<me>
-    \tau_1\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right)=a-bx-cx^2+dx^3
-</me>
-
-
-<men>\label{eq:justforfuniso2}\tau_2:\mathbb{M}_{2,2}\rightarrow\mathbb{P}^3</men>
-
-<me>
-    \tau_2\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right)=a+(a+c)x+(b-c)x^2+dx^3
-</me>
 
 
 
+<p>
+Isomorphism <m>T</m> in <xref ref="ex-isomorphexample1"/> establishes the fact that <m>\mathbb{M}_{2,2}\cong\mathbb{P}^3</m>. However, there is nothing special about <m>T</m>, as there are many other isomorphisms from <m>\mathbb{M}_{2,2}</m> to <m>\mathbb{P}^3</m>.  Just for fun, try to verify that each of the following is an isomorphism.
+
+<men xml:id="eq-justforfuniso1">
+    \tau_1:\mathbb{M}_{2,2}\rightarrow\mathbb{P}^3; \quad \  \tau_1\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right)=a-bx-cx^2+dx^3,,
+</men>
+
+
+<men xml:id="eq-justforfuniso2">
+\tau_2:\mathbb{M}_{2,2}\rightarrow\mathbb{P}^3; \quad \  \tau_2\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right)=a+(a+c)x+(b-c)x^2+dx^3.
+</men>
+</p>
 
 
 
 
 
-\subsubsection*{The Coordinate Vector Isomorphism}
-In Exploration <xref ref="init-isomorph"/> we made good use of a transformation that maps every element of <m>\mathbb{P}^2</m> to its coordinate vector in <m>\R^3</m>.  We observed that this transformation is linear and invertible, therefore it is an isomorphism.  The following example generalizes this result.
+
+
+<subsection xml:id="The-Coordinate-Vector-Isomorphism">
+<title>The Coordinate Vector Isomorphism</title>
+
+
+<p>
+In <xref ref="init-isomorph"/> we made good use of a transformation that maps every element of <m>\mathbb{P}^2</m> to its coordinate vector in <m>\R^3</m>.  We observed that this transformation is linear and invertible, therefore it is an isomorphism.  The following example generalizes this result.
+</p> 
+
 
 <theorem xml:id="ex-coordmapiso">
 
@@ -348,11 +359,11 @@ In Exploration <xref ref="init-isomorph"/> we made good use of a transformation 
 
 <proof>
     <p>
-We leave the proof of this result to the reader (see <xref ref="prob-verifyisomorphism"/>.)
+We leave the proof of this result to the reader (see <xref ref="prob-verifyisomorphism"/>).
     </p>
 </proof>
 </theorem>
-</subsubsection>
+</subsection>
 
 
 
@@ -365,20 +376,29 @@ We leave the proof of this result to the reader (see <xref ref="prob-verifyisomo
 
 <subsection xml:id="Subsection-Properties-of-Isomorphic-Vector-Spaces-and-Isomorphisms">
     <title>Properties of Isomorphic Vector Spaces and Isomorphisms</title>
-</subsection>  In this section we will illustrate properties of isomorphisms with specific examples.  Formal proofs of properties will be presented in the next section.
+
+    <p>
+In this section we will illustrate properties of isomorphisms with specific examples.  Formal proofs of properties will be presented in the next section.
+    </p> 
 
 <exploration xml:id="init-basestobasesiso">
     <p>
-        In Exploration <xref ref="init-isomorph"/> we defined a transformation <m>T:\mathbb{P}^2\rightarrow \R^3</m> by
-<m>T(a+bx+cx^2)=\begin{bmatrix}a\\b\\c\end{bmatrix}</m>. We later observed that  <m>T</m> is an isomorphism.  We will now examine the effect of <m>T</m> on two different bases of <m>\mathbb{P}^2</m>.
+        In <xref ref="init-isomorph"/> we defined a transformation <m>T:\mathbb{P}^2\rightarrow \R^3</m> by
+        <me>
+        T(a+bx+cx^2)=\begin{bmatrix}a\\b\\c\end{bmatrix}.
+        </me>
+        
+        We later observed that  <m>T</m> is an isomorphism.  We will now examine the effect of <m>T</m> on two different bases of <m>\mathbb{P}^2</m>.
 
 Let 
-<m>\mathcal{B}_1=\{1, x, x^2\}</m> and <m>\mathcal{B}_2=\{x, 1+x, x+x^2\}</m>.  (Recall that <m>\mathcal{B}_2</m> is a basis of <m>\mathbb{P}^2</m> by Example <xref ref="ex-coordvectorinpolyvectspace2"/> of <url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0060/main">Bases and Dimension of Abstract Vector Spaces</url>.)
+<me>
+\mathcal{B}_1=\{1, x, x^2\}\quad \text{and} \quad \mathcal{B}_2=\{x, 1+x, x+x^2\}.
+</me> 
 
-First,
+(Recall that <m>\mathcal{B}_2</m> is a basis of <m>\mathbb{P}^2</m> by <xref ref="ex-coordvectorinpolyvectspace2"/>). First,
 
 <me>
-    T(\mathcal{B}_1)=\{T(1), T(x), T(x^2)\}=\left\{\begin{bmatrix}1\\0\\0\end{bmatrix}, \begin{bmatrix}0\\1\\0\end{bmatrix}, \begin{bmatrix}0\\0\\1\end{bmatrix}\right\}
+    T(\mathcal{B}_1)=\{T(1), T(x), T(x^2)\}=\left\{\begin{bmatrix}1\\0\\0\end{bmatrix}, \begin{bmatrix}0\\1\\0\end{bmatrix}, \begin{bmatrix}0\\0\\1\end{bmatrix}\right\}.
 </me>
 
 Clearly, the images of the elements of <m>\mathcal{B}_1</m> form a basis of <m>\R^3</m>.
@@ -386,16 +406,23 @@ Clearly, the images of the elements of <m>\mathcal{B}_1</m> form a basis of <m>\
 Now we consider <m>\mathcal{B}_2</m>.
 
 <me>
-    T(\mathcal{B}_2)=\{T(x), T(1+x), T(x+x^2)\}=\left\{\begin{bmatrix}0\\1\\0\end{bmatrix}, \begin{bmatrix}1\\1\\0\end{bmatrix}, \begin{bmatrix}0\\1\\1\end{bmatrix}\right\}
+    T(\mathcal{B}_2)=\{T(x), T(1+x), T(x+x^2)\}=\left\{\begin{bmatrix}0\\1\\0\end{bmatrix}, \begin{bmatrix}1\\1\\0\end{bmatrix}, \begin{bmatrix}0\\1\\1\end{bmatrix}\right\}.
 </me>
 
-It is easy to verify that <m>\begin{bmatrix}0\\1\\0\end{bmatrix}, \begin{bmatrix}1\\1\\0\end{bmatrix}, \begin{bmatrix}0\\1\\1\end{bmatrix}</m> are linearly independent and span <m>\R^3</m>, therefore the images of the elements of <m>\mathcal{B}_2</m> from a basis of <m>\R^3</m>.
+It is easy to verify that 
+<me>
+\begin{bmatrix}0\\1\\0\end{bmatrix}, \quad \begin{bmatrix}1\\1\\0\end{bmatrix}, \quad \begin{bmatrix}0\\1\\1\end{bmatrix}
+</me>
+
+are linearly independent and span <m>\R^3</m>. Therefore the images of the elements of <m>\mathcal{B}_2</m> from a basis of <m>\R^3</m>.
     </p>
 </exploration>
 
+<p>
 We can try any number of bases of <m>\mathbb{P}^2</m> and we will find that the image of each basis of <m>\mathbb{P}^2</m> is a basis of <m>\R^3</m>.  In general, we have the following result:
-<{pretext}>
+</p>
 
+<fact>
     <statement>
         <p>
             An isomorphism maps a basis of the domain to a basis of the codomain. (We will state this result more formally as Theorem <xref ref="th-bijectionsbasis"/> in the next section.)
@@ -403,12 +430,19 @@ We can try any number of bases of <m>\mathbb{P}^2</m> and we will find that the 
     </statement>
 </fact>
 
+<p>
 Isomorphisms preserve bases, but more generally, they preserve linear independence.  
-<{pretext}>
+</p>
 
+<fact>
     <statement>
         <p>
-            If <m>T:V\rightarrow W</m> is an isomorphism, then the subset <m>\{\mathbf{v_1}, \mathbf{v}_2,\ldots ,\mathbf{v}_n\}</m> of <m>V</m> is linearly independent if and only if <m>\{T(\mathbf{v_1}), T(\mathbf{v}_2),\ldots ,T(\mathbf{v}_n)\}</m> is linearly independent in <m>W</m>.  (We will state and prove this result as Theorem <xref ref="th-linindtolinindiso"/>.)
+            If <m>T:V\rightarrow W</m> is an isomorphism, then the subset <m>\{\mathbf{v_1}, \mathbf{v}_2,\ldots ,\mathbf{v}_n\}</m> of <m>V</m> is linearly independent if and only if 
+            <me>
+            \{T(\mathbf{v_1}), T(\mathbf{v}_2),\ldots ,T(\mathbf{v}_n)\}
+            </me>
+            
+            is linearly independent in <m>W</m>. We will state and prove this result as <xref ref="th-linindtolinindiso"/>.
         </p>
     </statement>
 </fact>
@@ -418,24 +452,17 @@ Isomorphisms preserve bases, but more generally, they preserve linear independen
         <p>
             Let <m>V</m> be a vector space, and let <m>\mathcal{B}=\{\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3, \mathbf{v}_4\}</m> be an ordered basis of <m>V</m>.  Let 
 
-<me>
-    \mathbf{w}_1=2\mathbf{v}_1+3\mathbf{v}_2-5\mathbf{v}_3-2\mathbf{v}_4
-</me>
-
-
-<me>
-    \mathbf{w}_2=-\mathbf{v}_1+4\mathbf{v}_2-3\mathbf{v}_3+\mathbf{v}_4
-</me>
-
-
-<me>
-    \mathbf{w}_3=-3\mathbf{v}_1-\mathbf{v}_2+4\mathbf{v}_3+3\mathbf{v}_4
-</me>
+<md>
+<mrow>    \mathbf{w}_1 \amp = 2\mathbf{v}_1+3\mathbf{v}_2-5\mathbf{v}_3-2\mathbf{v}_4, </mrow>
+<mrow>    \mathbf{w}_2 \amp = -\mathbf{v}_1+4\mathbf{v}_2-3\mathbf{v}_3+\mathbf{v}_4, </mrow>
+<mrow>    \mathbf{w}_3 \amp = -3\mathbf{v}_1-\mathbf{v}_2+4\mathbf{v}_3+3\mathbf{v}_4. </mrow>
+</md>
 
 
 Are <m>\mathbf{w}_1, \mathbf{w}_2, \mathbf{w}_3</m> linearly independent?
        </p>
     </statement>
+
     <answer>
         <p>
             We could approach this question head-on by considering the vector equation
@@ -444,15 +471,22 @@ Are <m>\mathbf{w}_1, \mathbf{w}_2, \mathbf{w}_3</m> linearly independent?
     a\mathbf{w}_1+b\mathbf{w}_2+c\mathbf{w}_3=\mathbf{0}
 </me>
 
-to see if the only solution is the trivial one. (See Practice Problem <xref ref="prob-noiso"/>.)
+to see if the only solution is the trivial one (see <xref ref="prob-noiso"/>).
 
-Instead, we will use isomorphisms.  Observe that we do not know anything about <m>V</m> aside from the fact that it has four basis vectors.  Vectors <m>\mathbf{w}_1</m>, <m>\mathbf{w}_2</m>, <m>\mathbf{w}_3</m> are given in terms of these basis vectors.  This should give us an idea for constructing an isomorphism between <m>V</m> and <m>\R^4</m>.  Consider <m>T:V\rightarrow\R^4</m> such that <m>T(\mathbf{w})=[\mathbf{w}]_{\mathcal{B}}</m>.
+Instead, we will use isomorphisms.
+</p>
+
+<p> 
+Observe that we do not know anything about <m>V</m> aside from the fact that it has four basis vectors.  Vectors <m>\mathbf{w}_1</m>, <m>\mathbf{w}_2</m>, <m>\mathbf{w}_3</m> are given in terms of these basis vectors.  This should give us an idea for constructing an isomorphism between <m>V</m> and <m>\R^4</m>.  Consider <m>T:V\rightarrow\R^4</m> such that <m>T(\mathbf{w})=[\mathbf{w}]_{\mathcal{B}}</m>.
 Then 
 <me>
-    T(\mathbf{w}_1)=[\mathbf{w}_1]_{\mathcal{B}}=\begin{bmatrix}2\\3\\-5\\-2\end{bmatrix},\quad T(\mathbf{w}_2)=[\mathbf{w}_2]_{\mathcal{B}}=\begin{bmatrix}-1\\4\\-3\\1\end{bmatrix},\quad T(\mathbf{w}_3)=[\mathbf{w}_3]_{\mathcal{B}}=\begin{bmatrix}-3\\-1\\4\\3\end{bmatrix}
+    T(\mathbf{w}_1)=[\mathbf{w}_1]_{\mathcal{B}}=\begin{bmatrix}2\\3\\-5\\-2\end{bmatrix},\quad T(\mathbf{w}_2)=[\mathbf{w}_2]_{\mathcal{B}}=\begin{bmatrix}-1\\4\\-3\\1\end{bmatrix} ,
+</me>
+<me>
+T(\mathbf{w}_3)=[\mathbf{w}_3]_{\mathcal{B}}=\begin{bmatrix}-3\\-1\\4\\3\end{bmatrix}.    
 </me>
 
-By Theorem <xref ref="ex-coordmapiso"/>, <m>T</m>   is an isomorphism.  This means that <m>\mathbf{w}_1</m>, <m>\mathbf{w}_2</m>, <m>\mathbf{w}_3</m> are linearly independent if and only if their coordinate vectors are linearly independent.  There are multiple ways of determining whether 
+By <xref ref="ex-coordmapiso"/>, <m>T</m>   is an isomorphism.  This means that <m>\mathbf{w}_1</m>, <m>\mathbf{w}_2</m>, <m>\mathbf{w}_3</m> are linearly independent if and only if their coordinate vectors are linearly independent.  There are multiple ways of determining whether 
 
 <me>
     \begin{bmatrix}2\\3\\-5\\-2\end{bmatrix}, \begin{bmatrix}-1\\4\\-3\\1\end{bmatrix}, \begin{bmatrix}-3\\-1\\4\\3\end{bmatrix}
@@ -474,24 +508,32 @@ We see that the rank of the matrix is <m>2</m>.  We conclude that the column vec
        </p>
     </answer>
 </example>
+</subsection>
+
+
+
+
+
 
 
 
 <subsection xml:id="Subsection-Proofs-of-Isomorphism-Properties">
     <title>Proofs of Isomorphism Properties</title>
-</subsection>
 
+<p>
 Recall that a transformation <m>T</m> is <term>one-to-one</term> provided that 
 <me>
     T(\mathbf{v}_1)=T(\mathbf{v}_2)
 </me>
  implies that 
 <me>
-    \mathbf{v}_1=\mathbf{v}_2
+    \mathbf{v}_1=\mathbf{v}_2.
 </me>
 
 
  We will show that images of linearly independent vectors under one-to-one linear transformations are linearly independent.  
+</p>
+
 
 <theorem xml:id="th-onetoonelinind">
 
@@ -500,37 +542,52 @@ Recall that a transformation <m>T</m> is <term>one-to-one</term> provided that
             Let <m>T:V\rightarrow W</m> be a one-to-one linear transformation.  Suppose <m>\{\mathbf{v}_1,\ldots,\mathbf{v}_n\}</m> is linearly independent in <m>V</m>.  Then <m>\{T(\mathbf{v}_1),\ldots,T(\mathbf{v}_n)\}</m> is linearly independent in <m>W</m>.
         </p>
     </statement>
-</theorem>
+
 
 <proof>
     <p>
 Suppose <m>a_1, \ldots, a_n</m> satisfy
-<mdn>\label{onlysolution}a_1T(\mathbf{v}_1)+\ldots +a_nT(\mathbf{v}_n)=\mathbf{0}</mdn>
-We will show that for each <m>i</m>, we must have <m>a_i=0</m>.
+<men xml:id="onlysolution">
+a_1T(\mathbf{v}_1)+\ldots +a_nT(\mathbf{v}_n)=\mathbf{0}.
+</men>
 
-By linearity, we have:
-<md>\mathbf{0}\amp =a_1T(\mathbf{v}_1)+\ldots +a_nT(\mathbf{v}_n)\\
-\amp =T(a_1\mathbf{v}_1)+\ldots +T(a_n\mathbf{v}_n)\\
-\amp =T(a_1\mathbf{v}_1+\ldots +a_n\mathbf{v}_n)
+
+We will show that for each <m>i</m>, we must have <m>a_i=0</m>. By linearity, we have:
+<md>
+<mrow> \mathbf{0}\amp =a_1T(\mathbf{v}_1)+\ldots +a_nT(\mathbf{v}_n) </mrow>
+<mrow> \amp =T(a_1\mathbf{v}_1)+\ldots +T(a_n\mathbf{v}_n) </mrow>
+<mrow> \amp =T(a_1\mathbf{v}_1+\ldots +a_n\mathbf{v}_n).  </mrow>
 </md>
-By Theorem <xref ref="th-zerotozero"/>, <m>T(\mathbf{0})=\mathbf{0}</m>.  Therefore,
+
+
+By <xref ref="th-zerotozero"/>, <m>T(\mathbf{0})=\mathbf{0}</m>.  Therefore,
 
 <me>
-    T(a_1\mathbf{v}_1+\ldots +a_n\mathbf{v}_n)=T(\mathbf{0})
+    T(a_1\mathbf{v}_1+\ldots +a_n\mathbf{v}_n)=T(\mathbf{0}).
 </me>
 
 
 Because <m>T</m> is one-to-one, we conclude that 
-<mdn>\label{onlytrivial}a_1\mathbf{v}_1+\ldots +a_n\mathbf{v}_n=\mathbf{0}</mdn>
+<men xml:id="onlytrivial">
+a_1\mathbf{v}_1+\ldots +a_n\mathbf{v}_n=\mathbf{0}.
+</men>
 
 
 By assumption, <m>\{\mathbf{v}_1,\ldots,\mathbf{v}_n\}</m> is linearly independent.  Therefore <m>a_i=0</m> for <m>1\leq i\leq n</m>.  
     </p>
 </proof>
+</theorem>
 
+
+<p>
 Recall that a transformation <m>T</m> is <term>onto</term> provided that every vector of the codomain of <m>T</m> is the image of some vector in the domain of <m>T</m>.  
 
 We will show that an onto linear transformation maps sets that span the domain to sets that span the codomain. 
+</p>
+
+
+
+
 
 <theorem xml:id="th-ontospan">
 
@@ -539,34 +596,52 @@ We will show that an onto linear transformation maps sets that span the domain t
             Let <m>T:V\rightarrow W</m> be an onto linear transformation.  Suppose <m>V=\mbox{span}(\mathbf{v}_1,\ldots ,\mathbf{v}_n)</m>.  Then <m>W=\mbox{span}(T(\mathbf{v}_1),\ldots ,T(\mathbf{v}_n))</m>.
         </p>
     </statement>
-</theorem>
+
 <proof>
     <p>
 Suppose <m>\mathbf{w}</m> is an element of <m>W</m>. To show that <m>\{T(\mathbf{v}_1),\ldots ,T(\mathbf{v}_n)\}</m> spans <m>W</m>, we will express <m>\mathbf{w}</m> as a linear combination of <m>T(\mathbf{v}_1),\ldots ,T(\mathbf{v}_n)</m>.
+    </p>
 
-Because <m>T</m> is onto, <m>\mathbf{w}=T(\mathbf{v})</m> for some <m>\mathbf{v}</m> in <m>V</m>.  But <m>V=\mbox{span}(\mathbf{v}_1,\ldots ,\mathbf{v}_n)</m>.  Therefore, <m>\mathbf{v}=a_1\mathbf{v}_1+\ldots +a_n\mathbf{v}_n</m> for some scalar coefficients <m>a_1,\ldots ,a_n</m>.
+    <p> 
+Because <m>T</m> is onto, <m>\mathbf{w}=T(\mathbf{v})</m> for some <m>\mathbf{v}</m> in <m>V</m>.  But <m>V=\mbox{span}(\mathbf{v}_1,\ldots ,\mathbf{v}_n)</m>.  Therefore, 
+<me>
+\mathbf{v}=a_1\mathbf{v}_1+\ldots +a_n\mathbf{v}_n
+</me>
+
+for some scalar coefficients <m>a_1,\ldots ,a_n</m>.
 By linearity, we have:
 <md>
-\mathbf{w}=T(\mathbf{v})\amp =T(a_1\mathbf{v}_1+\ldots +a_n\mathbf{v}_n)\\
-\amp =a_1T(\mathbf{v}_1)+\ldots +a_nT(\mathbf{v}_n)
+<mrow> \mathbf{w} \amp =T(\mathbf{v}) </mrow> 
+<mrow> \amp =T(a_1\mathbf{v}_1+\ldots +a_n\mathbf{v}_n) </mrow> 
+<mrow> \amp =a_1T(\mathbf{v}_1)+\ldots +a_nT(\mathbf{v}_n). </mrow>
 </md>
+
 Thus, <m>\mathbf{w}</m> is in the span of <m>T(\mathbf{v}_1),\ldots ,T(\mathbf{v}_n)</m>.
     </p>
 </proof>
- 
-We will now combine the results of Theorem <xref ref="th-onetoonelinind"/> and Theorem <xref ref="th-ontospan"/> to obtain a result about the effect of isomorphisms on a basis.
+</theorem>
+
+<p> 
+We will now combine the results of <xref ref="th-onetoonelinind"/> and <xref ref="th-ontospan"/> to obtain a result about the effect of isomorphisms on a basis.
+</p> 
+
 
 <theorem xml:id="th-bijectionsbasis">
 
     <statement>
         <p>
-            Let <m>T:V\rightarrow W</m> be an isomorphism.  Suppose <m>\mathcal{B}_V=\{\mathbf{v}_1,\ldots ,\mathbf{v}_n\}</m> is a basis for <m>V</m>.  Then <m>\{T(\mathbf{v}_1),\ldots ,T(\mathbf{v}_n)\}</m> is a basis for <m>W</m>.
+            Let <m>T:V\rightarrow W</m> be an isomorphism.  Suppose <m>\mathcal{B}_V=\{\mathbf{v}_1,\ldots ,\mathbf{v}_n\}</m> is a basis for <m>V</m>.  Then 
+            <me>
+            \{T(\mathbf{v}_1),\ldots ,T(\mathbf{v}_n)\}
+            </me>
+            
+            is a basis for <m>W</m>.
         </p>
     </statement>
 </theorem>
 <proof>
     <p>
-Left to the reader.  (See Practice Problem <xref ref="prob-bijectionsbasisproof"/>) 
+Left to the reader. See <xref ref="prob-bijectionsbasisproof"/>.
     </p>
 </proof>
 
@@ -577,64 +652,51 @@ Left to the reader.  (See Practice Problem <xref ref="prob-bijectionsbasisproof"
             Suppose <m>T:V\rightarrow W</m> is an isomorphism, then the subset <m>\{\mathbf{v_1}, \mathbf{v}_2,\ldots ,\mathbf{v}_n\}</m> of <m>V</m> is linearly independent if and only if <m>\{T(\mathbf{v_1}), T(\mathbf{v}_2),\ldots ,T(\mathbf{v}_n)\}</m> is linearly independent in <m>W</m>.
         </p>
     </statement>
-</theorem> 
+
 <proof>
     <p>
-We have already proved one direction of this this ``if and only if" statement as Theorem <xref ref="th-onetoonelinind"/>.  To prove the other direction, suppose that <m>T(\mathbf{v_1}), T(\mathbf{v}_2),\ldots ,T(\mathbf{v}_n)</m> are linearly independent vectors in <m>W</m>.  We need to show that this implies that <m>\mathbf{v_1}, \mathbf{v}_2,\ldots ,\mathbf{v}_n</m> are linearly independent in <m>V</m>.  Observe that if <m>T</m> is an isomorphism, then <m>T^{-1}:W\rightarrow V</m> is also an isomorphism.  Thus, by Theorem <xref ref="th-onetoonelinind"/>, <m>T^{-1}(T(\mathbf{v_1})), T^{-1}(T(\mathbf{v}_2)),\ldots ,T^{-1}(T(\mathbf{v}_n))</m> are linearly independent.  But this means that <m>\mathbf{v_1}, \mathbf{v}_2,\ldots ,\mathbf{v}_n</m> are linearly independent.
+We have already proved one direction of this this ``if and only if" statement as <xref ref="th-onetoonelinind"/>. 
+    </p>
+    
+    <p>
+    To prove the other direction, suppose that <m>T(\mathbf{v_1}), T(\mathbf{v}_2),\ldots ,T(\mathbf{v}_n)</m> are linearly independent vectors in <m>W</m>.  We need to show that this implies that <m>\mathbf{v_1}, \mathbf{v}_2,\ldots ,\mathbf{v}_n</m> are linearly independent in <m>V</m>.  Observe that if <m>T</m> is an isomorphism, then <m>T^{-1}:W\rightarrow V</m> is also an isomorphism.  Thus, by <xref ref="th-onetoonelinind"/>,
+    <me>
+    T^{-1}(T(\mathbf{v_1})), T^{-1}(T(\mathbf{v}_2)),\ldots ,T^{-1}(T(\mathbf{v}_n))
+    </me>
+    
+    are linearly independent.  But this means that <m>\mathbf{v_1}, \mathbf{v}_2,\ldots ,\mathbf{v}_n</m> are linearly independent.
     </p>
 </proof>
+</theorem> 
+
 
 <theorem xml:id="th-isocompisiso">
 
     <statement>
         <p>
-            Let <m>U</m>, <m>V</m> and <m>W</m> be vector spaces.  Suppose that <m>T_1:U\rightarrow V</m> and <m>T_2:V\rightarrow W</m> are isomorphisms.  Then <m>T_2\circ T_1:U\rightarrow W</m> is an isomorphism.
+            Let <m>U</m>, <m>V</m> and <m>W</m> be vector spaces.  Suppose <m>T_1:U\rightarrow V</m> and <m>T_2:V\rightarrow W</m> are isomorphisms.  Then <m>T_2\circ T_1:U\rightarrow W</m> is an isomorphism.
         </p>
     </statement>
 </theorem>
 <proof>
     <p>
-The proof is left to the reader.  (See Practice Problem <xref ref="prob-isocompisisoproof"/>.)
+The proof is left to the reader (see <xref ref="prob-isocompisisoproof"/>).
     </p>
 </proof>
- 
-%%%% Moved to Exercises %%%%%%%%%%%%%% 
-%<{pretext}>
+</subsection>
 
-    <statement>
-        <p>
-            A linear transformation <m>T:V\rightarrow W</m> is one-to-one if and only if <m>\text{ker}(T)=\{\mathbf{0}\}</m>.
-%
-        </p>
-    </statement>
-</theorem>
-%<proof>
-    <p>
-%First assume that <m>T</m> is one-to-one.  Suppose <m>\mathbf{v}</m> is in <m>\text{ker}(T)</m>.  Then <m>T(\mathbf{v})=\mathbf{0}=T(\mathbf{0})</m>.  But then <m>\mathbf{v}=\mathbf{0}</m>.
 
-%Next, assume that <m>\text{ker}(T)=\{\mathbf{0}\}</m>.  To show that <m>T</m> is one-to-one, suppose <m>T(\mathbf{v}_1)=T(\mathbf{v}_2)</m>, but then
-%<md>
-%T(\mathbf{v}_1)-T(\mathbf{v}_2)\amp =\mathbf{0}\\
-%T(\mathbf{v}_1-\mathbf{v}_2)\amp =\mathbf{0}
-%</md>
-%Since the kernel only contains the zero vector, we conclude that
-%
-<me>
-    \mathbf{v}_1-\mathbf{v}_2=\mathbf{0}
-</me>
 
-%Therefore
-%
-<me>
-    \mathbf{v}_1=\mathbf{v}_2
-</me>
 
-%    </p>
-</proof>
- 
+
+
+
+
+
+
 <subsection xml:id="Subsection-Finite-dimensional-Vector-Spaces">
     <title>Finite-dimensional Vector Spaces</title>
-</subsection>
+
 
 <theorem xml:id="th-ndimspacesisorn">
 
@@ -647,24 +709,42 @@ The proof is left to the reader.  (See Practice Problem <xref ref="prob-isocompi
 </me>
         </p>
     </statement>
-</theorem>
+
 <proof>
     <p>
-First, assume that <m>V\cong W</m>.  Then there exists an isomorphism <m>T:V\rightarrow W</m>.  Suppose <m>\mbox{dim}(V)=n</m> and let <m>\{\mathbf{v}_1,\mathbf{v}_2,\ldots ,\mathbf{v}_n\}</m> be a basis for <m>V</m>. By Theorem <xref ref="th-bijectionsbasis"/> <m>\{T(\mathbf{v}_1),\ldots ,T(\mathbf{v}_n)\}</m> is a basis for <m>W</m>. Therefore <m>\mbox{dim}(W)=n</m>.
+First, assume that <m>V\cong W</m>.  Then there exists an isomorphism <m>T:V\rightarrow W</m>.  Suppose <m>\mbox{dim}(V)=n</m> and let 
+<me>
+\{\mathbf{v}_1,\mathbf{v}_2,\ldots ,\mathbf{v}_n\}
+</me>
 
-Conversely, suppose <m>\mbox{dim}(V)=\mbox{dim}(W)=n</m>, and let <m>\mathcal{B}=\{\mathbf{v}_1,\mathbf{v}_2,\ldots ,\mathbf{v}_n\}</m>, <m>\mathcal{C}=\{\mathbf{w}_1,\mathbf{w}_2,\ldots ,\mathbf{w}_n\}</m> be bases for <m>V</m> and <m>W</m>, respectively.
+be a basis for <m>V</m>. By <xref ref="th-bijectionsbasis"/>, 
+<me>
+\{T(\mathbf{v}_1),\ldots ,T(\mathbf{v}_n)\}
+</me>
+
+is a basis for <m>W</m>. Therefore <m>\mbox{dim}(W)=n</m>.
+    </p>
+
+    <p>
+Conversely, suppose <m>\mbox{dim}(V)=\mbox{dim}(W)=n</m>, and let 
+<me>
+\mathcal{B}=\{\mathbf{v}_1,\mathbf{v}_2,\ldots ,\mathbf{v}_n\},\quad
+ \mathcal{C}=\{\mathbf{w}_1,\mathbf{w}_2,\ldots ,\mathbf{w}_n\}
+</me> 
+
+be bases for <m>V</m> and <m>W</m>, respectively.
 
 Define a linear transformation <m>T:V\rightarrow W</m> by <m>T(\mathbf{v}_i)=\mathbf{w}_i</m> for <m>1\leq i\leq n</m>.  To show that <m>T</m> is an isomorphism, we need to prove that <m>T</m> is one-to-one and onto.
 
 Suppose <m>T(\mathbf{u}_1)=T(\mathbf{u}_2)</m> for some vectors <m>\mathbf{u}_1</m>, <m>\mathbf{u}_2</m> in <m>V</m>.  We know that
 
 <me>
-    \mathbf{u}_1=a_1\mathbf{v}_1+\ldots +a_n\mathbf{v}_n
+    \mathbf{u}_1=a_1\mathbf{v}_1+\ldots +a_n\mathbf{v}_n,
 </me>
 
 
 <me>
-    \mathbf{u}_2=b_1\mathbf{v}_1+\ldots +b_n\mathbf{v}_n
+    \mathbf{u}_2=b_1\mathbf{v}_1+\ldots +b_n\mathbf{v}_n,
 </me>
 
 for some scalars <m>a_i</m>'s and <m>b_i</m>'s.  Thus,
@@ -695,8 +775,12 @@ We now show that <m>T</m> is onto. Suppose that <m>\mathbf{w}</m> is an element 
 We conclude that <m>\mathbf{w}</m> is an image of an element of <m>V</m>, so <m>T</m> is onto.
     </p>
 </proof>
+</theorem>
 
+<p>
 From this theorem follows an important corollary that shows why we spent so much time trying to understand <m>\R^n</m> in this course.
+</p>
+
 
 <corollary xml:id="cor-ndimisotorn">
 
@@ -709,11 +793,13 @@ From this theorem follows an important corollary that shows why we spent so much
 
 <example xml:id="ex-planeisoplane">
     <p>
-        The span of any two linearly independent vectors in <m>\R^3</m> is isomorphic to <m>\R^2</m>. \begin{center}
-\tdplotsetmaincoords{70}{130}
-<image width="100%">
-   <shortdescription></shortdescription>
+        The span of any two linearly independent vectors in <m>\R^3</m> is isomorphic to <m>\R^2</m>.
+    </p>
+
+<image width="65%">
+   <shortdescription>Plane isomorphic to a subspace of R3 drawn</shortdescription>
     <latex-image>
+        \tdplotsetmaincoords{70}{130}
       \begin{tikzpicture}[scale=0.8]
 	\draw[-\gt ](-2,0,0)--(3,0,0) ;
     \draw[-\gt ](0,-2,0)--(0,3,0) ;
@@ -726,9 +812,10 @@ From this theorem follows an important corollary that shows why we spent so much
     
     \end{tikzpicture}
     </latex-image>
-</image>\quad\quad
-<image width="100%">
-   <shortdescription></shortdescription>
+</image>
+
+<image width="65%">
+   <shortdescription>Drawing above continued</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.5]
 
@@ -738,14 +825,12 @@ From this theorem follows an important corollary that shows why we spent so much
      \end{tikzpicture}
     </latex-image>
 </image>
-\end{center}
-    </p>
 </example>
 
 <example xml:id="ex-p2isor3b">
     <statement>
         <p>
-            <m>\mathbb{P}^2\ncong \R^2</m>
+            <me>\mathbb{P}^2\ncong \R^2.</me>
        </p>
     </statement>
     <answer>
@@ -754,15 +839,24 @@ From this theorem follows an important corollary that shows why we spent so much
        </p>
     </answer>
 </example>
-
-<subsection xml:id="Subsection-Practice-Problems">
-    <title>Practice Problems</title>
 </subsection>
+
+
+
+
+
+
+
+
+
+
+<exercises>
+
 
 <exercise xml:id="prob-Tonetooneonto">
     <statement>
         <p>
-            Prove that transformation <m>T</m> of Exploration <xref ref="init-isomorph"/> is one-to-one and onto.
+            Prove that transformation <m>T</m> of <xref ref="init-isomorph"/> is one-to-one and onto.
         </p>
     </statement>
 </exercise>
@@ -781,7 +875,7 @@ given by
     \tau_1\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right)=a-bx-cx^2+dx^3
 </me>
 
-of Expression <xref ref="eq-justforfuniso1"/> is an isomorphism.
+of <xref ref="eq-justforfuniso1"/> is an isomorphism.
         </p>
     </statement>
 </exercise>
@@ -789,7 +883,7 @@ of Expression <xref ref="eq-justforfuniso1"/> is an isomorphism.
 <exercise xml:id="prob-noiso">
     <statement>
         <p>
-            Do Example <xref ref="ex-inverseimageoflinind"/> without using isomorphisms.
+            Do <xref ref="ex-inverseimageoflinind"/> without using isomorphisms.
         </p>
     </statement>
 </exercise>
@@ -800,12 +894,18 @@ of Expression <xref ref="eq-justforfuniso1"/> is an isomorphism.
             Let 
 
 <me>
-    \mathcal{S}=\left\{\begin{bmatrix}1\amp -3\\-2\amp 2\end{bmatrix}, \begin{bmatrix}4\amp -2\\1\amp 5\end{bmatrix}, \begin{bmatrix}5\amp 5\\8\amp 4\end{bmatrix}\right\}
+    \mathcal{S}=\left\{\begin{bmatrix}1\amp -3\\-2\amp 2\end{bmatrix}, \begin{bmatrix}4\amp -2\\1\amp 5\end{bmatrix}, \begin{bmatrix}5\amp 5\\8\amp 4\end{bmatrix}\right\}.
 </me>
 
-Is <m>\mathcal{S}</m> linearly independent in <m>\mathbb{M}_{2,2}</m>?  \wordChoice{\choice[correct]{Yes}\choice{No}}
+Is <m>\mathcal{S}</m> linearly independent in <m>\mathbb{M}_{2,2}</m>? 
         </p>
     </statement>
+
+<answer>
+    <p>
+Yes!
+    </p>
+</answer>
 </exercise>
 
 <exercise xml:id="prob-basism22iso">
@@ -817,15 +917,21 @@ Is <m>\mathcal{S}</m> linearly independent in <m>\mathbb{M}_{2,2}</m>?  \wordCho
     \mathcal{S}=\left\{\begin{bmatrix}1\amp 2\\3\amp 4\end{bmatrix}, \begin{bmatrix}5\amp 6\\7\amp 8\end{bmatrix}, \begin{bmatrix}9\amp 10\\11\amp 12\end{bmatrix}, \begin{bmatrix}13\amp 14\\15\amp 16\end{bmatrix}\right\}
 </me>
 
-Is <m>\mathcal{S}</m> a basis for <m>\mathbb{M}_{2,2}</m>? \wordChoice{\choice{Yes}\choice[correct]{No}}
+Is <m>\mathcal{S}</m> a basis for <m>\mathbb{M}_{2,2}</m>?
         </p>
     </statement>
+
+<answer>
+    <p>
+No!
+    </p>
+</answer>
 </exercise>
 
 <exercise xml:id="prob-bijectionsbasisproof">
     <statement>
         <p>
-            Prove Theorem <xref ref="th-bijectionsbasis"/>.
+            Prove <xref ref="th-bijectionsbasis"/>.
         </p>
     </statement>
 </exercise>
@@ -834,100 +940,105 @@ Is <m>\mathcal{S}</m> a basis for <m>\mathbb{M}_{2,2}</m>? \wordChoice{\choice{Y
     <statement>
         <p>
             Let <m>V</m> be a vector space, and suppose <m>\mathcal{B}=\{\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3, \mathbf{v}_4, \mathbf{v}_5\}</m> is a basis for <m>V</m>.  What can we conclude about <m>V</m>?  Check ALL that apply.
-<choices>
+        </p>
+    </statement> 
+
+ <choices>
   <choice>
       <statement>
-          <p> We cannot conclude anything about <m>V</m> because we don't know what <m>V</m> is. </p>
+          <p> We cannot conclude anything about <m>V</m> because we do not know what <m>V</m> is. </p>
       </statement>
   </choice>
       <choice correct="yes">
       <statement>
-          <p> <m>V\cong \R^5</m> </p>
+          <p> <m>V\cong \R^5</m>. </p>
       </statement>
   </choice>
       <choice>
       <statement>
-          <p> <m>V\cong \mathbb{P </p>
+          <p> <m>V\cong \mathbb{P}^5</m>. </p>
       </statement>
-  </choice>^5</m>}
+  </choice>
       <choice>
       <statement>
-          <p> <m>V\cong \R^4</m> </p>
+          <p> <m>V\cong \R^4</m>. </p>
       </statement>
   </choice>
       <choice correct="yes">
       <statement>
-          <p> <m>V\cong \mathbb{P </p>
+          <p> <m>V\cong \mathbb{P}^4 </m>. </p>
       </statement>
-  </choice>^4</m>}
+  </choice>
       <choice>
       <statement>
-          <p> <m>V\cong \mathbb{M </p>
+          <p> <m>V\cong \mathbb{M}_{5,5} </m>- </p>
       </statement>
-  </choice>_{5,5}</m>}
+  </choice>
 </choices>
-        </p>
-    </statement>
+     
 </exercise>
 
 <exercise xml:id="prob-pickisospaces">
     <statement>
         <p>
             Which of the followng statements are true? Check ALL that apply.
+        </p>
+    </statement>
+
 <choices>
   <choice>
       <statement>
-          <p> <m>\mathbb{M </p>
+          <p> <m>\mathbb{M}_{3,3} \cong \R^6 </m>. </p>
       </statement>
-  </choice>_{3,3}\cong \R^6</m>}
+  </choice>
       <choice correct="yes">
       <statement>
-          <p> <m>\mathbb{M </p>
+          <p> <m>\mathbb{M}_{3,3}\cong \R^9</m>. </p>
       </statement>
-  </choice>_{3,3}\cong \R^9</m>}
+  </choice>
       <choice>
       <statement>
-          <p> <m>\mathbb{M </p>
+          <p> <m>\mathbb{M}_{4,4} \cong \mathbb{P}^{16} </m>. </p>
       </statement>
-  </choice>_{4,4}\cong \mathbb{P}^{16}</m>}
+  </choice>
       <choice correct="yes">
       <statement>
-          <p> <m>\mathbb{M </p>
+          <p> <m>\mathbb{M}_{4,4} \cong \mathbb{P}^{15}</m>. </p>
       </statement>
-  </choice>_{4,4}\cong \mathbb{P}^{15}</m>}
+  </choice>
       <choice correct="yes">
       <statement>
-          <p> <m>\mathbb{L </p>
+          <p> <m>\mathbb{L} \cong \R^2 </m>. </p>
       </statement>
-  </choice>\cong \R^2</m>}
+  </choice>
 </choices>
-        </p>
-    </statement>
 </exercise>
 
 <exercise xml:id="prob-verifyisomorphism">
     <statement>
         <p>
-            Verify that <m>T:V\rightarrow \R^n</m> of Theorem <xref ref="ex-coordmapiso"/> is an isomorphism.
-\begin{hint}
-You may find the proof of Theorem <xref ref="th-ndimspacesisorn"/> helpful.
-\end{hint}
+            Verify that <m>T:V\rightarrow \R^n</m> of <xref ref="ex-coordmapiso"/> is an isomorphism.
         </p>
     </statement>
+
+<hint>
+<p>
+You may find the proof of T<xref ref="th-ndimspacesisorn"/> helpful.
+</p> 
+</hint>
 </exercise>
 
 <exercise xml:id="prob-isocompisisoproof">
     <statement>
         <p>
-            Prove that the composition of two isomorphisms is an isomorphism.  (Theorem <xref ref="th-isocompisiso"/>.)
+            Prove that the composition of two isomorphisms is an isomorphism  (see also <xref ref="th-isocompisiso"/>).
         </p>
     </statement>
 </exercise>
 
-<exercise>
+<exercise xml:id="kerneliszero">
     <statement>
         <p>
-            \label{prob:kerneliszero}
 Prove that a linear transformation <m>T:V\rightarrow W</m> is one-to-one if and only if <m>\text{ker}(T)=\{\mathbf{0}\}</m>.
         </p>
     </statement>
@@ -935,5 +1046,5 @@ Prove that a linear transformation <m>T:V\rightarrow W</m> is one-to-one if and 
 
 
 
-
+</exercises>
 </section>
