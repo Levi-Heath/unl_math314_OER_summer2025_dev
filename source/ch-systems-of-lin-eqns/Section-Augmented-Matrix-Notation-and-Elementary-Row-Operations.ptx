@@ -714,9 +714,8 @@
         </example>
     </subsection>
 
-    <subsection xml:id="Subsection-Practice-Problems">
-        <title>Practice Problems</title>
-        <exercises>
+
+        <exercises xml:id="Exercises-Augmented-Matrix-Notation-and-Elementary-Row-Operations">
             <exercisegroup>
             
                 <introduction>
@@ -978,5 +977,5 @@
                 </exercise>
             </exercisegroup>
         </exercises>
-    </subsection>
+
 </section>

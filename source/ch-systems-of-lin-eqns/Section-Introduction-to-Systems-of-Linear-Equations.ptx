@@ -779,9 +779,8 @@
             </theorem>
     </subsection>
 
-    <subsection xml:id="Subsection-Practice-Problems">
-        <title>Practice Problems</title>
-        <exercises>
+
+        <exercises xml:id="Exercises-Introduction-to-Systems-of-Linear-Equations">
             <exercise xml:id="prob-sysgraphillustration">
                 <statement>
                    <p>
@@ -1053,5 +1052,5 @@
               </statement>
             </exercise>
         </exercises>
-    </subsection>
+
 </section>

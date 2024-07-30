@@ -131,9 +131,8 @@
 </remark>
 </subsection>
 
-<subsection xml:id="Subsection-Practice-Problems">
-  <title>Practice Problems</title>
-  <exercises>
+
+  <exercises xml:id="Exercises-Dot-Product-and-Angle">
     <exercisegroup>
       <introduction>
         <p>
@@ -311,5 +310,5 @@
       </hint>
     </exercise>
   </exercises>
-</subsection>
+
 </section>
