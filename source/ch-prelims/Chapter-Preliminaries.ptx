@@ -24,21 +24,25 @@
                     Transition seamlessly between algebraic and geometric representations of vectors in <m>\mathbb{R}^2</m> or <m>\mathbb{R}^3</m>.
                 </p>
             </li>
+            <!-- 
             <li>
                 <p>
                     Determine the angle between vectors and test for orthogonality.
                 </p>
             </li> 
+            -->
             <li>
                 <p>
                     Project one vector onto another.
                 </p>
             </li>
+            <!--
             <li>
                 <p>
                     Compute and interpret the cross product of two vectors in <m>\mathbb{R}^3</m>.
                 </p>
-            </li> 
+            </li>
+            -->
             <li>
                 <p>
                     Transition seamlessly between parametric and non-parametric forms of the equation of a line in <m>\mathbb{R}^2</m>.

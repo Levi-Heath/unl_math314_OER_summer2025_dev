@@ -408,9 +408,7 @@ We say that strict diagonal dominance is <term>sufficient</term> to guarantee co
 </p>
 </subsection>
 
-<subsection xml:id="Subsection-Practice-Problems">
-    <title>Practice Problems</title>
-    <exercises>
+    <exercises xml:id="Exercises-Iterative-Methods-for-Solving-Linear-Systems">
         <exercisegroup>
         
             <introduction>
@@ -481,28 +479,24 @@ We say that strict diagonal dominance is <term>sufficient</term> to guarantee co
             </exercise>
         </exercisegroup>
 
+        <exercise xml:id="prb-2.1">
+            <statement>
+                <p>
+                The lines, <m>x+3y=1</m> and <m>4x-y=3.</m> intersect at <m>x=\frac{10}{13},y=\frac{1}{13}</m>.  Use Jacobi's method and the Gauss-Seidel method with an initial guess of <m>x=0,y=0</m> to find an approximate solution where each coordinate is within 0.1 of the exact solution.  Write the coefficient matrix so it is strictly diagonally dominant in order to ensure convergence.
+            </p>
+            <p>
+                <xref ref="prb-2.1"/> comes from the end of Chapter 1 of Ken Kuttler's <url href="https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017"><em>A First Course in Linear Algebra</em></url>.
+            </p>
+        </statement>
+        </exercise>
 
+        <exercise xml:id="prob-special_slopes">
+            <statement>
+            <p>
+                What happens if the Gauss-Seidel method is to find the solution to a system of 2 equations in 2 unknowns when the slopes of the two lines are <m>m</m> and <m>-m</m>?
+            </p>
+        </statement>
+        </exercise>
+    </exercises>
 
-
-
-<exercise xml:id="prb-2.1">
-    <statement>
-        <p>
-        The lines, <m>x+3y=1</m> and <m>4x-y=3.</m> intersect at <m>x=\frac{10}{13},y=\frac{1}{13}</m>.  Use Jacobi's method and the Gauss-Seidel method with an initial guess of <m>x=0,y=0</m> to find an approximate solution where each coordinate is within 0.1 of the exact solution.  Write the coefficient matrix so it is strictly diagonally dominant in order to ensure convergence.
-       </p>
-       <p>
-        <xref ref="prb-2.1"/> comes from the end of Chapter 1 of Ken Kuttler's <url href="https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017"><em>A First Course in Linear Algebra</em></url>.
-       </p>
-  </statement>
-</exercise>
-
-<exercise xml:id="prob-special_slopes">
-    <statement>
-       <p>
-        What happens if the Gauss-Seidel method is to find the solution to a system of 2 equations in 2 unknowns when the slopes of the two lines are <m>m</m> and <m>-m</m>?
-       </p>
-  </statement>
-</exercise>
-</exercises>    
-</subsection>
 </section>

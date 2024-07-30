@@ -382,9 +382,9 @@
         </theorem>
     </subsection>
 
-    <subsection xml:id="Subsection-Practice-Problems">
-        <title>Practice Problems</title>
-        <exercises>
+
+
+        <exercises xml:id="Exercises-Cross-Product-and-its-Properties">
             <exercise xml:id="prob-crossik">
                 <statement>
                    <p>
@@ -554,5 +554,5 @@
                 </statement> 
             </exercise>
         </exercises>
-    </subsection>
+        
 </section>
