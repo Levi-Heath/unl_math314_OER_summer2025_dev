@@ -511,7 +511,7 @@ The coordinate vector for <m>T(\mathbf{v})</m> with respect to the ordered basis
     T(1)=\begin{bmatrix}1\amp 0\\0\amp 1\end{bmatrix},\quad T(x)=\begin{bmatrix}1\amp 1\\0\amp 1\end{bmatrix},\quad T(x^2)=\begin{bmatrix}1\amp 1\\1\amp 1\end{bmatrix}
 </me>
 
-Find <m>T(4-x+3x^2)</m>.
+Find <me>T(4-x+3x^2)</me>.
         </p>
     </statement>
 
@@ -529,7 +529,7 @@ Find <m>T(4-x+3x^2)</m>.
         <p>
             Define <m>T:\mathbb{M}_{3,3}\rightarrow \R</m> by <m>T(A)=\mbox{tr}(A)</m>.  (Recall that <m>\mbox{tr}(A)</m> denotes the <term>trace</term> of <m>A</m>, which is the sum of the main diagonal entries of <m>A</m>.)
 
-Find <m>T\left(\begin{bmatrix}1\amp 2\amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\end{bmatrix}\right)</m>
+Find <me>T\left(\begin{bmatrix}1\amp 2\amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\end{bmatrix}\right).</me>
         </p>
     </statement>
     <answer>
@@ -588,9 +588,9 @@ Find <me>
 Define <m>T:\mathbb{M}_{3,3}\rightarrow \R</m> by <m>T(A)=\det(A)</m>.  
 
 
-Find <m>
+Find <me>
      T\left(\begin{bmatrix}1\amp 2\amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\end{bmatrix}\right).
-    </m>
+    </me>
         </p>
     </statement>
     <answer>
@@ -615,7 +615,7 @@ Find <m>
     <statement>
         <p>
             Define <m>T:\mathbb{P}^3\rightarrow\mathbb{P}^2</m> by <m>T(p(x))=p'(x)</m> (in other words, <m>T</m> maps a polynomial to its derivative).
-Find <m>T(4x^3-2x^2+x+6)</m>.
+Find <me>T(4x^3-2x^2+x+6).</me>
         </p>
     </statement>
     <answer>
@@ -675,7 +675,7 @@ T(I_2) \quad \text{and} \quad T\left(\begin{bmatrix}2\amp -3\\-3\amp 1\end{bmatr
 <exercise xml:id="prob-coordvector">
     <statement>
         <p>
-            Let <m>V</m> be a subspace of <m>\R^3</m> with a basis <m>\mathcal{B}=\left\{\begin{bmatrix}2\\1\\-1\end{bmatrix}, \begin{bmatrix}0\\3\\2\end{bmatrix}\right\}</m>.  Find the coordinate vector, <m>[\mathbf{v}]_{\mathcal{B}}</m>, for <m>\mathbf{v}=\begin{bmatrix}4\\-1\\-4\end{bmatrix}</m>.
+            Let <m>V</m> be a subspace of <m>\R^3</m> with a basis <m>\mathcal{B}=\left\{\begin{bmatrix}2\\1\\-1\end{bmatrix}, \begin{bmatrix}0\\3\\2\end{bmatrix}\right\}</m>.  Find the coordinate vector, <m>[\mathbf{v}]_{\mathcal{B}}</m>, for <m>\mathbf{v}=[4,-1,-4]</m>.
         </p>
     </statement>
             <answer>
