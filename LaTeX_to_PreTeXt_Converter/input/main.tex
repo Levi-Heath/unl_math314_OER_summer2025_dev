@@ -1,543 +1,908 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
- \title{Orthogonality and Projections} \license{CC BY-NC-SA 4.0}
+\title{Orthogonal Matrices and Symmetric Matrices} \license{CC BY-NC-SA 4.0}
 
 \begin{document}
+
 \begin{abstract}
+
 \end{abstract}
 \maketitle
 
-\begin{onlineOnly}
-\section*{Orthogonality and Projections}
-\end{onlineOnly}
+\section*{Orthogonal Matrices and Symmetric Matrices}
+Recall that an $n \times n$ matrix $A$ is diagonalizable if and only if it has $n$ linearly independent eigenvectors.  (see \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/EIG-0050/main}{Diagonalizable Matrices and Multiplicity}) Moreover, the matrix $P$ with these eigenvectors as columns is a diagonalizing matrix for $A$, that is
+\begin{equation*}
+P^{-1}AP \mbox{ is diagonal.}
+\end{equation*}
+As we have seen, the nice bases of $\RR^n$ are the orthogonal ones, so a natural question is: which $n \times n$ matrices have $n$ orthogonal eigenvectors, so that columns of $P$ form an orthogonal basis for $\RR^n$? These turn out to be precisely the \dfn{symmetric matrices} (matrices for which $A=A^T$), and this is the main result of this section.
 
-\subsection*{Orthogonal and Orthonormal Sets}
-In this section, we examine what it means for vectors (and sets of
-vectors) to be orthogonal and orthonormal. Recall that two non-zero vectors are orthogonal if their dot product is zero.  A collection of non-zero vectors in $\RR^n$ is called \dfn{orthogonal} if the vectors are pair-wise orthogonal.  The diagram below shows two orthogonal vectors in $\RR^2$ and three orthogonal vectors in $\RR^3$.
-\begin{center}
-\begin{tikzpicture}[scale=0.5]
-\draw[line width=0.5pt, dashed](-2,-0.5)--(2,-0.5)--(2,3.5)--(-2,3.5)--cycle;
-\draw[line width=2pt,red,-stealth](0,0)--(1.5,0.5);  
-\draw[line width=2pt,blue,-stealth](0,0)--(-1,3);
-\node[] at (-0.5, -1.5)  (p2)    {Orthogonal vectors in $\RR^2$};
- \end{tikzpicture}
- \quad\quad\quad
-\begin{tikzpicture}[scale=0.5]
-	\draw[line width=2pt,red,-stealth](0,0,0)--(4,1,0);
-    \draw[line width=2pt,blue,-stealth](0,0,0)--(-0.5,2,0);
-    \draw[line width=2pt,black,-stealth](0,0,0)--(0,0,5);
-    \node[] at (3, -3,1.5)  (p2)    {Orthogonal vectors in $\RR^3$};
-        \draw[-,line width=0.2mm, dashed](6.5,3.5,5.5)--(6.5,-1,5.5) ;
-    \draw[-,line width=0.2mm, dashed](6.5,3.5,5.5)--(-1,3.5,5.5) ;
-    \draw[-,line width=0.2mm, dashed](6.5,3.5,5.5)--(6.5,3.5,-1) ;
-    \draw[-,line width=0.2mm, dashed](-1,-1,5.5)--(6.5,-1,5.5) ;
-    \draw[-,line width=0.2mm, dashed](-1,-1,5.5)--(-1,3.5,5.5) ;
-    \draw[-,line width=0.2mm, dashed](6.5,-1,5.5)--(6.5,-1,-1) ;
-    \draw[-,line width=0.2mm, dashed](6.5,3.5,-1)--(6.5,-1,-1) ;
-    \draw[-,line width=0.2mm, dashed](6.5,3.5,-1)--(-1,3.5,-1) ;
-    \draw[-,line width=0.2mm, dashed](-1,3.5,5.5)--(-1,3.5,-1) ;
-        \end{tikzpicture}
-\end{center}
+\section*{Orthogonal Matrices}
+Recall that an orthogonal set of vectors is called \dfn{orthonormal} if $\norm{\vec{q}} = 1$ for each vector $\vec{q}$ in the set, and that any orthogonal set $\{\vec{v}_{1}, \vec{v}_{2}, \dots, \vec{v}_{k}\}$ can be ``\textit{normalized}'', i.e. converted into an orthonormal set $\left\{ \frac{1}{\norm{\vec{v}_{1}}}\vec{v}_{1}, \frac{1}{\norm{\vec{v}_{2}}}\vec{v}_{2}, \dots, \frac{1}{\norm{\vec{v}_{k}}}\vec{v}_{k} \right\}$. In particular, if a matrix $A$ has $n$ orthogonal eigenvectors, they can (by normalizing) be taken to be orthonormal. The corresponding diagonalizing matrix (we will use $Q$ instead of $P$) has orthonormal columns, and such matrices are very easy to invert.
 
-If every vector in an orthogonal set of vectors is also a unit vector, then we say that the given set of vectors is \dfn{orthonormal}.
 
-\begin{center}
-\begin{tikzpicture}[scale=0.5]
-\draw[line width=2pt,red,-stealth](0,0)--(3,4);  
-\draw[line width=2pt,blue,-stealth](0,0)--(-4,3);
-\node[] at (-1, -1)  (p2)    {An orthonormal set of two vectors};
-\node[] at (-1.8, 2)  (p2)    {1};
-\node[] at (1.3, 2.5)  (p2)    {1};
- \end{tikzpicture}
- \end{center}
+\begin{theorem}\label{th:orthogonal_matrices}
+The following conditions are equivalent for an $n \times n$ matrix $Q$.
 
-Formally, we can define orthogonal and orthonormal vectors as follows.
+\begin{enumerate}
+\item\label{th:orthogonal_matrices_a} $Q$ is invertible and $Q^{-1} = Q^{T}$.
 
-\begin{definition}\label{orthset}
-Let $\{ \vec{v}_1, \vec{v}_2, \cdots, \vec{v}_k \}$ be a set of nonzero
-vectors in $\RR^n$. Then this set is called an
-\dfn{orthogonal set} if 
-$\vec{v}_i \dotp \vec{v}_j = 0$ for all $i \neq j$.
-Moreover, if $\norm{\vec{v}_i}=1$ for $i=1,\ldots,m$ (i.e. each vector in the set is a unit vector), we say the set of vectors is an \dfn{orthonormal set}.
+\item\label{th:orthogonal_matrices_b} The rows of $Q$ are orthonormal.
+
+\item\label{th:orthogonal_matrices_c} The columns of $Q$ are orthonormal.
+
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+First note that condition \ref{th:orthogonal_matrices_a} is equivalent to $Q^{T}Q = I$. Let $\vec{q}_{1}, \vec{q}_{2}, \dots, \vec{q}_{n}$ denote the columns of $Q$. Then $\vec{q}_{i}^{T}$ is the $i$th row of $Q^{T}$, so the $(i, j)$-entry of $Q^{T}Q$ is $\vec{q}_{i} \dotp \vec{q}_{j}$. Thus $Q^{T}Q = I$ means that $\vec{q}_{i} \dotp \vec{q}_{j} = 0$ if $i \neq j$ and $\vec{q}_{i} \dotp \vec{q}_{j} = 1$ if $i = j$. Hence condition \ref{th:orthogonal_matrices_a} is equivalent to \ref{th:orthogonal_matrices_c}. The proof of the equivalence of \ref{th:orthogonal_matrices_a} and \ref{th:orthogonal_matrices_b} is similar.
+\end{proof}
+
+\begin{definition}[Orthogonal Matrices]\label{def:orthogonal matrices}
+An $n \times n$ matrix $Q$ is called an \dfn{orthogonal matrix} if it satisfies one (and hence all) of the conditions in Theorem~\ref{th:orthogonal_matrices}.
 \end{definition}
 
-An orthogonal set of vectors may not be orthonormal.  To convert an orthogonal set to an orthonormal set, we need to divide each vector by its own length.
 
-\begin{definition}\label{normalizing}
-\dfn{Normalizing} an orthogonal set is the process of turning an orthogonal set into an orthonormal set.
-If $\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k\}$
-is an orthogonal subset of $\RR^n$,
-then
-\[ \left\{
-\frac{1}{\norm{\vec{v}_1}}\vec{v}_1,
-\frac{1}{\norm{\vec{v}_2}}\vec{v}_2, \ldots,
-\frac{1}{\norm{\vec{v}_k}}\vec{v}_k \right\}
-\]
-is an orthonormal set.
-\end{definition}
-
-We illustrate this concept in the following example.
-
-\begin{example}\label{ex:orthonormalset}
-Consider the vectors
-\[
-\vec{v}_1=\begin{bmatrix}
-1 \\
-1
-\end{bmatrix},\quad \vec{v}_2  =
-\begin{bmatrix}
--1 \\
-1
-\end{bmatrix}
-\]
-Show that $\{\vec{v}_1,\vec{v}_2\}$ is an orthogonal set of vectors  but not an orthonormal one. Find the corresponding orthonormal set.
-
+\begin{example}\label{ex:rotation_ortho}
+The rotation matrix
+$\begin{bmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{bmatrix}$ is orthogonal for any angle $\theta$.
 \begin{explanation}
-One easily verifies that $\vec{v}_1 \dotp \vec{v}_2 = 0$ and
-$\left\{ \vec{v}_1, \vec{v}_2 \right\}$ is an orthogonal set of
-vectors. On the other hand one can compute that ${\norm{\vec{v}_1}}= {\norm{\vec{v}_2}} =
-\sqrt{2} \neq 1$ and so the set is not orthonormal.
-
-To find a corresponding orthonormal set, we need to
-normalize each vector. 
-\begin{eqnarray*}
-\vec{q}_1 &=& \frac{1}{\norm{\vec{v}_1}}\vec{v}_1\\
-&=& \frac{1}{\sqrt{2}} \begin{bmatrix}
-1 \\
-1
-\end{bmatrix} \\
-&=&
-\begin{bmatrix}
-\frac{1}{\sqrt{2}} \\
-\frac{1}{\sqrt{2}}
-\end{bmatrix}
-\end{eqnarray*}
-
-Similarly,
-\begin{eqnarray*}
-\vec{q}_2 &=& \frac{1}{\norm{\vec{v}_2}}\vec{v}_2\\
-&=& \frac{1}{\sqrt{2}} \begin{bmatrix}
--1 \\
-1
-\end{bmatrix} \\
-&=&
-\begin{bmatrix}
--\frac{1}{\sqrt{2}} \\
-\frac{1}{\sqrt{2}}
-\end{bmatrix}
-\end{eqnarray*}
-
-Therefore the corresponding orthonormal set is
-\[
-\left\{ \vec{q}_1, \vec{q}_2 \right\} =
-\left\{
-\begin{bmatrix}
-\frac{1}{\sqrt{2}} \\
-\frac{1}{\sqrt{2}}
-\end{bmatrix},
-\begin{bmatrix}
--\frac{1}{\sqrt{2}} \\
-\frac{1}{\sqrt{2}}
-\end{bmatrix}
-\right\}
-\]
-
-You can verify that this set is orthonormal.
+See Practice Problem \ref{prob:rotation_ortho}.
 \end{explanation}
 \end{example}
 
-\subsection*{Orthogonal and Orthonormal Bases}
-Recall that every basis of $\RR^n$ (or a subspace $W$ of $\RR^n$) imposes a coordinate system on $\RR^n$ (or $W$) that can be used to express any vector of $\RR^n$ (or $W$) as a linear combination of the elements of the basis.  For example, vectors $\vec{v}_1$ and $\vec{v}_2$ impose a coordinate system onto the plane, as shown in the figure below.  We readily see that $\vec{x}$, contained in the plane, can be written as $\vec{x}=\vec{v}_1+2\vec{v}_2$.
+\begin{remark}\label{rem:orthVsOrthnormMat}
+In view of \ref{th:orthogonal_matrices_b} and \ref{th:orthogonal_matrices_c} of Theorem~\ref{th:orthogonal_matrices}, \dfn{orthonormal matrix} might be a better name. But \dfn{orthogonal matrix} is standard.
+\end{remark}
 
-\begin{center}
-\begin{tikzpicture}[scale=1]
-\draw[line width=0.5pt, gray](-2,1)--(0.5,6);  
-\draw[line width=0.5pt, gray](-1,-2)--(3,6);
-\draw[line width=0.5pt, gray](1.5,-2)--(5.5,6);
-\draw[line width=0.5pt, gray](4,-2)--(8,6);
-\draw[line width=0.5pt, gray](6.5,-2)--(8,1);
-\draw[line width=0.5pt, gray](-2, 4.33)--(3,6);
-\draw[line width=0.5pt, gray](-2, 2.66)--(8,6);
-\draw[line width=0.5pt, gray](-2, 1)--(8,4.33);
-\draw[line width=0.5pt, gray](-2, -0.66)--(8,2.66);
-\draw[line width=0.5pt, gray](-1, -2)--(8,1);
-\draw[line width=0.5pt, gray](4,-2)--(8,-0.66);
- \draw[line width=2pt,blue,-stealth](0,0)--(1,2);
-\draw[line width=2pt,red,-stealth](0,0)--(3,1);
-\draw[line width=2pt,-stealth](0,0)--(7,4);
-\node[blue] at (0.5, 1.5)  (p2)    {$\vec{v}_1$};
-\node[red] at (1.6, 0.2)  (p2)    {$\vec{v}_2$};
-\node[] at (3.5, 2.3)  (p2)    {$\vec{x}$};
-%\node[] at (-0.2, 0.2)  (p2)    {$\vec{O}$};
- \end{tikzpicture}
- \end{center}
-Vector $\vec{x}$ is visually easy to work with.  In general, one way to express an arbitrary vector as a linear combination of the basis vectors is to solve a system of linear equations, which can be costly.  One reason we like $\{\vec{i},\vec{j}\}$ as a basis of $\RR^2$ is because any vector $\vec{x}$ of $\RR^2$ can be easily expressed as the sum of the orthogonal projections of $\vec{x}$ onto the basis vectors $\vec{i}$ and $\vec{j}$, as shown below.
-\begin{center}
-\begin{tikzpicture}[scale=1.4]
- \draw[<->] (-1,0)--(3.5,0);
-  \draw[<->] (0,-1)--(0,3.5);
-  \draw[line width=6pt,-stealth, black!20!white](0,0)--(2,0);
-  \draw[line width=6pt,-stealth, black!20!white](0,0)--(0,3);
-\draw[line width=2pt,red,-stealth](0,0)--(1,0);  
-\draw[line width=2pt,blue,-stealth](0,0)--(0,1);
-\draw[line width=2pt,-stealth](0,0)--(2,3);  
-\draw[line width=0.5pt,dashed](2,3)--(2,0);  
-\draw[line width=0.5pt,dashed](2,3)--(0,3); 
-\node[] at (1.7, -0.4)  (p2)    {$\mbox{proj}_{\vec{i}}\vec{x}$};
-\node[] at (-0.7, 2.5)  (p2)    {$\mbox{proj}_{\vec{j}}\vec{x}$};
-\node[] at (3, 3.1)  (p2)    {$\vec{x}=\mbox{proj}_{\vec{i}}\vec{x}+\mbox{proj}_{\vec{j}}\vec{x}$};
-\node[red] at (0.5, -0.3)  (p2)    {$\vec{i}$};
-\node[blue] at (-0.3, 0.5)  (p2)    {$\vec{j}$};
- \end{tikzpicture}
-\end{center}
-
-We can see why an ``upright" coordinate system with basis $\{\vec{i},\vec{j}\}$ works well.  What if we tilt this coordinate system while preserving the orthogonal relationship between the basis vectors?  The following exploration allows you to investigate the consequences.
-
-\begin{exploration}\label{exp:orth1a}
-    In the following GeoGebra interactive, vectors $\vec{v}_1$ and $\vec{v}_2$ are orthogonal (slopes of the lines containing them are negative reciprocals of each other).  These vectors are clearly linearly independent and span $\RR^2$.  Therefore $\{\vec{v}_1,\vec{v}_2\}$ is a basis of $\RR^2$.  
+It is not enough that the rows of a matrix $A$ are merely orthogonal for $A$ to be an orthogonal matrix. Here is an example.
+%\begin{exploration}\label{exp:make_orthogonal}
+%\begin{octave} 
+%A=[2 1 1; -1 1 1; 0 -1 1]
+%\end{octave}
+%\begin{enumerate}
+ %   \item Check that matrix $A$ in the Octave window has rows that are orthogonal.
+  %  \begin{hint}
+  %  A(1,:)*transpose(A(2,:)) 
     
-    Let $\vec{x}$ be an arbitrary vector.  Orthogonal projections of $\vec{x}$ onto $\vec{v}_1$ and $\vec{v}_2$ are depicted in light grey.
-    \begin{itemize}
-           \item Use the tip of vector $\vec{x}$ to manipulate the vector and convince yourself that $\vec{x}$ is always the diagonal of the parallelogram (a rectangle!) determined by the projections.
-        \item Use the tips of $\vec{v}_1$ and $\vec{v}_2$ to change the basis vectors.  What happens when $\vec{v}_1$ and $\vec{v}_2$ are no longer orthogonal?
-        \item Pick another pair of orthogonal vectors $\vec{v}_1$ and $\vec{v}_2$.  Verify that $\vec{x}$ is the sum of its projections.
-    \end{itemize}
+  %  A(2,:)*transpose(A(3,:)) 
+    
+  %  A(1,:)*transpose(A(3,:)) 
+    
+  %  \end{hint}
+ %   \item Check that matrix $A$ in the Octave window has columns that are NOT orthogonal.
+ %   \begin{hint}
+ %   transpose(A(:,1))*A(:,2) 
+    
+ %   etc.
+    
+ %   \end{hint}
+ %   \item Check that matrix $A$ in the Octave window has rows that are NOT orthonormal.
+ %   \begin{hint}
+ %   A(1,:)*transpose(A(1,:)) 
+    
+ %   A(2,:)*transpose(A(2,:)) 
+    
+ %   A(3,:)*transpose(A(3,:)) 
+    
+ %   \end{hint}
+%    \item Create a matrix $Q$ by normalizing each of the rows of $A$.
+%    \begin{hint}
+%    q1=A(1,:)/norm(A(1,:)); 
+    
+%    q2=A(2,:)/norm(A(2,:));
+    
+%    q3=A(3,:)/norm(A(3,:));
+    
+%    Q = [q1;q2;q3]
+    
+%    \end{hint}
+%    \item Check that $Q$ is an orthogonal matrix.
+%    \begin{hint}
+%    You should get $Q = \begin{bmatrix}
+%\frac{2}{\sqrt{6}} & \frac{1}{\sqrt{6}} & %\frac{1}{\sqrt{6}} \\
+%\frac{-1}{\sqrt{3}} & \frac{1}{\sqrt{3}} & %\frac{1}{\sqrt{3}} \\
+%0 & \frac{-1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+%\end{bmatrix}$, and one can check that this is orthogonal in a number of ways.
+ %   \end{hint}
+%\end{enumerate}
 
-\pdfOnly{
-Access GeoGebra interactives through the online version of this text at 
+%\end{exploration}
 
-\href{https://ximera.osu.edu/oerlinalg}{https://ximera.osu.edu/oerlinalg}.
-}
+\begin{exploration}\label{exp:make_orthogonal}
+Let $A=\begin{bmatrix}
+    2&1&1\\-1&1&1\\0&-1&1
+\end{bmatrix}$
+\begin{enumerate}
+    \item Check that matrix $A$ has rows that are orthogonal.
+    \item Check that matrix $A$ has columns that are NOT orthogonal.
+    \item Check that matrix $A$ has rows that are NOT orthonormal.
+    \item Create a matrix $Q$ by normalizing each of the rows of $A$.
+    \item Check that $Q$ is an orthogonal matrix.
+\end{enumerate}
 
-\begin{onlineOnly}
-    \begin{center}
-\geogebra{nsqzhsxv}{800}{600}
-\end{center}
-\end{onlineOnly}
+Click the arrow to see the answer.
+\begin{expandable}
+You should get $Q = \begin{bmatrix}
+\frac{2}{\sqrt{6}} & \frac{1}{\sqrt{6}} & \frac{1}{\sqrt{6}} \\
+\frac{-1}{\sqrt{3}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}} \\
+0 & \frac{-1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}$, and one can check that this is orthogonal in a number of ways.
+\end{expandable}
+
+This exploration can certainly be done by hand (although it takes some time), but it also makes for a very nice Octave exercise.
+
+To use Octave, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
+
+\begin{verbatim}
+    %Exploration from Section 9.4 Orthogonal Matrices and Symmetric Matrices
+    A=[2 1 1; -1 1 1; 0 -1 1]
+    %Check that matrix A has rows that are orthogonal.
+    A(1,:)*transpose(A(2,:)) 
+    A(2,:)*transpose(A(3,:)) 
+    A(1,:)*transpose(A(3,:)) 
+    %Check that matrix A has columns that are NOT orthogonal.
+    transpose(A(:,1))*A(:,2) 
+    %(This is 1 of 3 calculations to do.)
+    %Check that matrix A in the Octave window has rows that are NOT orthonormal.
+    %(See the results from the first question.)
+    %Create a matrix Q by normalizing each of the rows of A.
+    q1=A(1,:)/norm(A(1,:)); 
+    q2=A(2,:)/norm(A(2,:));
+    q3=A(3,:)/norm(A(3,:));
+    Q = [q1;q2;q3]
+    %Check that Q is an orthogonal matrix.
+    Q*transpose(Q)
+    %(You may get numbers close to zero in some places you expect to get zero due to rounding error)
+\end{verbatim}
+    
+
 \end{exploration}
 
+We studied the idea of closure when we studied \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0020/main}{Subspaces of $\RR^n$}.  The next theorem tells us that orthogonal matrices are closed under matrix multiplication.
 
-As you have just discovered in Exploration \ref{exp:orth1a}, we can express an arbitrary vector of $\RR^2$ as the sum of its projections onto the basis vectors, provided that the basis is orthogonal. It turns out that this result holds for any subspace of $\RR^n$, making a basis consisting of orthogonal vectors especially useful. 
+\begin{theorem}\label{th:orthogonal_product_inverse}
+\begin{enumerate}
+    \item\label{th:orthogonal_product}
+    If $P$ and $Q$ are orthogonal matrices, then $PQ$ is also orthogonal. (We say that the set of orthogonal matices is closed under matrix multiplication.)
+    \item\label{th:orthogonal_inverse}
+    If $P$ is an orthogonal matrix, then so is $P^{-1} = P^{T}$.
+\end{enumerate}
 
-If an orthogonal set is a basis, we call it an
-\dfn{orthogonal basis}. Similarly, if an orthonormal set is a basis, we call it an \dfn{orthonormal basis}.
-
-
-The following theorem generalizes our observation in Exploration \ref{exp:orth1a}.  As you read the statement of the theorem, it will be helpful to recall that the orthogonal projection of vector $\vec{x}$ onto a non-zero vector $\vec{d}$ is given by
-\begin{equation}\label{eq:orthProj}
-\mbox{proj}_{\vec{d}}\vec{x}=\left(\frac{\vec{x}\cdot\vec{d}}{\norm{\vec{d}}^2}\right)\vec{d}
-\end{equation}
-(See \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VEC-0070/main}{Orthogonal Projections}.)
-
-\begin{theorem}\label{th:fourierexpansion}
-Let $W$ be a subspace of $\RR^n$ and suppose $\{ \vec{f}_1, \vec{f}_2, \ldots, \vec{f}_m \}$
-is an orthogonal basis of $W$.
-Then for every $\vec{x}$ in $W$,
-\begin{equation}\label{FourierEqn}
-\vec{x} =
-\left(\frac{\vec{x}\dotp \vec{f}_1}{\norm{\vec{f}_1}^2}\right) \vec{f}_1 +
-\left(\frac{\vec{x}\dotp \vec{f}_2}{\norm{\vec{f}_2}^2}\right) \vec{f}_2 +
-\cdots +
-\left(\frac{\vec{x}\dotp \vec{f}_m}{\norm{\vec{f}_m}^2}\right) \vec{f}_m.
-\end{equation}
+\begin{proof}
+For \ref{th:orthogonal_product}, $P$ and $Q$ are invertible, so $PQ$ is also invertible and
+\begin{equation*}
+(PQ)^{-1} = Q^{-1}P^{-1} = Q^{T}P^{T} = (PQ)^{T}
+\end{equation*}
+Hence $PQ$ is orthogonal. For \ref{th:orthogonal_inverse},
+\begin{equation*}
+(P^{-1})^{-1} = P = (P^{T})^{T} = (P^{-1})^{T}
+\end{equation*}
+shows that $P^{-1}$ is orthogonal.
+\end{proof}
 \end{theorem}
 
-\begin{proof}
-We may express $\vec{x}$ as a linear combination of the basis elements:
-\[ \vec{x} =
-c_1 \vec{f}_1 +
-c_2 \vec{f}_2 +
-\cdots +
-c_m \vec{f}_m.
-\]
-We claim that $c_i = \frac{\vec{x}\dotp \vec{f}_i}{\norm{\vec{f}_i}^2}$ for $i=1,\ldots,m$. To see this, we take the dot product of
-each side with the vector $\vec{f}_i$ and obtain the following.
+\section*{Symmetric Matrices}
 
-\begin{equation*}
-  \vec{x} \dotp \vec{f}_i =  \left(c_1\vec{f}_1 +
-c_2\vec{f}_2 +
-\cdots +
-c_m\vec{f}_m\right) \dotp \vec{f}_i 
-\end{equation*}
-Our basis is orthogonal, so $\vec{f}_j \dotp \vec{f}_i = 0$ for all $j \neq i$, which means after we distribute the dot product, only one term will remain on the right-hand side.  We have 
-\begin{equation*}
-  \vec{x} \dotp \vec{f}_i =  c_i\vec{f}_i \dotp \vec{f}_i 
-\end{equation*}
+We now shift our focus from orthogonal matrices to another important class of $n \times n$ matrices called \dfn{symmetric} matrices.  A \dfn{symmetric matrix} is a matrix which is equal to its transpose.  We saw a few examples of such matrices in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0025/main}{Transpose of a Matrix}.
 
-We now divide both sides by $\vec{f}_i \dotp \vec{f}_i = \norm{\vec{f}_i}^2$, and since our claim holds for $i=1,\ldots,m$, the proof is complete.
-\end{proof}
+When we began our study of eigenvalues and eigenvectors, we saw numerous examples of matrices with entries that were real numbers with eigenvalues that were complex numbers.  It can be shown that symmetric matrices only have real eigenvalues.  We also learned that some matrices are diagonalizable while other matrices are not.  It turns out that every symmetric matrix is diagonalizable.  In fact, we can say more, but first we need the following definition.
 
-Theorem~\ref{th:fourierexpansion} shows one important benefit of a basis being orthogonal.  With an orthogonal basis it is easy to represent any vector in terms of the basis vectors.  
-
-\begin{example}\label{fourier}
-Let
-$\vec{f}_1= \begin{bmatrix}
-1 \\ -1 \\ 2
-\end{bmatrix},
-\vec{f}_2= \begin{bmatrix}
-0 \\ 2 \\ 1 
-\end{bmatrix},
-\vec{f}_3 =\begin{bmatrix}
-5 \\ 1 \\ -2
-\end{bmatrix}$,
-and let
-$\vec{x} =\begin{bmatrix}
-1 \\ 1 \\ 1
-\end{bmatrix}$.  
-
-Notice that $\mathcal{B}=\{ \vec{f}_1, \vec{f}_2, \vec{f}_3\}$
-is an orthogonal set of vectors, and $\mathcal{B}$ spans $\RR^3$.  Use this fact to write $\vec{x}$ as  a linear combination of the vectors of $\mathcal{B}$.
-
-\begin{explanation}
-We first observe that $\mathcal{B}$ is a linearly independent set of vectors, and so $\mathcal{B}$ is a basis for $\RR^3$. Next we apply Theorem~\ref{th:fourierexpansion} to express $\vec{x}$ as  a linear combination of the vectors of $\mathcal{B}$.  We wish to write:
-
-\[
-\vec{x}   =
-\left(\frac{\vec{x}\dotp \vec{f}_1}{\norm{\vec{f}_1}^2}\right) \vec{f}_1 +
-\left(\frac{\vec{x}\dotp \vec{f}_2}{\norm{\vec{f}_2}^2}\right) \vec{f}_2 +
-\left(\frac{\vec{x}\dotp \vec{f}_3}{\norm{\vec{f}_3}^2}\right) \vec{f}_3.
-\]
-
-We readily compute:
-
-\[
-\frac{\vec{x}\dotp\vec{f}_1}{\norm{\vec{f}_1}^2} = \frac{2}{6}, \;
-\frac{\vec{x}\dotp\vec{f}_2}{\norm{\vec{f}_2}^2} = \frac{3}{5},
-\mbox{ and }
-\frac{\vec{x}\dotp\vec{f}_3}{\norm{\vec{f}_3}^2} = \frac{4}{30}.\]
-
-Therefore,
-\[ \begin{bmatrix}
-1 \\ 1 \\ 1
-\end{bmatrix}
-= \frac{1}{3}\begin{bmatrix}
-1 \\ -1 \\ 2
-\end{bmatrix}
-+\frac{3}{5}\begin{bmatrix}
-0 \\ 2 \\ 1
-\end{bmatrix}
-+\frac{2}{15}\begin{bmatrix}
-5 \\ 1 \\ -2
-\end{bmatrix}.\]
-\end{explanation} 
-\end{example}
-
-The formula from Theorem~\ref{th:fourierexpansion} is easy to use, and it becomes even easier when our basis is \emph{orthonormal}.
-
-\begin{corollary}\label{cor:orthonormal}
-Let $W$ be a subspace of $\RR^n$ and suppose $\{ \vec{q}_1, \vec{q}_2, \ldots, \vec{q}_m \}$
-is an orthonormal basis of $W$.
-Then for any $\vec{x}$ in $W$,
-\[ \vec{x} =
-\left(\vec{x}\dotp \vec{q}_1\right) \vec{q}_1 +
-\left(\vec{x}\dotp \vec{q}_2\right) \vec{q}_2 +
-\cdots +
-\left(\vec{x}\dotp \vec{q}_m\right)  \vec{q}_m.
-\]
-\end{corollary}
-\begin{proof}
-This is a special case of Theorem \ref{th:fourierexpansion}.  Because $\norm{\vec{u_i}} = 1$ for $i=1,\ldots,m$, %where we can compute the coefficients of $x$ with respect to the basis by simply taking the dot product with each basis vector, for in this case 
-the terms are given by 
-$$\left(\frac{\vec{x}\cdot \vec{q}_i}{\norm{\vec{q}_i}^2}\right)\vec{q}_i=\left(\vec{x}\dotp \vec{q}_i\right) \vec{q}_i.$$
-
-\end{proof}
-
-\subsection*{Orthogonal Projection onto a Subspace}
-In the previous section we found that given a subspace $W$ of $\RR^n$ with an orthogonal basis $\mathcal{B}$, every vector $\vec{x}$ in $W$ can be expressed as the sum of the orthogonal projections of $\vec{x}$ onto the elements of $\mathcal{B}$.  Note that our premise was that $\vec{x}$ is in $W$.  In this section, we look into the meaning of the sum of orthogonal projections of $\vec{x}$ onto the elements of an orthogonal basis of $W$ for those vectors $\vec{x}$ of $\RR^n$ that are \emph{not} in $W$.
-
-\begin{exploration}\label{exp:orthProjSub}
-In the GeoGebra interactive below, $W$ is a plane spanned by $\vec{v}_1$ and $\vec{v}_2$, in $\RR^3$.  $W$ is subspace of $\RR^3$.  In the initial set up, $\vec{v}_1$ and $\vec{v}_2$ are orthogonal.  Vector $\vec{x}$ is not in $W$.  
-
-Use check-boxes to construct the sum of orthogonal projections of $\vec{x}$ onto $\vec{v}_1$ and $\vec{v}_2$.  RIGHT-CLICK and DRAG to rotate the image.   
-
-\pdfOnly{
-Access GeoGebra interactives through the online version of this text at 
-
-\href{https://ximera.osu.edu/oerlinalg}{https://ximera.osu.edu/oerlinalg}.
-}
-
-\begin{onlineOnly}
-\begin{center}
-\geogebra{hehqyayz}{950}{800}
-\end{center}
-\end{onlineOnly}
-
-\begin{question}
-If moved, return the basis vectors $\vec{v}_1$ and $\vec{v}_2$ to their default position (set $s_1=s_2=0$) to ensure that they are orthogonal.  
-
-\begin{itemize}
-\item Rotate the image to convince yourself that the perpendiculars dropped from the tip of $\vec{x}$ to $\vec{v}_1$ and $\vec{v}_2$ are indeed perpendicular to $\vec{v}_1$ and $\vec{v}_2$ in the diagram. (You'll have to look at it just right to convince yourself of this.)  Are both of these perpendiculars also necessarily perpendicular to the plane? \wordChoice{\choice{Yes}, \choice[correct]{No}}
-
-\item Use sliders $x_1, x_2$ and $x_3$ to manipulate $\vec{x}$.  Rotate the figure for a better view.  What is true about about vector $\vec{p}$?
-    
-    \begin{multipleChoice}
- \choice{$\vec{p}=\vec{x}-(\mbox{proj}_{\vec{v}_1}\vec{x}+\mbox{proj}_{\vec{v}_2}\vec{x})$.}
- \choice{Vector $\vec{p}$ is orthogonal to $W$.}
- \choice[correct]{All of the above.}
- \end{multipleChoice}
- 
-  \item Rotate the figure so that you're looking directly down at the plane.  If you're looking at it correctly, you will notice that (1) the parallelogram determined by the projections of $\vec{x}$ onto $\vec{v}_1$ and $\vec{v}_2$ is a rectangle; (2) the sum of projections, $\mbox{proj}_{\vec{v}_1}\vec{x}+\mbox{proj}_{\vec{v}_2}\vec{x}$, is located directly underneath $\vec{x}$, like a shadow at midday.
- \end{itemize} 
- \end{question}
-
- \begin{question}
- Use sliders $s_1$ and $s_2$ to manipulate the basis vectors $\vec{v}_1$ and $\vec{v}_2$ so that they are no longer orthogonal.  
-
-\begin{itemize}
- \item 
- Rotate the figure for a better view.  Which of the following is true?
- \begin{multipleChoice}
- \choice[correct]{$\vec{p}=\vec{x}-(\mbox{proj}_{\vec{v}_1}\vec{x}+\mbox{proj}_{\vec{v}_2}\vec{x})$.}
- \choice{Vector $\vec{p}$ is orthogonal to $W$.}
-  \choice{All of the above.}
- \end{multipleChoice}
- \item
- Rotate your figure so that you're looking directly down at the plane. Which of the following is true?
- \begin{multipleChoice}
- \choice{Parallelogram determined by $\vec{v}_1$ and $\vec{v}_2$ is a rectangle.}
- \choice{$\mbox{proj}_{\vec{v}_1}\vec{x}+\mbox{proj}_{\vec{v}_2}\vec{x}$ is located directly underneath $\vec{x}$.}
-  \choice[correct]{None of the above.}
- \end{multipleChoice}
-\end{itemize}
-\end{question}
-\end{exploration}
-
-In Exploration \ref{exp:orthProjSub}, you discovered that given a plane, spanned by orthogonal vectors $\vec{v}_1,\vec{v}_2$, in $\RR^3$, and a vector $\vec{x}$, not in the plane, we can interpret the sum of orthogonal projections of $\vec{x}$ onto $\vec{v}_1$ and $\vec{v}_2$ as a ``shadow" of $\vec{x}$ that lies in the plane directly underneath the vector $\vec{x}$. We say that this ``shadow" is an \dfn{orthogonal projection of $\vec{x}$ onto $W$}. You have also found that if $\vec{v}_1,\vec{v}_2$ are not orthogonal, the parallelogram representing the sum of the orthogonal projections of $\vec{x}$ onto $\vec{v}_1$ and $\vec{v}_2$ will not be a rectangle.  In this case, $\vec{x}$ minus this sum will NOT be orthogonal to the plane.  It is essential that $\vec{v}_1,\vec{v}_2$ are orthogonal for $\mbox{proj}_{\vec{v}_1}\vec{x}+\mbox{proj}_{\vec{v}_2}\vec{x}$ to be considered an orthogonal projection.  
-
-In general, we can define an orthogonal projection of $\vec{x}$ in $\RR^n$ onto a subspace $W$ of $\RR^n$ as the sum of the orthogonal projections of $\vec{x}$ onto the elements of an orthogonal basis of $W$.  %We denote such a projection by $\mbox{proj}_V(\vec{x})$. An important aspect of this definition is that it allows us to express $\vec{x}$ as the sum of its orthogonal projection, $\vec{w}$, onto $W$ and a vector orthogonal to $\vec{w}$, called $\vec{w}^\perp$.  
-Definition \ref{def:projOntoSubspace} and the subsequent diagram summarize this discussion.
-
-
-\begin{definition}[Projection onto a Subspace of $\RR^n$]\label{def:projOntoSubspace}
-Let $W$ be a subspace of $\RR^n$ with orthogonal basis $\{\vec{f}_{1}, \vec{f}_{2}, \dots, \vec{f}_{m}\}$. If $\vec{x}$ is in $\RR^n$, the vector
-\begin{equation}\label{def:projectontoWeasy}
-\vec{w}=\mbox{proj}_W(\vec{x}) = \mbox{proj}_{\vec{f}_1}\vec{x} + \mbox{proj}_{\vec{f}_2}\vec{x} + \dots + \mbox{proj}_{\vec{f}_m}\vec{x}
-\end{equation}
-is called the \dfn{orthogonal projection} of $\vec{x}$ onto $W$.  %The vector $\vec{x}-\vec{w}$ is called the \dfn{component of $\vec{x}$ orthogonal to $\vec{w}$}.  We will write $\vec{w}^\perp = \vec{x}-\vec{w}$.
+\begin{definition}\label{def:orthDiag}
+An $n \times n$ matrix $A$ is said to be \dfn{orthogonally diagonalizable} if an orthogonal matrix $Q$ can be found such that  $Q^{-1}AQ = Q^{T}AQ$ is diagonal.
 \end{definition}
 
-An illustration of Definition \ref{def:projOntoSubspace} for a two-dimensional subspace $W$ with orthogonal basis $\{\vec{f}_1,\vec{f}_2\}$ is shown below.
-\begin{center}
-\tdplotsetmaincoords{70}{130}
-	\begin{tikzpicture}[scale=0.8]
-\filldraw[blue, opacity=0.2] (0,0,0)--(5,0,0)--(5,0,5)--(0,0,5)--cycle;
-\draw[->,line width=0.4mm, -stealth, blue](0,0,0)--(6,0,0) ;
-\draw[->,line width=0.4mm, -stealth, blue](0,0,0)--(0,0,6) ;
-\node[label={above:$\vec{f}_1$}] at (6,0,0) {};
-\node[label={above:$W$}] at (5.2,0,5) {};
-\node[label={left:$\vec{f}_2$}] at (0,0,6) {};
-\node[label={above:$\vec{x}$}] at (2,1.5,2) {};
-\node[label={above:$\vec{w}$}] at (2.2,0,3.5) {};
-\draw[-,line width=0.2mm, dashed](4,3,4)--(4,0,4) ;
-    \draw[-,line width=0.2mm, dashed](0,0,4)--(4,0,4) ;
-    \draw[-,line width=0.2mm, dashed](4,0,4)--(4,0,0) ;
-    \draw[->,line width=1.5mm, -stealth, black,opacity=0.4](0,0,0)--(0,0,4) ;
-    \draw[->,line width=1.5mm, -stealth, black,opacity=0.4](0,0,0)--(4,0,0) ;
-   \draw[->,line width=0.8mm, -stealth, red](0,0,0)--(4,3,4) ;
-    \draw[->,line width=1.5mm, -stealth, red,opacity=0.2](0,0,0)--(4,0,4) ;
-    \node[label={below:$\vec{w}=\mbox{proj}_W\vec{x}=\mbox{proj}_{\vec{f}_1}\vec{x}+\mbox{proj}_{\vec{f}_2}\vec{x}$}] at (3,-1,3) {};
-      \end{tikzpicture}
-\end{center}
+We have learned earlier that when we diagonalize a matrix $A$, we write $P^{-1}AP=D$ for some matrix $P$ where $D$ is diagonal, and the diagonal entries are the eigenvalues of $A$.  We have also learned that the columns of the matrix $P$ are the corresponding eigenvectors of $A$.  So when a matrix is orthogonally diagonalizable, we are able to accomplish the diagonalization using a matrix $Q$ consisting of $n$ eigenvectors that form an orthonormal basis for $\RR^n$.  The following remarkable theorem shows that the matrices that have this property are precisely the symmetric matrices.
 
-Using equation (\ref{eq:orthProj}) multiple times, we can also express $\vec{w}$ in Definition \ref{def:projOntoSubspace} using the following formula.
-
-\begin{formula}\label{form:orthProjOntoW}
-\begin{equation}\label{def:projectontoW}
-\vec{w} = \mbox{proj}_W(\vec{x}) =\frac{\vec{x} \dotp \vec{f}_{1}}{\norm{\vec{f}_{1}}^2}\vec{f}_{1} + \frac{\vec{x} \dotp \vec{f}_{2}}{\norm{\vec{f}_{2}}^2}\vec{f}_{2}+ \dots +\frac{\vec{x} \dotp \vec{f}_{m}}{\norm{\vec{f}_{m}}^2}\vec{f}_{m}
-\end{equation}
-\end{formula}
-
-\subsection*{Orthogonal Decomposition of $\vec{x}$}
-Definition \ref{def:projOntoSubspace} allows us to express $\vec{x}$ as the sum of its orthogonal projection, $\vec{w}=\mbox{proj}_W\vec{x}$, located in $W$, and a vector we will call $\vec{w}^\perp$ (pronounced ``W-perp"), given by $\vec{w}^\perp=\vec{x}-\vec{w}$. This decomposition of $\vec{x}$ is shown in the diagram below.  
-\begin{center}
-\tdplotsetmaincoords{70}{130}
-	\begin{tikzpicture}[scale=0.8]
-\filldraw[blue, opacity=0.2] (0,0,0)--(5,0,0)--(5,0,5)--(0,0,5)--cycle;
-\node[label={above:$\vec{x}$}] at (2,1.5,2) {};
-\node[label={above:$\vec{w}$}] at (2.2,0,3.5) {};
-\node[label={above:$\vec{w}^{\perp}$}] at (5.3,2.2,6) {};
-\draw[->,line width=0.8mm, -stealth, red](0,0,0)--(4,3,4) ;
-    \draw[->,line width=1.5mm, -stealth, red,opacity=0.2](0,0,0)--(4,0,4) ;
-\draw[->,line width=1.5mm, -stealth, red,opacity=0.2](4,0,4)--(4,3,4) ;
-    \node[label={below:$\vec{x}=\vec{w}+\vec{w}^{\perp}$}] at (3,-1,3) {};
-    \node[label={above:$W$}] at (5,0,1.9) {};
-      \end{tikzpicture}
-          
-     \end{center}
-You have already met $\vec{w}^\perp$, under the name of $\vec{p}$ in Exploration \ref{exp:orthProjSub}, and observed that this vector is orthogonal to $W$. We will now prove that $\vec{w}^\perp$ is orthogonal to every vector in $W$.  This will be accomplished in two steps.  First, in Theorem \ref{th:orthDecompX} we will prove that $\vec{w}^\perp$ is orthogonal to all of the basis elements of $W$. Next, you will use this result to demonstrate that $\vec{w}^\perp$ is orthogonal to every vector in $W$.
-
-\begin{theorem}\label{th:orthDecompX}
-Let $W$ be a subspace of $\RR^n$ with orthogonal basis $\{\vec{f}_{1}, \vec{f}_{2}, \dots, \vec{f}_{m}\}$. Let $\vec{x}$ be in $\RR^n$, and define $\vec{w}^\perp$ as
-\begin{equation*}
-\vec{w}^\perp=\vec{x}-\mbox{proj}_W\vec{x} = \vec{x}-(\mbox{proj}_{\vec{f}_1}\vec{x} + \mbox{proj}_{\vec{f}_2}\vec{x} + \dots + \mbox{proj}_{\vec{f}_m}\vec{x})
-\end{equation*}
-Then $\vec{w}^\perp$ is orthogonal to $\vec{f}_i$ for $1\leq i\leq m$.
+\begin{theorem}[Real Spectral Theorem]\label{th:PrinAxes}
+Let  $A$ be an $n \times n$ matrix.  Then $A$ is symmetric if and only if $A$ is orthogonally diagonalizable.
 \end{theorem}
 \begin{proof}
-We will use Formula \ref{form:orthProjOntoW} to show that $\vec{w}^\perp\cdot \vec{f}_i$=0.  Recall that $\{\vec{f}_{1}, \vec{f}_{2}, \dots, \vec{f}_{m}\}$ is an orthogonal basis.  Therefore $\vec{f}_j\dotp\vec{f}_i=0$ for $i\neq j$.  This observation enables us to compute as follows.
-\begin{eqnarray*}
-\vec{w}^\perp\cdot \vec{f}_i&=&\left[\vec{x}-\left(\frac{\vec{x} \dotp \vec{f}_{1}}{\norm{\vec{f}_{1}}^2}\vec{f}_{1} +\dots + \frac{\vec{x} \dotp \vec{f}_{i}}{\norm{\vec{f}_{i}}^2}\vec{f}_{i}+ \dots +\frac{\vec{x} \dotp \vec{f}_{m}}{\norm{\vec{f}_{m}}^2}\vec{f}_{m}\right)\right]\cdot \vec{f}_i\\
-& =& \vec{x}\dotp \vec{f}_i- \frac{\vec{x} \dotp \vec{f}_{i}}{\norm{\vec{f}_{i}}^2}(\vec{f}_{i}\dotp\vec{f}_i)\\
-&=& \vec{x}\dotp \vec{f}_i- \frac{\vec{x} \dotp \vec{f}_{i}}{\norm{\vec{f}_{i}}^2}\norm{\vec{f}_{i}}^2=\vec{x}\dotp \vec{f}_i-\vec{x}\dotp \vec{f}_i=0
-\end{eqnarray*}
+If $A$ is orthogonally diagonalizable, then it is an easy exercise to prove that it is symmetric.  You are asked to do this in Practice Problem \ref{prob:ortho_diag_implies_symmetric}.
+
+To prove the ``only if'' part of this theorem, we assume $A$ is symmetric, and we need to show it is orthogonally diagonalizable.  We proceed by induction on $n$, the size of the symmetric matrix. If $n = 1$, $A$ is already diagonal. If $n > 1$, assume that we know the ``only if'' statement holds for $(n - 1) \times (n - 1)$ symmetric matrices. Let $\lambda_{1}$ be an eigenvalue of $A$, and let $A\vec{x}_{1} = \lambda_{1}\vec{x}_{1}$, where $\norm{\vec{x}_{1}} = 1$. Next, set $\vec{q}_{1}=\vec{x}_{1}$, and use the Gram-Schmidt algorithm to find an orthonormal basis $\{\vec{q}_{1}, \vec{q}_{2}, \dots, \vec{q}_{n}\}$ for $\RR^n$. Let $Q_{1} = \begin{bmatrix}
+| & | &   & | \\
+\vec{q}_1 & \vec{q}_2  & \cdots & \vec{q}_n \\
+| & | &   & |
+\end{bmatrix}$, so that $Q_{1}$ is an orthogonal matrix.  We have
+\begin{align*}
+Q_{1}^TAQ_{1} &= \begin{bmatrix}
+-- & \vec{q}_{1}^T & -- \\ -- & \vec{q}_{2}^T & -- \\ & \vdots & \\ -- & \vec{q}_{n}^T & --
+\end{bmatrix} A \begin{bmatrix}
+| & | &   & | \\
+\vec{q}_1 & \vec{q}_2  & \cdots & \vec{q}_n \\
+| & | &   & |
+\end{bmatrix} \\
+&= \begin{bmatrix}
+-- & \vec{q}_{1}^T & -- \\ -- & \vec{q}_{2}^T & -- \\ & \vdots & \\ -- & \vec{q}_{n}^T & --
+\end{bmatrix} \begin{bmatrix}
+| & | &   & | \\
+A\vec{q}_1 & A\vec{q}_2  & \cdots & A\vec{q}_n \\
+| & | &   & |
+\end{bmatrix} \\
+&=
+\begin{bmatrix}
+\lambda_{1} & B \\
+\vec{0} & A_{1}
+\end{bmatrix},\\
+\end{align*} 
+where the block $B$ has dimensions $1 \times (n-1)$, and the block under $\lambda_1$ is a $(n-1) \times 1$ zero matrix, because of the orthogonality of the basis vectors.
+
+Next, using the fact that $A$ is symmetric, we notice that
+$$(Q_{1}^TAQ_{1})^T = Q_{1}^T A^T (Q_{1}^T)^T = Q_{1}^TAQ_{1},$$ so $Q_{1}^TAQ_{1}$ is symmetric.  It follows that $B$ is also a zero matrix and that $A_{1}$ is symmetric.  Since $A_{1}$ is an $(n - 1) \times (n - 1)$ symmetric matrix, we may apply the inductive hypothesis, so there exists an $(n - 1) \times (n - 1)$ orthogonal matrix $Q$ such that $Q^{T}A_{1}Q = D_{1}$ is diagonal. We observe that $Q_{2} = \begin{bmatrix}
+ 1 & 0\\
+ 0 & Q
+ \end{bmatrix}$
+ is orthogonal, and we compute:
+\begin{align*}
+(Q_{1}Q_{2})^TA(Q_{1}Q_{2}) &= Q_{2}^T(Q_{1}^TAQ_{1})Q_{2} \\
+&= \begin{bmatrix}
+1 & 0 \\
+0 & Q^T
+\end{bmatrix} \begin{bmatrix}
+\lambda_{1} & 0 \\
+0 & A_{1}
+\end{bmatrix}\begin{bmatrix}
+1 & 0 \\
+0 & Q
+\end{bmatrix}\\
+&= \begin{bmatrix}
+\lambda_{1} & 0 \\
+0 & D_{1}
+\end{bmatrix}
+\end{align*}
+is diagonal. Because $Q_{1}Q_{2}$ is orthogonal by Theorem \ref{th:orthogonal_product_inverse}\ref{th:orthogonal_product}, this completes the proof.
 \end{proof}
 
-We leave the proof of the following Corollary as Practice Problem \ref{prob:proofCor}
-\begin{corollary}\label{cor:orthProjOntoW}
-Let $W$ be a subspace of $\RR^n$ with orthogonal basis $\{\vec{f}_{1}, \vec{f}_{2}, \dots, \vec{f}_{m}\}$. Let $\vec{x}$ be in $\RR^n$, and define $\vec{w}^\perp$ as
+
+Because the eigenvalues of a real symmetric matrix are real, Theorem~\ref{th:PrinAxes} is also called the \dfn{Real Spectral Theorem}, and the set of distinct eigenvalues is called the \dfn{spectrum} of the matrix. A similar result holds for matrices with complex entries (Theorem \ref{th:025890}).
+
+
+\begin{example}\label{ex:DiagonalizeSymmetricMatrix}
+Find an orthogonal matrix $Q$ such that $Q^{-1}AQ$ is diagonal, where $A = \begin{bmatrix}
+1 & 0 & -1 \\
+0 & 1 & 2 \\
+-1 & 2 & 5
+\end{bmatrix}$.
+
+\begin{explanation}
+ The characteristic polynomial of $A$ is (adding twice row 1 to row 2):
 \begin{equation*}
-\vec{w}^\perp=\vec{x}-\mbox{proj}_W\vec{x} = \vec{x}-(\mbox{proj}_{\vec{f}_1}\vec{x} + \mbox{proj}_{\vec{f}_2}\vec{x} + \dots + \mbox{proj}_{\vec{f}_m}\vec{x})
+c_{A}(z) = \det \begin{bmatrix}
+z - 1 & 0 & 1 \\
+0 & z - 1 & -2 \\
+1 & -2 & z - 5
+\end{bmatrix} = z(z - 1)(z - 6)
 \end{equation*}
-Then $\vec{w}^\perp$ is orthogonal to every vector in $W$.
+Thus the eigenvalues are $\lambda = 0$, $1$, and $6$, and corresponding eigenvectors are
+\begin{equation*}
+\vec{x}_{1} = \begin{bmatrix}
+1 \\
+-2 \\
+1
+\end{bmatrix} \;
+\vec{x}_{2} = \begin{bmatrix}
+2 \\
+1 \\
+0
+\end{bmatrix} \;
+\vec{x}_{3} = \begin{bmatrix}
+-1 \\
+2 \\
+5
+\end{bmatrix}
+\end{equation*}
+respectively. Moreover, by what at first appears to be remarkably good luck, these eigenvectors are \textit{orthogonal}. We have $\norm{\vec{x}_{1}}^{2} = 6$, $\norm{\vec{x}_{2}}^{2} = 5$, and $\norm{\vec{x}_{3}}^{2} = 30$, so
+\begin{equation*}
+P = \begin{bmatrix}
+| & | &  | \\
+\frac{1}{\sqrt{6}}\vec{x}_{1} & \frac{1}{\sqrt{5}}\vec{x}_{2} & \frac{1}{\sqrt{30}}\vec{x}_{3} \\
+| & | &  | 
+\end{bmatrix} = \frac{1}{\sqrt{30}} \begin{bmatrix}
+\sqrt{5} & 2\sqrt{6} & -1 \\
+-2\sqrt{5} & \sqrt{6} & 2 \\
+\sqrt{5} & 0 & 5
+\end{bmatrix}
+\end{equation*}
+is an orthogonal matrix. Thus $P^{-1} = P^{T}$ and
+\begin{equation*}
+P^TAP = \begin{bmatrix}
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 6
+\end{bmatrix}.
+\end{equation*}
+
+\end{explanation}
+\end{example}
+
+Actually, the fact that the eigenvectors in Example~\ref{ex:DiagonalizeSymmetricMatrix} are orthogonal is no coincidence. These vectors certainly must be linearly independent (they correspond to distinct eigenvalues).  We will see that the fact that the matrix is \textit{symmetric} implies that the eigenvectors are orthogonal. To prove this we need the following useful fact about symmetric matrices.
+
+\begin{theorem}\label{th:dotpSymmetric}
+If A is an $n \times n$ symmetric matrix, then
+\begin{equation*}
+(A\vec{x}) \dotp \vec{y} = \vec{x} \dotp (A\vec{y})
+\end{equation*}
+for all columns $\vec{x}$ and $\vec{y}$ in $\RR^n$.
+\end{theorem}
+\begin{remark}
+The converse also holds (see Practice Problem \ref{ex:8_2_15}).
+\end{remark}
+
+\begin{proof}
+Recall that $\vec{x} \dotp \vec{y} = \vec{x}^{T} \vec{y}$ for all columns $\vec{x}$ and $\vec{y}$. Because $A^{T} = A$, we get
+\begin{equation*}
+(A\vec{x}) \dotp \vec{y} = (A\vec{x})^T\vec{y} = \vec{x}^TA^T\vec{y} =  \vec{x}^TA\vec{y} = \vec{x} \dotp (A\vec{y})
+\end{equation*}
+\end{proof}
+
+\begin{theorem}\label{th:symmetric_has_ortho_ev}
+If $A$ is a symmetric matrix, then eigenvectors of $A$ corresponding to distinct eigenvalues are orthogonal.
+\end{theorem}
+
+\begin{proof}
+Let $A\vec{x} = \lambda \vec{x}$ and $A\vec{y} = \mu \vec{y}$, where $\lambda \neq \mu$. We compute
+\begin{equation*}
+\lambda(\vec{x} \dotp \vec{y}) = (\lambda\vec{x}) \dotp \vec{y} = (A\vec{x}) \dotp \vec{y} = \vec{x} \dotp (A\vec{y}) = \vec{x} \dotp (\mu\vec{y}) = \mu(\vec{x} \dotp \vec{y})
+\end{equation*}
+Hence $(\lambda - \mu)(\vec{x} \dotp \vec{y}) = 0$, and so $\vec{x} \dotp \vec{y} = 0$ because $\lambda \neq \mu$.
+\end{proof}
+
+Now the procedure for diagonalizing a symmetric $n \times n$ matrix is clear. Find the distinct eigenvalues
+ and find orthonormal bases for each eigenspace (the Gram-Schmidt
+algorithm may be needed when there is a repeated eigenvalue). Then the set of all these basis vectors is
+orthonormal (by Theorem~\ref{th:symmetric_has_ortho_ev}) and contains $n$ vectors. Here is an example.
+
+\begin{example}\label{exa:ortho_diag_symm}
+Orthogonally diagonalize the symmetric matrix $A = \begin{bmatrix}
+8 & -2 & 2 \\
+-2 & 5 & 4 \\
+2 & 4 & 5
+\end{bmatrix}$.
+
+
+\begin{explanation}
+  The characteristic polynomial is
+\begin{equation*}
+c_{A}(z) = \det  \begin{bmatrix}
+z-8 & 2 & -2 \\
+2 & z-5 & -4 \\
+-2 & -4 & z-5
+\end{bmatrix} = z(z-9)^2
+\end{equation*}
+Hence the distinct eigenvalues are $0$ and $9$ are of algebraic multiplicity $1$ and $2$, respectively.  The geometric multiplicities must be the same, for $A$ is diagonalizable, being symmetric. It follows that $\mbox{dim}(\mathcal{S}_0) = 1$ and $\mbox{dim}(\mathcal{S}_9) = 2$.  Gaussian elimination gives
+\begin{equation*}
+\mathcal{S}_{0}(A) = \mbox{span}\{\vec{x}_{1}\}, \quad \vec{x}_{1} = \begin{bmatrix}
+1 \\
+2 \\
+-2
+\end{bmatrix}, \quad \mbox{ and } \quad \mathcal{S}_{9}(A) = \mbox{span} \left\lbrace \begin{bmatrix}
+	-2 \\
+	1 \\
+	0
+	\end{bmatrix}, \begin{bmatrix}
+2 \\
+0 \\
+1
+\end{bmatrix} \right\rbrace
+\end{equation*}
+The eigenvectors in $\mathcal{S}_{9}$ are both orthogonal to $\vec{x}_{1}$ as Theorem~\ref{th:symmetric_has_ortho_ev} guarantees, but not to each other. However, the Gram-Schmidt process yields an orthogonal basis
+\begin{equation*}
+\{\vec{f}_{2}, \vec{f}_{3}\} \mbox{ of } \mathcal{S}_{9}(A) \quad \mbox{ where } \quad \vec{f}_{2} = \begin{bmatrix}
+-2 \\
+1 \\
+0
+\end{bmatrix} \mbox{ and }  \vec{f}_{3} = \begin{bmatrix}
+2 \\
+4 \\
+5
+\end{bmatrix}
+\end{equation*}
+Normalizing gives orthonormal vectors $\{\frac{1}{3}\vec{x}_{1}, \frac{1}{\sqrt{5}}\vec{f}_{2}, \frac{1}{3\sqrt{5}}\vec{f}_{3}\}$, so
+\begin{equation*}
+Q = \begin{bmatrix}
+| & | &  | \\
+\frac{1}{3}\vec{x}_{1} & \frac{1}{\sqrt{5}}\vec{f}_{2} & \frac{1}{3\sqrt{5}}\vec{f}_{3} \\
+| & | &  | 
+\end{bmatrix} = \frac{1}{3\sqrt{5}}\begin{bmatrix}
+\sqrt{5} & -6 & 2 \\
+2\sqrt{5} & 3 & 4 \\
+-2\sqrt{5} & 0 & 5
+\end{bmatrix}
+\end{equation*}
+is an orthogonal matrix such that $Q^{-1}AQ$ is diagonal.
+
+
+It is worth noting that other, more convenient, diagonalizing matrices $Q$ exist. For example, $\vec{y}_{2} = \begin{bmatrix}
+2 \\
+1 \\
+2
+\end{bmatrix}$ and $\vec{y}_{3} = \begin{bmatrix}
+-2 \\
+2 \\
+1
+\end{bmatrix}$
+ lie in $\mathcal{S}_{9}(A)$ and they are orthogonal. Moreover, they both have norm $3$ (as does $\vec{x}_{1}$), so
+\begin{equation*}
+\hat{Q} = \begin{bmatrix}
+| & | &  | \\
+\frac{1}{3}\vec{x}_{1} & \frac{1}{3}\vec{y}_{2} & \frac{1}{3}\vec{y}_{3} \\
+| & | &  |
+\end{bmatrix} = \frac{1}{3}\begin{bmatrix}
+1 & 2 & -2 \\
+2 & 1 & 2 \\
+-2 & 2 & 1
+\end{bmatrix}
+\end{equation*}
+is a nicer orthogonal matrix with the property that $\hat{Q}^{-1}A\hat{Q}$ is diagonal.
+\end{explanation}
+\end{example}
+
+\begin{theorem}\label{th:PrinAxesOtherStuff}
+Let $A$ be an $n \times n$ matrix.  $A$ has an orthonormal set of $n$ eigenvectors if and only if $A$ is orthogonally diagonalizable.
+
+\begin{proof}
+Let $\vec{q}_{1}, \vec{q}_{2}, \dots, \vec{q}_{n}$ be orthonormal eigenvectors of $A$ with corresponding eigenvalues $\lambda_1, \lambda_2, \ldots, \lambda_n$ .  We must show $A$ is orthogonally diagonalizable. Let $Q = \begin{bmatrix}
+| & | &   & | \\
+\vec{q}_1 & \vec{q}_2  & \cdots & \vec{q}_n \\
+| & | &   & |
+\end{bmatrix}$ so that $Q$ is orthogonal.  We have
+$$AQ = \begin{bmatrix}
+| & | &   & | \\
+A\vec{q}_1 & A\vec{q}_2  & \cdots & A\vec{q}_n \\
+| & | &   & |
+\end{bmatrix} = \begin{bmatrix}
+| & | &   & | \\
+\lambda_1 \vec{q}_{1} & \lambda_2 \vec{q}_{2} & \dots & \lambda_n \vec{q}_{n} \\
+| & | &   & |
+\end{bmatrix}=QD, $$
+where $D$ is the diagonal matrix with diagonal entries $\lambda_1, \lambda_2, \ldots, \lambda_n$.  But then $Q^TAQ=D$, proving this half of the theorem.
+
+For the converse, if $A$ is orthogonally diagonalizable, then by Theorem \ref{th:PrinAxes} it is symmetric.  But then Theorem~\ref{th:symmetric_has_ortho_ev} tells us that eigenvectors corresponding to distinct eigenvalues are orthogonal.  Because $A$ is (orthogonally) diagonalizable, we know the geometric multiplicity of each eigenvalue is equal to its algebraic multiplicity.  This implies that we can use Gram-Schmidt on each eigenspace of dimension $> 1$ to get a full set of $n$ orthogonal eigenvectors.
+\end{proof}
+\end{theorem}
+
+If we are willing to replace ``diagonal'' by ``upper triangular'' in the real spectral theorem, we can weaken the requirement that $A$ is symmetric to insisting only that $A$ has real eigenvalues.
+
+\begin{theorem}[Schur Triangularization Theorem]\label{th:Schur}
+If $A$ is an $n \times n$ matrix with $n$ real eigenvalues, an orthogonal matrix $Q$ exists such that $Q^{T}AQ$ is upper triangular.
+\end{theorem}
+\remark{There is also a lower triangular version of this theorem.}
+
+\begin{proof}
+See Practice Problem \ref{prob:SchurChallenge}
+\end{proof}
+
+The eigenvalues of an upper triangular matrix are displayed along the main diagonal. Because $A$ and $Q^{T}AQ$ have the same determinant and trace whenever $Q$ is orthogonal (for they are similar matrices), Theorem~\ref{th:Schur} gives:
+
+\begin{corollary}\label{cor:det_and_tr}
+If $A$ is an $n \times n$ matrix with real eigenvalues $\lambda_{1}, \lambda_{2}, \dots, \lambda_{n}$ (possibly not all distinct), then $\det A = \lambda_{1}\lambda_{2} \dots \lambda_{n}$ and $\mbox{tr} A = \lambda_{1} + \lambda_{2} + \dots  + \lambda_{n}$.
 \end{corollary}
-
-
-
-The fact that the decomposition of $\vec{x}$ into the sum of $\vec{w}$ and $\vec{w}^\perp$ is unique is the subject of the Orthogonal Decomposition Theorem which we will prove in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0020/main}{Orthogonal Complements and Decompositions}.
-
-Throughout this section we have worked with orthogonal bases of subspaces.  Does every subspace of $\RR^n$ have an orthogonal basis?  If so, how do we find one?  These questions will be addressed in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0015/main}{Gram-Schmidt Orthogonalization}.
+\remark{This corollary remains true even if the eigenvalues are not real.} 
 
 \section*{Practice Problems}
-\begin{problem}\label{prob:rref_way}
-Retry Example~\ref{fourier} using Gaussian elimination.  Which method seems easier to you?
+
+\begin{problem}\label{prob:ortho_diag_implies_symmetric}
+Suppose $A$ is orthogonally diagonalizable.  Prove that $A$ is symmetric.  (This is the easy direction of the "if and only if" in Theorem \ref{th:PrinAxes}.)
 \end{problem}
 
-\begin{problem}\label{prob:vec_eq_0}
-    Let $\vec{x}_1, \vec{x}_2, \ldots, \vec{x}_k\in\RR^n$ and
-suppose $\mbox{span}\{\vec{x}_1, \vec{x}_2, \ldots, \vec{x}_k\}=\RR^n$.
-Furthermore, suppose that there exists a vector $\vec{v}\in\RR^n$ for which $\vec{v}\dotp \vec{x}_j=0$ for all $j$, $1\leq j\leq k$.
-Show that $\vec{v}=\vec{0}$.
+\begin{problem}%\label{prob:make_ortho_matrix}
+Normalize the rows to make each of the following matrices orthogonal.
+
+% 
+\begin{problem}\label{prob:make_ortho_matrix1} 
+$A = \begin{bmatrix}
+1 & 1 \\
+-1 & 1
+\end{bmatrix}$
 \end{problem}
 
-\emph{Problems \ref{OrthoProj1.1}-\ref{OrthoProj1.3}}
-
-Let $\vec{x} = \begin{bmatrix}1\\ -2\\ 1\\ 6\end{bmatrix}$ in $\RR^4$, and let $W = \mbox{span}\left(\begin{bmatrix}2\\ 1\\ 3\\ -4\end{bmatrix}, \begin{bmatrix}1\\ 2\\ 0\\ 1\end{bmatrix}\right)$.
-
-\begin{problem}\label{OrthoProj1.1}
-Compute $\mbox{proj}_W(\vec{x})$.
-
-Answer:  $$\frac{1}{10}\begin{bmatrix}\answer{-9}\\\answer{3}\\\answer{-21}\\\answer{33}\end{bmatrix}$$
+\begin{problem}\label{prob:make_ortho_matrix3}
+$A = \begin{bmatrix}
+1 & 2 \\
+-4 & 2
+\end{bmatrix}$
 \end{problem}
 
-\begin{problem}\label{OrthoProj1.2}
-Show that $\left\{\begin{bmatrix}1\\ 0\\ 2\\ -3\end{bmatrix}, \begin{bmatrix}4\\ 7\\ 1\\ 2\end{bmatrix}\right\}$ is another orthogonal basis of $W$.
+\begin{problem}\label{prob:make_ortho_matrix5}
+$A = \begin{bmatrix}
+\cos\theta & -\sin\theta & 0 \\
+\sin\theta & \cos\theta & 0 \\
+0 & 0 & 2
+\end{bmatrix}$
 \end{problem}
 
-\begin{problem}\label{OrthoProj1.3}
-Use the basis in Problem \ref{OrthoProj1.2} to compute $\mbox{proj}_W(\vec{x})$.
+\begin{problem}\label{prob:make_ortho_matrix7}
+$A = \begin{bmatrix}
+-1 & 2 & 2 \\
+2 & -1 & 2 \\
+2 & 2 & -1
+\end{bmatrix}$
+\end{problem}
+\end{problem}
 
-Answer:  $$\frac{1}{70}\begin{bmatrix}\answer{-63}\\\answer{21}\\\answer{-147}\\\answer{231}\end{bmatrix}$$
+\begin{problem}\label{prob:triag_orthogonal}
+If $Q$ is a triangular orthogonal matrix, show that $Q$ is diagonal and that all diagonal entries are $1$ or $-1$.
+
+\begin{hint}
+We have $Q^{T} = Q^{-1}$; the first step is to show that $Q$ is lower triangular and also upper triangular, and so is diagonal. But then $Q = Q^{T} = Q^{-1}$, so $Q^{2} = I$. This implies that the diagonal entries of $Q$ are all $\pm 1$.
+\end{hint}
+\end{problem}
+
+\begin{problem}\label{prob:scalar_othogonal}
+If $Q$ is orthogonal, show that $kQ$ is orthogonal if and only if $k = 1$ or $k = -1$.
+\end{problem}
+
+\begin{problem}\label{prob:thirdrow}
+If the first two rows of an orthogonal matrix are $[\frac{1}{3}, \frac{2}{3}, \frac{2}{3}]$ and $[\frac{2}{3}, \frac{1}{3}, \frac{-2}{3}]$, find all possible third rows.
+\end{problem}
+
+\begin{problem}\label{prob:findQ}
+For each matrix $A$, find an orthogonal matrix $Q$ such that $Q^{-1}AQ$ is diagonal.
+
+\begin{enumerate}
+\item\label{prob:findQa} $A = \begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}$
+
+\item\label{prob:findQb} $A = \begin{bmatrix}
+1 & -1 \\
+-1 & 1
+\end{bmatrix}$
+
+\item\label{prob:findQc} $A = \begin{bmatrix}
+3 & 0 & 0 \\
+0 & 2 & 2 \\
+0 & 2 & 5
+\end{bmatrix}$
+
+\item\label{prob:findQd} $A = \begin{bmatrix}
+3 & 0 & 7 \\
+0 & 5 & 0 \\
+7 & 0 & 3
+\end{bmatrix}$
+
+\item\label{prob:findQe} $A = \begin{bmatrix}
+1 & 1 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 2
+\end{bmatrix}$
+
+\item $A = \begin{bmatrix}
+5 & -2 & -4 \\
+-2 & 8 & -2\\
+-4 & -2 & 5
+\end{bmatrix}$
+\item\label{prob:findQf} (challenging problem) $A = \begin{bmatrix}
+5 & 3 & 0 & 0 \\
+3 & 5 & 0 & 0 \\
+0 & 0 & 7 & 1 \\
+0 & 0 & 1 & 7
+\end{bmatrix}$
+
+\item\label{prob:findQg} (challenging problem) $A = \begin{bmatrix}
+3 & 5 & -1 & 1 \\
+5 & 3 & 1 & -1 \\
+-1 & 1 & 3 & 5 \\
+1 & -1 & 5 & 3
+\end{bmatrix}$
+\end{enumerate}
+
+%\begin{sol}
+%\begin{enumerate} 
+%\setcounter{enumi}{1}
+%\item  $\frac{1}{\sqrt{2}}\begin{bmatrix}
+%1 & -1 \\
+%1 & 1
+%\end{bmatrix}$
+
+%\setcounter{enumi}{3}
+%\item  $\frac{1}{\sqrt{2}}\begin{bmatrix}
+%0 & 1 & 1\\
+%\sqrt{2} & 0 & 0\\
+%0 & 1 & -1
+%\end{bmatrix}$
+
+%\setcounter{enumi}{5}
+%\item  $\frac{1}{3\sqrt{2}}\begin{bmatrix}
+%2\sqrt{2} & 3 & 1\\
+%\sqrt{2} & 0 & -4\\
+%2\sqrt{2} & -3 & 1
+%\end{bmatrix}$ or %$\frac{1}{3}\begin{bmatrix}
+%2 & -2 & 1\\
+%1 & 2 & 2\\
+%2 & 1 & -2
+%\end{bmatrix}$
+
+%\setcounter{enumi}{7}
+%\item  $\frac{1}{2}\begin{bmatrix}
+%1 & -1 & \sqrt{2} & 0\\
+%-1 & 1 & \sqrt{2} & 0\\
+%-1 & -1 & 0 & \sqrt{2}\\
+%1 & 1 & 0 & \sqrt{2}
+%\end{bmatrix}$
+
+%\end{enumerate}
+%\end{sol}
+\end{problem}
+
+\begin{problem}\label{prob:ortho15a}
+Show that the following are equivalent for a symmetric matrix $A$.
+
+
+\begin{enumerate}
+\item $A$ is orthogonal.
+\item $A^{2} = I$.
+\item All eigenvalues of $A$ are $\pm 1$.
+\end{enumerate}
+\begin{hint}
+For (b) if and only if (c), use Theorem~\ref{th:detofproduct}.
+\end{hint}
+
+
+%\begin{sol}
+%\begin{enumerate} 
+%\setcounter{enumi}{2}
+%\item $\Rightarrow$ a. By Theorem~\ref{thm:024227} let $P^{-1}AP = D = \func{diag}(\lambda_{1}, \dots, \lambda_{n})$ where the $\lambda_{i}$ are the eigenvalues of $A$. By c. we have $\lambda_{i} = \pm 1$ for each $i$, whence $D^{2} = I$. But then $A^{2} = (PDP^{-1})^{2} = PD^{2}P^{-1} = I$. Since $A$ is symmetric this is $AA^{T} = I$, proving a.
+
+%\end{enumerate}
+%\end{sol}
 \end{problem}
 
 
-\begin{problem}\label{prob:proofCor}
-Prove Corollary \ref{cor:orthProjOntoW}
-\end{problem}
-  
-\section*{Text Source}
-A portion of the text in this section is an adaptation of Section 4.11.1 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra}. (CC-BY)
+\begin{problem}\label{ex:8_2_12}
+We call matrices $A$ and $B$ \dfn{orthogonally similar} (and write $A \stackrel{\circ}{\sim} B$) if $B = P^{T}AP$ for an orthogonal matrix $P$.
 
-Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, p. 233-238.  
+
+\begin{enumerate}
+\item Show that $A \stackrel{\circ}{\sim} A$ for all $A$; $A \stackrel{\circ}{\sim} B \Rightarrow B \stackrel{\circ}{\sim} A$; and $A \stackrel{\circ}{\sim} B$ and $B \stackrel{\circ}{\sim} C \Rightarrow A \stackrel{\circ}{\sim} C$. (This means that ``orthogonally similar" is an \dfn{equivalence relation}.)
+
+\item Show that the following are equivalent for two symmetric matrices $A$ and $B$.
+
+
+\begin{enumerate}
+\item $A$ and $B$ are similar.
+
+\item $A$ and $B$ are orthogonally similar.
+
+\item $A$ and $B$ have the same eigenvalues.
+
+\end{enumerate}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}\label{prob:ortho14a}
+Assume that $A$ and $B$ are orthogonally similar (Problem \ref{ex:8_2_12}).
+
+
+\begin{enumerate} 
+\item If $A$ and $B$ are invertible, show that $A^{-1}$ and $B^{-1}$ are orthogonally similar.
+
+\item Show that $A^{2}$ and $B^{2}$ are orthogonally similar.
+
+\item Show that, if $A$ is symmetric, so is $B$.
+
+\end{enumerate}
+
+%\begin{sol}
+%\begin{enumerate}
+%\setcounter{enumi}{1}
+%\item  If $B = P^{T}AP = P^{-1}$, then $B^{2} = P^{T}APP^{T}AP = P^{T}A^{2}P$.
+
+%\end{enumerate}
+%\end{sol}
+\end{problem}
+
+\begin{problem}\label{prob:ortho15}
+If $A$ is symmetric, show that every eigenvalue of $A$ is nonnegative if and only if $A = B^{2}$ for some symmetric matrix $B$.
+\end{problem}
+
+\begin{problem}\label{ex:8_2_15}
+Prove the converse of Theorem~\ref{th:dotpSymmetric}:
+
+If $(A\vec{x}) \dotp \vec{y} = \vec{x} \dotp (A\vec{y})$ for all $n$-columns $\vec{x}$ and $\vec{y}$, then $A$ is symmetric.
+
+%\begin{sol}
+%If $\vec{x}$ and $\vec{y}$ are respectively columns $i$ and $j$ of $I_{n}$, then $\vec{x}^{T}A^{T}\vec{y} = \vec{x}^{T}A\vec{y}$ shows that the $(i, j)$-entries of $A^{T}$ and $A$ are equal.
+%\end{sol}
+\end{problem}
+
+\begin{problem}\label{prob:ortho17}
+Show that every eigenvalue of $A$ is zero if and only if $A$ is nilpotent ($A^{k} = 0$ for some $k \geq 1$).
+\end{problem}
+
+\begin{problem}\label{prob:ortho18}
+If $A$ has real eigenvalues, show that $A = B + C$ where $B$ is symmetric and $C$ is nilpotent. 
+%\begin{hint}
+%Theorem~\ref{th:024503}
+%\end{hint}
+\end{problem}
+
+\begin{problem}\label{prob:ortho19}
+Let $Q$ be an orthogonal matrix.
+
+\begin{enumerate}
+\item Show that $\det Q = 1$ or $\det Q = -1$.
+
+\item Give $2 \times 2$ examples of $Q$ such that $\det Q = 1$ and $\det  Q = -1$.
+
+\item If $\det  Q = -1$, show that $I + Q$ has no inverse.
+\begin{hint}
+$Q^{T}(I + Q) = (I + Q)^{T}$.
+\end{hint}
+
+\item If $P$ is $n \times n$ and $\det P \neq (-1)^{n}$, show that $I - P$ has no inverse.
+
+\begin{hint}
+$P^{T}(I - P) = -(I - P)^{T}$
+\end{hint}
+\end{enumerate}
+%\begin{sol}
+%\begin{enumerate} 
+%\setcounter{enumi}{1}
+%\item $\det \begin{bmatrix}
+%\cos\theta & -\sin\theta \\
+%\sin\theta & \cos\theta
+%\end{bmatrix} = 1$ \\ and $\det \begin{bmatrix}
+%\cos\theta & \sin\theta \\
+%\sin\theta & -\cos\theta
+%\end{bmatrix} = -1$
+%\begin{remark}
+%These are the \textit{only} $2 \times 2$ examples.
+%\end{remark}
+
+%\setcounter{enumi}{3}
+%\item Use the fact that $P^{-1} = P^{T}$ to show that $P^{T}(I - P) = -(I - P)^{T}$. Now take determinants and use the hypothesis that $\det P \neq (-1)^{n}$.
+
+%\end{enumerate}
+%\end{sol}
+\end{problem}
+
+\begin{problem}\label{prob:ortho20}
+We call a square matrix $E$ a \dfn{projection matrix} if $E^{2} = E = E^{T}$.
+
+
+\begin{enumerate} 
+\item If $E$ is a projection matrix, show that $Q = I - 2E$ is orthogonal and symmetric.
+
+\item If $Q$ is orthogonal and symmetric, show that \\ $E = \frac{1}{2}(I - Q)$ is a projection matrix.
+
+\item If $Q$ is $m \times n$ and $Q^{T}Q = I$ (for example, a unit column in $\RR^n$), show that $E = QQ^{T}$ is a projection matrix.
+
+\end{enumerate}
+\end{problem}
+
+\begin{problem}\label{prob:ortho21}
+A matrix that we obtain from the identity matrix by writing its rows in a different order is called a \dfn{permutation matrix} (see Theorem \ref{th:LUPA}). Show that every permutation matrix is orthogonal.
+\end{problem}
+
+\begin{problem}\label{prob:ortho22}
+If the rows $\vec{r}_{1}, \dots, \vec{r}_{n}$ of the $n \times n$ matrix $A = \begin{bmatrix}
+a_{ij}
+\end{bmatrix}$ are orthogonal, show that the $(i, j)$-entry of $A^{-1}$ is $\frac{a_{ji}}{\norm{\vec{r}_{j}}^2}$.
+
+%\begin{sol}
+%We have $AA^{T} = D$, where $D$ is diagonal with main diagonal entries $\norm{R_{1}}^{2}, \dots, \norm{R_{n}}^{2}$. Hence $A^{-1} = A^{T}D^{-1}$, and the result follows because $D^{-1}$ has diagonal entries $1 / \norm{R_{1}}^{2}, \dots, 1 / \norm{R_{n}}^{2}$.
+%\end{sol}
+\end{problem}
+
+\begin{problem}\label{prob:ortho23}
+\begin{enumerate} 
+\item Let $A$ be an $m \times n$ matrix. Show that the following are equivalent.
+
+
+\begin{enumerate}[label={\roman*.}]
+\item $A$ has orthogonal rows.
+
+\item $A$ can be factored as $A = DP$, where $D$ is invertible and diagonal and $P$ has orthonormal rows.
+
+\item $AA^{T}$ is an invertible, diagonal matrix.
+
+\end{enumerate}
+\item Show that an $n \times n$ matrix $A$ has orthogonal rows if and only if $A$ can be factored as $A = DQ$, where $Q$ is orthogonal and $D$ is diagonal and invertible.
+
+\end{enumerate}
+\end{problem}
+
+\begin{problem}\label{prob:ortho24}
+Let $A$ be a skew-symmetric matrix; that is, $A^{T} = -A$. Assume that $A$ is an $n \times n$ matrix.
+
+
+\begin{enumerate} 
+\item Show that $I + A$ is invertible. 
+\begin{hint}
+By Theorem~\ref{thm:004553}, it suffices to show that $(I + A)\vec{x} = \vec{0}$, $\vec{x}$ in $\RR^n$, implies $\vec{x} = \vec{0}$. Compute $\vec{x} \dotp \vec{x} = \vec{x}^{T}\vec{x}$, and use the fact that $A\vec{x} = -\vec{x}$ and $A^{2}\vec{x} = \vec{x}$.
+\end{hint}
+
+\item Show that $Q = (I - A)(I + A)^{-1}$ is orthogonal.
+
+\item Show that every orthogonal matrix $P$ such that $I + P$ is invertible arises as in part (b) from some skew-symmetric matrix $A$. 
+\begin{hint}
+Solve $P = (I - A)(I + A)^{-1}$ for $A$.
+\end{hint}
+
+\end{enumerate}
+%\begin{sol}
+%\begin{enumerate} 
+%\setcounter{enumi}{1}
+%\item  Because $I - A$ and $I + A$ commute, $PP^{T} = (I - A)(I + A)^{-1}[(I + A)^{-1}]^{T}(I - A)^{T} = (I - A)(I + A)^{-1}(I - A)^{-1}(I + A) = I$.
+
+%\end{enumerate}
+%\end{sol}
+\end{problem}
+
+\begin{problem}\label{prob:ortho25}
+Show that the following are equivalent for an $n \times n$ matrix $Q$.
+
+
+\begin{enumerate} 
+\item $Q$ is orthogonal.
+
+\item $\norm{Q\vec{x}} = \norm{\vec{x}}$ for all $\vec{x}\in\RR^n$.
+
+\item $\norm{ Q\vec{x} - Q\vec{y}} = \norm{\vec{x} - \vec{y}}$ for all $\vec{x}$, $\vec{y}\in \RR^n$.
+
+\item $(Q\vec{x}) \dotp (Q\vec{y}) = \vec{x} \dotp \vec{y}$ for all columns $\vec{x}$, $\vec{y}\in\RR^n$.
+
+\begin{hint}
+%For (c) $\Rightarrow$ (d), see Exercise \ref{ex:5_3_14}(a). 
+For (d) $\Rightarrow$ (a), show that column $i$ of $Q$ equals $Q\vec{e}_{i}$, where $\vec{e}_{i}$ is column $i$ of the identity matrix.
+\end{hint}
+\end{enumerate}
+\begin{remark}
+    This exercise shows that linear transformations with orthogonal standard matrices are distance-preserving (b,c) and angle-preserving (d).
+\end{remark}
+
+\end{problem}
+
+
+
+\begin{problem}\label{prob:rotation_ortho}
+\begin{enumerate}
+    \item Show that $\begin{bmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{bmatrix}$ is an orthogonal matrix.
+
+    \item Show that every $2 \times 2$ orthogonal matrix has the form $\begin{bmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{bmatrix}$ or $\begin{bmatrix}
+\cos\theta & \sin\theta \\
+\sin\theta & -\cos\theta
+\end{bmatrix}$
+ for some angle $\theta$.
+ \begin{hint}
+ If $a^{2} + b^{2} = 1$, then $a = \cos\theta$ and $b = \sin\theta$ for some angle $\theta$.
+ \end{hint}
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}\label{prob:SchurChallenge}
+Modify the proof of Theorem~\ref{th:PrinAxes} to prove Theorem \ref{th:Schur}.
+%If $A\vec{x}_{1} = \lambda_{1}\vec{x}_{1}$ where $\norm{\vec{x}_{1}} = 1$, let $\{\vec{x}_{1}, \vec{x}_{2}, \dots, \vec{x}_{n}\}$ be an orthonormal basis of $\RR^n$, and let $P_{1} = \begin{bmatrix}
+%\vec{x}_{1} & \vec{x}_{2} & \cdots &  \vec{x}_{n}
+%\end{bmatrix}$. Then $P_{1}$ is orthogonal and $P_{1}^TAP_{1} = \begin{bmatrix}
+%\lambda_{1} & B \\
+%0 & A_{1}
+%\end{bmatrix}$ in block form. By induction, let $Q^{T}A_{1}Q = T_{1}$ be upper triangular where $Q$ is of size $(n-1)\times(n-1)$ and orthogonal. Then $P_{2} = \begin{bmatrix}
+%1 & 0 \\
+%0 & Q
+%\end{bmatrix}$ is orthogonal, so $P = P_{1}P_{2}$ is also orthogonal and $P^TAP = \begin{bmatrix}
+%\lambda_{1} & BQ \\
+%0 & T_{1}
+%\end{bmatrix}$
+% is upper triangular.
+\end{problem}
+
+\section*{Text Source} This section was adapted from Section 8.2 of Keith Nicholson's \href{https://open.umn.edu/opentextbooks/textbooks/linear-algebra-with-applications}{\it Linear Algebra with Applications}. (CC-BY-NC-SA)
+
+W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2018, Open Edition, p. 424
+
 
 \end{document}

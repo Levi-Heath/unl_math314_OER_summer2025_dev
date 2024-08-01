@@ -36,6 +36,8 @@
 <!--<xi:include href="Section-Addition-and-Scalar-Multiplication-of-Matrices.ptx"/>-->
 <xi:include href="Section-Gram-Schmidt-Orthogonalization.ptx"/>
 <xi:include href="Section-Orthogonality-and-Projections.ptx"/>
+<xi:include href="Section-Orthogonal-Complements-and-Decompositions.ptx"/>
+<xi:include href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.ptx"/>
 
 </chapter>
 
