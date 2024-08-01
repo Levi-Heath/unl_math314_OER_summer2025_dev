@@ -38,6 +38,7 @@
 <xi:include href="Section-Orthogonality-and-Projections.ptx"/>
 <xi:include href="Section-Orthogonal-Complements-and-Decompositions.ptx"/>
 <xi:include href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.ptx"/>
+<xi:include href="Section-QR-Factorization.ptx"/>
 
 </chapter>
 
