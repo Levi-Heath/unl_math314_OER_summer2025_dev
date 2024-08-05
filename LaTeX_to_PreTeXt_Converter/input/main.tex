@@ -1,512 +1,923 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
-\title{Least-Squares Approximation} \license{CC BY-NC-SA 4.0}
+\title{Geometric Transformations of the Plane} \license{CC BY-NC-SA 4.0}
 
 \begin{document}
-
 \begin{abstract}
-\end{abstract}
+ \end{abstract}
 \maketitle
 
 \begin{onlineOnly}
-\section*{Least-Squares Approximation}
+\section*{Geometric Transformations of the Plane}
 \end{onlineOnly}
 
-% \begin{center}
-% \begin{tikzpicture}[scale=1]
-%   \filldraw[orange](-0.25,3.5)--(0.25,3.5)--(1.5,0)--(-1.5,0)--cycle;
-%   \filldraw[orange] (0,0) ellipse (2cm and 1cm);
-%   \filldraw[orange] (0,3.5) ellipse (0.25cm and 0.15cm);
-% \end{tikzpicture}
- 
-% UNDER CONSTRUCTION -- COMING SOON
-% \end{center}
+In Exploration \ref{exp:shapeTransformation} we saw how geometric shapes in the plane can be manipulated with matrix transformations.  In this section we will study matrix transformations of the plane in more detail by applying matrix transformations to pixels in photos.  
+We will treat every pixel of a picture as a point or a vector in $\RR^2$.  A transformation is applied to each pixel, and the output pixel is colored the same color as the input pixel.  The figure below shows the result of one such transformation.
 
-Often an exact solution to a problem in applied mathematics is difficult or impossible to obtain. However, it is usually just as useful to find an approximation to a solution. In particular, finding ``linear approximations" is a powerful technique in applied mathematics. One basic case is the situation where a system
-of linear equations has no solution, and it is desirable to find a ``best approximation" to a solution to the
-system. 
+\begin{image}
+         \includegraphics[height=1.5in]{twobuildings.jpg}
+\end{image}
 
-We begin by defining the ``best approximation'' in a natural way, and showing that computing the best approximation reduces to solving a related system of linear equations  called the \emph{normal equations}.  Next, we demonstrate a common application where a collection of data points is approximated by a line (or a curve).  We conclude this section by showing that $QR$-factorization provides us with a more efficient way to solve the normal equations and compute the best approximation. 
-\subsection*{Best Approximate Solutions}
-\begin{exploration}\label{exp:leastSq1}
-    Let
-    $$A=\begin{bmatrix}3 & 1\\1 & 2\\1 & 2\end{bmatrix}\quad\text{and}\quad \vec{b}=\begin{bmatrix}2\\1\\3\end{bmatrix}$$
-    Consider the matrix equation $A\vec{x}=\vec{b}$.
-    A quick examination of the last two rows should convince you that this equation has no solutions.  In other words, $\vec{b}$ is not in the span of the columns of $A$.
+Not all transformations are matrix transformations.  Practice Problem \ref{prob:translation_does_not_work} offers a cautionary tale of what happens when we try to find a matrix for a transformation when such a matrix does not exist.
+Luckily, many familiar transformations, including rotations, scalings, reflections, and shears, are matrix transformations. We will focus our attention on those.
 
-    If $\vec{z}$ were an exact solution to $A\vec{x}=\vec{b}$, then $\vec{b}-A\vec{z}$ would be $\vec{0}$.  Since the equation does not have a solution, we will attempt to find the next best thing to a solution by finding $\vec{z}$ such that $\norm{\vec{b}-A\vec{z}}$ is as small as possible.  The quantity $\norm{\vec{b}-A\vec{z}}$ is called the \emph{error}.
+Recall that by Observation \ref{obs:imagesOfijk} of \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/LTR-0005/main}{Matrix Transformations}, we can find a matrix for each transformation by examining what the transformation does to the standard basis vectors $\vec{i}$ and $\vec{j}$. 
 
-    The following GeoGebra interactive will help you understand the geometry behind finding $\vec{z}$.  
-    
-    RIGHT-CLICK and DRAG to rotate the image for a better view.
+\subsection*{Horizontal and Vertical Scaling} 
 
-\pdfOnly{
-Access GeoGebra interactives through the online version of this text at 
-
-\href{https://ximera.osu.edu/oerlinalg}{https://ximera.osu.edu/oerlinalg}.
-}
-
-\begin{onlineOnly}
-\begin{center}
-\geogebra{mm7wauhw}{950}{650}
-\end{center}
-\end{onlineOnly}
-
- Record your best guess for $\vec{z}$ -- you will have a chance to check your answer in Example \ref{ex:leastSquares1}.
-
-What did you discover about the geometry of minimizing $\norm{\vec{b}-A\vec{z}}$? 
-Select all that apply.
-
-\begin{selectAll}
-    \choice{$\vec{z}$ is orthogonal to the plane spanned by the columns of $A$.}
-    \choice{$\norm{\vec{b}-A\vec{z}}$ is orthogonal to $\text{col}(A)$.}
-    \choice[correct]{$\vec{b}-A\vec{z}$ is orthogonal to $\text{col}(A)$.}
-    \choice{$A\vec{z}$ is orthogonal to $\text{col}(A)$.}
-     \choice[correct]{$A\vec{z}$ is an orthogonal projection of $\vec{b}$ onto $\text{col}(A)$.}
-\end{selectAll}
-
-Our geometric observations will help us develop a method for finding $\vec{z}$ .  
-\end{exploration}
-
-  Suppose $A$ is an $m\times n$ matrix, and $\vec{b}$ is a column vector in $\RR^m$.  Consider the matrix equation $A\vec{x}=\vec{b}$. If this equation does not have a solution, we can attempt to find a best approximation by finding $\vec{z}$ which minimizes the \emph{error}, $\norm{\vec{b}-A\vec{z}}$.  The expression $\norm{\vec{b}-A\vec{z}}$ is also sometimes called the \emph{residual}.  The error (or the residual) is given in terms of a vector norm. Recall that our definition of the norm involves the sum of squares of the vector components.  When we minimize the norm, we minimize the sum of squares.  This is why the method we are describing is often referred to as \emph{least squares}.  We will explore this idea further later in this section.
-  
-  In the case when $\text{col}(A)$ is a subspace of $\RR^3$, 
-  we can see geometrically that $\vec{z}$ is the best approximation if and only if $A\vec{z}$ is an orthogonal projection of $\vec{b}$ onto $\text{col}(A)$, and the error is the magnitude of $\vec{b}-A\vec{z}$, as shown below.
+\begin{exploration}\label{init:vertstretch} Let us attempt to find a matrix $M$ for the transformation $T$ that stretches an image vertically by a factor of 2, as shown in the figure below.  
 
 \begin{center}
-\tdplotsetmaincoords{70}{130}
-	\begin{tikzpicture}[scale=0.8]
-\filldraw[blue, opacity=0.2] (0,0,0)--(5,0,0)--(5,0,5)--(0,0,5)--cycle;
-\node[label={left:$\vec{b}-A\vec{z}$}] at (4.5,0.6,0) {};
-\node[label={above:$\vec{b}$}] at (2,1.5,2) {};
-\node[label={above:$A\vec{z}$}] at (2.2,0,3.5) {};
-\draw[->,line width=1.5mm, -stealth, blue,opacity=0.5](4,0,4)--(4,3,4) ;
-   \draw[->,line width=0.8mm, -stealth, black](0,0,0)--(1,0,5) ;
-    \draw[->,line width=0.8mm, -stealth, black](0,0,0)--(5,0,1) ;
-   \draw[->,line width=0.8mm, -stealth, red](0,0,0)--(4,3,4) ;
-    \draw[->,line width=1.5mm, -stealth, red,opacity=0.2](0,0,0)--(4,0,4) ;
-    %\node[label={below: $\vec{w}=\mbox{proj}_W\vec{x}=\mbox{proj}_{\vec{f}_1}\vec{x}+\mbox{proj}_{\vec{f}_2}\vec{x}$}] at (3,-1,3) {};
-      \end{tikzpicture}
-\end{center}
+		\begin{tikzpicture}[scale=2]
+\node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
+  {\includegraphics[width=25mm]{gulls.jpg}};
+  \draw[<->] (-0.5,0)--(2,0);
+  \draw[<->] (0,-0.5)--(0,2);
+       \end{tikzpicture}
+  \quad\quad
+   \begin{tikzpicture}[scale=2]
+ \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (6.25mm,0)
+  {\includegraphics[width=25mm]{stretchedgulls.jpg}};
+\draw[<->] (-0.5,0)--(2,0);
+  \draw[<->] (0,-0.5)--(0,2);
+    \end{tikzpicture}
+    \end{center}
 
-What we observed above, holds in general.  We will use this fact to find $\vec{z}$.
-
-Every vector in $\text{col}(A)$ can be written in the form $A\vec{x}$ for some $\vec{x}$ in $\RR^m$.  Our goal is to find $\vec{z}$ such that $A\vec{z}$ is the orthogonal projection of $\vec{b}$ onto $\text{col}(A)$. By Corollary \ref{cor:orthProjOntoW}, every vector $A\vec{x}$ in $\text{col}(A)$ is orthogonal to $\vec{b}-A\vec{z}$.  This means $\vec{b}-A\vec{z}$ is in the orthogonal complement of $\text{col}(A)$, which is $\text{null}(A^T)$.
-
-Therefore, we have
-%{\begin{eqnarray*}
-%    0=(A\vec{x})\dotp(\vec{b}-A\vec{x})&=&\left(A\vec{x}\right)^T(\vec{b}-A\vec{z})\\
-%    &=&\vec{x}^TA^T(\vec{b}-A\vec{z})\\
-%    &=&\vec{x}\dotp\left(A^T(\vec{b}-A\vec{z})\right)
-%\end{eqnarray*}
-%But this means that $A^T(\vec{b}-A\vec{z})$ is orthogonal to \emph{every} vector of $\RR^m$, including itself.  Therefore,
-
-\begin{eqnarray}
-A^T(\vec{b}-A\vec{z})&=&\vec{0}\nonumber\\
-A^T\vec{b}-A^TA\vec{z}&=&\vec{0}\nonumber\\
-A^TA\vec{z}&=&A^T\vec{b}\label{eq:normalForZ}
-\end{eqnarray}
-
-Since $\vec{b}-A\vec{z}$ is normal to the subspace $\text{col}(A)$, we call the system of linear equations in (\ref{eq:normalForZ}) the \emph{normal equations for} $\vec{z}$.  If $A^TA$ is invertible, then we can write
-%have the following formula for finding $\vec{z}$
-
-\begin{equation}\label{eq:leastSquaresZ}
-    \vec{z}=(A^TA)^{-1}A^T\vec{b}
-\end{equation}
-
-We will return to the question of invertibility of $A^TA$ in Theorem \ref{th:ATAinverse}.  For now, let's revisit the problem posed in Exploration \ref{exp:leastSq1}.
-
-\begin{example}\label{ex:leastSquares1}
-We now return to the matrix equation $A\vec{x}=\vec{b}$ of Exploration \ref{exp:leastSq1} to find $\vec{z}$ that best approximates a solution.
-
-\begin{explanation}
-    Recall that $$A=\begin{bmatrix}3 & 1\\1 & 2\\1 & 2\end{bmatrix}\quad\text{and}\quad \vec{b}=\begin{bmatrix}2\\1\\3\end{bmatrix}$$
-
-In this case, $(A^TA)^{-1}$ exists.  Applying equation (\ref{eq:leastSquaresZ}), we compute
-\begin{eqnarray*}
-\vec{z}&=&\left(\begin{bmatrix}3 & 1 & 1\\1 & 2 & 2\end{bmatrix}\begin{bmatrix}3 & 1\\1 & 2\\1& 2\end{bmatrix}\right)^{-1}\begin{bmatrix}3 & 1 & 1\\1 & 2 & 2\end{bmatrix}\begin{bmatrix}2\\1\\3\end{bmatrix}\\
-&=&\begin{bmatrix}11 & 7\\7 & 9\end{bmatrix}^{-1}\begin{bmatrix}10\\10\end{bmatrix}=\begin{bmatrix}0.18 & -0.14\\-0.14 & 0.22\end{bmatrix}\begin{bmatrix}10\\10\end{bmatrix}\\
-&=&\begin{bmatrix}0.4\\0.8\end{bmatrix}
-    \end{eqnarray*}    
-\end{explanation}
-Compare this answer to your guess in Exploration \ref{exp:leastSq1}.  If your guess was correct, nice job!  If your guess was different, try setting $\vec{z}$ to the correct answer and use the GeoGebra interactive in Exploration \ref{exp:leastSq1} to examine the geometry of the problem.    
-\end{example}
-
-We now come back to the question of when $A^TA$ is invertible.
-
-\begin{theorem}\label{th:ATAinverse}
-If columns of matrix $A$ are linearly independent, then $A^TA$ is invertible.    
-\end{theorem}
-
-\begin{proof}
-    Let $A$ be a matrix with linearly independent columns.  We will show that $\left(A^TA\right)\vec{x}=\vec{0}$ has only the trivial solution.  For $\vec{x}$, a solution of $A^TA\vec{x}=\vec{0}$, we have
-    \begin{eqnarray*}
-        \norm{A\vec{x}}^2&=&(A\vec{x})\dotp(A\vec{x})\\
-        &=&\left(A\vec{x}\right)^TA\vec{x}\\
-        &=&\vec{x}^TA^TA\vec{x}\\
-        &=&\vec{x}^T\dotp\vec{0}=0
-    \end{eqnarray*}
-    Therefore $A\vec{x}=\vec{0}$.  By linear independence of the columns of $A$ we conclude that $\vec{x}=\vec{0}$.
-\end{proof}    
-
-    We summarize our findings in the following theorem.
-
-    \begin{theorem}\label{th:bestApprox}
-    Let $A$ be an $m\times n$ matrix, let $\vec{b}$ be a column vector in $\RR^m$.  Consider the matrix equation
-    $$A\vec{x}=\vec{b}$$
-    \begin{enumerate}
-        \item Any solution $\vec{z}$ to the normal equations 
-        $$\left(A^TA\right)\vec{z}=A^T\vec{b}$$
-        is a best approximation to a solution to $A\vec{x}=\vec{b}$ in the sense that $\norm{\vec{b}-A\vec{z}}$ is minimized.
-        \item If the columns of $A$ are linearly independent, then $A^TA$ is invertible and $\vec{z}$ is given uniquely by 
-        $$\vec{z}=\left(A^TA\right)^{-1}A^T\vec{b}$$
-    \end{enumerate}
-    \end{theorem}
-
-    \begin{example}\label{ex:leastSq2}
-        The sytem of linear equations
-        $$\begin{matrix}3x & - & y&=&4\\x&+&2y&=&0\\2x&+&y&=&1\end{matrix}$$
-        has no solution.  Find the vector $\vec{z}$ that best approximates a solution.
-
-        \begin{explanation}            
-            We have $$A=\begin{bmatrix}3&-1\\1&2\\2&1\end{bmatrix},\quad\begin{bmatrix}4\\0\\1\end{bmatrix}.$$ 
-            The normal equations are $\left(A^TA\right)\vec{z}=A^T\vec{b}$.  We compute
-                       $$\begin{bmatrix}3&1&2\\-1&2&1\end{bmatrix}\begin{bmatrix}3&-1\\1&2\\2&1\end{bmatrix}\vec{z}=\begin{bmatrix}3&1&2\\-1&2&1\end{bmatrix}\begin{bmatrix}4\\0\\1\end{bmatrix}.$$
-                       $$\begin{bmatrix}14&1\\1&6\end{bmatrix}\vec{z}=\begin{bmatrix}14\\-3\end{bmatrix}$$ 
-            
-            
-            We observe that is $A^TA$ is invertible. 
- Multiplying on the left by $(A^TA)^{-1}$ yields $$\vec{z}=\frac{1}{83}\begin{bmatrix}87\\-56\end{bmatrix}$$
-            With this vector $\vec{z}$, the left sides of the equations become
-            $$\begin{matrix}3(87/83) & - & (-56/83)&\approx&3.82\\(87/83)&+&2(-56/83)&\approx&-0.30\\2(87/83)&+&(-56/83)&\approx&1.42\end{matrix}$$
-            This is as close as possible to a solution.
-        \end{explanation}
-    \end{example}
-
-\begin{example}\label{ex:leastSquares3}
-The average number $g$ of goals per game scored by a hockey player seems to be related linearly to
-two factors: the number $x_1$ of years of experience and the number $x_2$ of goals in the preceding 10
-games. The data on the following page were collected on four players. Find the linear function $g=a_0+a_1x_1+a_2x_2$ that best fits the data.
-$$\begin{array}{|c|c|c|} 
- \hline g&x_1&x_2\\ \hline 0.8&5&3\\  0.8&3&4\\
- 0.6 &1&5\\
- 0.4 &2&1\\
- \hline 
- \end{array}$$
-
-\begin{explanation}
-    If the relationship is given by $g=a_0+a_1x_1+a_2x_2$, then the data can be described as follows:
-    $$\begin{bmatrix}1&5&3\\1&3&4\\1&1&5\\1&2&1\end{bmatrix}\begin{bmatrix}a_0\\a_1\\a_2\end{bmatrix}=\begin{bmatrix}0.8\\0.8\\0.6\\0.4\end{bmatrix}$$
-    Using Theorem \ref{th:bestApprox}, we get
-    $$\vec{z}=\underbrace{\frac{1}{42}\begin{bmatrix}
-        119&-17&-19\\-17&5&1\\-19&1&5
-    \end{bmatrix}}_{\left(A^TA\right)^{-1}}\underbrace{\begin{bmatrix}
-        1&1&1&1\\5&3&1&2\\3&4&5&1
-    \end{bmatrix}}_{A^T}\begin{bmatrix}
-        0.8\\0.8\\0.6\\0.4
-    \end{bmatrix}=\begin{bmatrix}
-        0.14\\0.09\\0.08
-    \end{bmatrix}$$
-    Hence the best-fitting function is $g=0.14+0.09x_1+0.08x_2$.  
-\end{explanation}    
-\end{example}
-
-\subsection*{Application of Least Squares to Curve Fitting}
-In \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/APP-0070/main}{Curve Fitting}, we discussed how to fit a function to a set of data points, so that the graph of the function passes through each of the points.  We also discussed why doing so is sometimes impossible (two points lie one above the other), and may not even be desirable (overfitting).  In this section we will learn how to approximate a collection of data points with a line (or a curve) that fits the ``trend" of the points.  We will start with data that fit a linear pattern.  
-
-\begin{exploration}\label{exp:leastSq2}
-    Consider the points $(1,1)$, $(2, 3)$ and $(4,4)$.  These points do not lie on a straight line, but they have a general upward linear trend.  (Typically there would be many more points to consider, but we will limit our exploration to what we can do by hand.)  Our goal is to find a line that fits these points as closely as possible.  
-
-    We are looking for a function $f$ of the form $f(x)=ax+b$ such that the following infeasible system is satisfied as closely as possible
-    $$\begin{matrix}a(1)&+&b&=&1\\a(2)&+&b&=&3\\a(4)&+&b&=&4\end{matrix}$$
-
-    From the first part of this section we know how to find a best approximation.  By Theorem \ref{th:bestApprox}, we have
-    \begin{eqnarray*}
-\vec{z}=\begin{bmatrix}a\\b\end{bmatrix}&=&\left(A^TA\right)^{-1}A^T\vec{b}\\
-&=&\left(\begin{bmatrix}1&2&4\\1&1&1\end{bmatrix}\begin{bmatrix}
-1&1\\2&1\\4&1\end{bmatrix}\right)^{-1}\begin{bmatrix}1&2&4\\1&1&1\end{bmatrix}\begin{bmatrix}
-    1\\3\\4
-\end{bmatrix}\\
-&=&\begin{bmatrix}13/14\\1/2\end{bmatrix}
-\end{eqnarray*}
-According to our computations, the line that best fits the data is given by $$f(x)=\frac{13}{14}x+\frac{1}{2}$$
-Let's take a look.
-\begin{center}
-\begin{tikzpicture}[scale=1]
-\draw[thin,gray!40] (-1,-1) grid (5,5);
-  \draw[<->] (-1,0)--(5,0);
-  \draw[<->] (0,-1)--(0,5);
-  \draw[line width=2pt](-1,-0.43)--(5,5.14) ;
-\fill[blue] (1,1)  circle (0.08cm);
-\fill[blue] (2,3) circle (0.08cm);
-\fill[blue] (4,4) circle (0.08cm);
- \end{tikzpicture}
- \end{center}
-
-We found this fit by minimizing $\norm{\vec{b}-A\vec{z}}$.  We will now investigate the meaning of this expression in relation to the line and the data points.
-\begin{equation}
-    \vec{b}-A\vec{z}=\begin{bmatrix}1\\3\\4\end{bmatrix}-\begin{bmatrix}(13/14)(1)+1/2\\(13/14)(2)+1/2\\{(13/14)(4)+1/2}\end{bmatrix}\approx\begin{bmatrix}
-        -0.43\\0.64\\-0.21
-    \end{bmatrix}
-\end{equation}
-Observe that each entry of $\vec{b}-A\vec{z}$ is the signed vertical distance between a particular point and the line.
-
-Instead of computing the error, $\norm{\vec{b}-A\vec{z}}$, we will compute $\norm{\vec{b}-A\vec{z}}^2$ to avoid the square root.
-
-\begin{equation}
-    \norm{\vec{b}-A\vec{z}}^2=(-0.43)^2+0.64^2+(-0.21)^2\approx 0.64
-\end{equation}
-
-Minimizing $\norm{\vec{b}-A\vec{z}}$ also minimizes $\norm{\vec{b}-A\vec{z}}^2$.  Therefore, what we have minimized is the sum of squares of the vertical distances between the data points and the line.
-The following GeoGebra interactive will help you explore this idea.
-
-\pdfOnly{
-Access GeoGebra interactives through the online version of this text at 
-
-\href{https://ximera.osu.edu/oerlinalg}{https://ximera.osu.edu/oerlinalg}.
-}
-
-\begin{onlineOnly}
-\begin{center}
-\geogebra{crgw4usb}{950}{650}
-\end{center}
-\end{onlineOnly}
-\end{exploration}
-
-
-In Exploration \ref{exp:leastSq2} we discovered that $\norm{\vec{b}-A\vec{z}}^2$ is the sum of squares of vertical distances between the given data points and the proposed line.  By minimizing $\norm{\vec{b}-A\vec{z}}$, we minimize the sum of squares of vertical distances.  This observation holds in general.  Given a collection of points $(x_1, y_1), (x_2, y_2),\dots ,(x_n, y_n)$, finding a linear function of the form $f(x)=ax+b$ that best fits the points we would find a best solution to the system
-$$\begin{bmatrix}x_1&1\\x_2&1\\\vdots&\vdots\\x_n&1\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}=\begin{bmatrix}y_1\\y_2\\\vdots\\y_n\end{bmatrix}$$
-by minimizing
-$$\norm{\begin{bmatrix}y_1-(ax_1+b)\\y_2-(ax_2+b)\\\vdots\\y_n-(ax_n+b)\end{bmatrix}}^2=(y_1-(ax_1+b))^2+(y_2-(ax_2+b))^2+\dots +(y_n-(ax_n+b))^2$$
-A geometric interpretation of $y_i-(ax_i+b)$ is shown below.
-
+Consider what this transformation does to the standard unit vectors.  We observe that $T(\vec{i})=\vec{i}$ and $T(\vec{j})=2\vec{j}$. 
 
 \begin{center}
 \begin{tikzpicture}[scale=1.5]
-\draw[thin,gray!40] (-1,-1) grid (4,4);
-   \draw[line width=2pt](-1,-1)--(2.75,4) ;
-\fill[blue] (2,1) node[below right]{$(x_i, y_i)$}  circle (0.08cm);
-\fill[red] (2,3) node[above left] {$(x_i, ax_i+b)$}circle (0.08cm);
-\draw[line width=0.5pt, dashed](2,1)--(2,3);
-\node[] at (2.8, 2)   {$y_i-(ax_i+b)$};
+
+  \draw[<->] (-0.5,0)--(2.5,0);
+  \draw[<->] (0,-0.5)--(0,2.5);
+   \draw[->,line width=1pt,red,-stealth](0,0)--(1,0);
+   \node[red] at (0.5, -0.2)   (a) {$\vec{i}$};
+    \draw[->,line width=1pt,blue,-stealth](0,0)--(0,1);
+    \node[blue] at (-0.2, 0.5)   (b) {$\vec{j}$};
+  \end{tikzpicture}
+  \quad\quad
+    \begin{tikzpicture}[scale=1.5]
+\draw[<->] (-0.5,0)--(2.5,0);
+  \draw[<->] (0,-0.5)--(0,2.5);
+  \node[red] at (0.5, -0.2)   (a) {$T(\vec{i})$};
+  \node[blue] at (-0.3, 1)   (b) {$T(\vec{j})$};
+   \draw[->,line width=1pt,red,-stealth](0,0)--(1,0);
+    \draw[->,line width=1pt,blue,-stealth](0,0)--(0,2);
+    
+ \end{tikzpicture}
+ \end{center}
+%\end{image}
+
+ This allows us to construct a candidate for the transformation matrix $M$, by making the images of $\vec{i}$ and $\vec{j}$ the columns of $M$.  Thus, 
+$$M=\begin{bmatrix}
+1 & 0\\
+0 & 2
+\end{bmatrix}$$
+
+We can now check to see what this matrix does to an arbitrary point $(a, b)$.  Treating this point as a vector $\begin{bmatrix}a\\b\end{bmatrix}$, we compute
+$$M=\begin{bmatrix}
+1 & 0\\
+0 & 2
+\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}=\begin{bmatrix}a\\2b\end{bmatrix}$$
+ Thus, this transformation takes point $(a, b)$ to point $(a, 2b)$.  So, the proposed transformation doubles all $y$-coordinates resulting in a vertical stretch by a factor of 2.
+\end{exploration}
+
+
+
+
+
+
+ In general, a vertical stretch (or compression) leaves $\vec{i}$ unchanged, and scales the vector $\vec{j}$ while preserving its vertical direction.  Thus, a vertical stretch (or compression) maps $\vec{i}$ to $\vec{i}$, and maps $\vec{j}$ to $k\vec{j}$ for some positive number $k$.  Similarly, a horizontal stretch (or compression) maps $\vec{i}$ to $k\vec{i}$, and maps $\vec{j}$ to $\vec{j}$.
+
+
+\begin{formula}[Horizontal and Vertical Scaling] \label{form:horvertscaling}
+  
+ A matrix transformation induced by 
+  \begin{equation} \label{vscale}
+M_v=\begin{bmatrix}
+1 & 0\\
+0 & k
+\end{bmatrix},
+\end{equation}
+where ($k>0$), scales objects in the plane vertically by a factor of $k$.
+
+A matrix transformation induced by
+  \begin{equation} \label{hscale}
+M_h=\begin{bmatrix}
+k & 0\\
+0 & 1
+\end{bmatrix},
+\end{equation}
+where ($k>0$), scales objects in the plane horizontally by a factor of $k$.
+\end{formula}
+
+In stating the above formula we stipulated that $k>0$.  If we were to allow $k$ to be zero, what would the resulting transformations accomplish?  In what way would the resulting matrices be fundamentally different from matrices $M_v$ and $M_h$?  What would happen if $k$ were allowed to be negative? (See Practice Problem \ref{prob:k0})
+
+\subsection*{Horizontal and Vertical Shears}
+A \dfn{horizontal shear} is a transformation that takes an arbitrary point $(a, b)$ and maps it to the point $(a+kb, b)$.  The effect of this transformation is that all points along a fixed horizontal line slide to the left or to the right by a fixed amount.  Note that the higher the point $(a, b)$ is above the $x$-axis, the greater is the magnitude of $kb$, resulting in a greater amount of horizontal slide.
+
+%\begin{figure}[h]
+%\begin{image}[4in]
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+
+  \draw[<->] (-2,0)--(4,0);
+   \draw[<->] (0,-2)--(0,4);
+  \draw[dashed] (-2,-1)--(4,-1);
+  \draw[dashed] (-2,1)--(4,1);
+  \draw[dashed] (-2,2)--(4,2);
+  \draw[dashed] (-2,3)--(4,3);
+  
+  
+  \fill[] (0,-1) circle (0.1cm);
+  \fill[] (1,-1) circle (0.1cm);
+  \fill[] (2,-1) circle (0.1cm);
+   
+  \fill[red] (0,0) circle (0.1cm);
+  \fill[red] (1,0) circle (0.1cm);
+  \fill[red] (2,0) circle (0.1cm);
+  
+  \fill[blue] (0,1) circle (0.1cm);
+  \fill[blue] (1,1) circle (0.1cm);
+  \fill[blue] (2,1) circle (0.1cm);
+  
+  \fill[gray] (0,2) circle (0.1cm);
+  \fill[gray] (1,2) circle (0.1cm);
+  \fill[gray] (2,2) circle (0.1cm);
+  
+  \fill[orange] (0,3) circle (0.1cm);
+  \fill[orange] (1,3) circle (0.1cm);
+  \fill[orange] (2,3) circle (0.1cm);
+  
+   
+  \end{tikzpicture}
+   \quad\quad
+\begin{tikzpicture}[scale=0.8]
+
+\draw[<->] (-2,0)--(4,0);
+  \draw[<->] (0,-2)--(0,4);
+  \draw[dashed] (-2,-1)--(4,-1);
+  \draw[dashed] (-2,1)--(4,1);
+  \draw[dashed] (-2,2)--(4,2);
+  \draw[dashed] (-2,3)--(4,3);
+   
+   \fill[] (0-0.5,-1) circle (0.1cm);
+  \fill[] (1-0.5,-1) circle (0.1cm);
+  \fill[] (2-0.5,-1) circle (0.1cm);
+   
+  \fill[red] (0,0) circle (0.1cm);
+  \fill[red] (1,0) circle (0.1cm);
+  \fill[red] (2,0) circle (0.1cm);
+  
+  \fill[blue] (0+0.5,1) circle (0.1cm);
+  \fill[blue] (1+0.5,1) circle (0.1cm);
+  \fill[blue] (2+0.5,1) circle (0.1cm);
+  
+  \fill[gray] (0+1,2) circle (0.1cm);
+  \fill[gray] (2,2) circle (0.1cm);
+  \fill[gray] (3,2) circle (0.1cm);
+  
+  \fill[orange] (1.5,3) circle (0.1cm);
+  \fill[orange] (2.5,3) circle (0.1cm);
+  \fill[orange] (3.5,3) circle (0.1cm);
+ 
+ \end{tikzpicture}
+%\end{image}
+\end{center}
+
+Adding a scalar multiple of the $y$ component to the $x$ component can be accomplished by matrix multiplication.  Observe that 
+$$\begin{bmatrix}
+1 & k\\
+0 & 1
+\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}=\begin{bmatrix}a+kb\\b\end{bmatrix}$$
+
+A \dfn{vertical shear} is a transformation that takes an arbitrary point $(a, b)$ and maps it to the point $(a, b+ka)$.  This too, can be accomplished by matrix multiplication.
+$$\begin{bmatrix}
+1 & 0\\
+k & 1
+\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}=\begin{bmatrix}a\\b+ka\end{bmatrix}$$
+
+\begin{formula}[Horizontal and Vertical Shears]\label{form:shears}
+  
+A matrix transformation induced by 
+  \begin{equation} 
+M_{hs}=\begin{bmatrix}
+1 & k\\
+0 & 1
+\end{bmatrix}
+\end{equation}
+shears the plane horizontally.
+
+A matrix transformation induced by
+  \begin{equation} 
+M_{vs}=\begin{bmatrix}
+1 & 0\\
+k & 1
+\end{bmatrix}
+\end{equation}
+shears the plane vertically.
+\end{formula}
+
+\begin{example}\label{ex:vertshear1} Find the matrix $M_{vs}$ of a matrix transformation $T$ that {\it shears} the image of a seagull, as shown in the figure below. 
+
+%\begin{figure}[h]
+%\begin{image}[4in]
+  \begin{center} 
+		\begin{tikzpicture}[scale=2]
+\node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
+  {\includegraphics[width=25mm]{gull.jpg}};
+  \draw[<->] (-0.5,0)--(2,0);
+  \draw[<->] (0,-0.5)--(0,2);
+       \end{tikzpicture}
+  \quad\quad
+\begin{tikzpicture}[scale=2]
+ \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (6.25mm,0)
+  {\includegraphics[width=25mm]{shearedgull.jpg}};
+  
+  \draw (0.5,0) arc (0:30:0.5);
+  \node[] at (0.75, 0.2)   (a) {$30^{\circ}$};
+
+\draw[<->] (-0.5,0)--(2,0);
+  \draw[<->] (0,-0.5)--(0,2);
+    
+ \end{tikzpicture}
+%\end{image}
+\end{center}
+
+\begin{explanation}
+Consider what this transformation does to the standard unit vectors.
+
+%\begin{figure}[h]
+
+%\begin{image}[4in]
+\begin{center}
+\begin{tikzpicture}[scale=2]
+
+  \draw[<->] (-0.5,0)--(1.5,0);
+  \draw[<->] (0,-0.5)--(0,1.5);
+   \draw[->,line width=1pt,red,-stealth](0,0)--(1,0);
+    \draw[->,line width=1pt,blue,-stealth](0,0)--(0,1);
+    \node[red] at (0.5, -0.1)   (a) {$\vec{i}$};
+  \node[blue] at (-0.1, 0.5)   (b) {$\vec{j}$};
+  \end{tikzpicture}
+   \quad\quad
+\begin{tikzpicture}[scale=2]
+
+\draw[<->] (-0.5,0)--(1.5,0);
+  \draw[<->] (0,-0.5)--(0,1.5);
+  \fill[] (1,0.58)node[above]{$(1,\tan 30^{\circ})$} circle (0.03cm);   
+   \draw[->,line width=1pt,red,-stealth](0,0)--(1,0.58);
+    \draw[->,line width=1pt,blue,-stealth](0,0)--(0,1);
+    \node[red] at (0.65, 0.15)   (a) {$T(\vec{i})$};
+  \node[blue] at (-0.2, 0.5)   (b) {$T(\vec{j})$};
+  \end{tikzpicture}
+%  \end{image}
+\end{center}
+
+The tip of the vector $\vec{i}$ slides up a vertical line and its $x$-component remains the same.  Vector $\vec{j}$ stays fixed.  We observe that $T(\vec{i})=\begin{bmatrix}
+1 \\
+\tan 30^{\circ}
+\end{bmatrix}=\begin{bmatrix}
+1 \\
+\sqrt{3}/3
+\end{bmatrix}$ and $T(\vec{j})=\vec{j}$.  This allows us to construct $M_{vs}$, by making the images of $\vec{i}$ and $\vec{j}$ the columns of $M_{vs}$.  Thus, 
+$$M_{vs}=\begin{bmatrix}
+1 & 0\\
+\sqrt{3}/3 & 1
+\end{bmatrix}$$
+\end{explanation}
+\end{example}
+
+
+
+\subsection*{Rotations about the Origin}
+It turns out that rotations about the origin are also matrix transformations.  You will have an opportunity to revisit and prove this claim in Problem \ref{prob:linOfRotRef} of \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SUPX-0060/main}{Additional Exercises}.
+
+\begin{example}\label{ex: rotate45} Let $R_{45^{\circ}}:\RR^2\rightarrow\RR^2$ be a transformation that rotates $\RR^2$ countercolockwise about the origin by $45^{\circ}$.  Find a matrix that induces $R_{45^{\circ}}$.
+
+%\begin{image}[4in]
+ \begin{center}   
+		\begin{tikzpicture}[scale=1.3]
+\node[inner sep=0pt] (tower) at (0,0)
+  {\includegraphics[width=45mm]{tower.jpg}};
+  \draw[<->] (-2,0)--(2,0);
+  \draw[<->] (0,-2)--(0,2);
+       \end{tikzpicture}\quad
+\begin{tikzpicture}[scale=1.3]
+\node[inner sep=0pt] (tower) at (0,0)
+  {\includegraphics[width=50mm]{rotatedtower.jpg}};
+  \draw[<->] (-2,0)--(2,0);
+  \draw[<->] (0,-2)--(0,2);
+       \end{tikzpicture}
+%\end{image}
+\end{center}
+
+\begin{explanation}  Consider the action of $R_{\theta}$ on the standard unit vectors. 
+
+%\begin{image}[4.5in]   
+\begin{center}
+\begin{tikzpicture}[scale=2.2]
+    \node[red] at (0.5, -0.1)   (a) {$\vec{i}$};
+    \node[blue] at (-0.1, 0.5)   (b) {$\vec{j}$};
+  \draw[<->] (-0.5,0)--(1.5,0);
+  \draw[<->] (0,-0.5)--(0,1.5);
+   \draw[->,line width=1pt,red,-stealth](0,0)--(1,0);
+    \draw[->,line width=1pt,blue,-stealth](0,0)--(0,1);
+  \end{tikzpicture}
+  \quad
+  \begin{tikzpicture}[scale=2.2]
+\node[red] at (0.3, 0.5)   (a) {$T(\vec{i})$};
+    \node[blue] at (-0.5, 0.2)   (b) {$T(\vec{j})$};
+     \node[] at (-0.7, 0.9)   (c) {$(-\sin 45^{\circ}, \cos 45^{\circ})$};
+      \node[] at (0.7, 0.9)   (c) {$(\cos 45^{\circ}, \sin 45^{\circ})$};
+  \draw[<->] (0,-0.5)--(0,1.5);
+  \draw[<->] (-1,0)--(1,0);
+  \fill[] (0.71,0.71) circle (0.03cm); 
+  \fill[] (-0.71,0.71) circle (0.03cm); 
+   \draw[->,line width=1pt,red,-stealth](0,0)--(0.71,0.71);
+    \draw[->,line width=1pt,blue,-stealth](0,0)--(-0.71,0.71);
+ \filldraw[blue, opacity=0.2](0,0)--(0.71,0.71)--(0.71,0)--cycle;
+ \filldraw[orange, opacity=0.3](0,0)--(-0.71,0.71)--(0,0.71)--cycle;
+  \draw (0.25,0) arc (0:45:0.25) ;
+  \draw (0,0.25) arc (90:135:0.25) ;
+  \node[] at (-0.15, 0.35)   (a) {$45^{\circ}$};
+\node[] at (0.40, 0.15)   (b) {$45^{\circ}$};
+ \end{tikzpicture}
+
+\end{center}
+
+
+
+We observe that $R_{\theta}(\vec{i})=\begin{bmatrix}
+\cos 45^{\circ} \\
+\sin 45^{\circ}
+\end{bmatrix}=\begin{bmatrix}
+\frac{\sqrt{2}}{2} \\
+\frac{\sqrt{2}}{2}
+\end{bmatrix}$ and $R_{\theta}(\vec{j})=\begin{bmatrix}
+-\sin 45^{\circ} \\
+\cos 45^{\circ}
+\end{bmatrix}=\begin{bmatrix}
+-\frac{\sqrt{2}}{2} \\
+\frac{\sqrt{2}}{2}
+\end{bmatrix}$.  This allows us to construct the matrix $M_{\theta}$, by making the images of $\vec{i}$ and $\vec{j}$ the columns of $M_{\theta}$.  Thus, 
+$$M_{\theta}=\begin{bmatrix}
+\frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2}\\
+\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}
+\end{bmatrix}$$
+\end{explanation}
+\end{example}
+
+In general, we find the rotation matrix by determining the images of vectors $\vec{i}$ and $\vec{j}$.
+
+\begin{center}
+\begin{tikzpicture}[scale=2.5]
+  \draw[<->] (-0.5,0)--(1.5,0);
+  \draw[<->] (0,-0.5)--(0,1.5);
+  \node[red] at (0.5, -0.1)   (a) {$\vec{i}$};
+    \node[blue] at (-0.1, 0.5)   (b) {$\vec{j}$};
+   \draw[->,line width=1pt,red,-stealth](0,0)--(1,0);
+    \draw[->,line width=1pt,blue,-stealth](0,0)--(0,1);
+  \end{tikzpicture}
+  \quad
+\begin{tikzpicture}[scale=2.5]
+\node[blue] at (-0.5, 0.5)   (a) {$R_{\theta}(\vec{j})$};
+\node[red] at (0.4, 0.4)   (b) {$R_{\theta}(\vec{i})$};
+
+\node[] at (0.9, 0.6)   (c) {$(\cos \theta,\sin \theta)$};
+\node[] at (-0.5, 1)   (d) {$(-\sin \theta, \cos \theta)$};
+
+\node[] at (-0.15, 0.55)   (a) {$\theta$};
+\node[] at (0.55, 0.15)   (b) {$\theta$};
+\draw[<->] (-1,0)--(1,0);
+  \draw[<->] (0,-0.5)--(0,1.5);
+  \fill[] (0.87,0.5) circle (0.03cm); 
+  \fill[] (-0.5, 0.87) circle (0.03cm); 
+   \draw[->,line width=1pt,red,-stealth](0,0)--(0.87,0.5);
+    \draw[->,line width=1pt,blue,-stealth](0,0)--(-0.5, 0.87);
+ \draw (0.5,0) arc (0:30:0.5) ;
+  \draw (0,0.5) arc (90:120:0.5) ;
  \end{tikzpicture}
  \end{center}
 
- The line we obtain in this fashion is called a \emph{line of best fit} or a \emph{trendline}, and the method we used is referred to as the  \emph{method of least squares}.
 
- We can apply the method of least squares to find best fitting non-linear functions.  
+\begin{formula}[Counterclockwise Rotation]\label{form:rotation}
+    A matrix transformation induced by
+    \begin{equation} \label{eq:rotation}
+M_{\theta}=\begin{bmatrix}
+\cos\theta & -\sin\theta\\
+\sin\theta & \cos\theta
+\end{bmatrix}
+\end{equation}
+rotates the plane counterclockwise through angle $\theta$ about the origin.
+\end{formula}
 
- \begin{example}\label{ex:leastSquaresPoly}
-Find the least squares approximating quadratic polynomial of the form $f(x)=ax^2+bx+c$ for the following points.
-$$(-3, 3), (-1, 1), (0, 1), (1, 2), (3, 4)$$
+\subsection*{Reflections about Lines of the Form $y=mx$}
+When a point is reflected about a line, its image is located on the opposite side of the line and the same distance away from the line as the original point.  This is another example of a matrix transformation.  (We will prove that this is a matrix transformation in Problem \ref{prob:linOfRotRef} of \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SUPX-0060/main}{Additional Exercises}.)
 
-\begin{explanation}
-    We are looking for an approximate solution to the system of equations
-    $$\begin{matrix}a(-3)^2&+&b(-3)&+&c&=&3\\a(-1)^2&+&b(-1)&+&c&=&1\\a(0)^2&+&b(0)&+&c&=&1\\a(1)^2&+&b(1)&+&c&=&2\\a(3)^2&+&b(3)&+&c&=&4\end{matrix}$$
-    This corresponds to the matrix equation
-    $$\begin{bmatrix}9&-3&1\\1&-1&1\\0&0&1\\1&1&1\\9&3&1\end{bmatrix}\begin{bmatrix}a\\b\\c\end{bmatrix}=\begin{bmatrix}3\\1\\1\\2\\4\end{bmatrix}$$
-    Multiplying on the left by $A^T$ gives us the normal equations.
-    $$A^TA\vec{z}=A^T\vec{b}$$
-    $$\begin{bmatrix}164&0&20\\0&20&0\\20&0&5\end{bmatrix}\vec{z}=\begin{bmatrix}66\\11\\4\end{bmatrix}$$
-    It turns out that $A^TA$ is invertible, so it is easy to solve for $\vec{z}$.  You can use technology to accomplish this.  We will demonstrate how to do this using Octave.  
+For example, the figure below shows the reflection of point $A$ about line $l$.  Note that the reflection lies on a line through $A$ perpendicular to $l$.
 
-To use Octave, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
 
-\begin{verbatim}
-% Define matrix A
-A=[9 -3 1;1 -1 1;0 0 1;1 1 1; 9 3 1];
-% Define vector b
-b=[3;1;1;2;4];
-% Let B be the inverse of A^TA.  
-B= inv(transpose(A)*A);
-% Now we solve for z
-ans=B*transpose(A)*b
-\end{verbatim}
+   \draw[line width=1pt](-1,2)node[below, left]{$l$}--(1,-2);
+  \draw[thin, dashed](-2,-1.5)--(2,0.5);
+  
+  \fill[red](1,0) circle (0.08)node[above]{$A$};
+  \fill[](-0.6,-0.8) circle (0.08);
+    \end{tikzpicture}
+    \end{center}
+ %   \end{image}
+ 
+Our task is to find the matrix of a reflection of the plane about an arbitrary line through the origin.  
+  
+
+\begin{exploration}\label{init:reflectionxyaxes}
+In this problem we will find the matrix for the reflection about the $x$ and $y$ axes.  You can easily do this on your own by finding the images of vectors $\vec{i}$ and $\vec{j}$.  
+  
+  We will start with the reflection about the $x$-axis.
+  
+  $$\vec{i}=\begin{bmatrix}1\\0\end{bmatrix}\quad\text{maps to}\quad\begin{bmatrix}\answer{1}\\\answer{0}\end{bmatrix}$$
+  
+  $$\vec{j}=\begin{bmatrix}0\\1\end{bmatrix}\quad\text{maps to}\quad\begin{bmatrix}\answer{0}\\\answer{-1}\end{bmatrix}$$
+  
+  So, the matrix that induces the reflection about the $x$-axis is
+  $$\begin{bmatrix}\answer{1}&\answer{0}\\\answer{0}&\answer{-1}\end{bmatrix}$$
+Next, we will consider the reflection about the $y$-axis.
+$$\vec{i}=\begin{bmatrix}1\\0\end{bmatrix}\quad\text{maps to}\quad\begin{bmatrix}\answer{-1}\\\answer{0}\end{bmatrix}$$
+  
+  $$\vec{j}=\begin{bmatrix}0\\1\end{bmatrix}\quad\text{maps to}\quad\begin{bmatrix}\answer{0}\\\answer{1}\end{bmatrix}$$
+  
+  Thus, the matrix that induces the reflection about the $y$-axis is
+  $$\begin{bmatrix}\answer{-1}&\answer{0}\\\answer{0}&\answer{1}\end{bmatrix}$$
+  
+  \end{exploration}
+  
+  Now we will turn our attention to transformations that reflect the plane about the line $y=mx$.  We will assume that $m\neq 0$.
+  
+  Consider the vector $\vec{i}$ and its reflection. 
+%\begin{figure}[h]
+%\begin{image}[2.2in]
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+
+  \draw[<->] (-2,0)--(2,0);
+  \draw[<->] (0,-2)--(0,2);
+
+  \draw[line width=1pt](-1,2)node[below, left]{$y=mx$}--(1,-2);
+  \draw[thin, dashed](-2,-1.5)node[below]{$y=-\frac{1}{m}x+\frac{1}{m}$}--(2,0.5);
+  \node[red] at (0.5, 0.2)   (a) {$\vec{i}$};
+  \node[] at (-0.5, -0.2)   (b) {$T(\vec{i})$};
+  \draw[->,line width=1pt, -stealth, red](0,0)--(1,0);
+  \draw[->,line width=1pt, -stealth](0,0)--(-0.6,-0.8);
+  \draw[dashed] (0,0) circle (1);
+ 
+  \end{tikzpicture}
+  \end{center}
+  %\end{image}
+
+   
+   
+   
+   Observe that the head of the image vector, $T(\vec{i})$, will lie on the line that passes through $(1,0)$ and is perpendicular to the line $y=mx$.  The equation of this line is given by
+   
+   \begin{equation}\label{eq:reflectionline} 
+   y=-\frac{1}{m}x+\frac{1}{m}
+   \end{equation}
+   
+ The head of $T(\vec{i})$ will also lie on the circle with equation
+   $$x^2+y^2=1$$
+   
+   
+   To find the image of $\vec{i}$ we need to determine where the line  $y=-\frac{1}{m}x+\frac{1}{m}$ intersects the circle.  Substitution gives us
+   
+   $$x^2+\left(-\frac{1}{m}x+\frac{1}{m}\right)^2=1$$
+   After a little algebra we get
+   $$\left(1+\frac{1}{m^2}\right)x^2-\left(\frac{2}{m^2}\right)x+\left(\frac{1}{m^2}-1\right)=0$$
+   The quadratic formula yields 
+   $$x=1\quad\text{and}\quad x=\frac{1-m^2}{m^2+1}$$
+   
+   The solution $x=1$ corresponds to the head of the vector $\vec{i}$.  So, the $x$-component of $T(\vec{i})$ is $x=\frac{1-m^2}{m^2+1}$.  We find the $y$-component of $T(\vec{i})$ by
+   substituting $x=\frac{1-m^2}{m^2+1}$ into Equation \ref{eq:reflectionline}.
+   $$ y=-\frac{1}{m}\left(\frac{1-m^2}{m^2+1}\right)+\frac{1}{m}=\frac{2m}{m^2+1}$$
+   Thus, the image of $\vec{i}$ under this reflection is given by
+   $$T(\vec{i})=\begin{bmatrix}\frac{1-m^2}{m^2+1}\\\frac{2m}{m^2+1}\end{bmatrix}$$
+   
+Next we need to find the image of $\vec{j}$. The head of $T(\vec{j})$ is located at one of the intersections of line $y=-\frac{1}{m}x+1$ and the circle $x^2+y^2=1$.  
+   
+
+% \begin{image}[2.2in]
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+
+  \draw[<->] (-2,0)--(2,0);
+  \draw[<->] (0,-2)--(0,2);
+ 
+  \draw[line width=1pt](-1,2)--(1,-2)node[above, right]{$y=mx$};
+  \draw[thin, dashed](-2,0)--(2,2)node[below,right]{$y=-\frac{1}{m}x+1$};
+  \node[blue] at (0.15, 0.5)   (a) {$\vec{j}$};
+  \draw[->,line width=1pt, -stealth, blue](0,0)--(0,1);
+  \draw[->,line width=1pt, -stealth](0,0)--(-0.8,0.6)node[above, left]{$T(\vec{j})$};
+  \draw[dashed] (0,0) circle (1);
+  \end{tikzpicture}
+  \end{center}
+ % \end{image}
+
+
+We leave it to the reader to verify that
+\begin{equation}\label{eq:imageofj} T(\vec{j})=\begin{bmatrix}\frac{2m}{m^2+1}\\\frac{m^2-1}{m^2+1}\end{bmatrix}\end{equation}
+
+This reflection is induced by the matrix 
+$$M_{y=mx}=\begin{bmatrix}\frac{1-m^2}{m^2+1} & \frac{2m}{m^2+1}\\\frac{2m}{m^2+1} & \frac{m^2-1}{m^2+1}\end{bmatrix}=\frac{1}{1+m^2}\begin{bmatrix}
+1-m^2 & 2m \\
+2m & m^2-1
+\end{bmatrix}$$
+
+\begin{formula}[Reflection about the line $y=mx$]\label{form:reflection}
+  
+  A matrix transformation induced by
+\begin{equation} \label{eq:reflectionymx}
+M_{y=mx}=\frac{1}{1+m^2}\begin{bmatrix}
+1-m^2 & 2m \\
+2m & m^2-1
+\end{bmatrix}
+\end{equation}
+reflects the plane about the line $y=mx$.
+\end{formula}
+Note that when $m=0$, expression (\ref{eq:reflectionymx}) is consistent with the reflection matrix you found in Exploration \ref{init:reflectionxyaxes}.
+
+\begin{example}\label{ex:reflectedduck} Find matrix $M$ that reflects the image of the duck about the line $y=\frac{3}{5}x$.
+
+%\begin{figure}[h]
+%\begin{image}[4in]
+\begin{center}
+		\begin{tikzpicture}[scale=2]
+\node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
+  {\includegraphics[width=25mm]{duck.jpg}};
+  \draw[<->] (-0.5,0)--(2,0);
+  \draw[<->] (0,-0.5)--(0,1.5);
+  \draw[red,thick] (0,0)--(2,1.2);
+  \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
+       \end{tikzpicture}
+   \quad
+\begin{tikzpicture}[scale=2]
+ \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (6.875mm,-4.2mm)
+  {\includegraphics[width=27.5mm]{reflectedduck.jpg}};
+  \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
+\draw[red,thick] (0,0)--(2,1.2);
+\draw[<->] (-0.5,0)--(2,0);
+  \draw[<->] (0,-0.5)--(0,1.5);
     
-    We arrive at the solution
-    $$\vec{z}=\begin{bmatrix}0.26\\0.20\\1.15\end{bmatrix}$$
+ \end{tikzpicture}
+ \end{center}
+% \end{image}
+% \caption{The original photo of the duck was reflected about he line $y=\frac{3}{5}x$.}
+%  \label{fig:reflectedduck} 
+%\end{figure}
+\begin{explanation}
+$$M=\frac{1}{1+9/25}\begin{bmatrix}1-9/25 & 6/5\\6/5 & 9/25 -1\end{bmatrix}=\frac{25}{34}\begin{bmatrix}16/25 & 6/5\\6/5 & -16/25\end{bmatrix}=\begin{bmatrix}8/17 & 15/17\\15/17 & -8/17\end{bmatrix}$$
+\end{explanation}
+\end{example}
 
-    Therefore, the quadratic function of best fit is given by $f(x)=0.26x^2+0.2x+1.15$.  You can see the graph and the points shown below.
+Note that the eye of the duck in Example \ref{ex:reflectedduck} is located on the line $y=\frac{3}{5}x$.  The reflection leaves the eye fixed in place.  The eye is an example of a \dfn{fixed point}.  In Practice Problem \ref{prob:fixedpoint} you will be asked to show that every point along the line $y=\frac{3}{5}x$ is a fixed point.
+
+\subsection*{Composition of Linear Transformations}
+
+If a matrix transformation is followed by another matrix transformation, the resulting transformation can be represented as a product of the two matrices that induce the individual transformations.  Thus, if $T_1$ is induced by $M_1$ and $T_2$ is induced by $M_2$, then $T=T_2\circ T_1$ is induced by $M=M_2M_1$.
+
+\begin{center}
+\begin{tikzpicture}
+\node{
+\begin{tikzcd}
+\RR^2\rar{T_1}\arrow[black, bend right]{rr}[black,swap]{T}  & \RR^2 \rar{T_2}  & \RR^2
+\end{tikzcd}
+};
+\end{tikzpicture}
+\end{center}
+
+Remember that matrix multiplication is not commutative, so the order in which the matrices are multiplied is of utmost importance.
+
+Consider the following example which incorporates a reflection as well as a rotation of vectors.
+
+\begin{example}\label{exa:rotationreflection}
+\begin{enumerate}
+    \item Find the matrix of the linear transformation which is obtained by first rotating all vectors counterclockwise by an angle of $\pi /6$ and then reflecting across the $x$-axis.
+    \item Multiply the vector $\vec{v}=\begin{bmatrix}
+    1/2 \\ \sqrt{3}/2 \end{bmatrix}$ by the matrix you found in part (a) to illustrate how the transformation works.
+\end{enumerate}
+
+
+\begin{explanation}
+\begin{enumerate}
+    \item 
+
+Using Formula \ref{form:rotation}, the matrix of the transformation which
+involves rotating through an angle of $\pi /6$ is
+\begin{equation*}
+M_1 =
+\begin{bmatrix}
+\cos \left( \pi /6\right) & -\sin \left( \pi /6\right) \\
+\sin \left( \pi /6\right) & \cos \left( \pi /6\right)
+\end{bmatrix}
+ =
+\begin{bmatrix}
+\frac{1}{2}\sqrt{3} & -\frac{1}{2} \\
+\frac{1}{2} & \frac{1}{2}\sqrt{3}
+\end{bmatrix}
+\end{equation*}
+
+As we learned in Exploration \ref{init:reflectionxyaxes}, the matrix for the transformation which reflects all vectors about the $x$-axis is $M_2 = \begin{bmatrix}1 & 0 \\ 0 & -1 \end{bmatrix}$.
+
+Therefore, the matrix of the linear transformation which first rotates
+through $\pi /6$ and then reflects through the $x$-axis is given by
+\begin{equation*}
+M = M_2 M_1 = 
+\begin{bmatrix}1 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix}
+\frac{1}{2}\sqrt{3} & -\frac{1}{2} \\
+\frac{1}{2} & \frac{1}{2}\sqrt{3}
+\end{bmatrix} = \begin{bmatrix}
+\frac{1}{2}\sqrt{3} & \frac{1}{2} \\
+-\frac{1}{2} & -\frac{1}{2}\sqrt{3}
+\end{bmatrix}
+\end{equation*}
+
+\item From unit circle trigonometry, we know that $\vec{v}$ makes a $\pi/3$ angle with the $x$-axis.  If we rotate $\vec{v}$ counterclockwise by $\pi /6$, it will point straight up.  
+
+\begin{center}
+\begin{tikzpicture}[scale=2]
+  \draw[<->] (-0.5,0)--(1,0);
+  \draw[<->] (0,-0.5)--(0,1.5);
+\draw[line width=1pt, blue, stealth-](0.5,1.73/2)--(0,0);
+\draw[line width=1pt, red, -stealth](0,0)--(0,1);
+\fill[blue] (0.4,0.3)node[right]{$\pi/3$};
+\fill[red] (0.2,0.7)node[above]{$\pi/6$};
+\draw[blue] (0.4,0) arc (0:60:0.4) ;
+\draw[red] (0.25,1.73/4) arc (60:90:0.5) ;
+\node[blue] at (0.9, 1.75/2)   (b) {$(\frac{1}{2},\frac{\sqrt{3}}{2})$}; 
+ \end{tikzpicture}
+\end{center}
+
+
+Following the rotation with reflection across the $x$-axis will make it point straight down.  Sure enough, 
+$$M\vec{v} = \begin{bmatrix}
+\frac{1}{2}\sqrt{3} & -\frac{1}{2} \\
+-\frac{1}{2} & -\frac{1}{2}\sqrt{3}
+\end{bmatrix} \begin{bmatrix}
+    1/2 \\ \sqrt{3}/2 \end{bmatrix} = \begin{bmatrix}
+    0 \\ -1 \end{bmatrix}.$$
+\end{enumerate}
+\end{explanation} 
+\end{example}
+
+\begin{exploration}\label{exp:matrixComp}
+You can use the GeoGebra interactive below to decompose a matrix into a product of two matrices corresponding to the basic transformations we discussed above: scalings, rotations, shears and reflections.
+
+Consider the matrix $M=\begin{bmatrix} 1 & 0\\-1 & -1\end{bmatrix}$.  This matrix induces a transformation that can be broken into two parts: (1) a reflection followed by (2) a shear.  Find matrices $M_1$ and $M_2$ that induce the reflection and the shear respectively.  Verify that the product of the two matrices is equal to $M$ (be careful about the order of the product!).
+$$M=M_2M_1=\begin{bmatrix}\answer{1}&\answer{0}\\\answer{-1}&\answer{1}\end{bmatrix}\begin{bmatrix}\answer{1}&\answer{0}\\\answer{0}&\answer{-1}\end{bmatrix}$$
+
+\pdfOnly{
+Access GeoGebra interactives through the online version of this text at 
+
+\href{https://ximera.osu.edu/oerlinalg}{https://ximera.osu.edu/oerlinalg}.
+}
 
 \begin{onlineOnly}
 \begin{center}
-\desmos{kxbnnn5cwr}{950}{650}
+\geogebra{d6jyt85s}{950}{500}
 \end{center}
 \end{onlineOnly}
 
-Before the end of this section we will return to this problem with a more computationally efficient approach.
-\end{explanation}
- \end{example}
+Let  $M=\begin{bmatrix}-1&0\\0&-1\end{bmatrix}$.  Use the GeoGebra interactive above to visually examine the transformation induced by $M$.  The composition of which transformations is equivalent to the transformation induced by $M$? 
+\begin{multipleChoice}  
+\choice{Rotation by 180 degrees.}  
+\choice{Reflection about the $x$-axis, followed by a reflection about the $y$-axis.}
+\choice{Reflection about the $y$-axis, followed by a reflection about the $x$-axis.}  
+\choice[correct]{All of the above.}
+\end{multipleChoice} 
 
- \begin{example}\label{ex:leastSq3}
-     Given the data points $(-1, 0)$, $(0,1)$, and $(1,4)$, find the least squares approximating function of the form $f(x)=ax+b2^x$.
-\begin{explanation}
-    We are looking for an approximate solution to the system of equations
-    $$\begin{matrix}a(-1)&+&b(2^{-1})&=&0\\a(0)&+&b(2^{0})&=&1\\a(1)&+&b(2^{1})&=&4\end{matrix}\\$$
-    This corresponds to the matrix equation
-    $$\begin{bmatrix}-1&1/2\\0&1\\1&2\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}=\begin{bmatrix}0\\1\\4\end{bmatrix}$$
+Let $M=\begin{bmatrix}0&1\\-1&0\end{bmatrix}$.  Use the GeoGebra interactive above to visually examine the transformation induced by $M$.
+The composition of which transformations is equivalent to the transformation induced by $M$? 
+\begin{multipleChoice}  
+\choice[correct]{Reflection about the $x$-axis, followed by a reflection about the line $y=-x$.}
+\choice{Reflection about the $y$-axis, followed by a reflection about the $x$-axis.}  
+\choice{All of the above.}
+\choice{None of the above.}
+\end{multipleChoice} 
+\end{exploration}
 
-    Using the normal equations, we obtain
-    $$A^TA\vec{z}=A^T\vec{b}$$
-    $$\frac{1}{4}\begin{bmatrix}8&6\\6&21\end{bmatrix}\vec{z}=\begin{bmatrix}4\\9\end{bmatrix}$$
-Solving for $\vec{z}$ yields
-$$\vec{z}=\begin{bmatrix}10/11\\16/11\end{bmatrix}$$
-Therefore, the function of best fit (of the given form) is given by $$f(x)=\frac{10}{11}x+\frac{16}{11}(2^x)$$
 
-\begin{onlineOnly}
+\begin{example}\label{init:reflectioncomp}  In this problem we will consider compositions of two reflections and use geometry to illustrate non-commutativity of matrix multiplication.  
+Let $$T_{y=-2x}:\RR^2\rightarrow \RR^2$$ be a reflection about the line $y=-2x$.  Let $$T_{y=x}:\RR^2\rightarrow \RR^2$$ be a reflection about the line $y=x$. We will denote the standard matrices for these transformations by $M_{y=-2x}$ and $M_{y=x}$, and
+use geometry to demonstrate that $M_{y=x}M_{y=-2x}\neq M_{y=-2x}M_{y=x}$.  
+ 
+ To do this, consider transformations $T_1=T_{y=x}\circ T_{y=-2x}$ and $T_2=T_{y=-2x}\circ T_{y=x}$.  Transformation $T_1$ is induced by $M_{y=x}M_{y=-2x}$, and $T_2$ is induced by $M_{y=-2x}M_{y=x}$.
+
+The figure on the left illustrates the action of $T_1$ on a single point $A$.  First, $A$ is reflected about the line $y=-2x$, then $A$ is reflected about the line $y=x$.   
+
+The figure on the right shows the action of $T_2$ on the same point $A$.  The point is first reflected about the line $y=x$, followed by a reflection about the line $y=-2x$.  The final images of point $A$ under $T_1$ and $T_2$ are clearly different.
+
 \begin{center}
-\desmos{y2fgw13hki}{950}{650}
+\begin{tikzpicture}[scale=.3]
+\draw[thin,gray!40] (-8,-8) grid (8,8);
+  \draw[<->] (-8,0)--(8,0);
+  \draw[<->] (0,-8)--(0,8);
+  \draw[line width=1pt,blue](-8,-8)--(8,8)node[below=4mm]{$y=x$} ;
+  \draw[line width=1pt,red](-4,8)--(4,-8)node[above=2mm, right=1mm]{$y=-2x$};
+ 
+  \draw[gray, dashed] (-5,5)--(-1,7);
+  \draw[gray, dashed] (-1,7)--(7,-1);
+  \fill[] (-5,5)node[above=2mm, left=1mm]{$A$} circle (0.2cm);
+  \fill[] (-1,7)node[above=3mm]{} circle (0.2cm);
+  \fill[] (7,-1)node[below=2mm]{$T_1(A)$} circle (0.3cm);
+  \end{tikzpicture}
+  \quad\quad
+\begin{tikzpicture}[scale=.3]
+ 
+\draw[thin,gray!40] (-8,-8) grid (8,8);
+  \draw[<->] (-8,0)--(8,0);
+  \draw[<->] (0,-8)--(0,8);
+\draw[gray, dashed] (-5,5)--(5,-5);
+  \draw[gray, dashed] (5,-5)--(1,-7);
+  \fill[] (-5,5)node[above=2mm, left=1mm]{$A$} circle (0.2cm);
+  \fill[] (5,-5)node[above=3mm]{} circle (0.2cm);
+  \fill[] (1,-7)node[left=2mm]{$T_2(A)$} circle (0.3cm);
+  the transformation induced by
+  \draw[line width=1pt,blue](-8,-8)--(8,8)node[below=4mm]{$y=x$} ;
+  \draw[line width=1pt,red](-4,8)--(4,-8)node[above=2mm, right=1mm]{$y=-2x$} ;
+ \end{tikzpicture}
+%\end{image}
 \end{center}
-\end{onlineOnly}
-\end{explanation}
- \end{example}
 
-\subsection*{$QR$-Factorization: A Quicker Way to do Least Squares}
-
-When solving the normal equations in (\ref{eq:normalForZ}), it is advantageous to have a $QR$-factorization of $A$.  For then we can write
-\begin{eqnarray*}
-A^TA\vec{z}&=&A^T\vec{b} \\
-(QR)^T(QR)\vec{z}&=&(QR)^T\vec{b} \\
-R^TQ^TQR\vec{z}&=&R^TQ^T\vec{b} \\
-R^TR\vec{z}&=&R^TQ^T\vec{b}.
-\end{eqnarray*}
-
-Since $R$ is invertible, then $R^T$ also has an inverse, and multiplying on the left by it yields
-$$R\vec{z} = Q^T b.$$
-
-This last equation is easily solved by back-substitution, since $R$ is upper triangular.
-This greatly reduces the amount of computations we need to make, as we will observe by using Octave in our final example of the section.  
-
-\begin{example}\label{ex:leastSquaresPolyRevisited}
-Let's return to the Octave calculations we did in Example \ref{ex:leastSquaresPoly}, so we can see the improvement.
-
-\begin{explanation}
-    To use Octave, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
-
-\begin{verbatim}
-% Define matrix A
-A=[9 -3 1;1 -1 1;0 0 1;1 1 1; 9 3 1];
-% Define vector b
-b=[3;1;1;2;4];
-tic %this command begins a timer so we can compare how long it takes to perform our computations
-% Let B be the inverse of A^TA.  
-B= inv(transpose(A)*A);
-% Now we solve for z
-ans=B*transpose(A)*b
-toc % This command gives us the amount of time it took to perform the calculations
-% Here we try the computation again using QR-factorization, and we will see it is more efficient
-tic  %start the timer
-% Compute the QR-factorization of A  
-[Q,R]=qr(A);
-ans=R\(transpose(Q)*b)
-toc  % Is the result noticeably faster?
-\end{verbatim}
-
-\end{explanation}
+Since $T_1\neq T_2$, we conclude that $M_{y=x}M_{y=-2x}\neq M_{y=-2x}M_{y=x}$.
 
 \end{example}
 
+\begin{example}\label{ex:rotationscommute}
+Some pairs of matrices do commute.  For example, geometry makes it is easy to see that two rotation matrices commute.
+\end{example}
+
 \section*{Practice Problems}
-
-\begin{problem}\label{prob:leastSq1}
-Find the best approximation to a solution to the system of equations.
-$$\begin{matrix}3x&+&y&+&z&=&6\\2x&+&3y&-&z&=&1\\2x&-&y&+&z&=&0\\3x&-&3y&+&3z&=&8\end{matrix}$$
-Enter answers in fraction form below.
-$$x=\answer{\frac{-20}{12}},\quad y=\answer{\frac{46}{12}},\quad z=\answer{\frac{95}{12}}$$
-\end{problem}
-
-\begin{problem}
-Find a linear function of best fit for each of the following sets of data points.  Examine how well your line fits the points by typing the equation of the line into the Desmos window.
-
-\begin{problem}\label{prob:leastSq2a}
-$$(2,4), (4,3), (7,2), (8,1)$$
-Enter your answers in fraction form.
-$$f(x)=\answer{\frac{-6}{13}}x+\answer{\frac{64}{13}}$$
-\begin{onlineOnly}
-\begin{center}
-\desmos{tktztr0nvo}{950}{650}
-\end{center}
-\end{onlineOnly}
-\end{problem}
-
-\begin{problem}\label{prob:leastSq2b}
-$$(-2, 3), (-1,1), (0,0), (1, -2), (2, -4)$$
-
-$$f(x)=\answer{-1.7}x+\answer{-0.4}$$
-\begin{onlineOnly}
-\begin{center}
-\desmos{oom9xumepk}{950}{650}
-\end{center}
-\end{onlineOnly}
-\end{problem}
-\end{problem}
-
-\begin{problem}\label{prob:useOctave}
-    Modify the Octave code in Example \ref{ex:leastSquaresPolyRevisited} to retry the problem in Example \ref{ex:leastSquares3}.  Is $QR$ quicker?
-\end{problem}
-
-\begin{problem}\label{prob:leastSq3}
-Use Octave to find the least squares approximating quadratic function for the following data points.
-$$(-2,1),(0,0),(3,2),(4,3)$$
-Round your answers to three decimal places.
-$$f(x)=\answer{0.194}x^2+\answer{-0.024}x+\answer{0.127}$$
-\end{problem}
-
-\begin{problem}\label{ex:5_6_14}
-If $A$ is an $m \times n$ matrix, it can be proved that there exists a unique $n \times m$ matrix $A^{\#}$ satisfying the following four conditions: $AA^{\#}A = A$; $A^{\#}AA^{\#} = A^{\#}$; $AA^{\#}$ and $A^{\#}A$ are symmetric. The matrix $A^{\#}$ is called the \emph{Moore-Penrose} inverse.
-
+\begin{problem}\label{prob:k0}
+Consider matrices $M_v$ and $M_h$ in (\ref{vscale}) and (\ref{hscale}).  
 \begin{enumerate}
-\item If $A$ is square and invertible, show that $A^{\#} = A^{-1}$.
-
-\item If $\text{rank} A = m$, show that $A^{\#} = A^{T}(AA^{T})^{-1}$.
-
-\item If $\text{rank} A = n$, show that $A^{\#} = (A^{T}A)^{-1}A^{T}$.  (Notice the appearance of the Moore-Penrose inverse arrived when we solve the normal equations, arriving at Equation (\ref{eq:leastSquaresZ})). 
-
+\item
+If we were to allow $k$ to be zero, what would the resulting transformations accomplish?  
+\item If $k=0$, in what way would the resulting matrices be fundamentally different from matrices $M_v$ and $M_h$ $(k\neq 0)$?  
+\item Do $M_v$ and $M_h$ $(k\neq 0)$ have inverses?  What about $M_v$ and $M_h$ $(k= 0)$?  
+\item What would happen if we allowed $k$ to be negative?
 \end{enumerate}
 \end{problem}
 
+\begin{problem}\label{prob:matrixlintrans} Find a matrix $M$ that would double the length of a photo horizontally, and triple the height of the photo.
+$$M=\begin{bmatrix}\answer{2} & \answer{0}\\\answer{0} & \answer{3}\end{bmatrix}$$
+\end{problem}
 
-% In many scientific investigations, data are collected that relate two variables. For example, if $x$ is the
-% number of dollars spent on advertising by a manufacturer and $y$ is the value of sales in the region in
-% question, the manufacturer could generate data by spending $x_1,\,x_2,\, \dots,\, x_n$ dollars at different times and
-% measuring the corresponding sales values $y_1,\, y_2,\,\dots ,\, y_n$.
+\begin{problem}\label{prob:shearedsheep}
+(Sheared Sheep) Find a matrix that induces the transformation shown in the figure. 
+%\begin{image}[4in]
+   \begin{center}
+		\begin{tikzpicture}[scale=2]
+\node[inner sep=0pt, anchor=base] (gulls) at (8.75mm,0)
+  {\includegraphics[width=35mm]{sheep.jpg}};
+  \draw[<->] (-0.25,0)--(2,0);
+  \draw[<->] (0,-0.25)--(0,1.8);
+       \end{tikzpicture}
+  \quad
+\begin{tikzpicture}[scale=2]
+ 
+ \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (12.35mm,0)
+  {\includegraphics[width=49.4mm]{shearedsheep.jpg}};
+  \node[] at (2.4, 0.25)   (a) {$60^{\circ}$};
+ \draw (22.3mm,0) arc (0:60:0.5) ;
 
-% Suppose it is known that a linear relationship exists between the variables
-% $x$ and $y$ -- in other words, that $y = a+bx$ for some constants $a$ and
-% $b$. If the data are plotted, the points $(x_1, y_1),\, (x_2, y_2),\dots ,\, (x_n, y_n)$ may
-% appear to lie on a straight line and estimating $a$ and $b$ requires finding
-% the “best-fitting” line through these data points. For example, if five data
-% points occur as shown in the diagram, line $L_1$ is clearly a better fit than line
-% $L_2$. In general, the problem is to find the values of the constants $a$ and $b$
-% such that the line $y = a+bx$ best approximates the data in question. Note
-% that an exact fit would be obtained if $a$ and $b$ were such that $y_i = a+bx_i$
-% were true for each data point $(x_i, y_i)$. But this is too much to expect. So, the choice of $a$ and $b$ should be made in such a
-% way that the errors between the observed values $y_i$ and the corresponding fitted values $a+bx_i$ are in some
-% sense minimized. 
+\draw[<->] (-0.25,0)--(3,0);
+  \draw[<->] (0,-0.25)--(0,1.8);
+    
+ \end{tikzpicture}
+ \end{center}
+%\end{image}
+
+\end{problem}
+
+\begin{problem}\label{prob:translation_does_not_work}
+
+Suppose a 1 by 1 photo of a chipmunk was shifted as shown in the figure. 
+%\begin{image}[4.2in]  
+\begin{center}
+		\begin{tikzpicture}[scale=2]
+\node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
+  {\includegraphics[width=25mm]{chipmunk.jpg}};
+  \draw[<->] (-0.5,0)--(2,0);
+  \draw[<->] (0,-0.5)--(0,2);
+  \draw[->,red, line width=1mm, -stealth] (0mm,0mm)--(12.5mm,0mm)node[below right]{$(1, 0)$};
+  \draw[->,blue, line width=1mm, -stealth] (0mm,0mm)--(0mm,12.5mm)node[above left]{$(0, 1)$};
+       \end{tikzpicture}
+  \quad\quad
+   \begin{tikzpicture}[scale=2]
+ \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (11.25mm,5mm)
+  {\includegraphics[width=25mm]{chipmunk.jpg}};
+\draw[<->] (-0.5,0)--(2,0);
+  \draw[<->] (0,-0.5)--(0,2);
+  \draw[->,red, line width=1mm, -stealth] (0mm,0mm)--(17.5mm,5mm)node[below right]{$(1.4, 0.4)$};
+  \draw[->,blue, line width=1mm, -stealth] (0mm,0mm)--(5mm,17.5mm)node[above right]{$(0.4, 1.4)$};
+    \end{tikzpicture}
+    \end{center}
+%\end{image}
+
+Suppose we tried to construct a standard matrix $M$ for this transformation by making the images of $\vec{i}$ and $\vec{j}$ the columns of $M$.  We would obtain
+$$M=\begin{bmatrix}1.4 & 0.4\\0.4 & 1.4\end{bmatrix}$$
+Does this matrix describe the transformation?  If so, prove it.  If not, explain why not.
+\end{problem}
+
+\begin{problem}\label{prob:translationtrans}
+A transformation $T:\RR^2\rightarrow \RR^2$ that shifts all points in the plane horizontally or vertically by a fixed amount is called a \dfn{translation}.  Is $T$ a matrix transformation?  Prove your claim.
+\begin{hint}
+    Use Problem \ref{prb:6.4}
+\end{hint}
+\end{problem}
+
+\begin{problem}\label{prob:reflectreflect} A reflection about the line $y=mx$ followed by another reflection about the same line, returns all points to their original position.  Prove this using matrix multiplication.
+\begin{hint}
+    Find the product of $M_{y=mx}M_{y=mx}$.
+\end{hint}
+\end{problem}
+
+\begin{problem} \label{prob:imageofj}
+Verify Equation (\ref{eq:imageofj}).
+\end{problem}
+
+\begin{problem}\label{prob:fixedpoint}
+Prove that every point along the line $y=\frac{3}{5}x$ in Example \ref{ex:reflectedduck} is a fixed point.
+\end{problem}
+
+\begin{problem}\label{prob:reflectedduck}
+The figure below shows a sequence of two matrix transformations that accomplishes a reflection about the line $y=\frac{3}{5}x$.  The first transformation is a reflection of the plane about the $x$-axis.  The second transformation is a rotation of the plane about the origin.  Find matrices that induce the two transformations and verify that their product (in the correct order) is the reflection matrix of Example \ref{ex:reflectedduck}.
+%\begin{figure}[h]
+\begin{center}
+     
+		\begin{tikzpicture}[scale=2]
+\node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
+  {\includegraphics[width=25mm]{duck.jpg}};
+  \draw[<->] (-0.5,0)--(2,0);
+  \draw[<->] (0,-0.5)--(0,1.5);
+  \draw[red,thick] (0,0)--(2,1.2);
+  \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
+       \end{tikzpicture}
+\end{center}  
+    
+ \begin{center}      
+		\begin{tikzpicture}[scale=2]
+\node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,-8.9mm)
+  {\includegraphics[width=25mm]{upsidedownduck.jpg}};
+  \draw[<->] (-0.5,0)--(2,0);
+  \draw[<->] (0,-1.5)--(0,1.5);
+  \draw[red,thick] (0,0)--(2,1.2);
+  \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
+  \draw[dashed] (0,0)--(0.8,1.5)node[above=2mm, left=1mm]{};
+       \end{tikzpicture}
+ \end{center}  
+    
+ \begin{center}
+\begin{tikzpicture}[scale=2]
+ \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (6.875mm,-4.2mm)
+  {\includegraphics[width=27.5mm]{reflectedduck.jpg}};
+  
+  
+\draw[red,thick] (0,0)--(2,1.2);
+\node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
+\draw[<->] (-0.5,0)--(2,0);
+  \draw[<->] (0,-0.5)--(0,1.5);
+   \draw[dashed] (0,0)--(0.8,1.5)node[above=2mm, left=1mm]{}; 
+ \end{tikzpicture}
+\end{center}
+ \end{problem}
+
+\section*{Example Source}
+Example \ref{exa:rotationreflection}  was adapted from Example 5.27  of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra}. (CC-BY)
+
+Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, p. 290. 
+
+
+\section*{Photo Credits}
+The following images are courtesy of \href{https://commons.wikimedia.org/wiki/Main_Page}
+{Wikimedia Commons}
+
+Adrian Pingstone, \dfn{A male Mandarin Duck at Slimbridge Wildfowl and Wetlands Centre, Gloucestershire, England.} Public Domain
+
+Ansgar Koreng, \dfn{Facade of ARD-Hauptstadtstudio in Berlin-Mitte.} CC-BY 4.0
+
+Christoph Braun, \dfn{Reflection of St. Michaelis Church in a window of St. Ansgar in Hamburg, Germany.} Public Domain.
+
+Daniel Gammert, \dfn{Red-billed Gulls Chroicocephalus novaehollandiae scopulinus. Brighton Beach, New Zealand.} Public Domain
+
+ I, Tony Wills, \dfn{Red billed gull in Wellington Harbour, Wellington, New Zealand.}  CC-BY
+
+Jackhynes, \dfn{Lleyn sheep taken with a Sony Digital Camera at 3.2 megapixels in Devon, UK.} Public Domain
+
+Erik Davis, \dfn{Chipmunk.} CC-BY
 
 
 
-% Least squares approximation is a way to do this.
-% The first thing we must do is explain exactly what we mean by the best fit of a line y = a+bx to an
-% observed set of data points (x1, y1), (x2, y2), . . . , (xn, yn). For convenience, write the linear function
-% r0+r1x as
-% f
 
-
-
-
-
-% This is from Nicholson's section on QR, and may be helpful:
-
-% In Section~\ref{sec:5_6} we found how to find a best approximation $\vec{z}$ to a solution of a (possibly inconsistent) system $A\vec{x} = \vec{b}$ of linear equations: take $\vec{z}$ to be any solution of the ``normal'' equations $(A^{T}A)\vec{z} = A^{T}\vec{b}$. If $A$ has independent columns this $\vec{z}$ is unique ($A^{T}A$ is invertible by Theorem~\ref{thm:015672}), so it is often desirable to compute $(A^{T}A)^{-1}$. This is particularly useful in least squares approximation (Section~\ref{sec:5_6}). This is simplified if we have a QR-factorization of $A$ (and is one of the main reasons for the importance of Theorem~\ref{th:QR-025133}). For if $A = QR$ is such a factorization, then $Q^{T}Q = I_{n}$ because $Q$ has orthonormal columns (verify), so we obtain
-% \begin{equation*}
-% A^TA = R^TQ^TQR = R^TR
-% \end{equation*}
-% Hence computing $(A^{T}A)^{-1}$ amounts to finding $R^{-1}$, and this is a routine matter because $R$ is upper triangular. Thus the difficulty in computing $(A^{T}A)^{-1}$ lies in obtaining the QR-factorization of $A$.
-
-\section*{Text Source}
-A portion of this section has been adapted from
-W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2021-A, Open Edition, pp. 308-319.
-
-\end{document}
+\end{document} 

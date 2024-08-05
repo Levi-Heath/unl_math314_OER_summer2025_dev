@@ -49,5 +49,7 @@
 <xi:include href="Section-Standard_matrix-of-a-Linear-Transformation-from-Rn-to-Rm.ptx"/>
 <xi:include href="Section-Composition-and-Inverses-of-Linear-Transformations.ptx"/>
 <xi:include href="Section-Image-and-Kernel-of-a-Linear-Transformation.ptx"/>
+<xi:include href="Section-Geometric-Transformations-of-the-Plane.ptx"/>
+
 </chapter>
 
