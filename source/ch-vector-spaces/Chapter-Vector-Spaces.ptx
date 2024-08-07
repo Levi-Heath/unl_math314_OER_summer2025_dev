@@ -49,6 +49,6 @@
 <xi:include href="Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.ptx"/>
 <xi:include href="Section-Isomorphic-Vector-Spaces.ptx"/>
 <xi:include href="Section-Linear-Transformationns-of-Abstract-Vector-Spaces.ptx"/>
-
+<xi:include href="Section-Inner-Product-Spaces.ptx"/>
 </chapter>
 
