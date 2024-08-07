@@ -41,5 +41,5 @@
 <xi:include href="Section-QR-Factorization.ptx"/>
 <xi:include href="Section-Least-Squares-Approximation.ptx"/>
 <xi:include href="Section-SVD-Decomposition.ptx"/>
-
+<xi:include href="Section-Positive-Definite-Matrices.ptx"/>
 </chapter>
