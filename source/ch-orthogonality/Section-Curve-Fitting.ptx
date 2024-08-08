@@ -290,7 +290,7 @@ is referred to as <em>overfitting</em>.  While sometimes it is beneficial to hav
     <latex-image>
       \begin{tikzpicture}
 \node[inner sep=0pt, anchor=base] (p1) at (0,0)
-  {\includegraphics[height=50mm]{pointsCoincide.jpg}};
+  {\includegraphics[height=50mm]{/workspaces/unl_math314/assets/images/pointsCoincide.jpg}};
              \end{tikzpicture}
     </latex-image>
 </image>
@@ -298,9 +298,9 @@ is referred to as <em>overfitting</em>.  While sometimes it is beneficial to hav
    <image width="55%">
    <shortdescription></shortdescription>
     <latex-image>
-      \begin{tikzpicture}[scale=2]
+      \begin{tikzpicture}
  \node[inner sep=0pt, anchor=base]  (p2) at (0,0)
-  {\includegraphics[height=50mm]{verticalPoints.jpg}};
+  {\includegraphics[height=50mm]{/workspaces/unl_math314/assets/images/verticalPoints.jpg}};
         \end{tikzpicture}
     </latex-image>
 </image>

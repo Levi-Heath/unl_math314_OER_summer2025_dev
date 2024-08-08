@@ -69,13 +69,13 @@ Using these equations, express each <m>\mathbf{c}_{k}</m> as a linear combinatio
 \end{array}
 </me>
 These equations have a matrix form that gives the required factorization:
-<mdn xml:id="matrixFactEq">
-<mrow> A \amp  = \left[ \begin{array}{ccccc}
+<mdn>
+<mrow  xml:id="matrixFactEq"> A \amp  = \left[ \begin{array}{ccccc}
 |\amp |\amp |\amp  \amp | \\
 \mathbf{c}_{1} \amp  \mathbf{c}_{2} \amp  \mathbf{c}_{3} \amp \cdots \amp   \mathbf{c}_{n}\\
 |\amp |\amp |\amp  \amp |
 \end{array}\right]  </mrow>
-<mrow> \amp = \left[ \begin{array}{ccccc}
+<mrow number="no"> \amp = \left[ \begin{array}{ccccc}
 |\amp |\amp |\amp  \amp | \\
 \mathbf{q}_{1} \amp  \mathbf{q}_{2} \amp  \mathbf{q}_{3} \amp  \cdots \amp   \mathbf{q}_{n}\\
 |\amp |\amp |\amp  \amp |
@@ -88,7 +88,7 @@ These equations have a matrix form that gives the required factorization:
 \end{array} \right]. </mrow>
 </mdn>
 
-Here the first factor 
+<xref ref="matrixFactEq"/> Here the first factor 
 <me>
 Q = \left[ \begin{array}{ccccc}
 |\amp |\amp |\amp  \amp | \\
