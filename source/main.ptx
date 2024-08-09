@@ -5,7 +5,7 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="my-great-book">
-    <title>Linear Algebra</title>
+    <title>Coordinated Linear Algebra</title>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
