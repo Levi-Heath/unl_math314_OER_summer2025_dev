@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="Section-Composition-and-Inverses-of-Linear-Transformations" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Composition, Inverses, Images and kernel</title>
+    <title>Composition, Inverses, Images and Kernel</title>
 
 
 
@@ -16,6 +16,14 @@
 Note to Student:  In this section we will often use <m>U</m>, <m>V</m> and <m>W</m> to denote subspaces of <m>\R^n</m>, or any other finite-dimensional vector space, such as those we study later on.
 </p>
 
+
+
+
+
+
+<subsection xml:id="Subsection-Composition-and-Matrix-Multiplication">
+    <title>Composition and Matrix Multiplication</title>
+    
 
 <definition xml:id="def-compoflintrans">
 
@@ -172,9 +180,6 @@ We have <m>(R\circ S)\circ T=R\circ (S\circ T)</m>.
 
 
 
-
-<subsection xml:id="Subsection-Composition-and-Matrix-Multiplication">
-    <title>Composition and Matrix Multiplication</title>
 
 <p>
 In this section we will consider linear transformations of <m>\R^n</m> and their standard matrices.  
@@ -339,19 +344,11 @@ We leave it to the reader to verify that <m>T\circ S=\id_{\R^2}</m>.
        </p>
     </answer>
 </example>
-</subsection>
 
 
 
 
 
-
-
-
-
-
-<subsection xml:id="Subsection-Linearity-of-Inverses-of-Linear-Transformations">
-    <title>Linearity of Inverses of Linear Transformations</title>
 
 <p>
 <xref ref="def-inverseoflintrans"/> does not specifically require an inverse <m>S</m> of a linear transformation <m>T</m> to be linear, but it turns out that the requirement that <m>S\circ T=\id_V</m> and <m>T\circ S=\id_W</m> is sufficient to guarantee that <m>S</m> is linear.  
