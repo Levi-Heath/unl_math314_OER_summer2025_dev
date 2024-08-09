@@ -30,7 +30,7 @@ end of these segments.
  
  Note that a color image requires that three images are sent, one to
 each of the red, green, and blue phosphorus dots on the screen, in
-varying intensities.\index{computer graphics}\index{linear transformations!in computer graphics}\index{vector geometry!computer graphics}
+varying intensities.
 </p> 
 
 <p> 
@@ -232,7 +232,7 @@ On the other hand, we can rotate the letter about the origin through <m>\frac{\p
 
 See <xref ref="form-rotation"/> for details.  This gives
 <md>
-R_{\frac{\pi}{2}} \amp = \left[
+<mrow> R_{\frac{\pi}{2}} \amp = \left[
 \begin{array}{ll}
 0.866 \amp  -0.5\\
 0.5 \amp  0.866
@@ -242,13 +242,14 @@ R_{\frac{\pi}{2}} \amp = \left[
 0 \amp  6 \amp  5 \amp  1 \amp  3\\
 0 \amp  0 \amp  3 \amp  3 \amp  9
 \end{array}
-\right] \\ \amp =
+\right] </mrow>
+<mrow> \amp =
 \left[
 \begin{array}{lllrr}
 0 \amp  5.196 \amp  2.83 \amp  -0.634 \amp  -1.902\\
 0 \amp  3 \amp  5.098 \amp  3.098 \amp  9.294
 \end{array}
-\right]
+\right] </mrow>
 </md>
 and is plotted in the figure below.
 </p> 
@@ -282,8 +283,10 @@ we have solved another more basic problem.
 It is clearly important to be
  able to translate a screen image by a fixed vector <m>\mathbf{w}</m>, that is apply the transformation <m>T_{w} : \R^2 \to \R^2</m> given by <m>T_{w}(\mathbf{v}) = \mathbf{v} + \mathbf{w}</m> for all <m>\mathbf{v}</m> in <m>\R^2</m>. 
  The problem is that these translations are not matrix transformations <m>\R^2 \to \R^2</m> because they do not carry <m>\mathbf{0}</m> to <m>\mathbf{0}</m> 
- (unless <m>\mathbf{w} = \mathbf{0}</m>) (see <xref ref="prob-translation-does-not-work"/>). However, there is a clever way around this.
+ (unless <m>\mathbf{w} = \mathbf{0}</m>) (see for instance <xref ref="prob-translation-does-not-work"/>). However, there is a clever way around this.
+</p> 
 
+<p> 
 The idea is to represent a point 
 <me>\mathbf{v} = \left[
 \begin{array}{r}
@@ -300,7 +303,7 @@ y
  \end{array}
  \right],</me>
  
- called the <term>homogeneous coordinates</term>\index{homogeneous coordinates} of <m>\mathbf{v}</m>. Then translation by 
+ called the <term>homogeneous coordinates</term>of <m>\mathbf{v}</m>. Then translation by 
  <me>\mathbf{w} = \left[
  \begin{array}{r}
  p\\
@@ -379,7 +382,7 @@ cx + dy\\
 A\mathbf{v}\\
 1
 \end{array}
-\right]
+\right].
 </me>
 So everything can be accomplished at the expense of using <m>3 \times 3</m> matrices and homogeneous coordinates.
 </p> 

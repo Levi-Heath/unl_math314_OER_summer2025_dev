@@ -122,7 +122,7 @@ as a matrix that induces <m>T</m>.
     <p>  Observe that
 <md>
 <mrow> \mathbf{x}=\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix} \amp=x_1\begin{bmatrix}1\\0\\\vdots\\0\end{bmatrix}+x_2\begin{bmatrix}0\\1\\\vdots\\0\end{bmatrix}+\dots+x_n\begin{bmatrix}0\\0\\\vdots\\1\end{bmatrix} </mrow>
-<mrow> \amp=x_1\mathbf{e}_1+x_2\mathbf{e}_2+\dots+x_n\mathbf{e}_n </mrow>
+<mrow> \amp=x_1\mathbf{e}_1+x_2\mathbf{e}_2+\dots+x_n\mathbf{e}_n. </mrow>
 </md>
 Because <m>T</m> is linear, we have
 <md>
@@ -132,7 +132,7 @@ Because <m>T</m> is linear, we have
            | \amp  |\amp  \amp |\\
 		T(\mathbf{e}_1) \amp  T(\mathbf{e}_2)\amp \dots \amp T(\mathbf{e}_n)\\
 		|\amp | \amp  \amp |
-         \end{bmatrix}\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix}=A\mathbf{x} </mrow>
+         \end{bmatrix}\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix}=A\mathbf{x}. </mrow>
 </md>
 
 Thus, for every <m>\mathbf{x}</m> in <m>\R^n</m>, we have <m>T(\mathbf{x})=A\mathbf{x}</m>. 
@@ -141,7 +141,8 @@ Thus, for every <m>\mathbf{x}</m> in <m>\R^n</m>, we have <m>T(\mathbf{x})=A\mat
 </theorem>
 
 <p>
- <xref ref="th-matrixtran"/> shows that every matrix transformation is linear.  <xref ref="th-matlin"/> states that every linear transformation from <m>\R^n</m> into <m>\R^m</m> is a matrix transformation.  We combine these results in a corollary.
+ <xref ref="th-matrixtran"/> shows that every matrix transformation is linear.  <xref ref="th-matlin"/> states that every linear transformation from <m>\R^n</m> into <m>\R^m</m> is a matrix transformation. 
+  We combine these results in a corollary.
 </p>
 
   <corollary xml:id="cor-lintransmattrans">
@@ -154,7 +155,9 @@ Thus, for every <m>\mathbf{x}</m> in <m>\R^n</m>, we have <m>T(\mathbf{x})=A\mat
 </corollary>  
 
 <p>
-The results of this section rely on the fact that every vector of <m>\R^n</m> can be written as a unique linear combination of the standard unit vectors <m>\mathbf{e}_1,\mathbf{e}_2,\dots,\mathbf{e}_n</m>.  These vectors form the <term>standard basis</term> for <m>\R^n</m>.  We will see in <url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/LTR-0080/main">Matrix of a Linear Transformation with Respect to Arbitrary Bases</url> that the matrix used to represent a linear transformation depends on a choice of basis.  Because we are using the standard basis, it is natural to name the matrix in Theorem <xref ref="th-matlin"/> accordingly.
+The results of this section rely on the fact that every vector of <m>\R^n</m> can be written as a unique linear combination of the standard unit vectors <m>\mathbf{e}_1,\mathbf{e}_2,\dots,\mathbf{e}_n</m>.  
+These vectors form the <term>standard basis</term> for <m>\R^n</m>. Later on, when we encounter transformations of arbitrary bases, we will observe that the matrix used to represent a linear transformation 
+depends on a choice of basis.  Since we are using the standard basis, it is natural to name the matrix in <xref ref="th-matlin"/> accordingly.
 </p>
 
 
@@ -175,7 +178,7 @@ The results of this section rely on the fact that every vector of <m>\R^n</m> ca
     </me> 
  is
 <me>
-    A=\begin{bmatrix}2\amp -1\amp 0\\-1\amp 3\amp 4\end{bmatrix}
+    A=\begin{bmatrix}2\amp -1\amp 0\\-1\amp 3\amp 4\end{bmatrix}.
 </me>
     </p>
 </example>
@@ -191,7 +194,7 @@ The results of this section rely on the fact that every vector of <m>\R^n</m> ca
             We use the images of <m>\mathbf{i}</m> and <m>\mathbf{j}</m> as columns of the matrix.  The standard matrix of <m>T</m> is
 
 <me>
-    \begin{bmatrix}2\amp 0\\0\amp 2\end{bmatrix}
+    \begin{bmatrix}2\amp 0\\0\amp 2\end{bmatrix}.
 </me>
        </p>
     </answer>
@@ -213,13 +216,13 @@ The results of this section rely on the fact that every vector of <m>\R^n</m> ca
 Let's start with the easy one.  
 
 <me>
-    \mathbf{i}=-\frac{1}{2}\begin{bmatrix}-2\\0\end{bmatrix}
+    \mathbf{i}=-\frac{1}{2}\begin{bmatrix}-2\\0\end{bmatrix}.
 </me>
 
 Therefore, by linearity of <m>T</m>, we have:
 
 <me>
-    T(\mathbf{i})=T\left(-\frac{1}{2}\begin{bmatrix}-2\\0\end{bmatrix}\right)=-\frac{1}{2}T\left(\begin{bmatrix}-2\\0\end{bmatrix}\right)=-\frac{1}{2}\begin{bmatrix}-2\\0\\-8\\2\end{bmatrix}=\begin{bmatrix}1\\0\\4\\-1\end{bmatrix}
+    T(\mathbf{i})=T\left(-\frac{1}{2}\begin{bmatrix}-2\\0\end{bmatrix}\right)=-\frac{1}{2}T\left(\begin{bmatrix}-2\\0\end{bmatrix}\right)=-\frac{1}{2}\begin{bmatrix}-2\\0\\-8\\2\end{bmatrix}=\begin{bmatrix}1\\0\\4\\-1\end{bmatrix}.
 </me>
 
 This gives us the first column of the standard matrix for <m>T</m>.
@@ -235,19 +238,19 @@ You can solve the vector equation
 to express <m>\mathbf{j}</m> as a linear combination of <m>[3,1]</m> and <m>[-2,0]</m> as follows:
 
 <me>
-    \mathbf{j}=\begin{bmatrix}3\\1\end{bmatrix}+\frac{3}{2}\begin{bmatrix}-2\\0\end{bmatrix}
+    \mathbf{j}=\begin{bmatrix}3\\1\end{bmatrix}+\frac{3}{2}\begin{bmatrix}-2\\0\end{bmatrix}.
 </me>
 
 By linearity of <m>T</m>,
 <md>
     <mrow> T(\mathbf{j})\amp =T\left(\begin{bmatrix}3\\1\end{bmatrix}+\frac{3}{2}\begin{bmatrix}-2\\0\end{bmatrix}\right) </mrow>
     <mrow>    \amp =T\left(\begin{bmatrix}3\\1\end{bmatrix}\right)+\frac{3}{2}T\left(\begin{bmatrix}-2\\0\end{bmatrix}\right) </mrow> 
-    <mrow> \amp =\begin{bmatrix}6\\1\\13\\-1\end{bmatrix}+\frac{3}{2}\begin{bmatrix}-2\\0\\-8\\2\end{bmatrix}=\begin{bmatrix}3\\1\\1\\2\end{bmatrix} </mrow>
+    <mrow> \amp =\begin{bmatrix}6\\1\\13\\-1\end{bmatrix}+\frac{3}{2}\begin{bmatrix}-2\\0\\-8\\2\end{bmatrix}=\begin{bmatrix}3\\1\\1\\2\end{bmatrix}. </mrow>
 </md>
 This gives us the second column of the standard matrix.  Putting all of the information together, we get the following standard matrix for <m>T</m>:
 
 <me>
-    A=\begin{bmatrix}1\amp 3\\0\amp 1\\4\amp 1\\-1\amp 2\end{bmatrix}
+    A=\begin{bmatrix}1\amp 3\\0\amp 1\\4\amp 1\\-1\amp 2\end{bmatrix}.
 </me>
        </p>
     </answer>
@@ -265,7 +268,10 @@ This gives us the second column of the standard matrix.  Putting all of the info
             T(\mathbf{i})=\begin{bmatrix}-4\\2\\1\end{bmatrix} \quad \text{and} \quad T(\mathbf{j})=\begin{bmatrix}0\\-1\\5\end{bmatrix}.
         </me>
         
-        Find <m>T\Big(\begin{bmatrix}4\\-1\end{bmatrix}\Big)</m>.
+        Find 
+        <me>
+        T\Big(\begin{bmatrix}4\\-1\end{bmatrix}\Big)
+        </me>.
     </p>
     </statement>
 
@@ -282,9 +288,9 @@ This gives us the second column of the standard matrix.  Putting all of the info
     <statement>
         <p>
             Suppose that a linear transformation <m>T:\R^2\rightarrow\R^3</m> is such that
-            <m>
+            <me>
             T\Big(\begin{bmatrix}1\\-1\end{bmatrix}\Big)=\begin{bmatrix}1\\4\\-1\end{bmatrix} \quad \text{and} \quad T\Big(\begin{bmatrix}2\\0\end{bmatrix}\Big)=\begin{bmatrix}0\\6\\4\end{bmatrix}
-            </m>.
+            </me>.
         
         Find the standard matrix <m>A</m> of <m>T</m>.
         </p>
@@ -293,7 +299,7 @@ This gives us the second column of the standard matrix.  Putting all of the info
 <answer>
 <p>
 <me>
-    A=\begin{bmatrix}0\amp -1\\3\amp -1\\2\amp 3\end{bmatrix}
+    A=\begin{bmatrix}0\amp -1\\3\amp -1\\2\amp 3\end{bmatrix}.
 </me>
         </p>
     </answer>
@@ -335,7 +341,7 @@ This gives us the second column of the standard matrix.  Putting all of the info
 <answer>
     <p>
 <me>
-    A=\begin{bmatrix}-1\amp 0\\0\amp -1\end{bmatrix}
+    A=\begin{bmatrix}-1\amp 0\\0\amp -1\end{bmatrix}.
 </me>
     </p>
 </answer>

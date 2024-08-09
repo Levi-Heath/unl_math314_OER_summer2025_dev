@@ -11,7 +11,15 @@
     <title>Functions from <m>\R^n</m> into <m>\R^m</m></title>
 
 <p>
-In the past you have worked with functions <m>f:\R\longrightarrow \R</m>.  Most of the time such functions were defined algebraically.  For example, we can define <m>f</m> by <m>f(x)=x^2</m>.  This function takes a number in the <term>domain</term> (<m>\R</m>) and <term>maps</term> it to the square of the number in the <term>codomain</term> (also <m>\R</m>).  Previously, you might have visualized function <m>f</m> by looking at its graph, the set of all points of the form <m>(x, f(x))</m> in <m>\R^2</m>.  In this course, we will find it more useful to look at functions diagrammatically.  For instance, the diagram below shows that <m>f</m> maps 2 to 4.  We say that 4 is the <term>image of</term> 2 <term>under <m>f</m></term>.
+In the past you have worked with functions <m>f:\R\longrightarrow \R</m>.  Most of the time such functions were defined algebraically.  
+For example, we can define <m>f</m> by 
+<me>f(x)=x^2.</me>  
+This function takes a number in the <term>domain</term> (<m>\R</m>) and <term>maps</term> it to the square of the number in the <term>codomain</term> (also <m>\R</m>).
+</p> 
+
+<p> 
+Previously, you might have visualized function <m>f</m> by looking at its graph, the set of all points of the form <m>(x, f(x))</m> in <m>\R^2</m>.  
+In this course, we will find it more useful to look at functions diagrammatically.  For instance, the diagram below shows that <m>f</m> maps 2 to 4.  We say that 4 is the <term>image of</term> 2 <term>under <m>f</m></term>.
 </p>
 
 <image width="80%">
@@ -33,7 +41,24 @@ In the past you have worked with functions <m>f:\R\longrightarrow \R</m>.  Most 
 </image>
 
 <p>
-We will now consider functions that map <m>\R^n</m> into <m>\R^m</m>.  We will refer to such functions as <term>transformations</term>.  There are two ways of thinking of transformations.  A transformation <m>T:\R^n\longrightarrow\R^m</m> can take a vector in <m>\R^n</m> and map it to a vector in <m>\R^m</m>, or it can map a point in <m>\R^n</m> to a point in <m>\R^m</m>.  We will think of transformations as acting on vectors or points interchangeably because every point <m>(x_1, x_2,\dots ,x_n)</m> of <m>\R^n</m> can be interpreted as the tip of a vector <m>[x_1, x_2, \ldots , x_n]</m> in <m>\R^n</m>.  Matrix multiplication will provide us with initial tools for defining some transformations.
+We will now consider functions that map <m>\R^n</m> into <m>\R^m</m>.  We will refer to such functions as <term>transformations</term>.  
+There are two ways of thinking of transformations.  
+</p> 
+
+
+<p> 
+A transformation <m>T:\R^n\longrightarrow\R^m</m> can take a vector in <m>\R^n</m> and map it to a vector in <m>\R^m</m>, 
+or it can map a point in <m>\R^n</m> to a point in <m>\R^m</m>.  We think of transformations as acting on vectors or points interchangeably
+ because every point 
+<me>
+(x_1, x_2,\dots ,x_n) \ \text{ in} \R^n
+</me>
+ can be interpreted as the tip of a vector 
+ <me>
+[x_1, x_2, \ldots , x_n] \ \text{in } \R^n.
+</me>
+
+  Matrix multiplication will provide us with initial tools for defining some transformations.
 </p>
 </subsection>
 
@@ -59,7 +84,8 @@ A=\begin{bmatrix}1\amp 0.5\\0\amp 1\end{bmatrix}.
 The product of <m>A</m> with a <m>2\times 1</m> vector is a <m>2\times 1</m> vector.  We can define a transformation <m>T:\R^2\longrightarrow\R^2</m> by <m>T(\mathbf{x})=A\mathbf{x}</m>.  This transformation can be applied to every vector of <m>\R^2</m>. We will look at what it does to five vectors.  
 </p>
 
-<image width="55%">
+<sidebyside>
+<image width="45%">
    <shortdescription>Vectors graphed</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.7]
@@ -76,7 +102,7 @@ The product of <m>A</m> with a <m>2\times 1</m> vector is a <m>2\times 1</m> vec
 </image>
 
 
-   <image width="40%">
+   <image width="30%">
    <shortdescription> T and arrow drawn </shortdescription>
     <latex-image>
       \begin{tikzpicture}
@@ -87,7 +113,7 @@ The product of <m>A</m> with a <m>2\times 1</m> vector is a <m>2\times 1</m> vec
     </latex-image>
 </image>
 
-<image width="55%">
+<image width="45%">
    <shortdescription> T acted on vectors graphed </shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=0.7]
@@ -102,12 +128,13 @@ The product of <m>A</m> with a <m>2\times 1</m> vector is a <m>2\times 1</m> vec
           \end{tikzpicture}
     </latex-image>
 </image>
+</sidebyside> 
 
 <p>
 Even after looking at a handful of vectors it is often difficult to tell what the transformation actually accomplishes.  This is why sometimes looking at points instead of vectors can be beneficial.  If we consider every point in the left grid below as a tip of a vector, we can apply the transformation to each point to obtain the grid on the right.
 </p>
 
-
+<sidebyside>
 <image width="55%">
    <shortdescription>Grid of points graphed</shortdescription>
     <latex-image>
@@ -172,14 +199,14 @@ Even after looking at a handful of vectors it is often difficult to tell what th
      \end{tikzpicture}
     </latex-image>
 </image>
-
+</sidebyside>
 
 <p>
 Applying <m>T</m> to a grid of points helps us see that the entire plane was <term>sheared</term> by the transformation.
 </p>
 
 <p>
-We can also analyze the action of <m>T</m> algebraically.  Start by finding the image of a generic vector <m>\begin{bmatrix}x\\y\end{bmatrix}</m>.
+We can also analyze the action of <m>T</m> algebraically.  Start by finding the image of a generic vector <m>[x,y]]</m>.
 
 <me>
     T\left(\begin{bmatrix}x\\y\end{bmatrix}\right)=\begin{bmatrix}1\amp 0.5\\0\amp 1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}x+0.5y\\y\end{bmatrix}
@@ -200,10 +227,8 @@ We immediately see that the <m>y</m> component of the vector remains unchanged. 
 
 <figure>
   <caption>
-    A larger version of this activity is available 
-    <url href="https://www.geogebra.org/calculator/cvxdwput" visual="geogebra.org">here</url>.
   </caption>
-  <interactive xml:id="geogebra-Points-Transformed" platform="geogebra" width="100%" aspect="950:700">
+  <interactive xml:id="geogebra-Points-Transformed" platform="geogebra" width="130%" aspect="950:700">
     <slate xml:id="Points-Transformed" surface="geogebra" material="cvxdwput" aspect="950:700" />
   </interactive>
 </figure>
@@ -213,17 +238,17 @@ We immediately see that the <m>y</m> component of the vector remains unchanged. 
 Try each of the following matrices to determine what each transformation accomplishes.  (Type pi into GeoGebra to get <m>\pi</m>.)
 
 <me>
-    M_1=\begin{bmatrix}1\amp 0\\0\amp 2\end{bmatrix},\quad M_2=\begin{bmatrix}1/2\amp 0\\0\amp 1\end{bmatrix},\quad M_3=\begin{bmatrix}1\amp 2\\0\amp 1\end{bmatrix}
+    M_1=\begin{bmatrix}1\amp 0\\0\amp 2\end{bmatrix},\quad M_2=\begin{bmatrix}1/2\amp 0\\0\amp 1\end{bmatrix},\quad M_3=\begin{bmatrix}1\amp 2\\0\amp 1\end{bmatrix},
 </me>
 
 
 <me>
-    M_4=\begin{bmatrix}\cos(\pi)\amp -\sin(\pi)\\\sin(\pi)\amp \cos(\pi)\end{bmatrix},\quad M_5=\begin{bmatrix}\cos\left(\pi/4\right)\amp -\sin\left(\pi/4\right)\\\sin\left(\pi/4\right)\amp \cos\left(\pi/4\right)\end{bmatrix}
+    M_4=\begin{bmatrix}\cos(\pi)\amp -\sin(\pi)\\\sin(\pi)\amp \cos(\pi)\end{bmatrix},\quad M_5=\begin{bmatrix}\cos\left(\pi/4\right)\amp -\sin\left(\pi/4\right)\\\sin\left(\pi/4\right)\amp \cos\left(\pi/4\right)\end{bmatrix},
 </me>
 
 
 <me>
-    M_6=\begin{bmatrix}1\amp 0\\0\amp -1\end{bmatrix},\quad M_7=\begin{bmatrix}0\amp 1\\1\amp 0\end{bmatrix},\quad M_8=\begin{bmatrix}1\amp 1\\1\amp 1\end{bmatrix}
+    M_6=\begin{bmatrix}1\amp 0\\0\amp -1\end{bmatrix},\quad M_7=\begin{bmatrix}0\amp 1\\1\amp 0\end{bmatrix},\quad M_8=\begin{bmatrix}1\amp 1\\1\amp 1\end{bmatrix}.
 </me>
 </p>
 
@@ -344,7 +369,13 @@ Match the description of each transformation described below with a the matrix <
 
 
 <p>
-A <m>2\times 2</m> matrix induces a transformation from <m>\R^2</m> into <m>\R^2</m>.  An <m>m\times n</m> matrix can be multiplied by an <m>n\times 1</m> vector on the right, with the resulting product being an <m>m\times 1</m> vector.  Therefore we can use an <m>m\times n</m> matrix <m>A</m> to define a transformation <m>T:\R^n\longrightarrow \R^m</m> by <m>T(\mathbf{x})=A\mathbf{x}</m>.
+A <m>2\times 2</m> matrix induces a transformation from <m>\R^2</m> into <m>\R^2</m>.  An <m>m\times n</m> matrix can be multiplied by an <m>n\times 1</m> vector on the right, with the resulting product being an <m>m\times 1</m> vector.  
+Therefore we can use an <m>m\times n</m> matrix <m>A</m> to define a transformation 
+<me>
+T:\R^n\longrightarrow \R^m \  \text{ by } \ T(\mathbf{x})=A\mathbf{x}.
+</me>
+
+The example below showcases this concretely.
 </p>
 
 
@@ -413,7 +444,9 @@ A(\mathbf{v}+\mathbf{w})= A\mathbf{v}+A\mathbf{w}
 </men>
 
 
-These two properties of matrix multiplications translate into analogous properties of matrix transformations.  Suppose <m>T:\R^n\longrightarrow\R^m</m> is a matrix transformation, then for all vectors <m>\mathbf{v}</m>, <m>\mathbf{w}</m> in <m>\R^n</m> and all constants <m>k</m> in <m>\R</m>,
+These two properties of matrix multiplications translate into analogous properties of matrix transformations.  
+Suppose <m>T:\R^n\longrightarrow\R^m</m> is a matrix transformation, then for all vectors <m>\mathbf{v}</m>, <m>\mathbf{w}</m> in <m>\R^n</m> 
+and all constants <m>k</m> in <m>\R</m>,
 <men xml:id="matrixTransProp1"> 
 T(k\mathbf{v})=kT(\mathbf{v})
 </men>
@@ -423,7 +456,8 @@ T(\mathbf{v}+\mathbf{w})=T(\mathbf{v})+T(\mathbf{w})
 </p>
 
 <p>
-In general, any transformation that satisfies <xref ref="matrixTransProp1"/> and <xref ref="matrixTransProp2"/> is called a <term>linear transformation</term>.  As we have just seen, all matrix transformations are linear.
+In general, any transformation that satisfies <xref ref="matrixTransProp1"/> and <xref ref="matrixTransProp2"/> is called a <term>linear transformation</term>. 
+ As we have just seen, all matrix transformations are linear.
 We will study linear transformations in depth later in this chapter.
 </p>
 </subsection>
@@ -509,7 +543,8 @@ We will examine the effect of <m>T</m> on the standard unit vectors <m>\mathbf{i
 T(\mathbf{k})=A\mathbf{k}=\begin{bmatrix}4\\5\end{bmatrix}
 </me>
 
-Observe that the image of <m>\mathbf{i}</m> is the first column of <m>A</m>, the image of <m>\mathbf{j}</m> is the second column of <m>A</m>, and the image of <m>\mathbf{k}</m> is the third column.
+Observe that the image of <m>\mathbf{i}</m> is the first column of <m>A</m>, the image of <m>\mathbf{j}</m> is the second column of <m>A</m>, 
+and the image of <m>\mathbf{k}</m> is the third column.
 </p>
 </answer>
 </problem>
@@ -520,10 +555,12 @@ Observe that the image of <m>\mathbf{i}</m> is the first column of <m>A</m>, the
 We formalize our findings in  <xref ref="exp-imagesOfijk"/> as follows.
 </p>
 
-<observation xml:id="imagesofijk">
+<observation xml:id="obs-imagesofijk">
 <statement>
 <p>
-    In general, the linear transformation <m>T:\R^n\rightarrow\R^m</m>, induced by an <m>m\times n</m> matrix <m>A</m> maps the standard unit vectors <m>\mathbf{e}_1\ldots \mathbf{e}_n</m> to the columns of <m>A</m>.  We summarize this observation by expressing columns of <m>A</m> as images of vectors <m>\mathbf{e}_1\ldots \mathbf{e}_n</m> under <m>T</m>.
+    In general, the linear transformation <m>T:\R^n\rightarrow\R^m</m>, induced by an <m>m\times n</m> matrix <m>A</m>
+     maps the standard unit vectors <m>\mathbf{e}_1\ldots \mathbf{e}_n</m> to the columns of <m>A</m>.  
+     We summarize this observation by expressing columns of <m>A</m> as images of vectors <m>\mathbf{e}_1\ldots \mathbf{e}_n</m> under <m>T</m>.
  
   <me xml:id="eq-matlintransIntro"> 
  A=\begin{bmatrix}
@@ -552,7 +589,13 @@ Why is it that knowing the images of standard unit vectors under a matrix transf
 <example xml:id="ex-imageOfBasisVectors">
     <statement>
         <p>
-            Let <m>T:\R^2\longrightarrow\R^2</m> be a matrix transformation such that  <m>T(\mathbf{i})=\begin{bmatrix}-2\\3\end{bmatrix}</m> and <m>T(\mathbf{j})=\begin{bmatrix}1\\0\end{bmatrix}</m>.  Find <m>T\left(\begin{bmatrix}-4\\10\end{bmatrix}\right)</m>.
+            Let <m>T:\R^2\longrightarrow\R^2</m> be a matrix transformation such that  
+            <me>
+            T(\mathbf{i})=\begin{bmatrix}-2\\3\end{bmatrix} \ \text{ and } \
+            T(\mathbf{j})=\begin{bmatrix}1\\0\end{bmatrix}.
+            </me>
+            
+            Find <m>T\left(\begin{bmatrix}-4\\10\end{bmatrix}\right)</m>.
        </p>
     </statement>
     <explanation>
@@ -566,7 +609,9 @@ Why is it that knowing the images of standard unit vectors under a matrix transf
 </example>
 
 <p>
-Now, <xref ref="ex-imageOfBasisVectors"/> illustrates that a matrix transformation <m>T:\R^n\longrightarrow\R^m</m> is <term>completely determined</term> by where it maps the standard unit vectors.  This is true because we can express every vector <m>\mathbf{v}</m> in <m>\R^n</m> as a linear combination of the standard unit vectors, then use (<xref ref="matrixTransProp1"/>) and (<xref ref="matrixTransProp2"/>) to find the image of <m>\mathbf{v}</m>.  %The following GeoGebra interactive illustrates this point.
+Now, <xref ref="ex-imageOfBasisVectors"/> illustrates that a matrix transformation <m>T:\R^n\longrightarrow\R^m</m> is <term>completely determined</term> 
+by where it maps the standard unit vectors.  This is true because we can express every vector <m>\mathbf{v}</m> in <m>\R^n</m> as a linear combination of the 
+standard unit vectors, then use <xref ref="matrixTransProp1"/> and <xref ref="matrixTransProp2"/> to find the image of <m>\mathbf{v}</m>.  
 </p>
 </subsection>
 
@@ -587,7 +632,20 @@ Now, <xref ref="ex-imageOfBasisVectors"/> illustrates that a matrix transformati
 <exercise xml:id="exp-linCombStUnitVectors">
     <statement>
         <p>
-            Let <m>T:\R^2\longrightarrow \R^2</m> be a matrix transformation induced by the matrix <m>A</m>.  The GeoGebra window on the left shows the domain of <m>T</m>, with standard unit vectors <m>\mathbf{i}</m> and <m>\mathbf{j}</m>, and a vector <m>\mathbf{x}</m>.  The window  on the right shows the codomain of <m>T</m>, with the images of <m>\mathbf{i}</m>, <m>\mathbf{j}</m> and <m>\mathbf{x}</m> plotted.  To use this interactive, you can 
+            Let <m>T:\R^2\longrightarrow \R^2</m> be a matrix transformation induced by the matrix <m>A</m>.  
+            The GeoGebra window on the left shows the domain of <m>T</m>, with standard unit vectors <m>\mathbf{i}</m> and <m>\mathbf{j}</m>, 
+            and a vector <m>\mathbf{x}</m>.  The window  on the right shows the codomain of <m>T</m>, 
+            with the images of <m>\mathbf{i}</m>, <m>\mathbf{j}</m> and <m>\mathbf{x}</m> plotted.  
+        </p> 
+            <figure>
+                <caption>
+                </caption>
+                <interactive xml:id="geogebra-Exercise-Tryout" platform="geogebra" width="150%" aspect="950:700">
+                  <slate xml:id="Exercise-Tryout" surface="geogebra" material="nhs3wnqd" aspect="950:700" />
+                </interactive>
+              </figure>
+        <p>     
+        To use this interactive, you can 
 <ul>
     <li>
       <p> Change the entries of matrix <m>A</m>; </p>
@@ -598,15 +656,7 @@ Now, <xref ref="ex-imageOfBasisVectors"/> illustrates that a matrix transformati
 </ul>
 </p> 
 
-<figure>
-  <caption>
-    A larger version of this activity is available 
-    <url href="https://www.geogebra.org/calculator/nhs3wnqd" visual="geogebra.org">here</url>.
-  </caption>
-  <interactive xml:id="geogebra-ADD-LINK_ID" platform="geogebra" width="150%" aspect="950:700">
-    <slate xml:id="ADD-LINK_ID" surface="geogebra" material="nhs3wnqd" aspect="950:700" />
-  </interactive>
-</figure>
+
 
 <p>
 Choose your matrix <m>A</m>.  Visually verify the following claims:
@@ -626,12 +676,12 @@ Let <m>\mathbf{x}=[2,1]</m>.  Complete the following statement by filling the bl
 
 
 <me>
-    T(\mathbf{x})=T([]\mathbf{i}+[]\mathbf{j})=[]T(\mathbf{i})+[]T(\mathbf{j})
+    T(\mathbf{x})=T([\ ]\mathbf{i}+[\ ]\mathbf{j})=[\ ]T(\mathbf{i})+[\ ]T(\mathbf{j})
 </me>
 
 After having done that, change vector <m>\mathbf{x}</m> by dragging its tip.  Observe the image of <m>\mathbf{x}</m> and its relationship to the images of <m>\mathbf{i}</m> and <m>\mathbf{j}</m>. Then fill the blanks below for a general vector <m> [a,b] </m>:
 <me>
-T\left(\begin{bmatrix}a\\b\end{bmatrix}\right)=T([]\mathbf{i}+[]\mathbf{j})=[]T(\mathbf{i})+[]T(\mathbf{j})
+T\left(\begin{bmatrix}a\\b\end{bmatrix}\right)=T([\ ]\mathbf{i}+[\ ]\mathbf{j})=[\ ]T(\mathbf{i})+[\ ]T(\mathbf{j})
 </me>
 </p>
 </statement>
@@ -640,10 +690,10 @@ T\left(\begin{bmatrix}a\\b\end{bmatrix}\right)=T([]\mathbf{i}+[]\mathbf{j})=[]T(
 <p>
 The expressions filled in are
 <me>
-    T\left(\begin{bmatrix}a\\b\end{bmatrix}\right)=T(2\mathbf{i}+1\mathbf{j})=2T(\mathbf{i})+1T(\mathbf{j})
+    T\left(\begin{bmatrix}a\\b\end{bmatrix}\right)=T(2\mathbf{i}+1\mathbf{j})=2T(\mathbf{i})+1T(\mathbf{j}),
     </me>
 <me>
-    T\left(\begin{bmatrix}a\\b\end{bmatrix}\right)=T(a\mathbf{i}+b\mathbf{j})=aT(\mathbf{i})+bT(\mathbf{j})
+    T\left(\begin{bmatrix}a\\b\end{bmatrix}\right)=T(a\mathbf{i}+b\mathbf{j})=aT(\mathbf{i})+bT(\mathbf{j}).
 </me>
 </p>
 </answer>

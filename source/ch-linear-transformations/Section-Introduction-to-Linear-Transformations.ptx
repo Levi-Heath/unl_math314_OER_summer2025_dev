@@ -24,7 +24,7 @@ We start by reviewing the definition of a function.
     f:V\rightarrow W
 </me>
 
-assigns to each element <m>x</m> of <m>V</m>, an element <m>y=f(x)</m> of <m>W</m>. 
+assigns to each element <m>x</m> of <m>V</m>, an element <m>y=f(x)</m> of <m>W</m>.  Moreover, we use the the following terminology.
 </p> 
 
 <p>
@@ -57,7 +57,7 @@ In algebra and calculus you worked with functions <m>f:\R\rightarrow\R</m> whose
     \end{bmatrix}\right)=\begin{bmatrix}
     x-y\\
     x
-    \end{bmatrix}
+    \end{bmatrix},
 </me>
 
 
@@ -69,14 +69,12 @@ In algebra and calculus you worked with functions <m>f:\R\rightarrow\R</m> whose
     \end{bmatrix}\right)=\begin{bmatrix}
     -x+y+1\\
     y-2
-    \end{bmatrix}
+    \end{bmatrix}.
 </me>
 
 
-Each of these transformations takes a vector in <m>\R^2</m>, and maps it to another vector in <m>\R^2</m>.  To see if you understand how these transformations are defined, see if you can determine what these transformations do to the vector <m>\begin{bmatrix}
-4\\
-3
-\end{bmatrix}</m>. 
+Each of these transformations takes a vector in <m>\R^2</m>, and maps it to another vector in <m>\R^2</m>.  
+To see if you understand how these transformations are defined, see if you can determine what these transformations do to the vector <m>[4,3]</m>. 
 </p>
 
 
@@ -137,7 +135,6 @@ Now let's compare how <m>T_1</m> and <m>T_2</m> ``handle" this product.  Startin
 
 
 <me>
-    
 T_1\left(7\begin{bmatrix}
 4\\
 3
@@ -147,7 +144,7 @@ T_1\left(7\begin{bmatrix}
 \end{bmatrix}\right)=\begin{bmatrix}
 7\\
 28
-\end{bmatrix} 
+\end{bmatrix}.
 </me>
 
 
@@ -168,7 +165,7 @@ T_1\left(7\begin{bmatrix}
 \end{bmatrix}=7T_1\left(\begin{bmatrix}
 4\\
 3
-\end{bmatrix}\right)
+\end{bmatrix}\right).
 </me>
 
 
@@ -280,7 +277,7 @@ u_2
 v_1\\
 v_2
 \end{bmatrix}\right) </mrow>
-<mrow> \amp =T_1(\mathbf{u})+T_1(\mathbf{v})
+<mrow> \amp =T_1(\mathbf{u})+T_1(\mathbf{v}).
 </mrow>
 </md>
 
@@ -296,7 +293,7 @@ See <xref ref="prob-prob2"/> for more on this.
 
 <p>
 Transformations satisfying <xref ref="lin1"/> and <xref ref="lin2"/>, like <m>T_1</m>, are called <term>linear transformations</term>. Transformations like <m>T_2</m> are not linear.
- You have already encountered several linear transformations in the form of matrix transformations 
+ You have encountered several linear transformations in the form of matrix transformations previously.
 </p>
 
   <definition xml:id="def-lin">
@@ -399,7 +396,7 @@ Equations <xref ref="lintrans1"/> and <xref ref="lintrans2"/> of the above defin
             Suppose <m>T:\R^2\rightarrow \R^3</m> is a linear transformation such that 
 
 <me>
-    T\left(\begin{bmatrix}1\\2\end{bmatrix}\right)=\begin{bmatrix}-1\\0\\3\end{bmatrix}\quad\text{and}\quad T\left(\begin{bmatrix}0\\-1\end{bmatrix}\right)=\begin{bmatrix}2\\-1\\0\end{bmatrix}
+    T\left(\begin{bmatrix}1\\2\end{bmatrix}\right)=\begin{bmatrix}-1\\0\\3\end{bmatrix}\quad\text{and}\quad T\left(\begin{bmatrix}0\\-1\end{bmatrix}\right)=\begin{bmatrix}2\\-1\\0\end{bmatrix}.
 </me>
 
 Find each of the following:
@@ -407,14 +404,14 @@ Find each of the following:
     <li xml:id="lintransfirsta">
   <p>
     <me>
-    T\left(\begin{bmatrix}2\\5\end{bmatrix}\right)=T\left(2\begin{bmatrix}1\\2\end{bmatrix}-\begin{bmatrix}0\\-1\end{bmatrix}\right)
+    T\left(\begin{bmatrix}2\\5\end{bmatrix}\right)=T\left(2\begin{bmatrix}1\\2\end{bmatrix}-\begin{bmatrix}0\\-1\end{bmatrix}\right).
     </me> 
   </p>
 </li>
     <li xml:id="lintransfirstb">
   <p> 
     <me>
-    T\left(\begin{bmatrix}1\\1\end{bmatrix}\right)
+    T\left(\begin{bmatrix}1\\1\end{bmatrix}\right).
     </me>
 </p>
 </li>
@@ -432,7 +429,12 @@ Find each of the following:
     <mrow> \amp =\begin{bmatrix}-2\\0\\6\end{bmatrix}-\begin{bmatrix}2\\-1\\0\end{bmatrix}=\begin{bmatrix}-4\\1\\6\end{bmatrix}.  </mrow>
 </md>
 
-<xref ref="lintransfirstb"/> Observe that <m>\begin{bmatrix}1\\1\end{bmatrix}=\begin{bmatrix}1\\2\end{bmatrix}+\begin{bmatrix}0\\-1\end{bmatrix}</m>.  By <xref ref="lintranscombinedprop"/> we have:
+<xref ref="lintransfirstb"/> Observe that 
+<me>
+\begin{bmatrix}1\\1\end{bmatrix}=\begin{bmatrix}1\\2\end{bmatrix}+\begin{bmatrix}0\\-1\end{bmatrix}.
+</me>
+
+By <xref ref="lintranscombinedprop"/> we have:
 <md>
     <mrow> T\left(\begin{bmatrix}1\\1\end{bmatrix}\right)\amp =T\left(\begin{bmatrix}1\\2\end{bmatrix}+\begin{bmatrix}0\\-1\end{bmatrix}\right) </mrow>
     <mrow> \amp =T\left(\begin{bmatrix}1\\2\end{bmatrix}\right)+T\left(\begin{bmatrix}0\\-1\end{bmatrix}\right) </mrow> 
@@ -456,11 +458,13 @@ Based on this information, we were able to determine the images of two additiona
 The reason we were able to determine <m>T([2,5])</m> and <m>T([1,1])</m> is because <m>[2,5]</m> and <m>[1,1]</m> can be written as unique linear combinations of <m>[1,2]</m> and <m>[0,-1]</m>.
 </p>
 </statement> 
+</observation>
+
 
 <problem>
 <statement>
 <p>
-    Can every vector of <m>\R^2</m> be written as a linear combination of <m>[]1,2</m> and <m>[0,-1]</m>?  
+    Can every vector of <m>\R^2</m> be written as a linear combination of <m>[1,2]</m> and <m>[0,-1]</m>?  
 </p>
 </statement>
 
@@ -484,7 +488,7 @@ Yes.
     </p>
 </answer>
 </problem>
-</observation>
+
 
 
 
@@ -512,7 +516,7 @@ Yes.
 \end{bmatrix}\right)=\begin{bmatrix}
 2\\
 -4
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 
 Determine whether <m>T</m> is a linear transformation.
@@ -556,7 +560,7 @@ If <m>T</m> were a linear transformation, then we would have:
 \end{bmatrix}=\begin{bmatrix}
 6\\
 5
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 
 But according to the given,
@@ -610,7 +614,7 @@ In  <xref ref="init-lintransintro"/> we introduced a transformation <m>T_2</m> w
 To prove <xref ref="item-zerotozero"/>, let <m>\mathbf{v}</m> be any vector in <m>\R^n</m>.  By linearity of <m>T</m>, we have:
 
 <me>
-    T(\mathbf{0})=T(\mathbf{v}-\mathbf{v})=T(\mathbf{v})-T(\mathbf{v})=\mathbf{0}
+    T(\mathbf{0})=T(\mathbf{v}-\mathbf{v})=T(\mathbf{v})-T(\mathbf{v})=\mathbf{0}.
 </me>
 
 
@@ -660,14 +664,17 @@ Since <m>T_2(\mathbf{0})\neq\mathbf{0}</m>, <m>T_2</m> is not linear.
     <title>Linear Transformations Induced by Matrices</title>
 
 <p> 
-Recall that a transformation <m>T:\R^n\rightarrow\R^m</m> defined by <m>T(\mathbf{v})=A\mathbf{v}</m>, where <m>A</m> is some <m>m\times n</m> matrix, is called a matrix transformation (or transformation induced by <m>A</m>).  As we had discovered in the precedng sectiion, all matrix transformations are linear.  We now formalize this result as a theorem.
+Recall that a transformation <m>T:\R^n\rightarrow\R^m</m> defined by <m>T(\mathbf{v})=A\mathbf{v}</m>, where <m>A</m> is some <m>m\times n</m> matrix, 
+is called a matrix transformation (or transformation induced by <m>A</m>).  As we had discovered in the precedng sectiion, all matrix transformations are linear.  
+We now formalize this result as a theorem.
 </p>
 
  <theorem xml:id="th-matrixtran">
 
     <statement>
         <p>
-            Let <m>A</m> be an <m>m\times n</m> matrix.  Define <m>T:\R^n\rightarrow\R^m</m> by <m>T(\mathbf{v})=A\mathbf{v}</m>.  Then <m>T</m> is a linear transformation.
+            Let <m>A</m> be an <m>m\times n</m> matrix.  Define <m>T:\R^n\rightarrow\R^m</m> by <m>T(\mathbf{v})=A\mathbf{v}</m>.  
+            Then <m>T</m> is a linear transformation.
         </p>
     </statement>
 
@@ -676,12 +683,12 @@ Recall that a transformation <m>T:\R^n\rightarrow\R^m</m> defined by <m>T(\mathb
     <p>  Let <m>\mathbf{u}</m> and <m>\mathbf{v}</m> be vectors in <m>\R^n</m>, and let <m>k</m> be a scalar.  By properties of matrix multiplication we have:
 
 <me>
-    T(\mathbf{u}+\mathbf{v})=A(\mathbf{u}+\mathbf{v})=A\mathbf{u}+A\mathbf{v}=T(\mathbf{u})+T(\mathbf{v})
+    T(\mathbf{u}+\mathbf{v})=A(\mathbf{u}+\mathbf{v})=A\mathbf{u}+A\mathbf{v}=T(\mathbf{u})+T(\mathbf{v}),
 </me>
 
 
 <me>
-    T(k\mathbf{u})=A(k\mathbf{u})=kA\mathbf{u}=kT(\mathbf{u})
+    T(k\mathbf{u})=A(k\mathbf{u})=kA\mathbf{u}=kT(\mathbf{u}).
 </me>
 
 Therefore <m>T</m> is a linear transformation.
@@ -721,13 +728,20 @@ Find the image of <m>T</m>.
         <p>
             <xref ref="item-exlineartrans2a"/> <m>A</m> is a <m>3\times 2</m> matrix, so for the expression <m>T(\mathbf{x})=A\mathbf{x}</m> to make sense, <m>\mathbf{x}</m> has to be a <m>2\times 1</m> vector.  Thus, the domain of <m>T</m> is <m>\R^2</m> (<m>n=2</m>).  The product <m>A\mathbf{x}</m> is a <m>3\times 1</m> vector.  The codomain of <m>T</m> is <m>\R^3</m> (<m>m=3</m>).
 
-<xref ref="item-exlineartrans2d"/>  By <xref ref="def-function"/>, the image of <m>T</m> consists of images of all individual vectors in <m>\R^2</m> under <m>T</m>.  Every vector <m>\mathbf{v}</m>  in <m>\R^2</m> can be written as <m>\mathbf{v}=a\mathbf{i}+b\mathbf{j}</m> for some real numbers  <m>a</m> and <m>b</m>.  Consider the image of <m>\mathbf{v}</m>
+<xref ref="item-exlineartrans2d"/>  By <xref ref="def-function"/>, the image of <m>T</m> consists of images of all individual vectors in <m>\R^2</m> under <m>T</m>.  
+        </p> 
+        
+        <p> 
+        Every vector <m>\mathbf{v}</m>  in <m>\R^2</m> can be written as <m>\mathbf{v}=a\mathbf{i}+b\mathbf{j}</m> for some real numbers  <m>a</m> and <m>b</m>.  
+        Consider the image of <m>\mathbf{v}</m>:
 
 <me>
-    T(\mathbf{v})=T(a\mathbf{i}+b\mathbf{j})=aT(\mathbf{i})+bT(\mathbf{j})=a\begin{bmatrix}2\\1\\0\end{bmatrix}+b\begin{bmatrix}0\\4\\1\end{bmatrix}
+    T(\mathbf{v})=T(a\mathbf{i}+b\mathbf{j})=aT(\mathbf{i})+bT(\mathbf{j})=a\begin{bmatrix}2\\1\\0\end{bmatrix}+b\begin{bmatrix}0\\4\\1\end{bmatrix}.
 </me>
 
-This shows that the range, or the image, of <m>T</m> consists of all linear combinations of the columns of <m>A</m>.  In other words, the image of <m>T</m> is the span of vectors <m>\begin{bmatrix}2\\1\\0\end{bmatrix}</m> and <m>\begin{bmatrix}0\\4\\1\end{bmatrix}</m>. The two vectors are not scalar multiples of each other, therefore they span a plane in <m>\R^3</m>.
+This shows that the range, or the image, of <m>T</m> consists of all linear combinations of the columns of <m>A</m>.  
+In other words, the image of <m>T</m> is the span of vectors <m>[2,1,0]</m> and <m>[0,4,1]</m>. 
+The two vectors are not scalar multiples of each other, therefore they span a plane in <m>\R^3</m>.
        </p>
     </answer>
 </example>
@@ -767,17 +781,19 @@ Find and draw the image of <m>T</m>.
     
 <p> 
 For <xref ref="item-lintrans3b"/>: To find the image of <m>T</m>, we will take a slightly different approach from what we did in <xref ref="ex-lineartrans2"/><xref ref="item-exlineartrans2d"/>.
+</p> 
 
-Let <m>\mathbf{v}=[a,b,c]]</m> be an arbitrary vector of <m>\R^3</m>. The image of <m>\mathbf{v}</m> is given by
+<p> 
+Let <m>\mathbf{v}=[a,b,c]</m> be an arbitrary vector of <m>\R^3</m>. The image of <m>\mathbf{v}</m> is given by
 <md>
 <mrow> T(\mathbf{v})=\begin{bmatrix}
 -2\amp 1\amp 3\\
 4\amp -2\amp -6
 \end{bmatrix}\begin{bmatrix}a\\b\\c\end{bmatrix}\amp =a\begin{bmatrix}-2\\4\end{bmatrix}+b\begin{bmatrix}1\\-2\end{bmatrix}+c\begin{bmatrix}3\\-6\end{bmatrix} </mrow>
-<mrow> \amp =(a(-2)+b+c(3))\begin{bmatrix}1\\-2\end{bmatrix} </mrow>
+<mrow> \amp =(a(-2)+b+c(3))\begin{bmatrix}1\\-2\end{bmatrix}. </mrow>
 </md>
 
-This shows that the image of every vector in <m>\R^3</m> is a scalar multiple of <m>\begin{bmatrix}1\\-2\end{bmatrix}</m>.  This means that the image of <m>T</m> is a line in <m>\R^2</m>.
+This shows that the image of every vector in <m>\R^3</m> is a scalar multiple of <m>[1,-2]</m>.  This means that the image of <m>T</m> is a line in <m>\R^2</m>.
 </p>
 
 <image width="65%">
@@ -831,12 +847,12 @@ This shows that the image of every vector in <m>\R^3</m> is a scalar multiple of
 
 
 <me>
-    T(k\mathbf{u})= kT(\mathbf{u})
+    T(k\mathbf{u})= kT(\mathbf{u}),
 </me>
 
 
 <me>
-    T(\mathbf{u}+\mathbf{v})= T(\mathbf{u})+T(\mathbf{v})
+    T(\mathbf{u}+\mathbf{v})= T(\mathbf{u})+T(\mathbf{v}).
 </me>
         </p>
     </statement>
@@ -845,10 +861,12 @@ This shows that the image of every vector in <m>\R^3</m> is a scalar multiple of
 <example xml:id="ex-subspacetransex1">
     <statement>
         <p>
-            Let <m>V</m> be a subspace of <m>\R^3</m> consisting of all vectors in the <m>xy</m>-plane.  Let <m>W</m> be a subspace of <m>\R^3</m> consisting of all vectors along the <m>z</m>-axis.  (Do a quick verification that <m>V</m> and <m>W</m> are subspaces of <m>\R^3</m>.)  Define a transformation <m>T:V\rightarrow W</m> by 
+            Let <m>V</m> be a subspace of <m>\R^3</m> consisting of all vectors in the <m>xy</m>-plane. 
+             Let <m>W</m> be a subspace of <m>\R^3</m> consisting of all vectors along the <m>z</m>-axis.  
+             Do a quick verification that <m>V</m> and <m>W</m> are subspaces of <m>\R^3</m>.  Define a transformation <m>T:V\rightarrow W</m> by 
 
 <me>
-    T\left(\begin{bmatrix}a\\b\\0\end{bmatrix}\right)=\begin{bmatrix}0\\0\\a+b\end{bmatrix}
+    T\left(\begin{bmatrix}a\\b\\0\end{bmatrix}\right)=\begin{bmatrix}0\\0\\a+b\end{bmatrix}.
 </me>
 
 Show that <m>T</m> is a linear transformation, and describe its action geometrically.
@@ -863,7 +881,7 @@ Show that <m>T</m> is a linear transformation, and describe its action geometric
 <mrow> \amp =\begin{bmatrix}0\\0\\(a_1+a_2)+(b_1+b_2)\end{bmatrix} </mrow>
 <mrow> \amp =\begin{bmatrix}0\\0\\(a_1+b_1)+(a_2+b_2)\end{bmatrix} </mrow>
 <mrow> \amp =\begin{bmatrix}0\\0\\a_1+b_1\end{bmatrix}+\begin{bmatrix}0\\0\\a_2+b_2\end{bmatrix} </mrow>
-<mrow> \amp =T\left(\begin{bmatrix}a_1\\b_1\\0\end{bmatrix}\right)+ T\left(\begin{bmatrix}a_2\\b_2\\0\end{bmatrix}\right) </mrow>
+<mrow> \amp =T\left(\begin{bmatrix}a_1\\b_1\\0\end{bmatrix}\right)+ T\left(\begin{bmatrix}a_2\\b_2\\0\end{bmatrix}\right). </mrow>
 </md>
 Verification of the fact that
 <me>
@@ -1070,12 +1088,317 @@ Left to the reader.  (See <xref ref="prob-zerotrans"/>)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<subsection xml:id="Section-Standard-Matrix-of-a-Linear-Transformation-from-m-R-n-m-to-m-R-m-m-" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Standard Matrix of a Linear Transformation from <m>\R^n</m> to <m>\R^m</m></title>
+ 
+<p>
+In the preceding sections, we learned several important properties of matrix transformations of <m>\R^n</m> and subspaces of <m>\R^n</m>.  Let's summarize the main points.
+</p>
+
+
+<fact xml:id="sum-matrixTrans">
+<statement>
+<p>
+For a matrix transformation <m>T:\R^n\rightarrow\R^m</m>, induced by an <m>m\times n</m> matrix <m>A</m> we have the following results:
+<ul>
+    <li>
+      <p> <m>T</m> is linear. (Theorem <xref ref="th-matrixtran"/>)  This means that 
+    
+<me>
+    T(k_1\mathbf{u}+k_2\mathbf{v})= k_1T(\mathbf{u})+k_2T(\mathbf{v})
+</me>
+
+    for vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m> in <m>\R^n</m> and scalars <m>k_1</m> and <m>k_2</m> in <m>\R</m>. </p>
+</li>
+    <li xml:id="eq-matlintrans">
+  <p> Columns of <m>A</m> are the images of the standard unit vectors of <m>\R^n</m> under <m>T</m>. <!--(<xref ref="obs-imagesOfijk"/>)-->
+ <me>
+ A=\begin{bmatrix}
+           a_{11} \amp  a_{12}\amp \dots\amp a_{1n}\\
+           a_{21}\amp a_{22} \amp \dots \amp a_{2n}\\ 
+           \vdots \amp  \vdots\amp \ddots \amp \vdots\\
+           a_{m1}\amp \dots \amp \dots \amp a_{mn}
+            \end{bmatrix}
+            = 
+            \begin{bmatrix}
+              | \amp  |\amp  \amp |\\
+           T(\mathbf{e}_1) \amp  T(\mathbf{e}_2)\amp \dots \amp T(\mathbf{e}_n)\\
+           |\amp | \amp  \amp |
+            \end{bmatrix}
+   </me>
+        </p>
+</li>
+
+    
+    <li>
+      <p> The action of <m>T</m> on all of the elements of <m>\R^n</m> is completely determined by where <m>T</m> maps the standard unit vectors. (See Examples <xref ref="ex-imageOfBasisVectors"/> and <xref ref="ex-imageofatransformation"/>) </p>
+</li>
+</ul>
+</p>
+</statement>
+</fact>
+
+<p>
+The last point in the summary is so important that it is worth illustrating again.
+</p>
+
+
+<example xml:id="ex-imageofatransformation">
+    <statement>
+        <p>
+            Let <m>T:\R^3\rightarrow \R^2</m> be a linear transformation. Suppose that the only information we have about this transformation is that 
+        <me>
+            T(\mathbf{i})=\begin{bmatrix}3\\-1\end{bmatrix}, \quad T(\mathbf{j})=\begin{bmatrix}0\\4\end{bmatrix} \quad \text{and} \quad T(\mathbf{k})=\begin{bmatrix}-2\\1\end{bmatrix}.
+        </me>
+        
+        Is this information sufficient to determine the image of <m>\mathbf{w}=\begin{bmatrix}1\\-3\\6\end{bmatrix}</m>?
+       </p>
+    </statement>
+    
+    <answer>
+        <p>
+            Observe that 
+
+<me>
+    \mathbf{w}=\mathbf{i}-3\mathbf{j}+6\mathbf{k}
+</me>
+
+We find <m>T(\mathbf{w})</m> by using the fact that <m>T</m> is linear:
+
+<md>
+    <mrow> T(\mathbf{w}) \amp =T(\mathbf{i}-3\mathbf{j}+6\mathbf{k})  </mrow>
+    <mrow> \amp=T(\mathbf{i})-3T(\mathbf{j})+6T(\mathbf{k}) </mrow>
+    <mrow> \amp=\begin{bmatrix}3\\-1\end{bmatrix}-3\begin{bmatrix}0\\4\end{bmatrix}+6\begin{bmatrix}-2\\1\end{bmatrix} </mrow>
+    <mrow> \amp=\begin{bmatrix}-9\\-7\end{bmatrix} </mrow>
+</md>
+
+Because of properties of linear transformations, the information about the images of the standard unit vectors proved to be sufficient for us to determine the image of <m>\mathbf{w}</m>.
+       </p>
+    </answer>
+</example>
+
+<p>
+In <xref ref="ex-imageofatransformation"/>, there was nothing special about the vector <m>\mathbf{w}</m>.  Any vector <m>\mathbf{x}</m> of <m>\R^n</m> can be written as a unique linear combination of the standard unit vectors <m>\mathbf{e}_1,\ldots , \mathbf{e}_n</m>.  Therefore, the image of any vector <m>\mathbf{x}</m> under a linear transformation <m>T:\R^n\rightarrow \R^m</m> is uniquely determined by the images of <m>\mathbf{e}_1, \ldots , \mathbf{e}_n</m>.  Knowing <m>T(\mathbf{e}_1),\ldots , T(\mathbf{e}_n)</m> allows us to construct a matrix <m>A</m>, with <m>T(\mathbf{e}_1),\ldots , T(\mathbf{e}_n)</m> as columns, that induces transformation <m>T</m>.  We formalize this idea in a theorem.
+</p>
+
+
+<theorem xml:id="th-matlin">
+
+    <statement>
+        <p>
+            Let <m>T:\R^n\rightarrow\R^m</m> be a linear transformation.  Then <m>T</m> is a matrix transformation with
+  <me> \label{matlintrans}
+ A=\begin{bmatrix}
+           | \amp  |\amp  \amp |\\
+		T(\mathbf{e}_1) \amp  T(\mathbf{e}_2)\amp \dots \amp T(\mathbf{e}_n)\\
+		|\amp | \amp  \amp |
+         \end{bmatrix}
+</me>
+as a matrix that induces <m>T</m>.
+        </p>
+    </statement>
+
+
+<proof>
+    <p>  Observe that
+<md>
+<mrow> \mathbf{x}=\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix} \amp=x_1\begin{bmatrix}1\\0\\\vdots\\0\end{bmatrix}+x_2\begin{bmatrix}0\\1\\\vdots\\0\end{bmatrix}+\dots+x_n\begin{bmatrix}0\\0\\\vdots\\1\end{bmatrix} </mrow>
+<mrow> \amp=x_1\mathbf{e}_1+x_2\mathbf{e}_2+\dots+x_n\mathbf{e}_n. </mrow>
+</md>
+Because <m>T</m> is linear, we have
+<md>
+<mrow> T(\mathbf{x})\amp =T(x_1\mathbf{e}_1+x_2\mathbf{e}_2+\dots+x_n\mathbf{e}_n) </mrow>
+<mrow> \amp=x_1T(\mathbf{e}_1)+x_2T(\mathbf{e}_2)+\dots+x_nT(\mathbf{e}_n) </mrow>
+<mrow> \amp =\begin{bmatrix}
+           | \amp  |\amp  \amp |\\
+		T(\mathbf{e}_1) \amp  T(\mathbf{e}_2)\amp \dots \amp T(\mathbf{e}_n)\\
+		|\amp | \amp  \amp |
+         \end{bmatrix}\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix}=A\mathbf{x}. </mrow>
+</md>
+
+Thus, for every <m>\mathbf{x}</m> in <m>\R^n</m>, we have <m>T(\mathbf{x})=A\mathbf{x}</m>. 
+    </p>
+</proof>
+</theorem>
+
+<p>
+ <xref ref="th-matrixtran"/> shows that every matrix transformation is linear.  <xref ref="th-matlin"/> states that every linear transformation from <m>\R^n</m> into <m>\R^m</m> is a matrix transformation. 
+  We combine these results in a corollary.
+</p>
+
+  <corollary xml:id="cor-lintransmattrans">
+
+    <statement>
+        <p>
+            A transformation <m>T:\R^n\rightarrow\R^m</m> is a linear transformation if and only if it is a matrix transformation.
+        </p>
+    </statement>
+</corollary>  
+
+<p>
+The results of this section rely on the fact that every vector of <m>\R^n</m> can be written as a unique linear combination of the standard unit vectors <m>\mathbf{e}_1,\mathbf{e}_2,\dots,\mathbf{e}_n</m>.  
+These vectors form the <term>standard basis</term> for <m>\R^n</m>. Later on, when we encounter transformations of arbitrary bases, we will observe that the matrix used to represent a linear transformation 
+depends on a choice of basis.  Since we are using the standard basis, it is natural to name the matrix in <xref ref="th-matlin"/> accordingly.
+</p>
+
+
+<definition xml:id="def-standardmatoflintrans">
+
+    <statement>
+        <p>
+            The matrix in <xref ref="th-matlin"/> is known as the <term>standard matrix of the linear transformation</term> <m>T</m>.
+        </p>
+    </statement>
+</definition>
+
+<example xml:id="ex-findmatrix2">
+    <p>
+        The standard matrix of a linear transformation <m>T:\R^3\rightarrow \R^2</m> such that
+    <me>
+     T(\mathbf{i})=\begin{bmatrix}2\\-1\end{bmatrix}, \quad T(\mathbf{j})=\begin{bmatrix}-1\\3\end{bmatrix} \quad \text{and} \quad T(\mathbf{k})=\begin{bmatrix}0\\4\end{bmatrix}
+    </me> 
+ is
+<me>
+    A=\begin{bmatrix}2\amp -1\amp 0\\-1\amp 3\amp 4\end{bmatrix}.
+</me>
+    </p>
+</example>
+ 
+ <example xml:id="ex-findmatrix">
+    <statement>
+        <p>
+            Find the standard matrix of a linear transformation <m>T:\R^2\rightarrow \R^2</m> such that <m>T(\mathbf{i})=2\mathbf{i}</m> and <m>T(\mathbf{j})=2\mathbf{j}</m>.
+       </p>
+    </statement>
+    <answer>
+        <p>
+            We use the images of <m>\mathbf{i}</m> and <m>\mathbf{j}</m> as columns of the matrix.  The standard matrix of <m>T</m> is
+
+<me>
+    \begin{bmatrix}2\amp 0\\0\amp 2\end{bmatrix}.
+</me>
+       </p>
+    </answer>
+</example>
+ 
+ <example xml:id="ex-transNoStBases">
+    <statement>
+        <p>
+            Find the standard matrix of a linear transformation <m>T:\R^2\rightarrow \R^4</m>, where
+            <me> 
+            T\left(\begin{bmatrix}3\\1\end{bmatrix}\right)=\begin{bmatrix}6\\1\\13\\-1\end{bmatrix} \quad \text{and} \quad T\left(\begin{bmatrix}-2\\0\end{bmatrix}\right)=\begin{bmatrix}-2\\0\\-8\\2\end{bmatrix}.
+            </me>
+       </p>
+    </statement>
+    <answer>
+        <p>
+            In this example we are not given the images of the standard basis vectors <m>\mathbf{i}</m> and <m>\mathbf{j}</m>.  However, we can find the images of <m>\mathbf{i}</m> and <m>\mathbf{j}</m> by expressing <m>\mathbf{i}</m> and <m>\mathbf{j}</m> as linear combinations of <m>[3,1]</m> and <m>[-2,0]</m>, then apply the fact that <m>T</m> is linear.
+
+Let's start with the easy one.  
+
+<me>
+    \mathbf{i}=-\frac{1}{2}\begin{bmatrix}-2\\0\end{bmatrix}.
+</me>
+
+Therefore, by linearity of <m>T</m>, we have:
+
+<me>
+    T(\mathbf{i})=T\left(-\frac{1}{2}\begin{bmatrix}-2\\0\end{bmatrix}\right)=-\frac{1}{2}T\left(\begin{bmatrix}-2\\0\end{bmatrix}\right)=-\frac{1}{2}\begin{bmatrix}-2\\0\\-8\\2\end{bmatrix}=\begin{bmatrix}1\\0\\4\\-1\end{bmatrix}.
+</me>
+
+This gives us the first column of the standard matrix for <m>T</m>.
+</p>
+
+<p>
+You can solve the vector equation
+
+<me>
+    a\begin{bmatrix}3\\1\end{bmatrix}+b\begin{bmatrix}-2\\0\end{bmatrix}=\mathbf{j}
+</me>
+
+to express <m>\mathbf{j}</m> as a linear combination of <m>[3,1]</m> and <m>[-2,0]</m> as follows:
+
+<me>
+    \mathbf{j}=\begin{bmatrix}3\\1\end{bmatrix}+\frac{3}{2}\begin{bmatrix}-2\\0\end{bmatrix}.
+</me>
+
+By linearity of <m>T</m>,
+<md>
+    <mrow> T(\mathbf{j})\amp =T\left(\begin{bmatrix}3\\1\end{bmatrix}+\frac{3}{2}\begin{bmatrix}-2\\0\end{bmatrix}\right) </mrow>
+    <mrow>    \amp =T\left(\begin{bmatrix}3\\1\end{bmatrix}\right)+\frac{3}{2}T\left(\begin{bmatrix}-2\\0\end{bmatrix}\right) </mrow> 
+    <mrow> \amp =\begin{bmatrix}6\\1\\13\\-1\end{bmatrix}+\frac{3}{2}\begin{bmatrix}-2\\0\\-8\\2\end{bmatrix}=\begin{bmatrix}3\\1\\1\\2\end{bmatrix}. </mrow>
+</md>
+This gives us the second column of the standard matrix.  Putting all of the information together, we get the following standard matrix for <m>T</m>:
+
+<me>
+    A=\begin{bmatrix}1\amp 3\\0\amp 1\\4\amp 1\\-1\amp 2\end{bmatrix}.
+</me>
+       </p>
+    </answer>
+</example>
+
+
+
+</subsection>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <exercises>
 
 <exercise xml:id="prob-sum">
     <statement>
         <p>
-            Show that <xref ref="lin2"/> of <xref ref="init-lintransintro"/> holds for vectors <m>\begin{bmatrix}3\\4\end{bmatrix}</m> and <m>\begin{bmatrix}-2\\1\end{bmatrix}</m>.
+            Show that <xref ref="lin2"/> of <xref ref="init-lintransintro"/> holds for vectors <m>\begin{bmatrix}3\\4\end{bmatrix}</m> 
+            and <m>\begin{bmatrix}-2\\1\end{bmatrix}</m>.
         </p>
     </statement>
 </exercise>
@@ -1091,14 +1414,15 @@ Left to the reader.  (See <xref ref="prob-zerotrans"/>)
 <exercise xml:id="prob-imageoflincomb">
     <statement>
         <p>
-            Suppose <m>T:\R^{10}\rightarrow\R^2</m> is a linear transformation such that <m>T(\mathbf{u})=[2,-1]</m> and <m>T(\mathbf{v})=[-5,3]]</m>.  Find the image of <m>3\mathbf{u}-\mathbf{v}</m>.
+            Suppose <m>T:\R^{10}\rightarrow\R^2</m> is a linear transformation such that <m>T(\mathbf{u})=[2,-1]</m> and <m>T(\mathbf{v})=[-5,3]</m>.  
+            Find the image of <m>3\mathbf{u}-\mathbf{v}</m>.
         </p>
     </statement>
 
     <answer>
 <p>
 <me>
-    T(3\mathbf{u}-\mathbf{v})=\begin{bmatrix}11\\-6\end{bmatrix}
+    T(3\mathbf{u}-\mathbf{v})=\begin{bmatrix}11\\-6\end{bmatrix}.
 </me>
         </p>
     </answer>
@@ -1111,7 +1435,8 @@ Left to the reader.  (See <xref ref="prob-zerotrans"/>)
             Let <m>\mathbf{u}</m> be a fixed vector.  Define <m>T_{\mathbf{u}}:\R^2\rightarrow\R^2</m>, by <m>T_{\mathbf{u}}(\mathbf{x})=\mathbf{u}-\mathbf{x}</m>.
   <ol>
   <li>
-      <p> Describe the effect of this transformation by sketching <m><alert>x</alert></m> and <m>T_{\mathbf{u}}(<alert>x</alert>)</m> for at least four vectors <m><alert>x</alert></m> and a fixed vector <m>\mathbf{u}</m> of your choice. </p>
+      <p> Describe the effect of this transformation by sketching <m><alert>x</alert></m> and <m>T_{\mathbf{u}}(<alert>x</alert>)</m> 
+        for at least four vectors <m><alert>x</alert></m> and a fixed vector <m>\mathbf{u}</m> of your choice. </p>
 </li>
   <li>
       <p> Is <m>T_{\mathbf{u}}</m> a linear transformation? </p>
@@ -1155,7 +1480,7 @@ This transformation is called an <term>{orthogonal projection</term>} onto the <
     <answer>
         <p>
 <me>
-    T\left(\begin{bmatrix}1\\1\\-2\end{bmatrix}\right)=\begin{bmatrix}-6\\3\\11\end{bmatrix}
+    T\left(\begin{bmatrix}1\\1\\-2\end{bmatrix}\right)=\begin{bmatrix}-6\\3\\11\end{bmatrix}.
 </me>
         </p>
     </answer>
@@ -1181,7 +1506,8 @@ This transformation is called an <term>{orthogonal projection</term>} onto the <
 <exercisegroup> 
 <introduction>
     <p>
-For each matrix <m>A</m> below, find the domain and the codomain of the linear transformation <m>T:\R^n\rightarrow\R^m</m> induced by <m>A</m>; find and draw the image of <m>T</m>. (Hint: See <xref ref="ex-lineartrans3"/>.)
+For each matrix <m>A</m> below, find the domain together with codomain of the linear transformation <m>T:\R^n\rightarrow\R^m</m> induced by <m>A</m>; 
+then find and draw the image of <m>T</m> (Hint: See <xref ref="ex-lineartrans3"/>.)
     </p>
 </introduction>
 
@@ -1189,7 +1515,7 @@ For each matrix <m>A</m> below, find the domain and the codomain of the linear t
     <statement>
         <p>
 <me>
-    A=\begin{bmatrix}0\amp 0\\1\amp 1\\2\amp 0\end{bmatrix}
+    A=\begin{bmatrix}0\amp 0\\1\amp 1\\2\amp 0\end{bmatrix}.
 </me>
        </p>
     </statement>
@@ -1210,12 +1536,168 @@ For each matrix <m>A</m> below, find the domain and the codomain of the linear t
     <statement>
         <p>
             <me>
-    A=\begin{bmatrix}3\amp -1\\-3\amp 1\end{bmatrix}
+    A=\begin{bmatrix}3\amp -1\\-3\amp 1\end{bmatrix}.
 </me>
         </p>
     </statement>
 </exercise>
 </exercisegroup>
+
+
+
+
+
+
+
+
+
+
+
+<!--Standard matrix exercises-->
+
+    <exercise xml:id="prob-evaluateT">
+        <statement>
+            <p>
+                Suppose that a linear transformation <m>T:\R^2\rightarrow\R^3</m> is such that 
+            <me>
+                T(\mathbf{i})=\begin{bmatrix}-4\\2\\1\end{bmatrix} \quad \text{and} \quad T(\mathbf{j})=\begin{bmatrix}0\\-1\\5\end{bmatrix}.
+            </me>
+            
+            Find 
+            <me>
+            T\Big(\begin{bmatrix}4\\-1\end{bmatrix}\Big)
+            </me>.
+        </p>
+        </statement>
+    
+    <answer>
+    <p>
+        <me>
+            T\Big(\begin{bmatrix}4\\-1\end{bmatrix}\Big)=\begin{bmatrix}-16\\9\\-1\end{bmatrix}.
+        </me>
+    </p>
+    </answer>
+    </exercise>
+    
+    <exercise xml:id="prob-standardmatrix">
+        <statement>
+            <p>
+                Suppose that a linear transformation <m>T:\R^2\rightarrow\R^3</m> is such that
+                <me>
+                T\Big(\begin{bmatrix}1\\-1\end{bmatrix}\Big)=\begin{bmatrix}1\\4\\-1\end{bmatrix} \quad \text{and} \quad T\Big(\begin{bmatrix}2\\0\end{bmatrix}\Big)=\begin{bmatrix}0\\6\\4\end{bmatrix}
+                </me>.
+            
+            Find the standard matrix <m>A</m> of <m>T</m>.
+            </p>
+        </statement>
+    
+    <answer>
+    <p>
+    <me>
+        A=\begin{bmatrix}0\amp -1\\3\amp -1\\2\amp 3\end{bmatrix}.
+    </me>
+            </p>
+        </answer>
+    </exercise>
+    
+    
+    <exercisegroup>
+    <introduction>
+        <p>
+            Find the standard matrix <m>A</m> of each linear transformation <m>T:\R^2\rightarrow\R^2</m> described below. 
+        </p>
+    </introduction>
+    
+      <exercise xml:id="prob-standardmatrix1">
+        <statement>
+            <p>
+                <m>T</m> doubles the <m>x</m> component of every vector and triples the <m>y</m> component.
+            </p>
+        </statement>
+     
+    <answer>
+        <p>
+    <me>
+        A=\begin{bmatrix}2\amp 0\\0\amp 3\end{bmatrix}.
+    </me>
+        </p>
+    </answer>
+    </exercise>
+    
+    
+    
+      <exercise xml:id="prob-standardmatrix2">
+        <statement>
+            <p>
+                <m>T</m> reverses the direction of each vector.
+            </p>
+        </statement>
+    
+    <answer>
+        <p>
+    <me>
+        A=\begin{bmatrix}-1\amp 0\\0\amp -1\end{bmatrix}.
+    </me>
+        </p>
+    </answer>
+    </exercise>
+    
+    
+    
+      <exercise xml:id="prob-standardmatrix5">
+        <statement>
+            <p>
+                <m>T</m> doubles the length of each vector.
+            </p>
+        </statement>
+      
+    <answer>
+    <p>
+    <me>
+        A=\begin{bmatrix}2\amp 0\\0\amp 2\end{bmatrix}
+    </me>
+    </p>
+    </answer>
+    </exercise>
+    
+    
+      <exercise xml:id="prob-standardmatrix3">
+        <statement>
+            <p>
+                <m>T</m> projects each vector onto the <m>x</m>-axis. (e.g. <m>T([4,5])=[4,0]</m>).
+            </p>
+        </statement>
+    
+    <answer>
+    <p>
+    <me>
+        A=\begin{bmatrix}1\amp 0\\0\amp 0\end{bmatrix}.
+    </me>
+    </p>
+    </answer>
+    </exercise>
+    
+    
+    
+      <exercise xml:id="prob-standardmatrix4">
+        <statement>
+            <p>
+                <m>T</m> projects each vector onto the <m>y</m>-axis. (e.g. <m>T([4,5])=[0,5]</m>)
+            </p>
+        </statement>
+      
+    <answer>
+    <p>
+    <me>
+        A=\begin{bmatrix}0\amp 0\\0\amp 1\end{bmatrix}.
+    </me>
+    </p>
+    </answer>
+    </exercise>
+    </exercisegroup> 
+
+    
+
 
 
 </exercises>

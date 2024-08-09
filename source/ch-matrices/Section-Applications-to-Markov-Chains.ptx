@@ -928,7 +928,7 @@ Probability of being late <m>= \frac{7}{16}</m>, Probability of being on time <m
     </p>
 </introduction>
 
-<exercise xml:id="prob:mouse1">
+<exercise xml:id="prob-mouse1">
     <statement>
         <p>
 If he starts in compartment 1, find the probability that he is in compartment 1 again after <m>3</m> moves.
