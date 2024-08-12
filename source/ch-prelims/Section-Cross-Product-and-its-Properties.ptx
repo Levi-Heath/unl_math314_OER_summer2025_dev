@@ -359,7 +359,7 @@
                 <p>
                     Let <m>\mathbf{u}</m> and <m>\mathbf{v}</m> be vectors in <m>\R^3</m>. Let <m>\theta</m> be the angle between <m>\mathbf{u}</m> and <m>\mathbf{v}</m> such that <m>0\leq\theta\leq \pi</m>. Then
                     <me>
-                        \norm{\mathbf{u}\times\mathbf{v}}=\norm{\mathbf{u}}\norm{\mathbf{v}}\sin\theta
+                        \norm{\mathbf{u}\times\mathbf{v}}=\norm{\mathbf{u}}\norm{\mathbf{v}}\sin\theta.
                     </me>
                 </p>
             </statement>

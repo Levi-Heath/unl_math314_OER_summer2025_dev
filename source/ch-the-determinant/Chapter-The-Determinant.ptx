@@ -48,8 +48,8 @@
   <!-- include sections --> 
 <!--<xi:include href="Section-Linear-Combinations-of-Vectors.ptx"/>-->
 <xi:include href="Section-Finding-the-Determinant.ptx"/>
-<xi:include href="Section-Properties-of-the-Determinant.ptx"/>
 <xi:include href="Section-Elementary-Row-Operations-and-the-Determinant.ptx"/>
-<xi:include href="Section-Determinants-Areas-and-Volumes.ptx"/>
 <xi:include href="Section-Determinants-and-Inverses-of-Nonsingular-Matrices.ptx"/>
+<!--<xi:include href="Section-Properties-of-the-Determinant.ptx"/>-->
+<xi:include href="Section-Determinants-Areas-and-Volumes.ptx"/>
 </chapter>

@@ -60,7 +60,12 @@ As shown in the diagram below, the length of the base is the magnitude of <m>\ma
 
 
 <p>
-Using the area of a parallelogram formula together with <xref ref="th-crossproductsin"/> we get
+Using the area of a parallelogram formula together with the formula
+<me>
+    \norm{\mathbf{u}\times\mathbf{v}}=\norm{\mathbf{u}}\norm{\mathbf{v}}\sin\theta.
+</me>
+
+for the cross product of two vectors, we get
 
 <me>
     \mbox{Area}=(\text{base})(\text{height})=\norm{\mathbf{u}}h=\norm{\mathbf{u}}\norm{\mathbf{v}}\sin\theta=\norm{\mathbf{u}\times\mathbf{v}}.
@@ -81,6 +86,12 @@ We have established the following formula.
         </p>
     </statement>
 </identity>
+
+
+<p> 
+To get accustomed to this formula, let us examine a concrete case
+</p> 
+
 
 <example xml:id="ex-areaOfParFormula">
     <statement>
@@ -164,11 +175,17 @@ The formula from <xref ref="form-areaofparallelogram"/> can be easily adapted to
     \begin{bmatrix}4\\2\end{bmatrix}\quad\text{and}\quad\begin{bmatrix}-2\\2\end{bmatrix}.
 </me>
 
-The problem we run into is that these vectors are in <m>\R^2</m>, whereas the cross product is defined only for vectors in <m>\R^3</m>.  We will get around this difficulty by ``padding" our vectors with zeros on the bottom.  In other words, we will consider them as vectors sitting in the <m>xy</m>-coordinate plane in <m>\R^3</m>.  This allows us to compute the cross product 
+The problem we run into is that these vectors are in <m>\R^2</m>, whereas the cross product is defined only for vectors in <m>\R^3</m>.  
+We will get around this difficulty by ``padding" our vectors with zeros on the bottom.  
+In other words, we will consider them as vectors sitting in the <m>xy</m>-coordinate plane in <m>\R^3</m>. 
+ This allows us to compute the cross product 
 
-<me>
-    \begin{bmatrix}4\\2\\0\end{bmatrix}\times\begin{bmatrix}-2\\2\\0\end{bmatrix}=\begin{vmatrix}\mathbf{i}\amp \mathbf{j}\amp \mathbf{k}\\4\amp 2\amp 0\\-2\amp 2\amp 0\end{vmatrix}=\mathbf{k}\Big((4)(2)-(2)(-2)\Big)=12\mathbf{k}=\begin{bmatrix}0\\0\\12\end{bmatrix}.
-</me>
+<md>
+    <mrow> \begin{bmatrix}4\\2\\0\end{bmatrix}\times\begin{bmatrix}-2\\2\\0\end{bmatrix} \amp =\begin{vmatrix}\mathbf{i}\amp \mathbf{j}\amp \mathbf{k}\\4\amp 2\amp 0\\-2\amp 2\amp 0\end{vmatrix} </mrow>
+    <mrow> \amp =\mathbf{k}\Big((4)(2)-(2)(-2)\Big) </mrow>
+    <mrow>  \amp =12\mathbf{k} </mrow> 
+    <mrow>   \amp =\begin{bmatrix}0\\0\\12\end{bmatrix}. </mrow>
+</md>
 
 The area of the parallelogram is then given by
 
@@ -216,6 +233,11 @@ The following formula summarizes our discussion.
         </p>
     </statement>
 </identity>
+
+
+<p>
+The formula in action is illustrated in an example now.
+</p> 
 
 <example xml:id="exp-polyArea">
     <statement>
@@ -406,7 +428,8 @@ The volume of a parallelepiped is given by
     \mbox{Volume}=(\text{area of base})(\text{height})
 </me>
 
-We will consider the parallelogram determined by <m>\mathbf{u}</m> and <m>\mathbf{v}</m> to be the base of the parallelepiped.  Thus, the area of the base is given by 
+We will consider the parallelogram determined by <m>\mathbf{u}</m> and <m>\mathbf{v}</m> to be the base of the parallelepiped.  
+Thus, the area of the base is given by 
 
 <me>
     \mbox{Area of Base}=\norm{\mathbf{u}\times\mathbf{v}}.
@@ -445,7 +468,8 @@ We will consider the parallelogram determined by <m>\mathbf{u}</m> and <m>\mathb
 </image>
 
 <p> 
-The height of the parallelepiped is measured along a line perpendicular to the base.  By <xref ref="th-crossproductorthtouandv"/>, <m>\mathbf{u}\times\mathbf{v}</m> lies on such a line. 
+The height of the parallelepiped is measured along a line perpendicular to the base.  
+By <!--<xref ref="th-crossproductorthtouandv"/>--> our knowledge of cross products, <m>\mathbf{u}\times\mathbf{v}</m> lies on such a line. 
 Let <m>\theta</m> be the angle between <m>\mathbf{w}</m> and <m>\mathbf{u}\times\mathbf{v}</m>, <m>0\leq \theta\leq\pi</m>. 
 Then the height, <m>h</m>, of the parallelepiped is given by 
 
@@ -502,8 +526,8 @@ Let
 </me>
 
 then
-<mdn xml:id="eq-boxproduct">
-(\mathbf{u}\times\mathbf{v})\cdot\mathbf{w}=\begin{vmatrix}\mathbf{i}\amp \mathbf{j}\amp \mathbf{k}\\u_1\amp u_2\amp u_3\\v_1\amp v_2\amp v_3\end{vmatrix}\cdot\begin{bmatrix}w_1\\w_2\\w_3\end{bmatrix}=\begin{vmatrix}w_1\amp w_2\amp w_3\\u_1\amp u_2\amp u_3\\v_1\amp v_2\amp v_3\end{vmatrix}.
+<mdn>
+<mrow xml:id="eq-boxproduct"> (\mathbf{u}\times\mathbf{v})\cdot\mathbf{w}=\begin{vmatrix}\mathbf{i}\amp \mathbf{j}\amp \mathbf{k}\\u_1\amp u_2\amp u_3\\v_1\amp v_2\amp v_3\end{vmatrix}\cdot\begin{bmatrix}w_1\\w_2\\w_3\end{bmatrix}=\begin{vmatrix}w_1\amp w_2\amp w_3\\u_1\amp u_2\amp u_3\\v_1\amp v_2\amp v_3\end{vmatrix}. </mrow>
 </mdn>
 
 The expression in <xref ref="eq-boxproduct"/> is sometimes referred to as the <term>box product</term> or the <term>scalar triple product</term>.
@@ -560,7 +584,7 @@ We will now turn our attention to the determinant of a matrix of a linear transf
 <figure>
   <caption>
   </caption>
-  <interactive xml:id="geogebra-Area-Image" platform="geogebra" width="110%" aspect="950:700">
+  <interactive xml:id="geogebra-Area-Image" platform="geogebra" width="135%" aspect="950:700">
     <slate xml:id="Area-Image" surface="geogebra" material="nr8jsz4w" aspect="950:700" />
   </interactive>
 </figure>
