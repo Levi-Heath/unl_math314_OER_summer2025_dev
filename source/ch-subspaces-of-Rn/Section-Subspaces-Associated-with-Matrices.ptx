@@ -25,7 +25,8 @@ Recall when learning Gaussian elimination, we observed that every row-echelon fo
 <definition xml:id="def-rowspace">
     <statement>
         <p>
-            Let <m>A</m> be an <m>m\times n</m> matrix.  The <term>row space</term> of <m>A</m>, denoted by <m>\mbox{row}(A)</m>, is the subspace of <m>\R^n</m> spanned by the rows of <m>A</m>.
+            Let <m>A</m> be an <m>m\times n</m> matrix.  The <term>row space</term> of <m>A</m>, denoted by <m>\mbox{row}(A)</m>, 
+            is the subspace of <m>\R^n</m> spanned by the rows of <m>A</m>.
         </p>
     </statement>
 </definition>
@@ -35,19 +36,19 @@ Recall when learning Gaussian elimination, we observed that every row-echelon fo
         Consider the matrix
 
 <me>
-    A=\begin{bmatrix}-2\amp 2\amp 1\\4\amp -2\amp 1\end{bmatrix}
+    A=\begin{bmatrix}-2\amp 2\amp 1\\4\amp -2\amp 1\end{bmatrix}.
 </me>
 
 Let <m>\mathbf{r}_1</m> and <m>\mathbf{r}_2</m> be the rows of <m>A</m>: 
 
 <me>
-    \mathbf{r}_1=\begin{bmatrix}-2\amp 2\amp 1\end{bmatrix},\quad \mathbf{r}_2=\begin{bmatrix}4\amp -2\amp 1\end{bmatrix}
+    \mathbf{r}_1=\begin{bmatrix}-2\amp 2\amp 1\end{bmatrix},\quad \mathbf{r}_2=\begin{bmatrix}4\amp -2\amp 1\end{bmatrix}.
 </me>
 
 
 Then 
 <m>\mbox{row}(A)=\mbox{span}(\mathbf{r}_1, \mathbf{r}_2)</m>
-is a plane through the origin containing <m>\mathbf{r}_1</m> and  <m>\mathbf{r}_2</m>.  
+is a plane through <m>(0,0)</m> containing <m>\mathbf{r}_1</m> and  <m>\mathbf{r}_2</m>.  
 </p>
 
 
@@ -69,16 +70,16 @@ is a plane through the origin containing <m>\mathbf{r}_1</m> and  <m>\mathbf{r}_
 </image>
 
 <p>
-We will use elementary row operations to reduce <m>A</m> to <m>\mbox{rref}(A)</m>.
+We will use elementary row operations to reduce <m>A</m> to <m>\mbox{rref}(A)</m>,namely
 
 <me>
-    \begin{bmatrix}-2\amp 2\amp 1\\4\amp -2\amp 1\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp 0\amp 1\\0\amp 1\amp 3/2\end{bmatrix}
+    \begin{bmatrix}-2\amp 2\amp 1\\4\amp -2\amp 1\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp 0\amp 1\\0\amp 1\amp 3/2\end{bmatrix}.
 </me>
 
 Let <m>\mathbf{\rho}_1</m> and <m>\mathbf{\rho}_2</m> be the rows of <m>\mbox{rref}(A)</m>:
 
 <me>
-    \mathbf{\rho}_1=\begin{bmatrix}1\amp 0\amp 1\end{bmatrix},\quad \mathbf{\rho}_2=\begin{bmatrix}0\amp 1\amp 3/2\end{bmatrix}
+    \mathbf{\rho}_1=\begin{bmatrix}1\amp 0\amp 1\end{bmatrix},\quad \mathbf{\rho}_2=\begin{bmatrix}0\amp 1\amp 3/2\end{bmatrix}.
 </me>
 
 What do you think <m>\mbox{span}(\mathbf{\rho}_1, \mathbf{\rho}_2)</m> looks like?  
@@ -146,7 +147,7 @@ The observations made in <xref ref="init-rowspace"/> makes a convincing case for
             If matrix <m>B</m> was obtained from matrix <m>A</m> by applying an elementary row operation to <m>A</m> then
 
 <me>
-    \mbox{row}(B)=\mbox{row}(A)
+    \mbox{row}(B)=\mbox{row}(A).
 </me>
         </p>
     </statement>
@@ -165,37 +166,56 @@ Suppose that <m>B</m> was obtained from <m>A</m> by multiplying the <m>i^{th}</m
 </p>
 
 <p>
-To do this we will assume that some vector <m>\mathbf{v}</m> is in <m>\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)</m>, and show that <m>\mathbf{v}</m> is in <m>\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)</m>.  We will then assume that some vector <m>\mathbf{w}</m> is in <m>\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)</m> and show that <m>\mathbf{w}</m> must be in <m>\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)</m>.
+To do this we will assume that some vector <m>\mathbf{v}</m> is in 
+<me>
+\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)
+</me>
 
+and show that <m>\mathbf{v}</m> is in <m>\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)</m>.  
+We will then assume that some vector <m>\mathbf{w}</m> is in
+<me>
+\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)
+</me> 
+
+and show that <m>\mathbf{w}</m> must be in <m>\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)</m>.
+</p> 
+
+
+<p> 
 Suppose that <m>\mathbf{v}</m> is in <m>\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)</m>.  Then 
 
 <me>
     \mathbf{v}=a_1\mathbf{r}_1+\ldots +a_i(k\mathbf{r}_i)+\ldots +a_m\mathbf{r}_m
 </me>
 
-But then 
+But this implies
 
 <me>
-    \mathbf{v}=a_1\mathbf{r}_1+\ldots +(a_ik)\mathbf{r}_i+\ldots +a_m\mathbf{r}_m
+    \mathbf{v}=a_1\mathbf{r}_1+\ldots +(a_ik)\mathbf{r}_i+\ldots +a_m\mathbf{r}_m.
 </me>
 
 So <m>\mathbf{v}</m> is in <m>\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)</m>.
+</p> 
 
+<p> 
 Now suppose <m>\mathbf{w}</m> is in <m>\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)</m>, then
 
 <me>
-    \mathbf{w}=b_1\mathbf{r}_1+\ldots +b_i\mathbf{r}_i+\ldots +b_m\mathbf{r}_m
+    \mathbf{w}=b_1\mathbf{r}_1+\ldots +b_i\mathbf{r}_i+\ldots +b_m\mathbf{r}_m.
 </me>
 
 But because <m>k\neq 0</m>, we can do the following:
 
 <me>
-    \mathbf{w}=b_1\mathbf{r}_1+\ldots +\frac{b_i}{k}(k\mathbf{r}_i)+\ldots +b_m\mathbf{r}_m
+    \mathbf{w}=b_1\mathbf{r}_1+\ldots +\frac{b_i}{k}(k\mathbf{r}_i)+\ldots +b_m\mathbf{r}_m.
 </me>
 
-So <m>\mathbf{w}</m> is in <m>\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)</m>.
-  
-We leave it to the reader to verify that adding a multiple of one row of <m>A</m> to another does not change the row space.  (See <xref ref="prob-proofofrowBrowA"/>.)  
+Therefore, <m>\mathbf{w}</m> is in <m>\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)</m>.
+</p> 
+
+<p> 
+We leave it to the reader to verify that adding a multiple of one row of <m>A</m> to another does not change the row space.  
+See also <xref ref="prob-proofofrowBrowA"/>.)
 </p>
 </proof>
 </theorem>
@@ -213,7 +233,7 @@ We leave it to the reader to verify that adding a multiple of one row of <m>A</m
             If matrix <m>B</m> was obtained from matrix <m>A</m> by applying a sequence of elementary row operations to <m>A</m> then
 
 <me>
-    \mbox{row}(B)=\mbox{row}(A)
+    \mbox{row}(B)=\mbox{row}(A).
 </me>
         </p>
     </statement>
@@ -232,7 +252,7 @@ This follows from repeated applications of <xref ref="th-rowBrowA"/>.
     <statement>
         <p>
             <me>
-    \mbox{row}(A)=\mbox{row}(\mbox{rref}(A))
+    \mbox{row}(A)=\mbox{row}(\mbox{rref}(A)).
 </me>
         </p>
     </statement>
@@ -244,7 +264,7 @@ This follows from repeated applications of <xref ref="th-rowBrowA"/>.
             Let
 
 <me>
-    A=\begin{bmatrix}2\amp -1\amp 1\amp -4\amp 1\\1\amp 0\amp 3\amp 3\amp 0\\-2\amp 1\amp -1\amp 5\amp 2\\4\amp -1\amp 7\amp 2\amp 1\end{bmatrix}
+    A=\begin{bmatrix}2\amp -1\amp 1\amp -4\amp 1\\1\amp 0\amp 3\amp 3\amp 0\\-2\amp 1\amp -1\amp 5\amp 2\\4\amp -1\amp 7\amp 2\amp 1\end{bmatrix}.
 </me>
 
 Find two distinct bases for <m>\mbox{row}(A)</m>.
@@ -256,29 +276,32 @@ Find two distinct bases for <m>\mbox{row}(A)</m>.
             By <xref ref="cor-rowArowrrefA"/> a basis for <m>\mbox{row}(\mbox{rref}(A))</m> will also be a basis for <m>\mbox{row}(A)</m>. Row reduction gives us:
 
 <me>
-    \begin{bmatrix}2\amp -1\amp 1\amp -4\amp 1\\1\amp 0\amp 3\amp 3\amp 0\\-2\amp 1\amp -1\amp 5\amp 2\\4\amp -1\amp 7\amp 2\amp 1\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp 0\amp 3\amp 0\amp -9\\0\amp 1\amp 5\amp 0\amp -31\\0\amp 0\amp 0\amp 1\amp 3\\0\amp 0\amp 0\amp 0\amp 0\end{bmatrix}=\mbox{rref}(A)
+    \begin{bmatrix}2\amp -1\amp 1\amp -4\amp 1\\1\amp 0\amp 3\amp 3\amp 0\\-2\amp 1\amp -1\amp 5\amp 2\\4\amp -1\amp 7\amp 2\amp 1\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp 0\amp 3\amp 0\amp -9\\0\amp 1\amp 5\amp 0\amp -31\\0\amp 0\amp 0\amp 1\amp 3\\0\amp 0\amp 0\amp 0\amp 0\end{bmatrix}=\mbox{rref}(A).
 </me>
 
 
-Since the zero row contributes nothing to the span, we conclude that the nonzero rows of <m>\mbox{rref}(A)</m> span <m>\mbox{row}(\mbox{rref}(A))</m>.  Therefore
+Since the zero row contributes nothing to the span, we conclude that the nonzero rows of <m>\mbox{rref}(A)</m> span <m>\mbox{row}(\mbox{rref}(A))</m>.  
+Therefore, a basis for the row space consists of the vecotrs
 
 <me>
-    \mbox{row}(A)=\mbox{span}\Big(\begin{bmatrix}1\amp 0\amp 3\amp 0\amp -9\end{bmatrix},
-\begin{bmatrix}0\amp 1\amp 5\amp 0\amp -31\end{bmatrix},
-\begin{bmatrix}0\amp 0\amp 0\amp 1\amp 3\end{bmatrix}\Big)
+[1\amp 0\amp 3\amp 0\amp -9], \ 
+[0\amp 1\amp 5\amp 0\amp -3], \ 
+[0\amp 0\amp 0\amp 1\amp 3].
 </me>
 
-By <xref ref="th-rowsrreflinind"/>, the nonzero rows of <m>\mbox{rref}(A)</m> are linearly independent.
+It follows that the nonzero rows of <m>\mbox{rref}(A)</m> are linearly independent.
 </p>
 
 <p>
-To find a second basis for <m>\mbox{row}(A)</m>, observe that by <xref ref="cor-rowequiv"/> the row space of <em>any</em> row-echelon form of <m>A</m> will be equal to <m>\mbox{row}(A)</m>.  Matrix <m>A</m> has many row-echelon forms.  Here is one of them:
+To find a second basis for <m>\mbox{row}(A)</m>, observe that by <xref ref="cor-rowequiv"/> the row space of <em>any</em> row-echelon form of <m>A</m> will be equal to <m>\mbox{row}(A)</m>.  
+Matrix <m>A</m> has many row-echelon forms.  Here is one of them:
 
 <me>
-    B=\begin{bmatrix}1\amp 0\amp 3\amp 3\amp 0\\0\amp -1\amp -5\amp -10\amp 1\\0\amp 0\amp 0\amp 1\amp 3\\0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}
+    B=\begin{bmatrix}1\amp 0\amp 3\amp 3\amp 0\\0\amp -1\amp -5\amp -10\amp 1\\0\amp 0\amp 0\amp 1\amp 3\\0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}.
 </me>
 
-The nonzero rows of <m>B</m> span <m>\mbox{row}(A)</m>.  By <xref ref="th-rowsofreflinind"/>, the nonzero rows of <m>B</m> are linearly independent.  Thus the nonzero rows of <m>B</m> form a basis for <m>\mbox{row}(A)</m>.
+The nonzero rows of <m>B</m> span <m>\mbox{row}(A)</m>.  Once again the nonzero rows of <m>B</m> are linearly independent.  
+Thus the nonzero rows of <m>B</m> form a basis for <m>\mbox{row}(A)</m>.
        </p>
     </answer>
 </example>
@@ -296,7 +319,8 @@ Our observations in <xref ref="ex-basisrowspace"/> can be generalized to all mat
       <p> The nonzero rows of any row-echelon form of <m>A</m> are linearly independent (Why?) and span <m>\mbox{row}(A)</m> (<xref ref="cor-rowequiv"/>). </p>
 </li>
 </ol>
-Therefore nonzero rows of <m>\mbox{rref}(A)</m> or the nonzero rows of any row-echelon form of <m>A</m> constitute a basis of <m>\mbox{row}(A)</m>.  Since all bases for <m>\mbox{row}(A)</m> must have the same number of elements (Theorem <xref ref="th-dimwelldefined"/>), we have just proved the following theorem.
+Therefore nonzero rows of <m>\mbox{rref}(A)</m> or the nonzero rows of any row-echelon form of <m>A</m> constitute a basis of <m>\mbox{row}(A)</m>.  
+Since all bases for <m>\mbox{row}(A)</m> must have the same number of elements ( <xref ref="th-dimwelldefined"/>), we have just proved the following theorem.
 </p>
 
 
@@ -310,7 +334,9 @@ Therefore nonzero rows of <m>\mbox{rref}(A)</m> or the nonzero rows of any row-e
 </theorem>
 
 <p>
-This result was first introduced without proof when learning of Guassian elimination, where we used it to define the <term>rank</term> of a matrix as the number of nonzero rows in its row-echelon forms.  We can now update the definition of rank as follows.
+This result was first introduced without proof when learning of Guassian elimination, 
+where we used it to define the <term>rank</term> of a matrix as the number of nonzero rows in its row-echelon forms.  
+We can now update the definition of rank as follows.
 </p>
 
 
@@ -321,7 +347,7 @@ This result was first introduced without proof when learning of Guassian elimina
         <p>
             For any matrix <m>A</m>,  
 <me> 
-    \mbox{rank}(A)=\mbox{dim}\Big(\mbox{row}(A)\Big)
+    \mbox{rank}(A)=\mbox{dim}\Big(\mbox{row}(A)\Big).
 </me>
 </p>
     </statement>
@@ -344,7 +370,8 @@ This result was first introduced without proof when learning of Guassian elimina
 
     <statement>
         <p>
-            Let <m>A</m> be an <m>m\times n</m> matrix.  The <term>column space</term> of <m>A</m>, denoted by <m>\mbox{col}(A)</m>, is the subspace of <m>\R^m</m> spanned by the columns of <m>A</m>.
+            Let <m>A</m> be an <m>m\times n</m> matrix.  The <term>column space</term> of <m>A</m>, denoted by <m>\mbox{col}(A)</m>, 
+            is the subspace of <m>\R^m</m> spanned by the columns of <m>A</m>.
         </p>
     </statement>
 </definition>
@@ -354,7 +381,7 @@ This result was first introduced without proof when learning of Guassian elimina
         Let
 
 <me>
-    B=\begin{bmatrix}2\amp -1\amp 3\amp 1\\1\amp -1\amp 2\amp 2\\1\amp 3\amp -2\amp -3\end{bmatrix}
+    B=\begin{bmatrix}2\amp -1\amp 3\amp 1\\1\amp -1\amp 2\amp 2\\1\amp 3\amp -2\amp -3\end{bmatrix}.
 </me>
 
 Our goal is to find a basis for <m>\mbox{col}(B)</m>.  To do this we need to find a linearly independent subset of the columns of <m>B</m> that spans <m>\mbox{col}(B)</m>.
@@ -363,13 +390,13 @@ Our goal is to find a basis for <m>\mbox{col}(B)</m>.  To do this we need to fin
 <p>
 Consider the linear relation:
 <men xml:id="init-colspaceB">
- a_1\begin{bmatrix}2\\1\\1\end{bmatrix}+a_2\begin{bmatrix}-1\\-1\\3\end{bmatrix}+a_3\begin{bmatrix}3\\2\\-2\end{bmatrix}+a_4\begin{bmatrix}1\\2\\-3\end{bmatrix}=\mathbf{0}
+ a_1\begin{bmatrix}2\\1\\1\end{bmatrix}+a_2\begin{bmatrix}-1\\-1\\3\end{bmatrix}+a_3\begin{bmatrix}3\\2\\-2\end{bmatrix}+a_4\begin{bmatrix}1\\2\\-3\end{bmatrix}=\mathbf{0}.
 </men>
 
-Solving this homogeneous equation amounts to finding <m>\mbox{rref}(B)</m>.
+Solving this homogeneous equation amounts to finding <m>\mbox{rref}(B)</m>. So,
 
 <me>
-    \begin{bmatrix}2\amp -1\amp 3\amp 1\\1\amp -1\amp 2\amp 2\\1\amp 3\amp -2\amp -3\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp 0\amp 1\amp 0\\0\amp 1\amp -1\amp 0\\0\amp 0\amp 0\amp 1\end{bmatrix}=\mbox{rref}(B)
+    \begin{bmatrix}2\amp -1\amp 3\amp 1\\1\amp -1\amp 2\amp 2\\1\amp 3\amp -2\amp -3\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp 0\amp 1\amp 0\\0\amp 1\amp -1\amp 0\\0\amp 0\amp 0\amp 1\end{bmatrix}=\mbox{rref}(B).
 </me>
 
 We now see that <xref ref="init-colspaceB"/> has infinitely many solutions.  
@@ -378,19 +405,25 @@ We now see that <xref ref="init-colspaceB"/> has infinitely many solutions.
 <p>
 Observe that the homogeneous equation
 <men xml:id="init-colspaceR">
-a_1\begin{bmatrix}1\\0\\0\end{bmatrix}+a_2\begin{bmatrix}0\\1\\0\end{bmatrix}+a_3\begin{bmatrix}1\\-1\\0\end{bmatrix}+a_4\begin{bmatrix}0\\0\\1\end{bmatrix}=\mathbf{0}
+a_1\begin{bmatrix}1\\0\\0\end{bmatrix}+a_2\begin{bmatrix}0\\1\\0\end{bmatrix}+a_3\begin{bmatrix}1\\-1\\0\end{bmatrix}+a_4\begin{bmatrix}0\\0\\1\end{bmatrix}=\mathbf{0}.
 </men>
 
-has the same solution set as <xref ref="init-colspaceB"/>.  In particular, <m>a_1=1</m>, <m>a_2=-1</m>, <m>a_3=-1</m>, <m>a_4=0</m> is a non-trivial solution of <xref ref="init-colspaceB"/> and <xref ref="init-colspaceR"/>.  This means that the third column of <m>B</m> and the third column of <m>\mbox{rref}(B)</m> can be expressed as the first column minus the second column of their respective matrices.  We conclude that the third column of <m>B</m> can be eliminated from the spanning set for <m>\mbox{col}(B)</m> and 
+has the same solution set as <xref ref="init-colspaceB"/>.  
+In particular, <m>a_1=1</m>, <m>a_2=-1</m>, <m>a_3=-1</m>, <m>a_4=0</m> is a non-trivial solution of <xref ref="init-colspaceB"/> and <xref ref="init-colspaceR"/>. 
+ This means that the third column of <m>B</m> and the third column of <m>\mbox{rref}(B)</m> can be expressed as the first column minus 
+ the second column of their respective matrices. 
+</p> 
 
+<p> 
+We conclude that the third column of <m>B</m> can be eliminated from the spanning set for <m>\mbox{col}(B)</m> and 
 <me>
-    \mbox{col}(B)=\mbox{span}\left(\begin{bmatrix}2\\1\\1\end{bmatrix},\begin{bmatrix}-1\\-1\\3\end{bmatrix}, \begin{bmatrix}3\\2\\-2\end{bmatrix}, \begin{bmatrix}1\\2\\-3\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}2\\1\\1\end{bmatrix},\begin{bmatrix}-1\\-1\\3\end{bmatrix}, \begin{bmatrix}1\\2\\-3\end{bmatrix}\right)
+    \mbox{col}(B)=\mbox{span}\left(\begin{bmatrix}2\\1\\1\end{bmatrix},\begin{bmatrix}-1\\-1\\3\end{bmatrix}, \begin{bmatrix}3\\2\\-2\end{bmatrix}, \begin{bmatrix}1\\2\\-3\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}2\\1\\1\end{bmatrix},\begin{bmatrix}-1\\-1\\3\end{bmatrix}, \begin{bmatrix}1\\2\\-3\end{bmatrix}\right).
 </me>
 
 Having gotten rid of one of the vectors, we need to determine whether the remaining three vectors are linearly independent.  To do this we need to find all solutions of 
 
 <men xml:id="init-colspaceB2">
-b_1\begin{bmatrix}2\\1\\1\end{bmatrix}+b_2\begin{bmatrix}-1\\-1\\3\end{bmatrix}+b_3\begin{bmatrix}1\\2\\-3\end{bmatrix}=\mathbf{0}
+b_1\begin{bmatrix}2\\1\\1\end{bmatrix}+b_2\begin{bmatrix}-1\\-1\\3\end{bmatrix}+b_3\begin{bmatrix}1\\2\\-3\end{bmatrix}=\mathbf{0}.
 </men>
 
 Fortunately, we do not have to start from scratch.  Observe that crossing out the third column in the previous row reduction process yields the desired reduced row-echelon form.
@@ -478,10 +511,12 @@ Given a matrix <m>B</m>, a basis for <m>\mbox{col}(B)</m> can be found as follow
 Observe that the equations
 <men>a_1\mathbf{b}_1+\ldots +a_n\mathbf{b}_n=\mathbf{0}</men>
 <men>a_1\mathbf{b}'_1+\ldots +a_n\mathbf{b}'_n=\mathbf{0}</men>
-have the same solution set.  This means that any non-trivial relation among the columns of <m>\mbox{rref}(B)</m> (or <m>B'</m>) translates into a non-trivial relation among the columns of <m>B</m>.  Likewise, any collection of linearly independent columns of <m>\mbox{rref}(B)</m> (or <m>B'</m>) corresponds to linearly independent columns of <m>B</m>.
-
+have the same solution set.  This means that any non-trivial relation among the columns of <m>\mbox{rref}(B)</m> (or <m>B'</m>) translates into a non-trivial relation among the columns of <m>B</m>.  
+Likewise, any collection of linearly independent columns of <m>\mbox{rref}(B)</m> (or <m>B'</m>) corresponds to linearly independent columns of <m>B</m>.
+    </p> 
   
-By  <xref ref="th-rowsrreflinind"/> and <xref ref="th-rowsofreflinind"/>, the pivot columns of <m>\mbox{rref}(B)</m> (or <m>B'</m>) are linearly independent.  Therefore the corresponding columns of <m>B</m> are linearly independent.  Non-pivot columns can be expressed as linear combinations of the pivot columns, therefore they contribute nothing to the span and can be removed from the spanning set. 
+    <p> 
+ Now, the pivot columns of <m>\mbox{rref}(B)</m> (or <m>B'</m>) are linearly independent.  Therefore the corresponding columns of <m>B</m> are linearly independent whereas non-pivot columns can be expressed as linear combinations of the pivot columns, therefore they contribute nothing to the span and can be removed from the spanning set. 
     </p>
 </proof>
 </algorithm>
@@ -500,7 +535,7 @@ The proof of <xref ref="colspace"/> shows that the number of basis elements for 
             Let <m>A</m> be a matrix.
 
 <me>
-    \mbox{dim}\Big(\mbox{row}(A)\Big)=\mbox{rank}(A)=\mbox{dim}\Big(\mbox{col}(A)\Big)
+    \mbox{dim}\Big(\mbox{row}(A)\Big)=\mbox{rank}(A)=\mbox{dim}\Big(\mbox{col}(A)\Big).
 </me>
         </p>
     </statement>
@@ -552,25 +587,36 @@ Columns <m>1</m>, <m>2</m> and <m>4</m> of <m>\mbox{rref}(A)</m> contain leading
     </statement>
 </definition>
 
+
+<p> 
+Before digging further, let us examine the notion through an example.
+</p> 
+
 <example xml:id="ex-nullintro">
     <statement>
         <p>
             Find <m>\mbox{null}(A)</m> if
 
 <me>
-    A=\begin{bmatrix}3\amp -1\\-6\amp 2\end{bmatrix}
+    A=\begin{bmatrix}3\amp -1\\-6\amp 2\end{bmatrix}.
 </me>
        </p>
     </statement>
-    <explanation>
+    <answer>
         <p>
             We need to solve the equation <m>A\mathbf{x}=\mathbf{0}</m>.  Row reduction gives us
 
 <me>
-    \begin{bmatrix}3\amp -1\\-6\amp 2\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp -1/3\\0\amp 0\end{bmatrix}=\mbox{rref}(A)
+    \begin{bmatrix}3\amp -1\\-6\amp 2\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp -1/3\\0\amp 0\end{bmatrix}=\mbox{rref}(A).
 </me>
 
-We conclude that <m>\mathbf{x}=\begin{bmatrix}1/3\\1\end{bmatrix}t</m>.  Thus <m>\mbox{null}(A)</m> consists of all vectors of the form <m>\begin{bmatrix}1/3\\1\end{bmatrix}t</m>.  We might write
+We conclude that <m>\mathbf{x}=\begin{bmatrix}1/3\\1\end{bmatrix}t</m>.  
+Thus <m>\mbox{null}(A)</m> consists of all vectors of the form 
+<me>
+t \begin{bmatrix}1/3\\1\end{bmatrix}.
+</me>
+
+We might write
 
 <me>
     \mbox{null}(A)=\left\{\begin{bmatrix}1/3\\1\end{bmatrix}t\right\}
@@ -578,14 +624,21 @@ We conclude that <m>\mathbf{x}=\begin{bmatrix}1/3\\1\end{bmatrix}t</m>.  Thus <m
  or
 
 <me>
-    \mbox{null}(A)=\mbox{span}\left(\begin{bmatrix}1/3\\1\end{bmatrix}\right)
+    \mbox{null}(A)=\mbox{span}\left(\begin{bmatrix}1/3\\1\end{bmatrix}\right).
 </me>
        </p>
-    </explanation>
+    </answer>
 </example>
 
 <p>
-The approach in <xref ref="ex-nullintro"/> allows us to make an important observation. Note that every scalar multiple of <m>[1/3,1]</m> is contained in <m>\mbox{null}(A)</m>.  This means that <m>\mbox{null}(A)</m> is closed under vector addition and scalar multiplication.  Recall that this property makes <m>\mbox{null}(A)</m> a <term>subspace</term> of <m>\R^n</m>.  This result was first presented as <xref ref="prob-null-A-is-subspace"/>. We now formalize it as a theorem.
+The approach in <xref ref="ex-nullintro"/> allows us to make an important observation. 
+Note that every scalar multiple of <m>[1/3,1]</m> is contained in <m>\mbox{null}(A)</m>.  
+This means that <m>\mbox{null}(A)</m> is closed under vector addition and scalar multiplication.  
+</p> 
+
+<p> 
+Recall that this property makes <m>\mbox{null}(A)</m> a <term>subspace</term> of <m>\R^n</m>.  
+This result was first presented as <xref ref="prob-null-A-is-subspace"/>. We now formalize it as a theorem.
 </p>
 
 
@@ -601,7 +654,11 @@ The approach in <xref ref="ex-nullintro"/> allows us to make an important observ
 
 <proof>
     <p>
-        To show that <m>\mbox{null}(A)</m> is closed under vector addition and scalar multiplication we will show that a linear combination of any two elements of <m>\mbox{null}(A)</m> is contained in <m>\mbox{null}(A)</m>.
+        To deduce that <m>\mbox{null}(A)</m> is closed under vector addition and scalar multiplication
+         we will show that a linear combination of any two elements of <m>\mbox{null}(A)</m> is contained in <m>\mbox{null}(A)</m>.
+    </p> 
+
+    <p> 
 Suppose <m>\mathbf{x}_1</m> and <m>\mathbf{x}_2</m> are in <m>\mbox{null}(A)</m>.  Then <m>A\mathbf{x}_1=\mathbf{0}</m> and <m>A\mathbf{x}_2=\mathbf{0}</m>.  But then
 
 <me>
@@ -707,7 +764,7 @@ Therefore, vectors obtained in this way will always be linearly independent.
             Let <m>A</m> be a matrix.  The dimension of the null space of <m>A</m> is called the <term>nullity</term> of <m>A</m>.
 
 <me>
-    \mbox{dim}\Big(\mbox{null}(A)\Big)=\mbox{nullity}(A)
+    \mbox{dim}\Big(\mbox{null}(A)\Big)=\mbox{nullity}(A).
 </me>
         </p>
     </statement>
@@ -744,10 +801,6 @@ We will see the geometric implications of this theorem when we study linear tran
 
 
 
-
-
-<subsection xml:id="Subsection-Practice-Problems">
-    <title>Practice Problems</title>
 
 <exercises>
 
@@ -808,7 +861,7 @@ Compute <m>\text{rank}(A)</m>, <m>\text{dim}(\text{row}(A))</m> and <m> \text{di
     <p>
 A basis for <m>\mbox{row}(A)</m> is 
 <me>
-\left\{\begin{bmatrix}1\amp  0\amp  1 \amp  2\end{bmatrix},\begin{bmatrix}0 \amp  1\amp  -1 \amp -1\end{bmatrix} \right\}
+\left\{\begin{bmatrix}1\amp  0\amp  1 \amp  2\end{bmatrix},\begin{bmatrix}0 \amp  1\amp  -1 \amp -1\end{bmatrix} \right\}.
 </me>
 </p>
 </answer>
@@ -827,7 +880,7 @@ A basis for <m>\mbox{row}(A)</m> is
 <p>
 A basis for <m>\mbox{col}(A) </m> is 
 <me>
-\left\{ \begin{bmatrix}2\\1\\-1\end{bmatrix}, \begin{bmatrix}0\\3\\-2\end{bmatrix}\right\}
+\left\{ \begin{bmatrix}2\\1\\-1\end{bmatrix}, \begin{bmatrix}0\\3\\-2\end{bmatrix}\right\}.
 </me>
 </p>
 </answer>
@@ -840,7 +893,7 @@ A basis for <m>\mbox{col}(A) </m> is
     <p>
 In the following four problems, we matrix in question is
 <men xml:id="MatB">
- B=\begin{bmatrix}1\amp 2\amp 3\\-1\amp 1\amp 3\\2\amp 0\amp -2\\1\amp -2\amp -5\\0\amp 1\amp 2\end{bmatrix}
+ B=\begin{bmatrix}1\amp 2\amp 3\\-1\amp 1\amp 3\\2\amp 0\amp -2\\1\amp -2\amp -5\\0\amp 1\amp 2\end{bmatrix}.
 </men>
     </p>
 </introduction>
@@ -855,7 +908,7 @@ Find <m>\mbox{rref}(B)</m>.
 <answer> 
 <p>
 <me>
-    \mbox{rref}(B)=\begin{bmatrix}1\amp 0\amp -1\\0\amp 1\amp 2\\0\amp 0\amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\end{bmatrix}
+    \mbox{rref}(B)=\begin{bmatrix}1\amp 0\amp -1\\0\amp 1\amp 2\\0\amp 0\amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\end{bmatrix}.
 </me>
 </p>
 </answer>
@@ -868,14 +921,14 @@ Find <m>\mbox{rref}(B)</m>.
         <p>
         Find
             <m>
-                \mbox{rank}(B)=\mbox{dim}(\mbox{row}(B))=\mbox{dim}(\mbox{col}(B))
+                \mbox{rank}(B)=\mbox{dim}(\mbox{row}(B))=\mbox{dim}(\mbox{col}(B)).
 </m>
         </p>
     </statement>
 
 <answer>
     <p>
-The answer is <m>  \mbox{rank}(B)=\mbox{dim}(\mbox{row}(B))=\mbox{dim}(\mbox{col}(B)) = 2 </m>
+The answer is <m>  \mbox{rank}(B)=\mbox{dim}(\mbox{row}(B))=\mbox{dim}(\mbox{col}(B)) = 2 </m>.
     </p>
 </answer>
 </exercise>
@@ -894,7 +947,7 @@ The answer is <m>  \mbox{rank}(B)=\mbox{dim}(\mbox{row}(B))=\mbox{dim}(\mbox{col
 <p>
 A basis for <m>\mbox{row}(B)</m> is 
 <me>
-\left\{\begin{bmatrix}1\amp  0\amp  -1\end{bmatrix},\begin{bmatrix}0 \amp  1\amp  2\end{bmatrix} \right\}
+\left\{\begin{bmatrix}1\amp  0\amp  -1\end{bmatrix},\begin{bmatrix}0 \amp  1\amp  2\end{bmatrix} \right\}.
 </me>
         </p>
     </answer>
@@ -913,7 +966,7 @@ A basis for <m>\mbox{row}(B)</m> is
 <p>
 A basis for <m>\mbox{col}(B)</m> is
 <me>
-\left\{ \begin{bmatrix}1\\-1\\2\\1\\0\end{bmatrix}, \begin{bmatrix}2\\1\\0\\-2\\1\end{bmatrix}\right\}
+\left\{ \begin{bmatrix}1\\-1\\2\\1\\0\end{bmatrix}, \begin{bmatrix}2\\1\\0\\-2\\1\end{bmatrix}\right\}.
 </me>
 </p>
 </answer>
@@ -937,7 +990,7 @@ A basis for <m>\mbox{col}(B)</m> is
             Find a basis for <m>V</m>, where
 
 <me>
-    V=\mbox{span}\left( \begin{bmatrix}1\\0\\2\end{bmatrix}, \begin{bmatrix}-1\\2\\-1\end{bmatrix}, \begin{bmatrix}1\\2\\3\end{bmatrix}, \begin{bmatrix}3\\-1\\0\end{bmatrix}, \begin{bmatrix}3\\1\\1\end{bmatrix}\right)
+    V=\mbox{span}\left( \begin{bmatrix}1\\0\\2\end{bmatrix}, \begin{bmatrix}-1\\2\\-1\end{bmatrix}, \begin{bmatrix}1\\2\\3\end{bmatrix}, \begin{bmatrix}3\\-1\\0\end{bmatrix}, \begin{bmatrix}3\\1\\1\end{bmatrix}\right).
 </me>
 </p>
 </statement>
@@ -963,7 +1016,8 @@ In the next two problems,  <m>A</m> and <m>B</m> refer to matrices of <xref ref=
 <exercise xml:id="nullABC1">
     <statement>
         <p>
-Find a basis for <m>\mbox{null}(A)</m>, demonstrate that the Rank-Nullity Theorem (see <xref ref="th-matrixranknullity"/>) holds for <m>A</m> and explain how you can quickly tell that the vectors you selected for your basis are linearly independent.
+Find a basis for <m>\mbox{null}(A)</m>, demonstrate that the Rank-Nullity Theorem (see <xref ref="th-matrixranknullity"/>) holds for <m>A</m> 
+and explain how you can quickly tell that the vectors you selected for your basis are linearly independent.
         </p>
     </statement>
 
@@ -971,7 +1025,7 @@ Find a basis for <m>\mbox{null}(A)</m>, demonstrate that the Rank-Nullity Theore
     <p>
 Basis for <m> \mbox{null}(A) </m>
 <me>
-\left\{ \begin{bmatrix}-1\\1\\1\\0\end{bmatrix}, \begin{bmatrix}-2\\1\\0\\1\end{bmatrix}\right\}
+\left\{ \begin{bmatrix}-1\\1\\1\\0\end{bmatrix}, \begin{bmatrix}-2\\1\\0\\1\end{bmatrix}\right\}.
 </me>
         </p>
     </answer>
@@ -1147,5 +1201,4 @@ Follow the process used in  <xref ref="ex-dimnull"/> to find a basis for <m>\mbo
 </exercise>
 
 </exercises>
-</subsection>
 </section>

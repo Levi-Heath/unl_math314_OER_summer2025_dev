@@ -12,7 +12,10 @@
 
 
 <p>
-Recall that a <term>basis</term> of a subspace <m>V</m> of <m>\R^n</m> is a subset of <m>V</m> that is linearly independent and spans <m>V</m>.  A basis allows us to uniquely express every element of <m>V</m> as a linear combination of the elements of the basis.  Several questions may come to mind at this time.  Does every subspace of <m>\R^n</m> have a basis?  We know that bases are not unique.  If there is more than one basis, what, if anything, do they have in common?
+Recall that a <term>basis</term> of a subspace <m>V</m> of <m>\R^n</m> is a subset of <m>V</m> that is linearly independent and spans <m>V</m>.  
+A basis allows us to uniquely express every element of <m>V</m> as a linear combination of the elements of the basis.  
+Several questions may come to mind at this time.  Does every subspace of <m>\R^n</m> have a basis?  We know that bases are not unique.  
+If there is more than one basis, what, if anything, do they have in common?
 </p>
 
 

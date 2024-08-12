@@ -8,7 +8,14 @@
 
 
 <p>
-We are familiar with two operations that can be applied to vectors in <m>\R^n</m>, namely, addition and scalar multiplication. We learned that addition and scalar multiplication satisfy many nice properties (see <xref ref="th-vecproperties"/>). These properties give <m>\R^n</m> an algebraic structure.  We begin this section by introducing another property, called <term>closure</term>.  Adding closure to the properties we studied earlier allows us to show that <m>\R^n</m> satisfies all of the properties of a <term>vector space</term>.  
+We are familiar with two operations that can be applied to vectors in <m>\R^n</m>, namely, addition of vectors and scalar multiplication. 
+We learned that addition and scalar multiplication satisfy many nice properties (see <xref ref="th-vecproperties"/>). 
+These properties give <m>\R^n</m> an algebraic structure.  
+</p>
+
+<p>
+We begin this section by introducing another property, called <term>closure</term>.  
+Adding closure to the properties we studied earlier allows us to show that <m>\R^n</m> satisfies all of the properties of a <term>vector space</term>.  
 </p>
 
 
@@ -36,6 +43,9 @@ We are familiar with two operations that can be applied to vectors in <m>\R^n</m
 
 
 
+<p> 
+A few examples to warm up to the concepts will be given.
+</p>
 
 <example xml:id="ex-posevenint">
     <p>
@@ -65,7 +75,7 @@ Let <m>X_1</m> be defined as the set of vectors in <m>\mathbb{R}^2</m> in the fi
 
     <answer>
         <p>
-            Suppose <m>\mathbf{v}_1=\begin{bmatrix}a\\b\end{bmatrix}</m> and <m>\mathbf{v}_2=\begin{bmatrix}c\\d\end{bmatrix}</m> are in <m>X_1</m>.  This means that <m>a, b, c, d\geq 0</m>.  But then we have <m>a+c, b+d\geq 0</m>.  Therefore
+            Suppose <m>\mathbf{v}_1=[a,b]</m> and <m>\mathbf{v}_2=[c,d]</m> are in <m>X_1</m>.  This means that <m>a, b, c, d\geq 0</m>.  But then we have <m>a+c, b+d\geq 0</m>.  Therefore
             <me>
             \mathbf{v}_1+\mathbf{v}_2=\begin{bmatrix}a+c\\b+d\end{bmatrix}
             </me>
@@ -126,7 +136,9 @@ Let <m>X_1</m> be as in <xref ref="Q1"/>.  Let
     X_3=\left\{\begin{bmatrix} x_1\\x_2\end{bmatrix} \in \mathbb{R}^2 : x_1 \le 0, \ x_2 \le 0 \right\}
 </me>
 
-In other words, <m>X_3</m> is the set of vectors in <m>\R^2</m> in the third quadrant (or on an axis on the boundary of the third quadrant).  Now let <m>Y</m> consist of <m>X_1</m> and <m>X_3</m> combined. In other words, <m>Y</m> is the set of vectors in <m>\R^2</m> that are either in the first quadrant, the third quadrant, or lie along one of the axes, as shown below.
+In other words, <m>X_3</m> is the set of vectors in <m>\R^2</m> in the third quadrant (or on an axis on the boundary of the third quadrant).  
+Let <m>Y</m> consist of <m>X_1</m> and <m>X_3</m> combined. In other words, <m>Y</m> is the set of vectors in <m>\R^2</m> that are either in the first quadrant, 
+the third quadrant, or lie along one of the axes, as shown below.
 </p>
 
 
@@ -156,6 +168,12 @@ Then <m>Y</m> is closed under scalar multiplication, but <m>Y</m> is not closed 
 
 
 
+
+
+
+
+
+
 <subsection xml:id="Subsection-Rn-as-a-Vector-Space">
     <title><m>\R^n</m> as a Vector Space</title>
 
@@ -168,35 +186,35 @@ For all vectors <m>\mathbf{u}</m>, <m>\mathbf{v}</m>, <m>\mathbf{w}\in\R^n</m>, 
 <ol>
  <li>
       <p> Commutative Property of Addition: 
-  <m>\mathbf{u}+\mathbf{v}=\mathbf{v}+\mathbf{u}</m> </p>
+  <m>\mathbf{u}+\mathbf{v}=\mathbf{v}+\mathbf{u}</m>. </p>
 </li>
   <li>
       <p> Associative Property of Addition: 
-  <m>(\mathbf{u}+\mathbf{v})+\mathbf{w}=\mathbf{u}+(\mathbf{v}+\mathbf{w})</m> </p>
+  <m>(\mathbf{u}+\mathbf{v})+\mathbf{w}=\mathbf{u}+(\mathbf{v}+\mathbf{w})</m>. </p>
 </li>
   <li>
       <p> Existence of Additive Identity:
-  <m>\mathbf{u}+\mathbf{0}=\mathbf{u}</m> </p>
+  <m>\mathbf{u}+\mathbf{0}=\mathbf{u}</m>. </p>
 </li>
   <li>
       <p> Existence of Additive Inverse: 
-  <m>\mathbf{u}+(-\mathbf{u})=\mathbf{0}</m> </p>
+  <m>\mathbf{u}+(-\mathbf{u})=\mathbf{0}</m>. </p>
 </li>
   <li>
       <p> Distributive Property over Vector Addition: 
-  <m>k(\mathbf{u}+\mathbf{v})=k\mathbf{u}+k\mathbf{v}</m> </p>
+  <m>k(\mathbf{u}+\mathbf{v})=k\mathbf{u}+k\mathbf{v}</m>. </p>
 </li>
   <li>
       <p> Distributive Property over Scalar Addition: 
-  <m>(k+p)\mathbf{u}=k\mathbf{u}+p\mathbf{u}</m> </p>
+  <m>(k+p)\mathbf{u}=k\mathbf{u}+p\mathbf{u}</m>. </p>
 </li>
   <li>
       <p> Associative Property for Scalar Multiplication: 
-  <m>k(p\mathbf{u})=(kp)\mathbf{u}</m> </p>
+  <m>k(p\mathbf{u})=(kp)\mathbf{u}</m>. </p>
 </li>
   <li>
       <p> Multiplication by <m>1</m>: 
-  <m>1\mathbf{u}=\mathbf{u}</m> </p>
+  <m>1\mathbf{u}=\mathbf{u}</m>. </p>
 </li>
   </ol>
 </p>
@@ -215,7 +233,15 @@ For all vectors <m>\mathbf{u}</m>, <m>\mathbf{v}</m>, <m>\mathbf{w}\in\R^n</m>, 
 </p>
 
 <p>
-      We will encounter other vector spaces later. Any vector space must be closed under both of its operations, and must satisfy the other eight properties in the list above.  We will see (in <url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0050/main">Abstract Vector Spaces</url>, for instance) that a wide variety of sets, with a wide variety of operations, are vector spaces (one important reason to study linear algebra).  As we shall see, these sets and their operations may look very different, but the behavior of the elements under the two operations makes them vector spaces.  For now, we simply focus on <m>\R^n</m>.
+      We will encounter other vector spaces later. Any vector space must be closed under both of its operations, 
+      and must satisfy the other eight properties in the list above. 
+</p> 
+
+<p> 
+      In the chapter on abstract vector spaces, we will see that a wide variety of sets with a variety of operations are vector spaces 
+      (one important reason to study linear algebra).  
+      As we shall see, these sets and their operations may look very different, but the behavior of the elements under the two operations makes them vector spaces. 
+    For now, we simply focus on <m>\R^n</m>.
 </p>    
 </subsection>
 
@@ -241,13 +267,17 @@ Now that we understand what it means for a set to be closed under addition and s
 
     <statement>
         <p>
-            Suppose that <m>V</m> is a nonempty subset of <m>\R^n</m> that is closed under addition and closed under scalar multiplication.  Then <m>V</m> is a <term>subspace</term> of <m>\R^n</m>.
+            Suppose that <m>V</m> is a nonempty subset of <m>\R^n</m> that is closed under addition and under scalar multiplication.  
+            Then <m>V</m> is a <term>subspace</term> of <m>\R^n</m>.
         </p>
     </statement>
 </definition>
 
 <p>
-We use the term <term>subspace</term> because it turns out that any subset of <m>\R^n</m> closed under both addition and scalar multiplication is also a vector space.  In other words, by inheriting vector addition and scalar multiplication from <m>\R^n</m>, and satisfying the properties of closure, a subset of <m>\R^n</m> will automatically satisfy all vector space properties.  We will prove this in <xref ref="th-subspacetestabstract"/> of <url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0050/main">Abstract Vector Spaces</url>.
+We use the term <term>subspace</term> because it turns out that any subset of <m>\R^n</m> closed under both addition and scalar multiplication is also a vector space.  
+In other words, by inheriting vector addition and scalar multiplication from <m>\R^n</m>, and satisfying the properties of closure, a subset of <m>\R^n</m> 
+will automatically satisfy vector space properties.  
+The proof is omitted until reaching abstract vector spaces.
 </p>
 
 
@@ -279,7 +309,9 @@ Let <m>V</m> be the set of vectors in <m>\R^3</m> on the <m>y-</m>axis.  Then <m
 </example>
 
 <p>
-Recall that the <term>span</term> of a set of vectors is the set of all linear combinations of those vectors (see <xref ref="def-span"/>).  It is easy to see from this definition, that the span of any set of vectors in <m>\R^n</m> must be closed under both addition and scalar multiplication, and therefore the span of those vectors is a subspace of <m>\R^n</m>.  This argument proves the following result, giving us an abundance of examples of subspaces:
+Recall that the <term>span</term> of a set of vectors is the set of all linear combinations of those vectors (see <xref ref="def-span"/>).  
+It is easy to see from this definition, that the span of any set of vectors in <m>\R^n</m> must be closed under both addition and scalar multiplication, 
+and therefore the span of those vectors is a subspace of <m>\R^n</m>.  This argument proves the following result, giving us an abundance of examples of subspaces:
 </p>
 
 
@@ -341,8 +373,9 @@ The proof is similar to what was done for the previous theorem and is left as an
 
 
 
-<subsection xml:id="Subsection-Practice-Problems">
-    <title>Practice Problems</title>
+
+
+
 
 
 <exercises>
@@ -518,5 +551,5 @@ It is closed under both addition and scalar multiplication.
 </exercise>
 
 </exercises>
-</subsection>
+
 </section>
