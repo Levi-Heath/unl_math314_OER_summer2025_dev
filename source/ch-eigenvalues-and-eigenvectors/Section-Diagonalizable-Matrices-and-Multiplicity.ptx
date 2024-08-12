@@ -150,7 +150,7 @@ while
 | \amp  | \amp    \amp  | \\
 \lambda _{1}\mathbf{x}_1 \amp  \lambda _{2}\mathbf{x}_2 \amp  \cdots \amp  \lambda_{n}\mathbf{x}_n \\
 | \amp  | \amp    \amp  | 
-\end{bmatrix} </mrow> 
+\end{bmatrix}. </mrow> 
 </md>
 We can complete this half of the proof by comparing columns, and noting that 
 <men>
@@ -174,7 +174,7 @@ D=\begin{bmatrix}
 \lambda _{1} \amp   \amp  0 \\
 \amp  \ddots \amp   \\
 0 \amp   \amp  \lambda _{n}
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 Then
 <me>
@@ -198,7 +198,7 @@ A\mathbf{x}_1 \amp  A\mathbf{x}_2  \amp  \cdots \amp  A\mathbf{x}_n \\
 | \amp  | \amp    \amp  | \\
 \lambda _{1}\mathbf{x}_1 \amp  \lambda _{2}\mathbf{x}_2 \amp  \cdots \amp  \lambda_{n}\mathbf{x}_n \\
 | \amp  | \amp    \amp  | 
-\end{bmatrix}
+\end{bmatrix},
 </me>
 showing the <m>\mathbf{x}_i</m> are eigenvectors of <m>A</m> and the <m>\lambda _{i}</m>
 are eigenvalues.
@@ -216,6 +216,7 @@ We demonstrate the concept given in the above theorem in the next example. Note 
 are the columns of the matrix <m>P</m> formed by eigenvectors, but <m>P</m> must
 be invertible, and therefore must consist of a linearly independent set of eigenvectors. 
 </p> 
+
 
 <example xml:id="ex-diagonalizematrix">
     <statement>
@@ -344,14 +345,19 @@ With this in mind, it is not as daunting to calculate <m>A^5</m> by hand.  We ca
 </exploration>  
 
 <p>
-In <xref ref="exp-motivate-diagonalization"/>, because matrix <m>A</m> was diagonalizable, we were able to cut down on computations.  When we chose to work with <m>D</m> and <m>P</m> instead of <m>A</m> we worked with the eigenvalues and eigenvectors of <m>A</m>.  Each column of <m>P</m> is an eigenvector of <m>A</m>, and so we repeatedly made use of the following theorem (with <m>m=5</m>).
+In <xref ref="exp-motivate-diagonalization"/>, because matrix <m>A</m> was diagonalizable, we were able to cut down on computations.  
+When we chose to work with <m>D</m> and <m>P</m> instead of <m>A</m> we worked with the eigenvalues and eigenvectors of <m>A</m>.  
+Each column of <m>P</m> is an eigenvector of <m>A</m>, and so we repeatedly made use of the following theorem (with <m>m=5</m>).
 </p>
 
 <theorem xml:id="th-eigpowers">
 
     <statement>
         <p>
-            Let <m>A</m> be an <m>n \times n</m> matrix and suppose <m>A\mathbf{x}=\lambda \mathbf{x}</m>.  Then <m>A^m \mathbf{x} = \lambda^m \mathbf{x}</m>
+            Let <m>A</m> be an <m>n \times n</m> matrix and suppose <m>A\mathbf{x}=\lambda \mathbf{x}</m>.  Then 
+            <me>
+                A^m \mathbf{x} = \lambda^m \mathbf{x}.
+            </me>
         </p>
     </statement>
 
@@ -460,7 +466,7 @@ A =
 \begin{bmatrix}
 1 \amp  1 \\
 0 \amp  1
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 
 If possible, find an invertible matrix <m>P</m> and a diagonal matrix <m>D</m> so that <m>P^{-1}AP=D</m>.
@@ -572,7 +578,7 @@ EB \amp  EC
 This implies
 
 <me>
-    DB = I_k,\quad DC=O_{k\,\,n-k},\quad EB = O_{n-k\,\,k} \quad\text{ and }\quad EC = I_{n-k}
+    DB = I_k,\quad DC=O_{k\,\,n-k},\quad EB = O_{n-k\,\,k} \quad\text{ and }\quad EC = I_{n-k}.
 </me>
 
 Therefore,
@@ -596,15 +602,16 @@ EAB \amp  EAC
   =  \left[\begin{array}{c|c}  
 \lambda_1 I_k \amp  DAC \\ \hline
 O \amp  EAC
- \end{array}\right]  </mrow>
+ \end{array}\right].  </mrow>
 </md>
 We finish the proof by comparing the characteristic polynomials on both sides of this equation, and making use of the fact that similar matrices have the same characteristic polynomials.  
 
 <me>
-    \det(A-\lambda I) = \det(P^{-1}AP-\lambda I)=(\lambda_1 - \lambda)^k \det(EAC)
+    \det(A-\lambda I) = \det(P^{-1}AP-\lambda I)=(\lambda_1 - \lambda)^k \det(EAC).
 </me>
 
-We see that the characteristic polynomial of <m>A</m> has <m>(\lambda_1 - \lambda)^k</m> as a factor.  This tells us that algebraic multiplicity of <m>\lambda_1</m> is at least <m>k</m>, proving the desired inequality. 
+We see that the characteristic polynomial of <m>A</m> has <m>(\lambda_1 - \lambda)^k</m> as a factor.  
+This tells us that algebraic multiplicity of <m>\lambda_1</m> is at least <m>k</m>, proving the desired inequality. 
     </p>
 </proof>
 </lemma>
@@ -620,7 +627,8 @@ is never more than the multiplicity of <m>\lambda</m>. We now use this fact to p
 
     <statement>
         <p>
-            Let <m>A</m> be an <m>n \times n</m> matrix <m>A</m>. Then <m>A</m> is diagonalizable if and only if for each eigenvalue <m>\lambda</m> of <m>A</m>, the algebraic multiplicity of <m>\lambda</m> is equal to the geometric multiplicity of <m>\lambda</m>.
+            Let <m>A</m> be an <m>n \times n</m> matrix <m>A</m>. Then <m>A</m> is diagonalizable if and only if for each eigenvalue <m>\lambda</m> of <m>A</m>, 
+            the algebraic multiplicity of <m>\lambda</m> is equal to the geometric multiplicity of <m>\lambda</m>.
         </p>
     </statement>
 

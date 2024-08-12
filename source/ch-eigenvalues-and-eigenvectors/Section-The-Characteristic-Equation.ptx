@@ -30,13 +30,17 @@ For an <m>n \times n</m> matrix, we will see that the eigenvalues are the roots 
 
 It seems natural at this point to try to factor.  We would love to ``factor out'' <m>\mathbf{x}</m>.  Here is the procedure:
 <md>
-<mrow> A\mathbf{x}-\lambda \mathbf{x} \amp = \mathbf{0} </mrow>
-<mrow> A\mathbf{x}-\lambda I\mathbf{x} \amp = \mathbf{0} </mrow>
-<mrow> (A-\lambda I)\mathbf{x} \amp = \mathbf{0} </mrow>
+<mrow> A\mathbf{x}-\lambda \mathbf{x} \amp = \mathbf{0}, </mrow>
+<mrow> A\mathbf{x}-\lambda I\mathbf{x} \amp = \mathbf{0}, </mrow>
+<mrow> (A-\lambda I)\mathbf{x} \amp = \mathbf{0}. </mrow>
 </md>
 
 The middle step was necessary before factoring because we cannot subtract a <m>1 \times 1</m> scalar <m>\lambda</m> from an <m>n \times n</m> matrix <m>A</m>.
 </p>
+
+<p> 
+In the spirit of connecting eigenvalues to previous notions, the following questions are intended to keep you linking concepts together.
+</p> 
 
 <problem>
 <statement>
@@ -82,6 +86,18 @@ In theory, <xref ref="exp-slowdown"/> offers us a way to find eigenvalues.  To f
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <subsection xml:id="Subsection-Eigenvalues">
     <title>Eigenvalues</title>
 
@@ -99,6 +115,11 @@ In theory, <xref ref="exp-slowdown"/> offers us a way to find eigenvalues.  To f
         </p>
     </statement>
 </definition>
+
+
+<p> 
+The characteristic equation is perhaps the most computational approach to finding eigenvalues. As such, examples are important to run through:
+</p> 
 
 <example xml:id="ex-2x2eig">
     <statement>
@@ -164,7 +185,7 @@ The characteristic equation <m>(\lambda-1)(\lambda-3)=0</m> has solutions <m>\la
 <mrow>            \amp =(2-\lambda)^3-(2-\lambda)-((2-\lambda)-1)+1-(2-\lambda)  </mrow>
 <mrow>            \amp =8-12\lambda+6\lambda^2-\lambda^3-2+\lambda-2+\lambda+1+1-2+\lambda </mrow>
 <mrow>            \amp =4-9\lambda+6\lambda^2-\lambda^3  </mrow>
-<mrow>            \amp =-(\lambda-4)(\lambda-1)^2  </mrow>
+<mrow>            \amp =-(\lambda-4)(\lambda-1)^2.  </mrow>
 </md>
             Matrix <m>C</m> has eigenvalues <m>\lambda_1=1</m> and <m>\lambda_2=4</m>.   
     </p>
@@ -176,7 +197,9 @@ In <xref ref="ex-3x3eig"/>, the factor  <m>(\lambda-1)</m> appears twice.  This 
 </p>
 
 <p>
-The three examples above are a bit contrived.  It is not always possible to completely factor the characteristic polynomial using only real numbers.  However, a fundamental fact from algebra is that every degree <m>n</m> polynomial has <m>n</m> roots (counting multiplicity) provided that we allow complex numbers.  This is why sometimes eigenvalues and their corresponding eigenvectors involve complex numbers.  The next example illustrates this point.
+The three examples above are a bit contrived.  It is not always possible to completely factor the characteristic polynomial using only real numbers.  
+However, a fundamental fact from algebra is that every degree <m>n</m> polynomial has <m>n</m> roots (counting multiplicity) provided that we allow complex numbers. 
+This is why sometimes eigenvalues and their corresponding eigenvectors involve complex numbers.  The next example highlights this point.
 </p> 
 
 
@@ -197,12 +220,15 @@ The three examples above are a bit contrived.  It is not always possible to comp
 <mrow> \det(D-\lambda I)\amp =\begin{vmatrix} -\lambda\amp 0\amp 0\\ 0 \amp 1-\lambda\amp 1\\ 0 \amp  -1\amp 1-\lambda\end{vmatrix} </mrow>
 <mrow> \amp =-\lambda\begin{vmatrix}1-\lambda\amp 1\\-1\amp 1-\lambda\end{vmatrix} </mrow>
 <mrow> \amp =-\lambda((1-\lambda)^2+1) </mrow>
-<mrow> \amp =-\lambda(\lambda^2-2\lambda+2) </mrow>
+<mrow> \amp =-\lambda(\lambda^2-2\lambda+2). </mrow>
 </md>
-So one of the eigenvalues of <m>D</m> is <m>\lambda=0</m>.  To get the other eigenvalues we must solve <m>\lambda^2-2\lambda+2=0</m>.  Using the quadratic formula, we compute that <m>\lambda_1=1+i</m> and <m>\lambda_2=1-i</m> are also eigenvalues of <m>D</m>.
+So one of the eigenvalues of <m>D</m> is <m>\lambda=0</m>.  To get the other eigenvalues we must solve <m>\lambda^2-2\lambda+2=0</m>.  
+Using the quadratic formula, we compute that <m>\lambda_1=1+i</m> and <m>\lambda_2=1-i</m> are also eigenvalues of <m>D</m>.
        </p>
     </answer>
 </example>
+
+
 
 
 
@@ -268,9 +294,18 @@ See <xref ref="prob-eigtri"/>.
 </corollary>
 
 <p> 
-One final note about eigenvalues.  We began this section with the sentence, "In theory, then, to find the eigenvalues of <m>A</m>, one can solve <xref ref="eqn-chareqn"/> for <m>\lambda</m>."  In general, one does not attempt to compute eigenvalues by solving the characteristic equation of a matrix, as there is no simple way to solve this polynomial equation for <m>n\gt 4</m>.  Instead, one can often approximate the eigenvalues using <term>iterative methods</term>.  
+One final note about eigenvalues.  We began this section with the sentence, 
+"In theory, then, to find the eigenvalues of <m>A</m>, one can solve <xref ref="eqn-chareqn"/> for <m>\lambda</m>."  
+In general, one does not attempt to compute eigenvalues by solving the characteristic equation of a matrix, as there is no simple way to solve this polynomial equation for <m>n\gt 4</m>.  Instead, one can often approximate the eigenvalues using <term>iterative methods</term>.  
 </p>
 </subsection>
+
+
+
+
+
+
+
 
 
 
@@ -288,7 +323,8 @@ Once we have computed an eigenvalue <m>\lambda</m> of an <m>n \times n</m> matri
  (A-\lambda I) \mathbf{x}=\mathbf{0}.
 </men> 
 
-For any given eigenvalue <m>\lambda</m> there are infinitely many eigenvectors associated with it.  In fact, the eigenvectors associated with <m>\lambda</m> form a subspace of <m>\R^n</m>. 
+For any given eigenvalue <m>\lambda</m> there are infinitely many eigenvectors associated with it.  
+In fact, the eigenvectors associated with <m>\lambda</m> form a subspace of <m>\R^n</m>. 
 </p> 
 
 
@@ -297,7 +333,8 @@ For any given eigenvalue <m>\lambda</m> there are infinitely many eigenvectors a
 
     <statement>
         <p>
-            Let <m>A</m> be an <m>n\times n</m> matrix and let <m>\lambda</m> be an eigenvalue of <m>A</m>.  Then the set of all eigenvectors associated with <m>\lambda</m> is a subspace of <m>\R^n</m>.
+            Let <m>A</m> be an <m>n\times n</m> matrix and let <m>\lambda</m> be an eigenvalue of <m>A</m>.  
+            Then the set of all eigenvectors associated with <m>\lambda</m> is a subspace of <m>\R^n</m>.
         </p>
     </statement>
 
@@ -323,8 +360,13 @@ This motivates the following definition.
 </definition>
 
 <p> 
-So given an eigenvalue <m>\lambda</m>, there is an associated eigenspace <m>\mathcal{S}</m>, and our goal is to find a basis of <m>\mathcal{S}</m>, for then any eigenvector <m>\mathbf{x}</m> will be a linear combination of the vectors in that basis.  Moreover, we are trying to find a basis for the set of vectors that satisfy <xref ref="eqn-nullspace"/>, which means we seek a basis for <m>\mbox{null}(A-\lambda I)</m>.  We have already learned how to compute a basis of a null space.
+So given an eigenvalue <m>\lambda</m>, there is an associated eigenspace <m>\mathcal{S}</m>, and our goal is to find a basis of <m>\mathcal{S}</m>, 
+for then any eigenvector <m>\mathbf{x}</m> will be a linear combination of the vectors in that basis.  
+Moreover, we are trying to find a basis for the set of vectors that satisfy <xref ref="eqn-nullspace"/>, 
+which means we seek a basis for <m>\mbox{null}(A-\lambda I)</m>.  We have already learned how to compute a basis of a null space.
+</p> 
 
+<p> 
 Let's return to the examples we did in the first part of this section.
 </p> 
 
@@ -515,6 +557,24 @@ A square matrix <m>A</m> is singular if and only if <m>\det{A}=0</m>.(see  <xref
 </proof>
 </theorem>
 </subsection>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
