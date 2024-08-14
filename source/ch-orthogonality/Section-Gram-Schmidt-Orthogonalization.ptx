@@ -65,7 +65,9 @@ The following exploration illustrates this process dynamically.
 
 <exploration xml:id="exp-orth1">
     <p>
-        Choose an arbitrary basis <m>\{\mathbf{v}_1, \mathbf{v}_2\}</m> of <m>\R^2</m> by dragging the tips of vectors <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m> to desired positions.  Use the navigation bar at the bottom of the interactive window to go through the steps of constructing an orthogonal basis of <m>\R^2</m>.
+        Choose an arbitrary basis <m>\{\mathbf{v}_1, \mathbf{v}_2\}</m> of <m>\R^2</m> by dragging the tips of vectors <m>\mathbf{v}_1</m> 
+        and <m>\mathbf{v}_2</m> to desired positions.  Use the navigation bar at the bottom of the interactive window to go through the 
+        steps of constructing an orthogonal basis of <m>\R^2</m>.
     </p> 
 
 <figure>
@@ -108,8 +110,6 @@ In the next exploration, we take the process of constructing an orthogonal basis
 
 <figure>
   <caption>
-    A larger version of this activity is available 
-    <url href="https://www.geogebra.org/calculator/qjpvmsws" visual="geogebra.org">here</url>.
   </caption>
   <interactive xml:id="geogebra-Procedure-InteractivesSteps" platform="geogebra" width="150%" aspect="900:800">
     <slate xml:id="Procedure-InteractiveSteps" surface="geogebra" material="qjpvmsws" aspect="900:800" />
@@ -241,7 +241,9 @@ We conclude that <m>\{\mathbf{f}_{1},\mathbf{f}_{2},\ldots,\mathbf{f}_{m}\}</m> 
 </theorem>
 
 
-
+<p>
+Knowing the Gram-Schmidt procedure in detail is important, albeit slightly tedious. As such, we better run through an example in detail.
+</p> 
 
 
 <example xml:id="exa-023743">
@@ -257,7 +259,9 @@ We conclude that <m>\{\mathbf{f}_{1},\mathbf{f}_{2},\ldots,\mathbf{f}_{m}\}</m> 
     </statement>
     <answer>
         <p>
-            Let <m>\mathbf{v}_{1}</m>, <m>\mathbf{v}_{2}</m>, <m>\mathbf{v}_{3}</m> denote the rows of <m>A</m> and observe that <m>\{\mathbf{v}_{1}, \mathbf{v}_{2}, \mathbf{v}_{3}\}</m> is linearly independent. Take <m>\mathbf{f}_{1} = \mathbf{v}_{1}</m>. The algorithm gives
+            Let <m>\mathbf{v}_{1}</m>, <m>\mathbf{v}_{2}</m>, <m>\mathbf{v}_{3}</m> denote the rows of <m>A</m> 
+            and observe that <m>\{\mathbf{v}_{1}, \mathbf{v}_{2}, \mathbf{v}_{3}\}</m> is linearly independent. 
+            Take <m>\mathbf{f}_{1} = \mathbf{v}_{1}</m>. The algorithm gives
 <md>
 <mrow> \mathbf{f}_{2} \amp =  \mathbf{v}_{2} - \frac{\mathbf{v}_{2} \cdot \mathbf{f}_{1}}{\norm{\mathbf{f}_{1}}^2}\mathbf{f}_{1} = [3, 2, 0, 1] - \frac{4}{4}[1, 1, -1, -1] = [2, 1, 1, 2]  </mrow>
 <mrow> \mathbf{f}_{3} \amp =  \mathbf{v}_{3} - \frac{\mathbf{v}_{3} \cdot \mathbf{f}_{1}}{\norm{\mathbf{f}_{1}}^2}\mathbf{f}_{1} - \frac{\mathbf{v}_{3} \cdot \mathbf{f}_{2}}{\norm{\mathbf{f}_{2}}^2}\mathbf{f}_{2} = \mathbf{v}_{3}  - \frac{3}{10}\mathbf{f}_{2} = \frac{1}{10}[4, -3, 7, -6]. </mrow>
@@ -300,7 +304,8 @@ The Gram-Schmidt algorithm demonstrates in a constructive way that every subspac
 
     <statement>
         <p>
-            Let <m>W</m> be a subspace of <m>\R^n</m>.  Then  <m>W</m> has an orthogonal basis.  In fact, every orthogonal subset <m>\{\mathbf{f}_{1}, \dots , \mathbf{f}_{m}\}</m> in <m>W</m> can be extended to an orthogonal basis for <m>W</m>.
+            Let <m>W</m> be a subspace of <m>\R^n</m>.  Then  <m>W</m> has an orthogonal basis.  
+            In fact, every orthogonal subset <m>\{\mathbf{f}_{1}, \dots , \mathbf{f}_{m}\}</m> in <m>W</m> can be extended to an orthogonal basis for <m>W</m>.
         </p>
     </statement>
 
@@ -315,7 +320,14 @@ Suppose <m>\{\mathbf{f}_{1}, \dots , \mathbf{f}_{m}\}</m> is an orthogonal subse
 it is already a basis. Otherwise, there exists <m>\mathbf{x}</m> in <m>W</m> outside <m>\mbox{span}\left(\mathbf{f}_{1}, \dots , \mathbf{f}_{m}\right)</m>.
     </p> 
     <p>
-    Using the Gram-Schmidt procedure we define <m>\mathbf{f}_{m+1} = \mathbf{x} - \mbox{proj}_{W_{m}}(\mathbf{x})</m>, where <m>W_m = \mbox{span}\{\mathbf{f}_{1},\mathbf{f}_{2},\ldots,\mathbf{f}_{m}\}</m>. If <m>\mbox{span}\left(\mathbf{f}_{1}, \dots, \mathbf{f}_{m}, \mathbf{f}_{m+1}\right) = W</m>, we are done. Otherwise, the process continues to create larger and larger orthogonal subsets of <m>W</m>. They are linearly independent by <xref ref="th-GS"/>, so we have a basis when we reach a subset containing <m>\mbox{dim}(W)</m> vectors.
+    Using the Gram-Schmidt procedure we define 
+    <me>
+    \mathbf{f}_{m+1} = \mathbf{x} - \mbox{proj}_{W_{m}}(\mathbf{x}),
+    </me>
+    
+    where <m>W_m = \mbox{span}\{\mathbf{f}_{1},\mathbf{f}_{2},\ldots,\mathbf{f}_{m}\}</m>. 
+    If <m>\mbox{span}\left(\mathbf{f}_{1}, \dots, \mathbf{f}_{m}, \mathbf{f}_{m+1}\right) = W</m>, 
+    we are done. Otherwise, the process continues to create larger and larger orthogonal subsets of <m>W</m>. They are linearly independent by <xref ref="th-GS"/>, so we have a basis when we reach a subset containing <m>\mbox{dim}(W)</m> vectors.
     </p>
 </proof>
 </theorem>
@@ -346,7 +358,7 @@ Choose any vector <m>\mathbf{v}_4 \in \R^4</m> not in <m>\mbox{span}\{\mathbf{f}
     </statement>
     <answer>
         <p>
-            Let <m>\mathbf{v}_4 = [1, 0, 0, 0]</m>.  (How would you check that <m>\mathbf{v}_4</m> is not in <m>\mbox{span}\{\mathbf{f}_1, \mathbf{f}_2, \mathbf{f}_3\}</m>?)  To get a vector <m>\mathbf{f}</m> orthogonal to the row space, we perform an iteration of Gram-Schmidt:
+            Let <m>\mathbf{v}_4 = [1, 0, 0, 0]</m> (quick mental exercise: How would you check that <m>\mathbf{v}_4</m> is not in <m>\mbox{span}\{\mathbf{f}_1, \mathbf{f}_2, \mathbf{f}_3\}</m>?).  To get a vector <m>\mathbf{f}</m> orthogonal to the row space, we perform an iteration of Gram-Schmidt:
   <md>
     <mrow>   \mathbf{f} \amp =  \mathbf{v}_{4} - \frac{\mathbf{v}_{4} \cdot \mathbf{f}_{1}}{\norm{\mathbf{f}_{1}}^2}\mathbf{f}_{1} - \frac{\mathbf{v}_{4} \cdot \mathbf{f}_{2}}{\norm{\mathbf{f}_{2}}^2}\mathbf{f}_{2} - \frac{\mathbf{v}_{4} \cdot \mathbf{f}_{3}}{\norm{\mathbf{f}_{3}}^2}\mathbf{f}_{3} </mrow>
     <mrow>  \amp =  [1, 0, 0, 0] - \frac{1}{4}[1, 1, -1, -1] - \frac{2}{10}[2, 1, 1, 2] - \frac{4}{110}[4, -3, 7, -6] </mrow>

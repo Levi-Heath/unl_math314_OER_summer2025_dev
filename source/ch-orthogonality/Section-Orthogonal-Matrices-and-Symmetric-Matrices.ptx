@@ -90,6 +90,10 @@ Note that condition <xref ref="th-orthogonal-matrices-a"/> is equivalent to <m>Q
 </definition>
 
 
+<p> 
+Rotation matrices are perhaps the most canonical examples of orthogonal matrices, as discussed below.
+</p> 
+
 <example xml:id="ex-rotation-ortho">
     <statement>
         <p>
@@ -194,7 +198,7 @@ We studied the idea of closure studying subspaces of <m>\R^n</m>.  The next theo
     <p>
 For <xref ref="th-orthogonal-product"/>, <m>P</m> and <m>Q</m> are invertible, so <m>PQ</m> is also invertible and
 <me>
-(PQ)^{-1} = Q^{-1}P^{-1} = Q^{T}P^{T} = (PQ)^{T}
+(PQ)^{-1} = Q^{-1}P^{-1} = Q^{T}P^{T} = (PQ)^{T}.
 </me>
 Hence <m>PQ</m> is orthogonal. For <xref ref="th-orthogonal-inverse"/>,
 <me>
@@ -243,7 +247,8 @@ When we began our study of eigenvalues and eigenvectors, we saw numerous example
 
     <statement>
         <p>
-            An <m>n \times n</m> matrix <m>A</m> is said to be <term>orthogonally diagonalizable</term> if an orthogonal matrix <m>Q</m> can be found such that  <m>Q^{-1}AQ = Q^{T}AQ</m> is diagonal.
+            An <m>n \times n</m> matrix <m>A</m> is said to be <term>orthogonally diagonalizable</term> if an orthogonal matrix <m>Q</m> can be found such that 
+             <m>Q^{-1}AQ = Q^{T}AQ</m> is diagonal.
         </p>
     </statement>
 </definition>
@@ -303,7 +308,8 @@ A\mathbf{q}_1 \amp  A\mathbf{q}_2  \amp  \cdots \amp  A\mathbf{q}_n \\
 \mathbf{0} \amp  A_{1}
 \end{bmatrix}, </mrow>
 </md> 
-where the block <m>B</m> has dimensions <m>1 \times (n-1)</m>, and the block under <m>\lambda_1</m> is a <m>(n-1) \times 1</m> zero matrix, because of the orthogonality of the basis.
+where the block <m>B</m> has dimensions <m>1 \times (n-1)</m>, and the block under <m>\lambda_1</m> is a <m>(n-1) \times 1</m> zero matrix, 
+because of the orthogonality of the basis.
 </p> 
 
 
@@ -313,7 +319,8 @@ Next, using the fact that <m>A</m> is symmetric, we notice that
 <me>
     (Q_{1}^TAQ_{1})^T = Q_{1}^T A^T (Q_{1}^T)^T = Q_{1}^TAQ_{1},
 </me>
- so <m>Q_{1}^TAQ_{1}</m> is symmetric.  It follows that <m>B</m> is also a zero matrix and that <m>A_{1}</m> is symmetric.  Since <m>A_{1}</m> is an <m>(n - 1) \times (n - 1)</m> symmetric matrix, we may apply the inductive hypothesis, so there exists an <m>(n - 1) \times (n - 1)</m> orthogonal matrix <m>Q</m> such that <m>Q^{T}A_{1}Q = D_{1}</m> is diagonal. We observe that 
+ so <m>Q_{1}^TAQ_{1}</m> is symmetric.  It follows that <m>B</m> is also a zero matrix and that <m>A_{1}</m> is symmetric.  
+ Since <m>A_{1}</m> is an <m>(n - 1) \times (n - 1)</m> symmetric matrix, we may apply the inductive hypothesis, so there exists an <m>(n - 1) \times (n - 1)</m> orthogonal matrix <m>Q</m> such that <m>Q^{T}A_{1}Q = D_{1}</m> is diagonal. We observe that 
  <me>Q_{2} = \begin{bmatrix}
  1 \amp  0\\
  0 \amp  Q
@@ -342,7 +349,9 @@ is diagonal. Because <m>Q_{1}Q_{2}</m> is orthogonal by <xref ref="th-orthogonal
 </theorem>
 
 <p>
-Because the eigenvalues of a real symmetric matrix are real, <xref ref="th-PrinAxes"/> is also called the <term>Real Spectral Theorem</term>, and the set of distinct eigenvalues is called the <term>spectrum</term> of the matrix. A similar result holds for matrices with complex entries (see <xref ref="th-025890"/>).
+Because the eigenvalues of a real symmetric matrix are real, <xref ref="th-PrinAxes"/> is also called the <term>Real Spectral Theorem</term>, 
+and the set of distinct eigenvalues is called the <term>spectrum</term> of the matrix. 
+A similar result holds for matrices with complex entries, which we avoid digging into.
 </p>
 
 <example xml:id="ex-DiagonalizeSymmetricMatrix">
@@ -383,7 +392,8 @@ Thus the eigenvalues are <m>\lambda = 0</m>, <m>1</m>, and <m>6</m>, and corresp
 5
 \end{bmatrix},
 </me>
-respectively. Moreover, by what at first appears to be remarkably good luck, these eigenvectors are <em>orthogonal</em>. We have <m>\norm{\mathbf{x}_{1}}^{2} = 6</m>, <m>\norm{\mathbf{x}_{2}}^{2} = 5</m>, and <m>\norm{\mathbf{x}_{3}}^{2} = 30</m>, so
+respectively. Moreover, by what at first appears to be remarkably good luck, these eigenvectors are <em>orthogonal</em>. 
+We have <m>\norm{\mathbf{x}_{1}}^{2} = 6</m>, <m>\norm{\mathbf{x}_{2}}^{2} = 5</m>, and <m>\norm{\mathbf{x}_{3}}^{2} = 30</m>, so
 <me>
 P = \begin{bmatrix}
 | \amp  | \amp   | \\
@@ -1035,6 +1045,11 @@ a_{ij}
     </statement>
 </exercise>
 
+
+
+
+
+
 <exercise xml:id="prob-ortho24">
     <statement>
         <p>
@@ -1061,7 +1076,7 @@ a_{ij}
 
 <hint>
 <p>
-For (a): by <xref ref="thm-004553"/>, it suffices to show that <m>(I + A)\mathbf{x} = \mathbf{0}</m>, <m>\mathbf{x}</m> in <m>\R^n</m>, implies <m>\mathbf{x} = \mathbf{0}</m>. Compute <m>\mathbf{x} \cdot \mathbf{x} = \mathbf{x}^{T}\mathbf{x}</m>, and use the fact that <m>A\mathbf{x} = -\mathbf{x}</m> and <m>A^{2}\mathbf{x} = \mathbf{x}</m>.
+For (a): It suffices to show that <m>(I + A)\mathbf{x} = \mathbf{0}</m>, <m>\mathbf{x}</m> in <m>\R^n</m>, implies <m>\mathbf{x} = \mathbf{0}</m>. Compute <m>\mathbf{x} \cdot \mathbf{x} = \mathbf{x}^{T}\mathbf{x}</m>, and use the fact that <m>A\mathbf{x} = -\mathbf{x}</m> and <m>A^{2}\mathbf{x} = \mathbf{x}</m>.
 </p>
 
 <p>
@@ -1069,6 +1084,11 @@ For (c): Solve <m>P = (I - A)(I + A)^{-1}</m> for <m>A</m>.
 </p>
 </hint>
 </exercise>
+
+
+
+
+
 
 <exercise xml:id="prob-ortho25">
     <statement>

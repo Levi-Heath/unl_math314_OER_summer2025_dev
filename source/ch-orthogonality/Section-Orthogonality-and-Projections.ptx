@@ -13,7 +13,12 @@
     <title>Orthogonal and Orthonormal Sets</title>
 <p>
 In this section, we examine what it means for vectors (and sets of
-vectors) to be orthogonal and orthonormal. Recall that two non-zero vectors are orthogonal if their dot product is zero.  A collection of non-zero vectors in <m>\R^n</m> is called <term>orthogonal</term> if the vectors are pair-wise orthogonal.  The diagram below shows two orthogonal vectors in <m>\R^2</m> and three orthogonal vectors in <m>\R^3</m>.
+vectors) to be orthogonal and orthonormal. Recall that two non-zero vectors are orthogonal if their dot product is zero.  
+A collection of non-zero vectors in <m>\R^n</m> is called <term>orthogonal</term> if the vectors are pair-wise orthogonal.  
+</p> 
+
+<p>
+The diagram below shows two orthogonal vectors in <m>\R^2</m> and three orthogonal vectors in <m>\R^3</m>.
 </p>
 
 
@@ -56,7 +61,6 @@ If every vector in an orthogonal set of vectors is also a unit vector, then we s
 
 
 
-\begin{center}
 <image width="65%">
    <shortdescription>An orthonormal set drawn this time for emphasis</shortdescription>
     <latex-image>
@@ -263,7 +267,12 @@ Vector <m>\mathbf{x}</m> is visually easy to work with.  In general, one way to 
 </image>
 
 <p>
-We can see why an ``upright" coordinate system with basis <m>\{\mathbf{i},\mathbf{j}\}</m> works well.  What if we tilt this coordinate system while preserving the orthogonal relationship between the basis vectors?  The following exploration allows you to investigate the consequences.
+We can see why an ``upright" coordinate system with basis <m>\{\mathbf{i},\mathbf{j}\}</m> works well.  
+What if we tilt this coordinate system while preserving the orthogonal relationship between the basis vectors? 
+</p> 
+
+<p>
+The following exploration allows you to investigate the consequences.
 </p> 
 
 
@@ -295,14 +304,20 @@ We can see why an ``upright" coordinate system with basis <m>\{\mathbf{i},\mathb
 </exploration>
 
 <p> 
-As you have just discovered in <xref ref="exp-orth1a"/>, we can express an arbitrary vector of <m>\R^2</m> as the sum of its projections onto the basis vectors, provided that the basis is orthogonal. It turns out that this result holds for any subspace of <m>\R^n</m>, making a basis consisting of orthogonal vectors especially useful. 
+As you have just discovered in <xref ref="exp-orth1a"/>, we can express an arbitrary vector of <m>\R^2</m> as the sum of its projections onto the basis vectors, 
+provided that the basis is orthogonal. It turns out that this result holds for any subspace of <m>\R^n</m>, 
+making a basis consisting of orthogonal vectors especially useful. 
+</p> 
 
+<p> 
 If an orthogonal set is a basis, we call it an
 <term>orthogonal basis</term>. Similarly, if an orthonormal set is a basis, we call it an <term>orthonormal basis</term>.
 </p> 
 
 <p>
-The following theorem generalizes our observation in <xref ref="exp-orth1a"/>.  As you read the statement of the theorem, it will be helpful to recall that the orthogonal projection of vector <m>\mathbf{x}</m> onto a non-zero vector <m>\mathbf{d}</m> is given by
+The following theorem generalizes our observation in <xref ref="exp-orth1a"/>.  
+As you read the statement of the theorem, it will be helpful to recall that the orthogonal projection of vector <m>\mathbf{x}</m> 
+onto a non-zero vector <m>\mathbf{d}</m> is given by
 <men xml:id="eq-orthProj">
 \mbox{proj}_{\mathbf{d}}\mathbf{x}=\left(\frac{\mathbf{x}\cdot\mathbf{d}}{\norm{\mathbf{d}}^2}\right)\mathbf{d}.
 </men>
@@ -345,9 +360,10 @@ c_2\mathbf{f}_2 +
 \cdots +
 c_m\mathbf{f}_m\right) \cdot \mathbf{f}_i 
 </me>
-Our basis is orthogonal, so <m>\mathbf{f}_j \cdot \mathbf{f}_i = 0</m> for all <m>j \neq i</m>, which means after we distribute the dot product, only one term will remain on the right-hand side.  We have 
+Our basis is orthogonal, so <m>\mathbf{f}_j \cdot \mathbf{f}_i = 0</m> for all <m>j \neq i</m>, 
+which means after we distribute the dot product, only one term will remain on the right-hand side.  We have 
 <me>
-  \mathbf{x} \cdot \mathbf{f}_i =  c_i\mathbf{f}_i \cdot \mathbf{f}_i 
+  \mathbf{x} \cdot \mathbf{f}_i =  c_i\mathbf{f}_i \cdot \mathbf{f}_i.
 </me>
 
 We now divide both sides by <m>\mathbf{f}_i \cdot \mathbf{f}_i = \norm{\mathbf{f}_i}^2</m>, and since our claim holds for <m>i=1,\ldots,m</m>, the proof is complete.
@@ -357,7 +373,8 @@ We now divide both sides by <m>\mathbf{f}_i \cdot \mathbf{f}_i = \norm{\mathbf{f
 
 
 <p>
-In <xref ref="th-fourierexpansion"/> shows one important benefit of a basis being orthogonal.  With an orthogonal basis it is easy to represent any vector in terms of the basis vectors.  
+In <xref ref="th-fourierexpansion"/> shows one important benefit of a basis being orthogonal. 
+ With an orthogonal basis it is easy to represent any vector in terms of the basis vectors.   The example below exemplifies these new ideas.
 </p> 
 
 <example xml:id="fourier">
@@ -373,7 +390,7 @@ In <xref ref="th-fourierexpansion"/> shows one important benefit of a basis bein
 \mathbf{f}_3 =\begin{bmatrix}
 5 \\ 1 \\ -2
 \end{bmatrix}, \quad 
-\tex{and} \quad
+\text{and} \quad
 \mathbf{x} =\begin{bmatrix}
 1 \\ 1 \\ 1
 \end{bmatrix}.</me>  
@@ -470,7 +487,14 @@ the terms are given by
     <title>Orthogonal Projection onto a Subspace</title>
 
     <p>
-In the previous section we found that given a subspace <m>W</m> of <m>\R^n</m> with an orthogonal basis <m>\mathcal{B}</m>, every vector <m>\mathbf{x}</m> in <m>W</m> can be expressed as the sum of the orthogonal projections of <m>\mathbf{x}</m> onto the elements of <m>\mathcal{B}</m>.  Note that our premise was that <m>\mathbf{x}</m> is in <m>W</m>.  In this section, we look into the meaning of the sum of orthogonal projections of <m>\mathbf{x}</m> onto the elements of an orthogonal basis of <m>W</m> for those vectors <m>\mathbf{x}</m> of <m>\R^n</m> that are <em>not</em> in <m>W</m>.
+In the previous section we found that given a subspace <m>W</m> of <m>\R^n</m> with an orthogonal basis <m>\mathcal{B}</m>, 
+every vector <m>\mathbf{x}</m> in <m>W</m> can be expressed as the sum of the orthogonal projections of <m>\mathbf{x}</m> onto the elements of <m>\mathcal{B}</m>.  
+We wish to emphasize that our premise is <m>\mathbf{x}</m> Being in <m>W</m>. 
+    </p> 
+    
+    <p> 
+    In this section, we look into the meaning of the sum of orthogonal projections of <m>\mathbf{x}</m> onto the elements of an orthogonal basis of <m>W</m> 
+    for those vectors <m>\mathbf{x}</m> of <m>\R^n</m> that are <em>not</em> in <m>W</m>.
     </p>
     
 
@@ -629,7 +653,10 @@ Option (3): None of the above.
 
 
 <p>
-In <xref ref="exp-orthProjSub"/>, you discovered that given a plane, spanned by orthogonal vectors <m>\mathbf{v}_1,\mathbf{v}_2</m>, in <m>\R^3</m>, and a vector <m>\mathbf{x}</m>, not in the plane, we can interpret the sum of orthogonal projections of <m>\mathbf{x}</m> onto <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m> as a ``shadow" of <m>\mathbf{x}</m> that lies in the plane directly underneath the vector <m>\mathbf{x}</m>. We say that this ``shadow" is an <term>orthogonal projection</term> of <m>\mathbf{x}</m> onto <m>W</m>. 
+In <xref ref="exp-orthProjSub"/>, you discovered that given a plane, spanned by orthogonal vectors <m>\mathbf{v}_1,\mathbf{v}_2</m>, in <m>\R^3</m>, 
+and a vector <m>\mathbf{x}</m>, not in the plane, we can interpret the sum of orthogonal projections of <m>\mathbf{x}</m> onto <m>\mathbf{v}_1</m> 
+and <m>\mathbf{v}_2</m> as a ``shadow" of <m>\mathbf{x}</m> that lies in the plane directly underneath the vector <m>\mathbf{x}</m>. 
+We say that this ``shadow" is an <term>orthogonal projection</term> of <m>\mathbf{x}</m> onto <m>W</m>. 
 </p> 
 
 <p>
@@ -637,7 +664,9 @@ You have also found that if <m>\mathbf{v}_1,\mathbf{v}_2</m> are not orthogonal,
 </p> 
 
 <p> 
-In general, we can define an orthogonal projection of <m>\mathbf{x}</m> in <m>\R^n</m> onto a subspace <m>W</m> of <m>\R^n</m> as the sum of the orthogonal projections of <m>\mathbf{x}</m> onto the elements of an orthogonal basis of <m>W</m>.  %We denote such a projection by <m>\mbox{proj}_V(\mathbf{x})</m>. An important aspect of this definition is that it allows us to express <m>\mathbf{x}</m> as the sum of its orthogonal projection, <m>\mathbf{w}</m>, onto <m>W</m> and a vector orthogonal to <m>\mathbf{w}</m>, called <m>\mathbf{w}^\perp</m>.  
+In general, we can define an orthogonal projection of <m>\mathbf{x}</m> in <m>\R^n</m> onto a subspace <m>W</m> of <m>\R^n</m> as the sum of the orthogonal projections of <m>\mathbf{x}</m> onto the elements of an orthogonal basis of <m>W</m>. 
+ A pivotal aspect of this definition is that it allows us to express <m>\mathbf{x}</m> as the sum of its orthogonal projection, <m>\mathbf{w}</m>, 
+ onto <m>W</m> and a vector orthogonal to <m>\mathbf{w}</m>, called <m>\mathbf{w}^\perp</m>.  
  <xref ref="def-projOntoSubspace"/> and the subsequent diagram summarize this discussion.
 </p>
 
@@ -645,7 +674,7 @@ In general, we can define an orthogonal projection of <m>\mathbf{x}</m> in <m>\R
     <title>Projection onto a Subspace of <m>\R^n</m></title>
     <statement>
         <p>
-            Let <m>W</m> be a subspace of <m>\R^n</m> with orthogonal basis <m>\{\mathbf{f}_{1}, \mathbf{f}_{2}, \dots, \mathbf{f}_{m}\}</m>. If <m>\mathbf{x}</m> is in <m>\R^n</m>, the vector
+            Suppose <m>W</m> is a subspace of <m>\R^n</m> with orthogonal basis <m>\{\mathbf{f}_{1}, \mathbf{f}_{2}, \dots, \mathbf{f}_{m}\}</m>. If <m>\mathbf{x}</m> is in <m>\R^n</m>, the vector
 <men xml:id="def-projectontoWeasy">
 \mathbf{w}=\mbox{proj}_W(\mathbf{x}) = \mbox{proj}_{\mathbf{f}_1}\mathbf{x} + \mbox{proj}_{\mathbf{f}_2}\mathbf{x} + \dots + \mbox{proj}_{\mathbf{f}_m}\mathbf{x}
 </men>
@@ -744,7 +773,7 @@ You have already met <m>\mathbf{w}^\perp</m>, under the name of <m>\mathbf{p}</m
         <p>
             Let <m>W</m> be a subspace of <m>\R^n</m> with orthogonal basis <m>\{\mathbf{f}_{1}, \mathbf{f}_{2}, \dots, \mathbf{f}_{m}\}</m>. Let <m>\mathbf{x}</m> be in <m>\R^n</m>, and define <m>\mathbf{w}^\perp</m> as
 <me>
-\mathbf{w}^\perp=\mathbf{x}-\mbox{proj}_W\mathbf{x} = \mathbf{x}-(\mbox{proj}_{\mathbf{f}_1}\mathbf{x} + \mbox{proj}_{\mathbf{f}_2}\mathbf{x} + \dots + \mbox{proj}_{\mathbf{f}_m}\mathbf{x})
+\mathbf{w}^\perp=\mathbf{x}-\mbox{proj}_W\mathbf{x} = \mathbf{x}-(\mbox{proj}_{\mathbf{f}_1}\mathbf{x} + \mbox{proj}_{\mathbf{f}_2}\mathbf{x} + \dots + \mbox{proj}_{\mathbf{f}_m}\mathbf{x}).
 </me>
 Then <m>\mathbf{w}^\perp</m> is orthogonal to <m>\mathbf{f}_i</m> for <m>1\leq i\leq m</m>.
         </p>
@@ -810,7 +839,10 @@ Throughout this section we have worked with orthogonal bases of subspaces.  Does
     <statement>
         <p>
             Let <m>\mathbf{x}_1, \mathbf{x}_2, \ldots, \mathbf{x}_k\in\R^n</m> and
-suppose <m>\mbox{span}\{\mathbf{x}_1, \mathbf{x}_2, \ldots, \mathbf{x}_k\}=\R^n</m>.
+suppose 
+<me>
+    \mbox{span}\{\mathbf{x}_1, \mathbf{x}_2, \ldots, \mathbf{x}_k\}=\R^n.
+</me>
 Furthermore, suppose that there exists a vector <m>\mathbf{v}\in\R^n</m> for which <m>\mathbf{v}\cdot \mathbf{x}_j=0</m> for all <m>j</m>, <m>1\leq j\leq k</m>.
 Show that <m>\mathbf{v}=\mathbf{0}</m>.
         </p>

@@ -34,12 +34,12 @@
 
   <!-- include sections --> 
 <!--<xi:include href="Section-Addition-and-Scalar-Multiplication-of-Matrices.ptx"/>-->
-<xi:include href="Section-Gram-Schmidt-Orthogonalization.ptx"/>
 <xi:include href="Section-Orthogonality-and-Projections.ptx"/>
+<xi:include href="Section-Gram-Schmidt-Orthogonalization.ptx"/>
 <xi:include href="Section-Orthogonal-Complements-and-Decompositions.ptx"/>
 <xi:include href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.ptx"/>
 <xi:include href="Section-QR-Factorization.ptx"/>
-<xi:include href="Section-Least-Squares-Approximation.ptx"/>
+<!--<xi:include href="Section-Least-Squares-Approximation.ptx"/>-->
 <xi:include href="Section-SVD-Decomposition.ptx"/>
 <xi:include href="Section-Positive-Definite-Matrices.ptx"/>
 <xi:include href="Section-Curve-Fitting.ptx"/>

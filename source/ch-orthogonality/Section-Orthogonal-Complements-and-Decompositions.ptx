@@ -13,7 +13,9 @@
     <title>Orthogonal Complements</title>
 
 <p>
-We will now consider the set of vectors that are orthogonal to every vector in a given subspace.  As a quick example, consider the <m>xy</m>-plane in <m>\R^3</m>.  Clearly, every scalar multiple of the standard unit vector <m>\mathbf{k}</m> in <m>\R^3</m> is orthogonal to every vector in the <m>xy</m>-plane.  We say that the set <m>\{c\mathbf{k} \mid c \in\R\}</m> is an <term>orthogonal complement</term> of <m>\{ a\mathbf{i}+b\mathbf{j} \mid a, b \in\R \}</m>.
+We will now consider the set of vectors that are orthogonal to every vector in a given subspace.  As a quick example, consider the <m>xy</m>-plane in <m>\R^3</m>. 
+ Clearly, every scalar multiple of the standard unit vector <m>\mathbf{k}</m> in <m>\R^3</m> is orthogonal to every vector in the <m>xy</m>-plane.  
+ We say that the set <m>\{c\mathbf{k} \mid c \in\R\}</m> is an <term>orthogonal complement</term> of <m>\{ a\mathbf{i}+b\mathbf{j} \mid a, b \in\R \}</m>.
 </p>
 
   <definition xml:id="def-023776">
@@ -97,6 +99,12 @@ where each <m>c_{i}</m> is in <m>\R</m>. Then
 
 
 
+<p>
+Let us put these new concepts into a concrete setting.
+</p> 
+
+
+
 
 <example xml:id="ex-023829">
     <statement>
@@ -160,8 +168,6 @@ Some of the important subspaces we studied earlier are orthogonal complements of
 
 <figure>
   <caption>
-    A larger version of this activity is available 
-    <url href="https://www.geogebra.org/calculator/f6eavqxs" visual="geogebra.org">here</url>.
   </caption>
   <interactive xml:id="geogebra-Coordinate-Try" platform="geogebra" width="140%" aspect="950:800">
     <slate xml:id="Coordinate-Try" surface="geogebra" material="f6eavqxs" aspect="950:800" />
@@ -179,6 +185,11 @@ Some of the important subspaces we studied earlier are orthogonal complements of
         </ol>
     </p>
 </exploration>
+
+
+
+
+
 
 
 <theorem xml:id="th-4subspaces">
@@ -218,6 +229,10 @@ is given by <me>\left\{\begin{bmatrix}
   \end{bmatrix}\right\}</me>.
 </p> 
 
+
+<p> 
+It is often useful to verify abstract statements in the concrete first. Let us give this a try:
+</p> 
 
 <example xml:id="ex-4subspaces">
     <statement>
@@ -303,11 +318,11 @@ The reason we need to prove this decomposition is unique is because we started w
 
 Suppose that <m>\{\mathbf{f}_1^\prime, \mathbf{f}_2^\prime, \dots, \mathbf{f}_m^\prime \}</m>  is another orthogonal basis of <m>W</m>, and let
 <me>
-\mathbf{w}^{\prime} = \left(\frac{\mathbf{x} \cdot \mathbf{f}^{\prime}_{1}}{\norm{\mathbf{f}^{\prime}_{1}}^2}\right)\mathbf{f}^{\prime}_{1} + \left(\frac{\mathbf{x} \cdot \mathbf{f}^{\prime}_{2}}{\norm{\mathbf{f}^{\prime}_{2}}^2}\right)\mathbf{f}^{\prime}_{2} + \dots +\left(\frac{\mathbf{x} \cdot \mathbf{f}^{\prime}_{m}}{\norm{\mathbf{f}^{\prime}_{m}}^2}\right)\mathbf{f}^{\prime}_{m}
+\mathbf{w}^{\prime} = \left(\frac{\mathbf{x} \cdot \mathbf{f}^{\prime}_{1}}{\norm{\mathbf{f}^{\prime}_{1}}^2}\right)\mathbf{f}^{\prime}_{1} + \left(\frac{\mathbf{x} \cdot \mathbf{f}^{\prime}_{2}}{\norm{\mathbf{f}^{\prime}_{2}}^2}\right)\mathbf{f}^{\prime}_{2} + \dots +\left(\frac{\mathbf{x} \cdot \mathbf{f}^{\prime}_{m}}{\norm{\mathbf{f}^{\prime}_{m}}^2}\right)\mathbf{f}^{\prime}_{m}.
 </me>
 As before, <m>\mathbf{w}^{\prime} \in W</m> and <m>\mathbf{x} - \mathbf{w}^{\prime} \in W^\perp</m>, and we must show that <m>\mathbf{w}^{\prime} = \mathbf{w}</m>. To see this, write the vector <m>\mathbf{w} - \mathbf{w}^\prime</m> as follows:
 <me>
-\mathbf{w} - \mathbf{w}^{\prime} = (\mathbf{x} - \mathbf{w}^{\prime}) - (\mathbf{x} - \mathbf{w})
+\mathbf{w} - \mathbf{w}^{\prime} = (\mathbf{x} - \mathbf{w}^{\prime}) - (\mathbf{x} - \mathbf{w}).
 </me>
 This vector is in <m>W</m> (because <m>\mathbf{w}</m> and <m>\mathbf{w}^\prime</m> are in <m>W</m>) and it is in <m>W^\perp</m> (because <m>\mathbf{x} - \mathbf{w}^\prime</m> and <m>\mathbf{x} - \mathbf{w}</m> are in <m>W^\perp</m>), and so it must be the zero vector (it is orthogonal to itself!). This means <m>\mathbf{w}^\prime = \mathbf{w}</m> as desired.
     </p>
@@ -315,6 +330,12 @@ This vector is in <m>W</m> (because <m>\mathbf{w}</m> and <m>\mathbf{w}^\prime</
 </theorem>
 
 
+
+
+
+<p> 
+The decomposition is extremely important. It splits a vector into two managable halves. Further, it is completely computable as the next example highlights.
+</p> 
 
 
 
@@ -457,12 +478,16 @@ Now suppose that <m>\mathbf{x}</m> is in <m>W^\perp</m>. Then <m>\mathbf{x} \cdo
 <exercise xml:id="prob-brokenInteractive">
     <statement>
         <p>
-            In this problem we return to the GeoGebra interactive in <xref ref="exp-discoverortho"/>, and we consider the case where the matrix <m>A</m> has rank 1 (which <xref ref="exp-discoverortho"/> could not handle).  This time, the sliders define row 1 of matrix <m>A</m>, and row 2 will be 2 times row 1.  Follow the prompts in the interactive to visualize <m>\mbox{row}(A)</m> and <m>\mbox{null}(A)</m>.  What relationships do you observe between <m>\mbox{row}(A)</m> and <m>\mbox{null}(A)</m>?
+            In this problem we return to the GeoGebra interactive in <xref ref="exp-discoverortho"/>,
+             and we consider the case where the matrix <m>A</m> has rank 1 (which <xref ref="exp-discoverortho"/> could not handle).  
+             This time, the sliders define row 1 of matrix <m>A</m>, and row 2 will be 2 times row 1. 
+        </p> 
+
+        <p> 
+             Follow the prompts in the interactive to visualize <m>\mbox{row}(A)</m> and <m>\mbox{null}(A)</m>.  What relationships do you observe between <m>\mbox{row}(A)</m> and <m>\mbox{null}(A)</m>?
         </p>
 <figure>
   <caption>
-    A larger version of this activity is available 
-    <url href="https://www.geogebra.org/calculator/tyntjmdp" visual="geogebra.org">here</url>.
   </caption>
   <interactive xml:id="geogebra-Coordinates-Try2" platform="geogebra" width="140%" aspect="950:800">
     <slate xml:id="Coordinates-Try2" surface="geogebra" material="tyntjmdp" aspect="950:800" />

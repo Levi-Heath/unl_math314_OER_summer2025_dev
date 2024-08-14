@@ -192,7 +192,7 @@ Try moving individual points around to see how their placement affects the line 
     A larger version of this activity is available 
     <url href="https://www.geogebra.org/calculator/z2qhxkmm" visual="geogebra.org">here</url>.
   </caption>
-  <interactive xml:id="geogebra-ScatterPlot" platform="geogebra" width="100%" aspect="950:650">
+  <interactive xml:id="geogebra-ScatterPlot" platform="geogebra" width="120%" aspect="950:650">
     <slate xml:id="ScatterPlot" surface="geogebra" material="z2qhxkmm" aspect="950:650" />
   </interactive>
 </figure>

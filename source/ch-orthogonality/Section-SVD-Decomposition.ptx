@@ -213,7 +213,7 @@ Thus <m>A\mathbf{v}_{i}=\sigma _{i}\mathbf{u}_{i}.</m> Now,
 <mrow> \mathbf{u}_{i} \cdot \mathbf{u}_{j} \amp =   \sigma _{i}^{-1}A
 \mathbf{v}_{i} \cdot \sigma _{j}^{-1}A\mathbf{v}_{j}  = \sigma_{i}^{-1}\mathbf{v}_{i}^T \sigma _{j}^{-1}A^TA\mathbf{v}_{j} </mrow>
 <mrow> \amp =  \sigma _{i}^{-1}\mathbf{v}_{i} \cdot \sigma _{j}^{-1}\sigma _{j}^{2} \mathbf{v}_{j} =
-\frac{\sigma _{j}}{\sigma _{i}}\left( \mathbf{v}_{i} \cdot \mathbf{v}_{j}\right)%=\delta _{ij}. </mrow>
+\frac{\sigma _{j}}{\sigma _{i}}\left( \mathbf{v}_{i} \cdot \mathbf{v}_{j}\right). </mrow>
 </md>
 
 This means that <m>\mathbf{u}_{i} \cdot \mathbf{u}_{j}=1</m> when <m>i=j</m> and <m>\mathbf{u}_{i} \cdot \mathbf{u}_{j}=0</m> when <m>i\neq j</m>.
@@ -428,7 +428,7 @@ Then
 V=\frac{1}{\sqrt{6}}\left[\begin{array}{rrr}
 \sqrt 3 \amp  -\sqrt 2 \amp  -1  \\
 0 \amp  -\sqrt 2 \amp  2 \\
-\sqrt 3 \amp  \sqrt 2 \amp  1 \end{array}\right]
+\sqrt 3 \amp  \sqrt 2 \amp  1 \end{array}\right].
 </me> 
 
 
@@ -448,13 +448,13 @@ Let <m>V=\left[\begin{array}{ccc} \mathbf{v}_1 \amp  \mathbf{v}_2 \amp  \mathbf{
 let <m>U=\left[\begin{array}{cc} \mathbf{u}_1 \amp  \mathbf{u}_2 \end{array}\right]</m>, where
 <m>\mathbf{u}_1</m> and <m>\mathbf{u}_2</m> are the two columns of <m>U</m>. Then we have
 <md>
-<mrow> A\left[\begin{array}{ccc} \mathbf{v}_1 \amp  \mathbf{v}_2 \amp  \mathbf{v}_3 \end{array}\right]  
-\amp = \left[\begin{array}{cc} \mathbf{u}_1 \amp  \mathbf{u}_2 \end{array}\right]\Sigma </mrow> 
-<mrow> \left[\begin{array}{ccc} A\mathbf{v}_1 \amp  A\mathbf{v}_2 \amp  A\mathbf{v}_3 \end{array}\right] 
- \amp =  \left[\begin{array}{ccc} \sigma_1\mathbf{u}_1 + 0\mathbf{u}_2 \amp 
+ <mrow> A\left[\begin{array}{ccc} \mathbf{v}_1 \amp  \mathbf{v}_2 \amp  \mathbf{v}_3 \end{array}\right]  
+ \amp = \left[\begin{array}{cc} \mathbf{u}_1 \amp  \mathbf{u}_2 \end{array}\right]\Sigma 
+ \left[\begin{array}{ccc} A\mathbf{v}_1 \amp  A\mathbf{v}_2 \amp  A\mathbf{v}_3 \end{array}\right] </mrow>
+ <mrow> \amp =  \left[\begin{array}{ccc} \sigma_1\mathbf{u}_1 + 0\mathbf{u}_2 \amp 
 0\mathbf{u}_1 + \sigma_2 \mathbf{u}_2 \amp  0 \mathbf{u}_1 + 0\mathbf{u}_2 \end{array}\right] </mrow>
-<mrow> \amp =\amp  \left[\begin{array}{ccc} \sigma_1\mathbf{u}_1 \amp  \sigma_2 \mathbf{u}_2 \amp </mrow>
-0 \end{array}\right]
+ <mrow> = \left[\begin{array}{ccc} \sigma_1\mathbf{u}_1 \amp  \sigma_2 \mathbf{u}_2 \amp 
+0 \end{array}\right] </mrow> 
 </md> 
 
 which implies that <m>A\mathbf{v}_1=\sigma_1\mathbf{u}_1 = 4\mathbf{u}_1</m> and

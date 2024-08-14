@@ -65,7 +65,8 @@ We conclude this section by showing that <m>QR</m>-factorization provides us wit
 </figure>
 
 <p>
- Record your best guess for <m>\mathbf{z}</m> -- you will have a chance to check your answer in <xref ref="ex-leastSquares1"/>.
+ Record your best guess for <m>\mathbf{z}</m> -- you will have a chance to check your answer in <xref ref="ex-leastSquares1"/>. 
+ Now, here is a few questions to keep you on yor toes.
 </p>
 
 <problem>
@@ -183,17 +184,20 @@ Since <m>\mathbf{b}-A\mathbf{z}</m> is normal to the subspace <m>\text{col}(A)</
 If <m>A^TA</m> is invertible, then we can write
 
 <men xml:id="eq-leastSquaresZ">
-    \mathbf{z}=(A^TA)^{-1}A^T\mathbf{b}
+    \mathbf{z}=(A^TA)^{-1}A^T\mathbf{b}.
 </men>
 
-We will return to the question of invertibility of <m>A^TA</m> in <xref ref="th-ATAinverse"/>.  For now, let's revisit the problem posed in <xref ref="exp-leastSq1"/>.
+We will return to the question of invertibility of <m>A^TA</m> in <xref ref="th-ATAinverse"/>.  
+For now, let's revisit the problem posed in <xref ref="exp-leastSq1"/>.
 </p> 
+
 
 
 <example xml:id="ex-leastSquares1">
     <statement>
         <p>
-            We now return to the matrix equation <m>A\mathbf{x}=\mathbf{b}</m> of <xref ref="exp-leastSq1"/> to find <m>\mathbf{z}</m> that best approximates a solution.
+            We now return to the matrix equation <m>A\mathbf{x}=\mathbf{b}</m> of <xref ref="exp-leastSq1"/> to find <m>\mathbf{z}</m> 
+            that best approximates a solution.
        </p>
     </statement>
 
@@ -260,7 +264,7 @@ We now come back to the question of when <m>A^TA</m> is invertible.
             Let <m>A</m> be an <m>m\times n</m> matrix, let <m>\mathbf{b}</m> be a column vector in <m>\R^m</m>.  Consider the matrix equation
     
 <me>
-    A\mathbf{x}=\mathbf{b}
+    A\mathbf{x}=\mathbf{b}.
 </me>
 
     <ol>
@@ -280,7 +284,7 @@ We now come back to the question of when <m>A^TA</m> is invertible.
       <p> If the columns of <m>A</m> are linearly independent, then <m>A^TA</m> is invertible and <m>\mathbf{z}</m> is given uniquely by 
         
 <me> 
-    \mathbf{z}=\left(A^TA\right)^{-1}A^T\mathbf{b}
+    \mathbf{z}=\left(A^TA\right)^{-1}A^T\mathbf{b}.
 </me>
     </p>
        </li>

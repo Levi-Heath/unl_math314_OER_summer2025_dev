@@ -11,7 +11,7 @@
 
 <p> 
 All the eigenvalues of any symmetric
-matrix are real (proved later in <xref ref="cor-ews-symmetric-real"/>); this section is about the case in which those eigenvalues
+matrix are real (deduced in later sections; this section is about the case in which those eigenvalues
  are positive. These matrices, which arise whenever optimization
 (maximum and minimum) problems are encountered, have countless
 applications throughout science and engineering. They also arise in
@@ -50,7 +50,7 @@ If <m>A</m> is <m>n \times n</m> and the eigenvalues are <m>\lambda_{1}, \lambda
 \det A = \lambda_{1}\lambda_{2} \cdots \lambda_{n} \gt  0
 </me>
 
-by the Real Spectral Theorem (or, more specifically, <xref ref="cor-det-and-tr"/>).
+by the Real Spectral Theorem.
     </p>
 </proof>
 </theorem>
@@ -87,10 +87,10 @@ y_{1} \amp  y_{2} \amp  \dots \amp  y_{n}
 </me>
 
 Then
-<mdn xml:id="symmetricEq">
+<mdn >
 <mrow number="no"> \mathbf{x}^TA\mathbf{x} \amp = \mathbf{x}^T(QDQ^T)\mathbf{x} </mrow>
 <mrow number="no"> \amp = \mathbf{y}^TD\mathbf{y} </mrow>
-<mrow> \amp = \lambda_{1}y_{1}^2 + \lambda_{2}y_{2}^2 + \dots + \lambda_{n}y_{n}^2. </mrow> 
+<mrow xml:id="symmetricEq"> \amp = \lambda_{1}y_{1}^2 + \lambda_{2}y_{2}^2 + \dots + \lambda_{n}y_{n}^2. </mrow> 
 
 </mdn>
 If <m>A</m> is positive definite and <m>\mathbf{x} \neq \mathbf{0}</m>, then <m>\mathbf{x}^{T}A\mathbf{x} \gt  0</m> by <xref ref="symmetricEq"/> because some <m>y_{j} \neq 0</m> and every <m>\lambda_{i} \gt  0</m>.
@@ -143,6 +143,10 @@ that is, <m>^{(r)}A</m> is the matrix obtained from <m>A</m> by deleting the las
 
 <p> 
 The matrices <m>^{(1)}A, ^{(2)}A, ^{(3)}A, \dots</m>, <m>^{(n)}A = A</m> are called the <term>principal submatrices</term> of <m>A</m>.
+</p> 
+
+<p>
+To get accustomed to principal matrices, we will analyse a concrete case.
 </p> 
 
 <example xml:id="exa-024883">
