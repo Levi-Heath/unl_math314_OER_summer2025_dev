@@ -1348,7 +1348,7 @@ Since <m>T_1\neq T_2</m>, we conclude that <m>M_{y=x}M_{y=-2x}\neq M_{y=-2x}M_{y
         </p> 
 
 <sidebyside>
-		<image width="45%">
+		<image width="30%">
    <shortdescription>Sheep</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=2]

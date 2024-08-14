@@ -33,9 +33,9 @@ W^\perp = \{\mathbf{x} \in\R^n \mid \mathbf{x} \cdot \mathbf{y} = 0 \mbox{ for a
 
 
 	<image width="65%">
-   <shortdescription></shortdescription>
+   <shortdescription>Complement of a line</shortdescription>
     <latex-image>
-        \tdplotsetmaincoords{70}Complement of a line{130}
+        \tdplotsetmaincoords{70}{130}
       \begin{tikzpicture}[scale=1]
 \filldraw[blue, opacity=0.3] (2,0,2)--(2,0,-2)--(-2,0,-2)--(-2,0,2)--cycle;
     \draw[-\gt ,line width=0.4mm, -stealth, blue](0,-2,0)--(0,3,0) ;%normal to grey
