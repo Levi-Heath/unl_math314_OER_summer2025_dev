@@ -10,7 +10,10 @@
 
 
  <p>
-In <xref ref="ep-inverse"/>, we examined a linear transformation <m>T:\R^2\rightarrow \R^2</m> that doubles all input vectors, and its inverse <m>S:\R^2\rightarrow \R^2</m>, that halves all input vectors.  We observed that the composite functions <m>S\circ T</m> and <m>T\circ S</m> are both identity transformations.  Diagrammatically, we can represent <m>T</m> and <m>S</m> as follows:
+In <xref ref="ep-inverse"/>, we examined a linear transformation <m>T:\R^2\rightarrow \R^2</m> that doubles all input vectors, 
+and its inverse <m>S:\R^2\rightarrow \R^2</m>, that halves all input vectors.  
+We observed that the composite functions <m>S\circ T</m> and <m>T\circ S</m> are both identity transformations.  
+Diagrammatically, we can represent <m>T</m> and <m>S</m> as follows:
  </p> 
 
  
@@ -34,9 +37,11 @@ This gives us a way of thinking about an inverse of <m>T</m> as a transformation
 
 <p> 
 Given an arbitrary linear transformation <m>T:V\rightarrow W</m>, ``reversing the arrows"
- may not always result in a transformation. Recall that transformations are functions.  The figures below show two ways in which our attempt to ``reverse" <m>T</m> may fail to produce a function.
+ may not always result in a transformation. Recall that transformations are functions.  
+ The figures below show two ways in which our attempt to ``reverse" <m>T</m> may fail to produce a function.
  
- First, if two distinct vectors <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m> map to the same vector <m>\mathbf{w}</m> in <m>W</m>, then reversing the arrows gives us a mapping that is clearly not a function. 
+ First, if two distinct vectors <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m> map to the same vector <m>\mathbf{w}</m> in <m>W</m>, 
+ then reversing the arrows gives us a mapping that is clearly not a function. 
 </p>
 
 
@@ -72,7 +77,9 @@ Given an arbitrary linear transformation <m>T:V\rightarrow W</m>, ``reversing th
 
   
 <p>
-Second, observe that our definition of an inverse of <m>T:V\rightarrow W</m> requires that the domain of the inverse transformation be <m>W</m> (see <xref ref="def-inverse"/>).  If there is a vector <m>\mathbf{b}</m> in <m>W</m> that is not an image of any vector in <m>V</m>, then <m>\mathbf{b}</m> cannot be in the domain of an inverse transformation. 
+Second, observe that our definition of an inverse of <m>T:V\rightarrow W</m> requires that the domain of the inverse transformation be
+ <m>W</m> (remember the inverse is intuitively the opposite one!)).  If there is a vector <m>\mathbf{b}</m> in <m>W</m> that is not an image of any vector in <m>V</m>, 
+ then <m>\mathbf{b}</m> cannot be in the domain of an inverse transformation. 
 </p> 
 
 
@@ -199,7 +206,7 @@ Our next goal is to develop vocabulary that would allow us to discuss issues ill
 
 
 <subsection xml:id="Subsection-One-to-one-Linear-Transformations">
-    <title>One-to-one Linear Transformations</title>
+    <title>One-to-one and Onto Linear Transformations</title>
 
     <p>
 Figure <m>1</m> gave us a diagrammatic representation of a transformation that maps two distinct elements, <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m> to the same element <m>\mathbf{w}</m>, making it impossible for us to ``reverse the arrows" in an attempt to find the inverse transformation.  Based on this example, it is reasonable to conjecture that for a transformation to be invertible, the transformation must be such that each output is the image of exactly one input.  Such transformations are called <term>one-to-one</term>.  
@@ -220,6 +227,10 @@ Figure <m>1</m> gave us a diagrammatic representation of a transformation that m
 
 <p>
 The transformation in figure <m>1</m> is not one-to-one because <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m> map to the same vector <m>\mathbf{w}</m>, (i.e. <m>T(\mathbf{v}_1)=T(\mathbf{v}_2)</m>), yet the diagram suggests that <m>\mathbf{v}_1\neq\mathbf{v}_2</m>.
+</p> 
+
+<p>
+Let us rexamine the previous examples with this new terminology.
 </p> 
 
 
@@ -283,15 +294,7 @@ It is clear that <m>\begin{bmatrix}1\\0\\2\end{bmatrix}</m> and <m>\begin{bmatri
 <p>
 Since transformation in <xref ref="ex-notonto"/> is one-to-one but not invertible we can conjecture that being one-to-one is a necessary, but not a sufficient condition for a linear transformation to have an inverse.  We will consider the other necessary condition next.
 </p> 
-</subsection>
 
-
-
-
-
-
-<subsection xml:id="Subsection-Onto-Linear-Transformations">
-    <title>``Onto" Linear Transformations</title>
 
 <p>
 Figure <m>2</m> makes a convincing case that for a transformation to be invertible every element of the codomain must have something mapping to it. Transformations such that every element of the codomain is an image of some element of the domain are called <term>onto</term>.
@@ -305,6 +308,11 @@ Figure <m>2</m> makes a convincing case that for a transformation to be invertib
         </p>
     </statement>
 </definition>
+
+
+<p> 
+Once again, we place preceding examples in the light of "onto".
+</p> 
 
 <example xml:id="ex-notonto2">
     <statement>
@@ -458,7 +466,7 @@ We conclude that <m>T</m> is onto.
 
 
 <subsection xml:id="Subsection-Existence-of-Inverses">
-    <title>Existence of Inverses</title>
+    <title>Existence and Uniqueness of Inverses</title>
 
 <theorem xml:id="th-isomeansinvert">
 
@@ -514,6 +522,10 @@ We conclude that <m>T</m> is onto.
 </theorem>
 
 
+<p> 
+The theorem together with its proof is all very formal. In practice, one can verify whether an inverse exists by verifying onto and one-to-one (often easier than pinpointing an inverse).
+Here is a case in point:
+</p> 
 
 
 
@@ -532,7 +544,6 @@ Recall that <m>T</m> was introduced to demonstrate that <xref ref="th-existuniqu
        </p>
     </answer>
 </example>
-</subsection>
 
 
 
@@ -541,13 +552,12 @@ Recall that <m>T</m> was introduced to demonstrate that <xref ref="th-existuniqu
 
 
 
-
-
-<subsection xml:id="Subsection-Uniqueness-of-Inverses">
-    <title>Uniqueness of Inverses</title>
 
 <p>
-<xref ref="def-inverse"/> refers to <m>S</m> as <term>an</term> inverse of <m>T</m>, implying that there may be more than one such transformation <m>S</m>.  We will now show that if such a transformation <m>S</m> exists, it is unique.  This will allow us to refer to it as <em>the</em> inverse of <m>T</m> and to start using <m>T^{-1}</m> to denote the unique inverse of <m>T</m>.
+Having an inverse refers to <m>S</m> as <term>an</term> inverse of <m>T</m>, 
+implying that there may be more than one such transformation <m>S</m>.  
+We will now show that if such a transformation <m>S</m> exists, it is unique.  
+This will allow us to refer to it as <em>the</em> inverse of <m>T</m> and to start using <m>T^{-1}</m> to denote the unique inverse of <m>T</m>.
 </p> 
 
 <theorem xml:id="th-inverseisunique">

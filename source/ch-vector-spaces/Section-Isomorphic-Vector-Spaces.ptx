@@ -264,6 +264,9 @@ Invertible linear transformations, such as transformation <m>T</m> of <xref ref=
 It is worth pointing out that if <m>T:V\rightarrow W</m> is an isomorphism, then <m>T^{-1}:W\rightarrow V</m>, being linear and invertible, is also an isomorphism.
 </p>
 
+<p>
+While all this has been fairly abstract, previous examples do have this content attached to them.
+</p>
 
 <example xml:id="ex-lisor2">
     <p>
@@ -446,6 +449,11 @@ Isomorphisms preserve bases, but more generally, they preserve linear independen
         </p>
     </statement>
 </fact>
+
+
+<p> 
+The example below flags up the idea that there is little differences between the abstract case and the concrete one in <m> \R^n </m>.
+</p> 
 
 <example xml:id="ex-inverseimageoflinind">
     <statement>
@@ -649,7 +657,10 @@ Left to the reader. See <xref ref="prob-bijectionsbasisproof"/>.
 
     <statement>
         <p>
-            Suppose <m>T:V\rightarrow W</m> is an isomorphism, then the subset <m>\{\mathbf{v_1}, \mathbf{v}_2,\ldots ,\mathbf{v}_n\}</m> of <m>V</m> is linearly independent if and only if <m>\{T(\mathbf{v_1}), T(\mathbf{v}_2),\ldots ,T(\mathbf{v}_n)\}</m> is linearly independent in <m>W</m>.
+            Suppose <m>T:V\rightarrow W</m> is an isomorphism, then the subset <m>\{\mathbf{v_1}, \mathbf{v}_2,\ldots ,\mathbf{v}_n\}</m> '
+            of <m>V</m> is linearly independent if and only if 
+            <me>\{T(\mathbf{v_1}), T(\mathbf{v}_2),\ldots ,T(\mathbf{v}_n)\}</me> 
+        is linearly independent in <m>W</m>.
         </p>
     </statement>
 
@@ -659,7 +670,9 @@ We have already proved one direction of this this ``if and only if" statement as
     </p>
     
     <p>
-    To prove the other direction, suppose that <m>T(\mathbf{v_1}), T(\mathbf{v}_2),\ldots ,T(\mathbf{v}_n)</m> are linearly independent vectors in <m>W</m>.  We need to show that this implies that <m>\mathbf{v_1}, \mathbf{v}_2,\ldots ,\mathbf{v}_n</m> are linearly independent in <m>V</m>.  Observe that if <m>T</m> is an isomorphism, then <m>T^{-1}:W\rightarrow V</m> is also an isomorphism.  Thus, by <xref ref="th-onetoonelinind"/>,
+    To prove the other direction, suppose that <m>T(\mathbf{v_1}), T(\mathbf{v}_2),\ldots ,T(\mathbf{v}_n)</m> are linearly independent vectors in <m>W</m>.  
+    We need to show that this implies that <m>\mathbf{v_1}, \mathbf{v}_2,\ldots ,\mathbf{v}_n</m> are linearly independent in <m>V</m>.  
+    Observe that if <m>T</m> is an isomorphism, then <m>T^{-1}:W\rightarrow V</m> is also an isomorphism.  Thus, by <xref ref="th-onetoonelinind"/>,
     <me>
     T^{-1}(T(\mathbf{v_1})), T^{-1}(T(\mathbf{v}_2)),\ldots ,T^{-1}(T(\mathbf{v}_n))
     </me>
@@ -674,7 +687,8 @@ We have already proved one direction of this this ``if and only if" statement as
 
     <statement>
         <p>
-            Let <m>U</m>, <m>V</m> and <m>W</m> be vector spaces.  Suppose <m>T_1:U\rightarrow V</m> and <m>T_2:V\rightarrow W</m> are isomorphisms.  Then <m>T_2\circ T_1:U\rightarrow W</m> is an isomorphism.
+            Let <m>U</m>, <m>V</m> and <m>W</m> be vector spaces.  Suppose <m>T_1:U\rightarrow V</m> and <m>T_2:V\rightarrow W</m> are isomorphisms.  
+            Then <m>T_2\circ T_1:U\rightarrow W</m> is an isomorphism.
         </p>
     </statement>
 </theorem>
@@ -705,7 +719,7 @@ The proof is left to the reader (see <xref ref="prob-isocompisisoproof"/>).
             Let <m>V</m> and <m>W</m> be finite-dimensional vector spaces. Then
 
 <me>
-    V\cong W\quad\text{if and only if}\quad \mbox{dim}(V)=\mbox{dim}(W)
+    V\cong W\quad\text{if and only if}\quad \mbox{dim}(V)=\mbox{dim}(W).
 </me>
         </p>
     </statement>
@@ -790,6 +804,10 @@ From this theorem follows an important corollary that shows why we spent so much
         </p>
     </statement>
 </corollary>
+
+<p>
+    The corollary in examples makes it less surprising:
+</p> 
 
 <example xml:id="ex-planeisoplane">
     <p>

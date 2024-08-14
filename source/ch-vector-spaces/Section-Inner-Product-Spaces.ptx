@@ -50,6 +50,10 @@ Note that every subspace of an inner product space is again an inner product spa
 </p> 
 
 
+<p> 
+We present how <m> \R^n </m> is "the" examples and then proceed to a more fancy one.
+</p> 
+
 <example xml:id="exa-030303">
     <p>
         <m>\R^n</m> is an inner product space with the dot product as inner product:
@@ -294,6 +298,10 @@ If we refer to the inner product space <m>\R^n</m> without specifying the inner 
 
 
 
+<p> 
+The theorem and its proof may signal that finding this form is difficult. To dispel this, we provide an example with details.
+</p>
+
 
 
 <example xml:id="exa-030413">
@@ -397,6 +405,7 @@ We define the <term>distance</term> between vectors <m>\mathbf{v}</m> and <m>\ma
 </remark>
 
 
+
 <p> 
 Note that  Property <xref ref="prop-inner-prod-5"/> of Definition <xref ref="def-innerproductspace"/> guarantees that
 <m>\langle\mathbf{v}, \mathbf{v}\rangle \geq 0</m>, so <m>\norm{\mathbf{v}}</m> is a real number.
@@ -438,6 +447,9 @@ Hence the unit ball in <m>\R^2</m> is the <term>unit circle</term> <m>x^{2} + y^
 </p> 
 
 
+<p> 
+Unit balls do not have to be "balls". Their shape depend on the norm in play and therefore the inner product. Let us see an example.
+</p> 
 
 
 <example xml:id="exa-030469">
@@ -510,6 +522,9 @@ then <m>\langle\mathbf{v}, \mathbf{w}\rangle = \pm ab</m>. This shows that <m>b\
 
 
 
+<p> 
+Perhaps the following special case may seem more familiar to students who had a keen eye on C   alculus.
+</p> 
 
 <example xml:id="ex-030499">
     <p>
@@ -1204,7 +1219,7 @@ Let <m> \norm{ \mathbf{u} } = 1</m>, <m>\norm{ \mathbf{v} } = 2</m>, <m>\norm{ \
 <exercise xml:id="prob-inner-prod-17">
     <statement>
         <p>
-            Given the data in  <xref ref="ex-10-1-16"/>, show that <m>\mathbf{u} + \mathbf{v} = \mathbf{w}</m>.
+            Given the data in  <xref ref="ex-10-1-6"/>, show that <m>\mathbf{u} + \mathbf{v} = \mathbf{w}</m>.
         </p>
     </statement>
 </exercise>

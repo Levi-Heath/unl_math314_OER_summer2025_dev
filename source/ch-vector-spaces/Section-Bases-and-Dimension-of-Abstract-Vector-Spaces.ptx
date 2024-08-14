@@ -21,18 +21,27 @@ When working with <m>\R^n</m> and subspaces of <m>\R^n</m> we developed several 
     <title>Linear Independence</title>
     <statement>
         <p>
-            Let <m>V</m> be a vector space.  Let <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m> be vectors of <m>V</m>.  We say that the set <m>\{\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p\}</m> is <term>linearly independent</term> if the only solution to 
+            Let <m>V</m> be a vector space.  Let <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m> be vectors of <m>V</m>.  
+            We say that the set <m>\{\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p\}</m> is <term>linearly independent</term> if the only solution to 
 
 <me>
     a_1\mathbf{v}_1+a_2\mathbf{v}_2+\ldots +a_p\mathbf{v}_p=\mathbf{0}
 </me>
 
 is the <term>trivial solution</term> <m>a_1=a_2=\ldots =a_p=0</m>.
+</p> 
 
-If, in addition to the trivial solution, a <term>non-trivial solution</term> (not all <m>a_1, a_2,\ldots ,a_p</m> are zero) exists, then we say that the set <m>\{\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p\}</m> is <term>linearly dependent</term>.
+        <p> 
+If, in addition to the trivial solution, a <term>non-trivial solution</term> (not all <m>a_1, a_2,\ldots ,a_p</m> are zero) exists, 
+then we say that the set <m>\{\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p\}</m> is <term>linearly dependent</term>.
         </p>
     </statement>
 </definition>
+
+
+<p> 
+Let us examine this abstract version of bases in the context of polynomials, to get a feeling for these concepts.
+</p> 
 
 <example xml:id="ex-polyindset">
     <statement>
@@ -123,7 +132,7 @@ By the definition of a basis, we know that <m>\mathbf{v}</m> can be written as a
 
 But then we have:
 <md>
-<mrow> \amp a_1\mathbf{v}_1+ a_2\mathbf{v}_2+\ldots+a_n\mathbf{v}_n =b_1\mathbf{v}_1+ b_2\mathbf{v}_2+\ldots+b_n\mathbf{v}_n </mrow> 
+<mrow> a_1\mathbf{v}_1+ a_2\mathbf{v}_2+\ldots+a_n\mathbf{v}_n =b_1\mathbf{v}_1+ b_2\mathbf{v}_2+\ldots+b_n\mathbf{v}_n </mrow> 
 <mrow> a_1\mathbf{v}_1+ a_2\mathbf{v}_2+\ldots+a_n\mathbf{v}_n-(b_1\mathbf{v}_1+ b_2\mathbf{v}_2+\ldots+b_n\mathbf{v}_n)\amp =\mathbf{0} </mrow>
 <mrow> (a_1-b_1)\mathbf{v}_1+ (a_2-b_2)\mathbf{v}_2+\ldots+(a_n-b_n)\mathbf{v}_n\amp =\mathbf{0}  </mrow>
 </md>
@@ -442,6 +451,13 @@ The order of in which vectors <m>\mathbf{v}_1, \ldots ,\mathbf{v}_n</m> appear i
     </p>
 </statement>
 </remark>
+
+
+
+<p> 
+Coordinate vectors may seem abstract as described above. In examples, however, one can nearly always pinpoint exactly what the coordinates are. Some examples will emphaize this:
+</p> 
+
 
 <example xml:id="ex-coordvectorinpolyvectspace">
     <p>
