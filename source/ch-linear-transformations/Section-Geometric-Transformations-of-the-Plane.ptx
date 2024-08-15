@@ -1348,12 +1348,12 @@ Since <m>T_1\neq T_2</m>, we conclude that <m>M_{y=x}M_{y=-2x}\neq M_{y=-2x}M_{y
         </p> 
 
 <sidebyside>
-		<image width="55%">
+		<image width="30%">
    <shortdescription>Sheep</shortdescription>
     <latex-image>
       \begin{tikzpicture}[scale=2]
 \node[inner sep=0pt, anchor=base] (gulls) at (8.75mm,0)
-  {\includegraphics[width=35mm]{/workspaces/unl_math314/assets/sheep.jpg};
+  {\includegraphics[width=35mm]{/workspaces/unl_math314/assets/sheep.jpg}};
   \draw[\lt -\gt ] (-0.25,0)--(2,0);
   \draw[\lt -\gt ] (0,-0.25)--(0,1.8);
            \end{tikzpicture}
