@@ -4,8 +4,10 @@
     <title>Linear Independence</title>
 
     <p>
-        If a friend told you that they have a line spanned by <m>\begin{bmatrix}1\\1\end{bmatrix}</m> and <m>\begin{bmatrix}2\\2\end{bmatrix}</m> and <m>\begin{bmatrix}3\\3\end{bmatrix}</m>, you would probably think that your friend's description is a little excessive.
-        Isn't one of the above vectors sufficient to describe the line?  A line can be described as a span of one vector, but it can also be described as a span of two or more vectors.
+        If a friend told you that they have a line spanned by <m>[1,1]</m>, <m>[2,2]</m> and <m>[3,3]</m>, 
+        you would probably think that your friend's description is a little excessive.
+        After all, should one of the above vectors not ne sufficient to describe the line? 
+         A line can be described as a span of one vector, but it can also be described as a span of two or more vectors.
         There are many advantages, however, to using the most efficient description possible.
         In this section we will begin to explore what makes a description ``more efficient."
     </p>
@@ -18,7 +20,7 @@
             <p>
                 Consider the following collection of vectors:
                 <me>
-                    \left\{\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right\}
+                    \left\{\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right\}.
                 </me>
             </p>
 
@@ -62,7 +64,10 @@
                 In this Exploration we will examine what can happen to the span of a collection of vectors when a vector is removed from the collection.
                 </p>
                 <p>
-                First, let's remove <m>\begin{bmatrix}2\\1\end{bmatrix}</m> from <m>\left\{\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right\}</m>.
+                First, let's remove <m>[2,1]</m> from 
+                <me>
+                \left\{\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right\}.
+                </me>
                </p>
 
             <problem>
@@ -109,7 +114,12 @@
                 
             <statement>
                 <p>
-                Removing <m>\begin{bmatrix}2\\1\end{bmatrix}</m> from <m>\left\{\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right\}</m> does what?
+                Removing <m>[2,1]</m> from 
+                <me>
+                \left\{\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right\}
+               </me> 
+               
+               does what?
             
                 <ol marker="a">
                     <li>
@@ -134,7 +144,7 @@
 
 
                 <p>
-                Now let's remove <m>\begin{bmatrix}-4\\2\end{bmatrix}</m> from the <em>original</em> collection of vectors.
+                Now let's remove <m>[-4,2]</m> from the <em>original</em> collection of vectors.
             
                 </p>
 
@@ -182,7 +192,12 @@
         <problem>
         <statement>
              <p>
-            Removing <m>\begin{bmatrix}-4\\2\end{bmatrix}</m> from <m>\left\{\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right\}</m> does what?
+            Removing <m>[-4,2]</m> from 
+            <me>
+            \left\{\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right\}
+            </me> 
+            
+            does what?
              
         <ol marker="a">
         <li>
@@ -210,7 +225,7 @@
         <p>
             As you just discovered, removing a vector from a collection of vectors may or may not affect the span of the collection.
             We will refer to vectors that can be removed from a collection without changing the span as <term>redundant</term>.
-            In <xref ref="exp-redundantVecs1"/>, <m>\begin{bmatrix}-4\\2\end{bmatrix}</m> is <term>redundant</term>, while <m>\begin{bmatrix}2\\1\end{bmatrix}</m> is not.
+            In <xref ref="exp-redundantVecs1"/>, <m>[-4,2]</m> is <term>redundant</term>, while <m>[2,1]</m> is not.
         </p>
 
         <definition xml:id="def-redundant">
@@ -220,7 +235,7 @@
                     If we can remove one vector without changing the span of this set, then that vector is <term>redundant</term>.
                     In other words, if
                     <me>
-                        \mbox{span}\left(\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k\right)=\mbox{span}\left(\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_{j-1},\mathbf{v}_{j+1},\dots,\mathbf{v}_k\right)
+                        \mbox{span}\left(\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k\right)=\mbox{span}\left(\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_{j-1},\mathbf{v}_{j+1},\dots,\mathbf{v}_k\right),
                     </me>
                     we say that <m>\mathbf{v}_j</m> is a redundant element of <m>\{\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k\}</m>, or simply redundant.
                 </p>
@@ -228,24 +243,37 @@
         </definition>
 
         <p>
-            Our next goal is to see what causes <m>\begin{bmatrix}-4\\2\end{bmatrix}</m> of <xref ref="exp-redundantVecs1"/> to be redundant.
-            The answer lies not in the vector itself, but in its relationship to the other vectors in the collection.
-            Observe that <m>\begin{bmatrix}-4\\2\end{bmatrix}=-2\begin{bmatrix}2\\-1\end{bmatrix}</m>.
-            In other words, <m>\begin{bmatrix}-4\\2\end{bmatrix}</m> is a scalar multiple of another vector in the set.
-            To see why this matters, let's pick an arbitrary vector <m>\mathbf{w}=\begin{bmatrix}0\\2\end{bmatrix}</m> in <m>\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)</m>.
-            Vector <m>\mathbf{w}</m> is in the span because it can be written as a linear combination of the three vectors as follows
+            Our next goal is to see what causes <m>[-4,2]</m> of <xref ref="exp-redundantVecs1"/> to be redundant.
+            The answer lies not in the vector itself, but in its relationship to the other vectors.
+        </p> 
+
+        <p> 
+            Observe that <m>[-4,2]=-2[2,-1]</m>.
+            In other words, <m>[-4,2]</m> is a scalar multiple of another vector in the set.
+            To see why this matters, let's pick an arbitrary vector <m>\mathbf{w}=[0,2]</m> in 
             <me>
-                \mathbf{w}=\begin{bmatrix}0\\2\end{bmatrix}=\begin{bmatrix}2\\-1\end{bmatrix}+ \begin{bmatrix}-4\\2\end{bmatrix}+ \begin{bmatrix}2\\1\end{bmatrix}
+            \mbox{span}\left([2,-1], [-4,2], [2,1]\right).
             </me>
-            But <m>\begin{bmatrix}-4\\2\end{bmatrix}</m> is not essential to this linear combination because it can be replaced with <m>-2\begin{bmatrix}2\\-1\end{bmatrix}</m>, as shown below.
+            The vector <m>\mathbf{w}</m> is in the span because it can be written as a linear combination of the three vectors as follows
             <me>
-                \begin{bmatrix}0\\2\end{bmatrix}=\begin{bmatrix}2\\-1\end{bmatrix}+ \begin{bmatrix}-4\\2\end{bmatrix}+ \begin{bmatrix}2\\1\end{bmatrix}=\begin{bmatrix}2\\-1\end{bmatrix}+ (-2)\begin{bmatrix}2\\-1\end{bmatrix}+ \begin{bmatrix}2\\1\end{bmatrix}=-\begin{bmatrix}2\\-1\end{bmatrix}+ \begin{bmatrix}2\\1\end{bmatrix}
+                \mathbf{w}=\begin{bmatrix}0\\2\end{bmatrix}=\begin{bmatrix}2\\-1\end{bmatrix}+ \begin{bmatrix}-4\\2\end{bmatrix}+ \begin{bmatrix}2\\1\end{bmatrix}.
             </me>
-            Regardless of what vector <m>\mathbf{w}</m> we write as a linear combination of<m>\begin{bmatrix}2\\-1\end{bmatrix}</m>,<m> \begin{bmatrix}-4\\2\end{bmatrix}</m> and <m>\begin{bmatrix}2\\1\end{bmatrix}</m>, we will always be able to replace <m>\begin{bmatrix}-4\\2\end{bmatrix}</m> with <m>-2\begin{bmatrix}2\\-1\end{bmatrix}</m>, placing <m>\mathbf{w}</m> into the span of <m>\begin{bmatrix}2\\-1\end{bmatrix}</m> and <m>\begin{bmatrix}2\\1\end{bmatrix}</m>, and making <m>\begin{bmatrix}-4\\2\end{bmatrix}</m> redundant.
-            (Note that we can just as easily write <m>\begin{bmatrix}2\\-1\end{bmatrix}=-\frac{1}{2}\begin{bmatrix}-4\\2\end{bmatrix}</m>, and argue that <m>\begin{bmatrix}2\\-1\end{bmatrix}</m> is redundant.)  We conclude that only one of <m>\begin{bmatrix}-4\\2\end{bmatrix}</m> and <m>\begin{bmatrix}2\\-1\end{bmatrix}</m> is needed to maintain the span of the original three vectors.
+            But <m>[-4,2]</m> is not essential to this linear combination because it can be replaced with <m>-2[2,-1]</m>, as shown below.
+            <md>
+            <mrow>   \begin{bmatrix}0\\2\end{bmatrix} \amp = \begin{bmatrix}2\\-1\end{bmatrix}+ \begin{bmatrix}-4\\2\end{bmatrix}+ \begin{bmatrix}2\\1\end{bmatrix} </mrow>
+            <mrow>   \amp =\begin{bmatrix}2\\-1\end{bmatrix}+ (-2)\begin{bmatrix}2\\-1\end{bmatrix}+ \begin{bmatrix}2\\1\end{bmatrix} </mrow>
+            <mrow>   \amp =-\begin{bmatrix}2\\-1\end{bmatrix}+ \begin{bmatrix}2\\1\end{bmatrix}. </mrow> 
+            </md>
+            Regardless of what vector <m>\mathbf{w}</m> we write as a linear combination of<m>[2,-1]</m>,<m> [-4,2]</m> and <m>[2,1]</m>,
+            we will always be able to replace <m>[-4,2]</m> with <m>-2[2,-1]</m>, placing <m>\mathbf{w}</m> into the span of <m>[2,-1]</m> 
+            and <m>[2,1]</m>, and making <m>[-4,2]</m> redundant. Similarly, writing <m>[2,-1]=-\frac{1}{2}[-4,2]</m> makes <m>[2,-1]</m> redundant.
+            </p> 
+    
+            <p> 
+            We conclude that only one of <m>[-4,2]</m> and <m>[2,-1]</m> is needed to maintain the span of the original three vectors.
             We have
             <me>
-                \mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)
+                \mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right).
             </me>
             The left-most collection in this expression contains redundant vectors; the other two collections do not.
             In <xref ref="exp-redundantVecs1"/> we found one vector to be redundant because we could replace it with a scalar multiple of another vector in the set.
@@ -259,12 +287,11 @@
             <p>
                 Consider the set of vectors
                 <me>
-                    \left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}
+                    \left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}.
                 </me>
                 The three vectors are shown below.
                 RIGHT-CLICK and DRAG to rotate the interactive graph.
                 <figure>
-                    <caption> A larger version of this activity is available <url href="https://www.geogebra.org/calculator/x72vbsaw" visual="geogebra.org">here</url>. </caption>
                     <interactive xml:id="geogebra-Span-Triple_Vector" platform="geogebra" width="100%" aspect="400:400">
                     <slate xml:id="Span-Triple_Vector" surface="geogebra" material="x72vbsaw" aspect="400:400" />
                     </interactive>
@@ -302,20 +329,29 @@
         </answer>
 
         <p>
-Can we remove one of the vectors from the set without changing the span?  Observe that we can write <m>\begin{bmatrix}4\\4\\-1\end{bmatrix}</m> as a linear combination of the other two vectors
+Can we remove one of the vectors from the set without changing the span?  Observe that we can write <m>[4,4,1-1]</m> as a linear combination of the other two vectors
                 <men xml:id="eq-redundant">
-\begin{bmatrix}4\\4\\-1\end{bmatrix}=2\begin{bmatrix}1\\2\\-1\end{bmatrix}+1\begin{bmatrix}2\\0\\1\end{bmatrix}
+\begin{bmatrix}4\\4\\-1\end{bmatrix}=2\begin{bmatrix}1\\2\\-1\end{bmatrix}+1\begin{bmatrix}2\\0\\1\end{bmatrix}.
                 </men>
- This means that we can write any vector in <m>\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)</m> as a linear combination of only <m>\begin{bmatrix}1\\2\\-1\end{bmatrix}</m> and <m>\begin{bmatrix}2\\0\\1\end{bmatrix}</m> by replacing <m>\begin{bmatrix}4\\4\\-1\end{bmatrix}</m> with the expression in (<xref ref="eq-redundant"/>). For example, 
+ This means that we can write any vector in 
+ <me>
+\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)
+</me>
+
+as a linear combination of only <m>[1,2,-1]</m> and <m>[2,0,1]</m> by replacing <m>[4,4,1]</m> with the expression in <xref ref="eq-redundant"/>. For example, 
                 <me>
-    \begin{bmatrix}7\\6\\-1\end{bmatrix}=\begin{bmatrix}1\\2\\-1\end{bmatrix}+\begin{bmatrix}2\\0\\1\end{bmatrix}+\begin{bmatrix}4\\4\\-1\end{bmatrix}=3\begin{bmatrix}1\\2\\-1\end{bmatrix}+2\begin{bmatrix}2\\0\\1\end{bmatrix}
+    \begin{bmatrix}7\\6\\-1\end{bmatrix}=\begin{bmatrix}1\\2\\-1\end{bmatrix}+\begin{bmatrix}2\\0\\1\end{bmatrix}+\begin{bmatrix}4\\4\\-1\end{bmatrix}=3\begin{bmatrix}1\\2\\-1\end{bmatrix}+2\begin{bmatrix}2\\0\\1\end{bmatrix}.
                 </me>
 We have
                 <me>
-    \mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix}\right)
+    \mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix}\right).
                 </me>
- We conclude that vector <m>\begin{bmatrix}4\\4\\-1\end{bmatrix}</m> is redundant.  Can each of the other two vectors in the set 
-                <m>\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}</m> be considered redundant? You will address this later in the practice problems.  <!--You will address this question in <xref ref="prob-redundant1"/>-->.
+ We conclude that vector <m>[4,4,1-1]</m> is redundant.  Can each of the other two vectors in the set 
+                <me>
+            \left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}
+                </me> 
+                
+                be considered redundant? You will address this later in the practice problems.  <!--You will address this question in <xref ref="prob-redundant1"/>-->.
             </p>
         </exploration>
 
@@ -338,11 +374,14 @@ We have
             <statement>
                 <p>
             Let <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_k</m> be vectors of <m>\R^n</m>.  We say that the set <m>\{\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_k\}</m> is <term>linearly independent</term> if the only solution to 
-                    <men xml:id="defLinInd">
+                    <men xml:id="eq-defLinInd">
 c_1\mathbf{v}_1+c_2\mathbf{v}_2+\ldots +c_p\mathbf{v}_k=\mathbf{0}
                     </men>
 is the <term>trivial solution</term> <m>c_1=c_2=\ldots =c_k=0</m>.
-If, in addition to the trivial solution, a <term>non-trivial solution</term> (not all <m>c_1, c_2,\ldots ,c_k</m> are zero) exists, then we say that the set <m>\{\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_k\}</m> is <term>linearly dependent</term>.
+                </p> 
+
+                <p> 
+If, in addition to the trivial solution, a <term>non-trivial solution</term> (not all <m>c_1, c_2,\ldots ,c_k</m> are zero) exists, then the set <m>\{\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_k\}</m> is called <term>linearly dependent</term>.
                 </p>
             </statement>
         </definition>
@@ -369,7 +408,9 @@ Given a set of vectors <m>X=\{\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k\}</m>
                         </p>
                     </li>
                 </ol>
-It turns out that these questions are equivalent.  In other words, if the answer to one of them is ``YES", the answer to the other two is also ``YES".  Conversely, if the answer to one of them is ``NO", then the answer to the other two is also ``NO".  We will start by illustrating this idea with an example, then conclude this section by formally proving the equivalency.
+It turns out that these questions are equivalent.  In other words, if the answer to one of them is ``YES", the answer to the other two is also ``YES".  
+Conversely, if the answer to one of them is ``NO", then the answer to the other two is also ``NO".  
+We will start by illustrating this idea with an example, then conclude this section by formally proving the equivalency.
             </p>
         </remark>
 
@@ -381,7 +422,7 @@ It turns out that these questions are equivalent.  In other words, if the answer
                         <li xml:id="item-linindpart1">
                             <p>
                                 <me>
-                                    \begin{bmatrix}2\\-3\end{bmatrix}, \begin{bmatrix}0\\3\end{bmatrix},\begin{bmatrix}1\\-1\end{bmatrix},\begin{bmatrix}1\\-2\end{bmatrix}
+                                    \begin{bmatrix}2\\-3\end{bmatrix}, \begin{bmatrix}0\\3\end{bmatrix},\begin{bmatrix}1\\-1\end{bmatrix},\begin{bmatrix}1\\-2\end{bmatrix}.
                                 </me>
                                 </p>
                             </li>
@@ -390,7 +431,7 @@ It turns out that these questions are equivalent.  In other words, if the answer
                         <li xml:id="item-linindpart2">
                             <p>
                                 <me>
-                                    \begin{bmatrix}2\\1\\4\end{bmatrix},\begin{bmatrix}-3\\1\\1\end{bmatrix}
+                                    \begin{bmatrix}2\\1\\4\end{bmatrix},\begin{bmatrix}-3\\1\\1\end{bmatrix}.
                                 </me>
                                 </p>
                             </li>
@@ -403,7 +444,7 @@ It turns out that these questions are equivalent.  In other words, if the answer
  <p>           
 We will start by addressing linear independence for <xref ref="item-linindpart1"/>.  To do so, we will solve the vector equation
                     <men xml:id="linrelationpart1">
-c_1\begin{bmatrix}2\\-3\end{bmatrix}+c_2 \begin{bmatrix}0\\3\end{bmatrix}+c_3\begin{bmatrix}1\\-1\end{bmatrix}+c_4\begin{bmatrix}1\\-2\end{bmatrix}=\mathbf{0}
+c_1\begin{bmatrix}2\\-3\end{bmatrix}+c_2 \begin{bmatrix}0\\3\end{bmatrix}+c_3\begin{bmatrix}1\\-1\end{bmatrix}+c_4\begin{bmatrix}1\\-2\end{bmatrix}=\mathbf{0}.
                     </men>
  Clearly <m>c_1=c_2=c_3=c_4=0</m> is a solution to the equation.  The question is whether another solution exists.
 The vector equation translates into the following system:
@@ -411,7 +452,7 @@ The vector equation translates into the following system:
     \begin{array}{ccccccccc}
       2c_1 \amp  \amp \amp +\amp c_3\amp +\amp c_4\amp = \amp 0 \\
         -3c_1\amp  +\amp 3c_2\amp -\amp c_3\amp -\amp 2c_4\amp = \amp 0 \\
-      \end{array}
+      \end{array}.
                     </me>
   Writing the system in augmented matrix form and applying elementary row operations gives us the following reduced row-echelon form:
                     <me>
@@ -419,40 +460,40 @@ The vector equation translates into the following system:
  2\amp 0\amp 1\amp 1\amp 0\\-3\amp 3\amp -1\amp -2\amp 0
  \end{array}\right]\rightsquigarrow\left[\begin{array}{cccc|c}  
  1\amp 0\amp 1/2\amp 1/2\amp 0\\0\amp 1\amp 1/6\amp -1/6\amp 0
- \end{array}\right]
+ \end{array}\right].
                     </me>
  This shows that (<xref ref="linrelationpart1"/>) has infinitely many solutions:  
                     <me>
-    c_1=-\frac{1}{2}s-\frac{1}{2}t,\quad c_2=-\frac{1}{6}s+\frac{1}{6}t,\quad c_3=s,\quad c_4=t
+    c_1=-\frac{1}{2}s-\frac{1}{2}t,\quad c_2=-\frac{1}{6}s+\frac{1}{6}t,\quad c_3=s,\quad c_4=t.
                     </me>
  Letting <m>t=s=6</m>, we obtain the following:
                     <men xml:id="ex1">
- -6\begin{bmatrix}2\\-3\end{bmatrix}+0 \begin{bmatrix}0\\3\end{bmatrix}+6\begin{bmatrix}1\\-1\end{bmatrix}+6\begin{bmatrix}1\\-2\end{bmatrix}=\mathbf{0}
+ -6\begin{bmatrix}2\\-3\end{bmatrix}+0 \begin{bmatrix}0\\3\end{bmatrix}+6\begin{bmatrix}1\\-1\end{bmatrix}+6\begin{bmatrix}1\\-2\end{bmatrix}=\mathbf{0}.
                     </men>
  We conclude that the vectors are linearly dependent.
 </p>
 
 <p> 
- Observe that (<xref ref="ex1"/>) allows us to solve for one of the vectors and express it as a linear combination of the others. For example, 
+ Observe that <xref ref="ex1"/> allows us to solve for one of the vectors and express it as a linear combination of the others. For example, 
                     <men xml:id="ex1lincomb">
-    \begin{bmatrix}2\\-3\end{bmatrix}=0 \begin{bmatrix}0\\3\end{bmatrix}+\begin{bmatrix}1\\-1\end{bmatrix}+\begin{bmatrix}1\\-2\end{bmatrix}
+    \begin{bmatrix}2\\-3\end{bmatrix}=0 \begin{bmatrix}0\\3\end{bmatrix}+\begin{bmatrix}1\\-1\end{bmatrix}+\begin{bmatrix}1\\-2\end{bmatrix}.
                     </men>
 This would not be possible if a nontrivial solution to the equation
                     <me>
     c_1\begin{bmatrix}2\\-3\end{bmatrix}+c_2 \begin{bmatrix}0\\3\end{bmatrix}+c_3\begin{bmatrix}1\\-1\end{bmatrix}+c_4\begin{bmatrix}1\\-2\end{bmatrix}=\mathbf{0}
                     </me>
 did not exist.
-Using the linear combination in (<xref ref="ex1lincomb"/>) and the argument of  <xref ref="exp-redundantVecs2"/>, we conclude that <m>\begin{bmatrix}2\\-3\end{bmatrix}</m> is redundant in 
+Using the linear combination in <xref ref="ex1lincomb"/> and the argument of  <xref ref="exp-redundantVecs2"/>, we conclude that <m>[2,-3]</m> is redundant in 
                     <me>
-    \left\{\begin{bmatrix}2\\-3\end{bmatrix}, \begin{bmatrix}0\\3\end{bmatrix},\begin{bmatrix}1\\-1\end{bmatrix},\begin{bmatrix}1\\-2\end{bmatrix}\right\}
+    \left\{\begin{bmatrix}2\\-3\end{bmatrix}, \begin{bmatrix}0\\3\end{bmatrix},\begin{bmatrix}1\\-1\end{bmatrix},\begin{bmatrix}1\\-2\end{bmatrix}\right\}.
                     </me>
-We find that the answer to all questions in Remark <xref ref="LinIndEquiv"/> is ``YES".
+We find that the answer to all questions in <xref ref="LinIndEquiv"/> is ``YES".
 </p>
 
 <p>
 For part <xref ref="item-linindpart2"/> To address linear independence, we need to solve the equation
                     <me>
-    c_1\begin{bmatrix}2\\1\\4\end{bmatrix}+c_2\begin{bmatrix}-3\\1\\1\end{bmatrix}=\mathbf{0}
+    c_1\begin{bmatrix}2\\1\\4\end{bmatrix}+c_2\begin{bmatrix}-3\\1\\1\end{bmatrix}=\mathbf{0}.
                     </me>
  Converting the equation to augmented matrix form and performing row reduction gives us
                     <me>
@@ -460,16 +501,32 @@ For part <xref ref="item-linindpart2"/> To address linear independence, we need 
  2\amp -3\amp 0\\1\amp 1\amp 0\\4\amp 1\amp 0
  \end{array}\right]\rightsquigarrow\left[\begin{array}{cc|c}  
  1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 0
- \end{array}\right]
+ \end{array}\right].
                     </me>
 
  This shows that <m>c_1=c_2=0</m> is the only solution.  Therefore the two vectors are linearly independent.
- Furthermore, we cannot write one of the vectors as a linear combination of the other.  (Do you see that the only way this would be possible with a set of two vectors is if they were scalar multiples of each other?)
-Finally, we observe that removing either vector would change the span from a plane in <m>\R^3</m> to a line in <m>\R^3</m>, so the answer to all three questions in Remark <xref ref="LinIndEquiv"/> is ``NO".
+ Furthermore, we cannot write one of the vectors as a linear combination of the other.  
+ Do you see that the only way this would be possible with a set of two vectors is if they were scalar multiples of each other?
+                </p> 
+
+                <p> 
+Finally, we observe that removing either vector would change the span from a plane in <m>\R^3</m> to a line in <m>\R^3</m>,
+ so the answer to all three questions in <xref ref="LinIndEquiv"/> is ``NO".
  </p>
             </answer>
-
         </example>
+
+
+
+
+
+
+
+
+
+
+
+
 
         <theorem xml:id="th-lindeplincombofother">
             <statement>
@@ -507,17 +564,24 @@ c_1\mathbf{v}_1+c_2\mathbf{v}_2+\ldots +c_j\mathbf{v}_j+\ldots +c_k\mathbf{v}_k=
                 </me>
  has a non-trivial solution.  In other words at least one of the constants, say <m>c_j</m>, does not equal zero.  This allows us to solve for <m>\mathbf{v}_j</m>:
                 <md>
--c_j\mathbf{v}_j\amp =c_1\mathbf{v}_1+c_2\mathbf{v}_2+\ldots +c_k\mathbf{v}_k \\ \\
-\mathbf{v}_j\amp =-\frac{c_1}{c_j}\mathbf{v}_1-\frac{c_2}{c_j}\mathbf{v}_2-\ldots -\frac{c_k}{c_j}\mathbf{v}_k
+<mrow> -c_j\mathbf{v}_j\amp =c_1\mathbf{v}_1+c_2\mathbf{v}_2+\ldots +c_k\mathbf{v}_k \\ \\
+\mathbf{v}_j </mrow> 
+<mrow> \amp =-\frac{c_1}{c_j}\mathbf{v}_1-\frac{c_2}{c_j}\mathbf{v}_2-\ldots -\frac{c_k}{c_j}\mathbf{v}_k. </mrow>
                 </md>
-(Do you see why it was important to have one of the constants nonzero?)  This shows that <m>\mathbf{v}_j</m> may be expressed as a linear combination of the other vectors.
+Do you see why it was important to have one of the constants nonzero?
+ This shows that <m>\mathbf{v}_j</m> may be expressed as a linear combination of the other vectors.
+            </p> 
 
-
+            <p> 
                For the implication <xref ref="th-lindeplincombofother-b"/> <m>\implies</m> <xref ref="th-lindeplincombofother-c"/>, suppose <m>\mathbf{v}_j</m> is a linear combination of <m>\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k</m>.  We will show that <m>\mathbf{v}_j</m> is redundant by showing that
                 <me>
     \mbox{span}\left(\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k\right)=\mbox{span}\left(\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_{j-1},\mathbf{v}_{j+1},\dots,\mathbf{v}_k\right).
                 </me>
-To show equality of the two spans we will pick a vector in the left span and show that it is also an element of the span on the right.  Then, we will pick a vector in the right span and show that it is also an element of the span on the left, and we will conclude that the sets are equal.
+To show equality of the two spans we will pick a vector in the left span and show that it is also an element of the span on the right.  
+Then, we will pick a vector in the right span and show that it is also an element of the span on the left, and we will conclude that the sets are equal.
+            </p> 
+
+            <p> 
 Observe that if <m>\mathbf{w}</m> is in <m>\mbox{span}\left(\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_{j-1},\mathbf{v}_{j+1},\dots,\mathbf{v}_k\right)</m>, then it has to be in <m>\mbox{span}\left(\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k\right)</m>. (Why?)
 Now suppose <m>\mathbf{w}</m> is in <m>\mbox{span}\left(\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k\right)</m>.  We need to show that <m>\mathbf{w}</m> is also in <m>\mbox{span}\left(\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_{j-1},\mathbf{v}_{j+1},\dots,\mathbf{v}_k\right)</m>.
 By assumption, we can write <m>\mathbf{v}_j</m> as
@@ -603,7 +667,7 @@ Theorem <xref ref="th-lindeplincombofother"/> gives us a convenient ways of look
 Two vectors are linearly dependent if and only if one is a scalar multiple of the other.  Two nonzero linearly dependent vectors may look like this:
             </p>
 
-                <image width="60%">
+                <image width="30%">
                     <shortdescription>Two vectors drawn</shortdescription>
                     <latex-image>
       \begin{tikzpicture}[scale=0.8]
@@ -616,7 +680,7 @@ Two vectors are linearly dependent if and only if one is a scalar multiple of th
 or like this:
 </p> 
 
-                <image width="30%">
+                <image width="20%">
                     <shortdescription>
                         One vector flipped
                     </shortdescription>
@@ -631,7 +695,7 @@ or like this:
 <p>
 Two linearly independent vectors will look like this:
 </p>
-                <image width="30%">
+                <image width="20%">
                     <shortdescription>
                         One vector rotated
                     </shortdescription>
@@ -657,7 +721,7 @@ Two linearly independent vectors will look like this:
                         <p>
                             (Linearly Dependent Vectors) The three vectors are scalar multiples of each other.
                         </p>
-                        <image width="65%">
+                        <image width="40%">
                             <shortdescription>
                             </shortdescription>
                             <latex-image>
@@ -674,7 +738,7 @@ Two linearly independent vectors will look like this:
                         <p>
                             (Linearly Dependent Vectors) Two of the vectors are scalar multiples of each other.
                         </p>
-                        <image width="65%">
+                        <image width="40%">
                             <shortdescription>
                             </shortdescription>
                             <latex-image>
@@ -692,7 +756,7 @@ Two linearly independent vectors will look like this:
                             (Linearly Dependent Vectors) One vector can be viewed as the diagonal of a parallelogram determined by scalar multiples of the other two vectors.
                             All three vectors lie in the same plane.
                         </p>
-                            <image width="80%">
+                            <image width="65%">
                                 <shortdescription>
                                 </shortdescription>
                                 <latex-image>
@@ -724,76 +788,113 @@ Two linearly independent vectors will look like this:
 
 
 
-    <subsection xml:id="Subsection-Practice-Problems">
-        <title>Practice Problems</title>
-
-        <exercise xml:id="prob-redundant1">
-            <statement>
-                <p>
-                    In Exploration <xref ref="exp-redundantVecs2"/> we considered the following set of vectors
-                    <me>
-                        \left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}
-                    </me>
-                    and demonstrated that <m>\begin{bmatrix}4\\4\\-1\end{bmatrix}</m> is redundant by using the fact that it is a linear combination of the other two vectors.
-
-                    <ol>
-                        <li>
-                            <p>
-                                Express each of <m>\begin{bmatrix}1\\2\\-1\end{bmatrix}</m> and <m>\begin{bmatrix}2\\0\\1\end{bmatrix}</m> as a linear combination of the remaining vectors.
-                                <md>
-                                <mrow>   \begin{bmatrix}1\\2\\-1\end{bmatrix}=-\frac{1{2}}\begin{bmatrix}2\\0\\1\end{bmatrix}+\frac{1{2}}\begin{bmatrix}4\\4\\-1\end{bmatrix}  </mrow>
-                                <mrow>        \begin{bmatrix}2\\0\\1\end{bmatrix}=-2\begin{bmatrix}1\\2\\-1\end{bmatrix}+1\begin{bmatrix}4\\4\\-1\end{bmatrix}                 </mrow>
-                                </md>
-                                </p>
-                            </li>
-
-                      
-
-                        <li>
-                            <p>
-                                Which of the following is NOT true?
-                            </p>
-                        
 
 
-                        <choices>
-                            <choice>
-                            <statement>
-                                <p>
-                                    If <m>\mathbf{w} </m> is in <m>\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)</m>, then <m>\mathbf{w}</m> is in <m>\mbox{span}\left(\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)</m>.
-                                </p>
-                            </statement>
-                            </choice> 
-
-                            
-                            <choice>
-                            <statement>
-                                <p>
-                                    Both <m>\begin{bmatrix} 1
-                                        \\2\\-1\end{bmatrix}</m> and <m>\begin{bmatrix}2\\0\\1\end{bmatrix}</m> are redundant in <m>\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}</m>.
-                                </p>
-                            </statement>
-                            </choice>
-        
-                            <choice correct="yes">
-                            <statement>
-                                <p>
-                                    We can remove <m>\begin{bmatrix} 1\\2\\-1\end{bmatrix}</m> and <m>\begin{bmatrix}2\\0\\1\end{bmatrix}</m> from <m>\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}</m> at the same time without affecting the span.
-                                </p>
-                            </statement>
-                            </choice>
-                        </choices>
-                    </li>
-                    </ol>
-                </p>
-            </statement>
-        </exercise>
 
 
+
+
+
+
+
+
+
+      
 
         <!--<em>Problems <xref ref="prob-linindmultchoice1</em>-\ref{prob-linindmultchoice4"/>} -->
 
         <exercises xml:id="prob-linindmultchoice1">
+
+
+
+
+            <exercise xml:id="prob-redundant1">
+                <statement>
+                    <p>
+                        In <xref ref="exp-redundantVecs2"/> we considered the following set of vectors
+                        <me>
+                            \left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}
+                        </me>
+                        and demonstrated that <m>[4,4,-1]</m> is redundant by using the fact that it is a linear combination of the other two vectors.
+    
+                        <ol>
+                            <li>
+                                <p>
+                                    Express each of <m>[1,2,-1]</m> and <m>[2,0,1]</m> as a linear combination of the remaining vectors.
+                                </p>
+                                </li>
+    
+                          
+    
+                            <li>
+                                <p>
+                                    Which of the following is NOT true?
+                                </p>
+                            </li>
+                        </ol>
+                    </p>
+                </statement>
+    
+    
+                            <choices>
+                                <choice>
+                                <statement>
+                                    <p>
+                                        If <m>\mathbf{w} </m> is in
+                                        <me>
+                                        \mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right),
+                                    </me>
+                                    
+                                    then <m>\mathbf{w}</m> is in 
+                                    <me>
+                                    \mbox{span}\left(\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right).
+                                    </me>
+                                    </p>
+                                </statement>
+                                </choice> 
+    
+                                
+                                <choice>
+                                <statement>
+                                    <p>
+                                        Both <m>[1,2,-1]</m> and <m>[2,0,1]</m> are redundant in 
+                                        <me>
+                                        \left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}.
+                                        </me>
+                                    </p>
+                                </statement>
+                                </choice>
+            
+                                <choice correct="yes">
+                                <statement>
+                                    <p>
+                                        We can remove <m>[1,2,-1]</m> and <m>[2,0,1]</m> from 
+                                    <me>
+                                    \left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}
+                                    </me> 
+                                    
+                                    at the same time without affecting the span.
+                                    </p>
+                                </statement>
+                                </choice>
+                            </choices>
+
+                            <answer>
+                                <p> 
+                                    <md>
+                                        <mrow>   \begin{bmatrix}1\\2\\-1\end{bmatrix} =-\frac{1}{2}\begin{bmatrix}2\\0\\1\end{bmatrix}+\frac{1}{2}\begin{bmatrix}4\\4\\-1\end{bmatrix}  </mrow>
+                                        <mrow>        \begin{bmatrix}2\\0\\1\end{bmatrix}=-2\begin{bmatrix}1\\2\\-1\end{bmatrix}+1\begin{bmatrix}4\\4\\-1\end{bmatrix}                 </mrow>
+                                    </md>
+                                </p>
+                            </answer>
+            </exercise>
+    
+    
+
+
+
+
+
         <exercisegroup>
         <introduction>
             <p>
@@ -1015,7 +1116,7 @@ Two linearly independent vectors will look like this:
 
                 <hint>
                 <p>
-                If we rewrite Equation <xref ref="eq-defLinInd"/> for five vectors in <m>\R^2</m> as a system of equations, how many equations and unknowns will it have?  What does this imply about the number of solutions?
+                If we rewrite  <xref ref="eq-defLinInd"/> for five vectors in <m>\R^2</m> as a system of equations, how many equations and unknowns will it have?  What does this imply about the number of solutions?
                 </p>
                 </hint>
         </exercise>
@@ -1278,5 +1379,4 @@ Two linearly independent vectors will look like this:
         </exercise>
         
     </exercises>
-    </subsection>
 </section>
