@@ -64,6 +64,9 @@ The <m>( i, j)</m>-entry of <m>A</m> becomes the
     </statement>
 </definition>
 
+<p> 
+Here is a short exercise to warm you up to the transpose matrix.
+</p> 
 
 
 <problem xml:id="ex-transposematrix">
@@ -75,7 +78,7 @@ A =
 \begin{bmatrix}
 1 \amp  2 \amp  -6 \\
 3 \amp  5 \amp  4
-\end{bmatrix}
+\end{bmatrix}.
 </me>
        </p>
     </statement>
@@ -87,7 +90,7 @@ A^T =
 1 \amp  3 \\
 2 \amp  5 \\
 -6 \amp  4
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 
 Note that <m>A</m> is a <m>2 \times 3</m> matrix, while <m>A^T</m> is a <m>3 \times 2</m> matrix. The columns of <m>A</m> are the rows of <m>A^T</m>, and the rows of <m>A</m> are the columns of <m>A^T</m>.
@@ -134,7 +137,13 @@ We will prove <xref ref="item-matrixtranspose1"/>.  The remaining properties are
 
 <proof>
     <p>[Proof of <xref ref="item-matrixtranspose1"/>:]
-Note that <m>A</m> and <m>B</m> have compatible dimensions, so that <m>AB</m> is defined and has dimensions <m>m\times p</m>.  Thus, <m>(AB)^T</m> has dimensions <m>p\times m</m>.  On the right side of the equality, <m>A^T</m> has dimensions <m>n\times m</m>, and <m>B^T</m> has dimensions <m>p\times n</m>.  Therefore <m>B^TA^T</m> is defined and has dimensions <m>p\times m</m>.  Now we know that <m>(AB)^T</m> and <m>B^TA^T</m> have the same dimensions.
+Note that <m>A</m> and <m>B</m> have compatible dimensions, so that <m>AB</m> is defined and has dimensions <m>m\times p</m>.  
+Thus, <m>(AB)^T</m> has dimensions <m>p\times m</m>.  On the right side of the equality, <m>A^T</m> has dimensions <m>n\times m</m>, 
+and <m>B^T</m> has dimensions <m>p\times n</m>.  Therefore <m>B^TA^T</m> is defined and has dimensions <m>p\times m</m>.  
+    </p> 
+    
+    <p> 
+    Now we know that <m>(AB)^T</m> and <m>B^TA^T</m> have the same dimensions.
     </p>
 
 <p>
@@ -185,7 +194,7 @@ A=
 2 \amp  1 \amp  3 \\
 1 \amp  5 \amp  -3 \\
 3 \amp  -3 \amp  7
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 Show that <m>A</m> is symmetric.
        </p>
@@ -198,7 +207,7 @@ A^{T} =
 2 \amp  1 \amp  3 \\
 1 \amp  5 \amp  -3 \\
 3 \amp  -3 \amp  7
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 Hence, <m>A = A^{T}</m>, so <m>A</m> is symmetric.
        </p>
@@ -215,7 +224,7 @@ A=
 0 \amp  1 \amp  3 \\
 -1 \amp  0 \amp  2 \\
 -3 \amp  -2 \amp  0
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 Show that <m>A</m> is skew symmetric.
        </p>
@@ -228,7 +237,7 @@ A^{T} =
 0 \amp  -1 \amp  -3\\
 1 \amp   0 \amp  -2\\
 3 \amp   2 \amp   0
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 
 Each entry of <m>A^T</m> is equal to <m>-1</m> times the same entry of <m>A</m>. 
@@ -241,7 +250,7 @@ Hence, <m>A^{T} = - A</m> and so by <xref ref="def-symmetricandskewsymmetric"/>,
 <p>
 A special case of a symmetric matrix is a <term>diagonal matrix</term>.  A diagonal matrix is a square matrix whose entries outside of the main diagonal are all zero.  The identity matrix <m>I</m> is a diagonal matrix.  Here is another example.
 <me>
-    \begin{bmatrix}2\amp 0\amp 0\amp 0\\0\amp -3\amp 0\amp 0\\0\amp 0\amp 1\amp 0\\0\amp 0\amp 0\amp 4\end{bmatrix}
+    \begin{bmatrix}2\amp 0\amp 0\amp 0\\0\amp -3\amp 0\amp 0\\0\amp 0\amp 1\amp 0\\0\amp 0\amp 0\amp 4\end{bmatrix}.
 </me>
 </p>
 </subsection>
@@ -251,10 +260,6 @@ A special case of a symmetric matrix is a <term>diagonal matrix</term>.  A diago
 
 
 
-
-
-<subsection xml:id="Subsection-Practice-Problems">
-    <title>Practice Problems</title>
 
 
 <exercises>
@@ -403,5 +408,5 @@ Make a conjecture about the main diagonal entries of a skew symmetric matrix.  P
 </exercises>
 
 
-</subsection>
+
 </section>

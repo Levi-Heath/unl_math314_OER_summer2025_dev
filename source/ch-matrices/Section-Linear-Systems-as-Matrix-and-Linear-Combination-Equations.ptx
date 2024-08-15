@@ -10,13 +10,6 @@
 
 
 
-  
-
-
-
-<subsection xml:id="Subsection-A-Linear-System-as-a-Matrix-Equation">
-    <title>A Linear System as a Matrix Equation</title>
-
 <exploration xml:id="init-matrixmultsyseq">
     <p>
         Consider the linear system
@@ -29,21 +22,21 @@
     \end{array}
 </me>
 
-Let's construct the coefficient matrix <m>A</m> and multiply it by <m>\mathbf{x}=\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}</m> on the right.  
+Let's construct the coefficient matrix <m>A</m> and multiply it by <m>\mathbf{x}=[x_1\\x_2\\x_3\\x_4]</m> on the right:
 
 <me>
-    A\mathbf{x}=\begin{bmatrix}3\amp -2\amp 4\amp 1\\-1\amp 0\amp 5\amp -2\\2\amp 1\amp -1\amp 3\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}=\begin{bmatrix}3x_1-2x_2+4x_3+x_4\\-x_1+5x_3-2x_4\\2x_1+x_2-x_3+3x_4\end{bmatrix}
+    A\mathbf{x}=\begin{bmatrix}3\amp -2\amp 4\amp 1\\-1\amp 0\amp 5\amp -2\\2\amp 1\amp -1\amp 3\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}=\begin{bmatrix}3x_1-2x_2+4x_3+x_4\\-x_1+5x_3-2x_4\\2x_1+x_2-x_3+3x_4\end{bmatrix}.
 </me>
 
-Observe that each component of the product vector corresponds to one of the equations in the system.  Let <m>\mathbf{b}=\begin{bmatrix}5\\1\\-4\end{bmatrix}</m>.  Then 
+Observe that each component of the product vector corresponds to one of the equations in the system.  Let <m>\mathbf{b}=[5\\1\\-4]</m>.  Then 
 
 <me>
-    A\mathbf{x}=\mathbf{b}
+    A\mathbf{x}=\mathbf{b},
 </me>
 
 
 <me>
-    \begin{bmatrix}3\amp -2\amp 4\amp 1\\-1\amp 0\amp 5\amp -2\\2\amp 1\amp -1\amp 3\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}=\begin{bmatrix}5\\1\\-4\end{bmatrix}
+    \begin{bmatrix}3\amp -2\amp 4\amp 1\\-1\amp 0\amp 5\amp -2\\2\amp 1\amp -1\amp 3\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}=\begin{bmatrix}5\\1\\-4\end{bmatrix}.
 </me>
 
 is a matrix equation that corresponds to our system of equations.
@@ -105,7 +98,9 @@ Solving this matrix equation (or showing that a solution does not exist) amounts
 </p>
 
 
-
+<p>
+Being able to use matrices to rewrite and solve systems of equations is crucial, so here are two examples to get you into this mindset.
+</p>
 
 
 
@@ -232,9 +227,11 @@ One way to obtain a solution is to convert this to a system of equations.  It is
 </example>
 
 <p>
-The solution given in (<xref ref="general-vs-particular"/>) is an example of a <term>general solution</term> because it accounts for all of the solutions to the system.  Letting <m>s</m> and <m>t</m> take on specific values produces <term>particular solutions</term>.  For example, <m>\begin{bmatrix}2\\-1\\1\\-1\end{bmatrix}</m> is a particular solution that corresponds to <m>s=1</m>, <m>t=-1</m>.
+The solution given in <xref ref="general-vs-particular"/> is an example of a <term>general solution</term> 
+because it accounts for all of the solutions to the system.  
+Letting <m>s</m> and <m>t</m> take on specific values produces <term>particular solutions</term>.  
+For example, <m>[2\\-1\\1\\-1]</m> is a particular solution that corresponds to <m>s=1</m>, <m>t=-1</m>.
 </p>
-</subsection>
 
 
 
@@ -252,7 +249,8 @@ The solution given in (<xref ref="general-vs-particular"/>) is an example of a <
     <title>Singular and Nonsingular Matrices</title>
 
     <p>
-Our examples so far involved non-square matrices.  Square matrices, however, play a very important role in linear algebra.  This section will focus on square matrices.
+Our examples so far involved non-square matrices.  Square matrices, however, play a very important role in linear algebra.  
+This section will focus on square matrices. We start the paragraph with an example to motivate.
     </p>
 
 <example xml:id="ex-nonsingularintro">
@@ -260,7 +258,7 @@ Our examples so far involved non-square matrices.  Square matrices, however, pla
         <p>
             Let 
 <me>
-    A=\begin{bmatrix}3\amp -1\amp 1\\0\amp 1\amp 2\\1\amp 2\amp 2\end{bmatrix}\quad\text{and}\quad\mathbf{b}=\begin{bmatrix}2\\1\\0\end{bmatrix}
+    A=\begin{bmatrix}3\amp -1\amp 1\\0\amp 1\amp 2\\1\amp 2\amp 2\end{bmatrix}\quad\text{and}\quad\mathbf{b}=\begin{bmatrix}2\\1\\0\end{bmatrix}.
 </me>
 
 Solve <m>A\mathbf{x}=\mathbf{b}</m>.
@@ -279,14 +277,14 @@ Solve <m>A\mathbf{x}=\mathbf{b}</m>.
  \\
  \end{array}\left[\begin{array}{ccc|c}  
  1\amp 0\amp 0\amp 0\\0\amp 1\amp 0\amp -1\\0\amp 0\amp 1\amp 1
- \end{array}\right]
+ \end{array}\right].
 </me>
 
  
  We can immediately see that the solution vector is
  
 <me>
-    \mathbf{x}=\begin{bmatrix}0\\-1\\1\end{bmatrix}
+    \mathbf{x}=\begin{bmatrix}0\\-1\\1\end{bmatrix}.
 </me>
        </p>
     </answer>
@@ -451,12 +449,12 @@ By <xref ref="th-nonsingularequivalency1"/>, a matrix equation <m>A\mathbf{x}=\m
  \\
  \end{array}\left[\begin{array}{ccc|c}  
  1\amp 0\amp 2/3\amp 1\\0\amp 1\amp 1/3\amp -2\\0\amp 0\amp 0\amp 0
- \end{array}\right]
+ \end{array}\right].
 </me>
 
  There are infinitely many solutions and they all have the following form:
 <me>
-    \mathbf{x}=\begin{bmatrix}1-(2/3)t\\-2-(1/3)t\\t\end{bmatrix}=\begin{bmatrix}1\\-2\\0\end{bmatrix}+\begin{bmatrix}-2/3\\-1/3\\1\end{bmatrix}t
+    \mathbf{x}=\begin{bmatrix}1-(2/3)t\\-2-(1/3)t\\t\end{bmatrix}=\begin{bmatrix}1\\-2\\0\end{bmatrix}+\begin{bmatrix}-2/3\\-1/3\\1\end{bmatrix}t.
 </me>
 </p>
 
@@ -472,7 +470,7 @@ By <xref ref="th-nonsingularequivalency1"/>, a matrix equation <m>A\mathbf{x}=\m
  \\
  \end{array}\left[\begin{array}{ccc|c}  
  1\amp 0\amp 2/3\amp 0\\0\amp 1\amp 1/3\amp 0\\0\amp 0\amp 0\amp 1
- \end{array}\right]
+ \end{array}\right].
 </me>
        </p>
     </answer>
@@ -606,8 +604,8 @@ This shows that this matrix equation has no solutions.  We conclude that <m>\mat
 
 
 
-<subsection xml:id="Subsection-Practice-Problems">
-    <title>Practice Problems</title>
+
+
 
     <exercises>
 
@@ -619,7 +617,7 @@ This shows that this matrix equation has no solutions.  We conclude that <m>\mat
      <mrow>  3x\amp - \amp y \amp - \amp 2z\amp = \amp 4 </mrow>
      <mrow>-x\amp  \amp  \amp + \amp z\amp = \amp -1 </mrow>
      <mrow> \amp  \amp -y \amp + \amp 5z\amp =\amp 0 </mrow>
-    \end{array}</md>
+    \end{array}.</md>
         </p>
     </statement>
 </exercise>
@@ -646,7 +644,7 @@ Use an augmented matrix and elementary row operations to find coefficients <m>x_
                 \end{bmatrix}=\begin{bmatrix}
                   1\\
                   8
-                \end{bmatrix}
+                \end{bmatrix}.
        </me>
     </p>
 </statement>
@@ -654,7 +652,7 @@ Use an augmented matrix and elementary row operations to find coefficients <m>x_
  <answer>
     <p>
         <me>
-            x_1=-1, x_2=2
+            x_1=-1, x_2=2.
         </me>   
     </p>
  </answer>
@@ -675,7 +673,7 @@ Use an augmented matrix and elementary row operations to find coefficients <m>x_
          \end{bmatrix}=\begin{bmatrix}
            0\\
            3
-         \end{bmatrix}
+         \end{bmatrix}.
 </me>
 </p>      
 </statement>
@@ -703,7 +701,7 @@ The system is inconsistent and no <m>x_1, x_2</m> exist.
 
 <exercise xml:id="spanofvect1">
 <statement>
- <m>\mathbf{b}=\begin{bmatrix}2\\14\\7\end{bmatrix}</m> and <m>\left\{\begin{bmatrix}2\\-1\\1\end{bmatrix}, \begin{bmatrix}-3\\4\\1\end{bmatrix}, \begin{bmatrix}1\\-3\\-2\end{bmatrix}\right\}</m>
+ <m>\mathbf{b}=\begin{bmatrix}2\\14\\7\end{bmatrix}</m> and <m>\left\{\begin{bmatrix}2\\-1\\1\end{bmatrix}, \begin{bmatrix}-3\\4\\1\end{bmatrix}, \begin{bmatrix}1\\-3\\-2\end{bmatrix}\right\}.</m>
 </statement>
 
 <answer>
@@ -716,7 +714,7 @@ The vector <m>b</m> is not in the span.
  <exercise xml:id="prob-spanofvect2">
     <statement>
         <p>
-            <m>\mathbf{b}=\begin{bmatrix}5\\2\\4\end{bmatrix}</m> and <m>\left\{\begin{bmatrix}4\\2\\4\end{bmatrix}, \begin{bmatrix}4\\5\\1\end{bmatrix}, \begin{bmatrix}3\\2\\2\end{bmatrix}, \begin{bmatrix}1\\0\\2\end{bmatrix}\right\}</m>
+            <m>\mathbf{b}=\begin{bmatrix}5\\2\\4\end{bmatrix}</m> and <m>\left\{\begin{bmatrix}4\\2\\4\end{bmatrix}, \begin{bmatrix}4\\5\\1\end{bmatrix}, \begin{bmatrix}3\\2\\2\end{bmatrix}, \begin{bmatrix}1\\0\\2\end{bmatrix}\right\}.</m>
         </p>
         </statement>
             <answer>
@@ -729,7 +727,7 @@ The vector <m>b</m> is not in the span.
  <exercise xml:id="prob-spanofvect3">
     <statement>
         <p>
-            <m>\mathbf{b}=\begin{bmatrix}2\\4\\-7\\-5\end{bmatrix}</m> and <m>\left\{\begin{bmatrix}1\\-1\\2\\3\end{bmatrix}, \begin{bmatrix}4\\1\\-3\\1\end{bmatrix}\right\}</m>
+            <m>\mathbf{b}=\begin{bmatrix}2\\4\\-7\\-5\end{bmatrix}</m> and <m>\left\{\begin{bmatrix}1\\-1\\2\\3\end{bmatrix}, \begin{bmatrix}4\\1\\-3\\1\end{bmatrix}\right\}.</m>
         </p>
      </statement>
             <answer>
@@ -741,5 +739,4 @@ The vector <m>b</m> is not in the span.
 </exercisegroup>
 
 </exercises>
-</subsection>
 </section>

@@ -17,7 +17,8 @@
 <subsection xml:id="Subsection-Matrix-Multiplication">
     <title>Matrix Multiplication</title>
 <p>
-We will introduce matrix multiplication by first considering the special case of a matrix-vector product.  In other words, the first matrix is <m>m \times n</m> and the second matrix is <m>n \times 1</m> for some positive integers <m>m,n</m>. % We will employ Octave in the following exploration.
+We will introduce matrix multiplication by first considering the special case of a matrix-vector product.  
+In other words, the first matrix is <m>m \times n</m> and the second matrix is <m>n \times 1</m> for some positive integers <m>m,n</m>. 
 </p>
 </subsection>
 
@@ -27,6 +28,10 @@ We will introduce matrix multiplication by first considering the special case of
 <subsection xml:id="Subsection-Matrix-Vector-Multiplication">
     <title>Matrix-Vector Multiplication</title>
 </subsection>
+
+<p>
+Prior to presenting the formal definition in full generality, it is better to see a concrete example because The formal version is notation heavy.
+</p>
 
 <example xml:id="exp-matrixvectormultdef">
 <statement>
@@ -42,37 +47,39 @@ One way to understand the matrix-vector product <m>A\mathbf{x}</m> is by thinkin
 
 
 
-<me>
-    A\mathbf{x}=\begin{bmatrix}\color{red}2\amp \color{blue}-1\amp \color{brown}3\amp 2\\ \color{red}0\amp \color{blue}3\amp \color{brown}-2\amp 1\\ \color{red}-2\amp \color{blue}4\amp \color{brown}1\amp 0\end{bmatrix}\begin{bmatrix}\color{red}3\\ \color{blue}-1\\ \color{brown}4\\1\end{bmatrix}=
-\color{red}3\begin{bmatrix}\color{red}2\\ \color{red}0\\ \color{red}-2\end{bmatrix}\color{black}+
+<md>
+ <mrow>   A\mathbf{x} \amp =\begin{bmatrix}\color{red}2\amp \color{blue}-1\amp \color{brown}3\amp 2\\ \color{red}0\amp \color{blue}3\amp \color{brown}-2\amp 1\\ \color{red}-2\amp \color{blue}4\amp \color{brown}1\amp 0\end{bmatrix}\begin{bmatrix}\color{red}3\\ \color{blue}-1\\ \color{brown}4\\1\end{bmatrix} </mrow> 
+ <mrow> \amp = color{red}3\begin{bmatrix}\color{red}2\\ \color{red}0\\ \color{red}-2\end{bmatrix}\color{black}+
 \color{blue}(-1)\begin{bmatrix}\color{blue}-1\\ \color{blue}3\\ \color{blue}4\end{bmatrix}
 \color{black}+\color{brown}4\begin{bmatrix}\color{brown}3\\ \color{brown}-2\\ \color{brown}1\end{bmatrix}
 \color{black}+\begin{bmatrix}2\\1\\0\end{bmatrix}
-=\begin{bmatrix}21\\-10 \\ -6\end{bmatrix}
+=\begin{bmatrix}21\\-10 \\ -6\end{bmatrix} </mrow>
 
-</me>
+</md>
 
 
 We can also compute the product one entry at a time.  First, let's focus on the first row of <m>A</m>.
 
-<me>
-    \begin{bmatrix}{\color{red}2}\amp {\color{blue}-1}\amp {\color{brown}3}\amp 2\\0\amp 3\amp -2\amp 1\\-2\amp 4\amp 1\amp 0\end{bmatrix}\begin{bmatrix}{\color{red}3}\\{\color{blue}-1}\\{\color{brown}4}\\1\end{bmatrix}=\begin{bmatrix}{\color{red}(2)( 3)}+{\color{blue}(-1)(-1)}+{\color{brown}(3)(4)}+(2)(1)\\ \\ \\\end{bmatrix}=\begin{bmatrix}21\\ \\ \\\end{bmatrix}
-
-</me>
+<md>
+    <mrow> \begin{bmatrix}{\color{red}2}\amp {\color{blue}-1}\amp {\color{brown}3}\amp 2\\0\amp 3\amp -2\amp 1\\-2\amp 4\amp 1\amp 0\end{bmatrix}\begin{bmatrix}{\color{red}3}\\{\color{blue}-1}\\{\color{brown}4}\\1\end{bmatrix}  </mrow>
+    <mrow> \amp= \begin{bmatrix}{\color{red}(2)( 3)}+{\color{blue}(-1)(-1)}+{\color{brown}(3)(4)}+(2)(1)\\ \\ \\\end{bmatrix}=\begin{bmatrix}21\\ \\ \\\end{bmatrix}. </mrow>   
+</md>
 
 Next, let's look a the second row of <m>A</m>.
 
-<me>
-    \begin{bmatrix}2\amp -1\amp 3\amp 2\\{\color{red}0}\amp {\color{blue}3}\amp {\color{brown}-2}\amp 1\\-2\amp 4\amp 1\amp 0\end{bmatrix}\begin{bmatrix}{\color{red}3}\\{\color{blue}-1}\\{\color{brown}4}\\1\end{bmatrix}=\begin{bmatrix}21\\{\color{red}(0)( 3)}+{\color{blue}(3)(-1)}+{\color{brown}(-2)(4)}+(1)(1)\\ \\ \end{bmatrix}=\begin{bmatrix}21\\-10 \\ \\\end{bmatrix}
+<md>
+<mrow>    \begin{bmatrix}2\amp -1\amp 3\amp 2\\{\color{red}0}\amp {\color{blue}3}\amp {\color{brown}-2}\amp 1\\-2\amp 4\amp 1\amp 0\end{bmatrix}\begin{bmatrix}{\color{red}3}\\{\color{blue}-1}\\{\color{brown}4}\\1\end{bmatrix}=\begin{bmatrix}21\\{\color{red}(0)( 3)}+{\color{blue}(3)(-1)}+{\color{brown}(-2)(4)}+(1)(1)\\ \\ \end{bmatrix} </mrow>
+<mrow>    \amp =\begin{bmatrix}21\\-10 \\ \\\end{bmatrix}. </mrow>
 
-</me>
+</md>
 
 Finally, let's do the third row of <m>A</m>.
 
-<me>
-    \begin{bmatrix}2\amp -1\amp 3\amp 2\\0\amp 3\amp -2\amp 1\\{\color{red}-2}\amp {\color{blue}4}\amp {\color{brown}1}\amp 0\end{bmatrix}\begin{bmatrix}{\color{red}3}\\{\color{blue}-1}\\{\color{brown}4}\\1\end{bmatrix}=\begin{bmatrix}21\\-10\\{\color{red}(-2)( 3)}+{\color{blue}(4)(-1)}+{\color{brown}(1)(4)}+(0)(1) \end{bmatrix}=\begin{bmatrix}21\\-10 \\ -6\end{bmatrix}
+<md>
+ <mrow>   \begin{bmatrix}2\amp -1\amp 3\amp 2\\0\amp 3\amp -2\amp 1\\{\color{red}-2}\amp {\color{blue}4}\amp {\color{brown}1}\amp 0\end{bmatrix}\begin{bmatrix}{\color{red}3}\\{\color{blue}-1}\\{\color{brown}4}\\1\end{bmatrix}=\begin{bmatrix}21\\-10\\{\color{red}(-2)( 3)}+{\color{blue}(4)(-1)}+{\color{brown}(1)(4)}+(0)(1) \end{bmatrix} </mrow>
+<mrow> \amp =\begin{bmatrix}21\\-10 \\ -6\end{bmatrix}. </mrow>
 
-</me>
+</md>
 
     </p>
 </statement>
@@ -88,17 +95,18 @@ Finally, let's do the third row of <m>A</m>.
         <p>
             Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>\mathbf{x}</m> be an <m>n\times 1</m> vector.  The product <m>A\mathbf{x}</m> is the <m>m\times 1</m> vector given by:
 
-<me>
-    A\mathbf{x}=\begin{bmatrix}
+<md>
+<mrow>    A\mathbf{x} \amp =\begin{bmatrix}
            a_{11} \amp  a_{12}\amp \dots\amp a_{1n}\\
            a_{21}\amp a_{22} \amp \dots \amp a_{2n}\\
 		\vdots \amp  \vdots\amp \ddots \amp \vdots\\
 		a_{m1}\amp \dots \amp \dots \amp a_{mn}
-         \end{bmatrix}\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix}=
+         \end{bmatrix}\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix} </mrow>
+<mrow>   \amp =
          x_1\begin{bmatrix}a_{11}\\a_{21}\\ \vdots \\a_{m1}\end{bmatrix}+
          x_2\begin{bmatrix}a_{12}\\a_{22}\\ \vdots \\a_{m2}\end{bmatrix}+\dots+
-         x_n\begin{bmatrix}a_{1n}\\a_{2n}\\ \vdots \\a_{mn}\end{bmatrix}
-</me>
+         x_n\begin{bmatrix}a_{1n}\\a_{2n}\\ \vdots \\a_{mn}\end{bmatrix} </mrow>
+</md>
 
 or, equivalently,
 
@@ -117,7 +125,12 @@ We can now make a couple of observations about the matrix-vector product.  The f
 
 <observation>
 <statement>
-In order for the product <m>A\mathbf{x}</m> to exist, <m>A</m> and <m>\mathbf{x}</m> must have compatible dimensions.  In particular, vector <m>\mathbf{x}</m> must have as many components as the number of columns of <m>A</m>.  (Otherwise, we would not be have a well-defined linear combination of the columns.)  So, if <m>A</m> is an <m>m\times n</m> matrix, <m>\mathbf{x}</m> must be an <m>n\times 1</m> vector.  If we write these dimensions next to each other, we will notice that the inner dimensions (<m>n</m>) must match, while the outer dimensions, <m>m</m> and <m>1</m>, give us the dimensions of the product.
+In order for the product <m>A\mathbf{x}</m> to exist, <m>A</m> and <m>\mathbf{x}</m> must have compatible dimensions.  
+In particular, vector <m>\mathbf{x}</m> must have as many components as the number of columns of <m>A</m>
+ (otherwise, we would not be have a well-defined linear combination of the columns).  So, if <m>A</m> is an <m>m\times n</m> matrix, 
+ <m>\mathbf{x}</m> must be an <m>n\times 1</m> vector.  
+If we write these dimensions next to each other, we will notice that the inner dimensions (<m>n</m>) must match, while the outer dimensions, <m>m</m> and <m>1</m>, 
+give us the dimensions of the product.
 
 <me>
     \begin{array}{ccccc}
@@ -134,10 +147,13 @@ A\amp  \amp  \mathbf{x} \amp =\amp  A\mathbf{x}\\
 <statement>
     <p>
  
-If you are familiar with the <term>dot product</term> (see <url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/VEC-0050/main">Dot Product and its Properties</url>), you may have noticed that each individual entry in the product matrix <m>A\mathbf{x}</m> is the dot product of a row of <m>A</m> with <m>\mathbf{x}</m>.  Thus, if the rows of <m>A</m> are vectors <m>\mathbf{r}_1</m>, <m>\mathbf{r}_2,\ldots ,\mathbf{r}_n</m> we can restate Definition <xref ref="def-matrixvectormult"/> as follows:
+If you are familiar with the <term>dot product</term>, you may have noticed that each individual entry in the product matrix <m>A\mathbf{x}</m> 
+is the dot product of a row of <m>A</m> with <m>\mathbf{x}</m>.  
+Thus, if the rows of <m>A</m> are vectors <m>\mathbf{r}_1</m>, <m>\mathbf{r}_2,\ldots ,\mathbf{r}_n</m> 
+we can restate Definition <xref ref="def-matrixvectormult"/> as follows:
 
 <me>
-    A\mathbf{x}=\begin{bmatrix}-\amp \mathbf{r}_1\amp -\\-\amp \mathbf{r}_2\amp -\\ \amp \vdots \amp  \\-\amp \mathbf{r}_n \amp -\end{bmatrix}\mathbf{x}=\begin{bmatrix}\mathbf{r}_1\cdot\mathbf{x}\\\mathbf{r}_2\cdot\mathbf{x}\\\vdots\\\mathbf{r}_n\cdot\mathbf{x}\end{bmatrix}
+    A\mathbf{x}=\begin{bmatrix}-\amp \mathbf{r}_1\amp -\\-\amp \mathbf{r}_2\amp -\\ \amp \vdots \amp  \\-\amp \mathbf{r}_n \amp -\end{bmatrix}\mathbf{x}=\begin{bmatrix}\mathbf{r}_1\cdot\mathbf{x}\\\mathbf{r}_2\cdot\mathbf{x}\\\vdots\\\mathbf{r}_n\cdot\mathbf{x}\end{bmatrix}.
 </me> 
 </p>
 </statement>
@@ -156,7 +172,7 @@ Let's find another matrix-vector product.
     <statement>
         <p>  Let 
 <me>
-    A=\begin{bmatrix}1\amp -1\\2\amp 3\\-2\amp 1\\4\amp 0\end{bmatrix}\quad\text{and}\quad\mathbf{x}=\begin{bmatrix}-3\\5\end{bmatrix}
+    A=\begin{bmatrix}1\amp -1\\2\amp 3\\-2\amp 1\\4\amp 0\end{bmatrix}\quad\text{and}\quad\mathbf{x}=\begin{bmatrix}-3\\5\end{bmatrix}.
 
 </me>
 Find <m>A\mathbf{x}</m>.
@@ -165,7 +181,7 @@ Find <m>A\mathbf{x}</m>.
     <answer>
         <p> 
 <me>
-    A\mathbf{x}=\begin{bmatrix}1\amp -1\\2\amp 3\\-2\amp 1\\4\amp 0\end{bmatrix}\begin{bmatrix}-3\\5\end{bmatrix}=\begin{bmatrix}-8\\9\\11\\-12\end{bmatrix}
+    A\mathbf{x}=\begin{bmatrix}1\amp -1\\2\amp 3\\-2\amp 1\\4\amp 0\end{bmatrix}\begin{bmatrix}-3\\5\end{bmatrix}=\begin{bmatrix}-8\\9\\11\\-12\end{bmatrix}.
 
 </me>
        </p>
@@ -186,13 +202,15 @@ Find <m>A\mathbf{x}</m>.
     <title>Matrix-Matrix Multiplication</title>
 
 <p>
-Matrix-matrix multiplication is simply an extension of the idea of matrix-vector multiplication.  In order for the product definition to work, matrix dimensions must be compatible.  Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>B</m> be an <m>n\times p</m> matrix, then the product <m>AB</m> will be an <m>m\times p</m> matrix.
+Matrix-matrix multiplication is simply an extension of the idea of matrix-vector multiplication.  
+In order for the product definition to work, matrix dimensions must be compatible.  
+Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>B</m> be an <m>n\times p</m> matrix, then the product <m>AB</m> will be an <m>m\times p</m> matrix.
 
 <me>
     \begin{array}{ccccc}
 A\amp  \amp  B \amp =\amp  AB\\
 (m\times n) \amp  \amp (n\times p) \amp  \amp (m\times p)
-\end{array}
+\end{array},
 </me>
 
 Just like with vector products, the inner dimensions must be the same, while the outer dimensions, <m>m</m> and <m>p</m>, give us the dimensions of the product.
@@ -295,7 +313,9 @@ and
 
 
 
-
+<p> 
+Let us put this into explicit examples.
+</p>
 
 
 <example xml:id="ex-matmatproduct2">
@@ -304,7 +324,7 @@ and
             Let
 
 <me>
-    A=\begin{bmatrix}-2 \amp  1\\3 \amp  0\\1 \amp  -3\end{bmatrix}\quad\text{and}\quad B=\begin{bmatrix}4 \amp  -2 \amp  3 \amp  -2 \amp 2\\1 \amp  -3 \amp  1 \amp  1 \amp 0\end{bmatrix}
+    A=\begin{bmatrix}-2 \amp  1\\3 \amp  0\\1 \amp  -3\end{bmatrix}\quad\text{and}\quad B=\begin{bmatrix}4 \amp  -2 \amp  3 \amp  -2 \amp 2\\1 \amp  -3 \amp  1 \amp  1 \amp 0\end{bmatrix}.
 </me>
 
 Find <m>AB</m>.
@@ -369,7 +389,7 @@ Use this information to express <m>\begin{bmatrix} 19\\-13\end{bmatrix}</m> as a
     <p>
         Let 
 <me>
-    A=\begin{bmatrix}1\amp 2\\3\amp 4\end{bmatrix}\quad\text{and}\quad B=\begin{bmatrix}5\amp 6\\7\amp 8\end{bmatrix}
+    A=\begin{bmatrix}1\amp 2\\3\amp 4\end{bmatrix}\quad\text{and}\quad B=\begin{bmatrix}5\amp 6\\7\amp 8\end{bmatrix}.
 </me>
 </p>
 
@@ -377,7 +397,7 @@ Use this information to express <m>\begin{bmatrix} 19\\-13\end{bmatrix}</m> as a
 Observe that both <m>AB</m> and <m>BA</m> are defined, and both products are <m>2\times 2</m> matrices.  Let's compute the two products
 
 <me>
-    AB=\begin{bmatrix}19\amp 22\\43\amp 50\end{bmatrix}\quad\text{and}\quad BA=\begin{bmatrix}23\amp 34\\31\amp 46\end{bmatrix}
+    AB=\begin{bmatrix}19\amp 22\\43\amp 50\end{bmatrix}\quad\text{and}\quad BA=\begin{bmatrix}23\amp 34\\31\amp 46\end{bmatrix}.
 </me>
 
 Clearly <m>AB\neq BA</m>. We say that <m>A</m> and <m>B</m> <term>do not commute</term>.
@@ -407,7 +427,7 @@ One example of an <m>n\times n</m> square matrix that commutes with all <m>n\tim
 <p>
 You can easily convince yourself that <m>I</m> commutes with all square matrices of appropriate dimensions.  Let 
 <me>
-    A=\begin{bmatrix}a\amp b\amp c\\d\amp e\amp f\\g\amp h\amp i\end{bmatrix}\quad\text{and}\quad I=\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\end{bmatrix}
+    A=\begin{bmatrix}a\amp b\amp c\\d\amp e\amp f\\g\amp h\amp i\end{bmatrix}\quad\text{and}\quad I=\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\end{bmatrix}.
 </me>
 
 Verify that <m>AI=A</m> and <m>IA=A</m>.  
@@ -481,7 +501,7 @@ We prove <xref ref="matrixproperties1"/> using the expression in (<xref ref="ije
 
 <me>
     
-\sum_{k}a_{ik}( b_{kj}+c_{kj})=\sum_{k}a_{ik}b_{kj}+\sum_{k}a_{ik}c_{kj}
+\sum_{k}a_{ik}( b_{kj}+c_{kj})=\sum_{k}a_{ik}b_{kj}+\sum_{k}a_{ik}c_{kj}.
 
 </me>
 
@@ -500,7 +520,8 @@ For <xref ref="identitymatrix"/>, the <m>(i,j)</m>-entry of the product <m>AI</m
 </p>
 
 <p>
-Note that we skipped the proof of <xref ref="matrixproperties3"/>, which is quite cumbersome using sigma notation.  We will easily tackle this proof later in the course when we cover <url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/LTR-0030/main">Composition of Linear Transformations</url>.
+Note that we skipped the proof of <xref ref="matrixproperties3"/>, which is quite cumbersome using sigma notation.  
+We will easily tackle this proof later in the course when we cover composition of linear Transformations.
     </p>
 </proof>
 </subsection>
@@ -512,8 +533,6 @@ Note that we skipped the proof of <xref ref="matrixproperties3"/>, which is quit
 
 
 
-<subsection xml:id="Subsection-Practice-Problems">
-    <title>Practice Problems</title>
 
 <exercises>
 <exercise xml:id="prob-matprodundefined">
@@ -654,7 +673,7 @@ Dimensions of product: <m>3\times 4</m>
 </exercise>
 </exercisegroup>
 </exercises>
-</subsection>
+
 
 
 </section>
