@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="Section-Application-to-Markov-Chains" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Application to Markov Chains</title>
+    <title>Extra Topic: Application to Markov Chains</title>
 
 
 
@@ -188,7 +188,7 @@ Moreover, as <m>m</m> increases the entries of <alert>s_{m}</alert> get closer a
 
 
 <p> 
-<xref ref="007199"/> incorporates most of the essential features of all Markov chains. 
+<xref ref="ex-007199"/> incorporates most of the essential features of all Markov chains. 
 The general model is as follows: The system evolves through various stages and at each stage can be in exactly one of <m>n</m> distinct states. 
 It progresses through a sequence of states as time goes on. If a Markov chain is in state <m>j</m> at a particular stage of its development, 
 the probability <m>p_{ij}</m> that it goes to state <m>i</m> at the next stage is called the <term>transition probability</term>. 
@@ -263,7 +263,7 @@ Hence <m>P</m> is called a <term>stochastic matrix</term>.
 </p> 
 
 <p> 
-As in <xref ref="007199"/>, we introduce the following notation: Let <m>s_{i}^{(m)}</m> denote the
+As in <xref ref="ex-007199"/>, we introduce the following notation: Let <m>s_{i}^{(m)}</m> denote the
  probability that the system is in state <m>i</m> after <m>m</m> transitions. The <m>n \times 1</m> matrices
 <me>
 <alert>s</alert>_m = \begin{bmatrix}
@@ -286,7 +286,7 @@ For example, if the chain has only two states, then an initial vector
 
 
 
-<theorem xml:id="ex-007270">
+<theorem xml:id="th-007270">
 
     <statement>
         <p>
@@ -324,7 +324,7 @@ s_{i}^{(m+1)} = p_{i1}s_{1}^{(m)} + p_{i2}s_{2}^{(m)} + \cdots + p_{in}s_{n}^{(m
 
 
 <p> 
-If the initial probability vector <m><alert>s</alert>_{0}</m> and the transition matrix <m>P</m> are given, Theorem~<xref ref="007270"/> gives <m><alert>s</alert>_{1}, <alert>s</alert>_{2}, <alert>s</alert>_{3}, \dots</m>, one after the other, as follows:
+If the initial probability vector <m><alert>s</alert>_{0}</m> and the transition matrix <m>P</m> are given, Theorem~<xref ref="th-007270"/> gives <m><alert>s</alert>_{1}, <alert>s</alert>_{2}, <alert>s</alert>_{3}, \dots</m>, one after the other, as follows:
 <me>
 \begin{array}{c}
 <mrow> <alert>s</alert>_{1} \amp = P<alert>s</alert>_0 </mrow>
@@ -334,7 +334,8 @@ If the initial probability vector <m><alert>s</alert>_{0}</m> and the transition
 \end{array}
 </me>
 
-Hence, the state vector <m><alert>s</alert>_{m}</m> is completely determined for each <m>m = 0, 1, 2, \dots</m> by <m>P</m> and <m><alert>s</alert>_{0}</m>.
+Hence, the state vector <m><alert>s</alert>_{m}</m> is completely determined for each <m>m = 0, 1, 2, \dots</m> by <m>P</m> 
+and <m><alert>s</alert>_{0}</m>. Let us revisit this concept in a new example.
 </p> 
 
 
@@ -373,7 +374,7 @@ If the pack hunts in <m>R_{1}</m> on Monday, find the probability that it hunts 
 
 Now let Monday be the initial stage. Then <m><alert>s</alert>_0 = [1,0,0]</m>
  because the pack hunts in <m>R_{1}</m> on that day. Then <m><alert>s</alert>_{1}</m>, <m><alert>s</alert>_{2}</m>, 
- and <m><alert>s</alert>_{3}</m> describe Tuesday, Wednesday, and Thursday, respectively, and we compute them using <xref ref="007270"/>:
+ and <m><alert>s</alert>_{3}</m> describe Tuesday, Wednesday, and Thursday, respectively, and we compute them using <xref ref="th-007270"/>:
 <me>
 <alert>s</alert>_1 = P<alert>s</alert>_0 = \begin{bmatrix}
 \frac{1}{2} \\
@@ -389,7 +390,7 @@ Now let Monday be the initial stage. Then <m><alert>s</alert>_0 = [1,0,0]</m>
 \frac{11}{32} \\
 \frac{6}{32} \\
 \frac{15}{32}
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 Hence, the probability that the pack hunts in Region <m>R_{1}</m> on Thursday is <m>\frac{11}{32}</m>.
        </p>
@@ -412,7 +413,7 @@ Hence, the probability that the pack hunts in Region <m>R_{1}</m> on Thursday is
     <title>Steady State Vector</title>
 
 <p> 
-Another phenomenon that was observed in <xref ref="007199"/> can be expressed in general terms. 
+Another phenomenon that was observed in <xref ref="ex-007199"/> can be expressed in general terms. 
 The state vectors <m><alert>s</alert>_{0}, <alert>s</alert>_{1}, <alert>s</alert>_{2}, \dots</m> were calculated in that example and 
 were found to ``approach'' <m><alert>s</alert> = [0.2,0.8]</m>.
 
@@ -424,16 +425,20 @@ were found to ``approach'' <m><alert>s</alert> = [0.2,0.8]</m>.
 </p> 
 
 <p>
- In <xref ref="007199"/>, enough state vectors were computed for the limiting vector <m><alert>s</alert></m> to be apparent. 
+ In <xref ref="ex-007199"/>, enough state vectors were computed for the limiting vector <m><alert>s</alert></m> to be apparent. 
  However, there is a better way to do this that works in most cases.
 </p> 
 
 <p> 
-Suppose <m>P</m> is the transition matrix of a Markov chain, and assume that the state vectors <m><alert>s</alert>_{m}</m> converge to a limiting vector <m><alert>s</alert></m>. Then <m><alert>s</alert>_{m}</m> is very close to <m><alert>s</alert></m> for sufficiently large <m>m</m>, so <m><alert>s</alert>_{m+1}</m> is also very close to <m><alert>s</alert></m>. Thus, the equation <m><alert>s</alert>_{m+1} = P<alert>s</alert>_{m}</m> from Theorem~<xref ref="007270"/> is closely approximated by
+Suppose <m>P</m> is the transition matrix of a Markov chain, and assume that the state vectors <m><alert>s</alert>_{m}</m> converge to a limiting vector <m><alert>s</alert></m>. 
+Then <m><alert>s</alert>_{m}</m> is very close to <m><alert>s</alert></m> for sufficiently large <m>m</m>, so <m><alert>s</alert>_{m+1}</m> 
+is also very close to <m><alert>s</alert></m>. Thus, the equation <m><alert>s</alert>_{m+1} = P<alert>s</alert>_{m}</m> from
+ <xref ref="th-007270"/> is closely approximated by
 <me>
 <alert>s</alert> = P<alert>s</alert>
 </me>
-so it is not surprising that <m><alert>s</alert></m> should be a solution to this matrix equation. Moreover, it is easily solved because it can be written as a system of homogeneous linear equations
+so it is not surprising that <m><alert>s</alert></m> should be a solution to this matrix equation. 
+Moreover, it is easily solved because it can be written as a system of homogeneous linear equations
 <me>
 (I - P)<alert>s</alert> = <alert>0</alert>
 </me>
@@ -441,7 +446,7 @@ with the entries of <m><alert>s</alert></m> as variables.
 </p> 
 
 <p>
-In <xref ref="007199"/>, where 
+In <xref ref="ex-007199"/>, where 
 <me>P = \begin{bmatrix}
 0 \amp  0.25 \\
 1 \amp  0.75
@@ -467,14 +472,14 @@ if some power <m>P^{m}</m> of <m>P</m> has every entry greater than zero. The ma
  1 \amp  0.75
 \end{bmatrix}</me>
 
- of <xref ref="007199"/> is regular (in this case, each entry of <m>P^{2}</m> is positive), and the general theorem is as follows:
+ of <xref ref="ex-007199"/> is regular (in this case, each entry of <m>P^{2}</m> is positive), and the general theorem is as follows:
 </p> 
 
 
 
 
 
-<theorem xml:id="thm-007400">
+<theorem xml:id="th-007400">
 
     <statement>
         <p>
@@ -504,12 +509,13 @@ in the sense that if <m>m</m> is large enough, each entry of <m><alert>s</alert>
 </theorem>
 
 <p> 
-This theorem will not be proved here.  The interested reader can find an elementary proof in J. Kemeny, H. Mirkil, J. Snell, and G. Thompson, <em>Finite Mathematical Structures</em> (Englewood Cliffs, N.J.: Prentice-Hall, 1958).
+This theorem will not be proved here.  The interested reader can find an elementary proof in J. Kemeny, H. Mirkil, J. Snell, and G. Thompson, 
+<em>Finite Mathematical Structures</em> (Englewood Cliffs, N.J.: Prentice-Hall, 1958).
 </p> 
 
 <p> 
 If <m>P</m> is the regular transition matrix of a Markov chain, 
-the column <m><alert>s</alert></m> satisfying conditions 1 and 2 of <xref ref="007400"/> is called the <term>steady-state vector</term>for the Markov chain. 
+the column <m><alert>s</alert></m> satisfying conditions 1 and 2 of <xref ref="th-007400"/> is called the <term>steady-state vector</term>for the Markov chain. 
 The entries of <m><alert>s</alert></m> are the long-term probabilities that the chain will be in each of the various states.
 </p> 
 
@@ -566,7 +572,7 @@ This answers (a.) and also shows that he eats chicken and vegetable soup each wi
 
 <p> 
 To find the long-run probabilities, we must find the steady-state vector <m><alert>s</alert></m>. 
-<xref ref="007400"/> applies because <m>P</m> is regular (<m>P^{2}</m> has positive entries), so <m><alert>s</alert></m> satisfies <m>P<alert>s</alert> = <alert>s</alert></m>. 
+<xref ref="th-007400"/> applies because <m>P</m> is regular (<m>P^{2}</m> has positive entries), so <m><alert>s</alert></m> satisfies <m>P<alert>s</alert> = <alert>s</alert></m>. 
 That is, <m>(I - P)<alert>s</alert> = <alert>0</alert></m> where
 <me>
 I - P = \frac{1}{6} \begin{bmatrix}

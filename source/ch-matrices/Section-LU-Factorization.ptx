@@ -16,13 +16,13 @@
         Consider the equation:
 
 <me>
-    \begin{bmatrix}1\amp 0\amp 0\\3\amp 1\amp 0\\-2\amp 2\amp 1\end{bmatrix}\begin{bmatrix}2\amp -1\amp 2\\0\amp 4\amp -1\\0\amp 0\amp 3\end{bmatrix}\mathbf{x}=\begin{bmatrix}1\\8\\5\end{bmatrix}
+    \begin{bmatrix}1\amp 0\amp 0\\3\amp 1\amp 0\\-2\amp 2\amp 1\end{bmatrix}\begin{bmatrix}2\amp -1\amp 2\\0\amp 4\amp -1\\0\amp 0\amp 3\end{bmatrix}\mathbf{x}=\begin{bmatrix}1\\8\\5\end{bmatrix}.
 </me>
 
 This equation is unusual in that it involves two matrices on the left-hand side.  If we multiply the matrices together, we get
 
 <me>
-    \begin{bmatrix}2\amp -1\amp 2\\6\amp 1\amp 5\\-4\amp 10\amp -3\end{bmatrix}\mathbf{x}=\begin{bmatrix}1\\8\\5\end{bmatrix}
+    \begin{bmatrix}2\amp -1\amp 2\\6\amp 1\amp 5\\-4\amp 10\amp -3\end{bmatrix}\mathbf{x}=\begin{bmatrix}1\\8\\5\end{bmatrix}.
 </me>
 
 Gaussian elimination yields:
@@ -34,8 +34,7 @@ Gaussian elimination yields:
 \quad\rightsquigarrow\quad
 \left[\begin{array}{ccc|c}
  1\amp 0\amp 0\amp 2\\0\amp 1\amp 0\amp 1\\0\amp 0\amp 1\amp -1
-\end{array}\right]
-
+\end{array}\right].
 </me>
 
 We conclude that
@@ -51,19 +50,19 @@ Now that we know the answer, we will turn to the original question and consider 
 <p>
 Let
 <me>
-\mathbf{y}=\begin{bmatrix}2\amp -1\amp 2\\0\amp 4\amp -1\\0\amp 0\amp 3\end{bmatrix}\mathbf{x}
-</me>.  
+\mathbf{y}=\begin{bmatrix}2\amp -1\amp 2\\0\amp 4\amp -1\\0\amp 0\amp 3\end{bmatrix}\mathbf{x}.
+</me>
 
 Then we can write the original equation as
 
 <me>
-    \begin{bmatrix}1\amp 0\amp 0\\3\amp 1\amp 0\\-2\amp 2\amp 1\end{bmatrix}\left(\begin{bmatrix}2\amp -1\amp 2\\0\amp 4\amp -1\\0\amp 0\amp 3\end{bmatrix}\mathbf{x}\right)=\begin{bmatrix}1\amp 0\amp 0\\3\amp 1\amp 0\\-2\amp 2\amp 1\end{bmatrix}\mathbf{y}=\begin{bmatrix}1\\8\\5\end{bmatrix}
+    \begin{bmatrix}1\amp 0\amp 0\\3\amp 1\amp 0\\-2\amp 2\amp 1\end{bmatrix}\left(\begin{bmatrix}2\amp -1\amp 2\\0\amp 4\amp -1\\0\amp 0\amp 3\end{bmatrix}\mathbf{x}\right)=\begin{bmatrix}1\amp 0\amp 0\\3\amp 1\amp 0\\-2\amp 2\amp 1\end{bmatrix}\mathbf{y}=\begin{bmatrix}1\\8\\5\end{bmatrix}.
 </me>
 
 The equation 
 
 <me>
-    \begin{bmatrix}1\amp 0\amp 0\\3\amp 1\amp 0\\-2\amp 2\amp 1\end{bmatrix}\mathbf{y}=\begin{bmatrix}1\amp 0\amp 0\\3\amp 1\amp 0\\-2\amp 2\amp 1\end{bmatrix}\begin{bmatrix}y_1\\y_2\\y_3\end{bmatrix}=\begin{bmatrix}1\\8\\5\end{bmatrix}
+    \begin{bmatrix}1\amp 0\amp 0\\3\amp 1\amp 0\\-2\amp 2\amp 1\end{bmatrix}\mathbf{y}=\begin{bmatrix}1\amp 0\amp 0\\3\amp 1\amp 0\\-2\amp 2\amp 1\end{bmatrix}\begin{bmatrix}y_1\\y_2\\y_3\end{bmatrix}=\begin{bmatrix}1\\8\\5\end{bmatrix}.
 </me>
  
 corresponds to the system
@@ -73,7 +72,7 @@ corresponds to the system
     y_1  \amp  + \amp \amp \amp\amp = \amp 5 \\
 	3y_1  \amp  + \amp y_2 \amp \amp \amp =\amp 8\\
     -2y_1 \amp  + \amp 2y_2 \amp +\amp y_3 \amp =\amp 11
-    \end{array}
+    \end{array}.
 </me>
 
 
@@ -83,27 +82,30 @@ corresponds to the system
 This system can be easily solved by substitution, giving us
 
 <me>
-    y_1=1
+    y_1=1,
 </me>
 
 
 <me>
-    3(1)+y_2=8 \rightsquigarrow y_2=5
+    3(1)+y_2=8 \rightsquigarrow y_2=5,
 </me>
 
 
 <me>
-    -2(1)+2(5)+y_3=5 \rightsquigarrow y_3=-3
+    -2(1)+2(5)+y_3=5 \rightsquigarrow y_3=-3.
 </me>
 
 So,
 
 <me>
-    \mathbf{y}=\begin{bmatrix}y_1\\y_2\\y_3\end{bmatrix}=\begin{bmatrix}1\\5\\-3\end{bmatrix}
+    \mathbf{y}=\begin{bmatrix}y_1\\y_2\\y_3\end{bmatrix}=\begin{bmatrix}1\\5\\-3\end{bmatrix}.
 </me>
 
     
-Recall that we let <m>\mathbf{y}=\begin{bmatrix}2\amp -1\amp 2\\0\amp 4\amp -1\\0\amp 0\amp 3\end{bmatrix}\mathbf{x}</m>.  
+Recall that we let 
+<me>
+\mathbf{y}=\begin{bmatrix}2\amp -1\amp 2\\0\amp 4\amp -1\\0\amp 0\amp 3\end{bmatrix}\mathbf{x}.-
+</me>  
 The equation
 
 <me>
@@ -117,7 +119,7 @@ corresponds to the system
     2x_1  \amp  - \amp x_2 \amp + \amp 2x_3 \amp = \amp 1 \\
 	  \amp  \amp 4x_2 \amp - \amp x_3 \amp =\amp 5\\
      \amp  \amp  \amp \amp 3x_3 \amp =\amp -3
-    \end{array}
+    \end{array}.
 </me>
 
 
@@ -132,7 +134,7 @@ Solve the above system of equations in any way you wish.
 
 <answer>
 <me>
-    x_3=-1, \quad x_2 = 1, \quad x_1 = 1
+    x_3=-1, \quad x_2 = 1, \quad x_1 = 1.
 </me>
 </answer>
 </problem>
@@ -140,7 +142,7 @@ Solve the above system of equations in any way you wish.
 
 
 <p>
-    Thus, <m>\mathbf{x}=\begin{bmatrix}2\\1\\-1\end{bmatrix}</m>.  Observe that this is the same answer that we obtained in the beginning of the problem using Gaussian elimination.
+    Thus, <m>\mathbf{x}=[2\\1\\-1]</m>.  Observe that this is the same answer that we obtained in the beginning of the problem using Gaussian elimination.
     </p>
 </exploration>
 
@@ -164,7 +166,11 @@ of <xref ref="init-LUfactorization"/>, often in practice we express the matrix o
 </me>
 
 The process of taking a matrix <m>A</m> and expressing it as a product <m>A=LU</m> of a lower triangular matrix <m>L</m> and an upper triangular matrix <m>U</m> is called <term><m>LU</m> factorization</term>.
-Not every matrix has an <m>LU</m> factorization, but we will see that we can correct for that.
+</p> 
+
+
+<p>
+Not every matrix has an <m>LU</m> factorization, but we will see that we can correct for that. The next examples are more involved with multiple parts to cover.    
 </p>
 
 
@@ -200,7 +206,7 @@ Unfortunately, for reasons we will explain below, it is not possible to find an 
      x_1   \amp + \amp 2x_2   \amp - \amp 3x_3  \amp = \amp 1 \\
            \amp   \amp 12x_2  \amp - \amp 18x_3   \amp = \amp 6\\
      x_1   \amp - \amp 2x_2   \amp + \amp x_3    \amp = \amp 1
-    \end{array}
+    \end{array}.
 </me>
 
 
@@ -221,7 +227,7 @@ we are able to find an <m>LU</m> factorization of the coefficient matrix.
 1 \amp  2 \amp  -3 \\
 0 \amp  12  \amp  -18 \\
 0 \amp  0 \amp  -2
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 
 (How we actually come up with an  <m>LU</m> factorization of <m>A</m> will be discussed after this example.)
@@ -244,10 +250,10 @@ To understand how an <m>LU</m> factorization can be used, it is helpful to think
     L(U\mathbf{x})=\mathbf{b}
 </me>
 
-So if we let <m>\mathbf{y}=U\mathbf{x}</m> and also write <m>\mathbf{y}=\begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix}</m>, then we are able to solve for <m> y_1, y_2, \text{ and } y_3</m> using <em>forward-substitution</em>.
+So if we let <m>\mathbf{y}=U\mathbf{x}</m> and also write <m>\mathbf{y}=[y_1 \\ y_2 \\ y_3]</m>, then we are able to solve for <m> y_1, y_2, \text{ and } y_3</m> using <em>forward-substitution</em>.
 
 <me>
-    L\mathbf{y}=\mathbf{b}
+    L\mathbf{y}=\mathbf{b},
 </me>
 
 <me>
@@ -258,7 +264,7 @@ So if we let <m>\mathbf{y}=U\mathbf{x}</m> and also write <m>\mathbf{y}=\begin{b
 \end{bmatrix} 
 \begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix}
 =
-\begin{bmatrix} 1 \\ 6 \\ 1 \end{bmatrix}
+\begin{bmatrix} 1 \\ 6 \\ 1 \end{bmatrix}.
 </me>
 </p>
 
@@ -273,7 +279,7 @@ See if you can do it!
 <answer>
 <p>
 <me>
-    y_1=1,\quad y_2=6,\quad y_3=2
+    y_1=1,\quad y_2=6,\quad y_3=2.
 </me>
 </p>
 </answer>
@@ -282,7 +288,7 @@ See if you can do it!
 Once we have the values of <m>\mathbf{y}</m>, since <m>\mathbf{y}=U\mathbf{x}</m>, all that remains is to solve the following matrix equation using back-substitution.
 
 <men xml:id="LUeq">
-    U\mathbf{x}=\mathbf{y}
+    U\mathbf{x}=\mathbf{y}.
 </men>
 </p>
 
@@ -299,7 +305,7 @@ Once we have the values of <m>\mathbf{y}</m>, since <m>\mathbf{y}=U\mathbf{x}</m
         \end{bmatrix} 
         \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}
         =
-        \begin{bmatrix} 1 \\ 6 \\ 2 \end{bmatrix}
+        \begin{bmatrix} 1 \\ 6 \\ 2 \end{bmatrix}.
         </me>
     </p>
     </statement>
@@ -308,7 +314,7 @@ Once we have the values of <m>\mathbf{y}</m>, since <m>\mathbf{y}=U\mathbf{x}</m
     <answer>
     <p>
     <me>
-    x_1=0,\quad x_2=-1,\quad x_3=-1
+    x_1=0,\quad x_2=-1,\quad x_3=-1.
     </me>
     </p>
     </answer>
@@ -323,10 +329,6 @@ Once we have the values of <m>\mathbf{y}</m>, since <m>\mathbf{y}=U\mathbf{x}</m
 
 
 
-
-
-<subsection xml:id="Subsection-Finding-an-LU-factorization-by-Inspection">
-    <title>Finding an <m>LU</m> factorization by Inspection</title>
 
 <p>
 We here present one method of finding LU factorizations using inspection.
@@ -364,7 +366,7 @@ y \amp  z \amp  1
 a \amp  d \amp  h \amp  j \\
 0 \amp  b \amp  e \amp  i \\
 0 \amp  0 \amp  c \amp  f
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 By multiplying the latter matrices we get
 <me>
@@ -372,7 +374,7 @@ By multiplying the latter matrices we get
 a \amp  d \amp  h \amp  j \\
 xa \amp  xd+b \amp  xh+e \amp  xj+i \\
 ya \amp  yd+zb \amp  yh+ze+c \amp  yj+iz+f
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 and from this, it is a simple exercise to determine each of the unknowns. For example, from the first
 column, we get <m>a=1</m> and then <m>x=1,y=2.</m> 
@@ -406,14 +408,11 @@ column, we get <m>a=1</m> and then <m>x=1,y=2.</m>
 1 \amp  2 \amp  0 \amp  2 \\
 0 \amp  1 \amp  2 \amp  -1 \\
 0 \amp  0 \amp  6 \amp  -5
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 </p>
 </answer>
 </problem>
-</subsection>
-
-
 
 
 
@@ -451,7 +450,7 @@ In the following example we demonstrate a method for computing an <m>LU</m> fact
 1 \amp  2 \amp  3 \\
 2 \amp  3 \amp  1 \\
 -2 \amp  3 \amp  -2
-\end{bmatrix} 
+\end{bmatrix}. 
 </me>
        </p>
     </statement>
@@ -468,7 +467,7 @@ In the following example we demonstrate a method for computing an <m>LU</m> fact
 1 \amp  2 \amp  3 \\
 2 \amp  3 \amp  1 \\
 -2 \amp  3 \amp  -2
-\end{bmatrix} 
+\end{bmatrix}. 
 </me>
 
 In the matrix on the right, we begin with the left row and zero out the entries below the top using the row operation which involves adding a multiple of a row to another row. You do this and also update the matrix on the left so that the product will be unchanged. 
@@ -486,7 +485,7 @@ Here is the first step.  We take <m>-2</m> times the top row and add to the seco
 1 \amp  2 \amp  3 \\
 0 \amp  -1 \amp  -5 \\
 -2 \amp  3 \amp  -2
-\end{bmatrix} 
+\end{bmatrix}. 
 </me>
 
 The next step is to take <m>2</m> times the top row and add to the bottom in the matrix on the right. To ensure that the product is unchanged, we place a <m>-2</m> in the bottom left corner in the matrix on the left. Thus the second step yields
@@ -500,7 +499,7 @@ The next step is to take <m>2</m> times the top row and add to the bottom in the
 1 \amp  2 \amp  3 \\
 0 \amp  -1 \amp  -5 \\
 0 \amp  7 \amp  4
-\end{bmatrix} 
+\end{bmatrix}. 
 </me>
 
 For our final step, we take <m>7</m> times the middle row on right and add to bottom row. Updating the matrix on the left in the manner we did earlier, we get
@@ -514,7 +513,7 @@ For our final step, we take <m>7</m> times the middle row on right and add to bo
 1 \amp  2 \amp  3 \\
 0 \amp  -1 \amp  -5 \\
 0 \amp  0 \amp  -31
-\end{bmatrix} 
+\end{bmatrix}. 
 </me>
 
 At this point, we can stop. We have an <m>LU</m> factorization of the original matrix.  We can always multiply the matrices to check, if we wish.
@@ -572,7 +571,7 @@ For a simple illustration of the lemma, observe:
 1 \amp  0 \amp  0 \amp  1 \amp  0 \amp  0 \\
 0 \amp  1 \amp  0 \amp  0 \amp  1 \amp  0 \\
 0 \amp  0 \amp  1 \amp  0 \amp  -a \amp  1
-\end{array}\right]
+\end{array}\right].
 </me>
 
 Now let <m>A</m> be an <m>m\times n</m> matrix, say
@@ -597,7 +596,7 @@ E_{1}=
 \frac{a_{21}}{a_{11}} \amp  1 \amp  \cdots \amp  0 \\
 \vdots \amp  \vdots \amp  \ddots \amp  \vdots \\
 -\frac{a_{m1}}{a_{11}} \amp  0 \amp  \cdots \amp  1
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 
 This is the product of elementary matrices which make modifications in the first column only. It is equivalent to taking <m>-a_{21}/a_{11}</m> times the
@@ -611,7 +610,7 @@ a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n}^{\prime } \\
 0 \amp  a_{22}^{\prime } \amp  \cdots \amp  a_{2n}^{\prime } \\
 \vdots \amp  \vdots \amp   \amp  \vdots \\
 0 \amp  a_{m2}^{\prime } \amp  \cdots \amp  a_{mn}^{\prime }
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 By assumption, <m>a_{22}^{\prime }\neq 0</m> and so it is possible to use this
 entry to zero out all the entries below it in the matrix on the right by
@@ -621,7 +620,7 @@ E_{2}=
 \begin{bmatrix}
 1 \amp  \mathbf{0} \\
 \mathbf{0} \amp  E
-\end{bmatrix}
+\end{bmatrix},
 </me>
 where <m>E</m> is an <m>( m-1)\times ( m-1)</m>
 matrix of the form
@@ -631,16 +630,16 @@ E=\begin{bmatrix}
 -\frac{a_{32}^{\prime }}{a_{22}^{\prime }} \amp  1 \amp  \cdots \amp  0 \\
 \vdots \amp  \vdots \amp  \ddots \amp  \vdots \\
 -\frac{a_{m2}^{\prime }}{a_{22}^{\prime }} \amp  0 \amp  \cdots \amp  1
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 Again, the entries in the first column below the 1 are the multipliers.
 Continuing this way, zeroing out the entries below the diagonal entries, finally leads us to
 <me>
-E_{m-1}E_{m-2}\cdots E_{1}A=U
+E_{m-1}E_{m-2}\cdots E_{1}A=U,
 </me>
 where <m>U</m> is upper triangular. Each <m>E_{j}</m> has all ones down the main diagonal and is lower triangular. Now we can multiply both sides by the inverses of the <m>E_{j}</m> in the reverse order. This yields
 <me>
-A=E_{1}^{-1}E_{2}^{-1}\cdots E_{m-1}^{-1}U
+A=E_{1}^{-1}E_{2}^{-1}\cdots E_{m-1}^{-1}U.
 </me>
 
 By <xref ref="lem-multipliermethodtriangularmatrices"/>, this implies that the product of those <m>E_{j}^{-1}</m>
@@ -663,7 +662,7 @@ which we obtained in building <m>E_{1}</m>, and which we denote respectively by 
 -M_{21} \amp  1 \amp  \cdots \amp  0 \\
 \vdots \amp  \vdots \amp  \ddots \amp  \vdots \\
 -M_{m1} \amp  0 \amp  \cdots \amp  1
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 Similar considerations apply to the other <m>E_{j}^{-1}.</m> Thus <m>L</m> is a
 product of the form
@@ -690,7 +689,7 @@ where each factor has at most one nonzero column, the position of which moves fr
 \vdots \amp  -M_{32} \amp  \ddots \amp  \vdots \amp  \vdots \\
 -M_{(M-1)1} \amp  \vdots \amp  \cdots \amp  1 \amp  0 \\
 -M_{M1} \amp  -M_{M2} \amp  \cdots \amp  -M_{MM-1} \amp  1
-\end{bmatrix}
+\end{bmatrix}.
 </me>
 
 To sum up the procedure, beginning at the left column and moving toward the right, you
@@ -717,7 +716,8 @@ So we cannot apply Lemma <xref ref="lem-multipliermethodtriangularmatrices"/> to
 
 
 <p>
-If the elementary matrices used to reduce our matrix to row-echelon form are all lower triangular, then we can find an <m>LU</m> factorization.  But what about the general case?
+If the elementary matrices used to reduce our matrix to row-echelon form are all lower triangular, then we can find an <m>LU</m> factorization.  
+    But what about the general case?
 </p>
 
 
@@ -727,7 +727,8 @@ If the elementary matrices used to reduce our matrix to row-echelon form are all
 
     <statement>
         <p>
-            Suppose an <m>m \times n</m> matrix <m>A</m> is transformed to a row-echelon matrix <m>U</m> using Gaussian elimination. Let <m>P_1, P_2, \ldots, P_s</m> be the elementary matrices corresponding (in order) to the row interchanges used,
+            Suppose an <m>m \times n</m> matrix <m>A</m> is transformed to a row-echelon matrix <m>U</m> using Gaussian elimination. 
+            Let <m>P_1, P_2, \ldots, P_s</m> be the elementary matrices corresponding (in order) to the row interchanges used,
 and write <m>P=P_s \cdots P_2 P_1</m>. (If no interchanges are used take <m>P = I_M</m>.) Then:
 <ol>
 <li>
@@ -752,8 +753,17 @@ The matrix <m>P</m> in the above theorem is called a <term>permutation matrix</t
 
 
 
-<subsection xml:id="Subsection-Practice-Problems">
-    <title>Practice Problems</title>
+
+
+
+
+
+
+
+
+
+
+
 
 <exercises>
 
@@ -767,7 +777,7 @@ The matrix <m>P</m> in the above theorem is called a <term>permutation matrix</t
       x \amp  +\amp 2y\amp +\amp 3z\amp = \amp 5 \\
 	 2x\amp +\amp 3y\amp +\amp z\amp =\amp 6\\
      3x\amp  +\amp 5y\amp +\amp 4z\amp =\amp 11
-    \end{array}
+    \end{array}.
 </me>
 
 Observe that an <m>LU</m> factorization of the coefficient matrix is
@@ -786,7 +796,7 @@ Observe that an <m>LU</m> factorization of the coefficient matrix is
 1 \amp  2 \amp  3 \\
 0 \amp  -1 \amp  -5 \\
 0 \amp  0 \amp  0
-\end{bmatrix}
+\end{bmatrix}.
 </me>
         </p>
     </statement>
@@ -808,7 +818,7 @@ Find the <m>LU</m> factorization of the coefficient matrix and use it to solve t
 \begin{array}{ccccc}
     <mrow>  x\amp  +\amp 2y\amp =\amp 5 </mrow>
     <mrow>  2x \amp  +\amp 3y\amp = \amp 6 </mrow>
-    \end{array}
+    \end{array}.
 </md>
 </p>
 </statement>
@@ -822,7 +832,7 @@ The <m>LU</m> factorization is
 
 and the solution to the system of equations is
 <me>
-    x=-3, y=4
+    x=-3, y=4.
 </me>
 </p>   
 </answer>
@@ -838,7 +848,7 @@ and the solution to the system of equations is
     <mrow>  x \amp  +\amp 2y\amp +\amp z\amp = \amp 1 </mrow>
 	<mrow> \amp  \amp y\amp +\amp 3z\amp =\amp 2  </mrow>
     <mrow> 2x\amp  +\amp 3y\amp \amp \amp =\amp 6  </mrow>
-    \end{array}
+    \end{array}.
 </md>
 </p>
 </statement>
@@ -852,7 +862,7 @@ The <m>LU</m> factorization is
 
 and the solution to the system of equations is
 <me>
-    x=27,y=-16, z=6
+    x=27,y=-16, z=6.
 </me>
         </p>
     </answer>
@@ -876,7 +886,7 @@ and the solution to the system of equations is
 Consider the equation
 
 <me>
-\begin{bmatrix}0 \amp  1 \\0 \amp  1\end{bmatrix}=\begin{bmatrix}1\amp  0 \\1 \amp  1\end{bmatrix} \begin{bmatrix}0 \amp  1 \\0 \amp  0\end{bmatrix}
+\begin{bmatrix}0 \amp  1 \\0 \amp  1\end{bmatrix}=\begin{bmatrix}1\amp  0 \\1 \amp  1\end{bmatrix} \begin{bmatrix}0 \amp  1 \\0 \amp  0\end{bmatrix}.
 </me>
 
 Look for all possible <m>LU</m> factorizations.
@@ -891,19 +901,11 @@ Look for all possible <m>LU</m> factorizations.
 <exercise xml:id="prob-LU5">
     <statement>
         <p>
-            Can you show that every permutation matrix is invertible?  If so, What does the inverse of a permutation matrix look like? (Recall that a permutation matrix is matrix <m>P</m> of <xref ref="th-LUPA"/>.)
+            Can you show that every permutation matrix is invertible?  
+            If so, What does the inverse of a permutation matrix look like? Recall that a permutation matrix is matrix <m>P</m> of <xref ref="th-LUPA"/>.
         </p>
     </statement>
 </exercise>
 </exercises>
-</subsection>
-
-
-<subsection xml:id="Subsection-Bibliography">
-    <title>Bibliography</title>
-</subsection>
-
-[Nicholson] W. Keith Nicholson, <em>Linear Algebra with Applications</em>, Lyryx 2018, Open Edition, pp. 123--127.
-
 
 </section>

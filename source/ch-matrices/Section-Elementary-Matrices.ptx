@@ -7,9 +7,6 @@
 
 
 
-<subsection xml:id="Subsection-Definition-and-Examples">
-    <title>Definition and Examples</title>
-
 
 <exploration xml:id="init-elementarymat2">
     <p>
@@ -22,7 +19,7 @@
  \quad \text{and}\quad
  C = \begin{bmatrix}  
  1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp -2
- \end{bmatrix}
+ \end{bmatrix}.
 
 </me>
 
@@ -32,7 +29,7 @@ The two matrices have something in common.  Can you figure out what it is?  (The
 <me>
     \text{Let}\quad A = \begin{bmatrix}  
  1\amp 2\amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9
- \end{bmatrix}
+ \end{bmatrix}.
 </me>
 </p>
 
@@ -51,7 +48,7 @@ Compute <m>BA</m> and <m>CA</m>.
 \quad
 \text{and}
 \quad
-CA=\begin{bmatrix}1 \amp  2 \amp  3 \\ 4 \amp  5 \amp  6\\ -14 \amp  -16 \amp  -18\end{bmatrix}
+CA=\begin{bmatrix}1 \amp  2 \amp  3 \\ 4 \amp  5 \amp  6\\ -14 \amp  -16 \amp  -18\end{bmatrix}.
 </me>
 
 
@@ -72,7 +69,7 @@ Now we need to return to the question of what <m>B</m> and <m>C</m> have in comm
 Matrix <m>A</m> does not have to be a square matrix.  Try finding <m>BA'</m> and <m>CA'</m> for 
 
 <me>
-    A'=\begin{bmatrix}1\amp 2\\3\amp 4\\5\amp 6\end{bmatrix}
+    A'=\begin{bmatrix}1\amp 2\\3\amp 4\\5\amp 6\end{bmatrix}.
 </me>
 </p>
 </statement>
@@ -80,7 +77,7 @@ Matrix <m>A</m> does not have to be a square matrix.  Try finding <m>BA'</m> and
 <answer>
 <p>
 <me>
-    BA'=\begin{bmatrix}1\amp 2\\15\amp 20\\5\amp 6\end{bmatrix}\quad \text{and} \quad CA'=\begin{bmatrix}1\amp 2\\3\amp 4\\-10\amp -12\end{bmatrix}
+    BA'=\begin{bmatrix}1\amp 2\\15\amp 20\\5\amp 6\end{bmatrix}\quad \text{and} \quad CA'=\begin{bmatrix}1\amp 2\\3\amp 4\\-10\amp -12\end{bmatrix}.
 </me>
 
 
@@ -122,7 +119,7 @@ D = \begin{bmatrix}
  \quad \text{and}\quad
 F =  \begin{bmatrix}  
  1\amp 0\amp 0\\-2\amp 1\amp 0\\0\amp 0\amp 1
- \end{bmatrix}
+ \end{bmatrix}.
 </me>
 
 As in the previous Exploration, the two matrices have something in common.  Both <m>D</m> and <m>F</m> were obtained from the identity matrix by adding a multiple of one row to another row.
@@ -135,7 +132,7 @@ As in the previous Exploration, the two matrices have something in common.  Both
         <me>
             \text{Let}\quad A = \begin{bmatrix}  
             1\amp 2\amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9
-            \end{bmatrix}
+            \end{bmatrix}.
         </me>
     </p>
 </statement>
@@ -147,7 +144,7 @@ As in the previous Exploration, the two matrices have something in common.  Both
             \quad
             \text{and}
             \quad
-            FA=\begin{bmatrix}1 \amp  2 \amp  3 \\ 2 \amp  1 \amp  0\\ 7 \amp  8 \amp  9\end{bmatrix}
+            FA=\begin{bmatrix}1 \amp  2 \amp  3 \\ 2 \amp  1 \amp  0\\ 7 \amp  8 \amp  9\end{bmatrix}.
         </me>    
     </p>
 </answer>
@@ -192,7 +189,7 @@ In general, if a square matrix <m>E</m> is obtained from the identity matrix <m>
 <answer>
     <p>
 <me>
-    G=\begin{bmatrix}0 \amp  0 \amp  1 \\ 0 \amp  1 \amp  0\\ 1 \amp  0 \amp  0\end{bmatrix}
+    G=\begin{bmatrix}0 \amp  0 \amp  1 \\ 0 \amp  1 \amp  0\\ 1 \amp  0 \amp  0\end{bmatrix}.
 </me>
     </p>
 </answer>
@@ -234,7 +231,6 @@ Elementary matrices give us a new way of looking at Gauss-Jordan elimination.  S
 
 where each <m>E_i</m> is the elementary matrix corresponding to the <m>i</m>th row operation performed on <m>A</m>.  
 </p>
-</subsection>
 
 
 
@@ -304,7 +300,6 @@ We can use the same line of reasoning to show that the other two types of elemen
     </p>
 </proof>
 </theorem>
-</subsection>
 
 
 
@@ -313,8 +308,9 @@ We can use the same line of reasoning to show that the other two types of elemen
 
 
 
-<subsection xml:id="Subsection-Elementary-Matrices-and-Nonsingular-Matrices">
-    <title>Elementary Matrices and Nonsingular Matrices</title>
+
+
+
 
 <p>
 Recall that a square matrix <m>A</m> is called <term>nonsingular</term> provided that <m>\mbox{rref}(A)=I</m>.
@@ -355,7 +351,7 @@ Suppose <m>\mbox{rref}(A)=I</m>.  Then <m>A</m> can be carried to the identity b
 By <xref ref="th-elemmatricesinvertible"/>, elementary matrices are invertible and their inverses are also elementary matrices.  Thus, we can write <m>A</m> as a product of elementary matrices as follows:
 
 <me>
-    A=E_1^{-1}E_2^{-1}\ldots E_k^{-1}
+    A=E_1^{-1}E_2^{-1}\ldots E_k^{-1}.
 </me>
 
     </p>
@@ -382,10 +378,6 @@ See the corollary to Theorem <xref ref="th-matrixinverse"/>.
 
 
 
-
-
-<subsection xml:id="Subsection-Practice-Problems">
-    <title>Practice Problems</title>
 
 
 <exercises>
@@ -578,7 +570,6 @@ as a product of elementary matrices.
     </statement>
 </exercise>
 </exercises>
-</subsection>
 
 
 </section>

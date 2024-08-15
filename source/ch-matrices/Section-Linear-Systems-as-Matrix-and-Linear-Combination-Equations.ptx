@@ -503,7 +503,7 @@ By <xref ref="th-nonsingularequivalency1"/>, a matrix equation <m>A\mathbf{x}=\m
 Recall that the product of a matrix and a vector can be interpreted as a linear combination of the columns of the matrix.  For example,
 
 <me>
-    \begin{bmatrix}1\amp 2\amp 3\amp 4\\5\amp 6\amp 7\amp 8\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}=x_1\begin{bmatrix}1\\5\end{bmatrix}+x_2\begin{bmatrix}2\\6\end{bmatrix}+x_3\begin{bmatrix}3\\7\end{bmatrix}+x_4\begin{bmatrix}4\\8\end{bmatrix}
+    \begin{bmatrix}1\amp 2\amp 3\amp 4\\5\amp 6\amp 7\amp 8\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}=x_1\begin{bmatrix}1\\5\end{bmatrix}+x_2\begin{bmatrix}2\\6\end{bmatrix}+x_3\begin{bmatrix}3\\7\end{bmatrix}+x_4\begin{bmatrix}4\\8\end{bmatrix}.
 </me>
 </p>
 
@@ -521,7 +521,7 @@ Recall that the product of a matrix and a vector can be interpreted as a linear 
 3\amp 1\amp -2\\
 1\amp 0\amp 3\\
 -2\amp 1\amp 1
-\end{bmatrix},\,\,\,\mathbf{b}=\begin{bmatrix} -2\\7\\-1\end{bmatrix}
+\end{bmatrix},\,\,\,\mathbf{b}=\begin{bmatrix} -2\\7\\-1\end{bmatrix}.
 </me>
 </p>
 </li>
@@ -535,7 +535,7 @@ Recall that the product of a matrix and a vector can be interpreted as a linear 
 1\amp -1\amp 3\\
 2\amp -1\amp 1\\
 0\amp 1\amp -5
-\end{bmatrix},\,\,\,\mathbf{b}=\begin{bmatrix} 4\\-1\\2\end{bmatrix}
+\end{bmatrix},\,\,\,\mathbf{b}=\begin{bmatrix} 4\\-1\\2\end{bmatrix}.
 </me>
 </p>
 </li>
@@ -549,7 +549,7 @@ Recall that the product of a matrix and a vector can be interpreted as a linear 
            For <m>A</m>, we are looking for <m>x_1, x_2, x_3</m> such that
 
 <me>
-    x_1\begin{bmatrix}3\\1\\-2\end{bmatrix}+x_2\begin{bmatrix}1\\0\\1\end{bmatrix}+x_3\begin{bmatrix}-2\\3\\1\end{bmatrix}=\begin{bmatrix}-2\\7\\-1\end{bmatrix}
+    x_1\begin{bmatrix}3\\1\\-2\end{bmatrix}+x_2\begin{bmatrix}1\\0\\1\end{bmatrix}+x_3\begin{bmatrix}-2\\3\\1\end{bmatrix}=\begin{bmatrix}-2\\7\\-1\end{bmatrix}.
 </me>
 
 Solving this equation amounts to finding <m>\mathbf{x}=\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}</m> such that <m>A\mathbf{x}=\mathbf{b}</m>.  The augmented matrix corresponding to this equation, together with its reduced row-echelon form are
@@ -563,14 +563,14 @@ Solving this equation amounts to finding <m>\mathbf{x}=\begin{bmatrix}x_1\\x_2\\
  \\
  \end{array}\left[\begin{array}{ccc|c}  
  1\amp 0\amp 0\amp 1\\0\amp 1\amp 0\amp -1\\0\amp 0\amp 1\amp 2
- \end{array}\right]
+ \end{array}\right].
 </me>
 
 
 So, <m>\mathbf{x}=\begin{bmatrix} 1\\-1\\2\end{bmatrix}</m> is a solution to the matrix equation.  We conclude that <m>\mathbf{b}</m> is a linear combination of the columns of <m>A</m>, and write
 
 <me>
-    \mathbf{b}=\begin{bmatrix} -2\\7\\-1\end{bmatrix}=\begin{bmatrix} 3\\1\\-2\end{bmatrix}-\begin{bmatrix} 1\\0\\1\end{bmatrix}+2\begin{bmatrix} -2\\3\\1\end{bmatrix}
+    \mathbf{b}=\begin{bmatrix} -2\\7\\-1\end{bmatrix}=\begin{bmatrix} 3\\1\\-2\end{bmatrix}-\begin{bmatrix} 1\\0\\1\end{bmatrix}+2\begin{bmatrix} -2\\3\\1\end{bmatrix}.
 </me>
 </p>
 
@@ -586,7 +586,7 @@ For <m>B</m> We begin by attempting to solve the matrix equation  <m>A\mathbf{x}
  \\
  \end{array}\left[\begin{array}{ccc|c}  
  1\amp 0\amp -2\amp 0\\0\amp 1\amp -5\amp 0\\0\amp 0\amp 0\amp 1
- \end{array}\right]
+ \end{array}\right].
 </me>
 
 

@@ -8,11 +8,6 @@
 
 
 
-
-<subsection xml:id="Subsection-Definition-and-Properties-of-Matrix-Inverses">
-    <title>Definition and Properties of Matrix Inverses</title>
-</subsection>
-
 <p>
 Consider the equation <m>2x=6</m>.  It takes little time to recognize that the solution to this equation is <m>x=3</m>.  In fact, the solution is so obvious that we do not think about the algebraic steps necessary to find it.  Let's take a look at these steps in detail.
 
@@ -127,13 +122,13 @@ The following theorem shows that matrix inverses are unique.
 Because <m>B</m> is an inverse of <m>A</m>, we have:
 
 <me>
-    AB=BA=I
+    AB=BA=I.
 </me>
 
 Suppose there exists another <m>n\times n</m> matrix <m>C</m> such that 
 
 <me>
-    AC=CA=I
+    AC=CA=I.
 </me>
 
 Then
@@ -154,7 +149,7 @@ Then
 
 
 <me>
-    B=C
+    B=C.
 </me>
 
     </p>
@@ -174,7 +169,7 @@ Now that we know that a matrix <m>A</m> cannot have more than one inverse, we ca
         <p>
             Let 
 <me>
-    A=\begin{bmatrix}1 \amp  -1\\-5 \amp  2\end{bmatrix}\quad\text{and}\quad B=\begin{bmatrix}-2/3 \amp  -1/3\\-5/3 \amp  -1/3\end{bmatrix}
+    A=\begin{bmatrix}1 \amp  -1\\-5 \amp  2\end{bmatrix}\quad\text{and}\quad B=\begin{bmatrix}-2/3 \amp  -1/3\\-5/3 \amp  -1/3\end{bmatrix}.
 </me>
  Verify that <m>A</m> and <m>B</m> are inverses of each other.
        </p>
@@ -189,14 +184,14 @@ Now that we know that a matrix <m>A</m> cannot have more than one inverse, we ca
 <md>
 <mrow> AB \amp =\begin{bmatrix}1 \amp  -1\\-5 \amp  2\end{bmatrix}\begin{bmatrix}-2/3 \amp  -1/3\\-5/3 \amp  -1/3\end{bmatrix} </mrow>
 <mrow> \amp =\begin{bmatrix}-2/3+5/3 \amp  -1/3+1/3\\10/3-10/3 \amp  5/3-2/3\end{bmatrix} </mrow>
-<mrow> \amp =\begin{bmatrix}1 \amp  0\\0 \amp  1\end{bmatrix} </mrow>
+<mrow> \amp =\begin{bmatrix}1 \amp  0\\0 \amp  1\end{bmatrix}, </mrow>
 </md>
 
 
 <md>
 <mrow> BA \amp =\begin{bmatrix}-2/3 \amp  -1/3\\-5/3 \amp  -1/3\end{bmatrix}\begin{bmatrix}1 \amp  -1\\-5 \amp  2\end{bmatrix} </mrow>
 <mrow> \amp =\begin{bmatrix}-2/3+5/3 \amp  2/3-2/3\\-5/3+5/3 \amp  5/3-2/3\end{bmatrix} </mrow> 
-<mrow> \amp =\begin{bmatrix}1 \amp  0\\0 \amp  1\end{bmatrix} </mrow>
+<mrow> \amp =\begin{bmatrix}1 \amp  0\\0 \amp  1\end{bmatrix}. </mrow>
 </md>
        </p>
     </answer>
@@ -211,7 +206,7 @@ Now that we know that a matrix <m>A</m> cannot have more than one inverse, we ca
             Use what we found in <xref ref="ex-inverse1"/> to solve the matrix equation:
 
 <me>
-    \begin{bmatrix}1 \amp  -1\\-5 \amp  2\end{bmatrix}\mathbf{x}=\begin{bmatrix}-3\\1\end{bmatrix}
+    \begin{bmatrix}1 \amp  -1\\-5 \amp  2\end{bmatrix}\mathbf{x}=\begin{bmatrix}-3\\1\end{bmatrix}.
 </me>
        </p>
     </statement>
@@ -225,7 +220,7 @@ Now that we know that a matrix <m>A</m> cannot have more than one inverse, we ca
 
 
 <me>
-    \mathbf{x}=\begin{bmatrix}5/3\\14/3\end{bmatrix}
+    \mathbf{x}=\begin{bmatrix}5/3\\14/3\end{bmatrix}.
 </me>
        </p>
     </answer>
@@ -401,7 +396,9 @@ This shows that a matrix <m>B</m> such that <m>AB=I</m> does not exist, and <m>A
 </corollary>
 
 
-
+<p> 
+Finding inverses is important. We exhibit two examples of this.
+</p> 
 
 <example xml:id="ex-inverse3">
     <statement>
@@ -498,7 +495,7 @@ This shows that a matrix <m>B</m> such that <m>AB=I</m> does not exist, and <m>A
 <me>
     \left[\begin{array}{ccc|ccc}  
  1\amp 0\amp 0\amp 2\amp -5/2\amp 3/2\\0\amp 1\amp 0\amp -1\amp 3/2\amp -1/2\\0\amp 0\amp 1\amp -1\amp 2\amp -1
- \end{array}\right]
+ \end{array}\right].
 </me>
 
  
@@ -506,7 +503,7 @@ This shows that a matrix <m>B</m> such that <m>AB=I</m> does not exist, and <m>A
  
 
 <me>
-    A^{-1}=\begin{bmatrix}2\amp -5/2\amp 3/2\\-1\amp 3/2\amp -1/2\\-1\amp 2\amp -1\end{bmatrix}
+    A^{-1}=\begin{bmatrix}2\amp -5/2\amp 3/2\\-1\amp 3/2\amp -1/2\\-1\amp 2\amp -1\end{bmatrix}.
 </me>
        </p>
     </answer>
@@ -575,7 +572,7 @@ This shows that a matrix <m>B</m> such that <m>AB=I</m> does not exist, and <m>A
 <me>
     \left[\begin{array}{ccc|ccc}  
  1\amp 3/2\amp -1/2\amp 1/2\amp 0\amp 0\\0\amp 1\amp 1/2\amp 0\amp 1/2\amp 0\\0\amp 0\amp 0\amp -2\amp 1\amp 1
- \end{array}\right]
+ \end{array}\right].
 </me>
 
  At this point we see that the left-hand side cannot be turned into <m>I</m> through elementary row operations. We conclude that <m>A^{-1}</m> does not exist.
@@ -625,7 +622,7 @@ Let <m>A=\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}</m> be a nonsingular matri
     <statement>
         <p>
             <me>
-    A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d\amp -b\\-c\amp a\end{bmatrix}
+    A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d\amp -b\\-c\amp a\end{bmatrix}.
 </me>
         </p>
     </statement>
@@ -647,10 +644,6 @@ Clearly, the expression for <m>A^{-1}</m> is defined, if and only if <m>ad-bc\ne
 
 
 
-
-
-<subsection xml:id="Subsection-Practice-Problems">
-    <title>Practice Problems</title>
 <exercises>
 
 <exercise xml:id="prob-owninverse">
@@ -920,7 +913,5 @@ and <m>A\neq -I.</m>
     </statement>
 </exercise>
 </exercises>
-
-</subsection>
 
 </section>
