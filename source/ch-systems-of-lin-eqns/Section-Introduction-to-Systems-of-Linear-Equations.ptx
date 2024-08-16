@@ -394,6 +394,12 @@
             </li> 
             </ul>
             </p>
+
+
+
+            <p>
+            The following examples are in-depth full runs on linear systems of equations.
+            </p> 
             
             <example xml:id="ex-systwoeqs2">
                 <statement>
@@ -560,7 +566,7 @@
         <title>Geometry of Linear Systems in Three Variables</title>
 
         <p>
-            In <xref ref="ex-threeeqthreevars1"/> we solved the following linear system of three equations and three unknowns
+            In <xref ref="ex-threeeqthreevars1"/>, we solved the following linear system of three equations and three unknowns
             <me>
                 \begin{array}{ccccccc}
                   3x \amp   - \amp   y\amp  +\amp  z\amp  = \amp  0 \\
@@ -617,7 +623,7 @@
                 <p>
                     Second, the three planes can intersect in a line, forming a paddle-wheel shape.  In this case, every point along the line of intersection is a solution to the system, giving us infinitely many solutions.
                 </p>
-                <image width="80%">
+                <image width="70%">
                     <shortdescription></shortdescription>
                      <latex-image>
                          \tdplotsetmaincoords{70}{130}
@@ -717,7 +723,12 @@
         </definition>
 
         <p>
-            An <m>n</m>-tuple <m>(x_1, x_2,\ldots ,x_n)</m> is a <term>solution</term> to the equation <m>a_1x_1+a_2x_2+\ldots +a_nx_n=b</m> provided that it turns the equation into a true statement.  The set of all <m>n</m>-tuples that are solutions to a given equation is called the <term>graph</term> of the equation. The graph of a linear equation in two variables is a line in <m>\R^2</m>.  The graph of a linear equation in three variables is a plane in <m>\R^3</m>.  In <m>\R^n</m>, for <m>n\gt3</m>, we say that the graph of a linear equation is a <term>hyperplane</term>. A hyperplane cannot be visualized, but we can still talk about intersections of hyperplanes and their other attributes in algebraic terms.  
+            An <m>n</m>-tuple 
+            <me>
+            (x_1, x_2,\ldots ,x_n)
+            </me> 
+            
+            is a <term>solution</term> to the equation <m>a_1x_1+a_2x_2+\ldots +a_nx_n=b</m> provided that it turns the equation into a true statement.  The set of all <m>n</m>-tuples that are solutions to a given equation is called the <term>graph</term> of the equation. The graph of a linear equation in two variables is a line in <m>\R^2</m>.  The graph of a linear equation in three variables is a plane in <m>\R^3</m>.  In <m>\R^n</m>, for <m>n\gt3</m>, we say that the graph of a linear equation is a <term>hyperplane</term>. A hyperplane cannot be visualized, but we can still talk about intersections of hyperplanes and their other attributes in algebraic terms.  
             </p>
             
             <p>

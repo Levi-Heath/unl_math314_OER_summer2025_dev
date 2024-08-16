@@ -282,7 +282,12 @@
                -x_1\amp  +\amp x_2\amp +\amp 4x_3\amp =\amp 1
                 \end{array}
             </me>
-            Recall that in <xref ref="init-augmentedmatrixex"/> we converted the given system to an augmented matrix form, then performed elementary row operations until we arrived at a ``convenient" form.  We then converted the ``convenient" augmented matrix back to a system of equations and identified the solution.  The term ``convenient" is open to interpretation.  In this problem we will explore two ``convenient" forms.  Each one will lead to a definition.  
+            Recall that in <xref ref="init-augmentedmatrixex"/> we converted the given system to an augmented matrix form, then performed elementary row operations until we arrived at a ``convenient" form.  
+            We then converted the ``convenient" augmented matrix back to a system of equations and identified a solution.  
+            </p>
+
+            <p>
+            The term ``convenient" is open to interpretation.  In this problem we will explore two ``convenient" forms.  Each one will lead to a definition.  
             <mdn>
                 <mrow number="no"> 
                     \amp \left[\begin{array}{ccc|c}  

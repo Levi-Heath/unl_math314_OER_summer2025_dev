@@ -305,7 +305,7 @@ Do you think it is possible to start with <xref ref="eq-ref2"/> and obtain the s
  1\amp 0\amp 0\amp 0\\0\amp 1\amp 0\amp -1\\0\amp 0\amp 1\amp -1
  \end{array}\right]
 </me>
-You will be asked to fill in the elementary row operations in <xref ref="prob-same_rref"/>.
+You will be asked to fill in the elementary row operations in <xref ref="prob-same-rref"/>.
     </p>
 </exploration>
 
@@ -521,6 +521,13 @@ The following modification to the Gaussian Algorithm produces the reduced row-ec
 
 
 
+<p> 
+The algorithm is an essential tool in linear algebra. An fully detailed example is provided below.
+</p> 
+
+
+
+
 <example xml:id="ex-gaussjordanalg">
     <statement>
         <p>
@@ -616,7 +623,7 @@ The following modification to the Gaussian Algorithm produces the reduced row-ec
     The solution is
     
 <me>
-    x=2-3t,\quad y=1+2t,\quad z=t
+    x=2-3t,\quad y=1+2t,\quad z=t.
 </me>
        </p>
     </answer>
@@ -655,10 +662,17 @@ The video highlights the fact that regardless of what sequence of elementary row
 
     <statement>
         <p>
-            The <term>rank</term> of matrix <m>A</m>, denoted by <m>\mbox{rank}(A)</m>, is the number of nonzero rows that remain after we reduce <m>A</m> to row-echelon form by elementary row operations.
+            The <term>rank</term> of matrix <m>A</m>, denoted by <m>\mbox{rank}(A)</m>, 
+            is the number of nonzero rows that remain after we reduce <m>A</m> to row-echelon form by elementary row operations.
         </p>
     </statement>
 </definition>
+
+
+
+<p> 
+The rank a notion connected closely to the existence of solutions and other more nuanced notions emerging later on. We provide an example on how to compute it.
+</p> 
 
 <example xml:id="ex-rankofA1">
     <statement>
