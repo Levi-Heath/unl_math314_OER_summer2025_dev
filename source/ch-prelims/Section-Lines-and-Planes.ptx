@@ -179,6 +179,10 @@
             </statement>
         </identity>
         
+        <p> 
+        An example on using these formulas is show next.
+        </p> 
+
         <example xml:id="ex-parameqlinepoint">
             <p>
                 Find parametric equations for line <m>l</m> if <m>l</m> contains the point <m>(2, -5)</m> and is parallel to line <m>k</m> with parametric equations
@@ -288,6 +292,10 @@
             </statement>
         </identity>
         
+        <p> 
+        As before, using these in explicit situations is the most important part:
+        </p>
+
         <example xml:id="ex-paramline3d">
             <p>
                 Find a set of parametric equations for a line in <m>\R^3</m> that passes through <m>(1, -2, 4)</m> and <m>(-3, 1, 1)</m>.
@@ -452,6 +460,10 @@
             </statement>
         </definition>
       
+        <p> 
+        There are details in the definition worth flagging up, such as the wordin "to every vector". To emphasize this, we demonstrate an example in detail.
+        </p> 
+
         <example xml:id="ex-standardunitvectnormals">
             <p>
               The standard unit vector <m>\mathbf{k}</m> is orthogonal to every vector in the <m>xy</m>-plane, therefore it is a normal for the <m>xy</m>-plane.

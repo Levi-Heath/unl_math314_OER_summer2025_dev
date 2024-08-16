@@ -168,6 +168,10 @@
       </proof>
   </theorem>
   
+<p> 
+The abstract proof can it everything seem a little odd. In practice, the actual computation is relatively straightforward. Here is an example:
+</p> 
+
   <example xml:id="reference">
     <p>
       Find a unit vector in the direction of <m>\mathbf{v}=\begin{bmatrix}2\\-3\\1\\0\\1\end{bmatrix}</m>.
@@ -200,6 +204,10 @@
         </p>
       </statement>
     </definition>
+
+    <p> 
+    We will see the dot product reppear over and over again. As such, an example of a computation is reasonable to start with:
+    </p> 
 
     <example xml:id="ex-dotex">
       <p>
@@ -362,6 +370,10 @@
             </p>
         </statement>
     </definition>
+
+    <p>
+    Although we will revisit the projection in greater detail much later, we illustrate it in an explicit case with a picture.
+    </p> 
 
     <example xml:id="ex-projection1">
         <p>

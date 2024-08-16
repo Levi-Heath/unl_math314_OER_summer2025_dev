@@ -73,6 +73,12 @@
       </latex-image>
     </image>
 
+
+    <p> 
+Here is a hands down example:
+    </p> 
+
+
     <example xml:id="ex-plotpointsr3">
       <p>
         The following points are shown plotted in <m>\R^3</m>.
@@ -751,6 +757,10 @@
           </men>
       </p>
   
+      <p> 
+      Let us try these new formulas out:
+      </p> 
+      
       <example xml:id="ex-findmaginr3">
           <p>
               The magnitude of <m>\mathbf{v}=\begin{bmatrix}6\\-2\\3\end{bmatrix}</m> is given by
@@ -789,6 +799,10 @@
               </p>
           </statement>
       </definition>
+
+      <p> 
+        To get acquianted with the new concepts, we provide a concrete example to showcase them.
+      </p> 
   
       <example xml:id="ex-findnorminr4">
           <p>
