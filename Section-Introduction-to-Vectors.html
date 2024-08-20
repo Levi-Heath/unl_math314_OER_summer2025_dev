@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Introduction to Vectors</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Coordinated Linear Algebra">
+<meta property="book:author" content="Anna Davis">
+<meta property="book:author" content="Paul Zachlin">
+<meta property="book:author" content="Allan Donsig">
+<meta property="book:author" content="Levi Heath">
+<meta property="book:author" content="Mikkel Munkholm">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.3.6';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.6/prefix-runtime.00db6230172ad960.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.6/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.6/prefix-runestone.5d3fd44c34d81620.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.3.6/prefix-347.f9add1ca35d5ad93.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.3.6/prefix-runestone.f64dcc3632d7a0c3.css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""><img src="external/images/cover.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Coordinated Linear Algebra</span></a></h1>
+<p class="byline">Anna Davis, Paul Zachlin, Allan Donsig, Levi Heath, Mikkel Munkholm</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="Chapter-Preliminaries.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="Chapter-Preliminaries.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
+\newcommand{\Z}{\mathbb Z} 
+\newcommand{\Q}{\mathbb Q} 
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\dfn}{\textit}
+\newcommand{\id}{\text{id}}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="Chapter-Preliminaries.html" class="internal"><span class="codenumber">1</span> <span class="title">Preliminaries</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction to Vectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-A-Brief-Introduction-to-Real-Space" class="internal"><span class="codenumber">1.1.1</span> <span class="title">A Brief Introduction to <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Distance-in-Real-Space" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Distance in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-What-is-a-Vector" class="internal"><span class="codenumber">1.1.3</span> <span class="title">What is a Vector?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vectors-in-Standard-Position" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Vectors in Standard Position</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vectors-in-3d" class="internal"><span class="codenumber">1.1.5</span> <span class="title">Vectors in <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vectors-in-Real-Space" class="internal"><span class="codenumber">1.1.6</span> <span class="title">Vectors in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Section-Length-of-a-Vector" class="internal"><span class="codenumber">1.1.7</span> <span class="title">Length of a Vector</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Geometry-of-Scalar-Multiplication" class="internal"><span class="codenumber">1.1.8</span> <span class="title">Geometry of Scalar Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Algebra-of-Scalar-Multiplication" class="internal"><span class="codenumber">1.1.9</span> <span class="title">Algebra of Scalar Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Geometry-of-Vector-Addition" class="internal"><span class="codenumber">1.1.10</span> <span class="title">Geometry of Vector Addition</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsubsection-Head-to-Tail-Addition-Method" class="internal"><span class="codenumber">1.1.10.1</span> <span class="title">“Head-to-Tail” Addition Method</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsubsection-Parallelogram-Addition-Method" class="internal"><span class="codenumber">1.1.10.2</span> <span class="title">Parallelogram Addition Method</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Algebra-of-Vector-Addition" class="internal"><span class="codenumber">1.1.11</span> <span class="title">Algebra of Vector Addition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Geometry-of-Vector-Addition-in-3d" class="internal"><span class="codenumber">1.1.12</span> <span class="title">Geometry of Vector Addition in <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vector-Subtraction" class="internal"><span class="codenumber">1.1.13</span> <span class="title">Vector Subtraction</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Properties-of-Vector-Addition-and-Scalar-Multiplication" class="internal"><span class="codenumber">1.1.14</span> <span class="title">Properties of Vector Addition and Scalar Multiplication</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Exercises-Introduction-to-Vectors" class="internal"><span class="codenumber">1.1.15</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Unit Vectors, the Dot Product, and Orthogonal Projection</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Subsection-Standard-Unit-Vectors-in-2d-and-3d" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Standard Unit Vectors in <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Subsection-A-Vector-as-a-Linear-Combination-of-Standard-Unit-Vectors" class="internal"><span class="codenumber">1.2.2</span> <span class="title">A Vector as a Linear Combination of Standard Unit Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Subsection-Standard-Unit-Vectors-in-Real-Space" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Standard Unit Vectors in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Section-Unit-Vector-in-the-Direction-of-a-Given-Vector" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Unit Vector in the Direction of a Given Vector</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Subsection-The-Dot-Product" class="internal"><span class="codenumber">1.2.5</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Subsection-Orthogonal-Projections" class="internal"><span class="codenumber">1.2.6</span> <span class="title">Orthogonal Projections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Subsection-Distance-from-a-Point-to-a-Line" class="internal"><span class="codenumber">1.2.7</span> <span class="title">Distance from a Point to a Line</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Exercises-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection" class="internal"><span class="codenumber">1.2.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Lines-and-Planes.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Lines and Planes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Lines-and-Planes.html#Subsection-Parametric-Lines-in-the-Real-Plane" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Parametric Lines in <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Lines-and-Planes.html#Subsection-Parametric-Lines-in-3d" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Parametric Lines in <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Lines-and-Planes.html#Subsection-Parametric-Lines-in-Real-Space" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Parametric Lines in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Lines-and-Planes.html#Subsection-From-Parametric-Equations-to-Vector-Equations" class="internal"><span class="codenumber">1.3.4</span> <span class="title">From Parametric Equations to Vector Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Lines-and-Planes.html#Subsection-Planes-in-3d" class="internal"><span class="codenumber">1.3.5</span> <span class="title">Planes in <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Lines-and-Planes.html#Subsection-Linear-Equations-and-their-Graphs-From-Lines-to-Hyperplanes" class="internal"><span class="codenumber">1.3.6</span> <span class="title">Linear Equations and their Graphs: From Lines to Hyperplanes</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Lines-and-Planes.html#Exercises-Lines-and-Planes" class="internal"><span class="codenumber">1.3.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Systems-of-Linear-Equations.html" class="internal"><span class="codenumber">2</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction to Systems of Linear Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Algebra-of-Linear-Systems" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Algebra of Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Geometry-of-Linear-Systems-in-Two-Variables" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Geometry of Linear Systems in Two Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Geometry-of-Linear-Systems-in-Three-Variables" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Geometry of Linear Systems in Three Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-General-Systems-of-Linear-Equations" class="internal"><span class="codenumber">2.1.4</span> <span class="title">General Systems of Linear Equations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Exercises-Introduction-to-Systems-of-Linear-Equations" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Augmented Matrix Notation and Elementary Row Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html#Subsection-Augmented-Matrix-Notation" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Augmented Matrix Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html#Subsection-Row-Echelon-and-Reduced-Row-Echelon-Forms" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Row-Echelon and Reduced Row-Echelon Forms</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html#Exercises-Augmented-Matrix-Notation-and-Elementary-Row-Operations" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Gaussian Elimination and Rank</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html#Subsection-Row-Echelon-and-Reduced-Row-Echelon-Forms" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Row Echelon and Reduced Row Echelon Forms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html#Subsection-Gaussian-and-Gauss-Jordan-Elimination" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Gaussian and Gauss-Jordan Elimination</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html#Subsection-Rank" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Rank</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html#Exercises-Gaussian-Elimination-and-Rank" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html#Section-Gaussian-Elimination-and-Rank-6" class="internal"><span class="codenumber">2.3.5</span> <span class="title">References</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Applications-of-Systems-of-Linear-Equations.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Extra Topic: Applications of Systems of Linear Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Applications-of-Systems-of-Linear-Equations.html#Subsection-Network-Flows" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Network Flows</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Applications-of-Systems-of-Linear-Equations.html#Subsection-Electrical-Networks" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Electrical Networks</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Applications-of-Systems-of-Linear-Equations.html#Subsection-Chemical-Equations" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Chemical Equations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Applications-of-Systems-of-Linear-Equations.html#Exercises-Applications-of-Systems-of-Linear-Equations" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Big-Ideas-about-Vectors.html" class="internal"><span class="codenumber">3</span> <span class="title">Big Ideas about Vectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Linear-Combinations-of-Vectors.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Linear Combinations of Vectors and their Span</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Combinations-of-Vectors.html#Subsection-Visualizing-Linear-Combinations-in-2d-and-3d" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Visualizing Linear Combinations in <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Combinations-of-Vectors.html#Subsection-Geometry-of-Linear-Combinations" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Geometry of Linear Combinations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Combinations-of-Vectors.html#Section-Span" class="internal"><span class="codenumber">3.1.3</span> <span class="title">The Linear Span</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Linear-Combinations-of-Vectors.html#Section-Linear-Combinations-of-Vectors-9" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Linear-Independence.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Linear Independence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsection-Redundant-Vectors" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Redundant Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsection-Linear-Independence" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Linear Independence</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsection-Geometry-of-Linearly-Dependent-and-Linearly-Independent-Vectors" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Geometry of Linearly Dependent and Linearly Independent Vectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsubsection-A-Set-of-Two-Vectors" class="internal"><span class="codenumber">3.2.3.1</span> <span class="title">A Set of Two Vectors</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsubsection-A-Set-of-Three-Vectors" class="internal"><span class="codenumber">3.2.3.2</span> <span class="title">A Set of Three Vectors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Linear-Independence.html#prob-linindmultchoice1" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Matrices.html" class="internal"><span class="codenumber">4</span> <span class="title">Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Matrix Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Addition-of-Matrices" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Addition - and Scalar multiplication of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Matrix-Multiplication" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Matrix-Vector-Multiplication" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Matrix-Vector Multiplication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Matrix-Matrix-Multiplication" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Matrix-Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Properties-of-Matrix-Multiplication" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Properties of Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Transpose-of-a-Matrix" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Transpose of a Matrix</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Section-Addition-and-Scalar-Multiplication-of-Matrices-19" class="internal"><span class="codenumber">4.1.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Linear Systems as Matrix and Linear Combination Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html#Subsection-Singular-and-Nonsingular-Matrices" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Singular and Nonsingular Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html#Subsection-A-Linear-System-as-a-Linear-Combination-Equation" class="internal"><span class="codenumber">4.2.2</span> <span class="title">A Linear System as a Linear Combination Equation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html#Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations-10" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Homogeneous Linear Systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html#Subsection-General-and-Particular-Solutions" class="internal"><span class="codenumber">4.3.1</span> <span class="title">General and Particular Solutions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html#Section-Homogeneous-Linear-Systems-7" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-The-Inverse-of-a-Matrix.html" class="internal"><span class="codenumber">4.4</span> <span class="title">The Inverse of a Matrix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-The-Inverse-of-a-Matrix.html#Subsection-Computing-the-Inverse" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Computing the Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-The-Inverse-of-a-Matrix.html#Subsection-Inverse-of-a-2d-matrix" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Inverse of a <span class="process-math">\(2\times 2\)</span> Matrix</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-The-Inverse-of-a-Matrix.html#Section-The-Inverse-of-a-Matrix-15" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Elementary-Matrices.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Elementary Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Matrices.html#Subsection-Inverses-of-Elementary-Matrices" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Inverses of Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Elementary-Matrices.html#Section-Elementary-Matrices-14" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-LU-Factorization.html" class="internal"><span class="codenumber">4.6</span> <span class="title">LU Factorization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-LU-Factorization.html#Subsection-Finding-an-LU-factorization-by-the-Multiplier-Method" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Finding an <span class="process-math">\(LU\)</span> factorization by the Multiplier Method</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-LU-Factorization.html#Section-LU-Factorization-10" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Application-to-Markov-Chains.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Extra Topic: Application to Markov Chains</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Application-to-Markov-Chains.html#Subsection-Steady-State-Vector" class="internal"><span class="codenumber">4.7.1</span> <span class="title">Steady State Vector</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Application-to-Markov-Chains.html#Section-Application-to-Markov-Chains-20" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Subspaces-of-Rn.html" class="internal"><span class="codenumber">5</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section--m-mathbb-R.html" class="internal"><span class="codenumber">5.1</span> <span class="title"><span class="process-math">\(\mathbb{R}^n\)</span> and subspaces of <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section--m-mathbb-R.html#Subsection-Closure" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Closure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section--m-mathbb-R.html#Subsection-Rn-as-a-Vector-Space" class="internal"><span class="codenumber">5.1.2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section--m-mathbb-R.html#Subsection-Subspaces-of-Rn" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section--m-mathbb-R.html#Section--m-mathbb-R-7" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Bases-and-Dimension.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bases and Dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Subsection-Coordinate-Vectors" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Coordinate Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Subsection-What-Constitutes-a-Basis" class="internal"><span class="codenumber">5.2.2</span> <span class="title">What Constitutes a Basis?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Subsection-Definition-of-a-Basis" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Definition of a Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Subsection-Exploring-Dimension" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Exploring Dimension</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Bases-and-Dimension-6" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span> Associated with Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#Subsection-Row-Space-of-a-Matrix" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Row Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#Subsection-Column-Space-of-a-Matrix" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Column Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#Subsection-The-Null-Space" class="internal"><span class="codenumber">5.3.3</span> <span class="title">The Null Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#Subsection-Rank-and-Nullity-Theorem" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Rank and Nullity Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#Section-Subspaces-of-m-R-n-m-Associated-with-Matrices-6" class="internal"><span class="codenumber">5.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Linear-Transformations.html" class="internal"><span class="codenumber">6</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Matrix-Transformations.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Matrix Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Subsection-Functions-from-Rn-into-Rm" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Functions from <span class="process-math">\(\R^n\)</span> into <span class="process-math">\(\R^m\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Subsection-Examples-of-Matrix-Transformations" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Examples of Matrix Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Subsection-Linearity-of-Matrix-Transformations" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Linearity of Matrix Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Subsection-Where-did-i-go" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Where did <span class="process-math">\(\mathbf{i}\)</span> Go?</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Section-Matrix-Transformations-6" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Introduction-to-Linear-Transformations.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Introduction to Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Linear-Transformations.html#Subsection-Linear-Transformations-Induced-by-Matrices" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Linear Transformations Induced by Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Linear-Transformations.html#Subsection-Linear-Transformations-of-Subspaces-of-Rn" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Linear Transformations of Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Linear-Transformations.html#Section-Standard-Matrix-of-a-Linear-Transformation-from-m-R-n-m-to-m-R-m-m-" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Standard Matrix of a Linear Transformation from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Introduction-to-Linear-Transformations.html#Section-Introduction-to-Linear-Transformations-23" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Composition, Inverses, Images and Kernel</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#Subsection-Composition-and-Matrix-Multiplication" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Composition and Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#Subsection-Inverses-of-Linear-Transformations" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Inverses of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#Subsection-Linear-Transformations-of-Rn-and-the-Standard-Matrix-of-the-Inverse-Transformation" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Linear Transformations of <span class="process-math">\(\R^n\)</span> and the Standard Matrix of the Inverse Transformation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#Subsection-The-Image-of-a-Linear-Transformation" class="internal"><span class="codenumber">6.3.4</span> <span class="title">The Image</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#Subsection-The-Kernel-of-a-Linear-Transformation" class="internal"><span class="codenumber">6.3.5</span> <span class="title">The Kernel of a Linear Transformation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#Subsection-Rank-Nullity-Theorem-for-Linear-Transformations" class="internal"><span class="codenumber">6.3.6</span> <span class="title">Rank-Nullity Theorem for Linear Transformations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#Section-Composition-and-Inverses-of-Linear-Transformations-9" class="internal"><span class="codenumber">6.3.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Geometric-Transformations-of-the-Plane.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Extra Topic: Geometric Transformations of the Plane</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Geometric-Transformations-of-the-Plane.html#Subsection-Horizontal-and-Vertical-Scaling" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Horizontal and Vertical Scaling</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Geometric-Transformations-of-the-Plane.html#Subsection-Horizontal-and-Vertical-Shears" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Horizontal and Vertical Shears</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Geometric-Transformations-of-the-Plane.html#Subsection-Rotations-about-the-Origin" class="internal"><span class="codenumber">6.4.3</span> <span class="title">Rotations about the Origin</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Geometric-Transformations-of-the-Plane.html#Subsection-Reflections-about-Lines-of-the-Form" class="internal"><span class="codenumber">6.4.4</span> <span class="title">Reflections about Lines of the Form <span class="process-math">\(y=mx\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Geometric-Transformations-of-the-Plane.html#Subsection-Composition-of-Linear-Transformations" class="internal"><span class="codenumber">6.4.5</span> <span class="title">Composition of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Geometric-Transformations-of-the-Plane.html#Section-Geometric-Transformations-of-the-Plane-12" class="internal"><span class="codenumber">6.4.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Application-to-Computer-Graphics.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Extra Topic: Application to Computer Graphics</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Application-to-Computer-Graphics.html#Section-Application-to-Computer-Graphics-21" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-The-Determinant.html" class="internal"><span class="codenumber">7</span> <span class="title">The Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Finding-the-Determinant.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Finding the Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-Cofactor-Expansion-Along-the-Top-Row" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Cofactor Expansion Along the Top Row</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-Cofactor-Expansion-Along-the-First-Column" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Cofactor Expansion Along the First Column</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-Cofactor-Expansion-Along-Any-Row-or-Column" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Cofactor Expansion Along Any Row or Column</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-A-Note-on-Equivalency" class="internal"><span class="codenumber">7.1.4</span> <span class="title">A Note on Equivalency</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-Determinants-of-Some-Special-Matrices" class="internal"><span class="codenumber">7.1.5</span> <span class="title">Determinants of Some Special Matrices</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Section-Finding-the-Determinant-9" class="internal"><span class="codenumber">7.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Properties of the Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html#Subsection-The-Effects-of-Elementary-Row-Operations-on-the-Determinant" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Effects of Elementary Row Operations on the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html#Subsection-Computing-the-Determinant-Using-Elementary-Row-Operations" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Computing the Determinant Using Elementary Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html#Subsection-Properties-of-the-Determinant" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html#Section-Elementary-Row-Operations-and-the-Determinant-7" class="internal"><span class="codenumber">7.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Determinants and Inverses of Nonsingular Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#Subsection-Cramers-Rule" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Cramer’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#Subsection-Adjugate-Formula-for-the-Inverse-of-a-Matrix" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Adjugate Formula for the Inverse of a Matrix</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#Section-Determinants-and-Inverses-of-Nonsingular-Matrices-5" class="internal"><span class="codenumber">7.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Extra Topic: Determinants, Areas, and Volumes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html#Subsection-2times2-Determinant-and-the-Area-of-a-Parallelogram" class="internal"><span class="codenumber">7.4.1</span> <span class="title"><span class="process-math">\(2\times 2\)</span> Determinant and the Area of a Parallelogram</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html#Subsection-3times3-Determinant-and-the-Volume-of-a-Parallelepiped" class="internal"><span class="codenumber">7.4.2</span> <span class="title"><span class="process-math">\(3\times 3\)</span> Determinant and the Volume of a Parallelepiped</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html#Subsection-Determinants-and-Linear-Transformations" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Determinants and Linear Transformations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html#Section-Determinants-Areas-and-Volumes-5" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Eigenvalues-and-Eigenvectors.html" class="internal"><span class="codenumber">8</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#Section-The-Characteristic-Equation" class="internal"><span class="codenumber">8.1.1</span> <span class="title">The Characteristic Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#Subsection-Eigenvalues" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#Subsection-Eigenvectors" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Eigenvectors</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#Section-Describing-Eigenvalues-and-Eigenvectors-23" class="internal"><span class="codenumber">8.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Similar-Matrices-and-Their-Properties.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Similar - and Diagonalizable Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Similar-Matrices-and-Their-Properties.html#Section-Diagonalizable-Matrices-and-Multiplicity" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Diagonalizable Matrices and Multiplicity</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Similar-Matrices-and-Their-Properties.html#Section-Similar-Matrices-and-Their-Properties-20" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Orthogonality.html" class="internal"><span class="codenumber">9</span> <span class="title">Orthogonality</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Orthogonality and Projections</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Subsection-Orthogonal-and-Orthonormal-Sets" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Orthogonal and Orthonormal Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Subsection-Orthogonal-and-Orthonormal-Bases" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Orthogonal and Orthonormal Bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Subsection-Orthogonal-Projection-onto-a-Subspace" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Orthogonal Projection onto a Subspace</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Subsection-Orthogonal-Decomposition-of-x" class="internal"><span class="codenumber">9.1.4</span> <span class="title">Orthogonal Decomposition of <span class="process-math">\(\mathbf{x}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Section-Orthogonality-and-Projections-6" class="internal"><span class="codenumber">9.1.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Gram-Schmidt-Orthogonalization.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Gram-Schmidt Orthogonalization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Gram-Schmidt-Orthogonalization.html#Subsection-A-Visual-Guide-to-Creating-an-Orthogonal-Basis" class="internal"><span class="codenumber">9.2.1</span> <span class="title">A Visual Guide to Creating an Orthogonal Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Gram-Schmidt-Orthogonalization.html#Subsection-Gram-Schmidt-Orthogonalization-Algorithm" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Gram-Schmidt Orthogonalization Algorithm</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Gram-Schmidt-Orthogonalization.html#Section-Gram-Schmidt-Orthogonalization-5" class="internal"><span class="codenumber">9.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Orthogonal-Complements-and-Decompositions.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Orthogonal Complements and Decompositions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonal-Complements-and-Decompositions.html#Subsection-Orthogonal-Complements" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonal-Complements-and-Decompositions.html#Subsection-Orthogonal-Decomposition-Theorem" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Orthogonal Decomposition Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Orthogonal-Complements-and-Decompositions.html#Section-Orthogonal-Complements-and-Decompositions-4" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Orthogonal Matrices and Symmetric Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html#Subsection-Orthogonal-Matrices" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Orthogonal Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html#Subsection-Symmetric-Matrices" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Symmetric Matrices</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html#Section-Orthogonal-Matrices-and-Symmetric-Matrices-5" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-QR-Factorization.html" class="internal"><span class="codenumber">9.5</span> <span class="title">QR Factorization and Least Square Approximations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization.html#Subsection-QR-Algorithm-for-approximating-eigenvalues" class="internal"><span class="codenumber">9.5.1</span> <span class="title">QR-Algorithm for approximating eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization.html#Subsection-Least-Squares-Approximation" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Least-Squares Approximation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization.html#Subsection-Application-of-Least-Squares-to-Curve-Fitting" class="internal"><span class="codenumber">9.5.3</span> <span class="title">Application of Least Squares to Curve Fitting</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization.html#Subsection-QR-Factorization-A-Quicker-Way-to-do-Least-Squares" class="internal"><span class="codenumber">9.5.4</span> <span class="title"><span class="process-math">\(QR\)</span>-Factorization: A Quicker Way to do Least Squares</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-QR-Factorization.html#Section-QR-Factorization-19" class="internal"><span class="codenumber">9.5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Section-SVD-Decomposition.html" class="internal"><span class="codenumber">9.6</span> <span class="title">SVD Decomposition</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Positive-Definite-Matrices.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Extra Topic: Positive Definite Matrices</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Positive-Definite-Matrices.html#Section-Positive-Definite-Matrices-21" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Curve-Fitting.html" class="internal"><span class="codenumber">9.8</span> <span class="title">Extra Topic: Curve Fitting</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Curve-Fitting.html#Subsection-On-the-Dangers-of-Overfitting" class="internal"><span class="codenumber">9.8.1</span> <span class="title">On the Dangers of Overfitting</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Curve-Fitting.html#Section-Curve-Fitting-9" class="internal"><span class="codenumber">9.8.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Vector-Spaces.html" class="internal"><span class="codenumber">10</span> <span class="title">Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Abstract Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Subsection-Properties-of-Vector-Spaces" class="internal"><span class="codenumber">10.1.1</span> <span class="title">Properties of Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space" class="internal"><span class="codenumber">10.1.2</span> <span class="title">Definition of a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Subsection-Subspaces" class="internal"><span class="codenumber">10.1.3</span> <span class="title">Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Subsection-Linear-Combinations-and-Span" class="internal"><span class="codenumber">10.1.4</span> <span class="title">Linear Combinations and Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Section-Bases-and-Dimension-of-Abstract-Vector-Spaces" class="internal"><span class="codenumber">10.1.5</span> <span class="title">Bases and Dimension of Abstract Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Subsection-Bases-and-Dimension" class="internal"><span class="codenumber">10.1.6</span> <span class="title">Bases and Dimension</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Subsection-Finite-Dimensional-Vector-Spaces" class="internal"><span class="codenumber">10.1.7</span> <span class="title">Finite-Dimensional Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Subsection-Coordinate-Vectors" class="internal"><span class="codenumber">10.1.8</span> <span class="title">Coordinate Vectors</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Section-Abstract-Vector-Spaces-11" class="internal"><span class="codenumber">10.1.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Linear-Transformations-of-Abstract-Vector-Spaces.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Linear Transformations of Abstract Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Subsection-Linear-Transformations-and-Bases" class="internal"><span class="codenumber">10.2.1</span> <span class="title">Linear Transformations and Bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Subsection-Coordinate-Vectors" class="internal"><span class="codenumber">10.2.2</span> <span class="title">Coordinate Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Section-Existence-of-the-Inverse-of-a-Linear-Transformation" class="internal"><span class="codenumber">10.2.3</span> <span class="title">Inverses of a Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Subsection-One-to-one-Linear-Transformations" class="internal"><span class="codenumber">10.2.4</span> <span class="title">One-to-one and Onto Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Subsection-Existence-of-Inverses" class="internal"><span class="codenumber">10.2.5</span> <span class="title">Existence and Uniqueness of Inverses</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Section-Linear-Transformations-of-Abstract-Vector-Spaces-13" class="internal"><span class="codenumber">10.2.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Isomorphic Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#The-Coordinate-Vector-Isomorphism" class="internal"><span class="codenumber">10.3.1</span> <span class="title">The Coordinate Vector Isomorphism</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#Subsection-Properties-of-Isomorphic-Vector-Spaces-and-Isomorphisms" class="internal"><span class="codenumber">10.3.2</span> <span class="title">Properties of Isomorphic Vector Spaces and Isomorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#Subsection-Proofs-of-Isomorphism-Properties" class="internal"><span class="codenumber">10.3.3</span> <span class="title">Proofs of Isomorphism Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#Subsection-Finite-dimensional-Vector-Spaces" class="internal"><span class="codenumber">10.3.4</span> <span class="title">Finite-dimensional Vector Spaces</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#Section-Isomorphic-Vector-Spaces-20" class="internal"><span class="codenumber">10.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Inner-Product-Spaces.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Extra Topic: Inner Product Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Inner-Product-Spaces.html#Subsection-Norm-and-Distance" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Norm and Distance</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Inner-Product-Spaces.html#Section-Inner-Product-Spaces-20" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Section-Introduction-to-Vectors"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Introduction to Vectors</span>
+</h2>
+<section class="subsection" id="Subsection-A-Brief-Introduction-to-Real-Space"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="space"> </span><span class="title">A Brief Introduction to <span class="process-math">\(\R^n\)</span></span>
+</h3>
+<div class="para" id="Subsection-A-Brief-Introduction-to-Real-Space-2">The set of all real numbers is denoted by <span class="process-math">\(\R\text{.}\)</span>  It is convenient to associate real numbers with points on a line, called the <dfn class="terminology">real number line</dfn>.</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/Subsection-A-Brief-Introduction-to-Real-Space-3.svg" role="img" class="contained" alt="Image of the real number line."></div>
+<div class="para logical" id="Subsection-A-Brief-Introduction-to-Real-Space-4">
+<div class="para">The set of all ordered pairs <span class="process-math">\((x, y)\text{,}\)</span> where <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are real numbers, is called <span class="process-math">\(\R^2\text{.}\)</span>  Using set notation we write:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\R^2=\{(x, y):x,y\in \R\}
+\end{equation*}
+</div>
+<div class="para">Geometrically speaking, <span class="process-math">\(\R^2\)</span> can be associated with a coordinate plane in which we refer to each point by its <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> coordinates.</div>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/Subsection-A-Brief-Introduction-to-Real-Space-5.svg" role="img" class="contained" alt="Image of the real plane with coordinate axes x and y."></div>
+<div class="para logical" id="Subsection-A-Brief-Introduction-to-Real-Space-6">
+<div class="para">The set of all ordered triples <span class="process-math">\((x, y, z)\text{,}\)</span> where <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> are real numbers,  is called <span class="process-math">\(\R^3\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\R^3=\{(x, y, z):x,y, z\in \R\}
+\end{equation*}
+</div>
+<div class="para">Geometrically, an ordered triple of <span class="process-math">\(\R^3\)</span> is associated with a point of a three-dimensional space whose position is given by  <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> coordinates.</div>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/Subsection-A-Brief-Introduction-to-Real-Space-7.svg" role="img" class="contained" alt="Image of the 3-dimensional real space with coordinate axes x, y, and z."></div>
+<div class="para" id="Subsection-A-Brief-Introduction-to-Real-Space-8">Here is a hands down example:</div>
+<details id="ex-plotpointsr3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-plotpointsr3-1">
+<div class="para">The following points are shown plotted in <span class="process-math">\(\R^3\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="ex-plotpointsr3-1-2-1"><div class="para" id="ex-plotpointsr3-1-2-1-1"><span class="process-math">\(\displaystyle P(6, 8, 7)\)</span></div></li>
+<li id="ex-plotpointsr3-1-2-2"><div class="para" id="ex-plotpointsr3-1-2-2-1"><span class="process-math">\(\displaystyle Q(4, -6, 9)\)</span></div></li>
+<li id="ex-plotpointsr3-1-2-3"><div class="para" id="ex-plotpointsr3-1-2-3-1"><span class="process-math">\(\displaystyle R(-3, 9, -10)\)</span></div></li>
+</ol>
+</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/ex-plotpointsr3-2.svg" role="img" class="contained" alt="Points plotted in 3-dimensional real space."></div></article></details><div class="para" id="Subsection-A-Brief-Introduction-to-Real-Space-10">Each pair of axes in <span class="process-math">\(\R^3\)</span> determines a plane. The resulting three planes are called <dfn class="terminology">coordinate planes</dfn>. Each coordinate plane is named after the axes that determine it.  Thus, we have the <span class="process-math">\(xy\)</span>-plane, <span class="process-math">\(xz\)</span>-plane, and <span class="process-math">\(yz\)</span>-plane. Coordinate planes intersect at the point <span class="process-math">\((0, 0, 0)\text{,}\)</span> called the <dfn class="terminology">origin</dfn>&gt;, and subdivide <span class="process-math">\(\R^3\)</span> into eight regions, called <dfn class="terminology">octants</dfn>.</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/Subsection-A-Brief-Introduction-to-Real-Space-11.svg" role="img" class="contained" alt="Graphs of the 3 coordinate planes in 3-dimensional real space."></div>
+<div class="para logical" id="Subsection-A-Brief-Introduction-to-Real-Space-12">
+<div class="para">The set of all ordered <span class="process-math">\(n\)</span>-tuples <span class="process-math">\((x_1, x_2, \ldots, x_n)\text{,}\)</span> where <span class="process-math">\(x_i\)</span> is a real number for <span class="process-math">\(1\leq i\leq n\text{,}\)</span> is called <span class="process-math">\(\R^n\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\R^n=\{(x_1, x_2,\ldots,x_n)|x_i\in \R\, \text{for}\, 1\leq i\leq n\}
+\end{equation*}
+</div>
+<div class="para">The point <span class="process-math">\((0,0,\ldots, 0)\)</span> in <span class="process-math">\(\R^n\)</span> is called the <dfn class="terminology">origin</dfn>.</div>
+</div>
+<div class="para" id="Subsection-A-Brief-Introduction-to-Real-Space-13">
+<span class="process-math">\(\R^n\)</span> cannot be visualized for <span class="process-math">\(n\gt3\text{,}\)</span> but many familiar ideas, such as the distance formula, can be generalized to <span class="process-math">\(\R^n\text{.}\)</span>
+</div></section><section class="subsection" id="Subsection-Distance-in-Real-Space"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="space"> </span><span class="title">Distance in <span class="process-math">\(\R^n\)</span></span>
+</h3>
+<div class="para" id="Subsection-Distance-in-Real-Space-2">In this section we will establish a formula for the distance between two points in <span class="process-math">\(\R^n\text{.}\)</span> We begin by observing that the distance between two numbers (points) <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\)</span> on the number line is given by <span class="process-math">\(|x_1-x_2|\text{.}\)</span> (Why do we use the absolute value brackets?).</div>
+<div class="para" id="Subsection-Distance-in-Real-Space-3">We can use the Pythagorean Theorem to establish the distance formula for points of <span class="process-math">\(\R^2\text{.}\)</span>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/Subsection-Distance-in-Real-Space-4.svg" role="img" class="contained" alt="Picture of two arbitrary points in the real plane and the corresponding triangle we use to determine the distance between them."></div>
+<div class="para logical" id="Subsection-Distance-in-Real-Space-5">
+<div class="para">Let <span class="process-math">\(A(x_1, y_1)\)</span> and <span class="process-math">\(B(x_2, y_2)\)</span> be points in <span class="process-math">\(\R^2\text{.}\)</span>  By the Pythagorean Theorem we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+AB^2=(x_1-x_2)^2+(y_1-y_2)^2
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+AB=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}
+\end{equation*}
+</div>
+<div class="para">Why were we able to drop the absolute value brackets?</div>
+</div>
+<div class="para" id="Subsection-Distance-in-Real-Space-6">The distance formula for points in <span class="process-math">\(\R^3\)</span> can also be derived using the Pythagorean Theorem. Let <span class="process-math">\(A(x_1, y_1, z_1)\)</span> and <span class="process-math">\(B(x_2, y_2, z_2)\)</span> be points of <span class="process-math">\(\R^3\text{.}\)</span> Use the navigation bar in the following GeoGebra interactive to walk through the steps of the derivation of the distance formula.</div>
+<figure class="figure figure-like" id="Subsection-Distance-in-Real-Space-7"><iframe id="geogebra-distance-formula-in-3d" width="600" height="450" src="geogebra-distance-formula-in-3d-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span>Click the arrows at the bottom of the image to progress through the illustration of the distance formula in <span class="process-math">\(\R^3\text{.}\)</span> A larger version of this activity is available <a class="external" href="https://www.geogebra.org/calculator/dc267r6v" target="_blank">here</a><details class="ptx-footnote" aria-live="polite" id="Subsection-Distance-in-Real-Space-7-1-3"><summary class="ptx-footnote__number" title="Footnote 1.1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="Subsection-Distance-in-Real-Space-7-1-3"><code class="code-inline tex2jax_ignore">https://www.geogebra.org/calculator/dc267r6v</code></div></details>.</figcaption></figure><article class="identity theorem-like" id="form-distR3"><h4 class="heading">
+<span class="type">Formula</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="form-distR3-1-1">
+<div class="para">Let <span class="process-math">\(A(x_1, y_1, z_1)\)</span> and <span class="process-math">\(B(x_2, y_2, z_2)\)</span> be points in <span class="process-math">\(\R^3\text{.}\)</span>  The distance between <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+AB=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}
+\end{equation*}
+</div>
+</div></article><div class="para" id="Subsection-Distance-in-Real-Space-9">Observe the similarity of pattern in the distance formulas for <span class="process-math">\(\R^1\text{,}\)</span> <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\text{.}\)</span> We will take advantage of this pattern to define the distance between two points of <span class="process-math">\(\R^n\text{.}\)</span>
+</div>
+<article class="identity theorem-like" id="form-distRn"><h4 class="heading">
+<span class="type">Formula</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="form-distRn-1-1">
+<div class="para">Let <span class="process-math">\(A(a_1, a_2,\ldots ,a_n)\)</span> and <span class="process-math">\(B(b_1, b_2,\ldots ,b_n)\)</span> be points in <span class="process-math">\(\R^n\text{.}\)</span>  The distance between <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+AB=\sqrt{(a_1-b_1)^2+(a_2-b_2)^2+\ldots +(a_n-b_n)^2}
+\end{equation*}
+</div>
+</div></article></section><section class="subsection" id="Subsection-What-is-a-Vector"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="space"> </span><span class="title">What is a Vector?</span>
+</h3>
+<div class="para" id="Subsection-What-is-a-Vector-2">A <dfn class="terminology">scalar</dfn> is a quantity that has size, often called  magnitude, but no direction. For example, temperature, mass and speed are scalars. In this course, scalars will typically be real numbers, but we will also see complex numbers on a few occasions.</div>
+<div class="para" id="Subsection-What-is-a-Vector-3">A <dfn class="terminology">vector</dfn> has magnitude and direction. For example, velocity is a vector because it tells us how fast the object is traveling and also the direction of travel.</div>
+<div class="para" id="Subsection-What-is-a-Vector-4">If an object is traveling along a number line, the direction of travel is given by the sign of its velocity (positive or negative), while the speed is given by the absolute value of the velocity. If the object is traveling in a plane or in space, direction of travel can be described by an arrow, while the speed can be represented by the length of the arrow. Graphically speaking, vectors in <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\)</span> look like this:</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><img src="generated/latex-image/Subsection-What-is-a-Vector-5-1.svg" role="img" class="contained" alt="Vector in the real plane."></div>
+<div class="sbspanel top" style="width:50%;"><img src="generated/latex-image/Subsection-What-is-a-Vector-5-2.svg" role="img" class="contained" alt="Vector in 3-dimensional real space."></div>
+</div></div>
+<div class="para" id="Subsection-What-is-a-Vector-6">A vector can be denoted by a lower-case letter with an arrow over the top (like this: <span class="process-math">\(\overrightarrow{u}\)</span> ), or a bold lower-case letter (like this: <span class="process-math">\(\mathbf{u}\)</span>).</div>
+<div class="para" id="Subsection-What-is-a-Vector-7">The magnitude, or length, of a vector is denoted by double absolute value brackets. For example, the magnitude of <span class="process-math">\(\mathbf{u}\text{,}\)</span> is denoted by <span class="process-math">\(\norm{\mathbf{u}}\text{.}\)</span> A vector of zero length and no direction is called the <dfn class="terminology">zero vector.</dfn> We denote the zero vector by <span class="process-math">\(\overrightarrow{0}\)</span> or <span class="process-math">\(\mathbf{0}\text{.}\)</span> Going forward, we will use the terms magnitude of a vector and length of a vector interchangeably.</div>
+<div class="para" id="Subsection-What-is-a-Vector-8">Sometimes it is convenient to refer to a vector by naming  the endpoints of the arrow. In the figure below, point <span class="process-math">\(A\)</span> is the <dfn class="terminology">tail</dfn>, and point <span class="process-math">\(B\)</span> is the <dfn class="terminology">head</dfn> of the vector.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/Subsection-What-is-a-Vector-9.svg" role="img" class="contained" alt="Vector starting at a point A and ending at a point B."></div>
+<div class="para" id="Subsection-What-is-a-Vector-10">We refer to this vector as <span class="process-math">\(\overrightarrow{AB}\text{.}\)</span>
+</div></section><section class="subsection" id="Subsection-Vectors-in-Standard-Position"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="space"> </span><span class="title">Vectors in Standard Position</span>
+</h3>
+<div class="para" id="Subsection-Vectors-in-Standard-Position-2">Vectors that point in the same direction and have the same length are said to be <dfn class="terminology">equivalent</dfn>. For example, vectors  <span class="process-math">\(\mathbf{u}\text{,}\)</span> <span class="process-math">\(\mathbf{v}\)</span> and <span class="process-math">\(\mathbf{w}\)</span> in the figure below are equivalent. We write <span class="process-math">\(\mathbf{u}=\mathbf{v}=\mathbf{w}\text{.}\)</span>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/Subsection-Vectors-in-Standard-Position-3.svg" role="img" class="contained" alt="Three equal vectors in the real plane with different starting points and ending points."></div>
+<div class="para" id="Subsection-Vectors-in-Standard-Position-4">For the purpose of developing standard, convenient notation, we observe that every vector is equivalent to some vector whose tail is at the origin. Vectors with tails at the origin are said to be in <dfn class="terminology">standard position</dfn>. We will refer to each vector in standard position by the coordinates of its head. For example, a vector in standard position whose head is located at the point <span class="process-math">\((2, 1)\)</span> will be referred to as <span class="process-math">\(\begin{bmatrix}2\\1\end{bmatrix}\text{.}\)</span>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/Subsection-Vectors-in-Standard-Position-5.svg" role="img" class="contained" alt="The vectors w, v, u, and their corresponding vector in standard position."></div>
+<div class="para" id="Subsection-Vectors-in-Standard-Position-6">Vectors <span class="process-math">\(\mathbf{u}, \mathbf{v}\)</span> and <span class="process-math">\(\mathbf{w}\)</span> in the figure are equivalent to vector <span class="process-math">\(\begin{bmatrix}2\\1\end{bmatrix}\text{.}\)</span>  We write <span class="process-math">\(\mathbf{u}=\mathbf{v}=\mathbf{w}=\begin{bmatrix}2\\1\end{bmatrix}\text{.}\)</span>  Number <span class="process-math">\(2\)</span> is called the <dfn class="terminology">first component</dfn> of the vector (or the <span class="process-math">\(x\)</span>-component) while number <span class="process-math">\(1\)</span> is the <dfn class="terminology">second component</dfn> (or the <span class="process-math">\(y\)</span>-component).  The form <span class="process-math">\(\begin{bmatrix}2\\1\end{bmatrix}\)</span> is called the <dfn class="terminology">component form</dfn>.</div>
+<div class="para" id="Subsection-Vectors-in-Standard-Position-7">Vector <span class="process-math">\(\begin{bmatrix}2\\1\end{bmatrix}\)</span> is an example of a <dfn class="terminology">column vector</dfn>.  Occasionally, we will find that representing this vector as a <dfn class="terminology">row vector</dfn> <span class="process-math">\([2, 1]\)</span> is more convenient.</div>
+<div class="para" id="Subsection-Vectors-in-Standard-Position-8">Column (or row) representation of vectors in component form allows us to go beyond the physical and geometric definition, and think of vectors more abstractly as arrays of numbers.</div>
+<div class="para" id="Subsection-Vectors-in-Standard-Position-9">Our next goal is to find a process for writing any vector in the coordinate plane in component form.</div>
+<details id="init-headminustail" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="init-headminustail-1">Consider vector <span class="process-math">\(\mathbf{v}\)</span> shown below.  We will express <span class="process-math">\(\mathbf{v}\)</span> in component form.</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-headminustail-2.svg" role="img" class="contained" alt="The vector v in the real plane."></div> <div class="para" id="init-headminustail-3">Note that the vector has a ``run" of <span class="process-math">\(2\)</span> and a ``rise" of <span class="process-math">\(3\text{.}\)</span>  If we construct a vector with tail at the origin, a ``run" of <span class="process-math">\(2\)</span> and a ``rise" of <span class="process-math">\(3\text{,}\)</span> we will have a vector in standard position equivalent to vector <span class="process-math">\(\mathbf{v}\text{.}\)</span>
+</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-headminustail-4.svg" role="img" class="contained" alt="The vector v in the real plane plotted in its original and standard positions."></div> <div class="para" id="init-headminustail-5">The component form for the vector we constructed is <span class="process-math">\(\begin{bmatrix}2\\3\end{bmatrix}\text{.}\)</span> This gives us <span class="process-math">\(\mathbf{v}=\begin{bmatrix}2\\3\end{bmatrix}\text{.}\)</span>
+</div></article></details><div class="para" id="Subsection-Vectors-in-Standard-Position-11">The approach we used in <a href="Section-Introduction-to-Vectors.html#init-headminustail" class="xref" data-knowl="./knowl/xref/init-headminustail.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.5">Example 1.1.5</a> is applicable to specific vectors that can easily be visualized. What we need now is an algebraic approach that can be generalized to higher dimensions and more abstract situations.</div>
+<div class="para" id="Subsection-Vectors-in-Standard-Position-12">Let’s return to vector <span class="process-math">\(\mathbf{v}\)</span> of <a href="Section-Introduction-to-Vectors.html#init-headminustail" class="xref" data-knowl="./knowl/xref/init-headminustail.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.5">Example 1.1.5</a>. Suppose we were to slide vector <span class="process-math">\(\mathbf{v}\)</span> into standard position. Consider what would happen to the tail of <span class="process-math">\(\mathbf{v}\)</span> as we do so.</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/Subsection-Vectors-in-Standard-Position-13.svg" role="img" class="contained" alt=""></div>
+<div class="para" id="Subsection-Vectors-in-Standard-Position-14">What happens to the tail of the vector has to happen to the head</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/Subsection-Vectors-in-Standard-Position-15.svg" role="img" class="contained" alt=""></div>
+<div class="para" id="Subsection-Vectors-in-Standard-Position-16">We subtracted <span class="process-math">\(2\)</span> from the <span class="process-math">\(x\)</span>-coordinate and added <span class="process-math">\(1\)</span> to the <span class="process-math">\(y\)</span>-coordinate of the tail. To find the new location of the head we subtract <span class="process-math">\(2\)</span> from the <span class="process-math">\(x\)</span>-coordinate of the head, and add <span class="process-math">\(1\)</span> to the <span class="process-math">\(y\)</span>-coordinate of the head.  This gives us  <span class="process-math">\((4-2, 2+1)\text{.}\)</span>  So, the new location of the head is <span class="process-math">\((2, 3)\text{,}\)</span> and <span class="process-math">\(\mathbf{v}=\begin{bmatrix}2\\3\end{bmatrix}\text{.}\)</span>
+</div>
+<div class="para logical" id="Subsection-Vectors-in-Standard-Position-17">
+<div class="para">If you look back at what we did you will find that the components of <span class="process-math">\(\mathbf{v}\)</span> were computed by subtracting the coordinates of the tail from the coordinates of the head</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{v}=\begin{bmatrix}4-2\\ 2-(-1)\end{bmatrix}=\begin{bmatrix}2\\3\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">The following diagram summarizes and generalizes our findings.</div>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/Subsection-Vectors-in-Standard-Position-18.svg" role="img" class="contained" alt=""></div>
+<div class="para" id="Subsection-Vectors-in-Standard-Position-19">Let <span class="process-math">\(\overrightarrow{AB}\)</span> be a vector in <span class="process-math">\(\R^2\text{,}\)</span> with tail at point <span class="process-math">\(A(a_1, a_2)\)</span> and head at point <span class="process-math">\(B(b_1, b_2)\text{.}\)</span> As we slide <span class="process-math">\(\overrightarrow{AB}\)</span> into standard position by moving point <span class="process-math">\(A\)</span> to the origin, point <span class="process-math">\(B\)</span> travels along with point <span class="process-math">\(A\)</span> by undergoing the same horizontal and vertical shifts.  We now have an equivalent vector <span class="process-math">\(\overrightarrow{A'B'}\)</span> in standard position.  The diagram suggests the following formula.</div>
+<article class="identity theorem-like" id="form-headminustailr2"><h4 class="heading">
+<span class="type">Formula</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">“Head - Tail” Formula in <span class="process-math">\(\R^2\)</span>.</span>
+</h4>
+<div class="para logical" id="form-headminustailr2-2-1">
+<div class="para">Suppose a vector’s tail is at point <span class="process-math">\(A(a_1, a_2)\)</span> and the vector’s head is at <span class="process-math">\(B(b_1, b_2)\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="headtailr2">
+\begin{equation}
+\overrightarrow{AB}=\begin{bmatrix}b_1-a_1\\ b_2-a_2\end{bmatrix}\tag{1.1.1}
+\end{equation}
+</div>
+</div></article></section><section class="subsection" id="Subsection-Vectors-in-3d"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="space"> </span><span class="title">Vectors in <span class="process-math">\(\R^3\)</span></span>
+</h3>
+<div class="para" id="Subsection-Vectors-in-3d-2">Definitions of standard position and component form for vectors in <span class="process-math">\(\R^3\)</span> are analogous to their counterparts for vectors in <span class="process-math">\(\R^2\text{.}\)</span>  For example, vector <span class="process-math">\(\overrightarrow{OP}\)</span> in the figure below, is in standard position and can be written in component form as <span class="process-math">\(\overrightarrow{OP}=\begin{bmatrix}6\\10\\7\end{bmatrix}\text{.}\)</span>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/Subsection-Vectors-in-3d-3.svg" role="img" class="contained" alt=""></div>
+<div class="para" id="Subsection-Vectors-in-3d-4">If a vector is not in standard position but the location of its head and tail are known, a three-dimensional version of the ``Head - Tail" formula can be used to express the vector in component form.</div>
+<article class="identity theorem-like" id="form-headminustailr3"><h4 class="heading">
+<span class="type">Formula</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">“Head - Tail” Formula in <span class="process-math">\(\R^3\)</span>.</span>
+</h4>
+<div class="para logical" id="form-headminustailr3-2-1">
+<div class="para">Suppose a vector’s tail is at point <span class="process-math">\(A(a_1, a_2, a_3)\)</span> and the vector’s head is at <span class="process-math">\(B(b_1, b_2, b_3)\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="headtailr3">
+\begin{equation}
+\overrightarrow{AB}=\begin{bmatrix}b_1-a_1\\ b_2-a_2\\b_3-a_3\end{bmatrix}\tag{1.1.2}
+\end{equation}
+</div>
+</div></article></section><section class="subsection" id="Subsection-Vectors-in-Real-Space"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="space"> </span><span class="title">Vectors in <span class="process-math">\(\R^n\)</span></span>
+</h3>
+<div class="para" id="Subsection-Vectors-in-Real-Space-2">We cannot see <span class="process-math">\(\R^n\)</span> for <span class="process-math">\(n\gt3\text{,}\)</span> but we can conceptualize it by generalizing what we know about <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\text{.}\)</span>  A vector <span class="process-math">\(\mathbf{v}\)</span> in standard position whose head is located at <span class="process-math">\((v_1, v_2, \ldots ,v_n)\)</span> can be written in component form as <span class="process-math">\(\mathbf{v}=\begin{bmatrix}v_1\\ v_2\\ \vdots \\v_n\end{bmatrix}\text{.}\)</span>
+</div>
+<div class="para" id="Subsection-Vectors-in-Real-Space-3">Recall that we defined the <dfn class="terminology">zero vector</dfn> as a vector that has length <span class="process-math">\(0\)</span> and no direction.  In component form, the zero vector is a vector all of whose components are <span class="process-math">\(0\text{.}\)</span>
+</div>
+<div class="para" id="Subsection-Vectors-in-Real-Space-4">We conclude this section by stating the generalized ``Head -  Tail" formula.</div>
+<article class="identity theorem-like" id="form-headminustailrn"><h4 class="heading">
+<span class="type">Formula</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">“Head - Tail” Formula in <span class="process-math">\(\R^n\)</span>.</span>
+</h4>
+<div class="para logical" id="form-headminustailrn-2-1">
+<div class="para">Suppose a vector’s tail is at point <span class="process-math">\(A(a_1, a_2, \ldots ,a_n)\)</span> and the vector’s head is at <span class="process-math">\(B(b_1, b_2, \ldots ,b_n)\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="form-headtailrn">
+\begin{equation}
+\overrightarrow{AB}=\begin{bmatrix}b_1-a_1\\ b_2-a_2\\ \vdots \\b_n-a_n\end{bmatrix}\tag{1.1.3}
+\end{equation}
+</div>
+</div></article></section><section class="subsection" id="Section-Length-of-a-Vector"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="space"> </span><span class="title">Length of a Vector</span>
+</h3>
+<div class="para" id="Section-Length-of-a-Vector-2">Vector quantities, such as velocity and force, have magnitude and direction. The magnitude of a vector quantity is the length of the vector. For example, if a force of 10 Newtons is applied to an object, we would represent the force by a 10-unit-long vector.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/Section-Length-of-a-Vector-3.svg" role="img" class="contained" alt=""></div>
+<div class="para logical" id="Section-Length-of-a-Vector-4">
+<div class="para">The magnitude of a vector is denoted by double absolute value brackets.  In the case of force <span class="process-math">\(\mathbf{F}\text{,}\)</span> we write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\norm{\mathbf{F}}=10
+\end{equation*}
+</div>
+<div class="para">To find the length of a vector, we need to find the distance between the tail of the vector and its head.  Recall that in <span class="process-math">\(\R^2\text{,}\)</span> the distance between <span class="process-math">\(A(a_1, a_2)\)</span> and <span class="process-math">\(B(b_1, b_2)\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d_{AB}=\sqrt{(a_1-b_1)^2+(a_2-b_2)^2}
+\end{equation*}
+</div>
+<div class="para">A vector <span class="process-math">\(\mathbf{v}=\begin{bmatrix}v_1\\ v_2\end{bmatrix}\)</span> has the length of  the vector in standard position with its head at <span class="process-math">\((v_1, v_2)\)</span> and tail at <span class="process-math">\((0, 0)\text{.}\)</span> We find the length of <span class="process-math">\(\mathbf{v}\)</span> using the distance formula</div>
+<div class="displaymath process-math" id="eq-normr2">
+\begin{equation}
+\norm{\mathbf{v}}=\sqrt{(v_1-0)^2+(v_2-0)^2}=\sqrt{v_1^2+v_2^2}    \tag{1.1.4}
+\end{equation}
+</div>
+</div>
+<details id="ex-findmaginr2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-findmaginr2-1">Find the magnitude of <span class="process-math">\(\mathbf{u}=\begin{bmatrix}-3\\4\end{bmatrix}\text{.}\)</span>
+</div> <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="generated/latex-image/ex-findmaginr2-2.svg" role="img" class="contained" alt="The vector u."></div> <div class="para logical" id="ex-findmaginr2-3"><div class="displaymath process-math">
+\begin{equation*}
+\norm{\mathbf{u}}=\sqrt{(-3)^2+(4)^2}=5
+\end{equation*}
+</div></div></article></details><div class="para logical" id="Section-Length-of-a-Vector-6">
+<div class="para">The distance formula for points in <span class="process-math">\(\R^3\)</span> is analogous to the distance formula in <span class="process-math">\(\R^2\text{.}\)</span>  Given two points <span class="process-math">\(A(a_1, a_2, a_3)\)</span> and <span class="process-math">\(B(b_1, b_2, b_3)\text{,}\)</span> the distance between them is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d_{AB}=\sqrt{(a_1-b_1)^2+(a_2-b_2)^2+(a_3-b_3)^2}
+\end{equation*}
+</div>
+<div class="para">To find the length of vector <span class="process-math">\(\mathbf{v}=\begin{bmatrix}v_1\\ v_2\\ v_3\end{bmatrix}\text{,}\)</span> we find the distance between <span class="process-math">\((v_1, v_2, v_3)\)</span> and <span class="process-math">\((0, 0, 0)\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="eq-normr3">
+\begin{equation}
+\norm{\mathbf{v}}=\sqrt{(v_1-0)^2+(v_2-0)^2+(v_3-0)^2}=\sqrt{v_1^2+v_2^2+v_3^2}\tag{1.1.5}
+\end{equation}
+</div>
+</div>
+<div class="para" id="Section-Length-of-a-Vector-7">Let us try these new formulas out:</div>
+<details id="ex-findmaginr3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.10</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-findmaginr3-1">
+<div class="para">The magnitude of <span class="process-math">\(\mathbf{v}=\begin{bmatrix}6\\-2\\3\end{bmatrix}\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\norm{\mathbf{v}}=\sqrt{(6)^2+(-2)^2+(3)^2}=7
+\end{equation*}
+</div>
+</div></article></details><div class="para" id="Section-Length-of-a-Vector-9">Distance formulas for <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\)</span> motivate the following definition of distance between two points in <span class="process-math">\(\R^n\text{.}\)</span>
+</div>
+<article class="definition definition-like" id="def-distrn"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.11</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-distrn-1-1">
+<div class="para">Let <span class="process-math">\(A(a_1, a_2,\ldots, a_n)\)</span> and <span class="process-math">\(B(b_1, b_2,\ldots, b_n)\)</span> be points in <span class="process-math">\(\R^n\text{.}\)</span>  The <dfn class="terminology">distance</dfn> between <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> is defined to be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d_{AB}=\sqrt{(a_1-b_1)^2+(a_2-b_2)^2+\ldots +(a_n-b_n)^2}
+\end{equation*}
+</div>
+</div></article><div class="para" id="Section-Length-of-a-Vector-11">The following definition follows directly from the distance formula for <span class="process-math">\(\R^n\)</span> in the same way that expressions (<a href="Section-Introduction-to-Vectors.html#eq-normr2" class="xref" data-knowl="./knowl/xref/eq-normr2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.4">(1.1.4)</a> and <a href="Section-Introduction-to-Vectors.html#eq-normr3" class="xref" data-knowl="./knowl/xref/eq-normr3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.5">(1.1.5)</a> followed from distance formulas in <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\text{.}\)</span>
+</div>
+<article class="definition definition-like" id="def-normrn"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.12</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-normrn-1-1">
+<div class="para">Let <span class="process-math">\(\mathbf{v}=\begin{bmatrix}v_1\\ v_2\\ \vdots \\v_n\end{bmatrix}\)</span> be a vector in <span class="process-math">\(\R^n\text{,}\)</span> then the <dfn class="terminology">length</dfn>, or the <dfn class="terminology">magnitude</dfn>, of <span class="process-math">\(\mathbf{v}\)</span> is given by</div>
+<div class="displaymath process-math" id="eq-normrn">
+\begin{equation}
+\norm{\mathbf{v}}=\sqrt{v_1^2+v_2^2+\ldots +v_n^2}\tag{1.1.6}
+\end{equation}
+</div>
+</div></article><div class="para" id="Section-Length-of-a-Vector-13">To get acquianted with the new concepts, we provide a concrete example to showcase them.</div>
+<details id="ex-findnorminr4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.13</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-findnorminr4-1">
+<div class="para">The magnitude of <span class="process-math">\(\mathbf{w}=\begin{bmatrix}5\\ -1\\ -2\\ 4\end{bmatrix}\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\norm{\mathbf{w}}=\sqrt{5^2+(-1)^2+(-2)^2+4^2}=\sqrt{46}
+\end{equation*}
+</div>
+</div></article></details></section><section class="subsection" id="Subsection-Geometry-of-Scalar-Multiplication"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="space"> </span><span class="title">Geometry of Scalar Multiplication</span>
+</h3>
+<div class="para" id="Subsection-Geometry-of-Scalar-Multiplication-2">The product of vector <span class="process-math">\(\mathbf{u}\)</span> with a positive scalar <span class="process-math">\(k\text{,}\)</span> is a vector <span class="process-math">\(k\mathbf{u}\)</span> that points in the same direction as <span class="process-math">\(\mathbf{u}\text{,}\)</span> and whose length  is equal to the length of <span class="process-math">\(\mathbf{u}\)</span> multiplied by <span class="process-math">\(k\text{.}\)</span> For example, the figure below shows vectors <span class="process-math">\(\mathbf{u}\)</span> and <span class="process-math">\(2\mathbf{u}\text{.}\)</span> The vectors point in the same direction but the magnitude of <span class="process-math">\(2\mathbf{u}\)</span> is twice the magnitude of <span class="process-math">\(\mathbf{u}\text{.}\)</span>
+</div>
+<div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="generated/latex-image/Subsection-Geometry-of-Scalar-Multiplication-3.svg" role="img" class="contained" alt="Vectors u and 2u."></div>
+<div class="para" id="Subsection-Geometry-of-Scalar-Multiplication-4">If a vector <span class="process-math">\(\mathbf{u}\)</span> is multiplied by <span class="process-math">\(-1\text{,}\)</span> the resulting vector is denoted by <span class="process-math">\(-\mathbf{u}\text{.}\)</span> It has the same length as vector <span class="process-math">\(\mathbf{u}\text{,}\)</span> but points in the opposite direction.</div>
+<div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="generated/latex-image/Subsection-Geometry-of-Scalar-Multiplication-5.svg" role="img" class="contained" alt=""></div></section><section class="subsection" id="Subsection-Algebra-of-Scalar-Multiplication"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="space"> </span><span class="title">Algebra of Scalar Multiplication</span>
+</h3>
+<div class="para" id="Subsection-Algebra-of-Scalar-Multiplication-2">We know what scalar multiplication accomplishes geometrically.  Our goal now is to translate this idea to an algebraic operation.</div>
+<article class="exploration project-like" id="init-scalarmult"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="init-scalarmult-1">Consider vector <span class="process-math">\(\mathbf{u}=\begin{bmatrix}4\\2\end{bmatrix}\text{.}\)</span> We will find an algebraic approach for multiplying <span class="process-math">\(\mathbf{u}\)</span> by <span class="process-math">\(\frac{1}{2}\text{.}\)</span>
+</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-scalarmult-2.svg" role="img" class="contained" alt=""></div> <div class="para" id="init-scalarmult-3">Consider <span class="process-math">\(\mathbf{u}\)</span> to be the hypotenuse of a right triangle.</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-scalarmult-4.svg" role="img" class="contained" alt=""></div> <div class="para" id="init-scalarmult-5">The head of <span class="process-math">\(\frac{1}{2}\mathbf{u}\)</span> should be the midpoint of the hypotenuse.</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-scalarmult-6.svg" role="img" class="contained" alt=""></div> <div class="para" id="init-scalarmult-7">From our study of similar triangles in geometry, we know that if we drop perpendiculars from the midpoint of the hypotenuse to the two legs of the triangle, the perpendiculars will bisect the legs.</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-scalarmult-8.svg" role="img" class="contained" alt=""></div> <div class="para logical" id="init-scalarmult-9">
+<div class="para">This tells us that to find <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> components of <span class="process-math">\(\frac{1}{2}\mathbf{u}\)</span> we must multiply each component of <span class="process-math">\(\mathbf{u}\)</span> by <span class="process-math">\(\frac{1}{2}\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{2}\mathbf{u}=(1/2)\begin{bmatrix}4\\2\end{bmatrix}=\begin{bmatrix}(1/2)(4)\\(1/2)(2)\end{bmatrix}=\begin{bmatrix}2\\1\end{bmatrix}
+\end{equation*}
+</div>
+</div></article><article class="exploration project-like" id="init-negscalarmult"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="init-negscalarmult-1">Consider vector <span class="process-math">\(\mathbf{v}=\begin{bmatrix}3\\1\end{bmatrix}\text{.}\)</span> It is clear that multiplying the components of <span class="process-math">\(\mathbf{v}\)</span> by <span class="process-math">\(-1\)</span> reverses the direction of <span class="process-math">\(\mathbf{v}\)</span> while preserving its magnitude.</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-negscalarmult-2.svg" role="img" class="contained" alt=""></div></article><div class="para" id="Subsection-Algebra-of-Scalar-Multiplication-5">
+<a href="Section-Introduction-to-Vectors.html#init-scalarmult" class="xref" data-knowl="./knowl/xref/init-scalarmult.html" data-reveal-label="Reveal" data-close-label="Close" title="Exploration 1.1.1">Exploration 1.1.1</a> and <a href="Section-Introduction-to-Vectors.html#init-negscalarmult" class="xref" data-knowl="./knowl/xref/init-negscalarmult.html" data-reveal-label="Reveal" data-close-label="Close" title="Exploration 1.1.2">Exploration 1.1.2</a> give rise to the following definition of scalar multiplication.</div>
+<article class="definition definition-like" id="def-scalarmult"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.14</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-scalarmult-1-1">
+<div class="para">Let <span class="process-math">\(\mathbf{u}=\begin{bmatrix} u_1\\ u_2\\ \vdots\\ u_n \end{bmatrix}\)</span> be a vector in <span class="process-math">\(\R^n\text{,}\)</span> and let <span class="process-math">\(k\)</span> be a scalar, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+k\mathbf{u}=k\begin{bmatrix}
+u_1\\
+u_2\\
+\vdots\\
+u_n
+\end{bmatrix}=\begin{bmatrix}
+ku_1\\
+ku_2\\
+\vdots\\
+ku_n
+\end{bmatrix}
+\end{equation*}
+</div>
+</div></article><div class="para" id="Subsection-Algebra-of-Scalar-Multiplication-7">If <span class="process-math">\(\mathbf{v}=k\mathbf{u}\)</span> (<span class="process-math">\(k\neq 0\)</span>), then <span class="process-math">\(\mathbf{u}=\frac{1}{k}\mathbf{v}\text{,}\)</span> and we say that <span class="process-math">\(\mathbf{v}\)</span> and <span class="process-math">\(\mathbf{u}\)</span> are <dfn class="terminology">scalar multiples of each other</dfn>.</div></section><section class="subsection" id="Subsection-Geometry-of-Vector-Addition"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.10</span><span class="space"> </span><span class="title">Geometry of Vector Addition</span>
+</h3>
+<div class="para" id="Subsection-Geometry-of-Vector-Addition-2">There are two ways to add vectors geometrically.</div>
+<section class="subsubsection" id="Subsubsection-Head-to-Tail-Addition-Method"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.10.1</span><span class="space"> </span><span class="title">“Head-to-Tail” Addition Method</span>
+</h4>
+<div class="para" id="Subsubsection-Head-to-Tail-Addition-Method-2">Given vectors <span class="process-math">\(\mathbf{v}\)</span> and <span class="process-math">\(\mathbf{u}\text{,}\)</span> we can find the sum <span class="process-math">\(\mathbf{v}+\mathbf{u}\)</span> by sliding <span class="process-math">\(\mathbf{u}\)</span> so as to place its tail at the head of vector <span class="process-math">\(\mathbf{v}\text{.}\)</span> The vector connecting the tail of <span class="process-math">\(\mathbf{v}\)</span> with the head of <span class="process-math">\(\mathbf{u}\)</span> is the sum <span class="process-math">\(\mathbf{v}+\mathbf{u}\text{,}\)</span> as shown in the figure below.</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><img src="generated/latex-image/Subsubsection-Head-to-Tail-Addition-Method-3-1.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:50%;"><img src="generated/latex-image/Subsubsection-Head-to-Tail-Addition-Method-3-2.svg" role="img" class="contained" alt=""></div>
+</div></div>
+<div class="para" id="Subsubsection-Head-to-Tail-Addition-Method-4">This sum can be interpreted as the total displacement that occurs when traveling along the two vectors starting at the tail of <span class="process-math">\(\mathbf{v}\)</span> and finishing at the head of <span class="process-math">\(\mathbf{u}\text{.}\)</span>
+</div>
+<div class="para" id="Subsubsection-Head-to-Tail-Addition-Method-5">Note that if we place the tail of <span class="process-math">\(\mathbf{v}\)</span> at the head of <span class="process-math">\(\mathbf{u}\)</span> instead, the sum vector <span class="process-math">\(\mathbf{u}+\mathbf{v}\)</span> will be the same as <span class="process-math">\(\mathbf{v}+\mathbf{u}\text{.}\)</span>  Thus, addition of vectors is commutative.</div></section><section class="subsubsection" id="Subsubsection-Parallelogram-Addition-Method"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">1.1.10.2</span><span class="space"> </span><span class="title">Parallelogram Addition Method</span>
+</h4>
+<div class="para" id="Subsubsection-Parallelogram-Addition-Method-2">Most of the time we deal with vectors in standard position. So all vector tails are located at the origin. This motivates the <dfn class="terminology">parallelogram method</dfn> for adding vectors.</div>
+<div class="para" id="Subsubsection-Parallelogram-Addition-Method-3">Observe that if we slide vectors <span class="process-math">\(\mathbf{u}\)</span> and <span class="process-math">\(\mathbf{v}\)</span> so that their tails are together, the two vectors determine a parallelogram.</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/Subsubsection-Parallelogram-Addition-Method-4.svg" role="img" class="contained" alt=""></div>
+<div class="para" id="Subsubsection-Parallelogram-Addition-Method-5">Opposite sides of a parallelogram are congruent and parallel.</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/Subsubsection-Parallelogram-Addition-Method-6.svg" role="img" class="contained" alt=""></div>
+<div class="para" id="Subsubsection-Parallelogram-Addition-Method-7">Applying the ``head-to-tail" addition method shows that the sum <span class="process-math">\(\mathbf{v}+\mathbf{u}\)</span> is the diagonal of the parallelogram determined by <span class="process-math">\(\mathbf{v}\)</span> and <span class="process-math">\(\mathbf{u}\text{.}\)</span>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/Subsubsection-Parallelogram-Addition-Method-8.svg" role="img" class="contained" alt=""></div></section></section><section class="subsection" id="Subsection-Algebra-of-Vector-Addition"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.11</span><span class="space"> </span><span class="title">Algebra of Vector Addition</span>
+</h3>
+<div class="para" id="Subsection-Algebra-of-Vector-Addition-2">We now know how to add vectors geometrically.  Our next goal is to translate this idea to an algebraic operation.</div>
+<article class="exploration project-like" id="init-vectoradd"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="init-vectoradd-1">In this problem we will find the sum of <span class="process-math">\(\mathbf{u}=\begin{bmatrix}5\\1\end{bmatrix}\)</span> and <span class="process-math">\(\mathbf{v}=\begin{bmatrix}2\\3\end{bmatrix}\text{.}\)</span>
+</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-vectoradd-2.svg" role="img" class="contained" alt=""></div> <div class="para" id="init-vectoradd-3">To use “head-to-tail” addition method, or to construct the side of a parallelogram opposite of <span class="process-math">\(\mathbf{u}\text{,}\)</span> we want to slide <span class="process-math">\(\mathbf{u}\)</span> so that its tail is at the point <span class="process-math">\((2, 3)\text{.}\)</span> Observe that <span class="process-math">\(\mathbf{u}\)</span> has a ``run" of <span class="process-math">\(5\)</span> and a ``rise" of <span class="process-math">\(1\text{.}\)</span> If we start at <span class="process-math">\((2, 3)\text{,}\)</span> go over <span class="process-math">\(5\)</span> then up <span class="process-math">\(1\text{,}\)</span> we will land on <span class="process-math">\((7, 4)\text{.}\)</span>
+</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-vectoradd-4.svg" role="img" class="contained" alt=""></div> <div class="para" id="init-vectoradd-5">The sum <span class="process-math">\(\mathbf{u}+\mathbf{v}\)</span> is shown below.</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-vectoradd-6.svg" role="img" class="contained" alt=""></div> <div class="para logical" id="init-vectoradd-7">
+<div class="para">We see that the components of <span class="process-math">\(\mathbf{v}+\mathbf{u}\)</span> can be found by adding the components of <span class="process-math">\(\mathbf{v}\)</span> and <span class="process-math">\(\mathbf{u}\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{v}+\mathbf{u}=\begin{bmatrix}2\\3\end{bmatrix}+\begin{bmatrix}5\\1\end{bmatrix}=\begin{bmatrix}7\\4\end{bmatrix}
+\end{equation*}
+</div>
+</div></article><div class="para" id="Subsection-Algebra-of-Vector-Addition-4">
+<a href="Section-Introduction-to-Vectors.html#init-vectoradd" class="xref" data-knowl="./knowl/xref/init-vectoradd.html" data-reveal-label="Reveal" data-close-label="Close" title="Exploration 1.1.3">Exploration 1.1.3</a> motivates the following definition.</div>
+<article class="definition definition-like" id="def-vectoradd"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.15</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-vectoradd-1-1">
+<div class="para">Let <span class="process-math">\(\mathbf{u}=\begin{bmatrix} u_1\\ u_2\\ \vdots\\ u_n \end{bmatrix}\)</span> and <span class="process-math">\(\mathbf{v}=\begin{bmatrix} v_1\\ v_2\\ \vdots\\ v_n \end{bmatrix}\)</span> be vectors in <span class="process-math">\(\R^n\text{.}\)</span>  We define <span class="process-math">\(\mathbf{u}+\mathbf{v}\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{u}+\mathbf{v}=\begin{bmatrix}
+u_1\\
+u_2\\
+\vdots\\
+u_n
+\end{bmatrix}+\begin{bmatrix}
+v_1\\
+v_2\\
+\vdots\\
+v_n
+\end{bmatrix}=\begin{bmatrix}
+u_1+v_1\\
+u_2+v_2\\
+\vdots\\
+u_n+v_n
+\end{bmatrix}
+\end{equation*}
+</div>
+</div></article></section><section class="subsection" id="Subsection-Geometry-of-Vector-Addition-in-3d"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.12</span><span class="space"> </span><span class="title">Geometry of Vector Addition in <span class="process-math">\(\R^3\)</span></span>
+</h3>
+<div class="para" id="Subsection-Geometry-of-Vector-Addition-in-3d-2">Vectors in <span class="process-math">\(\R^1\text{,}\)</span> <span class="process-math">\(\R^2\text{,}\)</span> and <span class="process-math">\(\R^3\)</span> have the advantage in that we can gain insight into their behavior through visualization.  Vectors in <span class="process-math">\(\R^1\)</span> and <span class="process-math">\(\R^2\)</span> are the easiest to visualize. Vectors in <span class="process-math">\(\R^3\)</span> are a little trickier. The following exploration will help you visualize addition of vectors in <span class="process-math">\(\R^3\text{.}\)</span>
+</div>
+<article class="exploration project-like" id="exp-addInR3"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="exp-addInR3-1">
+<div class="para">Adding two vectors amounts to finding the diagonal of a parallelogram determined by placing the two vectors tail to tail.  This process is not limited to vectors of <span class="process-math">\(\R^2\text{.}\)</span>  Use the following GeoGebra interactive to add multiple vectors in <span class="process-math">\(\R^3\text{,}\)</span> two vectors at a time, by constructing diagonals of parallelograms.  To use the interactive</div>
+<ul class="disc">
+<li id="exp-addInR3-1-3-1"><div class="para" id="exp-addInR3-1-3-1-1">Define vectors <span class="process-math">\(\mathbf{u}\text{,}\)</span> <span class="process-math">\(\mathbf{v}\)</span> and <span class="process-math">\(\mathbf{w}\text{.}\)</span>
+</div></li>
+<li id="exp-addInR3-1-3-2"><div class="para" id="exp-addInR3-1-3-2-1">Use check-boxes at the bottom of the right panel to display the parallelograms.</div></li>
+<li id="exp-addInR3-1-3-3"><div class="para" id="exp-addInR3-1-3-3-1">RIGHT-CLICK and DRAG the left panel to rotate the graph.</div></li>
+</ul>
+</div> <figure class="figure figure-like" id="exp-addInR3-2"><iframe id="geogebra-sum-of-3-vectors-in-3d" width="900" height="800" src="geogebra-sum-of-3-vectors-in-3d-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.16<span class="period">.</span></span><span class="space"> </span>A larger version of this activity is available <a class="external" href="https://www.geogebra.org/calculator/ccpev33m" target="_blank">here</a><details class="ptx-footnote" aria-live="polite" id="exp-addInR3-2-1-2"><summary class="ptx-footnote__number" title="Footnote 1.1.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="exp-addInR3-2-1-2"><code class="code-inline tex2jax_ignore">https://www.geogebra.org/calculator/ccpev33m</code></div></details>.</figcaption></figure> <div class="para" id="exp-addInR3-3">The sum of two vectors can be visualized as the diagonal of a parallelogram.  The sum of three (non-co-planar) vectors is the diagonal of a three-dimensional counterpart of a parallelogram, called a \emph{parallelepiped}.  Each face of the parallelepiped is a parallelogram determined by two out of the three given vectors.  The following GeoGebra exercise will help you visualize the sum of three vectors as the diagonal of a parallelepiped.</div> <div class="para" id="exp-addInR3-4">Define vectors <span class="process-math">\(\mathbf{u}\text{,}\)</span> <span class="process-math">\(\mathbf{v}\)</span> and <span class="process-math">\(\mathbf{w}\text{.}\)</span>  The sum is the diagonal of the parallelepiped.  RIGHT-CLICK and DRAG the left panel to rotate the graph.</div> <figure class="figure figure-like" id="exp-addInR3-5"><iframe id="geogebra-sum-of-3-vectors-in-3d-parallelepiped" width="900" height="700" src="geogebra-sum-of-3-vectors-in-3d-parallelepiped-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.17<span class="period">.</span></span><span class="space"> </span>A larger version of this activity is available <a class="external" href="https://www.geogebra.org/calculator/bpzfb7vr" target="_blank">here</a><details class="ptx-footnote" aria-live="polite" id="exp-addInR3-5-1-2"><summary class="ptx-footnote__number" title="Footnote 1.1.3"><sup> 3 </sup></summary><div class="ptx-footnote__contents" id="exp-addInR3-5-1-2"><code class="code-inline tex2jax_ignore">https://www.geogebra.org/calculator/bpzfb7vr</code></div></details>.</figcaption></figure></article></section><section class="subsection" id="Subsection-Vector-Subtraction"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.13</span><span class="space"> </span><span class="title">Vector Subtraction</span>
+</h3>
+<div class="para logical" id="Subsection-Vector-Subtraction-2">
+<div class="para">We can find the difference of two vectors by interpreting subtraction as ``addition of the opposite".  Thus,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{v}-\mathbf{u}=\mathbf{v}+(-\mathbf{u})
+\end{equation*}
+</div>
+<div class="para">Vector subtraction has an interesting geometric interpretation.  As shown in the figure below, if <span class="process-math">\(\mathbf{v}+\mathbf{u}\)</span> is a diagonal of the parallelogram determined by <span class="process-math">\(\mathbf{v}\)</span> and <span class="process-math">\(\mathbf{u}\text{,}\)</span> the difference <span class="process-math">\(\mathbf{v}-\mathbf{u}\)</span> is the other diagonal of the same parallelogram.</div>
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><img src="generated/latex-image/Subsection-Vector-Subtraction-3-1.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:50%;"><img src="generated/latex-image/Subsection-Vector-Subtraction-3-2.svg" role="img" class="contained" alt=""></div>
+</div></div></section><section class="subsection" id="Subsection-Properties-of-Vector-Addition-and-Scalar-Multiplication"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.14</span><span class="space"> </span><span class="title">Properties of Vector Addition and Scalar Multiplication</span>
+</h3>
+<article class="theorem theorem-like" id="th-vecproperties"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.18</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="th-vecproperties-1-1">
+<div class="para">The following properties hold for vectors <span class="process-math">\(\mathbf{u}\text{,}\)</span> <span class="process-math">\(\mathbf{v}\)</span> and <span class="process-math">\({\bf w}\)</span> in <span class="process-math">\(\R^n\)</span> and scalars <span class="process-math">\(k\)</span> and <span class="process-math">\(p\)</span> in <span class="process-math">\(\R\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="item-commvectoradd"><div class="para logical" id="item-commvectoradd-1">
+<div class="para">Commutative Property of Addition</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{u}+\mathbf{v}=\mathbf{v}+\mathbf{u}
+\end{equation*}
+</div>
+</div></li>
+<li id="item-assocvectoradd"><div class="para logical" id="item-assocvectoradd-1">
+<div class="para">Associative Property of Addition</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\mathbf{u}+\mathbf{v})+{\bf w}=\mathbf{u}+(\mathbf{v}+{\bf w})
+\end{equation*}
+</div>
+</div></li>
+<li id="item-identityvectoradd"><div class="para logical" id="item-identityvectoradd-1">
+<div class="para">Existence of Additive Identity: There exists a vector <span class="process-math">\(\mathbf{0}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{u}+\mathbf{0}=\mathbf{u}
+\end{equation*}
+</div>
+</div></li>
+<li id="item-inversevectoradd"><div class="para logical" id="item-inversevectoradd-1">
+<div class="para">Existence of Additive Inverse: For every vector <span class="process-math">\(\mathbf{u}\text{,}\)</span> there exists a vector <span class="process-math">\(-\mathbf{u}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{u}+(-\mathbf{u})=\mathbf{0}
+\end{equation*}
+</div>
+</div></li>
+<li id="item-distvectoradd"><div class="para logical" id="item-distvectoradd-1">
+<div class="para">Distributive Property over Vector Addition</div>
+<div class="displaymath process-math">
+\begin{equation*}
+k(\mathbf{u}+\mathbf{v})=k\mathbf{u}+k\mathbf{v}
+\end{equation*}
+</div>
+</div></li>
+<li id="item-distvectoradd2"><div class="para logical" id="item-distvectoradd2-1">
+<div class="para">Distributive Property over Scalar Addition</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(k+p)\mathbf{u}=k\mathbf{u}+p\mathbf{u}
+\end{equation*}
+</div>
+</div></li>
+<li id="item-assocvectorscalarmult"><div class="para logical" id="item-assocvectorscalarmult-1">
+<div class="para">Associative Property for Scalar Multiplication</div>
+<div class="displaymath process-math">
+\begin{equation*}
+k(p\mathbf{u})=(kp)\mathbf{u}
+\end{equation*}
+</div>
+</div></li>
+<li id="item-onevectorscalarmult"><div class="para logical" id="item-onevectorscalarmult-1">
+<div class="para">Multiplication by 1</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1\mathbf{u}=\mathbf{u}
+\end{equation*}
+</div>
+</div></li>
+</ol>
+</div></article><details id="th-vecproperties-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th-vecproperties-2-1">We will prove <a href="Section-Introduction-to-Vectors.html#item-inversevectoradd" class="xref" data-knowl="./knowl/xref/item-inversevectoradd.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 4">Item 4</a> and <a href="Section-Introduction-to-Vectors.html#item-distvectoradd" class="xref" data-knowl="./knowl/xref/item-distvectoradd.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 5">Item 5</a>.  Proofs of the remaining properties are left to the reader.</div> <div class="para logical" id="th-vecproperties-2-2">
+<div class="para">For any vector <span class="process-math">\(\mathbf{u}=\begin{bmatrix} u_1\\ u_2\\ \vdots\\ u_n \end{bmatrix}\)</span> in <span class="process-math">\(\R^n\text{,}\)</span> let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-\mathbf{u}=(-1)\mathbf{u}=\begin{bmatrix}
+-u_1\\
+-u_2\\
+\vdots\\
+-u_n
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(\mathbf{u}+(-\mathbf{u})=\mathbf{0}\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="th-vecproperties-2-3">
+<div class="para">Now to prove <a href="Section-Introduction-to-Vectors.html#item-distvectoradd" class="xref" data-knowl="./knowl/xref/item-distvectoradd.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 5">Item 5</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-distvectoradd.html">
+\begin{equation*}
+k(\mathbf{u}+\mathbf{v})=k\left(\begin{bmatrix}
+u_1\\
+u_2\\
+\vdots\\
+u_n
+\end{bmatrix}+\begin{bmatrix}
+v_1\\
+v_2\\
+\vdots\\
+v_n
+\end{bmatrix}\right)=k\begin{bmatrix}
+u_1+v_1\\
+u_2+v_2\\
+\vdots\\
+u_n+v_n
+\end{bmatrix}=\begin{bmatrix}
+k(u_1+v_1)\\
+k(u_2+v_2)\\
+\vdots\\
+k(u_n+v_n)
+\end{bmatrix}=
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-distvectoradd.html">
+\begin{equation*}
+=\begin{bmatrix} ku_1+kv_1\\ ku_2+kv_2\\ \vdots\\ ku_n+kv_n \end{bmatrix}
+=\begin{bmatrix} ku_1\\ ku_2\\ \vdots\\ ku_n \end{bmatrix} + \begin{bmatrix} kv_1\\ kv_2\\ \vdots\\ kv_n \end{bmatrix}
+=k\begin{bmatrix}u_1\\ u_2\\ \vdots\\ u_n \end{bmatrix}+k\begin{bmatrix} v_1\\ v_2\\ \vdots\\ v_n \end{bmatrix}
+=k\mathbf{u}+k\mathbf{v}
+\end{equation*}
+</div>
+</div></article></details></section><section class="exercises" id="Exercises-Introduction-to-Vectors"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">1.1.15</span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="prob-plotpointsr3"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="prob-plotpointsr3-1-1">Find the coordinates of each point.</div> <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="generated/latex-image/prob-plotpointsr3-1-2.svg" role="img" class="contained" alt="Points P, Q, and R plotted in 3-dimensional real space."></div>
+<div class="solutions"><details id="prob-plotpointsr3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-plotpointsr3-2-1">
+<div class="displaymath process-math">
+\begin{equation*}
+P(5, 5, 10)
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Q(-6, 3, 2)
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R(3, -5, -8)
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="prob-geogebrapts"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="prob-geogebrapts-1-1">Find the coordinates of each point. RIGHT-CLICK and DRAG to rotate the image.</div> <figure class="figure figure-like" id="prob-geogebrapts-1-2"><iframe id="geogebra-prob-points-in-3d" width="600" height="450" src="geogebra-prob-points-in-3d-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.19<span class="period">.</span></span><span class="space"> </span>A larger version of this activity is available <a class="external" href="https://www.geogebra.org/calculator/bynu3r84" target="_blank">here</a><details class="ptx-footnote" aria-live="polite" id="prob-geogebrapts-1-2-1-2"><summary class="ptx-footnote__number" title="Footnote 1.1.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="prob-geogebrapts-1-2-1-2"><code class="code-inline tex2jax_ignore">https://www.geogebra.org/calculator/bynu3r84</code></div></details>.</figcaption></figure><div class="solutions"><details id="prob-geogebrapts-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-geogebrapts-2-1">
+<div class="displaymath process-math">
+\begin{equation*}
+A(-1, 4, 2)
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B(3, 2, -3)
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C(2, -5, 3)
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D(-3, -2, 4)
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="prob-distR3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="prob-distR3-1-1">Find the distance between <span class="process-math">\(A(-2, -1, 4)\)</span> and <span class="process-math">\(B(1, -5, -8)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="prob-distR3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-distR3-2-1"><div class="displaymath process-math">
+\begin{equation*}
+AB=13
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-distR4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" id="prob-distR4" data-multipleanswers="false">
+<div class="para logical" id="prob-distR4-1-1">
+<div class="para">Consider the equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x^2+y^2+z^2+w^2=25
+\end{equation*}
+</div>
+<div class="para">What can be said about all points <span class="process-math">\((x, y, z, w)\in \R^4\)</span> that satisfy this equation?</div>
+</div>
+<li data-component="answer" id="prob-distR4_opt_a"><div class="para" id="prob-distR4-2-1-1-1">Such points are equidistant from the origin.</div></li>
+<li data-component="feedback" id="prob-distR4_opt_a">
+<li data-component="answer" id="prob-distR4_opt_b"><div class="para" id="prob-distR4-2-2-1-1">Such points form a four-dimensional sphere of radius <span class="process-math">\(5\text{.}\)</span>
+</div></li>
+<li data-component="feedback" id="prob-distR4_opt_b">
+<li data-component="answer" id="prob-distR4_opt_c"><div class="para" id="prob-distR4-2-3-1-1">Such points are located 5 units from the origin.</div></li>
+<li data-component="feedback" id="prob-distR4_opt_c">
+<li data-component="answer" id="prob-distR4_opt_d" data-correct=""><div class="para" id="prob-distR4-2-4-1-1">All of the above.</div></li>
+<li data-component="feedback" id="prob-distR4_opt_d">
+</ul></div></div></article><div class="exercisegroup" id="Exercises-Introduction-to-Vectors-5">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="Exercises-Introduction-to-Vectors-5-1"><div class="para" id="Exercises-Introduction-to-Vectors-5-1-1">Sketch each pair of vectors described below.  Express each vector in component form.</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="prob-componentform1"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para" id="prob-componentform1-1-1">Vector <span class="process-math">\(\mathbf{v}\)</span> has a tail at <span class="process-math">\((-2,4)\)</span> and a head at <span class="process-math">\((4,5)\text{.}\)</span> Vector <span class="process-math">\(\mathbf{w}\)</span> has a tail at <span class="process-math">\((8,-5)\)</span> and a head at <span class="process-math">\((6,7)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="prob-componentform1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-componentform1-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\mathbf{v}=\begin{bmatrix} 6\\ 1\end{bmatrix},\quad\mathbf{w}=\begin{bmatrix} -2\\ 12\end{bmatrix}
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-componentform2"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para" id="prob-componentform2-1-1">Vector <span class="process-math">\(\mathbf{v}\)</span> has a tail at <span class="process-math">\((2,4,5)\)</span> and a head at <span class="process-math">\((-2,4,8)\text{.}\)</span> Vector <span class="process-math">\(\mathbf{w}\)</span> has a tail at <span class="process-math">\((-3,4,5)\)</span> and a head at <span class="process-math">\((7,7,8)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="prob-componentform2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-componentform2-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\mathbf{v}=\begin{bmatrix} -4\\ 0\\ 3\end{bmatrix},\quad\mathbf{w}=\begin{bmatrix} 10\\ 3\\ 3\end{bmatrix}
+\end{equation*}
+</div></div></div></details></div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="prob-compformgivenlength"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="prob-compformgivenlength-1-1">Express vector <span class="process-math">\(\mathbf{v}\)</span> shown in the figure  in component form if the magnitude (length) of <span class="process-math">\(\mathbf{v}\)</span> is <span class="process-math">\(5\text{.}\)</span>
+</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/prob-compformgivenlength-1-2.svg" role="img" class="contained" alt=""></div>
+<div class="solutions"><details id="prob-compformgivenlength-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-compformgivenlength-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\mathbf{v}=\begin{bmatrix} 4\\ 3\end{bmatrix}
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-compformpractice"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="prob-compformpractice-1-1">Let <span class="process-math">\(A(-2, 3)\text{,}\)</span> <span class="process-math">\(B(3, 1)\)</span> and <span class="process-math">\(C(-1, -1)\text{.}\)</span>  Find point <span class="process-math">\(D\)</span> such that <span class="process-math">\(\overrightarrow{AB}=\overrightarrow{CD}\text{.}\)</span>
+</div>
+<div class="solutions"><details id="prob-compformpractice-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-compformpractice-2-1"><div class="displaymath process-math">
+\begin{equation*}
+D(4, -3)
+\end{equation*}
+</div></div></div></details></div></article><div class="exercisegroup" id="Exercises-Introduction-to-Vectors-8">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="Exercises-Introduction-to-Vectors-8-1"><div class="para" id="Exercises-Introduction-to-Vectors-8-1-1">Find the length of the following vectors.</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="prob-magnitude1"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para logical" id="prob-magnitude1-1-1"><div class="displaymath process-math">
+\begin{equation*}
+\mathbf{u}=\begin{bmatrix}1\\3\end{bmatrix}
+\end{equation*}
+</div></div>
+<div class="solutions"><details id="prob-magnitude1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-magnitude1-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\norm{\mathbf{u}}=\sqrt{10}
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-magnitude2"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para logical" id="prob-magnitude2-1-1"><div class="displaymath process-math">
+\begin{equation*}
+\mathbf{v}=\begin{bmatrix}-4\\-6\end{bmatrix}
+\end{equation*}
+</div></div>
+<div class="solutions"><details id="prob-magnitude2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-magnitude2-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\norm{\mathbf{v}}= 2\sqrt{13}
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-magnitude3"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="para logical" id="prob-magnitude3-1-1"><div class="displaymath process-math">
+\begin{equation*}
+\mathbf{w}=\begin{bmatrix}2\\-4\\6\end{bmatrix}
+\end{equation*}
+</div></div>
+<div class="solutions"><details id="prob-magnitude3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-magnitude3-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\norm{\mathbf{w}}=\answer{2}\sqrt{\answer{14}}
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-magnitude4"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<div class="para logical" id="prob-magnitude4-1-1"><div class="displaymath process-math">
+\begin{equation*}
+\mathbf{q}=\begin{bmatrix}-10\\ 4\\ -7\\ 5\\ 3\end{bmatrix}
+\end{equation*}
+</div></div>
+<div class="solutions"><details id="prob-magnitude4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-magnitude4-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\norm{\mathbf{q}}=\sqrt{199}
+\end{equation*}
+</div></div></div></details></div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="prob-compformgivenmag"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para" id="prob-compformgivenmag-1-1">Find the component form of vector <span class="process-math">\(\mathbf{v}\)</span> in <span class="process-math">\(\R^2\)</span> if we know that <span class="process-math">\(\norm{\mathbf{v}}=15\text{,}\)</span> the <span class="process-math">\(x\)</span> component of <span class="process-math">\(\mathbf{v}\)</span> is <span class="process-math">\(-9\)</span> and the vector is located in the third quadrant.</div>
+<div class="solutions"><details id="prob-compformgivenmag-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-compformgivenmag-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\mathbf{v}=\begin{bmatrix} -9\\ -12\end{bmatrix}
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-comppossibilities"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="para" id="prob-comppossibilities-1-1">For a vector in <span class="process-math">\(\R^2\)</span> with a length of 26 and the <span class="process-math">\(y\)</span> component of 10, what are the possibilities for the <span class="process-math">\(x\)</span> component?</div>
+<div class="solutions"><details id="prob-comppossibilities-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-comppossibilities-2-1"><div class="displaymath process-math">
+\begin{equation*}
+-24 \quad\text{and}\quad 24
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-yvaluesgivennorm"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
+<div class="para" id="prob-yvaluesgivennorm-1-1">Let <span class="process-math">\(\mathbf{v}=\begin{bmatrix}1\\ y\\ 4\end{bmatrix}\text{.}\)</span>  Find all possible values of <span class="process-math">\(y\)</span> if <span class="process-math">\(\norm{\mathbf{v}}=9\text{.}\)</span>
+</div>
+<div class="solutions"><details id="prob-yvaluesgivennorm-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-yvaluesgivennorm-2-1"><div class="displaymath process-math">
+\begin{equation*}
+-8 \quad\text{and}\quad 8
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-comppossibilitiesinr4"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
+<div class="para" id="prob-comppossibilitiesinr4-1-1">For a vector in <span class="process-math">\(\R^4\text{,}\)</span> what are the possibilities for the fourth component if the length of the vector is 14, and the <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> components are 1, 5 and 13, respectively?</div>
+<div class="solutions"><details id="prob-comppossibilitiesinr4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-comppossibilitiesinr4-2-1"><div class="displaymath process-math">
+\begin{equation*}
+-1 \quad\text{and}\quad 1
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-pythagoreanR3"><h4 class="heading"><span class="codenumber">17<span class="period">.</span></span></h4>
+<div class="para" id="prob-pythagoreanR3-1-1">The points <span class="process-math">\(A(2,1,4),B(4,2,-1)\text{,}\)</span> and <span class="process-math">\(C(6,8,7)\)</span> form a triangle in <span class="process-math">\(\R^3\text{.}\)</span>  Is it a right triangle?</div>
+<div class="solutions"><details id="prob-pythagoreanR3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="prob-pythagoreanR3-2-1">Does the Pythagorean Theorem hold?</div></div></details></div></article><article class="exercise exercise-like" id="prob-sketchsumdiff"><h4 class="heading"><span class="codenumber">18<span class="period">.</span></span></h4>
+<div class="para" id="prob-sketchsumdiff-1-1">The figure below shows vectors <span class="process-math">\(\mathbf{u}\)</span> and <span class="process-math">\(\mathbf{v}\text{.}\)</span>  Sketch each of the following in the same coordinate plane.</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/prob-sketchsumdiff-1-2.svg" role="img" class="contained" alt=""></div> <div class="para logical" id="prob-sketchsumdiff-1-3"><ol class="lower-alpha">
+<li id="prob-sketchsumdiff-1-3-1-1"><div class="para" id="prob-sketchsumdiff-1-3-1-1-1"><span class="process-math">\(\displaystyle \mathbf{u}+\mathbf{v}\)</span></div></li>
+<li id="prob-sketchsumdiff-1-3-1-2"><div class="para" id="prob-sketchsumdiff-1-3-1-2-1"><span class="process-math">\(\displaystyle 2\mathbf{u}-\mathbf{v}\)</span></div></li>
+<li id="prob-sketchsumdiff-1-3-1-3"><div class="para" id="prob-sketchsumdiff-1-3-1-3-1"><span class="process-math">\(\displaystyle 3\mathbf{v}\)</span></div></li>
+<li id="prob-sketchsumdiff-1-3-1-4"><div class="para" id="prob-sketchsumdiff-1-3-1-4-1"><span class="process-math">\(\displaystyle -2\mathbf{u}\)</span></div></li>
+</ol></div></article><div class="exercisegroup" id="Exercises-Introduction-to-Vectors-15">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="Exercises-Introduction-to-Vectors-15-1"><div class="para logical" id="Exercises-Introduction-to-Vectors-15-1-1">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{u}=\begin{bmatrix}-2\\1\\4\end{bmatrix},\quad\mathbf{v}\begin{bmatrix}3\\-1\\0\end{bmatrix} .
+\end{equation*}
+</div>
+<div class="para">Find the following:</div>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="prob-evaluatevectsumdiff1"><h5 class="heading"><span class="codenumber">19<span class="period">.</span></span></h5>
+<div class="para logical" id="prob-evaluatevectsumdiff1-1-1"><div class="displaymath process-math">
+\begin{equation*}
+2\mathbf{u}-\mathbf{v}
+\end{equation*}
+</div></div>
+<div class="solutions"><details id="prob-evaluatevectsumdiff1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-evaluatevectsumdiff1-2-1"><div class="displaymath process-math">
+\begin{equation*}
+2\mathbf{u}-\mathbf{v}=\begin{bmatrix} -7\\ 3\\ 8\end{bmatrix}
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-evaluatevectsumdiff2"><h5 class="heading"><span class="codenumber">20<span class="period">.</span></span></h5>
+<div class="para" id="prob-evaluatevectsumdiff2-1-1">The additive inverse of <span class="process-math">\(\mathbf{v}\text{.}\)</span>
+</div>
+<div class="solutions"><details id="prob-evaluatevectsumdiff2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-evaluatevectsumdiff2-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} -3\\ 1\\ 0\end{bmatrix}
+\end{equation*}
+</div></div></div></details></div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="prob-vecpropproof1"><h4 class="heading"><span class="codenumber">21<span class="period">.</span></span></h4>
+<div class="para" id="prob-vecpropproof1-1-1">Prove <a href="Section-Introduction-to-Vectors.html#item-commvectoradd" class="xref" data-knowl="./knowl/xref/item-commvectoradd.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a>-<a href="Section-Introduction-to-Vectors.html#item-identityvectoradd" class="xref" data-knowl="./knowl/xref/item-identityvectoradd.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a> of <a href="Section-Introduction-to-Vectors.html#th-vecproperties" class="xref" data-knowl="./knowl/xref/th-vecproperties.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.18">Theorem 1.1.18</a>.</div></article><article class="exercise exercise-like" id="prob-vecpropproof2"><h4 class="heading"><span class="codenumber">22<span class="period">.</span></span></h4>
+<div class="para" id="prob-vecpropproof2-1-1">Prove <a href="Section-Introduction-to-Vectors.html#item-distvectoradd2" class="xref" data-knowl="./knowl/xref/item-distvectoradd2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 6">Item 6</a>-<a href="Section-Introduction-to-Vectors.html#item-onevectorscalarmult" class="xref" data-knowl="./knowl/xref/item-onevectorscalarmult.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 8">Item 8</a> of <a href="Section-Introduction-to-Vectors.html#th-vecproperties" class="xref" data-knowl="./knowl/xref/th-vecproperties.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.18">Theorem 1.1.18</a>.</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="Chapter-Preliminaries.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B=\begin{bmatrix}2\amp -1\amp 3\amp 1\\1\amp -1\amp 2\amp 2\\1\amp 3\amp -2\amp -3\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Our goal is to find a basis for <span class="process-math">\(\mbox{col}(B)\text{.}\)</span>  To do this we need to find a linearly independent subset of the columns of <span class="process-math">\(B\)</span> that spans <span class="process-math">\(\mbox{col}(B)\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Consider the linear relation:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/init-colspaceB.html">
+\begin{equation}
+a_1\begin{bmatrix}2\\1\\1\end{bmatrix}+a_2\begin{bmatrix}-1\\-1\\3\end{bmatrix}+a_3\begin{bmatrix}3\\2\\-2\end{bmatrix}+a_4\begin{bmatrix}1\\2\\-3\end{bmatrix}=\mathbf{0}.\tag{5.3.1}
+\end{equation}
+</div>
+<div class="para">Solving this homogeneous equation amounts to finding <span class="process-math">\(\mbox{rref}(B)\text{.}\)</span> So,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/init-colspaceB.html">
+\begin{equation*}
+\begin{bmatrix}2\amp -1\amp 3\amp 1\\1\amp -1\amp 2\amp 2\\1\amp 3\amp -2\amp -3\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp 0\amp 1\amp 0\\0\amp 1\amp -1\amp 0\\0\amp 0\amp 0\amp 1\end{bmatrix}=\mbox{rref}(B).
+\end{equation*}
+</div>
+<div class="para">We now see that <a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#init-colspaceB" class="xref" data-knowl="./knowl/xref/init-colspaceB.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.1">(5.3.1)</a> has infinitely many solutions.</div>
+</div> <div class="para logical">
+<div class="para">Observe that the homogeneous equation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/init-colspaceB.html ./knowl/xref/init-colspaceB.html ./knowl/xref/init-colspaceR.html">
+\begin{equation}
+a_1\begin{bmatrix}1\\0\\0\end{bmatrix}+a_2\begin{bmatrix}0\\1\\0\end{bmatrix}+a_3\begin{bmatrix}1\\-1\\0\end{bmatrix}+a_4\begin{bmatrix}0\\0\\1\end{bmatrix}=\mathbf{0}.\tag{5.3.2}
+\end{equation}
+</div>
+<div class="para">has the same solution set as <a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#init-colspaceB" class="xref" data-knowl="./knowl/xref/init-colspaceB.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.1">(5.3.1)</a>. In particular, <span class="process-math">\(a_1=1\text{,}\)</span> <span class="process-math">\(a_2=-1\text{,}\)</span> <span class="process-math">\(a_3=-1\text{,}\)</span> <span class="process-math">\(a_4=0\)</span> is a non-trivial solution of <a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#init-colspaceB" class="xref" data-knowl="./knowl/xref/init-colspaceB.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.1">(5.3.1)</a> and <a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#init-colspaceR" class="xref" data-knowl="./knowl/xref/init-colspaceR.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.2">(5.3.2)</a>. This means that the third column of <span class="process-math">\(B\)</span> and the third column of <span class="process-math">\(\mbox{rref}(B)\)</span> can be expressed as the first column minus the second column of their respective matrices.</div>
+</div> <div class="para logical">
+<div class="para">We conclude that the third column of <span class="process-math">\(B\)</span> can be eliminated from the spanning set for <span class="process-math">\(\mbox{col}(B)\)</span> and</div>
+<div class="displaymath process-math">
+\begin{align*}
+\mbox{col}(B) \amp =\mbox{span}\left(\begin{bmatrix}2\\1\\1\end{bmatrix},\begin{bmatrix}-1\\-1\\3\end{bmatrix}, \begin{bmatrix}3\\2\\-2\end{bmatrix}, \begin{bmatrix}1\\2\\-3\end{bmatrix}\right) \\
+\amp =\mbox{span}\left(\begin{bmatrix}2\\1\\1\end{bmatrix},\begin{bmatrix}-1\\-1\\3\end{bmatrix}, \begin{bmatrix}1\\2\\-3\end{bmatrix}\right). 
+\end{align*}
+</div>
+<div class="para">Having gotten rid of one of the vectors, we need to determine whether the remaining three vectors are linearly independent.  To do this we need to find all solutions of</div>
+<div class="displaymath process-math">
+\begin{equation}
+b_1\begin{bmatrix}2\\1\\1\end{bmatrix}+b_2\begin{bmatrix}-1\\-1\\3\end{bmatrix}+b_3\begin{bmatrix}1\\2\\-3\end{bmatrix}=\mathbf{0}.\tag{5.3.3}
+\end{equation}
+</div>
+<div class="para">Fortunately, we do not have to start from scratch.  Observe that crossing out the third column in the previous row reduction process yields the desired reduced row-echelon form.</div>
+</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-colspace-5.svg" role="img" class="contained" alt="Matrix with column cut out"></div> <div class="para logical">
+<div class="para">This time the reduced row-echelon form tells us that (<a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#init-colspaceB2" class="xref" data-knowl="./knowl/xref/init-colspaceB2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.3.3">(5.3.3)</a> has only the trivial solution.  We conclude that the three vectors are linearly independent and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/init-colspaceB2.html">
+\begin{equation*}
+\left\{\begin{bmatrix}2\\1\\1\end{bmatrix},\begin{bmatrix}-1\\-1\\3\end{bmatrix}, \begin{bmatrix}1\\2\\-3\end{bmatrix}\right\}
+\end{equation*}
+</div>
+<div class="para">is a basis for <span class="process-math">\(\mbox{col}(B)\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a class="internal" href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#init-colspace">in-context</a></span>
+</body>
+</html>

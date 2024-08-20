@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.8</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Find <span class="process-math">\(\det{A}\)</span> if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}4\amp -1\amp 2\amp 1\\3\amp 0\amp 1\amp -2\\
+2\amp 1\amp 5\amp 1\\-2\amp 1\amp 3\amp -1\end{bmatrix}.
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical">
+<div class="para">We will use the entries in the top row as coefficients in front of <span class="process-math">\(3\times 3\)</span> determinants.  As before, we will use the alternating sign pattern for the coefficients:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-threebythreedet1.html">
+\begin{equation*}
++(4), -(-1), +(2), -(1).
+\end{equation*}
+</div>
+<div class="para">Just like in the case of a <span class="process-math">\(3 \times 3\)</span> matrix in  <a href="Section-Finding-the-Determinant.html#ex-threebythreedet1" class="xref" data-knowl="./knowl/xref/ex-threebythreedet1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.1.4">Example 7.1.4</a>, each of the smaller determinants is obtained by crossing out the row and the column where the coefficient is located.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-threebythreedet1.html">
+\begin{align*}
+\det{A}
+\amp =4\begin{vmatrix}0\amp 1\amp -2\\1\amp 5\amp 1\\1\amp 3\amp -1\end{vmatrix}+\begin{vmatrix}3\amp 1\amp -2\\2\amp 5\amp 1\\-2\amp 3\amp -1\end{vmatrix}+2\begin{vmatrix}3\amp 0\amp -2\\2\amp 1\amp 1\\-2\amp 1\amp -1\end{vmatrix}-\begin{vmatrix}3\amp 0\amp 1\\2\amp 1\amp 5\\-2\amp 1\amp 3\end{vmatrix}\\
+\amp =4(6)+(-56)+2(-14)-(-2) \\
+\amp =-58 
+\end{align*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="Section-Finding-the-Determinant.html#ex-expansiontoprow">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="117pt" height="117pt" viewBox="0 0 117 117" version="1.1">
+<g id="surface1">
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -56.296623 -0.0001875 L 56.294875 -0.0001875 " transform="matrix(1.00002,0,0,-1,58.586812,58.492)"/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -2.072689 2.390812 C -1.693791 0.957219 -0.850057 0.277531 0.00148805 0.0001875 C -0.850057 -0.277156 -1.693791 -0.956844 -2.072689 -2.390438 " transform="matrix(-1.00002,0,0,1,2.091332,58.492)"/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -2.070531 2.390438 C -1.695539 0.956844 -0.851806 0.277156 -0.000260352 -0.0001875 C -0.851806 -0.277531 -1.695539 -0.957219 -2.070531 -2.390812 " transform="matrix(1.00002,0,0,-1,115.082292,58.492)"/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -0.000874203 -56.293156 L -0.000874203 56.296688 " transform="matrix(1.00002,0,0,-1,58.586812,58.492)"/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -2.072288 2.389703 C -1.693381 0.956138 -0.849631 0.28037 0.00193125 -0.000874203 C -0.849631 -0.278212 -1.693381 -0.957886 -2.072288 -2.391451 " transform="matrix(0,1,1.00002,0,58.586812,114.98635)"/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -2.072662 2.391451 C -1.693756 0.957886 -0.850006 0.278212 0.00155625 0.000874203 C -0.850006 -0.28037 -1.693756 -0.956138 -2.072662 -2.389703 " transform="matrix(0,-1,-1.00002,0,58.586812,1.99765)"/>
+<path style="fill:none;stroke-width:1.99255;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -56.695053 -42.519719 L 56.693304 28.347469 " transform="matrix(1.00002,0,0,-1,58.586812,58.492)"/>
+</g>
+</svg>

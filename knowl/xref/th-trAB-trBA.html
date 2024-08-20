@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.2.5</span><span class="period">.</span>
+</h3>
+<div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be <span class="process-math">\(n \times n\)</span> matrices. Then <span class="process-math">\(\mbox{tr}(AB) = \mbox{tr}(BA)\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Write <span class="process-math">\(A = [a_{ij}]\)</span> and <span class="process-math">\(B = [b_{ij}]\text{.}\)</span> For each <span class="process-math">\(i\text{,}\)</span> the <span class="process-math">\((i, i)\)</span>-entry <span class="process-math">\(d_{i}\)</span> of the matrix <span class="process-math">\(AB\)</span> is given as follows:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d_{i} = a_{i1}b_{1i} + a_{i2}b_{2i} + \dots + a_{in}b_{ni} = \sum_{j}a_{ij}b_{ji}.
+\end{equation*}
+</div>
+<div class="para">Hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{tr}(AB) = d_1 + d_2 + \dots + d_n = \sum_{i}d_i = \sum_{i}\left(\sum_{j}a_{ij}b_{ji}\right).
+\end{equation*}
+</div>
+<div class="para">Similarly we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{tr}(BA) = \sum_{i}\left(\sum_{j}b_{ij}a_{ji}\right).
+\end{equation*}
+</div>
+<div class="para">Since these two double sums are the same, we have proven the theorem.</div>
+</div></article></details><span class="incontext"><a class="internal" href="Section-Similar-Matrices-and-Their-Properties.html#th-trAB-trBA">in-context</a></span>
+</body>
+</html>

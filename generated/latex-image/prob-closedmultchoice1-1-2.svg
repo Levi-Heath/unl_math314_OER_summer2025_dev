@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128pt" height="125pt" viewBox="0 0 128 125" version="1.1">
+<g id="surface1">
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -90.708549 -0.00127784 L 22.278506 -0.00127784 " transform="matrix(1.00008,0,0,-1.00005,104.01268,78.565128)"/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -2.070698 2.389228 C -1.691822 0.955706 -0.848139 0.279958 -0.000550957 -0.00127784 C -0.848139 -0.278608 -1.691822 -0.958261 -2.070698 -2.391783 " transform="matrix(1.00008,0,0,-1.00005,126.492739,78.565128)"/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -0.000961413 -45.354479 L -0.000961413 67.635965 " transform="matrix(1.00008,0,0,-1.00005,104.01268,78.565128)"/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -2.072271 2.391395 C -1.693384 0.957916 -0.849676 0.278283 0.00184409 0.000961413 C -0.849676 -0.280266 -1.693384 -0.955993 -2.072271 -2.389472 " transform="matrix(0,-1.00005,-1.00008,0,104.01268,10.728407)"/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 17.462485 17.462693 L -43.372492 -43.370203 " transform="matrix(1.00008,0,0,-1.00005,104.01268,78.565128)"/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -2.072507 2.390231 C -1.694137 0.956767 -0.848981 0.277332 -0.00105604 -0.00161528 C -0.848989 -0.280588 -1.694166 -0.954525 -2.069817 -2.390761 " transform="matrix(-0.707157,0.707135,0.707157,0.707135,60.496489,122.080014)"/>
+<path style="fill-rule:nonzero;fill:rgb(0%,0%,100%);fill-opacity:0.3;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,100%);stroke-opacity:0.3;stroke-miterlimit:10;" d="M 8.728809 8.728754 L -59.300905 76.764415 L -102.953663 33.110348 L -34.923949 -34.921407 Z M 8.728809 8.728754 " transform="matrix(1.00008,0,0,-1.00005,104.01268,78.565128)"/>
+</g>
+</svg>

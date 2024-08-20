@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal Decomposition Theorem.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(W\)</span> be a subspace of <span class="process-math">\(\R^n\)</span> and let <span class="process-math">\(\mathbf{x} \in \R^n\text{.}\)</span>  Then there exist unique vectors <span class="process-math">\(\mathbf{w} \in W\)</span> and <span class="process-math">\(\mathbf{w}^\perp \in W^\perp\)</span> such that <span class="process-math">\(\mathbf{x} = \mathbf{w} + \mathbf{w}^\perp\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">This is an example of an ``existence and uniqueness’’ theorem, so there are two things to prove.  If we have an orthogonal basis <span class="process-math">\(\{\mathbf{f}_{1}, \mathbf{f}_{2}, \dots, \mathbf{f}_{m}\}\)</span> for <span class="process-math">\(W\text{,}\)</span> then it is easy to show that our orthogonal decomposition exists for <span class="process-math">\(\mathbf{x}\text{.}\)</span> We let <span class="process-math">\(\mathbf{w}=\mbox{proj}_W(\mathbf{x})\text{,}\)</span> which is clearly in <span class="process-math">\(W\)</span> and  <span class="process-math">\(\mathbf{w}^\perp = \mathbf{x} - \mathbf{w}\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{w} + \mathbf{w}^\perp = \mathbf{w} + (\mathbf{x} - \mathbf{w}) = \mathbf{x},
+\end{equation*}
+</div>
+<div class="para">so we need to see that <span class="process-math">\(\mathbf{w}^\perp \in W^\perp\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">By T<a href="Section-Orthogonal-Complements-and-Decompositions.html#th-023783" class="xref" data-knowl="./knowl/xref/th-023783.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.3.2">Theorem 9.3.2</a>~<a href="Section-Orthogonal-Complements-and-Decompositions.html#th-023783c" class="xref" data-knowl="./knowl/xref/th-023783c.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a>, it suffices to show that <span class="process-math">\(\mathbf{w}^\perp\)</span> is orthogonal to each of the basis vectors <span class="process-math">\(\mathbf{f}_i, i=1,\ldots,m\text{.}\)</span>  We compute for <span class="process-math">\(i=1,\ldots,m\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-023783.html ./knowl/xref/th-023783c.html">
+\begin{align*}
+\mathbf{f}_i \cdot \mathbf{w}^\perp 
+\amp = \mathbf{f}_i \cdot (\mathbf{x} - \mathbf{w}) \\
+\amp = \mathbf{f}_i \cdot \mathbf{x} -  \mathbf{f}_i \cdot  \left(\frac{\mathbf{x} \cdot \mathbf{f}_{1}}{\norm{\mathbf{f}_{1}}^2}\mathbf{f}_{1} + \frac{\mathbf{x} \cdot \mathbf{f}_{2}}{\norm{\mathbf{f}_{2}}^2}\mathbf{f}_{2}+ \dots +\frac{\mathbf{x} \cdot \mathbf{f}_{m}}{\norm{\mathbf{f}_{m}}^2}\mathbf{f}_{m}\right) \\
+\amp = \mathbf{f}_i \cdot \mathbf{x} - \left(\frac{\mathbf{x} \cdot \mathbf{f}_{1}}{\norm{\mathbf{f}_{1}}^2}\mathbf{f}_i \cdot\mathbf{f}_{i} \right) = \mathbf{f}_i \cdot \mathbf{x} - (\mathbf{x} \cdot \mathbf{f}_i) = 0. 
+\end{align*}
+</div>
+<div class="para">This proves that <span class="process-math">\(\mathbf{w}^\perp \in W^\perp\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">The reason we need to prove this decomposition is unique is because we started with the orthogonal basis <span class="process-math">\(\{\mathbf{f}_{1}, \mathbf{f}_{2}, \dots, \mathbf{f}_{m}\}\)</span> for <span class="process-math">\(W\text{,}\)</span> but what would happen if we chose a different orthogonal basis? Suppose that <span class="process-math">\(\{\mathbf{f}_1^\prime, \mathbf{f}_2^\prime, \dots, \mathbf{f}_m^\prime \}\)</span>  is another orthogonal basis of <span class="process-math">\(W\text{,}\)</span> and let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{w}^{\prime} = \left(\frac{\mathbf{x} \cdot \mathbf{f}^{\prime}_{1}}{\norm{\mathbf{f}^{\prime}_{1}}^2}\right)\mathbf{f}^{\prime}_{1} + \left(\frac{\mathbf{x} \cdot \mathbf{f}^{\prime}_{2}}{\norm{\mathbf{f}^{\prime}_{2}}^2}\right)\mathbf{f}^{\prime}_{2} + \dots +\left(\frac{\mathbf{x} \cdot \mathbf{f}^{\prime}_{m}}{\norm{\mathbf{f}^{\prime}_{m}}^2}\right)\mathbf{f}^{\prime}_{m}.
+\end{equation*}
+</div>
+<div class="para">As before, <span class="process-math">\(\mathbf{w}^{\prime} \in W\)</span> and <span class="process-math">\(\mathbf{x} - \mathbf{w}^{\prime} \in W^\perp\text{,}\)</span> and we must show that <span class="process-math">\(\mathbf{w}^{\prime} = \mathbf{w}\text{.}\)</span> To see this, write the vector <span class="process-math">\(\mathbf{w} - \mathbf{w}^\prime\)</span> as follows:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{w} - \mathbf{w}^{\prime} = (\mathbf{x} - \mathbf{w}^{\prime}) - (\mathbf{x} - \mathbf{w}).
+\end{equation*}
+</div>
+<div class="para">This vector is in <span class="process-math">\(W\)</span> (because <span class="process-math">\(\mathbf{w}\)</span> and <span class="process-math">\(\mathbf{w}^\prime\)</span> are in <span class="process-math">\(W\)</span>) and it is in <span class="process-math">\(W^\perp\)</span> (because <span class="process-math">\(\mathbf{x} - \mathbf{w}^\prime\)</span> and <span class="process-math">\(\mathbf{x} - \mathbf{w}\)</span> are in <span class="process-math">\(W^\perp\)</span>), and so it must be the zero vector (it is orthogonal to itself!). This means <span class="process-math">\(\mathbf{w}^\prime = \mathbf{w}\)</span> as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="Section-Orthogonal-Complements-and-Decompositions.html#th-OrthoDecomp">in-context</a></span>
+</body>
+</html>

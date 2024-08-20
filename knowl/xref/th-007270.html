@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.4</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(P\)</span> be the transition matrix for an <span class="process-math">\(n\)</span>-state Markov chain. If <span class="process-math">\(_{m}\)</span> is the state vector at stage <span class="process-math">\(m\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+_{m+1} = P_m
+\end{equation*}
+</div>
+<div class="para">for each <span class="process-math">\(m = 0, 1, 2, \dots\text{.}\)</span>
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">[Heuristic Proof] Suppose that the Markov chain has been run <span class="process-math">\(N\)</span> times, each time starting with the same initial state vector. Recall that <span class="process-math">\(p_{ij}\)</span> is the proportion of the time the system goes from state <span class="process-math">\(j\)</span> at some stage to state <span class="process-math">\(i\)</span> at the next stage, whereas <span class="process-math">\(s_{i}^{(m)}\)</span> is the proportion of the time it is in state <span class="process-math">\(i\)</span> at stage <span class="process-math">\(m\text{.}\)</span> Hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s_{i}^{m+1}N
+\end{equation*}
+</div>
+<div class="para">is (approximately) the number of times the system is in state <span class="process-math">\(i\)</span> at stage <span class="process-math">\(m + 1\text{.}\)</span> We are going to calculate this number another way. The system got to state <span class="process-math">\(i\)</span> at stage <span class="process-math">\(m + 1\)</span> through <em class="emphasis">some</em> other state (say state <span class="process-math">\(j\)</span>) at stage <span class="process-math">\(m\text{.}\)</span> The number of times it was <em class="emphasis">in</em> state <span class="process-math">\(j\)</span> at that stage is (approximately) <span class="process-math">\(s_{j}^{(m)}N\text{,}\)</span> so the number of times it got to state <span class="process-math">\(i\)</span> via state <span class="process-math">\(j\)</span> is <span class="process-math">\(p_{ij}(s_{j}^{(m)}N)\text{.}\)</span> Summing over <span class="process-math">\(j\)</span> gives the number of times the system is in state <span class="process-math">\(i\)</span> (at stage <span class="process-math">\(m + 1\)</span>). This is the number we calculated before, so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s_{i}^{(m+1)}N = p_{i1}s_{1}^{(m)}N + p_{i2}s_{2}^{(m)}N + \cdots + p_{in}s_{n}^{(m)}N.
+\end{equation*}
+</div>
+<div class="para">Dividing by <span class="process-math">\(N\)</span> gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s_{i}^{(m+1)} = p_{i1}s_{1}^{(m)} + p_{i2}s_{2}^{(m)} + \cdots + p_{in}s_{n}^{(m)}
+\end{equation*}
+</div>
+<div class="para">for each <span class="process-math">\(i\text{,}\)</span> and this can be expressed as the matrix equation <span class="process-math">\(_{m+1} = P_{m}\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="Section-Application-to-Markov-Chains.html#th-007270">in-context</a></span>
+</body>
+</html>

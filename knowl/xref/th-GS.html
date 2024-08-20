@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Gram-Schmidt Orthogonalization.</span>
+</h4>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(\{\mathbf{v}_{1}, \mathbf{v}_{2}, \dots , \mathbf{v}_{m}\}\)</span> is any basis of a subspace <span class="process-math">\(W\)</span> of <span class="process-math">\(\R^n\text{,}\)</span> consider the following sequence of subspaces:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccl}
+W_1\amp =\amp \mbox{span}\{\mathbf{v}_{1}\} \\
+W_2\amp =\amp \mbox{span}\{\mathbf{v}_{1},\mathbf{v}_{2}\} \\
+W_3\amp =\amp \mbox{span}\{\mathbf{v}_{1},\mathbf{v}_{2},\mathbf{v}_{3}\} \\
+\vdots \amp \amp \\
+W_m \amp =\amp  \mbox{span}\{\mathbf{v}_{1},\mathbf{v}_{2},\mathbf{v}_{3},\ldots,\mathbf{v}_{m}\}
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Then we can construct an orthogonal basis <span class="process-math">\(\{\mathbf{f}_{1},\mathbf{f}_{2},\ldots,\mathbf{f}_{m}\}\)</span> for <span class="process-math">\(W_k\)</span> for each <span class="process-math">\(k = 2, 3, \dots , m\)</span> by adding one vector at a time successively as follows:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccl}
+\mathbf{f}_{1} \amp =\amp  \mathbf{v}_{1} \\
+\mathbf{f}_{2} \amp =\amp  \mathbf{v}_{2} - \mbox{proj}_{W_1}(\mathbf{v}_2) \\
+\mathbf{f}_{3} \amp =\amp  \mathbf{v}_{3} - \mbox{proj}_{W_2}(\mathbf{v}_3) \\
+\vdots \amp \amp \\
+\mathbf{f}_{m} \amp =\amp  \mathbf{v}_{m} - \mbox{proj}_{W_{m-1}}(\mathbf{v}_m)
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Then, <span class="process-math">\(\{\mathbf{f}_{1},\mathbf{f}_{2},\ldots,\mathbf{f}_{m}\}\)</span> will be an orthogonal basis for <span class="process-math">\(W\text{.}\)</span>
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Using the definition of projection onto a subspace, the iterative procedure above may be written:</div>
+<div class="displaymath process-math">
+\begin{equation}
+\begin{array}{ccl}
+\mathbf{f}_{1} \amp =\amp  \mathbf{v}_{1} \\
+\mathbf{f}_{2} \amp =\amp  \mathbf{v}_{2} - \frac{\mathbf{v}_{2} \cdot \mathbf{f}_{1}}{\norm{\mathbf{f}_{1}}^2}\mathbf{f}_{1} \\
+\mathbf{f}_{3} \amp =\amp  \mathbf{v}_{3} - \frac{\mathbf{v}_{3} \cdot \mathbf{f}_{1}}{\norm{\mathbf{f}_{1}}^2}\mathbf{f}_{1} - \frac{\mathbf{v}_{3} \cdot \mathbf{f}_{2}}{\norm{\mathbf{f}_{2}}^2}\mathbf{f}_{2} \\
+\vdots \amp \amp \\
+\mathbf{f}_{k} \amp =\amp  \mathbf{v}_{k} - \frac{\mathbf{v}_{k} \cdot \mathbf{f}_{1}}{\norm{\mathbf{f}_{1}}^2}\mathbf{f}_{1} - \frac{\mathbf{v}_{k} \cdot \mathbf{f}_{2}}{\norm{\mathbf{f}_{2}}^2}\mathbf{f}_{2} - \dots -\frac{\mathbf{v}_{k} \cdot \mathbf{f}_{k-1}}{\norm{\mathbf{f}_{k-1}}^2}\mathbf{f}_{k-1} \\
+\vdots \amp \amp 
+\end{array}\tag{9.2.1}
+\end{equation}
+</div>
+<div class="para">We see immediately that <span class="process-math">\(\mbox{span}\{\mathbf{f}_{1}\}=W_1\)</span> and that <span class="process-math">\(\mbox{span}\{\mathbf{f}_{1},\mathbf{f}_{2}\}=W_2\)</span> because <span class="process-math">\(\mathbf{f}_{2}\)</span> is a linear combination of <span class="process-math">\(\mathbf{v}_{1}\)</span> and <span class="process-math">\(\mathbf{v}_{2}\text{.}\)</span>  In fact, for any value of <span class="process-math">\(k\text{,}\)</span> we see that <span class="process-math">\(\mbox{span}\{\mathbf{f}_{1},\mathbf{f}_{2},\ldots,\mathbf{f}_{k}\}=W_k\text{,}\)</span> because each <span class="process-math">\(\mathbf{f}_{k}\)</span> is a linear combination of the vectors <span class="process-math">\(\{\mathbf{v}_{1},\mathbf{v}_{2},\ldots,\mathbf{v}_{k-1}\}\text{.}\)</span>
+</div>
+</div> <div class="para">Repeated application of <a href="Section-Orthogonality-and-Projections.html#cor-orthProjOntoW" class="xref" data-knowl="./knowl/xref/cor-orthProjOntoW.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 9.1.16">Corollary 9.1.16</a> shows that the set <span class="process-math">\(\{\mathbf{f}_{1},\mathbf{f}_{2},\ldots,\mathbf{f}_{m}\}\)</span> is orthogonal.  Linear independence follows from orthogonality by <a href="Section-Gram-Schmidt-Orthogonalization.html#orthbasis" class="xref" data-knowl="./knowl/xref/orthbasis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.2.4">Theorem 9.2.4</a>.</div> <div class="para">We conclude that <span class="process-math">\(\{\mathbf{f}_{1},\mathbf{f}_{2},\ldots,\mathbf{f}_{m}\}\)</span> is a linearly independent orthogonal set that spans <span class="process-math">\(W\text{.}\)</span>
+</div></article></details><span class="incontext"><a class="internal" href="Section-Gram-Schmidt-Orthogonalization.html#th-GS">in-context</a></span>
+</body>
+</html>

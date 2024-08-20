@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Solve the following system of equations.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html">
+\begin{equation*}
+\begin{array}{ccccccccc}
+x \amp + \amp 2y\amp -\amp 3z\amp = \amp 1 \\
+-5x\amp  +\amp 2y\amp -\amp 3z\amp =\amp 1\\
+x\amp - \amp 2y\amp +\amp z\amp =\amp 1
+\end{array}
+\end{equation*}
+</div>
+<div class="para">We create an augmented matrix corresponding to the system and apply row operations until the matrix is in row-echelon form.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html">
+\begin{equation*}
+\left[\begin{array}{ccc|c}  
+1\amp 2\amp -3\amp 1\\-5\amp 2\amp -3\amp 1\\1\amp -2\amp 1\amp 1
+\end{array}\right]
+\begin{array}{c}
+\\
+\xrightarrow{R_2+5R_1}\\
+\xrightarrow{R_3-R_1}\\
+\end{array}
+\left[\begin{array}{ccc|c}  
+1\amp 2\amp -3\amp 1\\0\amp 12\amp -18\amp 6\\0\amp -4\amp 4\amp 0
+\end{array}\right]
+\begin{array}{c}
+\\
+\\
+\xrightarrow{R_3+\frac{1}{3}R_2}\\
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html">
+\begin{equation}
+\left[\begin{array}{ccc|c}  
+1\amp 2\amp -3\amp 1\\0\amp 12\amp -18\amp 6\\0\amp 0\amp -2\amp 2
+\end{array}\right]\tag{2.3.1}
+\end{equation}
+</div>
+<div class="para">Note that the elementary row operations that lead to <a href="Section-Gaussian-Elimination-and-Rank.html#eq-ref1" class="xref" data-knowl="./knowl/xref/eq-ref1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.1">(2.3.1)</a> were not prescribed.  We may employ row-operations in a different manner and obtain a different matrix in row-echelon form.  For example, suppose for some reason we had begun by switching the first and third rows.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html">
+\begin{equation*}
+\left[\begin{array}{ccc|c}  
+1\amp 2\amp -3\amp 1\\-5\amp 2\amp -3\amp 1\\1\amp -2\amp 1\amp 1
+\end{array}\right]
+\begin{array}{c}
+\\
+\xrightarrow{R_1\leftrightarrow R_3}\\
+\\
+\end{array}
+\left[\begin{array}{ccc|c}  
+1\amp -2\amp 1\amp 1\\-5\amp 2\amp -3\amp 1\\1\amp 2\amp -3\amp 1
+\end{array}\right]
+\begin{array}{c}
+\\
+\\
+\\
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Next we would reduce this matrix to row-echelon form, perhaps in this way:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html">
+\begin{equation*}
+\left[\begin{array}{ccc|c}  
+1\amp -2\amp 1\amp 1\\-5\amp 2\amp -3\amp 1\\1\amp 2\amp -3\amp 1
+\end{array}\right]
+\begin{array}{c}
+\\
+\xrightarrow{R_2+5R_1}\\
+\xrightarrow{R_3-R_1}\\
+\end{array}
+\left[\begin{array}{ccc|c}  
+1\amp -2\amp 1\amp 1\\0\amp -8\amp 2\amp 6\\0\amp 4\amp -4\amp 0
+\end{array}\right]
+\begin{array}{c}
+\\
+\\
+\xrightarrow{R_3+\frac{1}{2}R_2}\\
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html">
+\begin{equation}
+\left[\begin{array}{ccc|c}  
+1\amp -2\amp 1\amp 1\\0\amp -8\amp 2\amp 6\\0\amp 0\amp -3\amp 3
+\end{array}\right]\tag{2.3.2}
+\end{equation}
+</div>
+<div class="para">The augmented matrices in <a href="Section-Gaussian-Elimination-and-Rank.html#eq-ref1" class="xref" data-knowl="./knowl/xref/eq-ref1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.1">(2.3.1)</a> and <a href="Section-Gaussian-Elimination-and-Rank.html#eq-ref2" class="xref" data-knowl="./knowl/xref/eq-ref2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.2">(2.3.2)</a> are clearly not the same, but both are in row-echelon form. If we write the systems of equations corresponding to <a href="Section-Gaussian-Elimination-and-Rank.html#eq-ref1" class="xref" data-knowl="./knowl/xref/eq-ref1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.1">(2.3.1)</a> and <a href="Section-Gaussian-Elimination-and-Rank.html#eq-ref2" class="xref" data-knowl="./knowl/xref/eq-ref2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.2">(2.3.2)</a>, we can employ back substitution to solve them.  The matrix in <a href="Section-Gaussian-Elimination-and-Rank.html#eq-ref1" class="xref" data-knowl="./knowl/xref/eq-ref1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.1">(2.3.1)</a> corresponds to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html">
+\begin{equation*}
+\begin{array}{ccccccccc}
+x \amp + \amp 2y\amp -\amp 3z\amp = \amp 1 \\
+\amp  \amp 12y\amp -\amp 18z\amp =\amp 6\\
+\amp \amp \amp \amp -2z\amp =\amp 2
+\end{array}
+\end{equation*}
+</div>
+<div class="para">The matrix in <a href="Section-Gaussian-Elimination-and-Rank.html#eq-ref2" class="xref" data-knowl="./knowl/xref/eq-ref2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.2">(2.3.2)</a> corresponds to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html">
+\begin{equation*}
+\begin{array}{ccccccccc}
+x \amp - \amp 2y\amp +\amp z\amp = \amp 1 \\
+\amp  \amp -8y\amp +\amp 2z\amp =\amp 6\\
+\amp \amp \amp \amp -3z\amp =\amp 3
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Because both systems are equivalent to the original system, it is not surprising that back substitution yields the same solution for both systems.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html">
+\begin{equation*}
+x=0,\quad y=-1,\quad z=-1
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html">
+\begin{equation*}
+x=0, y=-1, z=-1
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html">
+\begin{equation*}
+x=0, y=-1, z=-1
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a class="internal" href="Section-Gaussian-Elimination-and-Rank.html#init-gaussianelim1">in-context</a></span>
+</body>
+</html>

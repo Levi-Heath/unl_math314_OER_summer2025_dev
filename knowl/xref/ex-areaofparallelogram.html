@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.4.4</span><span class="period">.</span>
+</h4>
+<div class="para">Find the area of the parallelogram in the diagram. <div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;"><img src="generated/latex-image/ex-areaofparallelogram-1-1-1.svg" role="img" class="contained" alt="Plane area"></div>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical">
+<div class="para">The vectors that determine the parallelogram are</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}4\\2\end{bmatrix}\quad\text{and}\quad\begin{bmatrix}-2\\2\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">The problem we run into is that these vectors are in <span class="process-math">\(\R^2\text{,}\)</span> whereas the cross product is defined only for vectors in <span class="process-math">\(\R^3\text{.}\)</span> We will get around this difficulty by ``padding" our vectors with zeros on the bottom. In other words, we will consider them as vectors sitting in the <span class="process-math">\(xy\)</span>-coordinate plane in <span class="process-math">\(\R^3\text{.}\)</span> This allows us to compute the cross product</div>
+<div class="displaymath process-math">
+\begin{align*}
+\begin{bmatrix}4\\2\\0\end{bmatrix}\times\begin{bmatrix}-2\\2\\0\end{bmatrix} \amp =\begin{vmatrix}\mathbf{i}\amp \mathbf{j}\amp \mathbf{k}\\4\amp 2\amp 0\\-2\amp 2\amp 0\end{vmatrix} \\
+\amp =\mathbf{k}\Big((4)(2)-(2)(-2)\Big) \\
+\amp =12\mathbf{k} \\
+\amp =\begin{bmatrix}0\\0\\12\end{bmatrix}. 
+\end{align*}
+</div>
+<div class="para">The area of the parallelogram is then given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{Area}=\norm{\begin{bmatrix}0\\0\\12\end{bmatrix}}=12.
+\end{equation*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="Section-Determinants-Areas-and-Volumes.html#ex-areaofparallelogram">in-context</a></span>
+</body>
+</html>

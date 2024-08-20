@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.3.5</span><span class="period">.</span>
+</h3>
+<div class="para">Show that <span class="process-math">\(\mathbb{M}_{2,2}\)</span> and <span class="process-math">\(\mathbb{P}^3\)</span> are isomorphic.</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical">
+<div class="para">We will start by finding a plausible candidate for an isomorphism.  Define <span class="process-math">\(T:\mathbb{M}_{2,2}\rightarrow \mathbb{P}^3\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right)=a+bx+cx^2+dx^3.
+\end{equation*}
+</div>
+<div class="para">We will first show that <span class="process-math">\(T\)</span> is a linear transformation,  then verify that <span class="process-math">\(T\)</span> is invertible.</div>
+<div class="displaymath process-math">
+\begin{align*}
+T\left(k\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right)\amp =T\left(\begin{bmatrix}ka\amp kb\\kc\amp kd\end{bmatrix}\right) \\
+\amp =ka+kbx+kcx^2+kdx^3=k(a+bx+cx^2+dx^3) \\
+\amp =kT\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right) 
+\end{align*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{align*}
+T\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}+\begin{bmatrix}m\amp n\\p\amp q\end{bmatrix}\right)\amp =T\left(\begin{bmatrix}a+m\amp b+n\\c+p\amp d+q\end{bmatrix}\right) \\
+\amp =(a+m)+(b+n)x+(c+p)x^2+(d+q)x^3 \\
+\amp =(a+bx+cx^2+dx^3)+(m+nx+px^2+qx^3) \\
+\amp =T\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right)+T\left(\begin{bmatrix}m\amp n\\p\amp q\end{bmatrix}\right) 
+\end{align*}
+</div>
+<div class="para">We can show that <span class="process-math">\(T\)</span> is one-to-one and onto, and therefore has an inverse.  We can also observe directly that <span class="process-math">\(T^{-1}\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T^{-1}(a+bx+cx^2+dx^3)=\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(T\)</span> is an isomorphism, and <span class="process-math">\(\mathbb{M}_{2,2}\cong\mathbb{P}^3\text{.}\)</span>
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="Section-Isomorphic-Vector-Spaces.html#ex-isomorphexample1">in-context</a></span>
+</body>
+</html>

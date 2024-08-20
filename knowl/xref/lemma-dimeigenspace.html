@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">8.2.22</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix, and let <span class="process-math">\(\mathcal{S}_{\lambda_1}\)</span> be the eigenspace corresponding to the eigenvalue <span class="process-math">\(\lambda_1\)</span> which has algebraic multiplicity <span class="process-math">\(m\text{.}\)</span>  Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{dim}(\mathcal{S}_{\lambda_1})\leq m.
+\end{equation*}
+</div>
+<div class="para">In other words, the geometric multiplicity of an eigenvalue is less than or equal to the algebraic multiplicity of that same eigenvalue.</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(k\)</span> be the geometric multiplicity of <span class="process-math">\(\lambda_1\text{,}\)</span> i.e., <span class="process-math">\(k=\mbox{dim}(\mathcal{S}_{\lambda_1})\text{.}\)</span>  Suppose <span class="process-math">\(\left\{\mathbf{x}_1, \mathbf{x}_2, \ldots ,\mathbf{x}_k\right\}\)</span> is a basis for the eigenspace <span class="process-math">\(\mathcal{S}_{\lambda_1}\text{.}\)</span>  Let <span class="process-math">\(P\)</span> be any invertible matrix having <span class="process-math">\(\mathbf{x}_1,  \mathbf{x}_2, \ldots ,\mathbf{x}_k\)</span> as its first <span class="process-math">\(k\)</span> columns, say</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P=\begin{bmatrix}
+| \amp  | \amp   \amp  | \amp  | \amp  \amp  | \\
+\mathbf{x}_1 \amp  \mathbf{x}_2 \amp  \cdots \amp  \mathbf{x}_k \amp  \mathbf{x}_{k+1} \amp  \cdots \amp  \mathbf{x}_n \\
+| \amp  | \amp   \amp  | \amp  | \amp  \amp  |
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">In block form we may write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P=\begin{bmatrix}
+B\amp C
+\end{bmatrix} \quad \text{and} \quad P^{-1}=\begin{bmatrix}
+D \\
+E
+\end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(B\)</span> is <span class="process-math">\(n \times k\text{,}\)</span> <span class="process-math">\(C\)</span> is  <span class="process-math">\(n \times (n-k)\text{,}\)</span> <span class="process-math">\(D\)</span> is <span class="process-math">\(k \times n\text{,}\)</span> and <span class="process-math">\(E\)</span> is <span class="process-math">\((n-k) \times n\text{.}\)</span>  We observe</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I_n = P^{-1}P = \left[\begin{array}{c|c}  
+DB \amp  DC \\ \hline
+EB \amp  EC
+\end{array}\right]. \text{.}
+\end{equation*}
+</div>
+<div class="para">This implies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+DB = I_k,\quad DC=O_{k\,\,n-k},\quad EB = O_{n-k\,\,k} \quad\text{ and }\quad EC = I_{n-k}.
+\end{equation*}
+</div>
+<div class="para">Therefore,</div>
+<div class="displaymath process-math">
+\begin{align*}
+P^{-1}AP  \amp =\begin{bmatrix}
+D \\
+E
+\end{bmatrix} 
+A
+\begin{bmatrix}
+B\amp C
+\end{bmatrix} =
+\left[\begin{array}{c|c}  
+DAB \amp  DAC \\ \hline
+EAB \amp  EAC
+\end{array}\right ] \\
+\amp =  \left[\begin{array}{c|c}  
+\lambda_1 DB \amp  DAC \\ \hline
+\lambda_1 EB \amp  EAC
+\end{array}\right]  
+=  \left[\begin{array}{c|c}  
+\lambda_1 I_k \amp  DAC \\ \hline
+O \amp  EAC
+\end{array}\right].  
+\end{align*}
+</div>
+<div class="para">We finish the proof by comparing the characteristic polynomials on both sides of this equation, and making use of the fact that similar matrices have the same characteristic polynomials.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det(A-\lambda I) = \det(P^{-1}AP-\lambda I)=(\lambda_1 - \lambda)^k \det(EAC).
+\end{equation*}
+</div>
+<div class="para">We see that the characteristic polynomial of <span class="process-math">\(A\)</span> has <span class="process-math">\((\lambda_1 - \lambda)^k\)</span> as a factor. This tells us that algebraic multiplicity of <span class="process-math">\(\lambda_1\)</span> is at least <span class="process-math">\(k\text{,}\)</span> proving the desired inequality.</div>
+</div></article></details><span class="incontext"><a class="internal" href="Section-Similar-Matrices-and-Their-Properties.html#lemma-dimeigenspace">in-context</a></span>
+</body>
+</html>

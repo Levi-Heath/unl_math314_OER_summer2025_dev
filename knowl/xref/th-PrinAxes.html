@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Real Spectral Theorem.</span>
+</h4>
+<div class="para">Let  <span class="process-math">\(A\)</span> be an <span class="process-math">\(n \times n\)</span> matrix.  Then <span class="process-math">\(A\)</span> is symmetric if and only if <span class="process-math">\(A\)</span> is orthogonally diagonalizable.</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">If <span class="process-math">\(A\)</span> is orthogonally diagonalizable, then it is an easy exercise to prove that it is symmetric.  You are asked to do this in <a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html#prob-ortho-diag-implies-symmetric" class="xref" data-knowl="./knowl/xref/prob-ortho-diag-implies-symmetric.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 9.4.3.1">Exercise 9.4.3.1</a>.</div> <div class="para">To prove the ``only if’’ part of this theorem, we assume <span class="process-math">\(A\)</span> is symmetric, and we need to show it is orthogonally diagonalizable.</div> <div class="para logical">
+<div class="para">We proceed by induction on <span class="process-math">\(n\text{,}\)</span> the size of the symmetric matrix. If <span class="process-math">\(n = 1\text{,}\)</span> <span class="process-math">\(A\)</span> is already diagonal. If <span class="process-math">\(n \gt  1\text{,}\)</span> assume that we know the ``only if’’ statement holds for <span class="process-math">\((n - 1) \times (n - 1)\)</span> symmetric matrices. Let <span class="process-math">\(\lambda_{1}\)</span> be an eigenvalue of <span class="process-math">\(A\text{,}\)</span> and let <span class="process-math">\(A\mathbf{x}_{1} = \lambda_{1}\mathbf{x}_{1}\text{,}\)</span> where <span class="process-math">\(\norm{\mathbf{x}_{1}} = 1\text{.}\)</span> Next, set <span class="process-math">\(\mathbf{q}_{1}=\mathbf{x}_{1}\text{,}\)</span> and use the Gram-Schmidt algorithm to find an orthonormal basis <span class="process-math">\(\{\mathbf{q}_{1}, \mathbf{q}_{2}, \dots, \mathbf{q}_{n}\}\)</span> for <span class="process-math">\(\R^n\text{.}\)</span> Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Q_{1} = \begin{bmatrix}
+| \amp  | \amp    \amp  | \\
+\mathbf{q}_1 \amp  \mathbf{q}_2  \amp  \cdots \amp  \mathbf{q}_n \\
+| \amp  | \amp    \amp  |
+\end{bmatrix},
+\end{equation*}
+</div>
+<div class="para">so that <span class="process-math">\(Q_{1}\)</span> is an orthogonal matrix.  We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+Q_{1}^TAQ_{1} \amp = \begin{bmatrix}
+-- \amp  \mathbf{q}_{1}^T \amp  -- \\ -- \amp  \mathbf{q}_{2}^T \amp  -- \\ \amp  \vdots \amp  \\ -- \amp  \mathbf{q}_{n}^T \amp  --
+\end{bmatrix} A \begin{bmatrix}
+| \amp  | \amp    \amp  | \\
+\mathbf{q}_1 \amp  \mathbf{q}_2  \amp  \cdots \amp  \mathbf{q}_n \\
+| \amp  | \amp    \amp  |
+\end{bmatrix} \\
+\amp = \begin{bmatrix}
+-- \amp  \mathbf{q}_{1}^T \amp  -- \\ -- \amp  \mathbf{q}_{2}^T \amp  -- \\ \amp  \vdots \amp  \\ -- \amp  \mathbf{q}_{n}^T \amp  --
+\end{bmatrix} \begin{bmatrix}
+| \amp  | \amp    \amp  | \\
+A\mathbf{q}_1 \amp  A\mathbf{q}_2  \amp  \cdots \amp  A\mathbf{q}_n \\
+| \amp  | \amp    \amp  |
+\end{bmatrix} \\
+\amp =
+\begin{bmatrix}
+\lambda_{1} \amp  B \\
+\mathbf{0} \amp  A_{1}
+\end{bmatrix}, 
+\end{align*}
+</div>
+<div class="para">where the block <span class="process-math">\(B\)</span> has dimensions <span class="process-math">\(1 \times (n-1)\text{,}\)</span> and the block under <span class="process-math">\(\lambda_1\)</span> is a <span class="process-math">\((n-1) \times 1\)</span> zero matrix, because of the orthogonality of the basis.</div>
+</div> <div class="para logical">
+<div class="para">Next, using the fact that <span class="process-math">\(A\)</span> is symmetric, we notice that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-orthogonal-product-inverse.html ./knowl/xref/th-orthogonal-product.html">
+\begin{equation*}
+(Q_{1}^TAQ_{1})^T = Q_{1}^T A^T (Q_{1}^T)^T = Q_{1}^TAQ_{1},
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(Q_{1}^TAQ_{1}\)</span> is symmetric.  It follows that <span class="process-math">\(B\)</span> is also a zero matrix and that <span class="process-math">\(A_{1}\)</span> is symmetric. Since <span class="process-math">\(A_{1}\)</span> is an <span class="process-math">\((n - 1) \times (n - 1)\)</span> symmetric matrix, we may apply the inductive hypothesis, so there exists an <span class="process-math">\((n - 1) \times (n - 1)\)</span> orthogonal matrix <span class="process-math">\(Q\)</span> such that <span class="process-math">\(Q^{T}A_{1}Q = D_{1}\)</span> is diagonal. We observe that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-orthogonal-product-inverse.html ./knowl/xref/th-orthogonal-product.html">
+\begin{equation*}
+Q_{2} = \begin{bmatrix}
+1 \amp  0\\
+0 \amp  Q
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">is orthogonal, and we compute:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-orthogonal-product-inverse.html ./knowl/xref/th-orthogonal-product.html">
+\begin{align*}
+(Q_{1}Q_{2})^TA(Q_{1}Q_{2}) \amp = Q_{2}^T(Q_{1}^TAQ_{1})Q_{2} \\
+\amp = \begin{bmatrix}
+1 \amp  0 \\
+0 \amp  Q^T
+\end{bmatrix} \begin{bmatrix}
+\lambda_{1} \amp  0 \\
+0 \amp  A_{1}
+\end{bmatrix}\begin{bmatrix}
+1 \amp  0 \\
+0 \amp  Q
+\end{bmatrix} \\
+\amp = \begin{bmatrix}
+\lambda_{1} \amp  0 \\
+0 \amp  D_{1}
+\end{bmatrix} 
+\end{align*}
+</div>
+<div class="para">is diagonal. Because <span class="process-math">\(Q_{1}Q_{2}\)</span> is orthogonal by <a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html#th-orthogonal-product-inverse" class="xref" data-knowl="./knowl/xref/th-orthogonal-product-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.4.6">Theorem 9.4.6</a><a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html#th-orthogonal-product" class="xref" data-knowl="./knowl/xref/th-orthogonal-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a>, this completes the proof.</div>
+</div></article></details><span class="incontext"><a class="internal" href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html#th-PrinAxes">in-context</a></span>
+</body>
+</html>

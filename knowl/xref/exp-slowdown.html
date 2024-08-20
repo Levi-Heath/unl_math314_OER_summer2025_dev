@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8.1.3</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">If a vector <span class="process-math">\(\mathbf{x}\)</span> is an eigenvector satisfying <a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#def-eigen" class="xref" data-knowl="./knowl/xref/def-eigen.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.1.1">(8.1.1)</a>, then clearly it also satisfies  <span class="process-math">\(A\mathbf{x}-\lambda \mathbf{x} = \mathbf{0} \text{.}\)</span> It seems natural at this point to try to factor.  We would love to ``factor out’’ <span class="process-math">\(\mathbf{x}\text{.}\)</span>  Here is the procedure:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-eigen.html">
+\begin{align*}
+A\mathbf{x}-\lambda \mathbf{x} \amp = \mathbf{0}, \\
+A\mathbf{x}-\lambda I\mathbf{x} \amp = \mathbf{0}, \\
+(A-\lambda I)\mathbf{x} \amp = \mathbf{0}. 
+\end{align*}
+</div>
+<div class="para">The middle step was necessary before factoring because we cannot subtract a <span class="process-math">\(1 \times 1\)</span> scalar <span class="process-math">\(\lambda\)</span> from an <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div> <div class="para">In the spirit of connecting eigenvalues to previous notions, the following questions are intended to keep you linking concepts together.</div> <details class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">8.1.10</span><span class="period">.</span>
+</h5></summary><article class="problem example-like knowl__content"><div class="para">Does the above show that any eigenvector <span class="process-math">\(\mathbf{x}\)</span> of <span class="process-math">\(A\)</span> is in the row space, column space or the null space of the related matrix, <span class="process-math">\(A-\lambda I\text{?}\)</span>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para">The null space.</div></div></details></div></article></details> <details class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">8.1.11</span><span class="period">.</span>
+</h5></summary><article class="problem example-like knowl__content"><div class="para">Since eigenvectors are non-zero vectors, this means that <span class="process-math">\(A\)</span> will have eigenvectors if and only if the null space of <span class="process-math">\(A-\lambda I\)</span> is nontrivial.  Which option is correct of the following is correct? The only way that <span class="process-math">\(\mbox{null}(A-\lambda I)\)</span> can be nontrivial is if <span class="process-math">\(\mbox{rank}(A-\lambda I)\)</span> is equal to, less than or greater than <span class="process-math">\(n \text{.}\)</span>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para">Less than <span class="process-math">\(n \text{.}\)</span>
+</div></div></details></div></article></details> <div class="para logical">
+<div class="para">If the rank of an <span class="process-math">\(n \times n\)</span> matrix is less than <span class="process-math">\(n\text{,}\)</span> then the matrix is singular.  Since <span class="process-math">\((A-\lambda I)\)</span> must be singular for any eigenvalue <span class="process-math">\(\lambda\text{,}\)</span> we see that <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> if and only if</div>
+<div class="displaymath process-math">
+\begin{equation}
+\mbox{det}(A-\lambda I) = 0\tag{8.1.2}
+\end{equation}
+</div>
+</div></article><span class="incontext"><a class="internal" href="Section-Describing-Eigenvalues-and-Eigenvectors.html#exp-slowdown">in-context</a></span>
+</body>
+</html>

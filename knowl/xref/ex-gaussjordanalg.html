@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Use the Gauss-Jordan Algorithm to solve the system</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccccccc}
+3x \amp + \amp y\amp +\amp 7z\amp = \amp 7 \\
+5x\amp  +\amp 3y\amp +\amp 9z\amp =\amp 13\\
+2x\amp + \amp y\amp +\amp 4z\amp =\amp 5
+\end{array}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical">
+<div class="displaymath process-math">
+\begin{align*}
+\amp \left[\begin{array}{ccc|c}  
+\fbox{\(3\)}\amp 1\amp 7\amp 7\\5\amp 3\amp 9\amp 13\\2\amp 1\amp 4\amp 5
+\end{array}\right] \\
+\begin{array}{c}
+\xrightarrow{\frac{1}{3}R_1}\\
+\\
+\\
+\end{array}
+\amp \left[\begin{array}{ccc|c}  
+\fbox{\(1\)}\amp 1/3\amp 7/3\amp 7/3\\5\amp 3\amp 9\amp 13\\2\amp 1\amp 4\amp 5
+\end{array}\right] \\
+\begin{array}{c}
+\\
+\xrightarrow{R_2-5R_1}\\
+\\
+\end{array}
+\amp \left[\begin{array}{ccc|c}  
+\fbox{\(1\)}\amp 1/3\amp 7/3\amp 7/3\\0\amp 4/3\amp -8/3\amp 4/3\\2\amp 1\amp 4\amp 5
+\end{array}\right]\\
+\begin{array}{c}
+\\
+\\
+\xrightarrow{R_3-2R_1}\\
+\end{array}\amp \left[\begin{array}{ccc|c}  
+1\amp 1/3\amp 7/3\amp 7/3\\0\amp \fbox{\(4/3\)}\amp -8/3\amp 4/3\\0\amp 1/3\amp -2/3\amp 1/3
+\end{array}\right] \\
+\begin{array}{c}
+\\
+\xrightarrow{\frac{3}{4}R_2}\\
+\\
+\end{array}
+\amp \left[\begin{array}{ccc|c}  
+1\amp 1/3\amp 7/3\amp 7/3\\0\amp \fbox{\(1\)}\amp -2\amp 1\\0\amp 1/3\amp -2/3\amp 1/3
+\end{array}\right] \\
+\begin{array}{c}
+\\
+\\
+\xrightarrow{R_3-\frac{1}{3}R_2}\\
+\end{array}
+\amp \left[\begin{array}{ccc|c}  
+1\amp 1/3\amp 7/3\amp 7/3\\0\amp \fbox{\(1\)}\amp -2\amp 1\\0\amp 0\amp 0\amp 0
+\end{array}\right] \\
+\begin{array}{c}
+\xrightarrow{R_1-\frac{1}{3}R_2}\\
+\\
+\\
+\end{array}
+\amp \left[\begin{array}{ccc|c}  
+1\amp 0\amp 3\amp 2\\0\amp 1\amp -2\amp 1\\0\amp 0\amp 0\amp 0
+\end{array}\right] 
+\end{align*}
+</div>
+<div class="para">We convert the reduced row-echelon form to a system of equations and find the solution.  The last equation contributes nothing to the system so we omit writing it down.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccccccc}
+x \amp  \amp \amp +\amp 3z\amp = \amp 2 \\
+\amp  \amp y\amp -\amp 2z\amp =\amp 1
+\end{array}
+\end{equation*}
+</div>
+<div class="para">The solution is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x=2-3t,\quad y=1+2t,\quad z=t.
+\end{equation*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="Section-Gaussian-Elimination-and-Rank.html#ex-gaussjordanalg">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}1\amp 2\amp 4\\3\amp -7\amp -1\\-1\amp 4\amp 2\end{bmatrix}\quad\text{and}\quad\mathbf{b}=\begin{bmatrix}-2\\7\\-4\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Consider the matrix equation <span class="process-math">\(A\mathbf{x}=\mathbf{b}\text{.}\)</span>  Row reduction produces the following.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{ccc|c}  
+1\amp 2\amp 4\amp -2\\3\amp -7\amp -1\amp 7\\-1\amp 4\amp 2\amp -4
+\end{array}\right]\begin{array}{c}
+\\
+\rightsquigarrow\\
+\\
+\end{array}\left[\begin{array}{ccc|c}  
+1\amp 0\amp 2\amp 0\\0\amp 1\amp 1\amp -1\\0\amp 0\amp 0\amp 0
+\end{array}\right]
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(\mathbf{x}=[-2t\\-1-t\\t]\text{.}\)</span>
+</div>
+</div> <details class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">4.3.5</span><span class="period">.</span>
+</h5></summary><article class="problem example-like knowl__content"><div class="para logical">
+<div class="para">Let’s take a more careful look at <span class="process-math">\(\mathbf{x}\text{.}\)</span> Rewrite</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{x}=\begin{bmatrix}-2t\\-1-t\\t\end{bmatrix}    
+\end{equation*}
+</div>
+<div class="para">onto its parametric form.</div>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\mathbf{x}=\begin{bmatrix}-2t\\-1-t\\t\end{bmatrix}=\begin{bmatrix}0\\-1\\0\end{bmatrix}+\begin{bmatrix}-2\\-1\\1\end{bmatrix}t.
+\end{equation*}
+</div></div></div></details></div></article></details> <div class="para logical">
+<div class="para">We now see that the solution vector <span class="process-math">\(\mathbf{x}\)</span> is made up of two distinct parts:</div>
+<ul class="disc">
+<li><div class="para">one specific vector <span class="process-math">\([0\\-1\\0]\)</span>
+</div></li>
+<li><div class="para">infinitely many scalar multiples of <span class="process-math">\([-2\\-1\\1]\text{.}\)</span>
+</div></li>
+</ul>
+</div> <div class="para logical">
+<div class="para">The vector <span class="process-math">\([0\\-1\\0]\)</span> is an example of a <dfn class="terminology">particular solution</dfn>. This particular ``particular solution" corresponds to <span class="process-math">\(t=0\text{.}\)</span>  We can find any number of particular solutions by letting <span class="process-math">\(t\)</span> assume different values. For example, the particular solution that corresponds to <span class="process-math">\(t=1\)</span> is <span class="process-math">\([-2\\-2\\1]\text{.}\)</span> Let <span class="process-math">\(\mathbf{x}_p\)</span> be any particular solution of <span class="process-math">\(A\mathbf{x}=\mathbf{b}\text{.}\)</span>  It turns out that all vectors of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{x}=\mathbf{x}_p+\begin{bmatrix}-2\\-1\\1\end{bmatrix}t
+\end{equation*}
+</div>
+<div class="para">are solutions of <span class="process-math">\(A\mathbf{x}=\mathbf{b}\text{.}\)</span>  We can verify this as follows</div>
+<div class="displaymath process-math">
+\begin{align*}
+A\mathbf{x} \amp =A\left(\mathbf{x}_p+\begin{bmatrix}-2\\-1\\1\end{bmatrix}t\right) \\
+\amp =A\mathbf{x}_p+\begin{bmatrix}1\amp 2\amp 4\\3\amp -7\amp -1\\-1\amp 4\amp 2\end{bmatrix}\begin{bmatrix}-2\\-1\\1\end{bmatrix}t \\
+\amp =A\mathbf{x}_p+\mathbf{0}=\mathbf{b}. 
+\end{align*}
+</div>
+<div class="para">This shows that the specific vector <span class="process-math">\(\begin{bmatrix}0\\-1\\0\end{bmatrix}\)</span> is not very special, as any solution of <span class="process-math">\(A\mathbf{x}=\mathbf{b}\)</span> can be used in its place. The vector <span class="process-math">\([-2\\-1\\1]\text{,}\)</span> however, is special. Note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A\begin{bmatrix}-2\\-1\\1\end{bmatrix}=\begin{bmatrix}1\amp 2\amp 4\\3\amp -7\amp -1\\-1\amp 4\amp 2\end{bmatrix}\begin{bmatrix}-2\\-1\\1\end{bmatrix}=\mathbf{0}.
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\([-2\\-1\\1]\)</span> and all of its scalar multiples are solutions to the associated homogeneous system.</div>
+</div></article><span class="incontext"><a class="internal" href="Section-Homogeneous-Linear-Systems.html#init-generalplusparticular">in-context</a></span>
+</body>
+</html>

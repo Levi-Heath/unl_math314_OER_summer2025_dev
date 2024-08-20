@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">If matrix <span class="process-math">\(B\)</span> was obtained from matrix <span class="process-math">\(A\)</span> by applying an elementary row operation to <span class="process-math">\(A\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{row}(B)=\mbox{row}(A).
+\end{equation*}
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(\mathbf{r}_1,\ldots ,\mathbf{r}_m\)</span> be the rows of <span class="process-math">\(A\text{.}\)</span> There are three elementary row operations.  Clearly, switching the order of vectors in <span class="process-math">\(\mbox{span}(\mathbf{r}_1,\ldots  ,\mathbf{r}_m)\)</span> will not affect the span. Suppose that <span class="process-math">\(B\)</span> was obtained from <span class="process-math">\(A\)</span> by multiplying the <span class="process-math">\(i^{th}\)</span> row of <span class="process-math">\(A\)</span> by a non-zero constant <span class="process-math">\(k\text{.}\)</span>  We need to show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)=\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">To do this we will assume that some vector <span class="process-math">\(\mathbf{v}\)</span> is in</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)
+\end{equation*}
+</div>
+<div class="para">and show that <span class="process-math">\(\mathbf{v}\)</span> is in <span class="process-math">\(\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)\text{.}\)</span> We will then assume that some vector <span class="process-math">\(\mathbf{w}\)</span> is in</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)
+\end{equation*}
+</div>
+<div class="para">and show that <span class="process-math">\(\mathbf{w}\)</span> must be in <span class="process-math">\(\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(\mathbf{v}\)</span> is in <span class="process-math">\(\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)\text{.}\)</span>  Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{v}=a_1\mathbf{r}_1+\ldots +a_i(k\mathbf{r}_i)+\ldots +a_m\mathbf{r}_m
+\end{equation*}
+</div>
+<div class="para">But this implies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{v}=a_1\mathbf{r}_1+\ldots +(a_ik)\mathbf{r}_i+\ldots +a_m\mathbf{r}_m.
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(\mathbf{v}\)</span> is in <span class="process-math">\(\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Now suppose <span class="process-math">\(\mathbf{w}\)</span> is in <span class="process-math">\(\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{w}=b_1\mathbf{r}_1+\ldots +b_i\mathbf{r}_i+\ldots +b_m\mathbf{r}_m.
+\end{equation*}
+</div>
+<div class="para">But because <span class="process-math">\(k\neq 0\text{,}\)</span> we can do the following:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{w}=b_1\mathbf{r}_1+\ldots +\frac{b_i}{k}(k\mathbf{r}_i)+\ldots +b_m\mathbf{r}_m.
+\end{equation*}
+</div>
+<div class="para">Therefore, <span class="process-math">\(\mathbf{w}\)</span> is in <span class="process-math">\(\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)\text{.}\)</span>
+</div>
+</div> <div class="para">We leave it to the reader to verify that adding a multiple of one row of <span class="process-math">\(A\)</span> to another does not change the row space. See also <a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#prob-proofofrowBrowA" class="xref" data-knowl="./knowl/xref/prob-proofofrowBrowA.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 5.3.5.17">Exercise 5.3.5.17</a>.)</div></article></details><span class="incontext"><a class="internal" href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#th-rowBrowA">in-context</a></span>
+</body>
+</html>

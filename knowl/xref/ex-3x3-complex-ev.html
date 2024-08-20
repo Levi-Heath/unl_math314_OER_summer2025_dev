@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.26</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">(Finding eigenvectors for Example <a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#ex-3x3-complex-eig" class="xref" data-knowl="./knowl/xref/ex-3x3-complex-eig.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.1.17">Example 8.1.17</a>) We know from’ <a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#ex-3x3-complex-eig" class="xref" data-knowl="./knowl/xref/ex-3x3-complex-eig.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.1.17">Example 8.1.17</a> that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-3x3-complex-eig.html ./knowl/xref/ex-3x3-complex-eig.html">
+\begin{equation*}
+D=\begin{bmatrix} 0\amp 0\amp 0\\ 0 \amp 1\amp 1\\ 0 \amp  -1\amp 1\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">has eigenvalues <span class="process-math">\(\lambda=0\text{,}\)</span> <span class="process-math">\(\lambda_1=1+i\text{,}\)</span> and <span class="process-math">\(\lambda_2=1-i\text{.}\)</span>  Compute a basis for the eigenspace associated with each eigenvalue.</div>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical">
+<div class="para">We first find a basis for the eigenspace <span class="process-math">\(\mathcal{S}_0\text{.}\)</span>  We need to compute a basis for <span class="process-math">\(\mbox{null}(D-0I)=\mbox{null}(D)\text{.}\)</span>  We compute:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-3x3-complex-ev.html">
+\begin{equation*}
+\mbox{rref}(D)=\mbox{rref}\left(\begin{bmatrix} 0\amp 0\amp 0\\ 0 \amp 1\amp 1\\ 0 \amp  -1\amp 1\end{bmatrix}\right) =\begin{bmatrix} 0 \amp  1 \amp  1\\ 0 \amp  0 \amp  1\\ 0 \amp  0 \amp  0\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">From this we see that for any eigenvector <span class="process-math">\([x_1, x_2, x_3]\)</span> in <span class="process-math">\(\mathcal{S}_0\)</span> we have <span class="process-math">\(x_2=0\)</span> and <span class="process-math">\(x_3=0\text{,}\)</span> but <span class="process-math">\(x_1\)</span> is a free variable. So one possible basis for the eigenspace <span class="process-math">\(\mathcal{S}_0\)</span> is given by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-3x3-complex-ev.html">
+\begin{equation*}
+\left \lbrace \begin{bmatrix}1\\0\\0\end{bmatrix}\right \rbrace.
+\end{equation*}
+</div>
+<div class="para">Next we find a basis for the eigenspace <span class="process-math">\(\mathcal{S}_{1+i}\text{.}\)</span>  We need to compute a basis for <span class="process-math">\(\mbox{null}(D-(1+i)I)\text{.}\)</span>  We compute:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-3x3-complex-ev.html">
+\begin{align*}
+\mbox{rref}(D-(1+i)I)\amp =\mbox{rref}\left(\begin{bmatrix} -(1+i)\amp 0\amp 0\\ 0 \amp 1-(1+i)\amp 1\\ 0 \amp  -1\amp 1-(1+i)\end{bmatrix}\right) \\
+\amp =\begin{bmatrix} 1 \amp  0 \amp 0\\ 0 \amp  1 \amp  i\\ 0 \amp  0 \amp  0\end{bmatrix}  
+\end{align*}
+</div>
+<div class="para">There is one free variable.  Setting <span class="process-math">\(x_3=t\text{,}\)</span> we get <span class="process-math">\(x_1=0\)</span> and <span class="process-math">\(x_2=ti\text{.}\)</span>  From this we see that eigenvectors in <span class="process-math">\(\mathcal{S}_{1+i}\)</span> have the form <span class="process-math">\([0,i,1]t\text{,}\)</span> so a possible basis for the eigenspace <span class="process-math">\(\mathcal{S}_{1+i}\)</span> is given by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-3x3-complex-ev.html">
+\begin{equation*}
+\left \lbrace \begin{bmatrix}0\\i\\1\end{bmatrix}\right \rbrace.
+\end{equation*}
+</div>
+<div class="para">We ask you in <a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#prob-3x3-complex-ev" class="xref" data-knowl="./knowl/xref/prob-3x3-complex-ev.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 8.1.4.18">Exercise 8.1.4.18</a> to show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-3x3-complex-ev.html">
+\begin{equation*}
+\left \lbrace \begin{bmatrix}0\\-i\\1\end{bmatrix}\right \rbrace.
+\end{equation*}
+</div>
+<div class="para">is a basis for <span class="process-math">\(\mathcal{S}_{1-i}\text{.}\)</span>
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="Section-Describing-Eigenvalues-and-Eigenvectors.html#ex-3x3-complex-ev">in-context</a></span>
+</body>
+</html>

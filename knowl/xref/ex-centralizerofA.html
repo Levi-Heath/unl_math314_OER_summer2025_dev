@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.1.13</span><span class="period">.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(A\)</span> be a fixed matrix in <span class="process-math">\(\mathbb{M}_{n,n}\text{.}\)</span> Show that the set <span class="process-math">\(C_A\)</span> of all <span class="process-math">\(n\times n\)</span> matrices that commute with <span class="process-math">\(A\)</span> under matrix multiplication  is a subspace of <span class="process-math">\(\mathbb{M}_{n,n}\text{.}\)</span>
+</div> <details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical">
+<div class="para">The set <span class="process-math">\(C_A\)</span> consists of all <span class="process-math">\(n\times n\)</span> matrices <span class="process-math">\(X\)</span> such that <span class="process-math">\(AX=XA\text{.}\)</span>  First, observe that <span class="process-math">\(C_A\)</span> is not empty because <span class="process-math">\(I_n\)</span> is an element.  Now we need to show that <span class="process-math">\(C_A\)</span> is closed under matrix addition and scalar multiplication. Suppose that <span class="process-math">\(X_1\)</span> and <span class="process-math">\(X_{2}\)</span> lie in <span class="process-math">\(C_A\text{.}\)</span>  Then <span class="process-math">\(AX_1 = X_1A\)</span> and <span class="process-math">\(AX_{2} = X_{2}A\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A(X_1 + X_2) 	= AX_1 + AX_2 = X_1A + X_2A + (X_1 + X_2)A.
+\end{equation*}
+</div>
+<div class="para">Therefore <span class="process-math">\((X_1+X_2)\)</span> commutes with <span class="process-math">\(A\text{.}\)</span>  Thus <span class="process-math">\((X_1+X_2)\)</span> is in <span class="process-math">\(C_A\text{.}\)</span>  We conclude that <span class="process-math">\(C_A\)</span> is closed under matrix addition. Now suppose <span class="process-math">\(X\)</span> is in <span class="process-math">\(C_A\text{.}\)</span>  Let <span class="process-math">\(k\)</span> be a scalar, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A(kX)= k(AX) = k(XA) = (kX)A.
+\end{equation*}
+</div>
+<div class="para">Therefore <span class="process-math">\((kX)\)</span> commutes with <span class="process-math">\(A\text{.}\)</span>  We conclude that <span class="process-math">\((kX)\)</span> is in <span class="process-math">\(C_A\text{,}\)</span> and <span class="process-math">\(C_A\)</span> is closed under scalar multiplication. Hence <span class="process-math">\(C_A\)</span> is a subspace of <span class="process-math">\(\mathbb{M}_{n,n}\text{.}\)</span>
+</div>
+</div></div></details></article><span class="incontext"><a class="internal" href="Section-Abstract-Vector-Spaces.html#ex-centralizerofA">in-context</a></span>
+</body>
+</html>

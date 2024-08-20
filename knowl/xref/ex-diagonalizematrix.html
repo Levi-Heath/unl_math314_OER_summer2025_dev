@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.13</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}
+2 \amp  0 \amp  0 \\
+1 \amp  4 \amp  -1 \\
+-2 \amp  -4 \amp  4
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Find an invertible matrix <span class="process-math">\(P\)</span> and a diagonal matrix <span class="process-math">\(D\)</span> such that <span class="process-math">\(P^{-1}AP=D\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical">
+<div class="para">We will use eigenvectors of <span class="process-math">\(A\)</span> as the columns of <span class="process-math">\(P\text{,}\)</span> and the corresponding eigenvalues of <span class="process-math">\(A\)</span> as the diagonal entries of <span class="process-math">\(D\text{.}\)</span> The eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda_1 =2,\lambda_2 = 2\text{,}\)</span> and <span class="process-math">\(\lambda_3 = 6\text{.}\)</span>   We leave these computations as exercises, as well as the computations to find a basis for each eigenspace. One possible basis for <span class="process-math">\(\mathcal{S}_2\text{,}\)</span> the eigenspace corresponding to <span class="process-math">\(2\text{,}\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left \lbrace 
+\begin{bmatrix}
+-2 \\
+1 \\
+0
+\end{bmatrix},
+\begin{bmatrix}
+1 \\
+0 \\
+1
+\end{bmatrix}
+\right \rbrace,
+\end{equation*}
+</div>
+<div class="para">while a basis for <span class="process-math">\(\mathcal{S}_6\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left \lbrace \begin{bmatrix}
+0 \\
+1 \\
+-2
+\end{bmatrix}\right \rbrace \text{.}
+\end{equation*}
+</div>
+<div class="para">We construct the matrix <span class="process-math">\(P\)</span> by using these basis elements as columns.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P=\begin{bmatrix}
+-2 \amp  1 \amp  0 \\
+1 \amp  0 \amp  1 \\
+0 \amp  1 \amp  -2
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">You can verify (and will do so during exercise) that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P^{-1}=\begin{bmatrix}
+-1/4 \amp  1/2 \amp  1/4 \\
+1/2 \amp  1 \amp  1/2 \\
+1/4 \amp  1/2 \amp  -1/4
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Thus,</div>
+<div class="displaymath process-math">
+\begin{align*}
+P^{-1}AP \amp = \begin{bmatrix}
+-1/4 \amp  1/2 \amp  1/4 \\
+1/2 \amp  1 \amp  1/2 \\
+1/4 \amp  1/2 \amp  -1/4
+\end{bmatrix} \begin{bmatrix}
+2 \amp  0 \amp  0 \\
+1 \amp  4 \amp  -1 \\
+-2 \amp  -4 \amp  4
+\end{bmatrix} \begin{bmatrix}
+-2 \amp  1 \amp  0 \\
+1 \amp  0 \amp  1 \\
+0 \amp  1 \amp  -2
+\end{bmatrix} \\
+\amp =\begin{bmatrix}
+2 \amp  0 \amp  0 \\
+0 \amp  2 \amp  0 \\
+0 \amp  0 \amp  6
+\end{bmatrix} 
+\end{align*}
+</div>
+<div class="para">You can see that the result here is a diagonal matrix where the entries on the main diagonal are the eigenvalues of <span class="process-math">\(A\text{.}\)</span> Notice that eigenvalues on the main diagonal <em class="emphasis">must</em> be in the same order as the corresponding eigenvectors in <span class="process-math">\(P\text{.}\)</span>
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="Section-Similar-Matrices-and-Their-Properties.html#ex-diagonalizematrix">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.19</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Describe</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{span}\left(\begin{bmatrix}2\\2\end{bmatrix}, \begin{bmatrix}-1\\0\end{bmatrix}\right).
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para">First, observe that <span class="process-math">\([2,2]\)</span> and <span class="process-math">\([-1,0]\)</span> are not scalar multiples of each other.</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/ex-spanr2-2-2.svg" role="img" class="contained" alt="Two vectors graphed"></div> <div class="para">Geometrically, we can use <a href="Section-Linear-Combinations-of-Vectors.html#pro-lincombgeo" class="xref" data-knowl="./knowl/xref/pro-lincombgeo.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 3.1.10">Algorithm 3.1.10</a> to express any vector of <span class="process-math">\(\R^2\)</span> as a linear combination of <span class="process-math">\([2,2]\)</span> and  <span class="process-math">\([-1,0]\text{,}\)</span> indicating that the two vectors span all of <span class="process-math">\(\R^2\text{.}\)</span>
+</div> <div class="para">To verify this claim algebraically we will show that an arbitrary vector <span class="process-math">\([s,t]\)</span> of <span class="process-math">\(\R^2\)</span> can be written as a linear combination of <span class="process-math">\([2,2]\)</span> and  <span class="process-math">\([-1,0]\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Consider the vector equation:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_1\begin{bmatrix}2\\2\end{bmatrix}+a_2\begin{bmatrix}-1\\0\end{bmatrix}=\begin{bmatrix}s\\t\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">This corresponds to the system:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccc}
+2a_1 \amp  -\amp a_2\amp = \amp s \\
+2a_1\amp  \amp \amp = \amp t \\
+\end{array}.
+\end{equation*}
+</div>
+<div class="para">Writing the system in augmented matrix form and applying elementary row operations gives us the following reduced row-echelon form:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c}  
+2\amp -1\amp s\\2\amp 0\amp t
+\end{array}\right]\rightsquigarrow\left[\begin{array}{cc|c}  
+1\amp 0\amp t/2\\0\amp 1\amp t-s
+\end{array}\right].
+\end{equation*}
+</div>
+<div class="para">This shows that every vector of <span class="process-math">\(\R^2\)</span> can be written as a linear combination of <span class="process-math">\([2,2]\)</span> and  <span class="process-math">\([-1,0]\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(t/2)\begin{bmatrix}2\\2\end{bmatrix}+(t-s)\begin{bmatrix}-1\\0\end{bmatrix}=\begin{bmatrix}s\\t\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">We conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{span}\left(\begin{bmatrix}2\\2\end{bmatrix}, \begin{bmatrix}-1\\0\end{bmatrix}\right)=\R^2.
+\end{equation*}
+</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="Section-Linear-Combinations-of-Vectors.html#ex-spanr2">in-context</a></span>
+</body>
+</html>

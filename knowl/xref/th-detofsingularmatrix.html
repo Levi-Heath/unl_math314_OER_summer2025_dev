@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.13</span><span class="period">.</span>
+</h4>
+<div class="para">A square matrix <span class="process-math">\(A\)</span> is singular if and only if <span class="process-math">\(\det{A}=0\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(A\)</span> be a square matrix.  To determine whether <span class="process-math">\(A\)</span> is singular we need to find <span class="process-math">\(\mbox{rref}(A)\text{.}\)</span> In the section on elementary matrices, we found that there exist elementary matrices <span class="process-math">\(E_1,\ldots ,E_k\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-detelemproduct.html ./knowl/xref/lemma-det0lemma.html">
+\begin{equation*}
+E_k\ldots E_2E_1A=\mbox{rref}(A).
+\end{equation*}
+</div>
+<div class="para">Therefore,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-detelemproduct.html ./knowl/xref/lemma-det0lemma.html">
+\begin{equation*}
+\det{(E_k\ldots E_2E_1A)}=\det{\big(\mbox{rref}(A)\big)}.
+\end{equation*}
+</div>
+<div class="para">By repeated application of <a href="Section-Elementary-Row-Operations-and-the-Determinant.html#lemma-detelemproduct" class="xref" data-knowl="./knowl/xref/lemma-detelemproduct.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 7.2.12">Lemma 7.2.12</a>, we find that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lemma-detelemproduct.html ./knowl/xref/lemma-det0lemma.html">
+\begin{equation*}
+\det{E_k}\ldots \det{E_2}\det{E_1}\det{A}=\det{\big(\mbox{rref}(A)\big)}.
+\end{equation*}
+</div>
+<div class="para">Suppose that <span class="process-math">\(A\)</span> is singular, then <span class="process-math">\(\mbox{rref}(A)\neq I\text{.}\)</span>  But then <span class="process-math">\(\mbox{rref}(A)\)</span> contains a row of zeros, and <span class="process-math">\(\det{\big(\mbox{rref}(A)\big)}=0\)</span> (see <a href="Section-Elementary-Row-Operations-and-the-Determinant.html#lemma-det0lemma" class="xref" data-knowl="./knowl/xref/lemma-det0lemma.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 7.2.7">Lemma 7.2.7</a>). Since determinants of elementary matrices are non-zero, we conclude that <span class="process-math">\(\det{A}=0\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Conversely, suppose <span class="process-math">\(\det{A}=0\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det{\big(\mbox{rref}(A)\big)}=\det{E_k}\ldots \det{E_2}\det{E_1}\det{A}=0.
+\end{equation*}
+</div>
+<div class="para">It follows that <span class="process-math">\(\mbox{rref}(A)\neq I\text{,}\)</span> so <span class="process-math">\(A\)</span> is singular.</div>
+</div></article></details><span class="incontext"><a class="internal" href="Section-Elementary-Row-Operations-and-the-Determinant.html#th-detofsingularmatrix">in-context</a></span>
+</body>
+</html>

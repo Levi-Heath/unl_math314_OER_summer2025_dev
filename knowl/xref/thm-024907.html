@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.7.7</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">The following conditions are equivalent for a symmetric <span class="process-math">\(n \times n\)</span> matrix <span class="process-math">\(A\text{:}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para">
+<span class="process-math">\(A\)</span> is positive definite.</div></li>
+<li><div class="para">
+<span class="process-math">\(\mbox{det}(^{(r)}A) \gt  0\)</span> for each <span class="process-math">\(r = 1, 2, \dots, n\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(A = U^{T}U\)</span> where <span class="process-math">\(U\)</span> is an upper triangular matrix with positive entries on the main diagonal.</div></li>
+</ol>
+<div class="para">Furthermore, the factorization in <a href="Section-Positive-Definite-Matrices.html#thm-024907c" class="xref" data-knowl="./knowl/xref/thm-024907c.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a> is unique (called the <dfn class="terminology">Cholesky factorization</dfn> of <span class="process-math">\(A\)</span>).</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">First, <a href="Section-Positive-Definite-Matrices.html#thm-024907c" class="xref" data-knowl="./knowl/xref/thm-024907c.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a> <span class="process-math">\(\Rightarrow\)</span> <a href="Section-Positive-Definite-Matrices.html#thm-024907a" class="xref" data-knowl="./knowl/xref/thm-024907a.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a> by <a href="Section-Positive-Definite-Matrices.html#exa-024865" class="xref" data-knowl="./knowl/xref/exa-024865.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 9.7.4">Example 9.7.4</a>, and <a href="Section-Positive-Definite-Matrices.html#thm-024907a" class="xref" data-knowl="./knowl/xref/thm-024907a.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a> <span class="process-math">\(\Rightarrow\)</span> <a href="Section-Positive-Definite-Matrices.html#thm-024907b" class="xref" data-knowl="./knowl/xref/thm-024907b.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a> by <a href="Section-Positive-Definite-Matrices.html#lem-024890" class="xref" data-knowl="./knowl/xref/lem-024890.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 9.7.6">Lemma 9.7.6</a> and <a href="Section-Positive-Definite-Matrices.html#thm-024815" class="xref" data-knowl="./knowl/xref/thm-024815.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.7.2">Theorem 9.7.2</a>.</div> <div class="para logical">
+<div class="para">
+<a href="Section-Positive-Definite-Matrices.html#thm-024907b" class="xref" data-knowl="./knowl/xref/thm-024907b.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a> <span class="process-math">\(\Rightarrow\)</span> <a href="Section-Positive-Definite-Matrices.html#thm-024907c" class="xref" data-knowl="./knowl/xref/thm-024907c.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a>. Assume <a href="Section-Positive-Definite-Matrices.html#thm-024907b" class="xref" data-knowl="./knowl/xref/thm-024907b.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a> and proceed by induction on <span class="process-math">\(n\text{.}\)</span> If <span class="process-math">\(n = 1\text{,}\)</span> then <span class="process-math">\(A = \left[ a \right]\)</span> where <span class="process-math">\(a \gt  0\)</span> by <a href="Section-Positive-Definite-Matrices.html#thm-024907b" class="xref" data-knowl="./knowl/xref/thm-024907b.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a>, so take <span class="process-math">\(U = \left[ \sqrt{a} \right]\text{.}\)</span> If <span class="process-math">\(n \gt  1\text{,}\)</span> write <span class="process-math">\(B =^{(n-1)}A\text{.}\)</span> Then <span class="process-math">\(B\)</span> is symmetric and satisfies <a href="Section-Positive-Definite-Matrices.html#thm-024907b" class="xref" data-knowl="./knowl/xref/thm-024907b.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a> so, by induction, we have <span class="process-math">\(B = U^{T}U\)</span> as in <a href="Section-Positive-Definite-Matrices.html#thm-024907c" class="xref" data-knowl="./knowl/xref/thm-024907c.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a> where <span class="process-math">\(U\)</span> is of size <span class="process-math">\((n - 1) \times (n - 1)\text{.}\)</span> Then, as <span class="process-math">\(A\)</span> is symmetric, it has block form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907c.html ./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907c.html ./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907c.html">
+\begin{equation*}
+A = \left[ \begin{array}{cc}
+B \amp  \mathbf{p} \\
+\mathbf{p}^T \amp  b
+\end{array}\right]
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\mathbf{p}\)</span> is a column in <span class="process-math">\(\R^{n-1}\)</span> and <span class="process-math">\(b\)</span> is in <span class="process-math">\(\R\text{.}\)</span> If we write <span class="process-math">\(\mathbf{x} = (U^{T})^{-1}\mathbf{p}\)</span> and <span class="process-math">\(c = b - \mathbf{x}^{T}\mathbf{x}\text{,}\)</span> block multiplication gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907c.html ./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907c.html ./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907c.html">
+\begin{equation*}
+A = \left[ \begin{array}{cc}
+U^TU \amp  \mathbf{p} \\
+\mathbf{p}^T \amp  b
+\end{array}\right] = \left[ \begin{array}{cc}
+U^T \amp  0 \\
+\mathbf{x}^T \amp  1
+\end{array}\right] \left[ \begin{array}{cc}
+U \amp  \mathbf{x} \\
+0 \amp  c
+\end{array}\right].
+\end{equation*}
+</div>
+<div class="para">Taking determinants gives <span class="process-math">\(\det A = \mbox{det}(U^{T}) \mbox{det} U \cdot c = c(\mbox{det}U)^{2}\text{.}\)</span> Hence <span class="process-math">\(c \gt  0\)</span> because <span class="process-math">\(\det A \gt  0\)</span> by <a href="Section-Positive-Definite-Matrices.html#thm-024907b" class="xref" data-knowl="./knowl/xref/thm-024907b.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a>, so the above factorization can be written</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907c.html ./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907c.html ./knowl/xref/thm-024907b.html ./knowl/xref/thm-024907c.html">
+\begin{equation*}
+A = \left[ \begin{array}{cc}
+U^T \amp  0 \\
+\mathbf{x}^T \amp  \sqrt{c}
+\end{array}\right] \left[ \begin{array}{cc}
+U \amp  \mathbf{x} \\
+0 \amp  \sqrt{c}
+\end{array}\right].
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(U\)</span> has positive diagonal entries, this proves <a href="Section-Positive-Definite-Matrices.html#thm-024907c" class="xref" data-knowl="./knowl/xref/thm-024907c.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a>.</div>
+</div> <div class="para logical">
+<div class="para">To prove uniqueness, suppose that <span class="process-math">\(A = U^TU = U_{1}^TU_{1}\)</span> are two Cholesky factorizations. Now write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D = UU_{1}^{-1} = (U^T)^{-1}U_{1}^T.
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(D\)</span> is upper triangular, because <span class="process-math">\(D = UU_{1}^{-1}\text{,}\)</span> and lower triangular, because</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D = (U^T)^{-1}U_{1}^T,
+\end{equation*}
+</div>
+<div class="para">and so it is a diagonal matrix. Thus <span class="process-math">\(U = DU_{1}\)</span> and <span class="process-math">\(U_{1} = DU\text{,}\)</span> so it suffices to show that <span class="process-math">\(D = I\text{.}\)</span> But eliminating <span class="process-math">\(U_{1}\)</span> gives <span class="process-math">\(U = D^{2}U\text{,}\)</span> so <span class="process-math">\(D^{2} = I\)</span> because <span class="process-math">\(U\)</span> is invertible. Since the diagonal entries of <span class="process-math">\(D\)</span> are positive (this is true of <span class="process-math">\(U\)</span> and <span class="process-math">\(U_{1}\)</span>), it follows that <span class="process-math">\(D = I\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="Section-Positive-Definite-Matrices.html#thm-024907">in-context</a></span>
+</body>
+</html>

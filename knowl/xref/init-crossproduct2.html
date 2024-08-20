@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.10.1</span><span class="period">.</span>
+</h4>
+<div class="para">What would happen if we took the cross product of the vectors in <a href="Section-Cross-Product-and-its-Properties.html#ex-crossproduct" class="xref" data-knowl="./knowl/xref/ex-crossproduct.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.10.6">Example 1.10.6</a> but reversed the order?</div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(\mathbf{v}=\begin{bmatrix}-2\\ 4\\ 7\end{bmatrix}\)</span> and <span class="process-math">\(\mathbf{u}=\begin{bmatrix}3\\ -10\\ 2\end{bmatrix}\text{.}\)</span> Recall that <span class="process-math">\(\mathbf{u}\times\mathbf{v}=\begin{bmatrix}-78\\-25\\-8\end{bmatrix}\text{.}\)</span>  We need to compute <span class="process-math">\(\mathbf{v}\times\mathbf{u}\text{.}\)</span> If you have already studied the effect that switching two rows of a matrix has on its determinant, you should be able to guess the outcome of the upcoming computation.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\mathbf{v}\times \mathbf{u}\amp =
+\begin{vmatrix}
+\mathbf{i} \amp  \mathbf{j} \amp  \mathbf{k}\\
+-2 \amp 4 \amp 7\\
+3 \amp  -10 \amp 2
+\end{vmatrix} =\mathbf{i}
+\begin{vmatrix}
+4 \amp  7\\
+-10 \amp  2
+\end{vmatrix} -\mathbf{j}
+\begin{vmatrix}
+-2 \amp  7\\
+3 \amp  2
+\end{vmatrix} +\mathbf{k}
+\begin{vmatrix}
+-2 \amp  4\\
+3 \amp  -10
+\end{vmatrix}\\
+\amp =\mathbf{i}\Big((4)(2)-(7)(-10)\Big)-\mathbf{j}\Big((-2)(2)-(7)(3)\Big)+\mathbf{k}\Big((-2)(-10)-(4)(3)\Big) \\
+\amp =78\mathbf{i}+25\mathbf{j}+8\mathbf{k}=\begin{bmatrix}78\\ 25\\ 8\end{bmatrix}=-(\mathbf{u}\times\mathbf{v}) 
+\end{align*}
+</div>
+<div class="para">This computation shows that the cross product is an operation that is not commutative. It also suggests that switching the order of the vectors changes the sign of the result.</div>
+</div></article><span class="incontext"><a class="internal" href="Section-Cross-Product-and-its-Properties.html#init-crossproduct2">in-context</a></span>
+</body>
+</html>

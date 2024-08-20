@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.5.10</span><span class="period">.</span>
+</h4>
+<div class="para">We now return to the matrix equation <span class="process-math">\(A\mathbf{x}=\mathbf{b}\)</span> of <a href="Section-QR-Factorization.html#exp-leastSq1" class="xref" data-knowl="./knowl/xref/exp-leastSq1.html" data-reveal-label="Reveal" data-close-label="Close" title="Exploration 9.5.1">Exploration 9.5.1</a> to find <span class="process-math">\(\mathbf{z}\)</span> that best approximates a solution.</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical">
+<div class="para">Recall that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-leastSquaresZ.html ./knowl/xref/exp-leastSq1.html ./knowl/xref/exp-leastSq1.html">
+\begin{equation*}
+A=\begin{bmatrix}3 \amp  1\\1 \amp  2\\1 \amp  2\end{bmatrix}\quad\text{and}\quad \mathbf{b}=\begin{bmatrix}2\\1\\3\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">In this case, <span class="process-math">\((A^TA)^{-1}\)</span> exists.  Applying <a href="Section-QR-Factorization.html#eq-leastSquaresZ" class="xref" data-knowl="./knowl/xref/eq-leastSquaresZ.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.5.3">(9.5.3)</a>, we compute</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-leastSquaresZ.html ./knowl/xref/exp-leastSq1.html ./knowl/xref/exp-leastSq1.html">
+\begin{align*}
+\mathbf{z}\amp = \left(\begin{bmatrix}3 \amp  1 \amp  1\\1 \amp  2 \amp  2\end{bmatrix}\begin{bmatrix}3 \amp  1\\1 \amp  2\\1\amp  2\end{bmatrix}\right)^{-1}\begin{bmatrix}3 \amp  1 \amp  1\\1 \amp  2 \amp  2\end{bmatrix}\begin{bmatrix}2\\1\\3\end{bmatrix} \\
+\amp = \begin{bmatrix}11 \amp  7\\7 \amp  9\end{bmatrix}^{-1}\begin{bmatrix}10\\10\end{bmatrix}=\begin{bmatrix}0.18 \amp  -0.14\\-0.14 \amp  0.22\end{bmatrix}\begin{bmatrix}10\\10\end{bmatrix} \\
+\amp = \begin{bmatrix}0.4\\0.8\end{bmatrix}.  
+\end{align*}
+</div>
+<div class="para">Compare this answer to your guess in <a href="Section-QR-Factorization.html#exp-leastSq1" class="xref" data-knowl="./knowl/xref/exp-leastSq1.html" data-reveal-label="Reveal" data-close-label="Close" title="Exploration 9.5.1">Exploration 9.5.1</a>.  If your guess was correct, nice job!  If your guess was different, try setting <span class="process-math">\(\mathbf{z}\)</span> to the correct answer and use the GeoGebra interactive in <a href="Section-QR-Factorization.html#exp-leastSq1" class="xref" data-knowl="./knowl/xref/exp-leastSq1.html" data-reveal-label="Reveal" data-close-label="Close" title="Exploration 9.5.1">Exploration 9.5.1</a> to examine the geometry of the problem.</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="Section-QR-Factorization.html#ex-leastSquares1">in-context</a></span>
+</body>
+</html>

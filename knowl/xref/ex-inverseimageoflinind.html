@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.3.9</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(V\)</span> be a vector space, and let <span class="process-math">\(\mathcal{B}=\{\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3, \mathbf{v}_4\}\)</span> be an ordered basis of <span class="process-math">\(V\text{.}\)</span>  Let</div>
+<div class="displaymath process-math">
+\begin{align*}
+\mathbf{w}_1 \amp = 2\mathbf{v}_1+3\mathbf{v}_2-5\mathbf{v}_3-2\mathbf{v}_4, \\
+\mathbf{w}_2 \amp = -\mathbf{v}_1+4\mathbf{v}_2-3\mathbf{v}_3+\mathbf{v}_4, \\
+\mathbf{w}_3 \amp = -3\mathbf{v}_1-\mathbf{v}_2+4\mathbf{v}_3+3\mathbf{v}_4. 
+\end{align*}
+</div>
+<div class="para">Are <span class="process-math">\(\mathbf{w}_1, \mathbf{w}_2, \mathbf{w}_3\)</span> linearly independent?</div>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical">
+<div class="para">We could approach this question head-on by considering the vector equation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-noiso.html">
+\begin{equation*}
+a\mathbf{w}_1+b\mathbf{w}_2+c\mathbf{w}_3=\mathbf{0}
+\end{equation*}
+</div>
+<div class="para">to see if the only solution is the trivial one (see <a href="Section-Isomorphic-Vector-Spaces.html#prob-noiso" class="xref" data-knowl="./knowl/xref/prob-noiso.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.3.5.3">Exercise 10.3.5.3</a>). Instead, we will use isomorphisms.</div>
+</div> <div class="para logical">
+<div class="para">Observe that we do not know anything about <span class="process-math">\(V\)</span> aside from the fact that it has four basis vectors.  Vectors <span class="process-math">\(\mathbf{w}_1\text{,}\)</span> <span class="process-math">\(\mathbf{w}_2\text{,}\)</span> <span class="process-math">\(\mathbf{w}_3\)</span> are given in terms of these basis vectors.  This should give us an idea for constructing an isomorphism between <span class="process-math">\(V\)</span> and <span class="process-math">\(\R^4\text{.}\)</span>  Consider <span class="process-math">\(T:V\rightarrow\R^4\)</span> such that <span class="process-math">\(T(\mathbf{w})=[\mathbf{w}]_{\mathcal{B}}\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-coordmapiso.html">
+\begin{equation*}
+T(\mathbf{w}_1)=[\mathbf{w}_1]_{\mathcal{B}}=\begin{bmatrix}2\\3\\-5\\-2\end{bmatrix},\quad T(\mathbf{w}_2)=[\mathbf{w}_2]_{\mathcal{B}}=\begin{bmatrix}-1\\4\\-3\\1\end{bmatrix} ,
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-coordmapiso.html">
+\begin{equation*}
+T(\mathbf{w}_3)=[\mathbf{w}_3]_{\mathcal{B}}=\begin{bmatrix}-3\\-1\\4\\3\end{bmatrix}.    
+\end{equation*}
+</div>
+<div class="para">By <a href="Section-Isomorphic-Vector-Spaces.html#ex-coordmapiso" class="xref" data-knowl="./knowl/xref/ex-coordmapiso.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 10.3.6">Theorem 10.3.6</a>, <span class="process-math">\(T\)</span>   is an isomorphism.  This means that <span class="process-math">\(\mathbf{w}_1\text{,}\)</span> <span class="process-math">\(\mathbf{w}_2\text{,}\)</span> <span class="process-math">\(\mathbf{w}_3\)</span> are linearly independent if and only if their coordinate vectors are linearly independent.  There are multiple ways of determining whether</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-coordmapiso.html">
+\begin{equation*}
+\begin{bmatrix}2\\3\\-5\\-2\end{bmatrix}, \begin{bmatrix}-1\\4\\-3\\1\end{bmatrix}, \begin{bmatrix}-3\\-1\\4\\3\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">are linearly independent.  One way is to find the reduced row echelon form of</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-coordmapiso.html">
+\begin{equation*}
+\begin{bmatrix}2\amp -1\amp -3\\3\amp 4\amp -1\\-5\amp -3\amp 4\\-2\amp 1\amp 3\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">The matrix reduces as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-coordmapiso.html">
+\begin{equation*}
+\begin{bmatrix}2\amp -1\amp -3\\3\amp 4\amp -1\\-5\amp -3\amp 4\\-2\amp 1\amp 3\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp 0\amp -13/11\\0\amp 1\amp 7/11\\0\amp 0\amp 0\\0\amp 0\amp 0\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">We see that the rank of the matrix is <span class="process-math">\(2\text{.}\)</span>  We conclude that the column vectors are not linearly independent.   Thus, the vectors <span class="process-math">\(\mathbf{w}_1\text{,}\)</span> <span class="process-math">\(\mathbf{w}_2\)</span> and <span class="process-math">\(\mathbf{w}_3\)</span> are not linearly independent.</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="Section-Isomorphic-Vector-Spaces.html#ex-inverseimageoflinind">in-context</a></span>
+</body>
+</html>

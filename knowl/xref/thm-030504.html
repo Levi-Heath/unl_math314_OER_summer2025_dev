@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">10.4.17</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(V\)</span> is an inner product space, the norm <span class="process-math">\(\norm{ \cdot }\)</span> has the following properties.</div>
+<ol class="decimal">
+<li><div class="para">
+<span class="process-math">\(\norm{\mathbf{v}} \geq 0\)</span> for every vector <span class="process-math">\(\mathbf{v}\)</span> in <span class="process-math">\(V\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\norm{\mathbf{v}} = 0\)</span> if and only if <span class="process-math">\(\mathbf{v} = \mathbf{0}\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\norm{ r \mathbf{v}} = |r|\norm{\mathbf{v}}\)</span> for every <span class="process-math">\(\mathbf{v}\)</span> in <span class="process-math">\(V\)</span> and every <span class="process-math">\(r\)</span> in <span class="process-math">\(\R\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\norm{\mathbf{v} + \mathbf{w}} \leq \norm{\mathbf{v}} + \norm{\mathbf{w}}\)</span> for all <span class="process-math">\(\mathbf{v}\)</span> and <span class="process-math">\(\mathbf{w}\)</span> in <span class="process-math">\(V\)</span> (<dfn class="terminology">triangle inequality</dfn>).</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Because <span class="process-math">\(\norm{ \mathbf{v} } = \sqrt{\langle \mathbf{v}, \mathbf{v} \rangle}\text{,}\)</span> properties <a href="Section-Inner-Product-Spaces.html#thm-030504a" class="xref" data-knowl="./knowl/xref/thm-030504a.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a> and <a href="Section-Inner-Product-Spaces.html#thm-030504b" class="xref" data-knowl="./knowl/xref/thm-030504b.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a> follow immediately from <a href="Section-Inner-Product-Spaces.html#list-030346c" class="xref" data-knowl="./knowl/xref/list-030346c.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a> and <a href="Section-Inner-Product-Spaces.html#list-030346d" class="xref" data-knowl="./knowl/xref/list-030346d.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 4">Item 4</a> of <a href="Section-Inner-Product-Spaces.html#thm-030346" class="xref" data-knowl="./knowl/xref/thm-030346.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 10.4.5">Theorem 10.4.5</a>. As to <a href="Section-Inner-Product-Spaces.html#thm-030504c" class="xref" data-knowl="./knowl/xref/thm-030504c.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a>, compute</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-030504a.html ./knowl/xref/thm-030504b.html ./knowl/xref/list-030346c.html ./knowl/xref/list-030346d.html ./knowl/xref/thm-030346.html ./knowl/xref/thm-030504c.html ./knowl/xref/thm-030504c.html ./knowl/xref/thm-030504d.html">
+\begin{equation*}
+\norm{ r\mathbf{v} } ^2 = \langle r\mathbf{v}, r\mathbf{v} \rangle = r^2\langle \mathbf{v}, \mathbf{v} \rangle = r^2\norm{ \mathbf{v} }^2
+\end{equation*}
+</div>
+<div class="para">Hence <a href="Section-Inner-Product-Spaces.html#thm-030504c" class="xref" data-knowl="./knowl/xref/thm-030504c.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a> follows by taking positive square roots. Finally, the fact that <span class="process-math">\(\langle\mathbf{v}, \mathbf{w}\rangle \leq \norm{\mathbf{v}}\norm{\mathbf{w}}\)</span> by the Cauchy-Schwarz inequality gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-030504a.html ./knowl/xref/thm-030504b.html ./knowl/xref/list-030346c.html ./knowl/xref/list-030346d.html ./knowl/xref/thm-030346.html ./knowl/xref/thm-030504c.html ./knowl/xref/thm-030504c.html ./knowl/xref/thm-030504d.html">
+\begin{align*}
+\norm{ \mathbf{v} + \mathbf{w} } ^2 =
+\langle \mathbf{v} + \mathbf{w}, \mathbf{v} + \mathbf{w} \rangle \amp =
+\norm{ \mathbf{v} } ^2 + 2 \langle \mathbf{v}, \mathbf{w} \rangle +
+\norm{ \mathbf{w} } ^2 \\
+\amp \leq \norm{ \mathbf{v} } ^2 +
+2 \norm{ \mathbf{v} } \norm{ \mathbf{w} } +
+\norm{ \mathbf{w} } ^2 \\
+\amp = (\norm{ \mathbf{v} } + \norm{ \mathbf{w} })^2. 
+\end{align*}
+</div>
+<div class="para">Hence <a href="Section-Inner-Product-Spaces.html#thm-030504d" class="xref" data-knowl="./knowl/xref/thm-030504d.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 4">Item 4</a> follows by taking positive square roots.</div>
+</div></article></details><span class="incontext"><a class="internal" href="Section-Inner-Product-Spaces.html#thm-030504">in-context</a></span>
+</body>
+</html>

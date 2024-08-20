@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.2.24</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(T:\R^n\rightarrow\R^m\)</span> be a linear transformation.  Then <span class="process-math">\(T\)</span> is a matrix transformation with</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\label{matlintrans}
+A=\begin{bmatrix}
+| \amp  |\amp  \amp |\\
+T(\mathbf{e}_1) \amp  T(\mathbf{e}_2)\amp \dots \amp T(\mathbf{e}_n)\\
+|\amp | \amp  \amp |
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">as a matrix that induces <span class="process-math">\(T\text{.}\)</span>
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Observe that</div>
+<div class="displaymath process-math">
+\begin{align*}
+\mathbf{x}=\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix} \amp=x_1\begin{bmatrix}1\\0\\\vdots\\0\end{bmatrix}+x_2\begin{bmatrix}0\\1\\\vdots\\0\end{bmatrix}+\dots+x_n\begin{bmatrix}0\\0\\\vdots\\1\end{bmatrix} \\
+\amp=x_1\mathbf{e}_1+x_2\mathbf{e}_2+\dots+x_n\mathbf{e}_n. 
+\end{align*}
+</div>
+<div class="para">Because <span class="process-math">\(T\)</span> is linear, we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+T(\mathbf{x})\amp =T(x_1\mathbf{e}_1+x_2\mathbf{e}_2+\dots+x_n\mathbf{e}_n) \\
+\amp=x_1T(\mathbf{e}_1)+x_2T(\mathbf{e}_2)+\dots+x_nT(\mathbf{e}_n) \\
+\amp =\begin{bmatrix}
+| \amp  |\amp  \amp |\\
+T(\mathbf{e}_1) \amp  T(\mathbf{e}_2)\amp \dots \amp T(\mathbf{e}_n)\\
+|\amp | \amp  \amp |
+\end{bmatrix}\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix}=A\mathbf{x}. 
+\end{align*}
+</div>
+<div class="para">Thus, for every <span class="process-math">\(\mathbf{x}\)</span> in <span class="process-math">\(\R^n\text{,}\)</span> we have <span class="process-math">\(T(\mathbf{x})=A\mathbf{x}\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="Section-Introduction-to-Linear-Transformations.html#th-matlin">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Solve the system of equations or determine that the system is inconsistent.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccccccc}
+x \amp - \amp 2y\amp +\amp z\amp \amp \amp = \amp 2 \\
+-2x\amp  +\amp y\amp -\amp z\amp +\amp w\amp =\amp 0\\
+x\amp  +\amp 4y\amp \amp \amp +\amp w\amp =\amp 1 
+\end{array}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical">
+<div class="para">We begin by rewriting the system in the augmented matrix form.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sys20reducedrowechelon.html">
+\begin{equation*}
+\left[\begin{array}{cccc|c}  
+1\amp -2\amp 1\amp 0\amp 2\\-2\amp 1\amp -1\amp 1\amp 0\\1\amp 4\amp 0\amp 1\amp 1
+\end{array}\right]
+\end{equation*}
+</div>
+<div class="para">Our goal is to convert this matrix to its reduced row-echelon form by means of elementary row operations.  To do this, we will proceed from left to right and use leading entries to wipe out all entries above and below them.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sys20reducedrowechelon.html">
+\begin{equation*}
+\left[\begin{array}{cccc|c}  
+1\amp -2\amp 1\amp 0\amp 2\\-2\amp 1\amp -1\amp 1\amp 0\\1\amp 4\amp 0\amp 1\amp 1
+\end{array}\right]
+\begin{array}{c}
+\\
+\xrightarrow{R_2+2R_1}\\
+\xrightarrow{R_3-R_1}\\
+\end{array}\left[\begin{array}{cccc|c}  
+1\amp -2\amp 1\amp 0\amp 2\\0\amp -3\amp 1\amp 1\amp 4\\0\amp 6\amp -1\amp 1\amp -1
+\end{array}\right]\begin{array}{c}
+\\
+\\
+\xrightarrow{R_3+2R_2}\\
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sys20reducedrowechelon.html">
+\begin{equation*}
+\left[\begin{array}{cccc|c}  
+1\amp -2\amp 1\amp 0\amp 2\\0\amp -3\amp 1\amp 1\amp 4\\0\amp 0\amp 1\amp 3\amp 7
+\end{array}\right]
+\begin{array}{c}
+\\
+\xrightarrow{(-1/3)R_2}\\
+\\
+\end{array}\left[\begin{array}{cccc|c}  
+1\amp -2\amp 1\amp 0\amp 2\\0\amp 1\amp -1/3\amp -1/3\amp -4/3\\0\amp 0\amp 1\amp 3\amp 7
+\end{array}\right]\begin{array}{c}
+\xrightarrow{R_1+2R_2}\\
+\\
+\\
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sys20reducedrowechelon.html">
+\begin{equation*}
+\left[\begin{array}{cccc|c}  
+1\amp 0\amp 1/3\amp -2/3\amp -2/3\\0\amp 1\amp -1/3\amp -1/3\amp -4/3\\0\amp 0\amp 1\amp 3\amp 7
+\end{array}\right]
+\begin{array}{c}
+\xrightarrow{R_1-(1/3)R_3}\\
+\xrightarrow{R_2+(1/3)R_3}\\
+\\
+\end{array}\left[\begin{array}{cccc|c}  
+1\amp 0\amp 0\amp -5/3\amp -3\\0\amp 1\amp 0\amp 2/3\amp 1\\0\amp 0\amp 1\amp 3\amp 7
+\end{array}\right]
+\end{equation*}
+</div>
+<div class="para">Our final matrix may not be quite as nice as the one in <a href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html#init-backsub-2-1" class="xref" data-knowl="./knowl/xref/eq-sys20reducedrowechelon.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2.6">(2.2.6)</a>, but it is in reduced row-echelon form.  Our next step is to convert our augmented matrix back to a system of equations.  We have:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sys20reducedrowechelon.html">
+\begin{equation*}
+\begin{array}{ccccccccc}
+x \amp  \amp \amp \amp \amp -\amp (5/3)w\amp = \amp -3 \\
+\amp  \amp y\amp \amp \amp +\amp (2/3)w\amp =\amp 1\\
+\amp  \amp \amp \amp z\amp +\amp 3w\amp =\amp 7 
+\end{array}
+\end{equation*}
+</div>
+<div class="para">We will rewrite the system as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sys20reducedrowechelon.html">
+\begin{equation*}
+\begin{array}{ccccccccc}
+x \amp  \amp \amp \amp \amp \amp \amp = \amp -3+(5/3)w \\
+\amp  \amp y\amp \amp \amp \amp \amp =\amp 1-(2/3)w\\
+\amp  \amp \amp \amp z\amp \amp \amp =\amp 7-3w 
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Now we see that we can assign any value to <span class="process-math">\(w\text{,}\)</span> then compute <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> to obtain a solution to the system.  For example, let <span class="process-math">\(w=0\text{,}\)</span> then <span class="process-math">\(x=-3\text{,}\)</span> <span class="process-math">\(y=1\)</span> and <span class="process-math">\(z=7\text{,}\)</span> so <span class="process-math">\((-3, 1, 7, 0)\)</span> is a solution.  If we let <span class="process-math">\(w=3\text{,}\)</span> then <span class="process-math">\(x=2\text{,}\)</span> <span class="process-math">\(y=-1\)</span> and <span class="process-math">\(z=-2\text{,}\)</span> so <span class="process-math">\((2, -1, -2, 3)\)</span> is also a solution.   To capture all possibilities, we will let <span class="process-math">\(w=t\text{,}\)</span> where <span class="process-math">\(t\)</span> is an arbitrary <dfn class="terminology">parameter</dfn>.</div>
+</div> <div class="para logical">
+<div class="para">We can think of the solution set in two different ways.  First, the solution set is the set of all points of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/form-paramlinend.html">
+\begin{equation*}
+\left(-3+\frac{5}{3}t, 1-\frac{2}{3}t, 7-3t, t\right)
+\end{equation*}
+</div>
+<div class="para">We can also think of the solution set in geometric terms by observing that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/form-paramlinend.html">
+\begin{align*}
+x\amp =-3+\frac{5}{3}t \\
+y\amp =1-\frac{2}{3}t \\
+z\amp =7-3t \\
+w\amp =t 
+\end{align*}
+</div>
+<div class="para">is a set of parametric equations that describes a line in <span class="process-math">\(\R^4\text{.}\)</span>  (See <a href="Section-Lines-and-Planes.html#form-paramlinend" class="xref" data-knowl="./knowl/xref/form-paramlinend.html" data-reveal-label="Reveal" data-close-label="Close" title="Formula 1.3.5">Formula 1.3.5</a>  This means that the three hyperplanes given by the equations in the system intersect in a line, producing infinitely many solutions to the system.</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html#ex-freevar1">in-context</a></span>
+</body>
+</html>

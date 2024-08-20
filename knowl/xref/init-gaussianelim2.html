@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">In this problem we revisit the system</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-rref3.html ./knowl/xref/prob-same-rref.html">
+\begin{equation*}
+\begin{array}{ccccccccc}
+x \amp + \amp 2y\amp -\amp 3z\amp = \amp 1 \\
+-5x\amp  +\amp 2y\amp -\amp 3z\amp =\amp 1\\
+x\amp - \amp 2y\amp +\amp z\amp =\amp 1
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Following the steps we took to get <a href="Section-Gaussian-Elimination-and-Rank.html#eq-ref1" class="xref" data-knowl="./knowl/xref/eq-ref1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.1">(2.3.1)</a>, but taking the process a little further, we get the reduced row-echelon form.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-rref3.html ./knowl/xref/prob-same-rref.html">
+\begin{equation*}
+\left[\begin{array}{ccc|c}  
+1\amp 2\amp -3\amp 1\\-5\amp 2\amp -3\amp 1\\1\amp -2\amp 1\amp 1
+\end{array}\right]
+\begin{array}{c}
+\\
+\xrightarrow{R_2+5R_1}\\
+\xrightarrow{R_3-R_1}\\
+\end{array}
+\left[\begin{array}{ccc|c}  
+1\amp 2\amp -3\amp 1\\0\amp 12\amp -18\amp 6\\0\amp -4\amp 4\amp 0
+\end{array}\right]
+\begin{array}{c}
+\\
+\\
+\xrightarrow{R_3+\frac{1}{3}R_2}\\
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-rref3.html ./knowl/xref/prob-same-rref.html">
+\begin{equation*}
+\left[\begin{array}{ccc|c}  
+1\amp 2\amp -3\amp 1\\0\amp 12\amp -18\amp 6\\0\amp 0\amp -2\amp 2
+\end{array}\right]
+\color{blue}
+\begin{array}{c}
+\\
+\xrightarrow{\frac{1}{12}R_2}\\
+\xrightarrow{-\frac{1}{2}R_3}\\
+\end{array}
+\left[\begin{array}{ccc|c}  
+1\amp 2\amp -3\amp 1\\0\amp 1\amp -\frac{3}{2}\amp \frac{1}{2}\\0\amp 0\amp 1\amp -1
+\end{array}\right]
+\begin{array}{c}
+\xrightarrow{R_1+3R_3}\\
+\xrightarrow{R_2+\frac{3}{2}R_3}\\
+\\
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-rref3.html ./knowl/xref/prob-same-rref.html">
+\begin{equation}
+\color{blue}
+\left[\begin{array}{ccc|c}  
+1\amp 2\amp 0\amp -2\\0\amp 1\amp 0\amp -1\\0\amp 0\amp 1\amp -1
+\end{array}\right]
+\begin{array}{c}
+\xrightarrow{R_1-2R_2}\\
+\\
+\\
+\end{array}
+\color{black}
+\left[\begin{array}{ccc|c}  
+1\amp 0\amp 0\amp 0\\0\amp 1\amp 0\amp -1\\0\amp 0\amp 1\amp -1
+\end{array}\right]\tag{2.3.3}
+\end{equation}
+</div>
+<div class="para">Do you think it is possible to start with <a href="Section-Gaussian-Elimination-and-Rank.html#eq-ref2" class="xref" data-knowl="./knowl/xref/eq-ref2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.2">(2.3.2)</a> and obtain the same reduced row-echelon form?  Try to justify your response.  If possible, find the elementary row operations that take <a href="Section-Gaussian-Elimination-and-Rank.html#eq-ref2" class="xref" data-knowl="./knowl/xref/eq-ref2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.2">(2.3.2)</a> to the reduced row-echelon form in <a href="Section-Gaussian-Elimination-and-Rank.html#eq-rref3" class="xref" data-knowl="./knowl/xref/eq-rref3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.3">(2.3.3)</a>.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-rref3.html ./knowl/xref/prob-same-rref.html">
+\begin{equation*}
+\left[\begin{array}{ccc|c}  
+1\amp 2\amp -3\amp 1\\-5\amp 2\amp -3\amp 1\\1\amp -2\amp 1\amp 1
+\end{array}\right]
+\begin{array}{c}
+\\
+\xrightarrow{R_1\leftrightarrow R_3}\\
+\\
+\end{array}
+\left[\begin{array}{ccc|c}  
+1\amp -2\amp 1\amp 1\\-5\amp 2\amp -3\amp 1\\1\amp 2\amp -3\amp 1
+\end{array}\right]
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-rref3.html ./knowl/xref/prob-same-rref.html">
+\begin{equation*}
+\begin{array}{c}
+\\
+\xrightarrow{R_2+5R_1}\\
+\xrightarrow{R_3-R_1}\\
+\end{array}
+\left[\begin{array}{ccc|c}  
+1\amp -2\amp 1\amp 1\\0\amp -8\amp 2\amp 6\\0\amp 4\amp -4\amp 0
+\end{array}\right]
+\begin{array}{c}
+\\
+\\
+\xrightarrow{R_3+\frac{1}{2}R_2}\\
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-ref1.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-ref2.html ./knowl/xref/eq-rref3.html ./knowl/xref/prob-same-rref.html">
+\begin{equation*}
+\left[\begin{array}{ccc|c}  
+1\amp -2\amp 1\amp 1\\0\amp -8\amp 2\amp 6\\0\amp 0\amp -3\amp 3
+\end{array}\right]
+\color{red}
+\begin{array}{c}
+\rightsquigarrow\text{Elementary}\rightsquigarrow\\
+\text{Row Ops.}
+\end{array}
+\color{black}
+\left[\begin{array}{ccc|c}  
+1\amp 0\amp 0\amp 0\\0\amp 1\amp 0\amp -1\\0\amp 0\amp 1\amp -1
+\end{array}\right]
+\end{equation*}
+</div>
+<div class="para">You will be asked to fill in the elementary row operations in <a href="Section-Gaussian-Elimination-and-Rank.html#prob-same-rref" class="xref" data-knowl="./knowl/xref/prob-same-rref.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.3.4.1">Exercise 2.3.4.1</a>.</div>
+</div></article><span class="incontext"><a class="internal" href="Section-Gaussian-Elimination-and-Rank.html#init-gaussianelim2">in-context</a></span>
+</body>
+</html>

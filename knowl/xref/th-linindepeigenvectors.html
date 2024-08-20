@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.2.16</span><span class="period">.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix, and suppose that <span class="process-math">\(A\)</span> has distinct eigenvalues <span class="process-math">\(\lambda_1, \lambda_2, \ldots, \lambda_m\text{.}\)</span> For each <span class="process-math">\(i\text{,}\)</span> let <span class="process-math">\(\mathbf{x}_i\)</span> be a <span class="process-math">\(\lambda_i\)</span>-eigenvector of <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(\{ \mathbf{x}_1, \mathbf{x}_2, \ldots, \mathbf{x}_m\}\)</span> is linearly independent.</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">We prove this by induction on <span class="process-math">\(m\text{,}\)</span> the number of vectors in the set. If <span class="process-math">\(m = 1\text{,}\)</span> then <span class="process-math">\(\{\mathbf{x}_{1}\}\)</span> is a linearly independent set because <span class="process-math">\(\mathbf{x}_{1} \neq \mathbf{0}\text{.}\)</span> In general, suppose we have established that the theorem is true for some <span class="process-math">\(m \geq 1\text{.}\)</span> Given eigenvectors <span class="process-math">\(\{\mathbf{x}_{1}, \mathbf{x}_{2}, \dots, \mathbf{x}_{m+1}\}\text{,}\)</span> suppose</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-thm-proof-5-5-4-1.html ./knowl/xref/eq-thm-proof-5-5-4-1.html ./knowl/xref/eq-thm-proof-5-5-4-2.html ./knowl/xref/eq-thm-proof-5-5-4-1.html">
+\begin{equation}
+c_1\mathbf{x}_1 + c_2\mathbf{x}_2 + \dots + c_{m+1}\mathbf{x}_{m+1} = \mathbf{0}.\tag{8.2.4}
+\end{equation}
+</div>
+<div class="para">We must show that each <span class="process-math">\(c_{i} = 0\text{.}\)</span> Multiply both sides of <a href="Section-Similar-Matrices-and-Their-Properties.html#eq-thm-proof-5-5-4-1" class="xref" data-knowl="./knowl/xref/eq-thm-proof-5-5-4-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.2.4">(8.2.4)</a> on the left by <span class="process-math">\(A\)</span> and use the fact that <span class="process-math">\(A\mathbf{x}_{i} = \lambda_{i}\mathbf{x}_{i}\)</span> to get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-thm-proof-5-5-4-1.html ./knowl/xref/eq-thm-proof-5-5-4-1.html ./knowl/xref/eq-thm-proof-5-5-4-2.html ./knowl/xref/eq-thm-proof-5-5-4-1.html">
+\begin{equation}
+c_1\lambda_1\mathbf{x}_1 + c_2\lambda_2\mathbf{x}_2 + \dots + c_{m+1}\lambda_{m+1}\mathbf{x}_{m+1} = \mathbf{0}.\tag{8.2.5}
+\end{equation}
+</div>
+<div class="para">If we multiply <a href="Section-Similar-Matrices-and-Their-Properties.html#eq-thm-proof-5-5-4-1" class="xref" data-knowl="./knowl/xref/eq-thm-proof-5-5-4-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.2.4">(8.2.4)</a> by <span class="process-math">\(\lambda_{1}\)</span> and subtract the result from <a href="Section-Similar-Matrices-and-Their-Properties.html#eq-thm-proof-5-5-4-2" class="xref" data-knowl="./knowl/xref/eq-thm-proof-5-5-4-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.2.5">(8.2.5)</a>, the first terms cancel and we obtain</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-thm-proof-5-5-4-1.html ./knowl/xref/eq-thm-proof-5-5-4-1.html ./knowl/xref/eq-thm-proof-5-5-4-2.html ./knowl/xref/eq-thm-proof-5-5-4-1.html">
+\begin{equation*}
+c_2(\lambda_2 - \lambda_1)\mathbf{x}_2 + c_3(\lambda_3 - \lambda_1)\mathbf{x}_3 + \dots + c_{m+1}(\lambda_{m+1} - \lambda_1)\mathbf{x}_{m+1} = \mathbf{0}.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\mathbf{x}_{2}, \mathbf{x}_{3}, \dots, \mathbf{x}_{m+1}\)</span> correspond to distinct eigenvalues <span class="process-math">\(\lambda_{2}, \lambda_{3}, \dots, \lambda_{m+1}\text{,}\)</span> the set <span class="process-math">\(\{\mathbf{x}_{2}, \mathbf{x}_{3}, \dots, \mathbf{x}_{m+1}\}\)</span> is linearly independent by the induction hypothesis. Hence,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-thm-proof-5-5-4-1.html ./knowl/xref/eq-thm-proof-5-5-4-1.html ./knowl/xref/eq-thm-proof-5-5-4-2.html ./knowl/xref/eq-thm-proof-5-5-4-1.html">
+\begin{equation*}
+c_2(\lambda_2 - \lambda_1) = 0, \quad c_3(\lambda_3 - \lambda_1) = 0, \quad \dots, \quad c_{m+1}(\lambda_{m+1} - \lambda_1) = 0
+\end{equation*}
+</div>
+<div class="para">and so <span class="process-math">\(c_{2} = c_{3} = \dots = c_{m+1} = 0\)</span> because the <span class="process-math">\(\lambda_{i}\)</span> are distinct. It follows that <a href="Section-Similar-Matrices-and-Their-Properties.html#eq-thm-proof-5-5-4-1" class="xref" data-knowl="./knowl/xref/eq-thm-proof-5-5-4-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.2.4">(8.2.4)</a> becomes <span class="process-math">\(c_{1}\mathbf{x}_{1} = \mathbf{0}\text{,}\)</span> which implies that <span class="process-math">\(c_{1} = 0\)</span> because <span class="process-math">\(\mathbf{x}_{1} \neq \mathbf{0}\text{,}\)</span> and the proof is complete.</div>
+</div></article></details><span class="incontext"><a class="internal" href="Section-Similar-Matrices-and-Their-Properties.html#th-linindepeigenvectors">in-context</a></span>
+</body>
+</html>

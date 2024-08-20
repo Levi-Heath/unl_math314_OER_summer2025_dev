@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.8</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">The following statements are equivalent for an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para">
+<span class="process-math">\(A\)</span> is nonsingular</div></li>
+<li><div class="para">
+<span class="process-math">\(A\)</span> is a product of elementary matrices</div></li>
+<li><div class="para">
+<span class="process-math">\(A\)</span> is invertible</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">We will prove equivalence of the three statements by showing that <a href="Section-Elementary-Matrices.html#item-anonsingular2" class="xref" data-knowl="./knowl/xref/item-anonsingular2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a><span class="process-math">\(\Rightarrow\)</span><a href="Section-Elementary-Matrices.html#item-aproductofelemmatrices" class="xref" data-knowl="./knowl/xref/item-aproductofelemmatrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a><span class="process-math">\(\Rightarrow\)</span><a href="Section-Elementary-Matrices.html#item-ainvertible" class="xref" data-knowl="./knowl/xref/item-ainvertible.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a><span class="process-math">\(\Rightarrow\)</span><a href="Section-Elementary-Matrices.html#item-anonsingular2" class="xref" data-knowl="./knowl/xref/item-anonsingular2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a>
+</div> <div class="para logical">
+<div class="para">[Proof of <a href="Section-Elementary-Matrices.html#item-anonsingular2" class="xref" data-knowl="./knowl/xref/item-anonsingular2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a><span class="process-math">\(\Rightarrow\)</span><a href="Section-Elementary-Matrices.html#item-aproductofelemmatrices" class="xref" data-knowl="./knowl/xref/item-aproductofelemmatrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a>]: Suppose <span class="process-math">\(\mbox{rref}(A)=I\text{.}\)</span>  Then <span class="process-math">\(A\)</span> can be carried to the identity by elementary row operations.  So, there exist elementary matrices <span class="process-math">\(E_1, E_2, \ldots ,E_k\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-anonsingular2.html ./knowl/xref/item-aproductofelemmatrices.html ./knowl/xref/th-elemmatricesinvertible.html">
+\begin{equation*}
+E_k\ldots E_2E_1A=I
+\end{equation*}
+</div>
+<div class="para">By <a href="Section-Elementary-Matrices.html#th-elemmatricesinvertible" class="xref" data-knowl="./knowl/xref/th-elemmatricesinvertible.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.5.7">Theorem 4.5.7</a>, elementary matrices are invertible and their inverses are also elementary matrices.  Thus, we can write <span class="process-math">\(A\)</span> as a product of elementary matrices as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-anonsingular2.html ./knowl/xref/item-aproductofelemmatrices.html ./knowl/xref/th-elemmatricesinvertible.html">
+\begin{equation*}
+A=E_1^{-1}E_2^{-1}\ldots E_k^{-1}.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">[Proof of <a href="Section-Elementary-Matrices.html#item-aproductofelemmatrices" class="xref" data-knowl="./knowl/xref/item-aproductofelemmatrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a><span class="process-math">\(\Rightarrow\)</span><a href="Section-Elementary-Matrices.html#item-ainvertible" class="xref" data-knowl="./knowl/xref/item-ainvertible.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a>]: Suppose <span class="process-math">\(A=E_1E_2\ldots E_k\text{,}\)</span> where <span class="process-math">\(E_1, E_2, \ldots , E_k\)</span> are elementary matrices.  In <a href="Section-The-Inverse-of-a-Matrix.html#item-inverseofproduct" class="xref" data-knowl="./knowl/xref/item-inverseofproduct.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a> we proved that <span class="process-math">\((BC)^{-1} = C^{-1} B^{-1}\text{.}\)</span>  By repeated applications of this theorem we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-aproductofelemmatrices.html ./knowl/xref/item-ainvertible.html ./knowl/xref/item-inverseofproduct.html">
+\begin{equation*}
+(E_1E_2\ldots E_k)^{-1}=E_k^{-1}\ldots E_2^{-1}E_1^{-1}=A^{-1}
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(A\)</span> is invertible.</div>
+</div> <div class="para">[Proof of <a href="Section-Elementary-Matrices.html#item-ainvertible" class="xref" data-knowl="./knowl/xref/item-ainvertible.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a><span class="process-math">\(\Rightarrow\)</span><a href="Section-Elementary-Matrices.html#item-anonsingular2" class="xref" data-knowl="./knowl/xref/item-anonsingular2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a>]: See the corollary to Theorem <a href="Section-The-Inverse-of-a-Matrix.html#th-matrixinverse" class="xref" data-knowl="./knowl/xref/th-matrixinverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.6: Row-reduction Method for Computing the Inverse of a Matrix">Theorem 4.4.6</a>.</div></article></details><span class="incontext"><a class="internal" href="Section-Elementary-Matrices.html#th-elemmatrices">in-context</a></span>
+</body>
+</html>

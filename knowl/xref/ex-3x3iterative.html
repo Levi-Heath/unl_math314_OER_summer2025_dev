@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Use direct methods to solve the linear system.  Then try using Jacobi’s Method and the Gauss-Seidel method.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccccc}
+5x \amp +\ampy\amp+\amp2z\amp= \amp1 \\
+2x\amp +\amp5y\amp+\ampz\amp=\amp1\\
+2x\amp +\ampy\amp+\amp5z\amp=\amp1
+\end{array}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical">
+<div class="para">We perform Gauss-Jordan elimination by applying elementary row operations as described in <a href="Section-Gaussian-Elimination-and-Rank.html" class="internal" title="Section 2.3: Gaussian Elimination and Rank">Section 2.3</a>.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Section-Gaussian-Elimination-and-Rank.html">
+\begin{equation*}
+\left[\begin{array}{ccc|c}  5\amp1\amp2\amp1\\2\amp5\amp1\amp1\\2\amp1\amp5\amp1
+\end{array}\right]
+\rightsquigarrow\text{ becomes (after a number of steps) } \rightsquigarrow
+\left[\begin{array}{ccc|c}  1\amp0\amp0\amp1/8\\0\amp1\amp0\amp1/8\\0\amp0\amp1\amp1/8
+\end{array}\right]
+\end{equation*}
+</div>
+<div class="para">This shows that the three planes in <span class="process-math">\(\R^3\)</span> share a common intersection point at <span class="process-math">\(\left(\frac{1}{8},\frac{1}{8},\frac{1}{8} \right)\text{,}\)</span> which is easily verified by looking at the original equations, and can also be seen in the GeoGebra graph below (RIGHT-CLICK AND DRAG TO ROTATE).</div>
+</div> <figure class="figure figure-like"><iframe id="geogebra-intersection-of-3-planes" width="600" height="487" src="geogebra-intersection-of-3-planes-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.3<span class="period">.</span></span><span class="space"> </span>A larger version of this activity is available <a class="external" href="https://www.geogebra.org/calculator/nuvt2rde" target="_blank">here</a><details class="ptx-footnote" aria-live="polite" id="ex-3x3iterative-2-2-1-2"><summary class="ptx-footnote__number" title="Footnote 2.4.3"><sup> 3 </sup></summary><div class="ptx-footnote__contents" id="ex-3x3iterative-2-2-1-2"><code class="code-inline tex2jax_ignore">geogebra.org</code></div></details>.</figcaption></figure> <div class="para logical">
+<div class="para">Now we solve the same linear system using our iterative methods.  In order to use Jacobi’s method or the Gauss-Seidel method, we solve for <span class="process-math">\(x\)</span> in the first equation, we solve for <span class="process-math">\(y\)</span> in the second equation, and we solve for <span class="process-math">\(z\)</span> in the third equation.  We get three formulas.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccccc}
+5x \amp +\ampy\amp+\amp2z\amp= \amp1 \\ 
+2x\amp +\amp5y\amp+\ampz\amp=\amp1\\ 
+2x\amp +\ampy\amp+\amp5z\amp=\amp1
+\end{array}
+\rightsquigarrow\text{isolating these variables}\rightsquigarrow
+\begin{array}{c}
+x=\frac{1-y-2z}{5},\\ \\
+y=\frac{1-2x-z}{5},\\ \\
+z=\frac{1-2x-y}{5}  
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Below is a link to a spreadsheet which can be used to solve a linear system of 3 equations in 3 unknowns using the Jacobi method and the Gauss-Seidel method.</div>
+</div> <div class="para">To use the spreadsheet, SAVE A COPY of the sheet.  Then you will be able to change the yellow boxes to input a system of equations as well as the initial values.</div> <div class="para">
+<a class="external" href="https://docs.google.com/spreadsheets/d/1cjRChe6nwq1S-f-bGsnMFI632cuALhfUHnSvD_lC7oQ/edit?usp=sharing" target="_blank">LINK TO SPREADSHEET</a><details class="ptx-footnote" aria-live="polite" id="ex-3x3iterative-2-5-2"><summary class="ptx-footnote__number" title="Footnote 2.4.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="ex-3x3iterative-2-5-2"><code class="code-inline tex2jax_ignore">docs.google.com/spreadsheets/d/1cjRChe6nwq1S-f-bGsnMFI632cuALhfUHnSvD_lC7oQ/edit?usp=sharing</code></div></details>
+</div> <div class="para">Notice how much more efficient the Gauss-Seidel method is than Jacobi’s method.  Both methods converge toward the exact solution we computed earlier using Gauss-Jordan elimination (<span class="process-math">\((0.125,0.125.0.125)\)</span> in decimal form).  Starting with an initial guess of <span class="process-math">\((1,2,3)\text{,}\)</span> when we use the Gauss-Seidel method, each coordinate gets to within 0.001 of the corresponding value of the exact solution.  Using Jacobi’s method, 15 iterations are necessary to achieve the same level of accuracy with the same initial guess. This is not surprising, since the Gauss-Seidel Method uses new values as we find them, rather than waiting until the subsequent iteration, as is done with the Jacobi Method.</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="Section-Iterative-Methods-for-Solving-Linear-Systems.html#ex-3x3iterative">in-context</a></span>
+</body>
+</html>

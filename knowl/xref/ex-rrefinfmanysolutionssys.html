@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Solve the system of equations or determine that the system is inconsistent.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccccc}
+x \amp  -\amp 3y\amp -\amp z\amp = \amp 3 \\
+-3x\amp  +\amp 5y\amp \amp \amp =\amp -2\\
+x\amp + \amp y\amp +\amp 2z\amp =\amp -4
+\end{array}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical">
+<div class="para">We rewrite the system in the augmented matrix form and transform it to reduced row-echelon form.  We leave the details of the elementary row operations to the reader and state the final result.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sys20nosolutions.html">
+\begin{equation*}
+\left[\begin{array}{ccc|c}  
+1\amp -3\amp -1\amp 3\\-3\amp 5\amp 0\amp -2\\1\amp 1\amp 2\amp -4
+\end{array}\right]\begin{array}{c}
+\\
+\rightsquigarrow\\
+\\
+\end{array}\left[\begin{array}{ccc|c}  
+1\amp 0\amp 5/4\amp -9/4\\0\amp 1\amp 3/4\amp -7/4\\0\amp 0\amp 0\amp 0
+\end{array}\right]
+\end{equation*}
+</div>
+<div class="para">Converting the augmented matrix back to a system of equations we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sys20nosolutions.html">
+\begin{equation*}
+\begin{array}{ccccccc}
+x \amp + \amp 0y\amp +\amp (5/4)z\amp = \amp -9/4 \\
+0x\amp  +\amp y\amp +\amp (3/4)z\amp =\amp -7/4\\
+0x\amp + \amp 0y\amp +\amp 0z\amp =\amp 0
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Unlike the last equation in <a href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html#eq-sys20nosolutions" class="xref" data-knowl="./knowl/xref/eq-sys20nosolutions.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2.8">(2.2.8)</a>, the last equation in this system has infinitely many solutions because all values of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> satisfy it.  Since the last equation contributes nothing, we will remove it and rewrite the system as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sys20nosolutions.html">
+\begin{equation*}
+\begin{array}{ccccc}
+x \amp  \amp \amp = \amp -9/4-(5/4)z \\
+\amp  \amp y\amp =\amp -7/4-(3/4)z\\
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Variables <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> correspond to leading <span class="process-math">\(1's\)</span> in the reduced row-echelon form.  So, <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are the leading variables.    Variable <span class="process-math">\(z\)</span> is a free variable.  We let <span class="process-math">\(z=t\text{.}\)</span>  Solutions to this system are points of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sys20nosolutions.html">
+\begin{equation*}
+\left(-\frac{9}{4}-\frac{5}{4}t, -\frac{7}{4}-\frac{3}{4}t, t\right)
+\end{equation*}
+</div>
+<div class="para">We can also interpret the solutions as lying on a line in <span class="process-math">\(\R^3\)</span> given by parametric equations</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sys20nosolutions.html">
+\begin{align*}
+x\amp =-\frac{9}{4}-\frac{5}{4}t \\
+y\amp =-\frac{7}{4}-\frac{3}{4}t \\
+z\amp =t 
+\end{align*}
+</div>
+<div class="para">This line is the line of intersection of the three planes.</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html#ex-rrefinfmanysolutionssys">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">10.4.6</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(A\)</span> is any <span class="process-math">\(n \times n\)</span> positive definite matrix, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle \mathbf{x}, \mathbf{y} \rangle = \mathbf{x}^TA\mathbf{y} \mbox{ for all columns } \mathbf{x}, \mathbf{y} \mbox{ in } \R^n
+\end{equation*}
+</div>
+<div class="para">defines an inner product on <span class="process-math">\(\R^n\text{,}\)</span> and every inner product on <span class="process-math">\(\R^n\)</span> arises in this way.</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Given an inner product <span class="process-math">\(\langle\ , \rangle\)</span> on <span class="process-math">\(\R^n\text{,}\)</span> let <span class="process-math">\(\{\mathbf{e}_{1}, \mathbf{e}_{2}, \dots, \mathbf{e}_{n}\}\)</span> be the standard basis of <span class="process-math">\(\R^n\text{.}\)</span> If</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-024830.html">
+\begin{equation*}
+\mathbf{x} = \displaystyle \sum_{i = 1}^{n} x_i\mathbf{e}_i \text{ and } \mathbf{y} = \displaystyle \sum_{j = 1}^{n} y_j\mathbf{e}_j
+\end{equation*}
+</div>
+<div class="para">are two vectors in <span class="process-math">\(\R^n\text{,}\)</span> compute <span class="process-math">\(\langle\mathbf{x}, \mathbf{y}\rangle\)</span> by adding the inner product of each term <span class="process-math">\(x_{i}\mathbf{e}_{i}\)</span> to each term <span class="process-math">\(y_{j}\mathbf{e}_{j}\text{.}\)</span> The result is a double sum, namely</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-024830.html">
+\begin{equation*}
+\langle \mathbf{x}, \mathbf{y} \rangle = \displaystyle \sum_{i = 1}^{n} \sum_{j = 1}^{n} \langle x_i \mathbf{e}_i, y_j\mathbf{e}_j \rangle =
+\displaystyle \sum_{i = 1}^{n} \sum_{j = 1}^{n} x_i \langle \mathbf{e}_i, \mathbf{e}_j \rangle y_j.
+\end{equation*}
+</div>
+<div class="para">As the reader can verify, this is a matrix product:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-024830.html">
+\begin{equation*}
+\langle \mathbf{x}, \mathbf{y} \rangle =
+\left[ \begin{array}{cccc}
+x_1 \amp  x_2 \amp  \cdots \amp  x_n \\
+\end{array} \right]
+\left[ \begin{array}{cccc}
+\langle \mathbf{e}_1, \mathbf{e}_1 \rangle \amp  \langle \mathbf{e}_1, \mathbf{e}_2 \rangle \amp  \cdots \amp  \langle \mathbf{e}_1, \mathbf{e}_n \rangle \\
+\langle \mathbf{e}_2, \mathbf{e}_1 \rangle \amp  \langle \mathbf{e}_2, \mathbf{e}_2 \rangle \amp  \cdots \amp  \langle \mathbf{e}_2, \mathbf{e}_n \rangle \\
+\vdots \amp  \vdots \amp  \ddots \amp  \vdots \\
+\langle \mathbf{e}_n, \mathbf{e}_1 \rangle \amp  \langle \mathbf{e}_n, \mathbf{e}_2 \rangle \amp  \cdots \amp  \langle \mathbf{e}_n, \mathbf{e}_n \rangle \\
+\end{array} \right]
+\left[ \begin{array}{c}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{array} \right]
+\end{equation*}
+</div>
+<div class="para">Hence <span class="process-math">\(\langle\mathbf{x}, \mathbf{y}\rangle = \mathbf{x}^{T}A\mathbf{y}\text{,}\)</span> where <span class="process-math">\(A\)</span> is the <span class="process-math">\(n \times n\)</span> matrix whose <span class="process-math">\((i, j)\)</span>-entry is <span class="process-math">\(\langle\mathbf{e}_{i}, \mathbf{e}_{j} \rangle\text{.}\)</span> The fact that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-024830.html">
+\begin{equation*}
+\langle\mathbf{e}_{i}, \mathbf{e}_{j}\rangle = \langle\mathbf{e}_{j}, \mathbf{e}_{i}\rangle
+\end{equation*}
+</div>
+<div class="para">shows that <span class="process-math">\(A\)</span> is symmetric. Finally, <span class="process-math">\(A\)</span> is positive definite by <a href="Section-Positive-Definite-Matrices.html#thm-024830" class="xref" data-knowl="./knowl/xref/thm-024830.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.7.3">Theorem 9.7.3</a>.</div>
+</div></article></details><span class="incontext"><a class="internal" href="Section-Inner-Product-Spaces.html#thm-030372">in-context</a></span>
+</body>
+</html>

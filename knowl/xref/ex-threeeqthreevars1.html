@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Solve the system of equations using elementary row operations.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccccc}
+3x \amp   - \amp   y\amp  +\amp  z\amp  = \amp  0 \\
+2x\amp   + \amp   y\amp  +\amp  2z\amp  =\amp  2\\
+x\amp   +\amp  4y\amp  -\amp  2z\amp  =\amp  11
+\end{array}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical">
+<div class="para">It may be daunting to think about how to begin.  But keep in mind the desired end-result.  What we want is to use elementary row operations to transform the given system into something like this</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccccc}
+x \amp   \amp  \amp  \amp  \amp  = \amp   a \\
+\amp    \amp   y\amp  \amp  \amp  =\amp   b\\
+\amp   \amp  \amp  \amp   z\amp  =\amp   c
+\end{array}
+\end{equation*}
+</div>
+<div class="para">We will accomplish this by using a convenient variable in one row to ``wipe out" this variable from the other two rows.  For example, we can use <span class="process-math">\(x\)</span> in the third equation to wipe out <span class="process-math">\(3x\)</span> in the first equation and <span class="process-math">\(2x\)</span> in the second equation.  To do this, multiply the third row by <span class="process-math">\(-3\)</span> and add it to the top row, then multiply the third row by <span class="process-math">\(-2\)</span> and add it to the second row.  We now have:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c}
+\xrightarrow{R_1-3R_3}\\
+\xrightarrow{R_2-2R_3}\\
+\\
+\end{array}
+\begin{array}{ccccccc}
+0x \amp   -\amp  13y\amp  +\amp  7z\amp  = \amp  -33 \\
+0x\amp   -\amp  7y\amp  +\amp  6z\amp  =\amp  -20\\
+x\amp   +\amp  4y\amp  -\amp  2z\amp  =\amp  11
+\end{array}
+\end{equation*}
+</div>
+<div class="para">In the previous step <span class="process-math">\(x\)</span> was a convenient variable to use because the coefficient in front of <span class="process-math">\(x\)</span> was 1.  We no longer have a variable with coefficient 1.  We could create a coefficient of 1 using division, but that would lead to fractions, making computations cumbersome.  Instead, we will subtract twice the second row from the first row. This gives us:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c}
+\xrightarrow{R_1-2R_2}\\
+\\
+\\
+\end{array}
+\begin{array}{ccccccc}
+0x \amp  +  \amp   y\amp  -\amp  5z\amp  = \amp  7 \\
+0x\amp   -\amp  7y\amp  +\amp  6z\amp  =\amp  -20\\
+x\amp   +\amp  4y\amp  -\amp  2z\amp  =\amp  11
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Next we add seven times the first row to the second row, and subtract four times the first row from the third row.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c}
+\\
+\xrightarrow{R_2+7R_1}\\
+\xrightarrow{R_3-4R_1}\\
+\end{array}
+\begin{array}{ccccccc}
+0x \amp   + \amp   y\amp  -\amp  5z\amp  = \amp  7 \\
+0x\amp   +\amp  0y\amp  -\amp  29z\amp  =\amp  29\\
+x\amp   +\amp  0y\amp  +\amp  18z\amp  =\amp  -17
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Now we divide both sides of the second row by <span class="process-math">\(-29\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c}
+\\
+\xrightarrow{-\frac{1}{29}R_2}\\
+\\
+\end{array}
+\begin{array}{ccccccc}
+0x \amp   + \amp   y\amp  -\amp  5z\amp  = \amp  7 \\
+0x\amp   +\amp  0y\amp  +\amp  z\amp  =\amp  -1\\
+x\amp   +\amp  0y\amp  +\amp  18z\amp  =\amp  -17
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Adding <span class="process-math">\(5\)</span> times the second row to the first row and subtracting <span class="process-math">\(18\)</span> times the second row from the third row gives us</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c}
+\xrightarrow{R_1+5R_2}\\
+\\
+\xrightarrow{R_3-18R_2}\\
+\end{array}
+\begin{array}{ccccccc}
+0x \amp   + \amp   y\amp  +\amp  0z\amp  = \amp  2 \\
+0x\amp   +\amp  0y\amp  +\amp  z\amp  =\amp  -1\\
+x\amp   +\amp  0y\amp  +\amp  0z\amp  =\amp  1
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Finally, rearranging the rows gives us</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccccc}
+x\amp   +\amp  0y\amp  +\amp  0z\amp  =\amp  1\\
+0x \amp   + \amp   y\amp  +\amp  0z\amp  = \amp  2 \\
+0x\amp   +\amp  0y\amp  +\amp  z\amp  =\amp  -1
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccccc}
+x\amp   \amp  \amp  \amp  \amp  =\amp  1\\
+\amp    \amp   y\amp  \amp  \amp  = \amp  2 \\
+\amp  \amp  \amp  \amp  z\amp  =\amp  -1
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Thus the system has a unique solution <span class="process-math">\((1, 2, -1)\text{.}\)</span>
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="Section-Introduction-to-Systems-of-Linear-Equations.html#ex-threeeqthreevars1">in-context</a></span>
+</body>
+</html>

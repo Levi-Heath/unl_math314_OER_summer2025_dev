@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.4.3</span><span class="period">.</span>
+</h3>
+<div class="para">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <span class="process-math">\(m \times n\)</span> matrices, define <span class="process-math">\(\langle A, B\rangle = \mbox{tr}(AB^{T})\)</span> where <span class="process-math">\(\mbox{tr}(X)\)</span> is the trace of the square matrix <span class="process-math">\(X\text{.}\)</span> Show that <span class="process-math">\(\langle\ , \rangle\)</span> is an inner product in <span class="process-math">\(\mathbb{M}_{mn}\text{.}\)</span>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical">
+<div class="para">
+<a href="Section-Inner-Product-Spaces.html#prop-inner-prod-1" class="xref" data-knowl="./knowl/xref/prop-inner-prod-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a> is clear. Since <span class="process-math">\(\mbox{tr}(P) = \mbox{tr}(P^{T})\)</span> for every square matrix <span class="process-math">\(P\text{,}\)</span> we have <a href="Section-Inner-Product-Spaces.html#prop-inner-prod-2" class="xref" data-knowl="./knowl/xref/prop-inner-prod-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-inner-prod-1.html ./knowl/xref/prop-inner-prod-2.html ./knowl/xref/prop-inner-prod-3.html ./knowl/xref/prop-inner-prod-4.html ./knowl/xref/ex-10-1-19.html ./knowl/xref/prop-inner-prod-5.html ./knowl/xref/prop-inner-prod-5.html">
+\begin{equation*}
+\langle A, B \rangle = \mbox{tr}(AB^T) = \mbox{tr}[(AB^T)^T] = \mbox{tr}(BA^T) = \langle B, A \rangle
+\end{equation*}
+</div>
+<div class="para">Next, Property <a href="Section-Inner-Product-Spaces.html#prop-inner-prod-3" class="xref" data-knowl="./knowl/xref/prop-inner-prod-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a> and Property <a href="Section-Inner-Product-Spaces.html#prop-inner-prod-4" class="xref" data-knowl="./knowl/xref/prop-inner-prod-4.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 4">Item 4</a> follow because trace is a linear transformation <span class="process-math">\(\mathbb{M}_{mn} \to \R\)</span> (see <a href="Section-Inner-Product-Spaces.html#ex-10-1-19" class="xref" data-knowl="./knowl/xref/ex-10-1-19.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.4.2.23">Exercise 10.4.2.23</a>). Turning to <a href="Section-Inner-Product-Spaces.html#prop-inner-prod-5" class="xref" data-knowl="./knowl/xref/prop-inner-prod-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 5">Item 5</a>, let <span class="process-math">\(\mathbf{r}_{1}, \mathbf{r}_{2}, \dots, \mathbf{r}_{m}\)</span> denote the rows of the matrix <span class="process-math">\(A\text{.}\)</span> Then the <span class="process-math">\((i, j)\)</span>-entry of <span class="process-math">\(AA^{T}\)</span> is <span class="process-math">\(\mathbf{r}_{i} \cdot \mathbf{r}_{j}\text{,}\)</span> so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-inner-prod-1.html ./knowl/xref/prop-inner-prod-2.html ./knowl/xref/prop-inner-prod-3.html ./knowl/xref/prop-inner-prod-4.html ./knowl/xref/ex-10-1-19.html ./knowl/xref/prop-inner-prod-5.html ./knowl/xref/prop-inner-prod-5.html">
+\begin{equation*}
+\langle A, A \rangle = \mbox{tr}(AA^T) =
+\mathbf{r}_1 \cdot \mathbf{r}_1 +
+\mathbf{r}_2 \cdot \mathbf{r}_2 + \dots +
+\mathbf{r}_m \cdot \mathbf{r}_m.
+\end{equation*}
+</div>
+<div class="para">But <span class="process-math">\(\mathbf{r}_{j} \cdot \mathbf{r}_{j}\)</span> is the sum of the squares of the entries of <span class="process-math">\(\mathbf{r}_{j}\text{,}\)</span> so this shows that <span class="process-math">\(\langle A, A\rangle\)</span> is the sum of the squares of all <span class="process-math">\(nm\)</span> entries of <span class="process-math">\(A\text{.}\)</span> Therefore, <a href="Section-Inner-Product-Spaces.html#prop-inner-prod-5" class="xref" data-knowl="./knowl/xref/prop-inner-prod-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 5">Item 5</a> follows.</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="Section-Inner-Product-Spaces.html#exa-030310">in-context</a></span>
+</body>
+</html>

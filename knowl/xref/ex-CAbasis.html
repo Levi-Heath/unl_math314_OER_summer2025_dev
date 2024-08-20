@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.1.28</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Consider the subset</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-centralizerofA.html">
+\begin{equation*}
+C_A = \lbrace X \in\mathbb{M}_{2,2} : AX = XA \rbrace.
+\end{equation*}
+</div>
+<div class="para">of <span class="process-math">\(\mathbb{M}_{2,2}\text{.}\)</span> It was shown in <a href="Section-Abstract-Vector-Spaces.html#ex-centralizerofA" class="xref" data-knowl="./knowl/xref/ex-centralizerofA.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 10.1.13">Example 10.1.13</a> of  that <span class="process-math">\(C_A\)</span> is a subspace for any choice of the matrix <span class="process-math">\(A\text{.}\)</span> Let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-centralizerofA.html">
+\begin{equation*}
+A = 
+\begin{bmatrix}
+1 \amp  1 \\
+0 \amp  0
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Show that <span class="process-math">\(\mbox{dim}(C_A) = 2\)</span> and find a basis of <span class="process-math">\(C_A\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical">
+<div class="para">Suppose</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-CABlinind.html">
+\begin{equation*}
+X = 
+\begin{bmatrix}
+a \amp  b \\
+c \amp  d
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">is in <span class="process-math">\(C_A\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-CABlinind.html">
+\begin{equation*}
+\begin{bmatrix}1\amp 1\\0\amp 0\end{bmatrix}\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}=\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\begin{bmatrix}1\amp 1\\0\amp 0\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-CABlinind.html">
+\begin{equation*}
+\begin{bmatrix}a+c\amp b+d\\0\amp 0\end{bmatrix}=\begin{bmatrix}a\amp a\\c\amp c\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">This gives us two relationships:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-CABlinind.html">
+\begin{equation*}
+b+d=a\quad\text{and}\quad c=0.
+\end{equation*}
+</div>
+<div class="para">We can now express a generic element <span class="process-math">\(X\)</span> of <span class="process-math">\(C_A\)</span> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-CABlinind.html">
+\begin{align*}
+X=\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix} \amp = \begin{bmatrix}b+d\amp b\\0\amp d\end{bmatrix}  \\
+\amp =\begin{bmatrix}b\amp b\\0\amp 0\end{bmatrix}+\begin{bmatrix}d\amp 0\\0\amp d\end{bmatrix}  \\
+\amp =b\begin{bmatrix}1\amp 1\\0\amp 0\end{bmatrix}+d\begin{bmatrix}1\amp 0\\0\amp 1\end{bmatrix}. 
+\end{align*}
+</div>
+<div class="para">Let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-CABlinind.html">
+\begin{equation*}
+\mathcal{B}=\left \lbrace \begin{bmatrix}1\amp 1\\0\amp 0\end{bmatrix},\begin{bmatrix}1\amp 0\\0\amp 1\end{bmatrix}\right \rbrace.
+\end{equation*}
+</div>
+<div class="para">The set <span class="process-math">\(\mathcal{B}\)</span> is linearly independent (see <a href="Section-Abstract-Vector-Spaces.html#prob-CABlinind" class="xref" data-knowl="./knowl/xref/prob-CABlinind.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.1.9.15">Exercise 10.1.9.15</a>) Every element <span class="process-math">\(X\)</span> of <span class="process-math">\(C_A\)</span> can be written as a linear combination of elements of <span class="process-math">\(\mathcal{B}\text{.}\)</span>  Thus <span class="process-math">\(C_A=\mbox{span}\mathcal{B}\text{.}\)</span> Therefore <span class="process-math">\(\mathcal{B}\)</span> is a basis of <span class="process-math">\(C_A\text{,}\)</span> and <span class="process-math">\(\mbox{dim}(C_A) = 2\text{.}\)</span>
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="Section-Abstract-Vector-Spaces.html#ex-CAbasis">in-context</a></span>
+</body>
+</html>

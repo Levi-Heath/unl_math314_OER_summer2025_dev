@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.1.37</span><span class="period">.</span>
+</h4>
+<div class="para">Show that the set <span class="process-math">\(\mathcal{B}=\{x, 1+x, x+x^2\}\)</span> is a basis for <span class="process-math">\(\mathbb{P}^2\text{.}\)</span> Keep the order of elements in <span class="process-math">\(\mathcal{B}\)</span> and find the coordinate vector for <span class="process-math">\(p(x)=4-x+3x^2\)</span> with respect to the ordered basis <span class="process-math">\(\mathcal{B}\text{.}\)</span>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical">
+<div class="para">We will begin by showing that the elements of <span class="process-math">\(\mathcal{B}\)</span> are linearly independent.  Suppose</div>
+<div class="displaymath process-math">
+\begin{equation*}
+ax+b(1+x)+c(x+x^2)=0.
+\end{equation*}
+</div>
+<div class="para">Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b+(a+b+c)x+cx^2=0.
+\end{equation*}
+</div>
+<div class="para">This gives us the following system of equations:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccccc}
+\amp  \amp b\amp \amp \amp =\amp 0 
+a \amp  +\amp b\amp +\amp c\amp = \amp 0 
+\amp  \amp \amp \amp c\amp =\amp 0 
+\end{array}  
+\end{equation*}
+</div>
+<div class="para">The solution <span class="process-math">\(a=b=c=0\)</span> is unique.  We conclude that <span class="process-math">\(\mathcal{B}\)</span> is linearly independent.</div>
+</div> <div class="para logical">
+<div class="para">Next, we need to show that <span class="process-math">\(\mathcal{B}\)</span> spans <span class="process-math">\(\mathbb{P}^2\text{.}\)</span>  To this end, we will consider a generic element <span class="process-math">\(p(x)=\alpha+\beta x+\gamma x^2\)</span> of <span class="process-math">\(\mathbb{P}^2\)</span> and attempt to express it as a linear combination of the elements of <span class="process-math">\(\mathcal{B}\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+ax+b(1+x)+c(x+x^2)=\alpha+\beta x+\gamma x^2.
+\end{equation*}
+</div>
+<div class="para">then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b+(a+b+c)x+cx^2=\alpha+\beta x+\gamma x^2. 
+\end{equation*}
+</div>
+<div class="para">Setting the coefficients of like terms equal to each other gives us</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccccc}
+\amp  \amp b\amp \amp \amp =\amp \alpha\\
+a \amp  +\amp b\amp +\amp c\amp = \amp \beta \\
+\amp  \amp \amp \amp c\amp =\amp \gamma
+\end{array}
+\end{equation*}
+</div>
+<div class="para">Solving this linear system of <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\)</span> and <span class="process-math">\(c\)</span> gives us</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a=\beta-\alpha-\gamma,\quad b=\alpha,\quad c=\gamma .
+\end{equation*}
+</div>
+<div class="para">(You should verify this.)  This shows that every element of <span class="process-math">\(\mathbb{P}^2\)</span> can be written as a linear combination of elements of <span class="process-math">\(\mathcal{B}\text{.}\)</span>  Therefore <span class="process-math">\(\mathcal{B}\)</span> is a basis for <span class="process-math">\(\mathbb{P}^2\text{.}\)</span> To find the coordinate vector for <span class="process-math">\(p(x)=4-x+3x^2\)</span> with respect to <span class="process-math">\(\mathcal{B}\)</span> we need to express <span class="process-math">\(p(x)\)</span> as a linear combination of the elements of <span class="process-math">\(\mathcal{B}\text{.}\)</span>  Fortunately, we have already done all the necessary work.  For <span class="process-math">\(p(x)\text{,}\)</span> <span class="process-math">\(\alpha=4\text{,}\)</span> <span class="process-math">\(\beta=-1\)</span> and <span class="process-math">\(\gamma=3\text{.}\)</span>  This gives us the coefficients of the linear combination: <span class="process-math">\(a=\beta-\alpha-\gamma=-8\text{,}\)</span> <span class="process-math">\(b=\alpha=4\text{,}\)</span> <span class="process-math">\(c=\gamma=3\text{.}\)</span>  We now write <span class="process-math">\(p(x)\)</span> as a linear combination</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p(x)=-8(x)+4(1+x)+3(x+x^2)
+\end{equation*}
+</div>
+<div class="para">The coordinate vector for <span class="process-math">\(p(x)\)</span> with respect to <span class="process-math">\(\mathcal{B}\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[p(x)]_{\mathcal{B}}=\begin{bmatrix}-8\\4\\3\end{bmatrix}
+\end{equation*}
+</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="Section-Abstract-Vector-Spaces.html#ex-coordvectorinpolyvectspace2">in-context</a></span>
+</body>
+</html>

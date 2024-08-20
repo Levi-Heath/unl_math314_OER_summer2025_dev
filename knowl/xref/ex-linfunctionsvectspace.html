@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.1.3</span><span class="period">.</span>
+</h4>
+<div class="para">Consider the set <span class="process-math">\(\mathbb{L}\)</span> of all linear functions.  This set includes all polynomials of degree <span class="process-math">\(1\)</span> and degree <span class="process-math">\(0\text{.}\)</span>  We will use addition and scalar multiplication of polynomials as the two operations, and show that <span class="process-math">\(\mathbb{L}\)</span> is closed under those operations and satisfies eight properties analogous to those of vectors of <span class="process-math">\(\R^n\text{.}\)</span>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical">
+<div class="para">Elements of <span class="process-math">\(\mathbb{L}\)</span> are functions <span class="process-math">\(f\)</span> given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=mx+b.
+\end{equation*}
+</div>
+<div class="para">(Note that <span class="process-math">\(m\)</span> and <span class="process-math">\(b\)</span> can be equal to zero.)</div>
+</div> <div class="para logical">
+<div class="para">Given <span class="process-math">\(f_1\)</span> and <span class="process-math">\(f_2\)</span> in <span class="process-math">\(\mathbb{L}\text{,}\)</span> it is easy to verify that <span class="process-math">\(f_1+f_2\)</span> is also in <span class="process-math">\(\mathbb{L}\text{.}\)</span>  This gives us closure under function addition. For any scalar <span class="process-math">\(k\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+kf(x)=k(mx+b)=(km)x+(kb).
+\end{equation*}
+</div>
+<div class="para">Therefore <span class="process-math">\(kf\)</span> is in <span class="process-math">\(\mathbb{L}\text{,}\)</span> and <span class="process-math">\(\mathbb{L}\)</span> is closed under scalar multiplication. We now proceed to formulate eight properties analogous to those of vectors of <span class="process-math">\(\R^n\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(f_1\text{,}\)</span> <span class="process-math">\(f_2\)</span> and <span class="process-math">\(f_3\)</span> be elements of <span class="process-math">\(\mathbb{L}\)</span> given by <span class="process-math">\(f_1(x)=m_1 x + b_1\text{,}\)</span> <span class="process-math">\(f_2(x)=m_2 x + b_2\text{,}\)</span> and <span class="process-math">\(f_3(x)=m_3 x + b_3\text{.}\)</span> Let <span class="process-math">\(k\)</span> and <span class="process-math">\(p\)</span> be scalars.</div>
+<ol class="decimal">
+<li>
+<div class="para">Commutative Property of Addition: <span class="process-math">\(f_1+f_2=f_2+f_1.\)</span>
+</div>
+<div class="para logical">
+<div class="para">This property holds because</div>
+<div class="displaymath process-math">
+\begin{align*}
+f_1(x) + f_2(x) \amp = (m_1 x + b_1) + (m_2 x + b_2) \\
+\amp = (m_2 x + b_2) + (m_1 x + b_1) \\
+\amp = f_2(x) + f_1(x).  
+\end{align*}
+</div>
+</div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">Associative property of Addition:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(f_1 + f_2) + f_3 = f_1 + (f_2 + f_3).
+\end{equation*}
+</div>
+</div>
+<div class="para">This property is easy to verify and is left to the reader.</div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">Existence of additive identity:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_1 + f_0 = f_1
+\end{equation*}
+</div>
+</div>
+<div class="para">The additive identity <span class="process-math">\(f_0\)</span> is given by <span class="process-math">\(f_0(x)=0\text{.}\)</span>  Note that <span class="process-math">\(f_0\)</span> is a vector in the space <span class="process-math">\(\mathbb{L}\text{.}\)</span>
+</div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">Existence of additive inverse:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_1 + (-f_1) = f_0.
+\end{equation*}
+</div>
+</div>
+<div class="para">The additive inverse of <span class="process-math">\(f_1\)</span> is a function <span class="process-math">\(-f_1\)</span> given by <span class="process-math">\(-f_1(x)=-mx+(-b)\text{.}\)</span>    Note that <span class="process-math">\(-f_1\)</span> is in <span class="process-math">\(\mathbb{L}\text{.}\)</span>
+</div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">Distributive Property over Vector Addition:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+k(f_1+f_2)=kf_1+kf_2.
+\end{equation*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">This property holds because</div>
+<div class="displaymath process-math">
+\begin{align*}
+k(f_1(x) + f_2(x)) \amp = k((m_1 x + b_1) + (m_2 x + b_2)) \\
+\amp = k(m_1 x + b_1) + k(m_2 x + b_2) \\
+\amp = k f_1(x) + k f_2(x). 
+\end{align*}
+</div>
+</div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">Distributive property over scalar addition:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(k+p)f_1=kf_1+pf_1.
+\end{equation*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">This property holds because</div>
+<div class="displaymath process-math">
+\begin{align*}
+(k+p)f_1(x)\amp = (k+p)(m_1 x + b_1) \\
+\amp =k(m_1 x + b_1) + p(m_1 x + b_1) \\
+\amp = k f_1(x) + p f_1(x). 
+\end{align*}
+</div>
+</div>
+</li>
+<li>
+<div class="para">Associative property for scalar multiplication: <span class="process-math">\((k(pf_1))=(kp)f_1.\)</span>
+</div>
+<div class="para logical">
+<div class="para">This property holds because</div>
+<div class="displaymath process-math">
+\begin{align*}
+k(p(f_1(x)))\amp =k(p(m_1 x + b_1)) \\
+\amp =k(p m_1 x +p b_1)  \\
+\amp =kp m_1 x +kp b_1  \\
+\amp = (kp) m_1 x + (kp) b_1 \\
+\amp = (kp)(m_1 x + b_1)  \\
+\amp =(kp)f_1(x). 
+\end{align*}
+</div>
+</div>
+</li>
+<li>
+<div class="para">Multiplication by <span class="process-math">\(1\)</span>
+</div>
+<div class="para logical">
+<div class="para">This follows from</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1 f_1=f_1.
+\end{equation*}
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="Section-Abstract-Vector-Spaces.html#ex-linfunctionsvectspace">in-context</a></span>
+</body>
+</html>

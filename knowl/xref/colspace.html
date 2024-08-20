@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="algorithm theorem-like"><h4 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">5.3.9</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Given a matrix <span class="process-math">\(B\text{,}\)</span> a basis for <span class="process-math">\(\mbox{col}(B)\)</span> can be found as follows:</div>
+<ol class="decimal">
+<li><div class="para">Find <span class="process-math">\(\mbox{rref}(B)\)</span> (or any row-echelon form <span class="process-math">\(B'\)</span> of <span class="process-math">\(B\text{.}\)</span>)</div></li>
+<li><div class="para">Identify the pivot columns of <span class="process-math">\(\mbox{rref}(B)\)</span> (or <span class="process-math">\(B'\)</span>).</div></li>
+<li><div class="para">The columns of <span class="process-math">\(B\)</span> corresponding to the pivot columns of <span class="process-math">\(\mbox{rref}(B)\)</span> (or <span class="process-math">\(B'\)</span>) form a basis for <span class="process-math">\(\mbox{col}(B)\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(\mathbf{b}_1,\ldots ,\mathbf{b}_n\)</span> be the columns of <span class="process-math">\(B\text{,}\)</span> and let <span class="process-math">\(\mathbf{b}'_1,\ldots ,\mathbf{b}'_n\)</span> be the columns of <span class="process-math">\(\mbox{rref}(B)\)</span> (or <span class="process-math">\(B'\)</span>). Observe that the equations</div>
+<div class="displaymath process-math">
+\begin{equation}
+a_1\mathbf{b}_1+\ldots +a_n\mathbf{b}_n=\mathbf{0}\tag{5.3.4}
+\end{equation}
+</div>
+<div class="displaymath process-math">
+\begin{equation}
+a_1\mathbf{b}'_1+\ldots +a_n\mathbf{b}'_n=\mathbf{0}\tag{5.3.5}
+\end{equation}
+</div>
+<div class="para">have the same solution set.  This means that any non-trivial relation among the columns of <span class="process-math">\(\mbox{rref}(B)\)</span> (or <span class="process-math">\(B'\)</span>) translates into a non-trivial relation among the columns of <span class="process-math">\(B\text{.}\)</span> Likewise, any collection of linearly independent columns of <span class="process-math">\(\mbox{rref}(B)\)</span> (or <span class="process-math">\(B'\)</span>) corresponds to linearly independent columns of <span class="process-math">\(B\text{.}\)</span>
+</div>
+</div> <div class="para">Now, the pivot columns of <span class="process-math">\(\mbox{rref}(B)\)</span> (or <span class="process-math">\(B'\)</span>) are linearly independent.  Therefore the corresponding columns of <span class="process-math">\(B\)</span> are linearly independent whereas non-pivot columns can be expressed as linear combinations of the pivot columns, therefore they contribute nothing to the span and can be removed from the spanning set.</div></article></details><span class="incontext"><a class="internal" href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#colspace">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.2</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">A man always eats lunch at one of two restaurants, <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> He never eats at <span class="process-math">\(A\)</span> twice in a row. However, if he eats at <span class="process-math">\(B\text{,}\)</span> he is three times as likely to eat at <span class="process-math">\(B\)</span> next time as at <span class="process-math">\(A\text{.}\)</span> Initially, he is equally likely to eat at either restaurant.</div>
+<ol class="decimal">
+<li><div class="para">What is the probability that he eats at <span class="process-math">\(A\)</span> on the third day after the initial one?</div></li>
+<li><div class="para">What proportion of his lunches does he eat at <span class="process-math">\(A\text{?}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical">
+<div class="para">The table of transition probabilities follows. The <span class="process-math">\(A\)</span> column indicates that if he eats at <span class="process-math">\(A\)</span> on one day, he never eats there again on the next day and so is certain to go to <span class="process-math">\(B\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{cc|c}
+\amp  \amp  \textbf{Present Lunch} \\  
+\amp   \amp   \begin{array}{cc} A \amp  B \end{array}  \\
+\hline
+\textbf{Next Lunch} \amp    \begin{array}{c} A\\ B\end{array} \amp  \begin{array}{cc} 0 \amp 0.25\\1 \amp  0.75 \end{array} 
+\end{array}
+\end{equation*}
+</div>
+<div class="para">The <span class="process-math">\(B\)</span> column shows that, if he eats at <span class="process-math">\(B\)</span> on one day, he will eat there on the next day <span class="process-math">\(\frac{3}{4}\)</span> of the time and switches to <span class="process-math">\(A\)</span> only <span class="process-math">\(\frac{1}{4}\)</span> of the time.</div>
+</div> <div class="para logical">
+<div class="para">The restaurant he visits on a given day is not determined. The most that we can expect is to know the probability that he will visit <span class="process-math">\(A\)</span> or <span class="process-math">\(B\)</span> on that day. Let <span class="process-math">\(_{m} = [
+s_{1}^{(m)} \\
+s_{2}^{(m)}
+]\)</span> denote the <em class="emphasis">state vector</em> for day <span class="process-math">\(m\text{.}\)</span> Here <span class="process-math">\(s_{1}^{(m)}\)</span> denotes the probability that he eats at <span class="process-math">\(A\)</span> on day <span class="process-math">\(m\text{,}\)</span> and <span class="process-math">\(s_{2}^{(m)}\)</span> is the probability that he eats at <span class="process-math">\(B\)</span> on day <span class="process-math">\(m\text{.}\)</span> It is convenient to let <span class="process-math">\(_{0}\)</span> correspond to the initial day. Because he is equally likely to eat at <span class="process-math">\(A\)</span> or <span class="process-math">\(B\)</span> on that initial day, <span class="process-math">\(s_{1}^{(0)} = 0.5\)</span> and <span class="process-math">\(s_{2}^{(0)} = 0.5\text{,}\)</span> so <span class="process-math">\(_{0} = [0.5,0.5].\)</span> Now let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P = \begin{bmatrix}
+0 \amp  0.25 \\
+1 \amp  0.75
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">denote the <em class="emphasis">transition matrix</em>. We claim that the relationship</div>
+<div class="displaymath process-math">
+\begin{equation*}
+_{m+1} = P_m
+\end{equation*}
+</div>
+<div class="para">holds for all integers <span class="process-math">\(m \geq 0\text{.}\)</span> This will be derived later; for now, we use it as follows to successively compute <span class="process-math">\(_{1}, _{2}, _{3}, \dots\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+_{1} \amp = P_0 = \begin{bmatrix}
+0 \amp  0.25 \\
+1 \amp  0.75
+\end{bmatrix}
+\begin{bmatrix}
+0.5 \\
+0.5
+\end{bmatrix} =
+\begin{bmatrix}
+0.125 \\
+0.875
+\end{bmatrix} \\
+_{2} \amp = P_1 =  \begin{bmatrix}
+0 \amp  0.25 \\
+1 \amp  0.75
+\end{bmatrix}
+\begin{bmatrix}
+0.125 \\
+0.875
+\end{bmatrix} =
+\begin{bmatrix}
+0.21875 \\
+0.78125
+\end{bmatrix} \\
+_{3} \amp = P_2 = \begin{bmatrix}
+0 \amp  0.25 \\
+1 \amp  0.75
+\end{bmatrix}
+\begin{bmatrix}
+0.21875 \\
+0.78125
+\end{bmatrix} =
+\begin{bmatrix}
+0.1953125 \\
+0.8046875
+\end{bmatrix}. 
+\end{align*}
+</div>
+<div class="para">Hence, the probability that his third lunch (after the initial one) is at <span class="process-math">\(A\)</span> is approximately <span class="process-math">\(0.195\text{,}\)</span> whereas the probability that it is at <span class="process-math">\(B\)</span> is <span class="process-math">\(0.805\text{.}\)</span> If we carry these calculations on, the next state vectors are (to five figures):</div>
+<div class="displaymath process-math">
+\begin{align*}
+_4 \amp = \begin{bmatrix}
+0.20117 \\
+0.79883
+\end{bmatrix}
+\quad _5 = \begin{bmatrix}
+0.19971 \\
+0.80029
+\end{bmatrix} \\
+_6 \amp = \begin{bmatrix}
+0.20007 \\
+0.79993
+\end{bmatrix} \quad _7 = \begin{bmatrix}
+0.19998 \\
+0.80002
+\end{bmatrix}. 
+\end{align*}
+</div>
+<div class="para">Moreover, as <span class="process-math">\(m\)</span> increases the entries of <em class="alert">s_{m}</em> get closer and closer to the corresponding entries of <span class="process-math">\([0.2, 0.8] \text{.}\)</span> Hence, in the long run, he eats <span class="process-math">\(20\%\)</span> of his lunches at <span class="process-math">\(A\)</span> and <span class="process-math">\(80\%\)</span> at <span class="process-math">\(B\text{.}\)</span>
+</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="Section-Application-to-Markov-Chains.html#ex-007199">in-context</a></span>
+</body>
+</html>
