@@ -170,7 +170,7 @@ Here is a hands down example:
     <p>
       Each pair of axes in <m>\R^3</m> determines a plane. The resulting three planes are called <term>coordinate planes</term>.  
       Each coordinate plane is named after the axes that determine it.  Thus, we have the <m>xy</m>-plane, <m>xz</m>-plane, and <m>yz</m>-plane.  
-      Coordinate planes intersect at the point <m>(0, 0, 0)</m>, called the <term>origin</term>>, and subdivide <m>\R^3</m> into eight regions, called <term>octants</term>.
+      Coordinate planes intersect at the point <m>(0, 0, 0)</m>, called the <term>origin</term>, and subdivide <m>\R^3</m> into eight regions, called <term>octants</term>.
     </p> 
 
     <image>
