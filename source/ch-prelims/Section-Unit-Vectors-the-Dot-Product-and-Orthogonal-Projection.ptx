@@ -251,6 +251,9 @@ The abstract proof can it everything seem a little odd. In practice, the actual 
             <li xml:id="item-norm"> 
               <p> <m>\norm{\mathbf{u}}^2=\mathbf{u}\cdot\mathbf{u}</m> </p>
             </li>
+            <li>
+              <p> <m> \mathbf{u} \cdot \mathbf{v} = 0 </m> and <m> \mathbf{u} \neq \mathbf{v} </m> if and only if <m>\mathbf{u}</m> and <m>\mathbf{v}</m> are orthogonal. </p>
+            </li>
           </ol>
         </p>
       </statement>

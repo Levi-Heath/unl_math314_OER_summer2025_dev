@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="Section-Dot-Product-and-Angle" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Dot Product and Angle</title>
+  <title>Extra Topic: Dot Product and Angle</title>
 
   <p>
     Given two vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m>, let <m>\theta</m> be the angle between them such that <m>0\leq\theta\leq \pi</m>.  

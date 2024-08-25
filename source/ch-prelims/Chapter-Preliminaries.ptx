@@ -65,7 +65,7 @@
   <xi:include href="Section-Introduction-to-Vectors.ptx"/>
   <xi:include href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.ptx"/>
   <xi:include href="Section-Lines-and-Planes.ptx"/>
-   <!-- The sections below are covered in Math 208 (Calculus 3 at UNL) and our not needed for future sections of the textbook. -->
-   <!--<xi:include href="Section-Dot-Product-and-Angle.ptx"/>-->
-   <!--<xi:include href="Section-Cross-Product-and-its-Properties.ptx"/>-->
+   <!-- The sections below are covered in Math 208 (Calculus 3 at UNL) and our not needed for future sections. -->
+    <xi:include href="Section-Dot-Product-and-Angle.ptx"/>
+    <xi:include href="Section-Cross-Product-and-its-Properties.ptx"/>
 </chapter>
