@@ -25,7 +25,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Introduction to Vectors",
-  "body": " Introduction to Vectors   A Brief Introduction to  The set of all real numbers is denoted by . It is convenient to associate real numbers with points on a line, called the real number line .   Image of the real number line.    The set of all ordered pairs , where and are real numbers, is called . Using set notation we write: Geometrically speaking, can be associated with a coordinate plane in which we refer to each point by its and coordinates.   Image of the real plane with coordinate axes x and y.    The set of all ordered triples , where , and are real numbers, is called . Geometrically, an ordered triple of is associated with a point of a three-dimensional space whose position is given by , and coordinates.   Image of the 3-dimensional real space with coordinate axes x, y, and z.    Here is a hands down example:   The following points are shown plotted in .                    Points plotted in 3-dimensional real space.     Each pair of axes in determines a plane. The resulting three planes are called coordinate planes . Each coordinate plane is named after the axes that determine it. Thus, we have the -plane, -plane, and -plane. Coordinate planes intersect at the point , called the origin >, and subdivide into eight regions, called octants .   Graphs of the 3 coordinate planes in 3-dimensional real space.    The set of all ordered -tuples , where is a real number for , is called . The point in is called the origin .   cannot be visualized for , but many familiar ideas, such as the distance formula, can be generalized to .    Distance in  In this section we will establish a formula for the distance between two points in . We begin by observing that the distance between two numbers (points) and on the number line is given by . (Why do we use the absolute value brackets?).  We can use the Pythagorean Theorem to establish the distance formula for points of .   Picture of two arbitrary points in the real plane and the corresponding triangle we use to determine the distance between them.    Let and be points in . By the Pythagorean Theorem we have  Why were we able to drop the absolute value brackets?  The distance formula for points in can also be derived using the Pythagorean Theorem. Let and be points of . Use the navigation bar in the following GeoGebra interactive to walk through the steps of the derivation of the distance formula.   Click the arrows at the bottom of the image to progress through the illustration of the distance formula in . A larger version of this activity is available here .      Let and be points in . The distance between and is given by     Observe the similarity of pattern in the distance formulas for , and . We will take advantage of this pattern to define the distance between two points of .    Let and be points in . The distance between and is given by       What is a Vector?  A scalar is a quantity that has size, often called magnitude, but no direction. For example, temperature, mass and speed are scalars. In this course, scalars will typically be real numbers, but we will also see complex numbers on a few occasions.  A vector has magnitude and direction. For example, velocity is a vector because it tells us how fast the object is traveling and also the direction of travel.  If an object is traveling along a number line, the direction of travel is given by the sign of its velocity (positive or negative), while the speed is given by the absolute value of the velocity. If the object is traveling in a plane or in space, direction of travel can be described by an arrow, while the speed can be represented by the length of the arrow. Graphically speaking, vectors in and look like this:    Vector in the real plane.     Vector in 3-dimensional real space.     A vector can be denoted by a lower-case letter with an arrow over the top (like this: ), or a bold lower-case letter (like this: ).  The magnitude, or length, of a vector is denoted by double absolute value brackets. For example, the magnitude of , is denoted by . A vector of zero length and no direction is called the zero vector. We denote the zero vector by or . Going forward, we will use the terms magnitude of a vector and length of a vector interchangeably.  Sometimes it is convenient to refer to a vector by naming the endpoints of the arrow. In the figure below, point is the tail , and point is the head of the vector.   Vector starting at a point A and ending at a point B.    We refer to this vector as .    Vectors in Standard Position  Vectors that point in the same direction and have the same length are said to be equivalent . For example, vectors , and in the figure below are equivalent. We write .   Three equal vectors in the real plane with different starting points and ending points.    For the purpose of developing standard, convenient notation, we observe that every vector is equivalent to some vector whose tail is at the origin. Vectors with tails at the origin are said to be in standard position . We will refer to each vector in standard position by the coordinates of its head. For example, a vector in standard position whose head is located at the point will be referred to as .   The vectors w, v, u, and their corresponding vector in standard position.    Vectors and in the figure are equivalent to vector . We write . Number is called the first component of the vector (or the -component) while number is the second component (or the -component). The form is called the component form .  Vector is an example of a column vector . Occasionally, we will find that representing this vector as a row vector  is more convenient.  Column (or row) representation of vectors in component form allows us to go beyond the physical and geometric definition, and think of vectors more abstractly as arrays of numbers.  Our next goal is to find a process for writing any vector in the coordinate plane in component form.   Consider vector shown below. We will express in component form.   The vector v in the real plane.    Note that the vector has a ``run\" of and a ``rise\" of . If we construct a vector with tail at the origin, a ``run\" of and a ``rise\" of , we will have a vector in standard position equivalent to vector .   The vector v in the real plane plotted in its original and standard positions.    The component form for the vector we constructed is . This gives us .   The approach we used in is applicable to specific vectors that can easily be visualized. What we need now is an algebraic approach that can be generalized to higher dimensions and more abstract situations.  Let's return to vector of . Suppose we were to slide vector into standard position. Consider what would happen to the tail of as we do so.      What happens to the tail of the vector has to happen to the head      We subtracted from the -coordinate and added to the -coordinate of the tail. To find the new location of the head we subtract from the -coordinate of the head, and add to the -coordinate of the head. This gives us . So, the new location of the head is , and .  If you look back at what we did you will find that the components of were computed by subtracting the coordinates of the tail from the coordinates of the head The following diagram summarizes and generalizes our findings.      Let be a vector in , with tail at point and head at point . As we slide into standard position by moving point to the origin, point travels along with point by undergoing the same horizontal and vertical shifts. We now have an equivalent vector in standard position. The diagram suggests the following formula.   Head - Tail Formula in   Suppose a vector's tail is at point and the vector's head is at , then       Vectors in  Definitions of standard position and component form for vectors in are analogous to their counterparts for vectors in . For example, vector in the figure below, is in standard position and can be written in component form as .      If a vector is not in standard position but the location of its head and tail are known, a three-dimensional version of the ``Head - Tail\" formula can be used to express the vector in component form.   Head - Tail Formula in   Suppose a vector's tail is at point and the vector's head is at , then       Vectors in  We cannot see for , but we can conceptualize it by generalizing what we know about and . A vector in standard position whose head is located at can be written in component form as .  Recall that we defined the zero vector as a vector that has length and no direction. In component form, the zero vector is a vector all of whose components are .  We conclude this section by stating the generalized ``Head - Tail\" formula.   Head - Tail Formula in   Suppose a vector's tail is at point and the vector's head is at , then       Length of a Vector  Vector quantities, such as velocity and force, have magnitude and direction. The magnitude of a vector quantity is the length of the vector. For example, if a force of 10 Newtons is applied to an object, we would represent the force by a 10-unit-long vector.      The magnitude of a vector is denoted by double absolute value brackets. In the case of force , we write To find the length of a vector, we need to find the distance between the tail of the vector and its head. Recall that in , the distance between and is given by A vector has the length of the vector in standard position with its head at and tail at . We find the length of using the distance formula    Find the magnitude of .   The vector u.        The distance formula for points in is analogous to the distance formula in . Given two points and , the distance between them is given by To find the length of vector , we find the distance between and .   Let us try these new formulas out:   The magnitude of is given by    Distance formulas for and motivate the following definition of distance between two points in .    Let and be points in . The distance between and is defined to be     The following definition follows directly from the distance formula for in the same way that expressions ( and followed from distance formulas in and .    Let be a vector in , then the length , or the magnitude , of is given by     To get acquianted with the new concepts, we provide a concrete example to showcase them.   The magnitude of is given by      Geometry of Scalar Multiplication  The product of vector with a positive scalar , is a vector that points in the same direction as , and whose length is equal to the length of multiplied by . For example, the figure below shows vectors and . The vectors point in the same direction but the magnitude of is twice the magnitude of .   Vectors u and 2u.    If a vector is multiplied by , the resulting vector is denoted by . It has the same length as vector , but points in the opposite direction.        Algebra of Scalar Multiplication  We know what scalar multiplication accomplishes geometrically. Our goal now is to translate this idea to an algebraic operation.   Consider vector . We will find an algebraic approach for multiplying by .      Consider to be the hypotenuse of a right triangle.      The head of should be the midpoint of the hypotenuse.      From our study of similar triangles in geometry, we know that if we drop perpendiculars from the midpoint of the hypotenuse to the two legs of the triangle, the perpendiculars will bisect the legs.      This tells us that to find and components of we must multiply each component of by .     Consider vector . It is clear that multiplying the components of by reverses the direction of while preserving its magnitude.        and give rise to the following definition of scalar multiplication.    Let be a vector in , and let be a scalar, then     If ( ), then , and we say that and are scalar multiples of each other .    Geometry of Vector Addition  There are two ways to add vectors geometrically.   Head-to-Tail Addition Method  Given vectors and , we can find the sum by sliding so as to place its tail at the head of vector . The vector connecting the tail of with the head of is the sum , as shown in the figure below.            This sum can be interpreted as the total displacement that occurs when traveling along the two vectors starting at the tail of and finishing at the head of .  Note that if we place the tail of at the head of instead, the sum vector will be the same as . Thus, addition of vectors is commutative.    Parallelogram Addition Method  Most of the time we deal with vectors in standard position. So all vector tails are located at the origin. This motivates the parallelogram method for adding vectors.  Observe that if we slide vectors and so that their tails are together, the two vectors determine a parallelogram.      Opposite sides of a parallelogram are congruent and parallel.      Applying the ``head-to-tail\" addition method shows that the sum is the diagonal of the parallelogram determined by and .         Algebra of Vector Addition  We now know how to add vectors geometrically. Our next goal is to translate this idea to an algebraic operation.   In this problem we will find the sum of and .      To use head-to-tail addition method, or to construct the side of a parallelogram opposite of , we want to slide so that its tail is at the point . Observe that has a ``run\" of and a ``rise\" of . If we start at , go over then up , we will land on .      The sum is shown below.      We see that the components of can be found by adding the components of and .     motivates the following definition.    Let and be vectors in . We define by       Geometry of Vector Addition in  Vectors in , , and have the advantage in that we can gain insight into their behavior through visualization. Vectors in and are the easiest to visualize. Vectors in are a little trickier. The following exploration will help you visualize addition of vectors in .   Adding two vectors amounts to finding the diagonal of a parallelogram determined by placing the two vectors tail to tail. This process is not limited to vectors of . Use the following GeoGebra interactive to add multiple vectors in , two vectors at a time, by constructing diagonals of parallelograms. To use the interactive   Define vectors , and .    Use check-boxes at the bottom of the right panel to display the parallelograms.    RIGHT-CLICK and DRAG the left panel to rotate the graph.      A larger version of this activity is available here .    The sum of two vectors can be visualized as the diagonal of a parallelogram. The sum of three (non-co-planar) vectors is the diagonal of a three-dimensional counterpart of a parallelogram, called a \\emph{parallelepiped}. Each face of the parallelepiped is a parallelogram determined by two out of the three given vectors. The following GeoGebra exercise will help you visualize the sum of three vectors as the diagonal of a parallelepiped.  Define vectors , and . The sum is the diagonal of the parallelepiped. RIGHT-CLICK and DRAG the left panel to rotate the graph.   A larger version of this activity is available here .       Vector Subtraction  We can find the difference of two vectors by interpreting subtraction as ``addition of the opposite\". Thus, Vector subtraction has an interesting geometric interpretation. As shown in the figure below, if is a diagonal of the parallelogram determined by and , the difference is the other diagonal of the same parallelogram.              Properties of Vector Addition and Scalar Multiplication    The following properties hold for vectors , and in and scalars and in .   Commutative Property of Addition     Associative Property of Addition     Existence of Additive Identity: There exists a vector such that     Existence of Additive Inverse: For every vector , there exists a vector such that     Distributive Property over Vector Addition     Distributive Property over Scalar Addition     Associative Property for Scalar Multiplication     Multiplication by 1        We will prove and . Proofs of the remaining properties are left to the reader.  For any vector in , let Then .  Now to prove :         Find the coordinates of each point.   Points P, Q, and R plotted in 3-dimensional real space.            Find the coordinates of each point. RIGHT-CLICK and DRAG to rotate the image.   A larger version of this activity is available here .             Find the distance between and .        Consider the equation What can be said about all points that satisfy this equation?     Such points are equidistant from the origin.      Such points form a four-dimensional sphere of radius .      Such points are located 5 units from the origin.      All of the above.       Sketch each pair of vectors described below. Express each vector in component form.    Vector has a tail at and a head at . Vector has a tail at and a head at .        Vector has a tail at and a head at . Vector has a tail at and a head at .         Express vector shown in the figure in component form if the magnitude (length) of is .            Let , and . Find point such that .         Find the length of the following vectors.                                         Find the component form of vector in if we know that , the component of is and the vector is located in the third quadrant.        For a vector in with a length of 26 and the component of 10, what are the possibilities for the component?        Let . Find all possible values of if .        For a vector in , what are the possibilities for the fourth component if the length of the vector is 14, and the , and components are 1, 5 and 13, respectively?        The points , and form a triangle in . Is it a right triangle?   Does the Pythagorean Theorem hold?    The figure below shows vectors and . Sketch each of the following in the same coordinate plane.                                 Let Find the following:             The additive inverse of .         Prove - of .    Prove - of .    "
+  "body": " Introduction to Vectors   A Brief Introduction to  The set of all real numbers is denoted by . It is convenient to associate real numbers with points on a line, called the real number line .   Image of the real number line.    The set of all ordered pairs , where and are real numbers, is called . Using set notation we write: Geometrically speaking, can be associated with a coordinate plane in which we refer to each point by its and coordinates.   Image of the real plane with coordinate axes x and y.    The set of all ordered triples , where , and are real numbers, is called . Geometrically, an ordered triple of is associated with a point of a three-dimensional space whose position is given by , and coordinates.   Image of the 3-dimensional real space with coordinate axes x, y, and z.    Here is a hands down example:   The following points are shown plotted in .                    Points plotted in 3-dimensional real space.     Each pair of axes in determines a plane. The resulting three planes are called coordinate planes . Each coordinate plane is named after the axes that determine it. Thus, we have the -plane, -plane, and -plane. Coordinate planes intersect at the point , called the origin , and subdivide into eight regions, called octants .   Graphs of the 3 coordinate planes in 3-dimensional real space.    The set of all ordered -tuples , where is a real number for , is called . The point in is called the origin .   cannot be visualized for , but many familiar ideas, such as the distance formula, can be generalized to .    Distance in  In this section we will establish a formula for the distance between two points in . We begin by observing that the distance between two numbers (points) and on the number line is given by . (Why do we use the absolute value brackets?).  We can use the Pythagorean Theorem to establish the distance formula for points of .   Picture of two arbitrary points in the real plane and the corresponding triangle we use to determine the distance between them.    Let and be points in . By the Pythagorean Theorem we have  Why were we able to drop the absolute value brackets?  The distance formula for points in can also be derived using the Pythagorean Theorem. Let and be points of . Use the navigation bar in the following GeoGebra interactive to walk through the steps of the derivation of the distance formula.   Click the arrows at the bottom of the image to progress through the illustration of the distance formula in . A larger version of this activity is available here .      Let and be points in . The distance between and is given by     Observe the similarity of pattern in the distance formulas for , and . We will take advantage of this pattern to define the distance between two points of .    Let and be points in . The distance between and is given by       What is a Vector?  A scalar is a quantity that has size, often called magnitude, but no direction. For example, temperature, mass and speed are scalars. In this course, scalars will typically be real numbers, but we will also see complex numbers on a few occasions.  A vector has magnitude and direction. For example, velocity is a vector because it tells us how fast the object is traveling and also the direction of travel.  If an object is traveling along a number line, the direction of travel is given by the sign of its velocity (positive or negative), while the speed is given by the absolute value of the velocity. If the object is traveling in a plane or in space, direction of travel can be described by an arrow, while the speed can be represented by the length of the arrow. Graphically speaking, vectors in and look like this:    Vector in the real plane.     Vector in 3-dimensional real space.     A vector can be denoted by a lower-case letter with an arrow over the top (like this: ), or a bold lower-case letter (like this: ).  The magnitude, or length, of a vector is denoted by double absolute value brackets. For example, the magnitude of , is denoted by . A vector of zero length and no direction is called the zero vector. We denote the zero vector by or . Going forward, we will use the terms magnitude of a vector and length of a vector interchangeably.  Sometimes it is convenient to refer to a vector by naming the endpoints of the arrow. In the figure below, point is the tail , and point is the head of the vector.   Vector starting at a point A and ending at a point B.    We refer to this vector as .    Vectors in Standard Position  Vectors that point in the same direction and have the same length are said to be equivalent . For example, vectors , and in the figure below are equivalent. We write .   Three equal vectors in the real plane with different starting points and ending points.    For the purpose of developing standard, convenient notation, we observe that every vector is equivalent to some vector whose tail is at the origin. Vectors with tails at the origin are said to be in standard position . We will refer to each vector in standard position by the coordinates of its head. For example, a vector in standard position whose head is located at the point will be referred to as .   The vectors w, v, u, and their corresponding vector in standard position.    Vectors and in the figure are equivalent to vector . We write . Number is called the first component of the vector (or the -component) while number is the second component (or the -component). The form is called the component form .  Vector is an example of a column vector . Occasionally, we will find that representing this vector as a row vector  is more convenient.  Column (or row) representation of vectors in component form allows us to go beyond the physical and geometric definition, and think of vectors more abstractly as arrays of numbers.  Our next goal is to find a process for writing any vector in the coordinate plane in component form.   Consider vector shown below. We will express in component form.   The vector v in the real plane.    Note that the vector has a ``run\" of and a ``rise\" of . If we construct a vector with tail at the origin, a ``run\" of and a ``rise\" of , we will have a vector in standard position equivalent to vector .   The vector v in the real plane plotted in its original and standard positions.    The component form for the vector we constructed is . This gives us .   The approach we used in is applicable to specific vectors that can easily be visualized. What we need now is an algebraic approach that can be generalized to higher dimensions and more abstract situations.  Let's return to vector of . Suppose we were to slide vector into standard position. Consider what would happen to the tail of as we do so.      What happens to the tail of the vector has to happen to the head      We subtracted from the -coordinate and added to the -coordinate of the tail. To find the new location of the head we subtract from the -coordinate of the head, and add to the -coordinate of the head. This gives us . So, the new location of the head is , and .  If you look back at what we did you will find that the components of were computed by subtracting the coordinates of the tail from the coordinates of the head The following diagram summarizes and generalizes our findings.      Let be a vector in , with tail at point and head at point . As we slide into standard position by moving point to the origin, point travels along with point by undergoing the same horizontal and vertical shifts. We now have an equivalent vector in standard position. The diagram suggests the following formula.   Head - Tail Formula in   Suppose a vector's tail is at point and the vector's head is at , then       Vectors in  Definitions of standard position and component form for vectors in are analogous to their counterparts for vectors in . For example, vector in the figure below, is in standard position and can be written in component form as .      If a vector is not in standard position but the location of its head and tail are known, a three-dimensional version of the ``Head - Tail\" formula can be used to express the vector in component form.   Head - Tail Formula in   Suppose a vector's tail is at point and the vector's head is at , then       Vectors in  We cannot see for , but we can conceptualize it by generalizing what we know about and . A vector in standard position whose head is located at can be written in component form as .  Recall that we defined the zero vector as a vector that has length and no direction. In component form, the zero vector is a vector all of whose components are .  We conclude this section by stating the generalized ``Head - Tail\" formula.   Head - Tail Formula in   Suppose a vector's tail is at point and the vector's head is at , then       Length of a Vector  Vector quantities, such as velocity and force, have magnitude and direction. The magnitude of a vector quantity is the length of the vector. For example, if a force of 10 Newtons is applied to an object, we would represent the force by a 10-unit-long vector.      The magnitude of a vector is denoted by double absolute value brackets. In the case of force , we write To find the length of a vector, we need to find the distance between the tail of the vector and its head. Recall that in , the distance between and is given by A vector has the length of the vector in standard position with its head at and tail at . We find the length of using the distance formula    Find the magnitude of .   The vector u.        The distance formula for points in is analogous to the distance formula in . Given two points and , the distance between them is given by To find the length of vector , we find the distance between and .   Let us try these new formulas out:   The magnitude of is given by    Distance formulas for and motivate the following definition of distance between two points in .    Let and be points in . The distance between and is defined to be     The following definition follows directly from the distance formula for in the same way that expressions ( and followed from distance formulas in and .    Let be a vector in , then the length , or the magnitude , of is given by     To get acquianted with the new concepts, we provide a concrete example to showcase them.   The magnitude of is given by      Geometry of Scalar Multiplication  The product of vector with a positive scalar , is a vector that points in the same direction as , and whose length is equal to the length of multiplied by . For example, the figure below shows vectors and . The vectors point in the same direction but the magnitude of is twice the magnitude of .   Vectors u and 2u.    If a vector is multiplied by , the resulting vector is denoted by . It has the same length as vector , but points in the opposite direction.        Algebra of Scalar Multiplication  We know what scalar multiplication accomplishes geometrically. Our goal now is to translate this idea to an algebraic operation.   Consider vector . We will find an algebraic approach for multiplying by .      Consider to be the hypotenuse of a right triangle.      The head of should be the midpoint of the hypotenuse.      From our study of similar triangles in geometry, we know that if we drop perpendiculars from the midpoint of the hypotenuse to the two legs of the triangle, the perpendiculars will bisect the legs.      This tells us that to find and components of we must multiply each component of by .     Consider vector . It is clear that multiplying the components of by reverses the direction of while preserving its magnitude.        and give rise to the following definition of scalar multiplication.    Let be a vector in , and let be a scalar, then     If ( ), then , and we say that and are scalar multiples of each other .    Geometry of Vector Addition  There are two ways to add vectors geometrically.   Head-to-Tail Addition Method  Given vectors and , we can find the sum by sliding so as to place its tail at the head of vector . The vector connecting the tail of with the head of is the sum , as shown in the figure below.            This sum can be interpreted as the total displacement that occurs when traveling along the two vectors starting at the tail of and finishing at the head of .  Note that if we place the tail of at the head of instead, the sum vector will be the same as . Thus, addition of vectors is commutative.    Parallelogram Addition Method  Most of the time we deal with vectors in standard position. So all vector tails are located at the origin. This motivates the parallelogram method for adding vectors.  Observe that if we slide vectors and so that their tails are together, the two vectors determine a parallelogram.      Opposite sides of a parallelogram are congruent and parallel.      Applying the ``head-to-tail\" addition method shows that the sum is the diagonal of the parallelogram determined by and .         Algebra of Vector Addition  We now know how to add vectors geometrically. Our next goal is to translate this idea to an algebraic operation.   In this problem we will find the sum of and .      To use head-to-tail addition method, or to construct the side of a parallelogram opposite of , we want to slide so that its tail is at the point . Observe that has a ``run\" of and a ``rise\" of . If we start at , go over then up , we will land on .      The sum is shown below.      We see that the components of can be found by adding the components of and .     motivates the following definition.    Let and be vectors in . We define by       Geometry of Vector Addition in  Vectors in , , and have the advantage in that we can gain insight into their behavior through visualization. Vectors in and are the easiest to visualize. Vectors in are a little trickier. The following exploration will help you visualize addition of vectors in .   Adding two vectors amounts to finding the diagonal of a parallelogram determined by placing the two vectors tail to tail. This process is not limited to vectors of . Use the following GeoGebra interactive to add multiple vectors in , two vectors at a time, by constructing diagonals of parallelograms. To use the interactive   Define vectors , and .    Use check-boxes at the bottom of the right panel to display the parallelograms.    RIGHT-CLICK and DRAG the left panel to rotate the graph.      A larger version of this activity is available here .    The sum of two vectors can be visualized as the diagonal of a parallelogram. The sum of three (non-co-planar) vectors is the diagonal of a three-dimensional counterpart of a parallelogram, called a \\emph{parallelepiped}. Each face of the parallelepiped is a parallelogram determined by two out of the three given vectors. The following GeoGebra exercise will help you visualize the sum of three vectors as the diagonal of a parallelepiped.  Define vectors , and . The sum is the diagonal of the parallelepiped. RIGHT-CLICK and DRAG the left panel to rotate the graph.   A larger version of this activity is available here .       Vector Subtraction  We can find the difference of two vectors by interpreting subtraction as ``addition of the opposite\". Thus, Vector subtraction has an interesting geometric interpretation. As shown in the figure below, if is a diagonal of the parallelogram determined by and , the difference is the other diagonal of the same parallelogram.              Properties of Vector Addition and Scalar Multiplication    The following properties hold for vectors , and in and scalars and in .   Commutative Property of Addition     Associative Property of Addition     Existence of Additive Identity: There exists a vector such that     Existence of Additive Inverse: For every vector , there exists a vector such that     Distributive Property over Vector Addition     Distributive Property over Scalar Addition     Associative Property for Scalar Multiplication     Multiplication by 1        We will prove and . Proofs of the remaining properties are left to the reader.  For any vector in , let Then .  Now to prove :         Find the coordinates of each point.   Points P, Q, and R plotted in 3-dimensional real space.            Find the coordinates of each point. RIGHT-CLICK and DRAG to rotate the image.   A larger version of this activity is available here .             Find the distance between and .        Consider the equation What can be said about all points that satisfy this equation?     Such points are equidistant from the origin.      Such points form a four-dimensional sphere of radius .      Such points are located 5 units from the origin.      All of the above.       Sketch each pair of vectors described below. Express each vector in component form.    Vector has a tail at and a head at . Vector has a tail at and a head at .        Vector has a tail at and a head at . Vector has a tail at and a head at .         Express vector shown in the figure in component form if the magnitude (length) of is .            Let , and . Find point such that .         Find the length of the following vectors.                                         Find the component form of vector in if we know that , the component of is and the vector is located in the third quadrant.        For a vector in with a length of 26 and the component of 10, what are the possibilities for the component?        Let . Find all possible values of if .        For a vector in , what are the possibilities for the fourth component if the length of the vector is 14, and the , and components are 1, 5 and 13, respectively?        The points , and form a triangle in . Is it a right triangle?   Does the Pythagorean Theorem hold?    The figure below shows vectors and . Sketch each of the following in the same coordinate plane.                                 Let Find the following:             The additive inverse of .         Prove - of .    Prove - of .    "
 },
 {
   "id": "Subsection-A-Brief-Introduction-to-Real-Space-2",
@@ -538,7 +538,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.2",
   "title": "Unit Vectors, the Dot Product, and Orthogonal Projection",
-  "body": " Unit Vectors, the Dot Product, and Orthogonal Projection   Standard Unit Vectors in and  A unit vector is a vector of length 1. A unit vector in the positive direction of a coordinate axis is called a standard unit vector . There are two standard unit vectors in . The vector is parallel the -axis, and the vector is parallel the -axis.   Standard unit vectors in the real plane.    Vector names and are reserved for standard unit vectors in the direction of and axes, respectively. We chose to express and as column vectors, instead of row vectors, because the context in which we will encounter them in the future will require them to be column vectors. You may see them presented as row vectors in a different course.  There are three standard unit vectors in :    Standard unit vectors in 3-dimensional real space.      A Vector as a Linear Combination of Standard Unit Vectors  Every vector in and can be written as a sum of scalar multiples of , and . For example, if , then The expression is called a linear combination of , and .    Standard Unit Vectors in  When working with vectors in , we often use a different notation to denote the standard unit vectors.    Let denote a vector that has as the component and zeros elsewhere. In other words, where is in the position. We say that is a standard unit vector of .      Unit Vector in the Direction of a Given Vector  Recall that a unit vector is a vector of length 1. Given a non-zero vector , we can find a unit vector in the same direction by multiplying by an appropriate scalar. For example, if and , then a unit vector in the same direction is given by .          In general, dividing a non-zero vector by its own magnitude produces a unit vector in the same direction. We summarize this observation in a theorem.    Let be a non-zero vector in . Vector given by is a unit vector in the direction of .    Because is a positive scalar multiple of , points in the direction of . We now show that .     The abstract proof can it everything seem a little odd. In practice, the actual computation is relatively straightforward. Here is an example:   Find a unit vector in the direction of .  We first compute . By ,      The Dot Product    Let and be vectors in . The dot product of and , denoted by , is given by     We will see the dot product reppear over and over again. As such, an example of a computation is reasonable to start with:   Find if and .    Note that the dot product of two vectors is a scalar. For this reason, the dot product is sometimes called a scalar product .  A quick examination of will convince you that the dot product is commutative . In other words, . This and other properties of the dot product are stated below.    The following properties hold for vectors , and in and scalar in .                        , and if and only if .            We will prove . The remaining properties are left as exercises.     We will illustrate with an example.   Let . Use to illustrate of .    If we take the square root of both sides of the equation in , we get an alternative way to think of the length of a vector ( ).   Length of a Vector   Let be a vector in , then the length , or the magnitude , of is given by       Orthogonal Projections  Given a line and a vector emanating from a point on , it is sometimes convenient to express as the sum of a vector , parallel to , and a vector , perpendicular to . If you have taken a physics course, you may have seen a force vector decomposed into the sum of two components: one parallel and one perpendicular to the direction of motion.      Suppose is a direction vector for . Then for some scalar . Our goal is to find . We conclude that and The vector is called the projection of onto . In our discussion, is a direction vector for line . So, we can also say that is the projection of onto .  To find , observe that .    Let be a vector, and let be a non-zero vector. The projection of onto is given by     Although we will revisit the projection in greater detail much later, we illustrate it in an explicit case with a picture.   Find the projection of , shown below, onto the line given by .      We begin by finding vectors and . The tail of is located at , and the head of is at . Using the ``head-tail\" formula we get The direction vector for the line is We find that and . Thus      Distance from a Point to a Line  The shortest distance from a point to a line is the length of the perpendicular line segment dropped from the point to the line. Vector projection formula will help us find the length of such a perpendicular.   Let be a point in . Suppose line is given by parametric equations         Find the distance from to .  We will first construct a vector by picking an arbitrary point on to be the tail of and using point as the head of . An easy point to choose on line is the point that corresponds to . Now we have       The line has a direction vector We will now find the projection of onto        Next, we find .       Finally, to find the distance between point and line , we find the magnitude of .        Express each of the following vectors as a linear combination of appropriate standard unit vectors.                                 Express each given vector in component form.     is a vector in .         is a vector in .         is a vector in .         Is it possible to express as a linear combination of and alone, where and are in ? Explain your reasoning.     Find a unit vector in the direction of the given vector .                                Let . Apply the concepts from this section to find a vector that points in the same direction as and whose length is 5.        Find the dot product of and if         Find the dot product of and if         Use vector to illustrate of .    Prove , , , , and of .    From the given list of vector pairs, identify ALL pairs of vectors that lie on perpendicular lines.    ,      ,      ,      ,    Also compute for each pair. What do you observe?   You may want to draw a picture and think about what you know about slopes of perpendicular lines.     For each problem below   Find the value of that will make vectors and perpendicular.   Hint: Think of the -component as the ``run\" and the -component as the ``rise\", then use what you know about slopes of perpendicular lines.    Find .                                         Vector that lies on the line , has the form . Assuming that , find the general form for a vector that lies on a line perpendicular to .    Find .    Formulate a conjecture about the dot product of perpendicular vectors.      What do you know about the slopes of perpendicular lines?     Find .    Let and . Compute .        Suppose and . Compute the projection of onto .         Find the projection of vector onto line . (If entering answers in decimal form, round to the nearest one hundredth.)            Find the distance between point and line .            Show that does not depend on the length of by proving that for . What does this result mean geometrically? Illustrate your response with a diagram.    Find the radius of a circle centered at if the line is tangent to the circle. Enter your response as a fraction.    The graph below shows the line together with a circle of radius . Change the value of to the radius you have found to visualize the correct answer.   A larger version of this activity is available here .      "
+  "body": " Unit Vectors, the Dot Product, and Orthogonal Projection   Standard Unit Vectors in and  A unit vector is a vector of length 1. A unit vector in the positive direction of a coordinate axis is called a standard unit vector . There are two standard unit vectors in . The vector is parallel the -axis, and the vector is parallel the -axis.    Standard unit vectors in the real plane.    The standard unit vectors in .   Vector names and are reserved for standard unit vectors in the direction of and axes, respectively. We chose to express and as column vectors, instead of row vectors, because the context in which we will encounter them in the future will require them to be column vectors. You may see them presented as row vectors in a different course.  There are three standard unit vectors in :    Standard unit vectors in 3-dimensional real space.      A Vector as a Linear Combination of Standard Unit Vectors  Every vector in and can be written as a sum of scalar multiples of , and . For example, if , then The expression is called a linear combination of , and .    Standard Unit Vectors in  When working with vectors in , we often use a different notation to denote the standard unit vectors.    Let denote a vector that has as the component and zeros elsewhere. In other words, where is in the position. We say that is a standard unit vector of .      Unit Vector in the Direction of a Given Vector  Recall that a unit vector is a vector of length 1. Given a non-zero vector , we can find a unit vector in the same direction by multiplying by an appropriate scalar. For example, if and , then a unit vector in the same direction is given by .          In general, dividing a non-zero vector by its own magnitude produces a unit vector in the same direction. We summarize this observation in a theorem.    Let be a non-zero vector in . Vector given by is a unit vector in the direction of .    Because is a positive scalar multiple of , points in the direction of . We now show that .     The abstract proof can it everything seem a little odd. In practice, the actual computation is relatively straightforward. Here is an example:   Find a unit vector in the direction of .  We first compute . By ,      The Dot Product    Let and be vectors in . The dot product of and , denoted by , is given by     We will see the dot product reppear over and over again. As such, an example of a computation is reasonable to start with:   Find if and .    Note that the dot product of two vectors is a scalar. For this reason, the dot product is sometimes called a scalar product .  A quick examination of will convince you that the dot product is commutative . In other words, . This and other properties of the dot product are stated below.    The following properties hold for vectors , and in and scalar in .                        , and if and only if .          and if and only if and are orthogonal.       We will prove . The remaining properties are left as exercises.     We will illustrate with an example.   Let . Use to illustrate of .    If we take the square root of both sides of the equation in , we get an alternative way to think of the length of a vector ( ).   Length of a Vector   Let be a vector in , then the length , or the magnitude , of is given by     Let's also look at an example of .   Note that the standard unit vectors in are orthogonal--see . Indeed, In general, by , for standard unit vectors in with , the vectors and are orthogonal since .     Orthogonal Projections  Given a line and a vector emanating from a point on , it is sometimes convenient to express as the sum of a vector , parallel to , and a vector , perpendicular to . If you have taken a physics course, you may have seen a force vector decomposed into the sum of two components: one parallel and one perpendicular to the direction of motion.      Suppose is a direction vector for . Then for some scalar . Our goal is to find . We conclude that and The vector is called the projection of onto . In our discussion, is a direction vector for line . So, we can also say that is the projection of onto .  To find , observe that .    Let be a vector, and let be a non-zero vector. The projection of onto is given by     Although we will revisit the projection in greater detail much later, we illustrate it in an explicit case with a picture.   Find the projection of , shown below, onto the line given by .      We begin by finding vectors and . The tail of is located at , and the head of is at . Using the ``head-tail\" formula we get The direction vector for the line is We find that and . Thus      Distance from a Point to a Line  The shortest distance from a point to a line is the length of the perpendicular line segment dropped from the point to the line. Vector projection formula will help us find the length of such a perpendicular.   Let be a point in . Suppose line is given by parametric equations         Find the distance from to .  We will first construct a vector by picking an arbitrary point on to be the tail of and using point as the head of . An easy point to choose on line is the point that corresponds to . Now we have       The line has a direction vector We will now find the projection of onto        Next, we find .       Finally, to find the distance between point and line , we find the magnitude of .        Express each of the following vectors as a linear combination of appropriate standard unit vectors.                                 Express each given vector in component form.     is a vector in .         is a vector in .         is a vector in .         Is it possible to express as a linear combination of and alone, where and are in ? Explain your reasoning.     Find a unit vector in the direction of the given vector .                                Let . Apply the concepts from this section to find a vector that points in the same direction as and whose length is 5.        Find the dot product of and if         Find the dot product of and if         Use vector to illustrate of .    Prove , , , , and of .    From the given list of vector pairs, identify ALL pairs of vectors that lie on perpendicular lines.    ,      ,      ,      ,    Also compute for each pair. What do you observe?   You may want to draw a picture and think about what you know about slopes of perpendicular lines.     For each problem below   Find the value of that will make vectors and perpendicular.   Hint: Think of the -component as the ``run\" and the -component as the ``rise\", then use what you know about slopes of perpendicular lines.    Find .                                         Vector that lies on the line , has the form . Assuming that , find the general form for a vector that lies on a line perpendicular to .    Find .    Formulate a conjecture about the dot product of perpendicular vectors.      What do you know about the slopes of perpendicular lines?     Find .    Let and . Compute .        Suppose and . Compute the projection of onto .         Find the projection of vector onto line . (If entering answers in decimal form, round to the nearest one hundredth.)            Find the distance between point and line .            Show that does not depend on the length of by proving that for . What does this result mean geometrically? Illustrate your response with a diagram.    Find the radius of a circle centered at if the line is tangent to the circle. Enter your response as a fraction.    The graph below shows the line together with a circle of radius . Change the value of to the radius you have found to visualize the correct answer.   A larger version of this activity is available here .      "
 },
 {
   "id": "Subsection-Standard-Unit-Vectors-in-2d-and-3d-2",
@@ -548,6 +548,15 @@ var ptx_lunr_docs = [
   "number": "",
   "title": "",
   "body": "unit vector standard unit vector "
+},
+{
+  "id": "figure-2d-standard-unit-vectors",
+  "level": "2",
+  "url": "Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#figure-2d-standard-unit-vectors",
+  "type": "Figure",
+  "number": "1.2.1",
+  "title": "",
+  "body": "  Standard unit vectors in the real plane.    The standard unit vectors in .  "
 },
 {
   "id": "Subsection-A-Vector-as-a-Linear-Combination-of-Standard-Unit-Vectors-2",
@@ -563,7 +572,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#def-standardunitvecrn",
   "type": "Definition",
-  "number": "1.2.1",
+  "number": "1.2.2",
   "title": "",
   "body": "  Let denote a vector that has as the component and zeros elsewhere. In other words, where is in the position. We say that is a standard unit vector of .   "
 },
@@ -572,7 +581,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#th-unit",
   "type": "Theorem",
-  "number": "1.2.2",
+  "number": "1.2.3",
   "title": "",
   "body": "  Let be a non-zero vector in . Vector given by is a unit vector in the direction of .    Because is a positive scalar multiple of , points in the direction of . We now show that .    "
 },
@@ -581,7 +590,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#reference",
   "type": "Example",
-  "number": "1.2.3",
+  "number": "1.2.4",
   "title": "",
   "body": " Find a unit vector in the direction of .  We first compute . By ,   "
 },
@@ -590,7 +599,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#def-dotproduct",
   "type": "Definition",
-  "number": "1.2.4",
+  "number": "1.2.5",
   "title": "",
   "body": "  Let and be vectors in . The dot product of and , denoted by , is given by    "
 },
@@ -599,7 +608,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#ex-dotex",
   "type": "Example",
-  "number": "1.2.5",
+  "number": "1.2.6",
   "title": "",
   "body": " Find if and .   "
 },
@@ -626,16 +635,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#th-dotproductproperties",
   "type": "Theorem",
-  "number": "1.2.6",
+  "number": "1.2.7",
   "title": "",
-  "body": "  The following properties hold for vectors , and in and scalar in .                        , and if and only if .            We will prove . The remaining properties are left as exercises.    "
+  "body": "  The following properties hold for vectors , and in and scalar in .                        , and if and only if .          and if and only if and are orthogonal.       We will prove . The remaining properties are left as exercises.    "
 },
 {
   "id": "ex-exprop6",
   "level": "2",
   "url": "Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#ex-exprop6",
   "type": "Example",
-  "number": "1.2.7",
+  "number": "1.2.8",
   "title": "",
   "body": " Let . Use to illustrate of .   "
 },
@@ -644,9 +653,18 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#cor-length_via_dotprod",
   "type": "Corollary",
-  "number": "1.2.8",
+  "number": "1.2.9",
   "title": "Length of a Vector.",
   "body": " Length of a Vector   Let be a vector in , then the length , or the magnitude , of is given by    "
+},
+{
+  "id": "Subsection-The-Dot-Product-13",
+  "level": "2",
+  "url": "Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Subsection-The-Dot-Product-13",
+  "type": "Example",
+  "number": "1.2.10",
+  "title": "",
+  "body": " Note that the standard unit vectors in are orthogonal--see . Indeed, In general, by , for standard unit vectors in with , the vectors and are orthogonal since .  "
 },
 {
   "id": "Subsection-Orthogonal-Projections-4",
@@ -662,7 +680,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#def-projection",
   "type": "Definition",
-  "number": "1.2.9",
+  "number": "1.2.11",
   "title": "",
   "body": "  Let be a vector, and let be a non-zero vector. The projection of onto is given by    "
 },
@@ -671,7 +689,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#ex-projection1",
   "type": "Example",
-  "number": "1.2.10",
+  "number": "1.2.12",
   "title": "",
   "body": " Find the projection of , shown below, onto the line given by .      We begin by finding vectors and . The tail of is located at , and the head of is at . Using the ``head-tail\" formula we get The direction vector for the line is We find that and . Thus   "
 },
@@ -680,7 +698,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#ex-distancefrompttoline",
   "type": "Example",
-  "number": "1.2.11",
+  "number": "1.2.13",
   "title": "",
   "body": " Let be a point in . Suppose line is given by parametric equations         Find the distance from to .  We will first construct a vector by picking an arbitrary point on to be the tail of and using point as the head of . An easy point to choose on line is the point that corresponds to . Now we have       The line has a direction vector We will now find the projection of onto        Next, we find .       Finally, to find the distance between point and line , we find the magnitude of .   "
 },
@@ -1205,6 +1223,447 @@ var ptx_lunr_docs = [
   "number": "1.3.7.12",
   "title": "",
   "body": " Planes containing , , .     0      1      Infinitely Many    "
+},
+{
+  "id": "Section-Dot-Product-and-Angle",
+  "level": "1",
+  "url": "Section-Dot-Product-and-Angle.html",
+  "type": "Section",
+  "number": "1.4",
+  "title": "Extra Topic: Dot Product and Angle",
+  "body": " Extra Topic: Dot Product and Angle  Given two vectors and , let be the angle between them such that . We will refer to as the included angle .   Angle between vectors.    The following theorem establishes a relationship between the dot product and the included angle.    Let and be vectors in , and let be the included angle. Then     Consider the triangle formed by , and .      By the Law of Cosines we have: By  , By  , By  , By  of ,      Find the included angle between vectors and .  By , .         Orthogonal Vectors    Let and be vectors in . We say and are orthogonal if .    We can use to show that two non-zero orthogonal vectors of are simply perpendicular vectors (the included angle is ). To see this, suppose that for nonzero vectors . Then from we have Since are nonzero vectors, we have , which implies . The converse also holds. If , then the dot product is clearly 0.  The reason we prefer the term ``orthogonal\" to ``perpendicular\" in this course is because is only one example of a vector space , and the dot product is only one example of a more general product, called an inner product . For vectors in a zero dot product happens to coincide with the geometric idea of perpendicularity, but there are many vector spaces that do not possess the visual geometry of . (Later in the text, you will encounter vector spaces whose vectors are polynomial functions!) In these more abstract settings, a zero inner product still signals a special relationship between vectors. The term orthogonal captures this relationship.   By our definition, the zero vector is orthogonal to any vector. However, we will not use the word perpendicular when the zero vector is involved, as it is not possible to talk about an ``included angle''.       Find the degree measure of the included angle, for each pair of vectors. Round your answers to the nearest tenth.     and .         and          and          and          What does the sign of the dot product tell us about the included angle?    Find all values of so that is orthogonal to .        Find the value of for which the vector is parallel to the vector . What is the measure of the included angle, ? Find the measure of the included angle using . Do the two results agree?    and     Prove that if is a unit vector, then .    Prove that if and are unit vectors, then . In what cases are the extreme values of 1 and attained?    Imagine a clock with hands represented by vectors and , as shown below. At what whole hour will attain its maximum value? At what whole hour will be as small as possible?   Image courtesy of Wikipedia Commons .   Image of a wall clock.           Let be a circle of radius . Suppose and are the endpoints of a diameter of , and is a point on distinct from and . Show that vectors and are orthogonal.   Circumscribed circle of a triangle.     Assign coordinates to points , and , express vectors and in component form, then find the dot product of and .    A rhombus is a quadrilateral with four congruent sides. Use vectors to prove that a parallelogram is a rhombus if and only if its diagonals are perpendicular.   See section on vector subtraction in .    The points , and form a triangle in . Is it a right triangle?   Express each side of the triangle as a vector and use what you have learned in this section.    "
+},
+{
+  "id": "Section-Dot-Product-and-Angle-2",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#Section-Dot-Product-and-Angle-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "included angle "
+},
+{
+  "id": "th-dotproductcosine",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#th-dotproductcosine",
+  "type": "Theorem",
+  "number": "1.4.1",
+  "title": "",
+  "body": "  Let and be vectors in , and let be the included angle. Then     Consider the triangle formed by , and .      By the Law of Cosines we have: By  , By  , By  , By  of ,    "
+},
+{
+  "id": "ex-anglebetweenvectors",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#ex-anglebetweenvectors",
+  "type": "Example",
+  "number": "1.4.2",
+  "title": "",
+  "body": " Find the included angle between vectors and .  By , .       "
+},
+{
+  "id": "def-orthovectors",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#def-orthovectors",
+  "type": "Definition",
+  "number": "1.4.3",
+  "title": "",
+  "body": "  Let and be vectors in . We say and are orthogonal if .   "
+},
+{
+  "id": "Subsection-Orthogonal-Vectors-3",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#Subsection-Orthogonal-Vectors-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "orthogonal perpendicular "
+},
+{
+  "id": "Subsection-Orthogonal-Vectors-4",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#Subsection-Orthogonal-Vectors-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "vector space inner product orthogonal "
+},
+{
+  "id": "Subsection-Orthogonal-Vectors-5",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#Subsection-Orthogonal-Vectors-5",
+  "type": "Remark",
+  "number": "1.4.4",
+  "title": "",
+  "body": " By our definition, the zero vector is orthogonal to any vector. However, we will not use the word perpendicular when the zero vector is involved, as it is not possible to talk about an ``included angle''.  "
+},
+{
+  "id": "prob-anglebetweenvectors1",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#prob-anglebetweenvectors1",
+  "type": "Exercise",
+  "number": "1.4.2.1",
+  "title": "",
+  "body": "  and .      "
+},
+{
+  "id": "prob-anglebetweenvectors2",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#prob-anglebetweenvectors2",
+  "type": "Exercise",
+  "number": "1.4.2.2",
+  "title": "",
+  "body": "  and       "
+},
+{
+  "id": "prob-anglebetweenvectors3",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#prob-anglebetweenvectors3",
+  "type": "Exercise",
+  "number": "1.4.2.3",
+  "title": "",
+  "body": "  and       "
+},
+{
+  "id": "prob-anglebetweenvectors4",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#prob-anglebetweenvectors4",
+  "type": "Exercise",
+  "number": "1.4.2.4",
+  "title": "",
+  "body": "  and       "
+},
+{
+  "id": "prob-dotproductsign",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#prob-dotproductsign",
+  "type": "Exercise",
+  "number": "1.4.2.5",
+  "title": "",
+  "body": " What does the sign of the dot product tell us about the included angle?  "
+},
+{
+  "id": "prob-orthvectorsdot",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#prob-orthvectorsdot",
+  "type": "Exercise",
+  "number": "1.4.2.6",
+  "title": "",
+  "body": " Find all values of so that is orthogonal to .      "
+},
+{
+  "id": "prob-parallelvectdot",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#prob-parallelvectdot",
+  "type": "Exercise",
+  "number": "1.4.2.7",
+  "title": "",
+  "body": " Find the value of for which the vector is parallel to the vector . What is the measure of the included angle, ? Find the measure of the included angle using . Do the two results agree?    and   "
+},
+{
+  "id": "prob-unitvectordot",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#prob-unitvectordot",
+  "type": "Exercise",
+  "number": "1.4.2.8",
+  "title": "",
+  "body": " Prove that if is a unit vector, then .  "
+},
+{
+  "id": "prob-unitvectordot1",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#prob-unitvectordot1",
+  "type": "Exercise",
+  "number": "1.4.2.9",
+  "title": "",
+  "body": " Prove that if and are unit vectors, then . In what cases are the extreme values of 1 and attained?  "
+},
+{
+  "id": "prob-clockproblem",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#prob-clockproblem",
+  "type": "Exercise",
+  "number": "1.4.2.10",
+  "title": "",
+  "body": " Imagine a clock with hands represented by vectors and , as shown below. At what whole hour will attain its maximum value? At what whole hour will be as small as possible?   Image courtesy of Wikipedia Commons .   Image of a wall clock.         "
+},
+{
+  "id": "prob-righttriangleincircle",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#prob-righttriangleincircle",
+  "type": "Exercise",
+  "number": "1.4.2.11",
+  "title": "",
+  "body": " Let be a circle of radius . Suppose and are the endpoints of a diameter of , and is a point on distinct from and . Show that vectors and are orthogonal.   Circumscribed circle of a triangle.     Assign coordinates to points , and , express vectors and in component form, then find the dot product of and .  "
+},
+{
+  "id": "prob-rhombusdot",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#prob-rhombusdot",
+  "type": "Exercise",
+  "number": "1.4.2.12",
+  "title": "",
+  "body": " A rhombus is a quadrilateral with four congruent sides. Use vectors to prove that a parallelogram is a rhombus if and only if its diagonals are perpendicular.   See section on vector subtraction in .  "
+},
+{
+  "id": "prob-pythagoreanR3usedotp",
+  "level": "2",
+  "url": "Section-Dot-Product-and-Angle.html#prob-pythagoreanR3usedotp",
+  "type": "Exercise",
+  "number": "1.4.2.13",
+  "title": "",
+  "body": " The points , and form a triangle in . Is it a right triangle?   Express each side of the triangle as a vector and use what you have learned in this section.  "
+},
+{
+  "id": "Section-Cross-Product-and-its-Properties",
+  "level": "1",
+  "url": "Section-Cross-Product-and-its-Properties.html",
+  "type": "Section",
+  "number": "1.5",
+  "title": "Extra Topic: Cross Product and its Properties",
+  "body": " Extra Topic: Cross Product and its Properties \\ In we introduced the dot product , one of two important products for vectors. We will now introduce the second type of product, called the cross product . There are several important distinctions to keep in mind. First, the dot product is defined for two vectors of , for any natural number ; the cross-product will only be defined for vectors of . Second, the dot product is a scalar; the cross product of two vectors will be a vector. Finally, we will find that unlike the dot product, the cross product is not commutative.  The cross product has many applications in physics and engineering. It also has important geometric properties which will be addressed in this section and in .   Preliminaries  In order to define the cross product in a convenient way we need to define and determinants. If you know how to find such determinants you may skip this section and proceed directly to the definition.   Determinant   A  determinant is a number associated with a matrix           Determinant   A  determinant is a number associated with a matrix          For more help on determinants, see and the video located there.    Definition of the Cross Product    Let and be vectors in . The cross product of and , denoted by , is given by     This formula is much easier to remember when stated symbolically in terms of determinants.    Find the cross product of and .        Properties of the Cross Product   What would happen if we took the cross product of the vectors in but reversed the order?  Let and . Recall that . We need to compute . If you have already studied the effect that switching two rows of a matrix has on its determinant, you should be able to guess the outcome of the upcoming computation. This computation shows that the cross product is an operation that is not commutative. It also suggests that switching the order of the vectors changes the sign of the result.    The Cross Product is not a commutative operation.     Let and be vectors in , then     The proof is left to the reader. (See Practice Problem )    The next theorem lists two additional properties of the cross product. Proofs of these properties are routine and are left to the reader. (See and )    Let , and be vectors in , and be a scalar, then\\\\   Scalar Associativity     Distributivity         The cross product has several important geometric properties. The following problems give us a glimpse of these properties.   Compute the following products: For the two vectors in each product, sketch the vectors together with the product vector. What do you observe about the relationship between the cross product and the plane determined by the two vectors in the product?   Hint:  . Vector is orthogonal to both and      Orthogonality Property   In this problem we will return to vectors of and of and . We know that We will now compute the dot product of with each of the original vectors and .  It is also easy to verify that and . Recall that the dot product of two vectors is if and only if the two vectors are orthogonal. ( ) We conclude that, at least in this case, the cross product of two vectors is orthogonal to each of the vectors.   It turns out that the orthogonality property illustrated by and holds in general. We state it as a theorem.    Let and be vectors of , then is orthogonal to both and .    This proof can be done by direct computation and is left to the reader. (See )      Cross Product and the Angle between Vectors  Recall that the dot product of and is related to the angle between and by the following formula We will derive an analogous result for the cross product. To do so, we will need the following Lemma.    Let and be vectors in . Then     The proof is left to the reader. (See )    The following theorem establishes a relationship between the magnitude of the cross product, the magnitudes of the two vectors involved in the cross product and the angle between the two vectors. It is important to note that the identity in this theorem involves the magnitude of the cross product, not the cross product itself.    Let and be vectors in . Let be the angle between and such that . Then     By and we have Observe that all magnitudes are non-negative. Also, because . Taking the square root of both sides give us                            neither                          neither       Find the cross product , and verify that is orthogonal to both and .     , .         , .         Prove .    Prove in two different ways:   By direct computation.    (Optional) By using .       Prove .    Prove .    Prove that the cross product of any vector with itself is the zero vector.    Suppose that is a non-zero vector. Let for . Argue that in two different ways:   By using .    (Optional) By using .       Prove .    "
+},
+{
+  "id": "Section-Cross-Product-and-its-Properties-2",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#Section-Cross-Product-and-its-Properties-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "dot product cross product "
+},
+{
+  "id": "def-twodetcrossprod",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#def-twodetcrossprod",
+  "type": "Definition",
+  "number": "1.5.1",
+  "title": "<span class=\"process-math\">\\(2\\times 2\\)<\/span> Determinant.",
+  "body": " Determinant   A  determinant is a number associated with a matrix    "
+},
+{
+  "id": "ex-twodetcrossprod",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#ex-twodetcrossprod",
+  "type": "Example",
+  "number": "1.5.2",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "def-threedetcrossprod",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#def-threedetcrossprod",
+  "type": "Definition",
+  "number": "1.5.3",
+  "title": "<span class=\"process-math\">\\(3\\times 3\\)<\/span> Determinant.",
+  "body": " Determinant   A  determinant is a number associated with a matrix    "
+},
+{
+  "id": "ex-threedetcrossprod",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#ex-threedetcrossprod",
+  "type": "Example",
+  "number": "1.5.4",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "def-crossproduct",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#def-crossproduct",
+  "type": "Definition",
+  "number": "1.5.5",
+  "title": "",
+  "body": "  Let and be vectors in . The cross product of and , denoted by , is given by    "
+},
+{
+  "id": "ex-crossproduct",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#ex-crossproduct",
+  "type": "Example",
+  "number": "1.5.6",
+  "title": "",
+  "body": " Find the cross product of and .     "
+},
+{
+  "id": "init-crossproduct2",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#init-crossproduct2",
+  "type": "Exploration",
+  "number": "1.5.1",
+  "title": "",
+  "body": " What would happen if we took the cross product of the vectors in but reversed the order?  Let and . Recall that . We need to compute . If you have already studied the effect that switching two rows of a matrix has on its determinant, you should be able to guess the outcome of the upcoming computation. This computation shows that the cross product is an operation that is not commutative. It also suggests that switching the order of the vectors changes the sign of the result.  "
+},
+{
+  "id": "Subsection-Properties-of-the-Cross-Product-3",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#Subsection-Properties-of-the-Cross-Product-3",
+  "type": "Warning",
+  "number": "1.5.7",
+  "title": "",
+  "body": " The Cross Product is not a commutative operation.  "
+},
+{
+  "id": "th-corssuvnegcrossvu",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#th-corssuvnegcrossvu",
+  "type": "Theorem",
+  "number": "1.5.8",
+  "title": "",
+  "body": "  Let and be vectors in , then     The proof is left to the reader. (See Practice Problem )   "
+},
+{
+  "id": "th-crossproductproperties",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#th-crossproductproperties",
+  "type": "Theorem",
+  "number": "1.5.9",
+  "title": "",
+  "body": "  Let , and be vectors in , and be a scalar, then\\\\   Scalar Associativity     Distributivity        "
+},
+{
+  "id": "init-ijkcrossproducts",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#init-ijkcrossproducts",
+  "type": "Exploration",
+  "number": "1.5.2",
+  "title": "",
+  "body": " Compute the following products: For the two vectors in each product, sketch the vectors together with the product vector. What do you observe about the relationship between the cross product and the plane determined by the two vectors in the product?   Hint:  . Vector is orthogonal to both and   "
+},
+{
+  "id": "init-orthofcorssproduct",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#init-orthofcorssproduct",
+  "type": "Exploration",
+  "number": "1.5.3",
+  "title": "",
+  "body": " In this problem we will return to vectors of and of and . We know that We will now compute the dot product of with each of the original vectors and .  It is also easy to verify that and . Recall that the dot product of two vectors is if and only if the two vectors are orthogonal. ( ) We conclude that, at least in this case, the cross product of two vectors is orthogonal to each of the vectors.  "
+},
+{
+  "id": "th-crossproductorthtouandv",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#th-crossproductorthtouandv",
+  "type": "Theorem",
+  "number": "1.5.10",
+  "title": "",
+  "body": "  Let and be vectors of , then is orthogonal to both and .    This proof can be done by direct computation and is left to the reader. (See )   "
+},
+{
+  "id": "lemma-crossprodmagnitude",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#lemma-crossprodmagnitude",
+  "type": "Lemma",
+  "number": "1.5.11",
+  "title": "",
+  "body": "  Let and be vectors in . Then     The proof is left to the reader. (See )   "
+},
+{
+  "id": "th-crossproductsin",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#th-crossproductsin",
+  "type": "Theorem",
+  "number": "1.5.12",
+  "title": "",
+  "body": "  Let and be vectors in . Let be the angle between and such that . Then     By and we have Observe that all magnitudes are non-negative. Also, because . Taking the square root of both sides give us    "
+},
+{
+  "id": "prob-crossik",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#prob-crossik",
+  "type": "Exercise",
+  "number": "1.5.6.1",
+  "title": "",
+  "body": "                     neither    "
+},
+{
+  "id": "prob-crosski",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#prob-crosski",
+  "type": "Exercise",
+  "number": "1.5.6.2",
+  "title": "",
+  "body": "                     neither    "
+},
+{
+  "id": "prob-crossuv1",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#prob-crossuv1",
+  "type": "Exercise",
+  "number": "1.5.6.3",
+  "title": "",
+  "body": "  , .      "
+},
+{
+  "id": "prob-crossuv2",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#prob-crossuv2",
+  "type": "Exercise",
+  "number": "1.5.6.4",
+  "title": "",
+  "body": "  , .      "
+},
+{
+  "id": "prob-corssuvnegcrossvu",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#prob-corssuvnegcrossvu",
+  "type": "Exercise",
+  "number": "1.5.6.5",
+  "title": "",
+  "body": " Prove .  "
+},
+{
+  "id": "prob-scalarassocofcrossprod",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#prob-scalarassocofcrossprod",
+  "type": "Exercise",
+  "number": "1.5.6.6",
+  "title": "",
+  "body": " Prove in two different ways:   By direct computation.    (Optional) By using .     "
+},
+{
+  "id": "prob-distofrossprod",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#prob-distofrossprod",
+  "type": "Exercise",
+  "number": "1.5.6.7",
+  "title": "",
+  "body": " Prove .  "
+},
+{
+  "id": "prob-crossproductorthtouandv",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#prob-crossproductorthtouandv",
+  "type": "Exercise",
+  "number": "1.5.6.8",
+  "title": "",
+  "body": " Prove .  "
+},
+{
+  "id": "prob-crossself",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#prob-crossself",
+  "type": "Exercise",
+  "number": "1.5.6.9",
+  "title": "",
+  "body": " Prove that the cross product of any vector with itself is the zero vector.  "
+},
+{
+  "id": "prob-crossprodzero",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#prob-crossprodzero",
+  "type": "Exercise",
+  "number": "1.5.6.10",
+  "title": "",
+  "body": " Suppose that is a non-zero vector. Let for . Argue that in two different ways:   By using .    (Optional) By using .     "
+},
+{
+  "id": "prob-corssprodmagnitude",
+  "level": "2",
+  "url": "Section-Cross-Product-and-its-Properties.html#prob-corssprodmagnitude",
+  "type": "Exercise",
+  "number": "1.5.6.11",
+  "title": "",
+  "body": " Prove .  "
 },
 {
   "id": "Section-Introduction-to-Systems-of-Linear-Equations",

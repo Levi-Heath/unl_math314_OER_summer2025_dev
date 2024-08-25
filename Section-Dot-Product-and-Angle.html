@@ -8,11 +8,11 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Dot Product and Angle</title>
+<title>Extra Topic: Dot Product and Angle</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="Linear Algebra">
+<meta property="book:title" content="Coordinated Linear Algebra">
 <meta property="book:author" content="Anna Davis">
 <meta property="book:author" content="Paul Zachlin">
 <meta property="book:author" content="Allan Donsig">
@@ -114,20 +114,20 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.3.3';
+eBookConfig.runestone_version = '7.3.7';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-runtime.740db250e511e1cc.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-runestone.9813637ef2f0e0ee.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.3.3/prefix-347.f9add1ca35d5ad93.css">
-<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.3.3/prefix-runestone.f64dcc3632d7a0c3.css">
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.7/prefix-runtime.00db6230172ad960.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.7/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.7/prefix-runestone.5d3fd44c34d81620.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.3.7/prefix-347.f9add1ca35d5ad93.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.3.7/prefix-runestone.f64dcc3632d7a0c3.css">
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""><img src="external/images/cover.jpg" alt="Logo image"></a><div class="title-container">
-<h1 class="heading"><a href="my-great-book.html"><span class="title">Linear Algebra</span></a></h1>
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Coordinated Linear Algebra</span></a></h1>
 <p class="byline">Anna Davis, Paul Zachlin, Allan Donsig, Levi Heath, Mikkel Munkholm</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -141,7 +141,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="Section-Dot-Product-and-its-Properties.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="Chapter-Preliminaries.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="Section-Orthogonal-Projections.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="Section-Lines-and-Planes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="Chapter-Preliminaries.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="Section-Cross-Product-and-its-Properties.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
 \newcommand{\Z}{\mathbb Z} 
 \newcommand{\Q}{\mathbb Q} 
 \newcommand{\R}{\mathbb R}
@@ -168,141 +168,72 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="Chapter-Preliminaries.html" class="internal"><span class="codenumber">1</span> <span class="title">Preliminaries</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-A-Brief-Introduction-to-Real-Space.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Brief Introduction to <span class="process-math">\(\R^n\)</span></span></a></div>
+<div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction to Vectors</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-A-Brief-Introduction-to-Real-Space.html#Subsection-Distance-in-Real-Space" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Distance in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-A-Brief-Introduction-to-Real-Space" class="internal"><span class="codenumber">1.1.1</span> <span class="title">A Brief Introduction to <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Distance-in-Real-Space" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Distance in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-What-is-a-Vector" class="internal"><span class="codenumber">1.1.3</span> <span class="title">What is a Vector?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vectors-in-Standard-Position" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Vectors in Standard Position</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vectors-in-3d" class="internal"><span class="codenumber">1.1.5</span> <span class="title">Vectors in <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vectors-in-Real-Space" class="internal"><span class="codenumber">1.1.6</span> <span class="title">Vectors in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Section-Length-of-a-Vector" class="internal"><span class="codenumber">1.1.7</span> <span class="title">Length of a Vector</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Geometry-of-Scalar-Multiplication" class="internal"><span class="codenumber">1.1.8</span> <span class="title">Geometry of Scalar Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Algebra-of-Scalar-Multiplication" class="internal"><span class="codenumber">1.1.9</span> <span class="title">Algebra of Scalar Multiplication</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-A-Brief-Introduction-to-Real-Space.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-A-Brief-Introduction-to-Real-Space.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Geometry-of-Vector-Addition" class="internal"><span class="codenumber">1.1.10</span> <span class="title">Geometry of Vector Addition</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsubsection-Head-to-Tail-Addition-Method" class="internal"><span class="codenumber">1.1.10.1</span> <span class="title">“Head-to-Tail” Addition Method</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsubsection-Parallelogram-Addition-Method" class="internal"><span class="codenumber">1.1.10.2</span> <span class="title">Parallelogram Addition Method</span></a></div></li>
+</ul>
 </li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Algebra-of-Vector-Addition" class="internal"><span class="codenumber">1.1.11</span> <span class="title">Algebra of Vector Addition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Geometry-of-Vector-Addition-in-3d" class="internal"><span class="codenumber">1.1.12</span> <span class="title">Geometry of Vector Addition in <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vector-Subtraction" class="internal"><span class="codenumber">1.1.13</span> <span class="title">Vector Subtraction</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Properties-of-Vector-Addition-and-Scalar-Multiplication" class="internal"><span class="codenumber">1.1.14</span> <span class="title">Properties of Vector Addition and Scalar Multiplication</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Exercises-Introduction-to-Vectors" class="internal"><span class="codenumber">1.1.15</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Introduction to Vectors</span></a></div>
+<div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Unit Vectors, the Dot Product, and Orthogonal Projection</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-What-is-a-Vector" class="internal"><span class="codenumber">1.2.1</span> <span class="title">What is a Vector?</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vectors-in-Standard-Position" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Vectors in Standard Position</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vectors-in-3d" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Vectors in <span class="process-math">\(\R^3\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vectors-in-Real-Space" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Vectors in <span class="process-math">\(\R^n\)</span></span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">1.2.5</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">1.2.5</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Subsection-Standard-Unit-Vectors-in-2d-and-3d" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Standard Unit Vectors in <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Subsection-A-Vector-as-a-Linear-Combination-of-Standard-Unit-Vectors" class="internal"><span class="codenumber">1.2.2</span> <span class="title">A Vector as a Linear Combination of Standard Unit Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Subsection-Standard-Unit-Vectors-in-Real-Space" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Standard Unit Vectors in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Section-Unit-Vector-in-the-Direction-of-a-Given-Vector" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Unit Vector in the Direction of a Given Vector</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Subsection-The-Dot-Product" class="internal"><span class="codenumber">1.2.5</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Subsection-Orthogonal-Projections" class="internal"><span class="codenumber">1.2.6</span> <span class="title">Orthogonal Projections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Subsection-Distance-from-a-Point-to-a-Line" class="internal"><span class="codenumber">1.2.7</span> <span class="title">Distance from a Point to a Line</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#Exercises-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection" class="internal"><span class="codenumber">1.2.8</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Length-of-a-Vector.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Length of a Vector</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Length-of-a-Vector.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Length-of-a-Vector.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Exercises</span></a></div></li></ul>
-</li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Vector-Arithmetic.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Vector Arithmetic</span></a></div>
+<div class="toc-title-box"><a href="Section-Lines-and-Planes.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Lines and Planes</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Vector-Arithmetic.html#Subsection-Geometry-of-Scalar-Multiplication" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Geometry of Scalar Multiplication</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Vector-Arithmetic.html#Subsection-Algebra-of-Scalar-Multiplication" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Algebra of Scalar Multiplication</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Vector-Arithmetic.html#Subsection-Geometry-of-Vector-Addition" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Geometry of Vector Addition</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Vector-Arithmetic.html#Subsubsection-Head-to-Tail-Addition-Method" class="internal"><span class="codenumber">1.4.3.1</span> <span class="title">“Head-to-Tail” Addition Method</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Vector-Arithmetic.html#Subsubsection-Parallelogram-Addition-Method" class="internal"><span class="codenumber">1.4.3.2</span> <span class="title">Parallelogram Addition Method</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Vector-Arithmetic.html#Subsection-Algebra-of-Vector-Addition" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Algebra of Vector Addition</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Vector-Arithmetic.html#Subsection-Geometry-of-Vector-Addition-in-3d" class="internal"><span class="codenumber">1.4.5</span> <span class="title">Geometry of Vector Addition in <span class="process-math">\(\R^3\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Vector-Arithmetic.html#Subsection-Vector-Subtraction" class="internal"><span class="codenumber">1.4.6</span> <span class="title">Vector Subtraction</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Vector-Arithmetic.html#Subsection-Properties-of-Vector-Addition-and-Scalar-Multiplication" class="internal"><span class="codenumber">1.4.7</span> <span class="title">Properties of Vector Addition and Scalar Multiplication</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Vector-Arithmetic.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">1.4.8</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Vector-Arithmetic.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">1.4.8</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Standard-Unit-Vectors-in-Real-Space.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Standard Unit Vectors in <span class="process-math">\(\R^n\)</span></span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Standard-Unit-Vectors-in-Real-Space.html#Subsection-Standard-Unit-Vectors-in-2d-and-3d" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Standard Unit Vectors in <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Standard-Unit-Vectors-in-Real-Space.html#Subsection-A-Vector-as-a-Linear-Combination-of-Standard-Unit-Vectors" class="internal"><span class="codenumber">1.5.2</span> <span class="title">A Vector as a Linear Combination of Standard Unit Vectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Standard-Unit-Vectors-in-Real-Space.html#Subsection-Standard-Unit-Vectors-in-Real-Space" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Standard Unit Vectors in <span class="process-math">\(\R^n\)</span></span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Standard-Unit-Vectors-in-Real-Space.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Standard-Unit-Vectors-in-Real-Space.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Unit-Vector-in-the-Direction-of-a-Given-Vector.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Unit Vector in the Direction of a Given Vector</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Unit-Vector-in-the-Direction-of-a-Given-Vector.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Unit-Vector-in-the-Direction-of-a-Given-Vector.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Exercises</span></a></div></li></ul>
-</li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Dot-Product-and-its-Properties.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Dot Product and its Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Dot-Product-and-its-Properties.html#Subsection-Properties-of-the-Dot-Product" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Properties of the Dot Product</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Dot-Product-and-its-Properties.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Dot-Product-and-its-Properties.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Lines-and-Planes.html#Subsection-Parametric-Lines-in-the-Real-Plane" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Parametric Lines in <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Lines-and-Planes.html#Subsection-Parametric-Lines-in-3d" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Parametric Lines in <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Lines-and-Planes.html#Subsection-Parametric-Lines-in-Real-Space" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Parametric Lines in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Lines-and-Planes.html#Subsection-From-Parametric-Equations-to-Vector-Equations" class="internal"><span class="codenumber">1.3.4</span> <span class="title">From Parametric Equations to Vector Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Lines-and-Planes.html#Subsection-Planes-in-3d" class="internal"><span class="codenumber">1.3.5</span> <span class="title">Planes in <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Lines-and-Planes.html#Subsection-Linear-Equations-and-their-Graphs-From-Lines-to-Hyperplanes" class="internal"><span class="codenumber">1.3.6</span> <span class="title">Linear Equations and their Graphs: From Lines to Hyperplanes</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Lines-and-Planes.html#Exercises-Lines-and-Planes" class="internal"><span class="codenumber">1.3.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section active">
-<div class="toc-title-box"><a href="Section-Dot-Product-and-Angle.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Dot Product and Angle</span></a></div>
+<div class="toc-title-box"><a href="Section-Dot-Product-and-Angle.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Extra Topic: Dot Product and Angle</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Dot-Product-and-Angle.html#Subsection-Orthogonal-Vectors" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Orthogonal Vectors</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Dot-Product-and-Angle.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Dot-Product-and-Angle.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Dot-Product-and-Angle.html#Subsection-Orthogonal-Vectors" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Orthogonal Vectors</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Dot-Product-and-Angle.html#Exercises-Dot-Product-and-Angle" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Orthogonal-Projections.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Orthogonal Projections</span></a></div>
+<div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Extra Topic: Cross Product and its Properties</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonal-Projections.html#Subsection-Distance-from-a-Point-to-a-Line" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Distance from a Point to a Line</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Orthogonal-Projections.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Orthogonal-Projections.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Cross Product and its Properties</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html#Subsection-Preliminaries" class="internal"><span class="codenumber">1.10.1</span> <span class="title">Preliminaries</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html#Subsection-Definition-of-the-Cross-Product" class="internal"><span class="codenumber">1.10.2</span> <span class="title">Definition of the Cross Product</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html#Subsection-Properties-of-the-Cross-Product" class="internal"><span class="codenumber">1.10.3</span> <span class="title">Properties of the Cross Product</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html#Subsection-Orthogonality-Property" class="internal"><span class="codenumber">1.10.4</span> <span class="title">Orthogonality Property</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html#Subsection-Cross-Product-and-the-Angle-between-Vectors" class="internal"><span class="codenumber">1.10.5</span> <span class="title">Cross Product and the Angle between Vectors</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">1.10.6</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">1.10.6</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Parametric-Equations-of-Lines.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Parametric Equations of Lines</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Parametric-Equations-of-Lines.html#Subsection-Parametric-Lines-in-the-Real-Plane" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Parametric Lines in <span class="process-math">\(\R^2\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Parametric-Equations-of-Lines.html#Subsection-Parametric-Lines-in-3d" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Parametric Lines in <span class="process-math">\(\R^3\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Parametric-Equations-of-Lines.html#Subsection-Parametric-Lines-in-Real-Space" class="internal"><span class="codenumber">1.11.3</span> <span class="title">Parametric Lines in <span class="process-math">\(\R^n\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Parametric-Equations-of-Lines.html#Subsection-From-Parametric-Equations-to-Vector-Equations" class="internal"><span class="codenumber">1.11.4</span> <span class="title">From Parametric Equations to Vector Equations</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Parametric-Equations-of-Lines.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Parametric-Equations-of-Lines.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Planes-in-3d.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Planes in <span class="process-math">\(\R^3\)</span></span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Planes-in-3d.html#Subsection-Linear-Equations-and-their-Graphs-From-Lines-to-Hyperplanes" class="internal"><span class="codenumber">1.12.1</span> <span class="title">Linear Equations and their Graphs: From Lines to Hyperplanes</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Planes-in-3d.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">1.12.2</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Planes-in-3d.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">1.12.2</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html#Subsection-Preliminaries" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Preliminaries</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html#Subsection-Definition-of-the-Cross-Product" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Definition of the Cross Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html#Subsection-Properties-of-the-Cross-Product" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Properties of the Cross Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html#Subsection-Orthogonality-Property" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Orthogonality Property</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html#Subsection-Cross-Product-and-the-Angle-between-Vectors" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Cross Product and the Angle between Vectors</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Cross-Product-and-its-Properties.html#Exercises-Cross-Product-and-its-Properties" class="internal"><span class="codenumber">1.5.6</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -317,10 +248,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Geometry-of-Linear-Systems-in-Two-Variables" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Geometry of Linear Systems in Two Variables</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Geometry-of-Linear-Systems-in-Three-Variables" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Geometry of Linear Systems in Three Variables</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-General-Systems-of-Linear-Equations" class="internal"><span class="codenumber">2.1.4</span> <span class="title">General Systems of Linear Equations</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Exercises-Introduction-to-Systems-of-Linear-Equations" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -328,10 +256,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html#Subsection-Augmented-Matrix-Notation" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Augmented Matrix Notation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html#Subsection-Row-Echelon-and-Reduced-Row-Echelon-Forms" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Row-Echelon and Reduced Row-Echelon Forms</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html#Exercises-Augmented-Matrix-Notation-and-Elementary-Row-Operations" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -340,18 +265,12 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html#Subsection-Row-Echelon-and-Reduced-Row-Echelon-Forms" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Row Echelon and Reduced Row Echelon Forms</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html#Subsection-Gaussian-and-Gauss-Jordan-Elimination" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Gaussian and Gauss-Jordan Elimination</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html#Subsection-Rank" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Rank</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html#Section-Gaussian-Elimination-and-Rank-6" class="internal"><span class="codenumber">2.3.5</span> <span class="title">References</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html#Section-Gaussian-Elimination-and-Rank-6-2" class="internal"><span class="codenumber">2.3.5</span> <span class="title">References</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html#Exercises-Gaussian-Elimination-and-Rank" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="Section-Gaussian-Elimination-and-Rank.html#Section-Gaussian-Elimination-and-Rank-6" class="internal"><span class="codenumber">2.3.5</span> <span class="title">References</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Applications-of-Systems-of-Linear-Equations.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Applications of Systems of Linear Equations</span></a></div>
+<div class="toc-title-box"><a href="Section-Applications-of-Systems-of-Linear-Equations.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Extra Topic: Applications of Systems of Linear Equations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Applications-of-Systems-of-Linear-Equations.html#Subsection-Network-Flows" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Network Flows</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Applications-of-Systems-of-Linear-Equations.html#Subsection-Electrical-Networks" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Electrical Networks</span></a></div></li>
@@ -365,44 +284,27 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="Chapter-Big-Ideas-about-Vectors.html" class="internal"><span class="codenumber">3</span> <span class="title">Big Ideas about Vectors</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Linear-Combinations-of-Vectors.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Linear Combinations of Vectors</span></a></div>
+<div class="toc-title-box"><a href="Section-Linear-Combinations-of-Vectors.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Linear Combinations of Vectors and their Span</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Combinations-of-Vectors.html#Subsection-Visualizing-Linear-Combinations-in-2d-and-3d" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Visualizing Linear Combinations in <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Combinations-of-Vectors.html#Subsection-Geometry-of-Linear-Combinations" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Geometry of Linear Combinations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Combinations-of-Vectors.html#Subsection-From-Geometry-to-Algebra-of-Linear-Combinations" class="internal"><span class="codenumber">3.1.3</span> <span class="title">From Geometry to Algebra of Linear Combinations</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Linear-Combinations-of-Vectors.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Linear-Combinations-of-Vectors.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Combinations-of-Vectors.html#Section-Span" class="internal"><span class="codenumber">3.1.3</span> <span class="title">The Linear Span</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Linear-Combinations-of-Vectors.html#Section-Linear-Combinations-of-Vectors-9" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Span.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Span</span></a></div>
+<div class="toc-title-box"><a href="Section-Linear-Independence.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Linear Independence</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Span.html#Subsection-Linear-Combinations-Revisited" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Linear Combinations Revisited</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Span.html#Subsection-Definition-of-Span" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Definition of Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsection-Redundant-Vectors" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Redundant Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsection-Linear-Independence" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Linear Independence</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Span.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Span.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsection-Geometry-of-Linearly-Dependent-and-Linearly-Independent-Vectors" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Geometry of Linearly Dependent and Linearly Independent Vectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsubsection-A-Set-of-Two-Vectors" class="internal"><span class="codenumber">3.2.3.1</span> <span class="title">A Set of Two Vectors</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsubsection-A-Set-of-Three-Vectors" class="internal"><span class="codenumber">3.2.3.2</span> <span class="title">A Set of Three Vectors</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Linear-Independence.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Linear Independence</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsection-Redundant-Vectors" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Redundant Vectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsection-Linear-Independence" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Linear Independence</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsection-Geometry-of-Linearly-Dependent-and-Linearly-Independent-Vectors" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Geometry of Linearly Dependent and Linearly Independent Vectors</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsubsection-A-Set-of-Two-Vectors" class="internal"><span class="codenumber">3.3.3.1</span> <span class="title">A Set of Two Vectors</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsubsection-A-Set-of-Three-Vectors" class="internal"><span class="codenumber">3.3.3.2</span> <span class="title">A Set of Three Vectors</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Linear-Independence.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Linear-Independence.html#prob-linindmultchoice1" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Linear-Independence.html#prob-linindmultchoice1" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -411,82 +313,315 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="Chapter-Matrices.html" class="internal"><span class="codenumber">4</span> <span class="title">Matrices</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Addition and Scalar Multiplication of Matrices</span></a></div>
+<div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Matrix Operations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Introduction-to-Matrices" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Introduction to Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Addition-of-Matrices" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Addition of Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Scalar-Multiplication-of-Matrices" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Scalar Multiplication of Matrices</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Addition-of-Matrices" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Addition - and Scalar multiplication of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Matrix-Multiplication" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Matrix-Vector-Multiplication" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Matrix-Vector Multiplication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Matrix-Matrix-Multiplication" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Matrix-Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Properties-of-Matrix-Multiplication" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Properties of Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Subsection-Transpose-of-a-Matrix" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Transpose of a Matrix</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Addition-and-Scalar-Multiplication-of-Matrices.html#Section-Addition-and-Scalar-Multiplication-of-Matrices-19" class="internal"><span class="codenumber">4.1.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Matrix-Multiplication.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Matrix Multiplication</span></a></div>
+<div class="toc-title-box"><a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Linear Systems as Matrix and Linear Combination Equations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Multiplication.html#Subsection-Matrix-Multiplication" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Matrix Multiplication</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Multiplication.html#Subsection-Matrix-Vector-Multiplication" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Matrix-Vector Multiplication</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Multiplication.html#Subsection-Matrix-Matrix-Multiplication" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Matrix-Matrix Multiplication</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Multiplication.html#Subsection-Properties-of-Matrix-Multiplication" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Properties of Matrix Multiplication</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Matrix-Multiplication.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">4.2.5</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Matrix-Multiplication.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">4.2.5</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html#Subsection-Singular-and-Nonsingular-Matrices" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Singular and Nonsingular Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html#Subsection-A-Linear-System-as-a-Linear-Combination-Equation" class="internal"><span class="codenumber">4.2.2</span> <span class="title">A Linear System as a Linear Combination Equation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html#Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations-10" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Block-Matrix-Multiplication.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Block Matrix Multiplication</span></a></div>
+<div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Homogeneous Linear Systems</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Block-Matrix-Multiplication.html#Subsection-Block-Matrix-Multiplication" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Block Matrix Multiplication</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Block-Matrix-Multiplication.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Block-Matrix-Multiplication.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html#Subsection-General-and-Particular-Solutions" class="internal"><span class="codenumber">4.3.1</span> <span class="title">General and Particular Solutions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html#Section-Homogeneous-Linear-Systems-7" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Transpose-of-a-Matrix.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Transpose of a Matrix</span></a></div>
+<div class="toc-title-box"><a href="Section-The-Inverse-of-a-Matrix.html" class="internal"><span class="codenumber">4.4</span> <span class="title">The Inverse of a Matrix</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Transpose-of-a-Matrix.html#Subsection-Transpose-of-a-Matrix" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Transpose of a Matrix</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Transpose-of-a-Matrix.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Transpose-of-a-Matrix.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-The-Inverse-of-a-Matrix.html#Subsection-Computing-the-Inverse" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Computing the Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-The-Inverse-of-a-Matrix.html#Subsection-Inverse-of-a-2d-matrix" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Inverse of a <span class="process-math">\(2\times 2\)</span> Matrix</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-The-Inverse-of-a-Matrix.html#Section-The-Inverse-of-a-Matrix-15" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Linear Systems as Matrix and Linear Combination Equations</span></a></div>
+<div class="toc-title-box"><a href="Section-Elementary-Matrices.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Elementary Matrices</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html#Subsection-A-Linear-System-as-a-Matrix-Equation" class="internal"><span class="codenumber">4.5.1</span> <span class="title">A Linear System as a Matrix Equation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html#Subsection-Singular-and-Nonsingular-Matrices" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Singular and Nonsingular Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html#Subsection-A-Linear-System-as-a-Linear-Combination-Equation" class="internal"><span class="codenumber">4.5.3</span> <span class="title">A Linear System as a Linear Combination Equation</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Matrices.html#Subsection-Inverses-of-Elementary-Matrices" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Inverses of Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Elementary-Matrices.html#Section-Elementary-Matrices-14" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Homogeneous Linear Systems</span></a></div>
+<div class="toc-title-box"><a href="Section-LU-Factorization.html" class="internal"><span class="codenumber">4.6</span> <span class="title">LU Factorization</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html#Subsection-General-and-Particular-Solutions" class="internal"><span class="codenumber">4.6.1</span> <span class="title">General and Particular Solutions</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Exercises</span></a></div></li></ul>
-</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-LU-Factorization.html#Subsection-Finding-an-LU-factorization-by-the-Multiplier-Method" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Finding an <span class="process-math">\(LU\)</span> factorization by the Multiplier Method</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-LU-Factorization.html#Section-LU-Factorization-10" class="internal"><span class="codenumber">4.6.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Elementary-Matrices.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Elementary Matrices</span></a></div>
+<div class="toc-title-box"><a href="Section-Application-to-Markov-Chains.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Extra Topic: Application to Markov Chains</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Matrices.html#Subsection-Definition-and-Examples" class="internal"><span class="codenumber">4.7.1</span> <span class="title">Definition and Examples</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Matrices.html#Subsection-Inverses-of-Elementary-Matrices" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Inverses of Elementary Matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Matrices.html#Subsection-Elementary-Matrices-and-Nonsingular-Matrices" class="internal"><span class="codenumber">4.7.3</span> <span class="title">Elementary Matrices and Nonsingular Matrices</span></a></div></li>
-<li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="Section-Elementary-Matrices.html#Subsection-Practice-Problems" class="internal"><span class="codenumber">4.7.4</span> <span class="title">Practice Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Elementary-Matrices.html#Subsection-Practice-Problems-2" class="internal"><span class="codenumber">4.7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Application-to-Markov-Chains.html#Subsection-Steady-State-Vector" class="internal"><span class="codenumber">4.7.1</span> <span class="title">Steady State Vector</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Application-to-Markov-Chains.html#Section-Application-to-Markov-Chains-20" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
 </li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Subspaces-of-Rn.html" class="internal"><span class="codenumber">5</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section--m-mathbb-R.html" class="internal"><span class="codenumber">5.1</span> <span class="title"><span class="process-math">\(\mathbb{R}^n\)</span> and subspaces of <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section--m-mathbb-R.html#Subsection-Closure" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Closure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section--m-mathbb-R.html#Subsection-Rn-as-a-Vector-Space" class="internal"><span class="codenumber">5.1.2</span> <span class="title"><span class="process-math">\(\R^n\)</span> as a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section--m-mathbb-R.html#Subsection-Subspaces-of-Rn" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section--m-mathbb-R.html#Section--m-mathbb-R-7" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Bases-and-Dimension.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bases and Dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Subsection-Coordinate-Vectors" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Coordinate Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Subsection-What-Constitutes-a-Basis" class="internal"><span class="codenumber">5.2.2</span> <span class="title">What Constitutes a Basis?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Subsection-Definition-of-a-Basis" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Definition of a Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Subsection-Exploring-Dimension" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Exploring Dimension</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Bases-and-Dimension-6" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span> Associated with Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#Subsection-Row-Space-of-a-Matrix" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Row Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#Subsection-Column-Space-of-a-Matrix" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Column Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#Subsection-The-Null-Space" class="internal"><span class="codenumber">5.3.3</span> <span class="title">The Null Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#Subsection-Rank-and-Nullity-Theorem" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Rank and Nullity Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#Section-Subspaces-of-m-R-n-m-Associated-with-Matrices-6" class="internal"><span class="codenumber">5.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Linear-Transformations.html" class="internal"><span class="codenumber">6</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Matrix-Transformations.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Matrix Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Subsection-Functions-from-Rn-into-Rm" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Functions from <span class="process-math">\(\R^n\)</span> into <span class="process-math">\(\R^m\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Subsection-Examples-of-Matrix-Transformations" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Examples of Matrix Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Subsection-Linearity-of-Matrix-Transformations" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Linearity of Matrix Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Subsection-Where-did-i-go" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Where did <span class="process-math">\(\mathbf{i}\)</span> Go?</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Section-Matrix-Transformations-6" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Introduction-to-Linear-Transformations.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Introduction to Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Linear-Transformations.html#Subsection-Linear-Transformations-Induced-by-Matrices" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Linear Transformations Induced by Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Linear-Transformations.html#Subsection-Linear-Transformations-of-Subspaces-of-Rn" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Linear Transformations of Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Linear-Transformations.html#Section-Standard-Matrix-of-a-Linear-Transformation-from-m-R-n-m-to-m-R-m-m-" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Standard Matrix of a Linear Transformation from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Introduction-to-Linear-Transformations.html#Section-Introduction-to-Linear-Transformations-23" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Composition, Inverses, Images and Kernel</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#Subsection-Composition-and-Matrix-Multiplication" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Composition and Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#Subsection-Inverses-of-Linear-Transformations" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Inverses of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#Subsection-Linear-Transformations-of-Rn-and-the-Standard-Matrix-of-the-Inverse-Transformation" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Linear Transformations of <span class="process-math">\(\R^n\)</span> and the Standard Matrix of the Inverse Transformation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#Subsection-The-Image-of-a-Linear-Transformation" class="internal"><span class="codenumber">6.3.4</span> <span class="title">The Image</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#Subsection-The-Kernel-of-a-Linear-Transformation" class="internal"><span class="codenumber">6.3.5</span> <span class="title">The Kernel of a Linear Transformation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#Subsection-Rank-Nullity-Theorem-for-Linear-Transformations" class="internal"><span class="codenumber">6.3.6</span> <span class="title">Rank-Nullity Theorem for Linear Transformations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#Section-Composition-and-Inverses-of-Linear-Transformations-9" class="internal"><span class="codenumber">6.3.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Geometric-Transformations-of-the-Plane.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Extra Topic: Geometric Transformations of the Plane</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Geometric-Transformations-of-the-Plane.html#Subsection-Horizontal-and-Vertical-Scaling" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Horizontal and Vertical Scaling</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Geometric-Transformations-of-the-Plane.html#Subsection-Horizontal-and-Vertical-Shears" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Horizontal and Vertical Shears</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Geometric-Transformations-of-the-Plane.html#Subsection-Rotations-about-the-Origin" class="internal"><span class="codenumber">6.4.3</span> <span class="title">Rotations about the Origin</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Geometric-Transformations-of-the-Plane.html#Subsection-Reflections-about-Lines-of-the-Form" class="internal"><span class="codenumber">6.4.4</span> <span class="title">Reflections about Lines of the Form <span class="process-math">\(y=mx\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Geometric-Transformations-of-the-Plane.html#Subsection-Composition-of-Linear-Transformations" class="internal"><span class="codenumber">6.4.5</span> <span class="title">Composition of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Geometric-Transformations-of-the-Plane.html#Section-Geometric-Transformations-of-the-Plane-12" class="internal"><span class="codenumber">6.4.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Application-to-Computer-Graphics.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Extra Topic: Application to Computer Graphics</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Application-to-Computer-Graphics.html#Section-Application-to-Computer-Graphics-21" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-The-Determinant.html" class="internal"><span class="codenumber">7</span> <span class="title">The Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Finding-the-Determinant.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Finding the Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-Cofactor-Expansion-Along-the-Top-Row" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Cofactor Expansion Along the Top Row</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-Cofactor-Expansion-Along-the-First-Column" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Cofactor Expansion Along the First Column</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-Cofactor-Expansion-Along-Any-Row-or-Column" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Cofactor Expansion Along Any Row or Column</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-A-Note-on-Equivalency" class="internal"><span class="codenumber">7.1.4</span> <span class="title">A Note on Equivalency</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-Determinants-of-Some-Special-Matrices" class="internal"><span class="codenumber">7.1.5</span> <span class="title">Determinants of Some Special Matrices</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Section-Finding-the-Determinant-9" class="internal"><span class="codenumber">7.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Properties of the Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html#Subsection-The-Effects-of-Elementary-Row-Operations-on-the-Determinant" class="internal"><span class="codenumber">7.2.1</span> <span class="title">The Effects of Elementary Row Operations on the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html#Subsection-Computing-the-Determinant-Using-Elementary-Row-Operations" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Computing the Determinant Using Elementary Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html#Subsection-Properties-of-the-Determinant" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html#Section-Elementary-Row-Operations-and-the-Determinant-7" class="internal"><span class="codenumber">7.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Determinants and Inverses of Nonsingular Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#Subsection-Cramers-Rule" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Cramer’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#Subsection-Adjugate-Formula-for-the-Inverse-of-a-Matrix" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Adjugate Formula for the Inverse of a Matrix</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#Section-Determinants-and-Inverses-of-Nonsingular-Matrices-5" class="internal"><span class="codenumber">7.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Extra Topic: Determinants, Areas, and Volumes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html#Subsection-2times2-Determinant-and-the-Area-of-a-Parallelogram" class="internal"><span class="codenumber">7.4.1</span> <span class="title"><span class="process-math">\(2\times 2\)</span> Determinant and the Area of a Parallelogram</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html#Subsection-3times3-Determinant-and-the-Volume-of-a-Parallelepiped" class="internal"><span class="codenumber">7.4.2</span> <span class="title"><span class="process-math">\(3\times 3\)</span> Determinant and the Volume of a Parallelepiped</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html#Subsection-Determinants-and-Linear-Transformations" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Determinants and Linear Transformations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html#Section-Determinants-Areas-and-Volumes-5" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Eigenvalues-and-Eigenvectors.html" class="internal"><span class="codenumber">8</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#Section-The-Characteristic-Equation" class="internal"><span class="codenumber">8.1.1</span> <span class="title">The Characteristic Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#Subsection-Eigenvalues" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#Subsection-Eigenvectors" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Eigenvectors</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#Section-Describing-Eigenvalues-and-Eigenvectors-23" class="internal"><span class="codenumber">8.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Similar-Matrices-and-Their-Properties.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Similar - and Diagonalizable Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Similar-Matrices-and-Their-Properties.html#Section-Diagonalizable-Matrices-and-Multiplicity" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Diagonalizable Matrices and Multiplicity</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Similar-Matrices-and-Their-Properties.html#Section-Similar-Matrices-and-Their-Properties-20" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Orthogonality.html" class="internal"><span class="codenumber">9</span> <span class="title">Orthogonality</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Orthogonality and Projections</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Subsection-Orthogonal-and-Orthonormal-Sets" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Orthogonal and Orthonormal Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Subsection-Orthogonal-and-Orthonormal-Bases" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Orthogonal and Orthonormal Bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Subsection-Orthogonal-Projection-onto-a-Subspace" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Orthogonal Projection onto a Subspace</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Subsection-Orthogonal-Decomposition-of-x" class="internal"><span class="codenumber">9.1.4</span> <span class="title">Orthogonal Decomposition of <span class="process-math">\(\mathbf{x}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Section-Orthogonality-and-Projections-6" class="internal"><span class="codenumber">9.1.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Gram-Schmidt-Orthogonalization.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Gram-Schmidt Orthogonalization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Gram-Schmidt-Orthogonalization.html#Subsection-A-Visual-Guide-to-Creating-an-Orthogonal-Basis" class="internal"><span class="codenumber">9.2.1</span> <span class="title">A Visual Guide to Creating an Orthogonal Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Gram-Schmidt-Orthogonalization.html#Subsection-Gram-Schmidt-Orthogonalization-Algorithm" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Gram-Schmidt Orthogonalization Algorithm</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Gram-Schmidt-Orthogonalization.html#Section-Gram-Schmidt-Orthogonalization-5" class="internal"><span class="codenumber">9.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Orthogonal-Complements-and-Decompositions.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Orthogonal Complements and Decompositions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonal-Complements-and-Decompositions.html#Subsection-Orthogonal-Complements" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonal-Complements-and-Decompositions.html#Subsection-Orthogonal-Decomposition-Theorem" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Orthogonal Decomposition Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Orthogonal-Complements-and-Decompositions.html#Section-Orthogonal-Complements-and-Decompositions-4" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Orthogonal Matrices and Symmetric Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html#Subsection-Orthogonal-Matrices" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Orthogonal Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html#Subsection-Symmetric-Matrices" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Symmetric Matrices</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html#Section-Orthogonal-Matrices-and-Symmetric-Matrices-5" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-QR-Factorization.html" class="internal"><span class="codenumber">9.5</span> <span class="title">QR Factorization and Least Square Approximations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization.html#Subsection-QR-Algorithm-for-approximating-eigenvalues" class="internal"><span class="codenumber">9.5.1</span> <span class="title">QR-Algorithm for approximating eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization.html#Subsection-Least-Squares-Approximation" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Least-Squares Approximation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization.html#Subsection-Application-of-Least-Squares-to-Curve-Fitting" class="internal"><span class="codenumber">9.5.3</span> <span class="title">Application of Least Squares to Curve Fitting</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization.html#Subsection-QR-Factorization-A-Quicker-Way-to-do-Least-Squares" class="internal"><span class="codenumber">9.5.4</span> <span class="title"><span class="process-math">\(QR\)</span>-Factorization: A Quicker Way to do Least Squares</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-QR-Factorization.html#Section-QR-Factorization-19" class="internal"><span class="codenumber">9.5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Section-SVD-Decomposition.html" class="internal"><span class="codenumber">9.6</span> <span class="title">SVD Decomposition</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Positive-Definite-Matrices.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Extra Topic: Positive Definite Matrices</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Positive-Definite-Matrices.html#Section-Positive-Definite-Matrices-21" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Curve-Fitting.html" class="internal"><span class="codenumber">9.8</span> <span class="title">Extra Topic: Curve Fitting</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Curve-Fitting.html#Subsection-On-the-Dangers-of-Overfitting" class="internal"><span class="codenumber">9.8.1</span> <span class="title">On the Dangers of Overfitting</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Curve-Fitting.html#Section-Curve-Fitting-9" class="internal"><span class="codenumber">9.8.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Vector-Spaces.html" class="internal"><span class="codenumber">10</span> <span class="title">Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Abstract Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Subsection-Properties-of-Vector-Spaces" class="internal"><span class="codenumber">10.1.1</span> <span class="title">Properties of Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space" class="internal"><span class="codenumber">10.1.2</span> <span class="title">Definition of a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Subsection-Subspaces" class="internal"><span class="codenumber">10.1.3</span> <span class="title">Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Subsection-Linear-Combinations-and-Span" class="internal"><span class="codenumber">10.1.4</span> <span class="title">Linear Combinations and Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Section-Bases-and-Dimension-of-Abstract-Vector-Spaces" class="internal"><span class="codenumber">10.1.5</span> <span class="title">Bases and Dimension of Abstract Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Subsection-Bases-and-Dimension" class="internal"><span class="codenumber">10.1.6</span> <span class="title">Bases and Dimension</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Subsection-Finite-Dimensional-Vector-Spaces" class="internal"><span class="codenumber">10.1.7</span> <span class="title">Finite-Dimensional Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Subsection-Coordinate-Vectors" class="internal"><span class="codenumber">10.1.8</span> <span class="title">Coordinate Vectors</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Abstract-Vector-Spaces.html#Section-Abstract-Vector-Spaces-11" class="internal"><span class="codenumber">10.1.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Linear-Transformations-of-Abstract-Vector-Spaces.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Linear Transformations of Abstract Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Subsection-Linear-Transformations-and-Bases" class="internal"><span class="codenumber">10.2.1</span> <span class="title">Linear Transformations and Bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Subsection-Coordinate-Vectors" class="internal"><span class="codenumber">10.2.2</span> <span class="title">Coordinate Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Section-Existence-of-the-Inverse-of-a-Linear-Transformation" class="internal"><span class="codenumber">10.2.3</span> <span class="title">Inverses of a Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Subsection-One-to-one-Linear-Transformations" class="internal"><span class="codenumber">10.2.4</span> <span class="title">One-to-one and Onto Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Subsection-Existence-of-Inverses" class="internal"><span class="codenumber">10.2.5</span> <span class="title">Existence and Uniqueness of Inverses</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Section-Linear-Transformations-of-Abstract-Vector-Spaces-13" class="internal"><span class="codenumber">10.2.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Isomorphic Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#The-Coordinate-Vector-Isomorphism" class="internal"><span class="codenumber">10.3.1</span> <span class="title">The Coordinate Vector Isomorphism</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#Subsection-Properties-of-Isomorphic-Vector-Spaces-and-Isomorphisms" class="internal"><span class="codenumber">10.3.2</span> <span class="title">Properties of Isomorphic Vector Spaces and Isomorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#Subsection-Proofs-of-Isomorphism-Properties" class="internal"><span class="codenumber">10.3.3</span> <span class="title">Proofs of Isomorphism Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#Subsection-Finite-dimensional-Vector-Spaces" class="internal"><span class="codenumber">10.3.4</span> <span class="title">Finite-dimensional Vector Spaces</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#Section-Isomorphic-Vector-Spaces-20" class="internal"><span class="codenumber">10.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Inner-Product-Spaces.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Extra Topic: Inner Product Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Inner-Product-Spaces.html#Subsection-Norm-and-Distance" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Norm and Distance</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Inner-Product-Spaces.html#Section-Inner-Product-Spaces-20" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -494,59 +629,59 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Section-Dot-Product-and-Angle"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.8</span><span class="space"> </span><span class="title">Dot Product and Angle</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.4</span><span class="space"> </span><span class="title">Extra Topic: Dot Product and Angle</span>
 </h2>
 <div class="para" id="Section-Dot-Product-and-Angle-2">Given two vectors <span class="process-math">\(\mathbf{u}\)</span> and <span class="process-math">\(\mathbf{v}\text{,}\)</span> let <span class="process-math">\(\theta\)</span> be the angle between them such that <span class="process-math">\(0\leq\theta\leq \pi\text{.}\)</span> We will refer to <span class="process-math">\(\theta\)</span> as the <dfn class="terminology">included angle</dfn>.</div>
 <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/latex-image/Section-Dot-Product-and-Angle-3.svg" role="img" class="contained" alt="Angle between vectors."></div>
 <div class="para" id="Section-Dot-Product-and-Angle-4">The following theorem establishes a relationship between the dot product and the included angle.</div>
 <article class="theorem theorem-like" id="th-dotproductcosine"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.1</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="th-dotproductcosine-1-1">
 <div class="para">Let <span class="process-math">\(\mathbf{u}\)</span> and <span class="process-math">\(\mathbf{v}\)</span> be vectors in <span class="process-math">\(\R^n\text{,}\)</span> and let <span class="process-math">\(\theta\)</span> be the included angle. Then</div>
 <div class="displaymath process-math" id="matlintrans">
 \begin{equation}
-\mathbf{u}\cdot\mathbf{v}=\norm{\mathbf{u}}\norm{\mathbf{v}}\cos \theta\tag{1.8.1}
+\mathbf{u}\cdot\mathbf{v}=\norm{\mathbf{u}}\norm{\mathbf{v}}\cos \theta\tag{1.4.1}
 \end{equation}
 </div>
 </div></article><details id="th-dotproductcosine-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th-dotproductcosine-2-1">Consider the triangle formed by <span class="process-math">\(\mathbf{u}\text{,}\)</span> <span class="process-math">\(\mathbf{v}\)</span> and <span class="process-math">\(\mathbf{u}-\mathbf{v}\text{.}\)</span>
 </div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/th-dotproductcosine-2-2.svg" role="img" class="contained" alt=""></div> <div class="para logical" id="th-dotproductcosine-2-3">
 <div class="para">By the Law of Cosines we have:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-norm.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-distributive-again.html  ./knowl/xref/item-distributive.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-commutative.html ./knowl/xref/Section-Dot-Product-and-its-Properties.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-norm.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-distributive-again.html  ./knowl/xref/item-distributive.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-commutative.html ">
 \begin{equation*}
 \norm{\mathbf{u}-\mathbf{v}}^2=\norm{\mathbf{u}}^2+\norm{\mathbf{v}}^2-2\norm{\mathbf{u}}\norm{\mathbf{v}}\cos\theta
 \end{equation*}
 </div>
-<div class="para">By <a href="Section-Dot-Product-and-its-Properties.html#th-dotproductproperties" class="xref" data-knowl="./knowl/xref/th-dotproductproperties.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.7.3">Theorem 1.7.3</a> <a href="Section-Dot-Product-and-its-Properties.html#item-norm" class="xref" data-knowl="./knowl/xref/item-norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 6">Item 6</a>,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-norm.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-distributive-again.html  ./knowl/xref/item-distributive.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-commutative.html ./knowl/xref/Section-Dot-Product-and-its-Properties.html">
+<div class="para">By <a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#th-dotproductproperties" class="xref" data-knowl="./knowl/xref/th-dotproductproperties.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.2.7">Theorem 1.2.7</a> <a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#item-norm" class="xref" data-knowl="./knowl/xref/item-norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 6">Item 6</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-norm.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-distributive-again.html  ./knowl/xref/item-distributive.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-commutative.html ">
 \begin{equation*}
 (\mathbf{u}-\mathbf{v})\cdot (\mathbf{u}-\mathbf{v})=\mathbf{u}\cdot \mathbf{u}+\mathbf{v}\cdot \mathbf{v}-2\norm{\mathbf{u}}\norm{\mathbf{v}}\cos\theta
 \end{equation*}
 </div>
-<div class="para">By <a href="Section-Dot-Product-and-its-Properties.html#th-dotproductproperties" class="xref" data-knowl="./knowl/xref/th-dotproductproperties.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.7.3">Theorem 1.7.3</a> <a href="Section-Dot-Product-and-its-Properties.html#item-distributive-again" class="xref" data-knowl="./knowl/xref/item-distributive-again.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a>,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-norm.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-distributive-again.html  ./knowl/xref/item-distributive.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-commutative.html ./knowl/xref/Section-Dot-Product-and-its-Properties.html">
+<div class="para">By <a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#th-dotproductproperties" class="xref" data-knowl="./knowl/xref/th-dotproductproperties.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.2.7">Theorem 1.2.7</a> <a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#item-distributive-again" class="xref" data-knowl="./knowl/xref/item-distributive-again.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-norm.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-distributive-again.html  ./knowl/xref/item-distributive.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-commutative.html ">
 \begin{equation*}
 (\mathbf{u}-\mathbf{v})\cdot \mathbf{u}-(\mathbf{u}-\mathbf{v})\cdot \mathbf{v}=\mathbf{u}\cdot \mathbf{u}+\mathbf{v}\cdot \mathbf{v}-2\norm{\mathbf{u}}\norm{\mathbf{v}}\cos\theta
 \end{equation*}
 </div>
-<div class="para">By <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "th-dotproductpropert, ies" missing or not unique]</code> <a href="Section-Dot-Product-and-its-Properties.html#item-distributive" class="xref" data-knowl="./knowl/xref/item-distributive.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a>,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-norm.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-distributive-again.html  ./knowl/xref/item-distributive.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-commutative.html ./knowl/xref/Section-Dot-Product-and-its-Properties.html">
+<div class="para">By <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "th-dotproductpropert, ies" missing or not unique]</code> <a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#item-distributive" class="xref" data-knowl="./knowl/xref/item-distributive.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-norm.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-distributive-again.html  ./knowl/xref/item-distributive.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-commutative.html ">
 \begin{equation*}
 \mathbf{u}\cdot \mathbf{u}-\mathbf{v}\cdot\mathbf{u}-\mathbf{u}\cdot\mathbf{v}+\mathbf{v}\cdot \mathbf{v}=\mathbf{u}\cdot \mathbf{u}+\mathbf{v}\cdot \mathbf{v}-2\norm{\mathbf{u}}\norm{\mathbf{v}}\cos\theta
 \end{equation*}
 </div>
-<div class="para">By <a href="Section-Dot-Product-and-its-Properties.html#th-dotproductproperties" class="xref" data-knowl="./knowl/xref/th-dotproductproperties.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.7.3">Theorem 1.7.3</a> <a href="Section-Dot-Product-and-its-Properties.html#item-commutative" class="xref" data-knowl="./knowl/xref/item-commutative.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a> of <a href="Section-Dot-Product-and-its-Properties.html" class="internal" title="Section 1.7: Dot Product and its Properties">Section 1.7</a>,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-norm.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-distributive-again.html  ./knowl/xref/item-distributive.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-commutative.html ./knowl/xref/Section-Dot-Product-and-its-Properties.html" id="th-dotproductcosine-2-3-14">
+<div class="para">By <a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#th-dotproductproperties" class="xref" data-knowl="./knowl/xref/th-dotproductproperties.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.2.7">Theorem 1.2.7</a> <a href="Section-Unit-Vectors-the-Dot-Product-and-Orthogonal-Projection.html#item-commutative" class="xref" data-knowl="./knowl/xref/item-commutative.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a> of <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "Section-Dot-Product-and-its-Properties" missing or not unique]</code>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-norm.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-distributive-again.html  ./knowl/xref/item-distributive.html ./knowl/xref/th-dotproductproperties.html ./knowl/xref/item-commutative.html " id="th-dotproductcosine-2-3-14">
 \begin{align*}
 -2(\mathbf{u}\cdot \mathbf{v})=\amp-2\norm{\mathbf{u}}\norm{\mathbf{v}}\cos\theta \\
 \mathbf{u}\cdot \mathbf{v}=\amp\norm{\mathbf{u}}\norm{\mathbf{v}}\cos\theta 
 \end{align*}
 </div>
 </div></article></details><details id="ex-anglebetweenvectors" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-anglebetweenvectors-1">Find the included angle between vectors <span class="process-math">\(\mathbf{u}=\begin{bmatrix}2\\-1\\4\end{bmatrix}\)</span> and <span class="process-math">\(\mathbf{v}=\begin{bmatrix}1\\2\\-3\end{bmatrix}\text{.}\)</span>
 </div> <div class="para logical" id="ex-anglebetweenvectors-2">
-<div class="para">By <a href="Section-Dot-Product-and-Angle.html#th-dotproductcosine" class="xref" data-knowl="./knowl/xref/th-dotproductcosine.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.1">Theorem 1.8.1</a>, <span class="process-math">\(\cos \theta=\frac{\mathbf{u}\cdot \mathbf{v}}{\norm{\mathbf{u}}\norm{\mathbf{v}}}\text{.}\)</span>
+<div class="para">By <a href="Section-Dot-Product-and-Angle.html#th-dotproductcosine" class="xref" data-knowl="./knowl/xref/th-dotproductcosine.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.1">Theorem 1.4.1</a>, <span class="process-math">\(\cos \theta=\frac{\mathbf{u}\cdot \mathbf{v}}{\norm{\mathbf{u}}\norm{\mathbf{v}}}\text{.}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-dotproductcosine.html">
 \begin{equation*}
@@ -574,14 +709,14 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation*}
 </div>
 </div></article></details><section class="subsection" id="Subsection-Orthogonal-Vectors"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.8.1</span><span class="space"> </span><span class="title">Orthogonal Vectors</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="space"> </span><span class="title">Orthogonal Vectors</span>
 </h3>
 <article class="definition definition-like" id="def-orthovectors"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.8.3</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-orthovectors-1-1">Let <span class="process-math">\(\mathbf{u}\)</span> and <span class="process-math">\(\mathbf{v}\)</span> be vectors in <span class="process-math">\(\R^n\text{.}\)</span> We say <span class="process-math">\(\mathbf{u}\)</span> and <span class="process-math">\(\mathbf{v}\)</span> are <dfn class="terminology">orthogonal</dfn> if <span class="process-math">\(\mathbf{u}\cdot \mathbf{v}=0\text{.}\)</span>
 </div></article><div class="para logical" id="Subsection-Orthogonal-Vectors-3">
-<div class="para">We can use <a href="Section-Dot-Product-and-Angle.html#th-dotproductcosine" class="xref" data-knowl="./knowl/xref/th-dotproductcosine.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.1">Theorem 1.8.1</a> to show that two non-zero <dfn class="terminology">orthogonal</dfn> vectors of <span class="process-math">\(\R^n\)</span> are simply <dfn class="terminology">perpendicular</dfn> vectors (the included angle is <span class="process-math">\(90^{\circ}\)</span>).  To see this, suppose that <span class="process-math">\(\mathbf{u}\cdot\mathbf{v}=0\)</span> for nonzero vectors <span class="process-math">\(\mathbf{u},\mathbf{v}\text{.}\)</span>  Then from <a href="Section-Dot-Product-and-Angle.html#th-dotproductcosine" class="xref" data-knowl="./knowl/xref/th-dotproductcosine.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.1">Theorem 1.8.1</a> we have</div>
+<div class="para">We can use <a href="Section-Dot-Product-and-Angle.html#th-dotproductcosine" class="xref" data-knowl="./knowl/xref/th-dotproductcosine.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.1">Theorem 1.4.1</a> to show that two non-zero <dfn class="terminology">orthogonal</dfn> vectors of <span class="process-math">\(\R^n\)</span> are simply <dfn class="terminology">perpendicular</dfn> vectors (the included angle is <span class="process-math">\(90^{\circ}\)</span>).  To see this, suppose that <span class="process-math">\(\mathbf{u}\cdot\mathbf{v}=0\)</span> for nonzero vectors <span class="process-math">\(\mathbf{u},\mathbf{v}\text{.}\)</span>  Then from <a href="Section-Dot-Product-and-Angle.html#th-dotproductcosine" class="xref" data-knowl="./knowl/xref/th-dotproductcosine.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.1">Theorem 1.4.1</a> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-dotproductcosine.html ./knowl/xref/th-dotproductcosine.html">
 \begin{equation*}
 0=\norm{\mathbf{u}}\norm{\mathbf{v}}\cos\theta.
@@ -591,51 +726,48 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para" id="Subsection-Orthogonal-Vectors-4">The reason we prefer the term ``orthogonal" to ``perpendicular" in this course is because <span class="process-math">\(\R^n\)</span> is only one example of a <dfn class="terminology">vector space</dfn>, and the dot product is only one example of a more general product, called an <dfn class="terminology">inner product</dfn>.  For vectors in <span class="process-math">\(\R^n\)</span> a zero dot product happens to coincide with the geometric idea of perpendicularity, but there are many vector spaces that do not possess the visual geometry of <span class="process-math">\(\R^n\text{.}\)</span>  (Later in the text, you will encounter vector spaces whose vectors are polynomial functions!)  In these more abstract settings, a zero inner product still signals a special relationship between vectors.  The term <dfn class="terminology">orthogonal</dfn> captures this relationship.</div>
 <article class="remark remark-like" id="Subsection-Orthogonal-Vectors-5"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.8.4</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="Subsection-Orthogonal-Vectors-5-1">By our definition, the zero vector is orthogonal to any vector. However, we will not use the word <dfn class="terminology">perpendicular</dfn> when the zero vector is involved, as it is not possible to talk about an ``included angle’’.</div></article></section><section class="subsection" id="Subsection-Practice-Problems"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="space"> </span><span class="title">Practice Problems</span>
+<div class="para" id="Subsection-Orthogonal-Vectors-5-1">By our definition, the zero vector is orthogonal to any vector. However, we will not use the word <dfn class="terminology">perpendicular</dfn> when the zero vector is involved, as it is not possible to talk about an ``included angle’’.</div></article></section><section class="exercises" id="Exercises-Dot-Product-and-Angle"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
-<section class="exercises" id="Subsection-Practice-Problems-2"><h4 class="heading hide-type">
-<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
-</h4>
-<div class="exercisegroup" id="Subsection-Practice-Problems-2-1">
-<h5 class="heading"><span class="title">Exercise Group.</span></h5>
-<div class="introduction" id="Subsection-Practice-Problems-2-1-1"><div class="para" id="Subsection-Practice-Problems-2-1-1-1">Find the degree measure of the included angle, <span class="process-math">\(\theta\)</span> for each pair of vectors.  Round your answers to the nearest tenth.</div></div>
+<div class="exercisegroup" id="Exercises-Dot-Product-and-Angle-1">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="Exercises-Dot-Product-and-Angle-1-1"><div class="para" id="Exercises-Dot-Product-and-Angle-1-1-1">Find the degree measure of the included angle, <span class="process-math">\(\theta\)</span> for each pair of vectors.  Round your answers to the nearest tenth.</div></div>
 <div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="prob-anglebetweenvectors1"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<article class="exercise exercise-like" id="prob-anglebetweenvectors1"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
 <div class="para" id="prob-anglebetweenvectors1-1-1">
 <span class="process-math">\(\begin{bmatrix}1\\2\end{bmatrix}\)</span> and <span class="process-math">\(\begin{bmatrix}-3\\-1\end{bmatrix}\text{.}\)</span>
 </div>
-<div class="solutions"><details id="prob-anglebetweenvectors1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-anglebetweenvectors1-2-1"><span class="process-math">\(\theta=135^\circ\)</span></div></div></details></div></article><article class="exercise exercise-like" id="prob-anglebetweenvectors2"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<div class="solutions"><details id="prob-anglebetweenvectors1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-anglebetweenvectors1-2-1"><span class="process-math">\(\theta=135^\circ\)</span></div></div></details></div></article><article class="exercise exercise-like" id="prob-anglebetweenvectors2"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
 <div class="para" id="prob-anglebetweenvectors2-1-1">
 <span class="process-math">\(\begin{bmatrix}-1\\2\\4\end{bmatrix}\)</span> and <span class="process-math">\(\begin{bmatrix}-2\\1\\-1\end{bmatrix}\)</span>
 </div>
-<div class="solutions"><details id="prob-anglebetweenvectors2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-anglebetweenvectors2-2-1"><span class="process-math">\(\theta=90^\circ\)</span></div></div></details></div></article><article class="exercise exercise-like" id="prob-anglebetweenvectors3"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<div class="solutions"><details id="prob-anglebetweenvectors2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-anglebetweenvectors2-2-1"><span class="process-math">\(\theta=90^\circ\)</span></div></div></details></div></article><article class="exercise exercise-like" id="prob-anglebetweenvectors3"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
 <div class="para" id="prob-anglebetweenvectors3-1-1">
 <span class="process-math">\(\begin{bmatrix}0\\-3\\1\end{bmatrix}\)</span> and <span class="process-math">\(\begin{bmatrix}-5\\-2\\4\end{bmatrix}\)</span>
 </div>
-<div class="solutions"><details id="prob-anglebetweenvectors3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-anglebetweenvectors3-2-1"><span class="process-math">\(\theta= 61.9^\circ\)</span></div></div></details></div></article><article class="exercise exercise-like" id="prob-anglebetweenvectors4"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<div class="solutions"><details id="prob-anglebetweenvectors3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-anglebetweenvectors3-2-1"><span class="process-math">\(\theta= 61.9^\circ\)</span></div></div></details></div></article><article class="exercise exercise-like" id="prob-anglebetweenvectors4"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
 <div class="para" id="prob-anglebetweenvectors4-1-1">
 <span class="process-math">\(\begin{bmatrix}1\\1\\-1\\2\end{bmatrix}\)</span> and <span class="process-math">\(\begin{bmatrix}-2\\0\\-3\\1\end{bmatrix}\)</span>
 </div>
 <div class="solutions"><details id="prob-anglebetweenvectors4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-anglebetweenvectors4-2-1"><span class="process-math">\(\theta=72.4^\circ\)</span></div></div></details></div></article>
 </div>
 </div>
-<article class="exercise exercise-like" id="prob-dotproductsign"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
-<div class="para" id="prob-dotproductsign-1-1">What does the sign of the dot product tell us about the included angle?</div></article><article class="exercise exercise-like" id="prob-orthvectorsdot"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<article class="exercise exercise-like" id="prob-dotproductsign"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="prob-dotproductsign-1-1">What does the sign of the dot product tell us about the included angle?</div></article><article class="exercise exercise-like" id="prob-orthvectorsdot"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para" id="prob-orthvectorsdot-1-1">Find all values of <span class="process-math">\(a\)</span> so that <span class="process-math">\(\begin{bmatrix}a^2\\2a\\1\end{bmatrix}\)</span> is orthogonal to <span class="process-math">\(\begin{bmatrix}1\\2\\3\end{bmatrix}\text{.}\)</span>
 </div>
-<div class="solutions"><details id="prob-orthvectorsdot-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-orthvectorsdot-2-1"><span class="process-math">\(a=-3, -1\)</span></div></div></details></div></article><article class="exercise exercise-like" id="prob-parallelvectdot"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
-<div class="para" id="prob-parallelvectdot-1-1">Find the value of <span class="process-math">\(x\)</span> for which the vector <span class="process-math">\(\begin{bmatrix}x\\-4\end{bmatrix}\)</span> is parallel to the vector <span class="process-math">\(\begin{bmatrix}3\\2\end{bmatrix}\text{.}\)</span> What is the measure of the included angle, <span class="process-math">\(\theta\text{?}\)</span> Find the measure of the included angle using <a href="Section-Dot-Product-and-Angle.html#ex-anglebetweenvectors" class="xref" data-knowl="./knowl/xref/ex-anglebetweenvectors.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.8.2">Example 1.8.2</a>. Do the two results agree?</div>
+<div class="solutions"><details id="prob-orthvectorsdot-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-orthvectorsdot-2-1"><span class="process-math">\(a=-3, -1\)</span></div></div></details></div></article><article class="exercise exercise-like" id="prob-parallelvectdot"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="prob-parallelvectdot-1-1">Find the value of <span class="process-math">\(x\)</span> for which the vector <span class="process-math">\(\begin{bmatrix}x\\-4\end{bmatrix}\)</span> is parallel to the vector <span class="process-math">\(\begin{bmatrix}3\\2\end{bmatrix}\text{.}\)</span> What is the measure of the included angle, <span class="process-math">\(\theta\text{?}\)</span> Find the measure of the included angle using <a href="Section-Dot-Product-and-Angle.html#ex-anglebetweenvectors" class="xref" data-knowl="./knowl/xref/ex-anglebetweenvectors.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.2">Example 1.4.2</a>. Do the two results agree?</div>
 <div class="solutions"><details id="prob-parallelvectdot-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-parallelvectdot-2-1">
 <span class="process-math">\(x=-6\)</span> and <span class="process-math">\(\theta=180^\circ\)</span>
-</div></div></details></div></article><article class="exercise exercise-like" id="prob-unitvectordot"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+</div></div></details></div></article><article class="exercise exercise-like" id="prob-unitvectordot"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para" id="prob-unitvectordot-1-1">Prove that if <span class="process-math">\(\mathbf{u}\)</span> is a unit vector, then <span class="process-math">\(\mathbf{u}\cdot \mathbf{u}=1\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="prob-unitvectordot1"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
-<div class="para" id="prob-unitvectordot1-1-1">Prove that if <span class="process-math">\(\mathbf{u}_1\)</span> and <span class="process-math">\(\mathbf{u}_2\)</span> are unit vectors, then <span class="process-math">\(-1\leq\mathbf{u}_1\cdot \mathbf{u}_2\leq 1\text{.}\)</span> In what cases are the extreme values of 1 and <span class="process-math">\(-1\)</span> attained?</div></article><article class="exercise exercise-like" id="prob-clockproblem"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+</div></article><article class="exercise exercise-like" id="prob-unitvectordot1"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="prob-unitvectordot1-1-1">Prove that if <span class="process-math">\(\mathbf{u}_1\)</span> and <span class="process-math">\(\mathbf{u}_2\)</span> are unit vectors, then <span class="process-math">\(-1\leq\mathbf{u}_1\cdot \mathbf{u}_2\leq 1\text{.}\)</span> In what cases are the extreme values of 1 and <span class="process-math">\(-1\)</span> attained?</div></article><article class="exercise exercise-like" id="prob-clockproblem"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
 <div class="para" id="prob-clockproblem-1-1">Imagine a clock with hands represented by vectors <span class="process-math">\(\mathbf{m}\)</span> and <span class="process-math">\(\mathbf{h}\text{,}\)</span> as shown below. At what whole hour will <span class="process-math">\(\mathbf{m}\cdot\mathbf{h}\)</span> attain its maximum value? At what whole hour will <span class="process-math">\(\mathbf{m}\cdot\mathbf{h}\)</span> be as small as possible?</div> <figure class="figure figure-like" id="prob-clockproblem-1-2"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/clockvectors.jpg" class="contained" alt="Image of a wall clock."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.8.5<span class="period">.</span></span><span class="space"> </span>Image courtesy of <a class="external" href="https://commons.wikimedia.org/wiki/Main_Page" target="_blank">Wikipedia Commons</a><details class="ptx-footnote" aria-live="polite" id="prob-clockproblem-1-2-1-2"><summary class="ptx-footnote__number" title="Footnote 1.8.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="prob-clockproblem-1-2-1-2"><code class="code-inline tex2jax_ignore">commons.wikimedia.org/wiki/Main_Page</code></div></details>.</figcaption></figure><div class="solutions"><details id="prob-clockproblem-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-clockproblem-2-1">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.5<span class="period">.</span></span><span class="space"> </span>Image courtesy of <a class="external" href="https://commons.wikimedia.org/wiki/Main_Page" target="_blank">Wikipedia Commons</a><details class="ptx-footnote" aria-live="polite" id="prob-clockproblem-1-2-1-2"><summary class="ptx-footnote__number" title="Footnote 1.4.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="prob-clockproblem-1-2-1-2"><code class="code-inline tex2jax_ignore">commons.wikimedia.org/wiki/Main_Page</code></div></details>.</figcaption></figure><div class="solutions"><details id="prob-clockproblem-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-clockproblem-2-1">
 <div class="displaymath process-math">
 \begin{equation*}
 \mathbf{m}\cdot\mathbf{h}\text{ is greatest at }12:00 \text{ o'clock} 
@@ -646,16 +778,16 @@ eBookConfig.enable_chatcodes =  false;
 \mathbf{m}\cdot\mathbf{h}\text{ is smallest at }6:00 \text{ o'clock} 
 \end{equation*}
 </div>
-</div></div></details></div></article><article class="exercise exercise-like" id="prob-righttriangleincircle"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+</div></div></details></div></article><article class="exercise exercise-like" id="prob-righttriangleincircle"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
 <div class="para" id="prob-righttriangleincircle-1-1">Let <span class="process-math">\(O\)</span> be a circle of radius <span class="process-math">\(r\text{.}\)</span> Suppose <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are the endpoints of a diameter of <span class="process-math">\(O\text{,}\)</span> and <span class="process-math">\(C\)</span> is a point on <span class="process-math">\(O\)</span> distinct from <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> Show that vectors <span class="process-math">\(\overrightarrow{AC}\)</span> and <span class="process-math">\(\overrightarrow{BC}\)</span> are orthogonal.</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/prob-righttriangleincircle-1-2.svg" role="img" class="contained" alt="Circumscribed circle of a triangle."></div>
 <div class="solutions"><details id="prob-righttriangleincircle-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="prob-righttriangleincircle-2-1">Assign coordinates to points <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\)</span> and <span class="process-math">\(C\text{,}\)</span> express vectors <span class="process-math">\(\overrightarrow{AC}\)</span> and <span class="process-math">\(\overrightarrow{BC}\)</span> in component form, then find the dot product of <span class="process-math">\(\overrightarrow{AC}\)</span> and <span class="process-math">\(\overrightarrow{BC}\text{.}\)</span>
-</div></div></details></div></article><article class="exercise exercise-like" id="prob-rhombusdot"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+</div></div></details></div></article><article class="exercise exercise-like" id="prob-rhombusdot"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
 <div class="para" id="prob-rhombusdot-1-1">A rhombus is a quadrilateral with four congruent sides.  Use vectors to prove that a parallelogram is a rhombus if and only if its diagonals are perpendicular.</div>
-<div class="solutions"><details id="prob-rhombusdot-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="prob-rhombusdot-2-1">See section on vector subtraction in <a href="Section-Vector-Arithmetic.html" class="internal" title="Section 1.4: Vector Arithmetic">Section 1.4</a>.</div></div></details></div></article><article class="exercise exercise-like" id="prob-pythagoreanR3usedotp"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<div class="solutions"><details id="prob-rhombusdot-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="prob-rhombusdot-2-1">See section on vector subtraction in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "Section-Vector-Arithmetic" missing or not unique]</code>.</div></div></details></div></article><article class="exercise exercise-like" id="prob-pythagoreanR3usedotp"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
 <div class="para" id="prob-pythagoreanR3usedotp-1-1">The points <span class="process-math">\(A(2,1,4),B(4,2,-1)\text{,}\)</span> and <span class="process-math">\(C(6,8,7)\)</span> form a triangle in <span class="process-math">\(\R^3\text{.}\)</span>  Is it a right triangle?</div>
-<div class="solutions"><details id="prob-pythagoreanR3usedotp-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="prob-pythagoreanR3usedotp-2-1">Express each side of the triangle as a vector and use what you have learned in this section.</div></div></details></div></article></section></section></section></div>
+<div class="solutions"><details id="prob-pythagoreanR3usedotp-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="prob-pythagoreanR3usedotp-2-1">Express each side of the triangle as a vector and use what you have learned in this section.</div></div></details></div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="Section-Dot-Product-and-its-Properties.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Section-Orthogonal-Projections.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="Section-Lines-and-Planes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Section-Cross-Product-and-its-Properties.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
