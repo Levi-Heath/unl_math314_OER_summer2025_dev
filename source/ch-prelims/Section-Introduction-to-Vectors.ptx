@@ -1912,7 +1912,7 @@ Here is a hands down example:
         <p>
           Let 
           <me>
-              \mathbf{u}=\begin{bmatrix}-2\\1\\4\end{bmatrix},\quad\mathbf{v}\begin{bmatrix}3\\-1\\0\end{bmatrix} .
+              \mathbf{u}=\begin{bmatrix}-2\\1\\4\end{bmatrix},\quad\mathbf{v}=\begin{bmatrix}3\\-1\\0\end{bmatrix} .
           </me>
           Find the following:
         </p>

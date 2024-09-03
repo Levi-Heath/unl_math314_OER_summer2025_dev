@@ -19,8 +19,8 @@
     <xi:include href="./ch-linear-transformations/Chapter-Linear-Transformations.ptx" />
     <xi:include href="./ch-the-determinant/Chapter-The-Determinant.ptx" />
     <xi:include href="./ch-eigenvalues-and-eigenvectors/Chapter-Eigenvalues-and-Eigenvectors.ptx" />
-    <xi:include href="./ch-orthogonality/Chapter-Orthogonality.ptx" />
     <xi:include href="./ch-vector-spaces/Chapter-Vector-Spaces.ptx" />
+    <xi:include href="./ch-orthogonality/Chapter-Orthogonality.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="Section-QR-Factorization" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>QR Factorization and Least Square Approximations</title>
+<section xml:id="Section-QR-Factorization-and-Least-Square-Approximations" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title><m>QR</m> Factorization and Least Square Approximations</title>
 
 
 
