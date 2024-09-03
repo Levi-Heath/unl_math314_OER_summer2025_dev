@@ -12,13 +12,13 @@
 </head>
 <body class="ignore-math">
 <article class="lemma theorem-like"><h3 class="heading">
-<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">9.6.2</span><span class="period">.</span>
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">10.6.2</span><span class="period">.</span>
 </h3>
 <div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m \times n\)</span> matrix. Then <span class="process-math">\(A^TA\)</span> and <span class="process-math">\(AA^T\)</span> have the same <span class="process-math">\(\textbf{nonzero}\)</span> eigenvalues.</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
 <div class="para">Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix, and suppose that  <span class="process-math">\(\lambda\)</span> is a nonzero eigenvalue of <span class="process-math">\(A^TA\text{.}\)</span> Then there exists a nonzero vector <span class="process-math">\(\mathbf{x} \in \R^n\)</span> such that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/nonzero.html">
 \begin{equation}
-(A^TA)\mathbf{x}=\lambda \mathbf{x}.\tag{9.6.1}
+(A^TA)\mathbf{x}=\lambda \mathbf{x}.\tag{10.6.1}
 \end{equation}
 </div>
 <div class="para">Multiplying both sides of this equation by <span class="process-math">\(A\)</span> yields:</div>
@@ -28,7 +28,7 @@ A(A^TA)\mathbf{x} \amp  =   A\lambda \mathbf{x}, \\
 (AA^T)(A\mathbf{x}) \amp  =  \lambda (A\mathbf{x}). 
 \end{align*}
 </div>
-<div class="para">Since <span class="process-math">\(\lambda\neq 0\)</span> and <span class="process-math">\(\mathbf{x}\neq 0_n\text{,}\)</span> <span class="process-math">\(\lambda \mathbf{x}\neq 0_n\text{,}\)</span> and thus by <a href="Section-SVD-Decomposition.html#nonzero" class="xref" data-knowl="./knowl/xref/nonzero.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.6.1">(9.6.1)</a>, <span class="process-math">\((A^TA)\mathbf{x}\neq 0_m\text{;}\)</span> thus <span class="process-math">\(A^T(A\mathbf{x})\neq 0_m\text{,}\)</span> implying that <span class="process-math">\(A\mathbf{x}\neq 0_m\text{.}\)</span>
+<div class="para">Since <span class="process-math">\(\lambda\neq 0\)</span> and <span class="process-math">\(\mathbf{x}\neq 0_n\text{,}\)</span> <span class="process-math">\(\lambda \mathbf{x}\neq 0_n\text{,}\)</span> and thus by <a href="Section-SVD-Decomposition.html#nonzero" class="xref" data-knowl="./knowl/xref/nonzero.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 10.6.1">(10.6.1)</a>, <span class="process-math">\((A^TA)\mathbf{x}\neq 0_m\text{;}\)</span> thus <span class="process-math">\(A^T(A\mathbf{x})\neq 0_m\text{,}\)</span> implying that <span class="process-math">\(A\mathbf{x}\neq 0_m\text{.}\)</span>
 </div>
 </div> <div class="para">Therefore <span class="process-math">\(A\mathbf{x}\)</span> is an eigenvector of <span class="process-math">\(AA^T\)</span> corresponding to eigenvalue <span class="process-math">\(\lambda\text{.}\)</span>  An analogous argument can be used to show that every nonzero eigenvalue of <span class="process-math">\(AA^T\)</span> is an eigenvalue of <span class="process-math">\(A^TA\text{,}\)</span> thus completing the proof.</div></article></details><span class="incontext"><a class="internal" href="Section-SVD-Decomposition.html#lem-samenonzeroeigenvalues">in-context</a></span>
 </body>
