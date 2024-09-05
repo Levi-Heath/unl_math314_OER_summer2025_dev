@@ -739,7 +739,10 @@
                             <mrow> x_4\amp=7t+1 </mrow>
                         </md>
                         Find the missing components for the two vectors below if we know that both vectors can be considered  direction vectors for line <m>l</m>.
-                    </p>
+                        <me>
+                          \begin{bmatrix} \boxed{~~}\\ \boxed{~~}\\ \boxed{~~}\\ 7\end{bmatrix},\begin{bmatrix} \boxed{~~}\\ -2\\ \boxed{~~}\\ \boxed{~~}\end{bmatrix}
+                        </me>
+                      </p>
                 </statement>
                 <answer>
                     <p>
