@@ -634,7 +634,7 @@ When doing computations by hand, however, the algorithm may not always be the op
 The following video shows how to arrive at the same reduced row-echelon form for the matrix in <xref ref="ex-gaussjordanalg"/> without doing any fraction arithmetic.  You will see that we still employ row operations, but in a different order.
 </p>
 
-<video youtube="videoID" play-at="select"/>
+<video youtube="76Y41ncuLeQ" play-at="popout"/>
 
 <p>
 The video highlights the fact that regardless of what sequence of elementary row operations we take to arrive at the reduced row-echelon form, the end result is the same.  
