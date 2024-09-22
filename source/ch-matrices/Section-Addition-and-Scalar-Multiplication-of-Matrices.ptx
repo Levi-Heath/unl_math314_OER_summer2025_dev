@@ -492,7 +492,7 @@ One way to understand the matrix-vector product <m>A\mathbf{x}</m> is by thinkin
 
 <md>
  <mrow>  A\mathbf{x} \amp =\begin{bmatrix}\color{red}2\amp \color{blue}-1\amp \color{brown}3\amp 2\\ \color{red}0\amp \color{blue}3\amp \color{brown}-2\amp 1\\ \color{red}-2\amp \color{blue}4\amp \color{brown}1\amp 0\end{bmatrix}\begin{bmatrix}\color{red}3\\ \color{blue}-1\\ \color{brown}4\\1\end{bmatrix} </mrow>
- <mrow>  = color{red}3\begin{bmatrix}\color{red}2\\ \color{red}0\\ \color{red}-2\end{bmatrix}\color{black}+
+ <mrow>  = \color{red}3\begin{bmatrix}\color{red}2\\ \color{red}0\\ \color{red}-2\end{bmatrix}\color{black}+
 \color{blue}(-1)\begin{bmatrix}\color{blue}-1\\ \color{blue}3\\ \color{blue}4\end{bmatrix}
 \color{black}+\color{brown}4\begin{bmatrix}\color{brown}3\\ \color{brown}-2\\ \color{brown}1\end{bmatrix}
 \color{black}+\begin{bmatrix}2\\1\\0\end{bmatrix} </mrow> 
@@ -903,7 +903,7 @@ Next we list several important properties of matrix multiplication. These proper
             The following hold for matrices <m>A,B,</m> and <m>C</m> and for scalar <m>c</m>,
 <ol>
 <li xml:id="matrixproperties1">
-  <p> \label{item:matrixproperties1} Left Distributive Property
+  <p> Left Distributive Property
 
 <me>
     A\left( B+C\right) =AB +AC
@@ -1107,7 +1107,7 @@ Note that <m>A</m> is a <m>2 \times 3</m> matrix, while <m>A^T</m> is a <m>3 \ti
 </li>
 <li xml:id="item-matrixtranspose1">
   <p> 
-<m>\left( AB\right) ^{T}=B^{T}A^{T} </m> (Shoes and Socks rule)
+<m>\left( AB\right) ^{T}=B^{T}A^{T} </m>
 </p>
 </li>
 <li xml:id="item-matrixtranspose2">
