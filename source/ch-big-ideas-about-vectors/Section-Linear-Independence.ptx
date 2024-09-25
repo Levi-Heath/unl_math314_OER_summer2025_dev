@@ -375,7 +375,7 @@ We have
                 <p>
             Let <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_k</m> be vectors of <m>\R^n</m>.  We say that the set <m>\{\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_k\}</m> is <term>linearly independent</term> if the only solution to 
                     <men xml:id="eq-defLinInd">
-c_1\mathbf{v}_1+c_2\mathbf{v}_2+\ldots +c_p\mathbf{v}_k=\mathbf{0}
+c_1\mathbf{v}_1+c_2\mathbf{v}_2+\ldots +c_k\mathbf{v}_k=\mathbf{0}
                     </men>
 is the <term>trivial solution</term> <m>c_1=c_2=\ldots =c_k=0</m>.
                 </p> 

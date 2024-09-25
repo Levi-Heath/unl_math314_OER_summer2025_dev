@@ -1106,9 +1106,9 @@ Note that <m>A</m> is a <m>2 \times 3</m> matrix, while <m>A^T</m> is a <m>3 \ti
 <m>\left(A^{T}\right)^{T} = A</m> </p>
 </li>
 <li xml:id="item-matrixtranspose1">
-  <p> 
-<m>\left( AB\right) ^{T}=B^{T}A^{T} </m>
-</p>
+    <p> 
+        <m>\left( AB\right) ^{T}=B^{T}A^{T} </m>
+    </p>
 </li>
 <li xml:id="item-matrixtranspose2">
   <p>

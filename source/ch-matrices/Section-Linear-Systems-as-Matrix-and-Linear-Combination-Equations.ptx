@@ -22,13 +22,13 @@
     \end{array}
 </me>
 
-Let's construct the coefficient matrix <m>A</m> and multiply it by <m>\mathbf{x}=[x_1\\x_2\\x_3\\x_4]</m> on the right:
+Let's construct the coefficient matrix <m>A</m> and multiply it by <m>\mathbf{x}=\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}</m> on the right:
 
 <me>
     A\mathbf{x}=\begin{bmatrix}3\amp -2\amp 4\amp 1\\-1\amp 0\amp 5\amp -2\\2\amp 1\amp -1\amp 3\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}=\begin{bmatrix}3x_1-2x_2+4x_3+x_4\\-x_1+5x_3-2x_4\\2x_1+x_2-x_3+3x_4\end{bmatrix}.
 </me>
 
-Observe that each component of the product vector corresponds to one of the equations in the system.  Let <m>\mathbf{b}=[5\\1\\-4]</m>.  Then 
+Observe that each component of the product vector corresponds to one of the equations in the system.  Let <m>\mathbf{b}=\begin{bmatrix}5\\1\\-4\end{bmatrix}</m>.  Then 
 
 <me>
     A\mathbf{x}=\mathbf{b},
