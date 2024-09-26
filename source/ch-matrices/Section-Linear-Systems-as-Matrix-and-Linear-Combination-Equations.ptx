@@ -612,7 +612,7 @@ This shows that this matrix equation has no solutions.  We conclude that <m>\mat
  <exercise xml:id="prob-systomatrixeq">
     <statement>
         <p>
-            Given a system of linear equations, write (a) the corresponding matrix equation, and (b) the corresponding linear combination equation.  DO NOT SOLVE.
+            Given the system of linear equations below, write (a) the corresponding matrix equation, and (b) the corresponding linear combination equation.  DO NOT SOLVE.
 <md>\begin{array}{ccccccc}
      <mrow>  3x\amp - \amp y \amp - \amp 2z\amp = \amp 4 </mrow>
      <mrow>-x\amp  \amp  \amp + \amp z\amp = \amp -1 </mrow>
