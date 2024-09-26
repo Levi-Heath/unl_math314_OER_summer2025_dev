@@ -935,7 +935,7 @@ The following video takes another look at <xref ref="ex-spanintro"/> using our n
             Let <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m> be vectors in <m>\R^n</m>.  The set <m>S</m> of all linear combinations of <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m> is called the <term>span</term> of <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m>.  We write 
 
 <me>
-    S=\mbox{span}(\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p),
+    S=\text{span}(\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p),
 </me>
 
 and we say that vectors <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m> <term>span</term> <m>S</m>.  Any vector in <m>S</m> is said to be <term>in the span</term> of <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m>.  
@@ -953,7 +953,7 @@ The definition is rather formal even with all the preceding examples and geometr
     <statement>
         <p>
             Describe <me>
-                \mbox{span}\left(\begin{bmatrix}-3\\1\end{bmatrix}\right).
+                \text{span}\left(\begin{bmatrix}-3\\1\end{bmatrix}\right).
             </me>
        </p>
     </statement>
@@ -996,7 +996,7 @@ The definition is rather formal even with all the preceding examples and geometr
         <p>
             Describe 
             <me>
-            \mbox{span}\left(\begin{bmatrix}2\\2\end{bmatrix}, \begin{bmatrix}-1\\0\end{bmatrix}\right).
+            \text{span}\left(\begin{bmatrix}2\\2\end{bmatrix}, \begin{bmatrix}-1\\0\end{bmatrix}\right).
         </me>
        </p>
     </statement>
@@ -1070,7 +1070,7 @@ and  <m>[-1,0]</m>:
 
 We conclude that 
 <me>
-    \mbox{span}\left(\begin{bmatrix}2\\2\end{bmatrix}, \begin{bmatrix}-1\\0\end{bmatrix}\right)=\R^2.
+    \text{span}\left(\begin{bmatrix}2\\2\end{bmatrix}, \begin{bmatrix}-1\\0\end{bmatrix}\right)=\R^2.
 </me>
        </p>
     </answer>
@@ -1085,7 +1085,7 @@ We conclude that
         <p>
             Describe 
             <me>
-            \mbox{span}\left(\begin{bmatrix}5\\0\\4\end{bmatrix}, \begin{bmatrix}0\\4\\2\end{bmatrix}\right).
+            \text{span}\left(\begin{bmatrix}5\\0\\4\end{bmatrix}, \begin{bmatrix}0\\4\\2\end{bmatrix}\right).
         </me>
        </p>
     </statement>
@@ -1148,7 +1148,7 @@ Because <xref ref="pro-lincombgeo"/> can be applied to vectors that lie in <m>p<
 
 
 <me>
-    \mbox{span}\left(\begin{bmatrix}5\\0\\4\end{bmatrix}, \begin{bmatrix}0\\4\\2\end{bmatrix}\right)=p.
+    \text{span}\left(\begin{bmatrix}5\\0\\4\end{bmatrix}, \begin{bmatrix}0\\4\\2\end{bmatrix}\right)=p.
 </me>
        </p>
     </answer>
@@ -1209,31 +1209,30 @@ Because <xref ref="pro-lincombgeo"/> can be applied to vectors that lie in <m>p<
         <p>
             Solve a system of linear equations to express <m>[-1, 7]</m> as a linear combination of
              <m>[1,2]</m> and <m>[-1,1]</m>.
-
-System of linear equations:
-
-<me>
-    \begin{array}{ccccc}
-      1a \amp  +\amp -1b\amp = \amp -1 \\
-	 2a\amp  +\amp 1b\amp =\amp 7
-    \end{array}.
-</me>
-
-    
-    Values of <m>a</m> and <m>b</m>:
-    
-<me>
-    a=2\quad\text{and}\quad b=3
-</me>
-
-    
-    Linear Combination:
-    
-<me>
-    \begin{bmatrix}-1\\7\end{bmatrix}=2\begin{bmatrix}1\\2\end{bmatrix}+3\begin{bmatrix}-1\\1\end{bmatrix}.
-</me>
         </p>
     </statement>
+    <answer>
+        <p>
+            System of linear equations:
+            <me>
+                \begin{array}{ccccc}
+                1a \amp  +\amp -1b\amp = \amp -1 \\
+                2a\amp  +\amp 1b\amp =\amp 7
+                \end{array}.
+            </me>             
+            Values of <m>a</m> and <m>b</m>:   
+            <me>
+                a=2\quad\text{and}\quad b=3
+            </me>
+
+                
+                Linear Combination:
+                
+            <me>
+                \begin{bmatrix}-1\\7\end{bmatrix}=2\begin{bmatrix}1\\2\end{bmatrix}+3\begin{bmatrix}-1\\1\end{bmatrix}.
+            </me>
+        </p>
+    </answer>
 </exercise>
 
 
@@ -1242,14 +1241,16 @@ System of linear equations:
         <p>
             Use <xref ref="pro-lincombgeo"/> to express <m>[-3, 0]</m> as a linear combination of
              <m>[2,4]</m> and <m>[-1, 1]</m>.
-
-Linear Combination:
-
-<me>
-    \begin{bmatrix}-3\\0\end{bmatrix}=-0.5\begin{bmatrix}2\\4\end{bmatrix}+2\begin{bmatrix}-1\\1\end{bmatrix}.
-</me>
         </p>
     </statement>
+    <answer>
+        <p>
+            Linear Combination:
+            <me>
+                \begin{bmatrix}-3\\0\end{bmatrix}=-0.5\begin{bmatrix}2\\4\end{bmatrix}+2\begin{bmatrix}-1\\1\end{bmatrix}.
+            </me>
+        </p>
+    </answer>
 </exercise>
 
 <exercise xml:id="prob-lincombtwovectors3">
@@ -1350,35 +1351,38 @@ RIGHT-CLICK and DRAG to rotate the image.  Use geometry to explain why <m>w</m> 
   </interactive>
 </figure>
 </p>
-
-<p>
-We can also show that <m>w</m> is not a linear combination of <m>v</m> and <m>u</m> algebraically by attempting to solve a system of equations corresponding to 
-
-<me>
-    x_1 v + x_2 u=w.
-</me>
-
-Set up the system of equations
-
-<me>
-    \begin{array}{ccccccc}
-      1x_1 \amp  +\amp 3x_2\amp = \amp 7 \\
-	 -2x_1\amp  +\amp 0x_2\amp =\amp 4\\
-     1x_1\amp  +\amp -1x_2\amp =\amp 0
-    \end{array}.
-</me>
-
-
-Find the reduced row echelon form.
-
-
-<me>
-    \left[\begin{array}{cc|c} 
- 1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1
- \end{array}\right].
-</me>
-        </p>
     </statement>
+    <answer>
+        <p>
+            <p>
+                We can also show that <m>w</m> is not a linear combination of <m>v</m> and <m>u</m> algebraically by attempting to solve a system of equations corresponding to 
+                
+                <me>
+                    x_1 v + x_2 u=w.
+                </me>
+                
+                Set up the system of equations
+                
+                <me>
+                    \begin{array}{ccccccc}
+                      1x_1 \amp  +\amp 3x_2\amp = \amp 7 \\
+                     -2x_1\amp  +\amp 0x_2\amp =\amp 4\\
+                     1x_1\amp  +\amp -1x_2\amp =\amp 0
+                    \end{array}.
+                </me>
+                
+                
+                Find the reduced row echelon form.
+                
+                
+                <me>
+                    \left[\begin{array}{cc|c} 
+                 1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1
+                 \end{array}\right].
+                </me>
+                        </p>
+        </p>
+    </answer>
 </exercise>
 
 
@@ -1405,7 +1409,7 @@ Find the reduced row echelon form.
     <statement>
     <p>
     <me>
-        \mbox{span}\left(\begin{bmatrix}1\\1\\-2\end{bmatrix}, \begin{bmatrix}2\\2\\-4\end{bmatrix}\right)
+        \text{span}\left(\begin{bmatrix}1\\1\\-2\end{bmatrix}, \begin{bmatrix}2\\2\\-4\end{bmatrix}\right)
     </me>
     </p>
     </statement>
@@ -1446,7 +1450,7 @@ Find the reduced row echelon form.
         <statement>
             <p>
                 <me>
-        \mbox{span}\left(\begin{bmatrix}1\\-2\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\right)
+        \text{span}\left(\begin{bmatrix}1\\-2\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\right)
     </me>
     </p>
     </statement>
@@ -1485,7 +1489,7 @@ Find the reduced row echelon form.
         <statement>
             <p>
                 <me>
-        \mbox{span}\left(\begin{bmatrix}-3\\1\end{bmatrix}, \begin{bmatrix}6\\-2\end{bmatrix}, \begin{bmatrix}3\\-1\end{bmatrix}\right)
+        \text{span}\left(\begin{bmatrix}-3\\1\end{bmatrix}, \begin{bmatrix}6\\-2\end{bmatrix}, \begin{bmatrix}3\\-1\end{bmatrix}\right)
     </me>
     </p>
     </statement>
@@ -1532,16 +1536,32 @@ Find the reduced row echelon form.
     
     <choices>
         <choice correct="yes">
-            <p> <m>V=\mbox{span}\left(\begin{bmatrix}5\\0\\0\end{bmatrix},\begin{bmatrix}10\\0\\0\end{bmatrix},\begin{bmatrix}0\\0\\-4\end{bmatrix}\right)\quad\text{and}\quad W=\mbox{span}\left(\begin{bmatrix}-2\\0\\0\end{bmatrix},\begin{bmatrix}0\\0\\1\end{bmatrix}\right)</m> </p>
+            <statement>
+            <p> 
+                <m>V=\text{span}\left(\begin{bmatrix}5\\0\\0\end{bmatrix},\begin{bmatrix}10\\0\\0\end{bmatrix},\begin{bmatrix}0\\0\\-4\end{bmatrix}\right)
+                \quad\text{and}\quad
+                W=\text{span}\left(\begin{bmatrix}-2\\0\\0\end{bmatrix},\begin{bmatrix}0\\0\\1\end{bmatrix}\right)</m> 
+            </p>
+        </statement>
         </choice>
          <choice correct="yes">
-            <p> <m>V=\mbox{span}\left(\begin{bmatrix}5\\3\end{bmatrix},\begin{bmatrix}10\\-1\end{bmatrix},\begin{bmatrix}0\\2\end{bmatrix}\right)\quad\text{and}\quad W=\mbox{span}\left(\begin{bmatrix}-2\\0\end{bmatrix},\begin{bmatrix}0\\1\end{bmatrix}\right)</m> </p>
+            <statement>
+            <p> 
+                <m>V=\text{span}\left(\begin{bmatrix} 5\\ 3\end{bmatrix},\begin{bmatrix} 10\\ -1 \end{bmatrix},\begin{bmatrix} 0\\ 2 \end{bmatrix}\right)
+                \quad\text{and}\quad
+                W=\text{span}\left(\begin{bmatrix} -2\\ 0 \end{bmatrix},\begin{bmatrix} 0\\ 1\end{bmatrix}\right)</m>
+            </p>
+        </statement>
         </choice>
          <choice>
-            <p> <m>V=\mbox{span}\left(\begin{bmatrix}1\\-2\\4\end{bmatrix}\right)\quad\text{and}\quad W=\mbox{span}\left(\begin{bmatrix}-1\\2\\-4\end{bmatrix},\begin{bmatrix}0\\0\\1\end{bmatrix}\right)</m> </p>
+            <statement>
+            <p> <m>V=\text{span}\left(\begin{bmatrix}1\\-2\\4\end{bmatrix}\right)\quad\text{and}\quad W=\text{span}\left(\begin{bmatrix}-1\\2\\-4\end{bmatrix},\begin{bmatrix}0\\0\\1\end{bmatrix}\right)</m> </p>
+            </statement>
         </choice>
          <choice correct="yes">
-            <p> <m>V=\mbox{span}\left(\begin{bmatrix}5\\0\end{bmatrix}\right)\quad\text{and}\quad W=\mbox{span}\left(\begin{bmatrix}-2\\0\end{bmatrix},\begin{bmatrix}1\\0\end{bmatrix},\begin{bmatrix}-4\\0\end{bmatrix},\begin{bmatrix}0\\0\end{bmatrix}\right)</m> </p>
+            <statement>
+            <p> <m>V=\text{span}\left(\begin{bmatrix}5\\0\end{bmatrix}\right)\quad\text{and}\quad W=\text{span}\left(\begin{bmatrix}-2\\0\end{bmatrix},\begin{bmatrix}1\\0\end{bmatrix},\begin{bmatrix}-4\\0\end{bmatrix},\begin{bmatrix}0\\0\end{bmatrix}\right)</m> </p>
+            </statement>
         </choice>
     </choices>
     
@@ -1550,7 +1570,7 @@ Find the reduced row echelon form.
     <exercise xml:id="prob-notinspan">
         <statement>
             <p>
-                Let <m>\mathbf{v}=[3,4,5]</m>.  Give an example of at least one vector <m>\mathbf{w}</m> such that <m>\mathbf{v}</m>, <m>\mathbf{w}</m> do NOT span a plane in <m>\R^3</m>.  Describe <m>\mbox{span}(\mathbf{v}, \mathbf{w})</m>.
+                Let <m>\mathbf{v}=[3,4,5]</m>.  Give an example of at least one vector <m>\mathbf{w}</m> such that <m>\mathbf{v}</m>, <m>\mathbf{w}</m> do NOT span a plane in <m>\R^3</m>.  Describe <m>\text{span}(\mathbf{v}, \mathbf{w})</m>.
             </p>
         </statement>
     </exercise>
