@@ -11,7 +11,7 @@
         <ul>
             <li>
                 <p>
-                    Perform basic operations, including addition, scalar multiplication, and dot product, on vectors in <m>\RR^n</m>.
+                    Perform basic operations, including addition, scalar multiplication, and dot product, on vectors in <m>\mathbb{R}^n</m>.
                 </p>
             </li>
             <li>
