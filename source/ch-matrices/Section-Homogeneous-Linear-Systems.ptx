@@ -139,7 +139,7 @@ Consider the matrix equation <m>A\mathbf{x}=\mathbf{b}</m>.  Row reduction produ
  \end{array}\right]
 </me>
 
- We conclude that <m>\mathbf{x}=[-2t\\-1-t\\t]</m>.  
+ We conclude that <m>\mathbf{x}=\begin{bmatrix}-2t\\-1-t\\t\end{bmatrix}</m>.  
 </p>
 
  <problem>
@@ -169,18 +169,18 @@ onto its parametric form.
  We now see that the solution vector <m>\mathbf{x}</m> is made up of two distinct parts: 
  <ul>
  <li>
-      <p> one specific vector <m>[0\\-1\\0]</m> </p>
+      <p> one specific vector <m>\begin{bmatrix}0\\-1\\0\end{bmatrix}</m> </p>
 </li>
  <li>
-      <p> infinitely many scalar multiples of <m>[-2\\-1\\1]</m>.   </p>
+      <p> infinitely many scalar multiples of <m>\begin{bmatrix}-2\\-1\\1\end{bmatrix}</m>.   </p>
 </li>
  </ul>
 </p>
 
 <p>
- The vector <m>[0\\-1\\0]</m> is an example of a <term>particular solution</term>.  
+ The vector <m>\begin{bmatrix}0\\-1\\0\end{bmatrix}</m> is an example of a <term>particular solution</term>.  
  This particular ``particular solution" corresponds to <m>t=0</m>.  We can find any number of particular solutions by letting <m>t</m> assume different values.  
- For example, the particular solution that corresponds to <m>t=1</m> is <m>[-2\\-2\\1]</m>.  
+ For example, the particular solution that corresponds to <m>t=1</m> is <m>\begin{bmatrix}-2\\-2\\1\end{bmatrix}</m>.  
  Let <m>\mathbf{x}_p</m> be any particular solution of <m>A\mathbf{x}=\mathbf{b}</m>.  It turns out that all vectors of the form 
 <me>
     \mathbf{x}=\mathbf{x}_p+\begin{bmatrix}-2\\-1\\1\end{bmatrix}t
@@ -195,14 +195,14 @@ onto its parametric form.
 
  This shows that the specific vector <m>\begin{bmatrix}0\\-1\\0\end{bmatrix}</m> is not very special, as any solution of <m>A\mathbf{x}=\mathbf{b}</m> can be used in its place.  
  
- The vector <m>[-2\\-1\\1]</m>, however, is special.  
+ The vector <m>\begin{bmatrix}-2\\-1\\1\end{bmatrix}</m>, however, is special.  
  Note that
  
 <me>
     A\begin{bmatrix}-2\\-1\\1\end{bmatrix}=\begin{bmatrix}1\amp 2\amp 4\\3\amp -7\amp -1\\-1\amp 4\amp 2\end{bmatrix}\begin{bmatrix}-2\\-1\\1\end{bmatrix}=\mathbf{0}.
 </me>
 
- So <m>[-2\\-1\\1]</m> and all of its scalar multiples are solutions to the associated homogeneous system.
+ So <m>\begin{bmatrix}-2\\-1\\1\end{bmatrix}</m> and all of its scalar multiples are solutions to the associated homogeneous system.
     </p>
 </exploration>
 
