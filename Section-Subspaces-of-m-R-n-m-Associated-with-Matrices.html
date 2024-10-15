@@ -114,15 +114,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.4.1';
+eBookConfig.runestone_version = '7.4.3';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.4.1/prefix-runtime.00db6230172ad960.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.4.1/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.4.1/prefix-runestone.04737dc219c2d2eb.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.4.1/prefix-347.f9add1ca35d5ad93.css">
-<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.4.1/prefix-runestone.f64dcc3632d7a0c3.css">
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.4.3/prefix-runtime.00db6230172ad960.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.4.3/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.4.3/prefix-runestone.aa624e4071d017c3.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.4.3/prefix-347.f9add1ca35d5ad93.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.4.3/prefix-runestone.f64dcc3632d7a0c3.css">
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
@@ -547,7 +547,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Isomorphic Vector Spaces</span></a></div>
+<div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Extra Topic: Isomorphic Vector Spaces</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#The-Coordinate-Vector-Isomorphism" class="internal"><span class="codenumber">9.3.1</span> <span class="title">The Coordinate Vector Isomorphism</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#Subsection-Properties-of-Isomorphic-Vector-Spaces-and-Isomorphisms" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Properties of Isomorphic Vector Spaces and Isomorphisms</span></a></div></li>
@@ -674,15 +674,14 @@ A=\begin{bmatrix}-2\amp 2\amp 1\\4\amp -2\amp 1\end{bmatrix}.
 </div>
 <div class="para">What do you think <span class="process-math">\(\mbox{span}(\mathbf{\rho}_1, \mathbf{\rho}_2)\)</span> looks like? The following video will help us visualize <span class="process-math">\(\mbox{span}(\mathbf{\rho}_1, \mathbf{\rho}_2)\)</span> and compare it to <span class="process-math">\(\mbox{span}(\mathbf{r}_1, \mathbf{r}_2)\text{.}\)</span>
 </div>
-</div> <div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/videoID?&amp;modestbranding=1&amp;rel=0" id="init-rowspace-4"></iframe></div> <div class="para logical" id="init-rowspace-5">
+</div> <div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/6wz-5G14jo8?&amp;modestbranding=1&amp;rel=0" id="init-rowspace-4"></iframe></div> <div class="para logical" id="init-rowspace-5">
 <div class="para">Based on what we observed in the video, we may conjecture that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \mbox{span}(\mathbf{\rho}_1, \mathbf{\rho}_2)=\mbox{span}(\mathbf{r}_1, \mathbf{r}_2)
 \end{equation*}
 </div>
-</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-rowspace-6.svg" role="img" class="contained" alt="New vectors for span added in above"></div> <div class="para" id="init-rowspace-7">But why does this make sense?  Vectors <span class="process-math">\(\mathbf{\rho}_1\)</span> and <span class="process-math">\(\mathbf{\rho}_2\)</span> were obtained from <span class="process-math">\(\mathbf{r}_1\)</span> and <span class="process-math">\(\mathbf{r}_2\)</span> by repeated applications of elementary row operations.  At every stage of the row reduction process, the rows of the matrix are linear combinations of <span class="process-math">\(\mathbf{r}_1\)</span> and <span class="process-math">\(\mathbf{r}_2\text{.}\)</span>  Thus, at every stage of the row reduction process, the rows of the matrix lie in the span of <span class="process-math">\(\mathbf{r}_1\)</span> and <span class="process-math">\(\mathbf{r}_2\text{.}\)</span>  Our next video shows a step-by-step row reduction process accompanied by sketches of vectors. <div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/videoID?&amp;modestbranding=1&amp;rel=0" id="init-rowspace-7-9"></iframe></div>
-</div></article><div class="para" id="Subsection-Row-Space-of-a-Matrix-5">The observations made in <a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#init-rowspace" class="xref" data-knowl="./knowl/xref/init-rowspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Exploration 5.3.1">Exploration 5.3.1</a> makes a convincing case for the following theorem.</div>
+</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-rowspace-6.svg" role="img" class="contained" alt="New vectors for span added in above"></div> <div class="para" id="init-rowspace-7">But why does this make sense?  Vectors <span class="process-math">\(\mathbf{\rho}_1\)</span> and <span class="process-math">\(\mathbf{\rho}_2\)</span> were obtained from <span class="process-math">\(\mathbf{r}_1\)</span> and <span class="process-math">\(\mathbf{r}_2\)</span> by repeated applications of elementary row operations.  At every stage of the row reduction process, the rows of the matrix are linear combinations of <span class="process-math">\(\mathbf{r}_1\)</span> and <span class="process-math">\(\mathbf{r}_2\text{.}\)</span>  Thus, at every stage of the row reduction process, the rows of the matrix lie in the span of <span class="process-math">\(\mathbf{r}_1\)</span> and <span class="process-math">\(\mathbf{r}_2\text{.}\)</span>  Our next video shows a step-by-step row reduction process accompanied by sketches of vectors.</div> <div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/KpoeWUQ3wkY?&amp;modestbranding=1&amp;rel=0" id="init-rowspace-8"></iframe></div></article><div class="para" id="Subsection-Row-Space-of-a-Matrix-5">The observations made in <a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#init-rowspace" class="xref" data-knowl="./knowl/xref/init-rowspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Exploration 5.3.1">Exploration 5.3.1</a> makes a convincing case for the following theorem.</div>
 <article class="theorem theorem-like" id="th-rowBrowA"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span>
 </h4>
