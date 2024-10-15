@@ -88,7 +88,7 @@ The following video will help us visualize <m>\mbox{span}(\mathbf{\rho}_1, \math
 </p>
 
 
-<video youtube="videoID" play-at="select"/>
+<video youtube="6wz-5G14jo8" play-at="select"/>
 
 
 <p>
@@ -123,13 +123,10 @@ Based on what we observed in the video, we may conjecture that
     </latex-image>
 </image>
 
-<p>
-But why does this make sense?  Vectors <m>\mathbf{\rho}_1</m> and <m>\mathbf{\rho}_2</m> were obtained from <m>\mathbf{r}_1</m> and <m>\mathbf{r}_2</m> by repeated applications of elementary row operations.  At every stage of the row reduction process, the rows of the matrix are linear combinations of <m>\mathbf{r}_1</m> and <m>\mathbf{r}_2</m>.  Thus, at every stage of the row reduction process, the rows of the matrix lie in the span of <m>\mathbf{r}_1</m> and <m>\mathbf{r}_2</m>.  Our next video shows a step-by-step row reduction process accompanied by sketches of vectors.
-
-
-
-<video youtube="videoID" play-at="select"/>
+    <p>
+        But why does this make sense?  Vectors <m>\mathbf{\rho}_1</m> and <m>\mathbf{\rho}_2</m> were obtained from <m>\mathbf{r}_1</m> and <m>\mathbf{r}_2</m> by repeated applications of elementary row operations.  At every stage of the row reduction process, the rows of the matrix are linear combinations of <m>\mathbf{r}_1</m> and <m>\mathbf{r}_2</m>.  Thus, at every stage of the row reduction process, the rows of the matrix lie in the span of <m>\mathbf{r}_1</m> and <m>\mathbf{r}_2</m>.  Our next video shows a step-by-step row reduction process accompanied by sketches of vectors.
     </p>
+    <video youtube="KpoeWUQ3wkY" play-at="select"/>
 </exploration>
 
 
