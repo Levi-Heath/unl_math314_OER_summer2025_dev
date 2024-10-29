@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.23</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.2.41</span><span class="period">.</span>
 </h4>
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(T:V\rightarrow W\)</span> be a linear transformation.  Suppose <span class="process-math">\(\mbox{dim}(V)=n\text{,}\)</span> then</div>
@@ -22,7 +22,7 @@
 \end{equation*}
 </div>
 </div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
-<div class="para">By <a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#th-imagesubspace" class="xref" data-knowl="./knowl/xref/th-imagesubspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.3.15">Theorem 6.3.15</a>, <span class="process-math">\(\mbox{im}(T)\)</span> is a subspace of <span class="process-math">\(W\text{.}\)</span>  There exists a basis for <span class="process-math">\(\mbox{im}(T)\)</span> of the form <span class="process-math">\(\{T(\mathbf{v}_1), \ldots,T(\mathbf{v}_r)\}\text{.}\)</span>  By <a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#th-kersubspace" class="xref" data-knowl="./knowl/xref/th-kersubspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.3.20">Theorem 6.3.20</a>, <span class="process-math">\(\mbox{ker}(T)\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>  Let <span class="process-math">\(\{\mathbf{u}_1,\ldots,\mathbf{u}_s\}\)</span> be a basis for <span class="process-math">\(\mbox{ker}(T)\text{.}\)</span> We will show that <span class="process-math">\(\{\mathbf{u}_1,\ldots ,\mathbf{u}_s, \mathbf{v}_1,\ldots ,\mathbf{v}_r\}\)</span> is a basis for <span class="process-math">\(V\text{.}\)</span> For any vector <span class="process-math">\(\mathbf{v}\)</span> in <span class="process-math">\(V\text{,}\)</span> we have:</div>
+<div class="para">By <a href="Section-Linear-Transformations.html#th-imagesubspace" class="xref" data-knowl="./knowl/xref/th-imagesubspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.33">Theorem 6.2.33</a>, <span class="process-math">\(\mbox{im}(T)\)</span> is a subspace of <span class="process-math">\(W\text{.}\)</span>  There exists a basis for <span class="process-math">\(\mbox{im}(T)\)</span> of the form <span class="process-math">\(\{T(\mathbf{v}_1), \ldots,T(\mathbf{v}_r)\}\text{.}\)</span>  By <a href="Section-Linear-Transformations.html#th-kersubspace" class="xref" data-knowl="./knowl/xref/th-kersubspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.38">Theorem 6.2.38</a>, <span class="process-math">\(\mbox{ker}(T)\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>  Let <span class="process-math">\(\{\mathbf{u}_1,\ldots,\mathbf{u}_s\}\)</span> be a basis for <span class="process-math">\(\mbox{ker}(T)\text{.}\)</span> We will show that <span class="process-math">\(\{\mathbf{u}_1,\ldots ,\mathbf{u}_s, \mathbf{v}_1,\ldots ,\mathbf{v}_r\}\)</span> is a basis for <span class="process-math">\(V\text{.}\)</span> For any vector <span class="process-math">\(\mathbf{v}\)</span> in <span class="process-math">\(V\text{,}\)</span> we have:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-imagesubspace.html ./knowl/xref/th-kersubspace.html">
 \begin{equation*}
 T(\mathbf{v})=c_1T(\mathbf{v}_1)+\ldots +c_rT(\mathbf{v}_r)
@@ -62,7 +62,7 @@ V=\mbox{span}(\mathbf{u}_1,\ldots ,\mathbf{u}_s, \mathbf{v}_1,\ldots ,\mathbf{v}
 <div class="para">Now we need to show that <span class="process-math">\(\{\mathbf{u}_1,\ldots ,\mathbf{u}_s, \mathbf{v}_1,\ldots ,\mathbf{v}_r\}\)</span> is linearly independent. Suppose</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/kerplusimproof.html">
 \begin{equation}
-c_1\mathbf{v}_1+\ldots +c_r\mathbf{v}_r+a_1\mathbf{u}_1+\ldots +a_s\mathbf{u}_s=\mathbf{0}.\tag{6.3.1}
+c_1\mathbf{v}_1+\ldots +c_r\mathbf{v}_r+a_1\mathbf{u}_1+\ldots +a_s\mathbf{u}_s=\mathbf{0}.\tag{6.2.7}
 \end{equation}
 </div>
 <div class="para">Applying <span class="process-math">\(T\)</span> to both sides, we get</div>
@@ -82,12 +82,12 @@ c_1T(\mathbf{v}_1)+\ldots +c_rT(\mathbf{v}_r)+a_1T(\mathbf{u}_1)+\ldots +a_sT(\m
 c_1T(\mathbf{v}_1)+\ldots +c_rT(\mathbf{v}_r)=\mathbf{0}.
 \end{equation*}
 </div>
-<div class="para">Since <span class="process-math">\(\{T(\mathbf{v}_1),\ldots ,T(\mathbf{v}_r)\}\)</span> is linearly independent, it follows that each <span class="process-math">\(c_i=0\text{.}\)</span> But then <a href="Section-Composition-and-Inverses-of-Linear-Transformations.html#kerplusimproof" class="xref" data-knowl="./knowl/xref/kerplusimproof.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.1">(6.3.1)</a> implies that <span class="process-math">\(a_1\mathbf{u}_1+\ldots +a_s\mathbf{u}_s=\mathbf{0}\text{.}\)</span>  Because <span class="process-math">\(\{\mathbf{u}_1, \ldots ,\mathbf{u}_s\}\)</span> is linearly independent, it follows that each <span class="process-math">\(a_i=0\text{.}\)</span> We conclude that <span class="process-math">\(\{\mathbf{u}_1,\ldots ,\mathbf{u}_s,\mathbf{v}_1,\ldots ,\mathbf{v}_r\}\)</span> is a basis for <span class="process-math">\(V\text{.}\)</span>  Thus,</div>
+<div class="para">Since <span class="process-math">\(\{T(\mathbf{v}_1),\ldots ,T(\mathbf{v}_r)\}\)</span> is linearly independent, it follows that each <span class="process-math">\(c_i=0\text{.}\)</span> But then <a href="Section-Linear-Transformations.html#kerplusimproof" class="xref" data-knowl="./knowl/xref/kerplusimproof.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.7">(6.2.7)</a> implies that <span class="process-math">\(a_1\mathbf{u}_1+\ldots +a_s\mathbf{u}_s=\mathbf{0}\text{.}\)</span>  Because <span class="process-math">\(\{\mathbf{u}_1, \ldots ,\mathbf{u}_s\}\)</span> is linearly independent, it follows that each <span class="process-math">\(a_i=0\text{.}\)</span> We conclude that <span class="process-math">\(\{\mathbf{u}_1,\ldots ,\mathbf{u}_s,\mathbf{v}_1,\ldots ,\mathbf{v}_r\}\)</span> is a basis for <span class="process-math">\(V\text{.}\)</span>  Thus,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/kerplusimproof.html">
 \begin{equation*}
 \mbox{dim}(\mbox{ker}(T))+\mbox{dim}(\mbox{im}(T))=s+r=n.
 \end{equation*}
 </div>
-</div></article></details><span class="incontext"><a class="internal" href="Section-Composition-and-Inverses-of-Linear-Transformations.html#th-ranknullityforT">in-context</a></span>
+</div></article></details><span class="incontext"><a class="internal" href="Section-Linear-Transformations.html#th-ranknullityforT">in-context</a></span>
 </body>
 </html>

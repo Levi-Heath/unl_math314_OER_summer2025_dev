@@ -5932,27 +5932,27 @@ var ptx_lunr_docs = [
   "body": " Show that a matrix transformation maps a line in to a line (or the origin) in .   A line in can be expressed as . (See .)  "
 },
 {
-  "id": "Section-Introduction-to-Linear-Transformations",
+  "id": "Section-Linear-Transformations",
   "level": "1",
-  "url": "Section-Introduction-to-Linear-Transformations.html",
+  "url": "Section-Linear-Transformations.html",
   "type": "Section",
   "number": "6.2",
-  "title": "Introduction to Linear Transformations",
-  "body": " Introduction to Linear Transformations  We start by reviewing the definition of a function.    Let and be sets. A function  from into , denoted by assigns to each element of , an element of . Moreover, we use the the following terminology.  The set is called the domain of , and the set is called the codomain .  If , we say that  maps to  , and is the image of .  The collection of images of all points of is called the image of under , or the image of . (It is also known as the range of .)    In algebra and calculus you worked with functions whose domain and codomain were each the set of all real numbers. In linear algebra, we call our functions transformations . The domain and codomain of a transformation are vector spaces .   In this exercise we will introduce a very special type of transformation by contrasting the effects of two transformations on vectors of . We will see that some transformations have ``nice\" properties, while others do not. Define and as follows:  Each of these transformations takes a vector in , and maps it to another vector in . To see if you understand how these transformations are defined, see if you can determine what these transformations do to the vector .    Compute the following two images:          Now, let's take the vector and multiply it by a scalar, say . Now let's compare how and ``handle\" this product. Starting with , we compute: Observe that multiplying the original vector by , then applying , has the same effect as applying to the original vector, then multiplying the image by . In other words, Diagrammatically, this can be represented as follows.   T with domain and codomain pictured    You should try to verify that this property does not hold for transformation . In other words, There is nothing special about the number , and it is not hard to prove that for any scalar and vector of , satisfies It turns out that satisfies another important property. For all vectors and of we have: We leave it to the reader to illustrate this property with a specific example (see ). We will show that satisfies in general. Let then It turns out that fails to satisfy this property. Can you prove that this is the case? Remember that to prove that a property DOES NOT hold, it suffices to find a counter-example. See if you can find vectors and such that See for more on this.   Transformations satisfying and , like , are called linear transformations . Transformations like are not linear. You have encountered several linear transformations in the form of matrix transformations previously.    A transformation is called a linear transformation if the following are true for all vectors and in , and scalars .      Equations and of the above definition can be illustrated diagrammatically as follows.   Linearity drawn as function diagram     Continuation of above      The properties and are often combined into a single property, namely       Suppose is a linear transformation such that Find each of the following:                 : Because is a linear transformation, it satisfies . We compute:  Observe that By we have:       In we were given the images of two vectors, and , under a linear transformation .  Based on this information, we were able to determine the images of two additional vectors: and . The reason we were able to determine and is because and can be written as unique linear combinations of and .      Can every vector of be written as a linear combination of and ?    Yes.      Is the information provided in sufficient to determine the image of every vector in under ?    Yes.      Suppose is a transformation such that Determine whether is a linear transformation.    Observe that If were a linear transformation, then we would have: But according to the given, Since we conclude that transformation is not linear.    In we introduced a transformation which turned out to be non-linear. It took some work to show that is not linear. The following theorem would have made our work easier.    Let be a linear transformation. Then    . In other words, linear transformations map the zero vector to the zero vector.     maps any line in to a line (or the zero vector) in .       To prove , let be any vector in . By linearity of , we have: Part will become evident after the next section by combinining observations there with .      Use to show that transformation of is not linear.    Recall that was defined by We evaluate at : Since , is not linear.     Linear Transformations Induced by Matrices  Recall that a transformation defined by , where is some matrix, is called a matrix transformation (or transformation induced by ). As we had discovered in the precedng sectiion, all matrix transformations are linear. We now formalize this result as a theorem.    Let be an matrix. Define by . Then is a linear transformation.    Let and be vectors in , and let be a scalar. By properties of matrix multiplication we have:  Therefore is a linear transformation.      Let be a linear transformation induced by    Find and .    Find the image of .         is a matrix, so for the expression to make sense, has to be a vector. Thus, the domain of is ( ). The product is a vector. The codomain of is ( ). By , the image of consists of images of all individual vectors in under .  Every vector in can be written as for some real numbers and . Consider the image of : This shows that the range, or the image, of consists of all linear combinations of the columns of . In other words, the image of is the span of vectors and . The two vectors are not scalar multiples of each other, therefore they span a plane in .      Let be a linear transformation induced by    Find and .    Find and draw the image of .       For part : and .  For : To find the image of , we will take a slightly different approach from what we did in .  Let be an arbitrary vector of . The image of is given by This shows that the image of every vector in is a scalar multiple of . This means that the image of is a line in .   Line generated is graphed        Linear Transformations of Subspaces of   defines a linear transformation as a map from into . We will now make this definition more general by allowing the domain and the codomain of the transformation to be subspaces of and . Eventually, a linear transformation will be defined as a mapping between vector spaces.    Let and be subspaces of and . Let be a transformation. We call  linear transformation if for all vectors and in , and scalars , the following two rules hold:        Let be a subspace of consisting of all vectors in the -plane. Let be a subspace of consisting of all vectors along the -axis. Do a quick verification that and are subspaces of . Define a transformation by Show that is a linear transformation, and describe its action geometrically.    Consider two arbitrary elements and of . Verification of the fact that is similar, and we omit the details.  We have shown that is a linear transformation. maps all vectors in the -plane to the -axis. The following diagram helps us visualize the action of on a specific vector.   [1,2,0] acted on by T    We can investigate further. Recall that is defined by Next, we ask you to consider the diagram below and try solve the following problem.        Choose the proper answer for each of the statements below.   Is the image of the line under a line, a plane, the zero vector or all of ?    is the image of the orange part of the domain (the front triangle) the positive -axis, the negative -axis, the zero vector or the entire -axis?    is the image of the purple part of the domain (the back triangle) the positive -axis, the negative -axis, the zero vector or the entire -axis?          The image of the line under is the the zero vector.    The image of the orange part of the domain (the front triangle) is the positive -axis.    The image of the purple part of the domain (the back triangle) is the negative -axis.         We conclude this section by introducing two simple but important transformations.    The identity transformation on , denoted by , is a transformation that maps each element of to itself. In other words, is a transformation such that       The zero transformation , , maps every element of the domain to the zero vector. In other words, is a transformation such that       The identity transformation is linear.    Left to the reader. (See )      The zero transformation is linear.    Left to the reader. (See )      Standard Matrix of a Linear Transformation from to  In the preceding sections, we learned several important properties of matrix transformations of and subspaces of . Let's summarize the main points.    For a matrix transformation , induced by an matrix we have the following results:    is linear. (Theorem ) This means that for vectors and in and scalars and in .    Columns of are the images of the standard unit vectors of under .      The action of on all of the elements of is completely determined by where maps the standard unit vectors. (See Examples and )       The last point in the summary is so important that it is worth illustrating again.    Let be a linear transformation. Suppose that the only information we have about this transformation is that Is this information sufficient to determine the image of ?    Observe that We find by using the fact that is linear: Because of properties of linear transformations, the information about the images of the standard unit vectors proved to be sufficient for us to determine the image of .    In , there was nothing special about the vector . Any vector of can be written as a unique linear combination of the standard unit vectors . Therefore, the image of any vector under a linear transformation is uniquely determined by the images of . Knowing allows us to construct a matrix , with as columns, that induces transformation . We formalize this idea in a theorem.    Let be a linear transformation. Then is a matrix transformation with as a matrix that induces .    Observe that Because is linear, we have Thus, for every in , we have .     shows that every matrix transformation is linear. states that every linear transformation from into is a matrix transformation. We combine these results in a corollary.    A transformation is a linear transformation if and only if it is a matrix transformation.    The results of this section rely on the fact that every vector of can be written as a unique linear combination of the standard unit vectors . These vectors form the standard basis for . Later on, when we encounter transformations of arbitrary bases, we will observe that the matrix used to represent a linear transformation depends on a choice of basis. Since we are using the standard basis, it is natural to name the matrix in accordingly.    The matrix in is known as the standard matrix of the linear transformation  .     The standard matrix of a linear transformation such that is      Find the standard matrix of a linear transformation such that and .    We use the images of and as columns of the matrix. The standard matrix of is       Find the standard matrix of a linear transformation , where     In this example we are not given the images of the standard basis vectors and . However, we can find the images of and by expressing and as linear combinations of and , then apply the fact that is linear. Let's start with the easy one. Therefore, by linearity of , we have: This gives us the first column of the standard matrix for .  You can solve the vector equation to express as a linear combination of and as follows: By linearity of , This gives us the second column of the standard matrix. Putting all of the information together, we get the following standard matrix for :        Show that of holds for vectors and .    Use a counter-example to prove of .    Suppose is a linear transformation such that and . Find the image of .        Let be a fixed vector. Define , by .   Describe the effect of this transformation by sketching and for at least four vectors and a fixed vector of your choice.    Is a linear transformation?       Define , by This transformation is called an {orthogonal projection } onto the -plane. Show that is a linear transformation.    Suppose a linear transformation maps Find the image of under .        Prove     Prove      For each matrix below, find the domain together with codomain of the linear transformation induced by ; then find and draw the image of (Hint: See .)        Domain: , where .  Codomain: , where .           Suppose that a linear transformation is such that Find .        Suppose that a linear transformation is such that . Find the standard matrix of .         Find the standard matrix of each linear transformation described below.     doubles the component of every vector and triples the component.         reverses the direction of each vector.         doubles the length of each vector.         projects each vector onto the -axis. (e.g. ).         projects each vector onto the -axis. (e.g. )         "
+  "title": "Linear Transformations",
+  "body": " Linear Transformations  We start by reviewing the definition of a function.    Let and be sets. A function  from into , denoted by assigns to each element of , an element of . Moreover, we use the the following terminology.  The set is called the domain of , and the set is called the codomain .  If , we say that  maps to  , and is the image of .  The collection of images of all points of is called the image of under , or the image of . (It is also known as the range of .)    In algebra and calculus you worked with functions whose domain and codomain were each the set of all real numbers. In linear algebra, we call our functions transformations . The domain and codomain of a transformation are vector spaces .   In this exercise we will introduce a very special type of transformation by contrasting the effects of two transformations on vectors of . We will see that some transformations have ``nice\" properties, while others do not. Define and as follows:  Each of these transformations takes a vector in , and maps it to another vector in . To see if you understand how these transformations are defined, see if you can determine what these transformations do to the vector .    Compute the following two images:          Now, let's take the vector and multiply it by a scalar, say . Now let's compare how and ``handle\" this product. Starting with , we compute: Observe that multiplying the original vector by , then applying , has the same effect as applying to the original vector, then multiplying the image by . In other words, Diagrammatically, this can be represented as follows.   T with domain and codomain pictured    You should try to verify that this property does not hold for transformation . In other words, There is nothing special about the number , and it is not hard to prove that for any scalar and vector of , satisfies It turns out that satisfies another important property. For all vectors and of we have: We leave it to the reader to illustrate this property with a specific example (see ). We will show that satisfies in general. Let then It turns out that fails to satisfy this property. Can you prove that this is the case? Remember that to prove that a property DOES NOT hold, it suffices to find a counter-example. See if you can find vectors and such that See for more on this.   Transformations satisfying and , like , are called linear transformations . Transformations like are not linear. You have encountered several linear transformations in the form of matrix transformations previously.    A transformation is called a linear transformation if the following are true for all vectors and in , and scalars .      Equations and of the above definition can be illustrated diagrammatically as follows.   Linearity drawn as function diagram     Continuation of above      The properties and are often combined into a single property, namely       Suppose is a linear transformation such that Find each of the following:                 : Because is a linear transformation, it satisfies . We compute:  Observe that By we have:       In we were given the images of two vectors, and , under a linear transformation .  Based on this information, we were able to determine the images of two additional vectors: and . The reason we were able to determine and is because and can be written as unique linear combinations of and .      Can every vector of be written as a linear combination of and ?    Yes.      Is the information provided in sufficient to determine the image of every vector in under ?    Yes.      Suppose is a transformation such that Determine whether is a linear transformation.    Observe that If were a linear transformation, then we would have: But according to the given, Since we conclude that transformation is not linear.    In we introduced a transformation which turned out to be non-linear. It took some work to show that is not linear. The following theorem would have made our work easier.    Let be a linear transformation. Then    . In other words, linear transformations map the zero vector to the zero vector.     maps any line in to a line (or the zero vector) in .       To prove , let be any vector in . By linearity of , we have: Part will become evident after the next section by combinining observations there with .      Use to show that transformation of is not linear.    Recall that was defined by We evaluate at : Since , is not linear.     Linear Transformations Induced by Matrices  Recall that a transformation defined by , where is some matrix, is called a matrix transformation (or transformation induced by ). As we had discovered in the precedng sectiion, all matrix transformations are linear. We now formalize this result as a theorem.    Let be an matrix. Define by . Then is a linear transformation.    Let and be vectors in , and let be a scalar. By properties of matrix multiplication we have:  Therefore is a linear transformation.      Let be a linear transformation induced by    Find and .    Find the image of .         is a matrix, so for the expression to make sense, has to be a vector. Thus, the domain of is ( ). The product is a vector. The codomain of is ( ). By , the image of consists of images of all individual vectors in under .  Every vector in can be written as for some real numbers and . Consider the image of : This shows that the range, or the image, of consists of all linear combinations of the columns of . In other words, the image of is the span of vectors and . The two vectors are not scalar multiples of each other, therefore they span a plane in .      Let be a linear transformation induced by    Find and .    Find and draw the image of .       For part : and .  For : To find the image of , we will take a slightly different approach from what we did in .  Let be an arbitrary vector of . The image of is given by This shows that the image of every vector in is a scalar multiple of . This means that the image of is a line in .   Line generated is graphed        Linear Transformations of Subspaces of   defines a linear transformation as a map from into . We will now make this definition more general by allowing the domain and the codomain of the transformation to be subspaces of and . Eventually, a linear transformation will be defined as a mapping between vector spaces.    Let and be subspaces of and . Let be a transformation. We call  linear transformation if for all vectors and in , and scalars , the following two rules hold:        Let be a subspace of consisting of all vectors in the -plane. Let be a subspace of consisting of all vectors along the -axis. Do a quick verification that and are subspaces of . Define a transformation by Show that is a linear transformation, and describe its action geometrically.    Consider two arbitrary elements and of . Verification of the fact that is similar, and we omit the details.  We have shown that is a linear transformation. maps all vectors in the -plane to the -axis. The following diagram helps us visualize the action of on a specific vector.   [1,2,0] acted on by T    We can investigate further. Recall that is defined by Next, we ask you to consider the diagram below and try solve the following problem.        Choose the proper answer for each of the statements below.   Is the image of the line under a line, a plane, the zero vector or all of ?    is the image of the orange part of the domain (the front triangle) the positive -axis, the negative -axis, the zero vector or the entire -axis?    is the image of the purple part of the domain (the back triangle) the positive -axis, the negative -axis, the zero vector or the entire -axis?          The image of the line under is the the zero vector.    The image of the orange part of the domain (the front triangle) is the positive -axis.    The image of the purple part of the domain (the back triangle) is the negative -axis.         We conclude this section by introducing two simple but important transformations.    The identity transformation on , denoted by , is a transformation that maps each element of to itself. In other words, is a transformation such that       The zero transformation , , maps every element of the domain to the zero vector. In other words, is a transformation such that       The identity transformation is linear.    Left to the reader. (See )      The zero transformation is linear.    Left to the reader. (See )      Standard Matrix of a Linear Transformation from to  In the preceding sections, we learned several important properties of matrix transformations of and subspaces of . Let's summarize the main points.    For a matrix transformation , induced by an matrix we have the following results:    is linear. (Theorem ) This means that for vectors and in and scalars and in .    Columns of are the images of the standard unit vectors of under .      The action of on all of the elements of is completely determined by where maps the standard unit vectors. (See Examples and )       The last point in the summary is so important that it is worth illustrating again.    Let be a linear transformation. Suppose that the only information we have about this transformation is that Is this information sufficient to determine the image of ?    Observe that We find by using the fact that is linear: Because of properties of linear transformations, the information about the images of the standard unit vectors proved to be sufficient for us to determine the image of .    In , there was nothing special about the vector . Any vector of can be written as a unique linear combination of the standard unit vectors . Therefore, the image of any vector under a linear transformation is uniquely determined by the images of . Knowing allows us to construct a matrix , with as columns, that induces transformation . We formalize this idea in a theorem.    Let be a linear transformation. Then is a matrix transformation with as a matrix that induces .    Observe that Because is linear, we have Thus, for every in , we have .     shows that every matrix transformation is linear. states that every linear transformation from into is a matrix transformation. We combine these results in a corollary.    A transformation is a linear transformation if and only if it is a matrix transformation.    The results of this section rely on the fact that every vector of can be written as a unique linear combination of the standard unit vectors . These vectors form the standard basis for . Later on, when we encounter transformations of arbitrary bases, we will observe that the matrix used to represent a linear transformation depends on a choice of basis. Since we are using the standard basis, it is natural to name the matrix in accordingly.    The matrix in is known as the standard matrix of the linear transformation  .     The standard matrix of a linear transformation such that is      Find the standard matrix of a linear transformation such that and .    We use the images of and as columns of the matrix. The standard matrix of is       Find the standard matrix of a linear transformation , where     In this example we are not given the images of the standard basis vectors and . However, we can find the images of and by expressing and as linear combinations of and , then apply the fact that is linear. Let's start with the easy one. Therefore, by linearity of , we have: This gives us the first column of the standard matrix for .  You can solve the vector equation to express as a linear combination of and as follows: By linearity of , This gives us the second column of the standard matrix. Putting all of the information together, we get the following standard matrix for :       The Image  In this section we will often use , and to denote subspaces of , or any other finite-dimensional vector space, such as those we study in a later chaper.    Let and be vector spaces, and let be a linear transformation. The image of , denoted by , is the set In other words, the image of consists of individual images of all vectors of .      Consider the linear transformation with standard matrix    Find .    Illustrate the action of with a sketch.        : Let then Thus, every element of the image can be written as a linear combination of the columns of . We conclude that Every column of is a scalar multiple of . Thus, The image of is a line in determined by the vector .   : The action of can be illustrated with a sketch.   Image of T graphed      In we observed that the image of the linear transformation was equal to the column space of its standard matrix. In general, it is easy to see that if is a linear transformation with standard matrix then the following relationship holds: In addition, by , we know that     Let be a linear transformation with standard matrix Find and .    As in , the image of is given by This time it is harder to detect the vectors that can be eliminated from the spanning set without affecting the span. We have to rely on the reduced row-echelon form of . We can see that , so . To identify vectors that span , we turn to . We identify the first three columns as pivot columns. These columns are linearly independent and span . Therefore,     By and , we know that for an matrix , is a subspace of . However, when vector spaces other than are involved, it is not yet clear that is a subspace of the codomain. The following theorem resolves this issue.    Let be a linear transformation. Then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose and are in . Then there are vectors and in such that and . Then This shows that is in . For any scalar , we have: This shows that is in .    We can now define the rank of a linear transformation.    The rank of a linear transformation , is the dimension of the image of .     This definition gives us the following relationship between the rank of a linear transformation and the rank of the standard matrix associated with it.           The Kernel of a Linear Transformation  Exactly as in the preceding section, we will often use , and to denote subspaces of , or any other finite-dimensional vector space, such as those we study in a later chaper.    Let and be vector spaces, and let be a linear transformation. The kernel of , denoted by , is the set In other words, the kernel of consists of all vectors of that map to in .    It is important to pay attention to the locations of the kernel and the image. We already proved that is a subspace of the codomain. In contrast, is located in the domain. (We will prove shortly that it is a subspace of the domain.)   Kernel diagram shown      Let be a linear transformation with standard matrix    Find .    Is a subspace of ? If so, find .        To find the kernel of , we need to find all vectors of that map to in . This amounts to solving the equation . Gauss-Jordan elimination yields: Thus, the kernel of consists of all elements of the form: We conclude that  : Since is the span of two vectors of , we know that is a subspace of . (See .) Observe that the two vectors in the spanning set are linearly independent. (How can we see this without performing computations?) Therefore .    Recall that the null space of a matrix is defined to be set of all solutions to the homogeneous equation . This means that if is a linear transformation with standard matrix then We know that of an matrix is a subspace of . (See .) We conclude this section by showing that even when vector spaces other than are involved, the kernel of a linear transformation is a subspace of the domain of the transformation.    Let be a linear transformation, then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose that and are in . Then, This shows that is in . For any scalar we have: This shows that is in .      The nullity of a linear transformation , is the dimension of the kernel of .     This definition gives us the following relationship between nullity of a linear transformation and the nullity of the standard matrix associated with it.           Rank-Nullity Theorem for Linear Transformations  In and , we found the image and the kernel of the linear transformation with standard matrix We also found that and Because of Rank-Nullity Theorem for matrices (Theorem ), it is not surprising that The following theorem is a generalization of this result.    Let be a linear transformation. Suppose , then     By , is a subspace of . There exists a basis for of the form . By , is a subspace of . Let be a basis for . We will show that is a basis for . For any vector in , we have: for some scalars  . Thus, By linearity, Therefore is in . Hence there are scalars  such that Thus, We conclude that   Now we need to show that is linearly independent. Suppose Applying to both sides, we get  But for , thus Since is linearly independent, it follows that each . But then implies that . Because is linearly independent, it follows that each . We conclude that is a basis for . Thus,        Show that of holds for vectors and .    Use a counter-example to prove of .    Suppose is a linear transformation such that and . Find the image of .        Let be a fixed vector. Define , by .   Describe the effect of this transformation by sketching and for at least four vectors and a fixed vector of your choice.    Is a linear transformation?       Define , by This transformation is called an {orthogonal projection } onto the -plane. Show that is a linear transformation.    Suppose a linear transformation maps Find the image of under .        Prove     Prove      For each matrix below, find the domain together with codomain of the linear transformation induced by ; then find and draw the image of (Hint: See .)        Domain: , where .  Codomain: , where .           Suppose that a linear transformation is such that Find .        Suppose that a linear transformation is such that . Find the standard matrix of .         Find the standard matrix of each linear transformation described below.     doubles the component of every vector and triples the component.         reverses the direction of each vector.         doubles the length of each vector.         projects each vector onto the -axis. (e.g. ).         projects each vector onto the -axis. (e.g. )           Describe the image and find the rank for each linear transformation with standard matrix given below.     ,              is a line in .   (T)    .       .       is a plane in .           ,       .       is a line in .   (T)    is a line in .       .       is a plane in .   (T)   .     Suppose linear transformations and are such that Does this mean that and are the same transformation? Justify your claim.     Describe the kernel and find the nullity for each linear transformation with standard matrix given below.     ,       .       .       .       is a plane in .       is a line in .           ,       .       .       is a line in .           ,       is a plane in .       is a line in .       is a line in .       .       .      .     Suppose a linear transformation is such that is a plane in . What is the rank and nulity of ?         Suppose a linear transformation is such that for all in . What is the rank and nulity of ?         Let be a linear transformation with standard matrix Find and if the reduced row-echelon form of is     Let and let be a linear transformation defined by . Find and .    Suppose a linear transformation is induced by a matrix . Let be a linear transformation induced by . Find , if . Prove your claim.    "
 },
 {
   "id": "def-function",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#def-function",
+  "url": "Section-Linear-Transformations.html#def-function",
   "type": "Definition",
   "number": "6.2.1",
   "title": "",
   "body": "  Let and be sets. A function  from into , denoted by assigns to each element of , an element of . Moreover, we use the the following terminology.  The set is called the domain of , and the set is called the codomain .  If , we say that  maps to  , and is the image of .  The collection of images of all points of is called the image of under , or the image of . (It is also known as the range of .)   "
 },
 {
-  "id": "Section-Introduction-to-Linear-Transformations-4",
+  "id": "Section-Linear-Transformations-4",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#Section-Introduction-to-Linear-Transformations-4",
+  "url": "Section-Linear-Transformations.html#Section-Linear-Transformations-4",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -5961,16 +5961,16 @@ var ptx_lunr_docs = [
 {
   "id": "init-lintransintro",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#init-lintransintro",
+  "url": "Section-Linear-Transformations.html#init-lintransintro",
   "type": "Exploration",
   "number": "6.2.1",
   "title": "",
   "body": " In this exercise we will introduce a very special type of transformation by contrasting the effects of two transformations on vectors of . We will see that some transformations have ``nice\" properties, while others do not. Define and as follows:  Each of these transformations takes a vector in , and maps it to another vector in . To see if you understand how these transformations are defined, see if you can determine what these transformations do to the vector .    Compute the following two images:          Now, let's take the vector and multiply it by a scalar, say . Now let's compare how and ``handle\" this product. Starting with , we compute: Observe that multiplying the original vector by , then applying , has the same effect as applying to the original vector, then multiplying the image by . In other words, Diagrammatically, this can be represented as follows.   T with domain and codomain pictured    You should try to verify that this property does not hold for transformation . In other words, There is nothing special about the number , and it is not hard to prove that for any scalar and vector of , satisfies It turns out that satisfies another important property. For all vectors and of we have: We leave it to the reader to illustrate this property with a specific example (see ). We will show that satisfies in general. Let then It turns out that fails to satisfy this property. Can you prove that this is the case? Remember that to prove that a property DOES NOT hold, it suffices to find a counter-example. See if you can find vectors and such that See for more on this.  "
 },
 {
-  "id": "Section-Introduction-to-Linear-Transformations-6",
+  "id": "Section-Linear-Transformations-6",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#Section-Introduction-to-Linear-Transformations-6",
+  "url": "Section-Linear-Transformations.html#Section-Linear-Transformations-6",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -5979,7 +5979,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-lin",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#def-lin",
+  "url": "Section-Linear-Transformations.html#def-lin",
   "type": "Definition",
   "number": "6.2.3",
   "title": "",
@@ -5988,7 +5988,7 @@ var ptx_lunr_docs = [
 {
   "id": "combinedLinearDef",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#combinedLinearDef",
+  "url": "Section-Linear-Transformations.html#combinedLinearDef",
   "type": "Remark",
   "number": "6.2.4",
   "title": "",
@@ -5997,7 +5997,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-lintransfirst",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#ex-lintransfirst",
+  "url": "Section-Linear-Transformations.html#ex-lintransfirst",
   "type": "Example",
   "number": "6.2.5",
   "title": "",
@@ -6006,25 +6006,25 @@ var ptx_lunr_docs = [
 {
   "id": "basisIsSufficient",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#basisIsSufficient",
+  "url": "Section-Linear-Transformations.html#basisIsSufficient",
   "type": "Observation",
   "number": "6.2.6",
   "title": "",
   "body": "  In we were given the images of two vectors, and , under a linear transformation .  Based on this information, we were able to determine the images of two additional vectors: and . The reason we were able to determine and is because and can be written as unique linear combinations of and .   "
 },
 {
-  "id": "Section-Introduction-to-Linear-Transformations-14",
+  "id": "Section-Linear-Transformations-14",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#Section-Introduction-to-Linear-Transformations-14",
+  "url": "Section-Linear-Transformations.html#Section-Linear-Transformations-14",
   "type": "Problem",
   "number": "6.2.7",
   "title": "",
   "body": "  Can every vector of be written as a linear combination of and ?    Yes.   "
 },
 {
-  "id": "Section-Introduction-to-Linear-Transformations-15",
+  "id": "Section-Linear-Transformations-15",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#Section-Introduction-to-Linear-Transformations-15",
+  "url": "Section-Linear-Transformations.html#Section-Linear-Transformations-15",
   "type": "Problem",
   "number": "6.2.8",
   "title": "",
@@ -6033,7 +6033,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-lineartrans1",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#ex-lineartrans1",
+  "url": "Section-Linear-Transformations.html#ex-lineartrans1",
   "type": "Example",
   "number": "6.2.9",
   "title": "",
@@ -6042,7 +6042,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-zerotozero",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#th-zerotozero",
+  "url": "Section-Linear-Transformations.html#th-zerotozero",
   "type": "Theorem",
   "number": "6.2.10",
   "title": "",
@@ -6051,7 +6051,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-zerotozero",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#ex-zerotozero",
+  "url": "Section-Linear-Transformations.html#ex-zerotozero",
   "type": "Example",
   "number": "6.2.11",
   "title": "",
@@ -6060,7 +6060,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-matrixtran",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#th-matrixtran",
+  "url": "Section-Linear-Transformations.html#th-matrixtran",
   "type": "Theorem",
   "number": "6.2.12",
   "title": "",
@@ -6069,7 +6069,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-lineartrans2",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#ex-lineartrans2",
+  "url": "Section-Linear-Transformations.html#ex-lineartrans2",
   "type": "Example",
   "number": "6.2.13",
   "title": "",
@@ -6078,7 +6078,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-lineartrans3",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#ex-lineartrans3",
+  "url": "Section-Linear-Transformations.html#ex-lineartrans3",
   "type": "Example",
   "number": "6.2.14",
   "title": "",
@@ -6087,7 +6087,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-lin2",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#def-lin2",
+  "url": "Section-Linear-Transformations.html#def-lin2",
   "type": "Definition",
   "number": "6.2.15",
   "title": "",
@@ -6096,7 +6096,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-subspacetransex1",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#ex-subspacetransex1",
+  "url": "Section-Linear-Transformations.html#ex-subspacetransex1",
   "type": "Example",
   "number": "6.2.16",
   "title": "",
@@ -6105,7 +6105,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-idtransonrn",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#def-idtransonrn",
+  "url": "Section-Linear-Transformations.html#def-idtransonrn",
   "type": "Definition",
   "number": "6.2.18",
   "title": "",
@@ -6114,7 +6114,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-zerotransonrn",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#def-zerotransonrn",
+  "url": "Section-Linear-Transformations.html#def-zerotransonrn",
   "type": "Definition",
   "number": "6.2.19",
   "title": "",
@@ -6123,7 +6123,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-idlintrans",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#th-idlintrans",
+  "url": "Section-Linear-Transformations.html#th-idlintrans",
   "type": "Theorem",
   "number": "6.2.20",
   "title": "",
@@ -6132,7 +6132,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-zerolintrans",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#th-zerolintrans",
+  "url": "Section-Linear-Transformations.html#th-zerolintrans",
   "type": "Theorem",
   "number": "6.2.21",
   "title": "",
@@ -6141,7 +6141,7 @@ var ptx_lunr_docs = [
 {
   "id": "sum-matrixTrans",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#sum-matrixTrans",
+  "url": "Section-Linear-Transformations.html#sum-matrixTrans",
   "type": "Fact",
   "number": "6.2.22",
   "title": "",
@@ -6150,7 +6150,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-imageofatransformation",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#ex-imageofatransformation",
+  "url": "Section-Linear-Transformations.html#ex-imageofatransformation",
   "type": "Example",
   "number": "6.2.23",
   "title": "",
@@ -6159,7 +6159,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-matlin",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#th-matlin",
+  "url": "Section-Linear-Transformations.html#th-matlin",
   "type": "Theorem",
   "number": "6.2.24",
   "title": "",
@@ -6168,7 +6168,7 @@ var ptx_lunr_docs = [
 {
   "id": "cor-lintransmattrans",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#cor-lintransmattrans",
+  "url": "Section-Linear-Transformations.html#cor-lintransmattrans",
   "type": "Corollary",
   "number": "6.2.25",
   "title": "",
@@ -6177,7 +6177,7 @@ var ptx_lunr_docs = [
 {
   "id": "Section-Standard-Matrix-of-a-Linear-Transformation-from-m-R-n-m-to-m-R-m-m--10",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#Section-Standard-Matrix-of-a-Linear-Transformation-from-m-R-n-m-to-m-R-m-m--10",
+  "url": "Section-Linear-Transformations.html#Section-Standard-Matrix-of-a-Linear-Transformation-from-m-R-n-m-to-m-R-m-m--10",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -6186,7 +6186,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-standardmatoflintrans",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#def-standardmatoflintrans",
+  "url": "Section-Linear-Transformations.html#def-standardmatoflintrans",
   "type": "Definition",
   "number": "6.2.26",
   "title": "",
@@ -6195,7 +6195,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-findmatrix2",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#ex-findmatrix2",
+  "url": "Section-Linear-Transformations.html#ex-findmatrix2",
   "type": "Example",
   "number": "6.2.27",
   "title": "",
@@ -6204,7 +6204,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-findmatrix",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#ex-findmatrix",
+  "url": "Section-Linear-Transformations.html#ex-findmatrix",
   "type": "Example",
   "number": "6.2.28",
   "title": "",
@@ -6213,164 +6213,380 @@ var ptx_lunr_docs = [
 {
   "id": "ex-transNoStBases",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#ex-transNoStBases",
+  "url": "Section-Linear-Transformations.html#ex-transNoStBases",
   "type": "Example",
   "number": "6.2.29",
   "title": "",
   "body": "  Find the standard matrix of a linear transformation , where     In this example we are not given the images of the standard basis vectors and . However, we can find the images of and by expressing and as linear combinations of and , then apply the fact that is linear. Let's start with the easy one. Therefore, by linearity of , we have: This gives us the first column of the standard matrix for .  You can solve the vector equation to express as a linear combination of and as follows: By linearity of , This gives us the second column of the standard matrix. Putting all of the information together, we get the following standard matrix for :    "
 },
 {
+  "id": "def-imageofT",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#def-imageofT",
+  "type": "Definition",
+  "number": "6.2.30",
+  "title": "",
+  "body": "  Let and be vector spaces, and let be a linear transformation. The image of , denoted by , is the set In other words, the image of consists of individual images of all vectors of .   "
+},
+{
+  "id": "ex-image1",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#ex-image1",
+  "type": "Example",
+  "number": "6.2.31",
+  "title": "",
+  "body": "  Consider the linear transformation with standard matrix    Find .    Illustrate the action of with a sketch.        : Let then Thus, every element of the image can be written as a linear combination of the columns of . We conclude that Every column of is a scalar multiple of . Thus, The image of is a line in determined by the vector .   : The action of can be illustrated with a sketch.   Image of T graphed     "
+},
+{
+  "id": "ex-image2",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#ex-image2",
+  "type": "Example",
+  "number": "6.2.32",
+  "title": "",
+  "body": "  Let be a linear transformation with standard matrix Find and .    As in , the image of is given by This time it is harder to detect the vectors that can be eliminated from the spanning set without affecting the span. We have to rely on the reduced row-echelon form of . We can see that , so . To identify vectors that span , we turn to . We identify the first three columns as pivot columns. These columns are linearly independent and span . Therefore,    "
+},
+{
+  "id": "th-imagesubspace",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#th-imagesubspace",
+  "type": "Theorem",
+  "number": "6.2.33",
+  "title": "",
+  "body": "  Let be a linear transformation. Then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose and are in . Then there are vectors and in such that and . Then This shows that is in . For any scalar , we have: This shows that is in .   "
+},
+{
+  "id": "def-rankofT",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#def-rankofT",
+  "type": "Definition",
+  "number": "6.2.34",
+  "title": "",
+  "body": "  The rank of a linear transformation , is the dimension of the image of .    "
+},
+{
+  "id": "form-rankTrankA",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#form-rankTrankA",
+  "type": "Formula",
+  "number": "6.2.35",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "def-kernel",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#def-kernel",
+  "type": "Definition",
+  "number": "6.2.36",
+  "title": "",
+  "body": "  Let and be vector spaces, and let be a linear transformation. The kernel of , denoted by , is the set In other words, the kernel of consists of all vectors of that map to in .   "
+},
+{
+  "id": "ex-kernel",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#ex-kernel",
+  "type": "Example",
+  "number": "6.2.37",
+  "title": "",
+  "body": "  Let be a linear transformation with standard matrix    Find .    Is a subspace of ? If so, find .        To find the kernel of , we need to find all vectors of that map to in . This amounts to solving the equation . Gauss-Jordan elimination yields: Thus, the kernel of consists of all elements of the form: We conclude that  : Since is the span of two vectors of , we know that is a subspace of . (See .) Observe that the two vectors in the spanning set are linearly independent. (How can we see this without performing computations?) Therefore .   "
+},
+{
+  "id": "Subsection-The-Kernel-of-a-Linear-Transformation-7",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#Subsection-The-Kernel-of-a-Linear-Transformation-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "null space "
+},
+{
+  "id": "th-kersubspace",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#th-kersubspace",
+  "type": "Theorem",
+  "number": "6.2.38",
+  "title": "",
+  "body": "  Let be a linear transformation, then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose that and are in . Then, This shows that is in . For any scalar we have: This shows that is in .   "
+},
+{
+  "id": "def-nullityT",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#def-nullityT",
+  "type": "Definition",
+  "number": "6.2.39",
+  "title": "",
+  "body": "  The nullity of a linear transformation , is the dimension of the kernel of .    "
+},
+{
+  "id": "form-nullTnullA",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#form-nullTnullA",
+  "type": "Formula",
+  "number": "6.2.40",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "th-ranknullityforT",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#th-ranknullityforT",
+  "type": "Theorem",
+  "number": "6.2.41",
+  "title": "",
+  "body": "  Let be a linear transformation. Suppose , then     By , is a subspace of . There exists a basis for of the form . By , is a subspace of . Let be a basis for . We will show that is a basis for . For any vector in , we have: for some scalars  . Thus, By linearity, Therefore is in . Hence there are scalars  such that Thus, We conclude that   Now we need to show that is linearly independent. Suppose Applying to both sides, we get  But for , thus Since is linearly independent, it follows that each . But then implies that . Because is linearly independent, it follows that each . We conclude that is a basis for . Thus,    "
+},
+{
   "id": "prob-sum",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-sum",
+  "url": "Section-Linear-Transformations.html#prob-sum",
   "type": "Exercise",
-  "number": "6.2.4.1",
+  "number": "6.2.7.1",
   "title": "",
   "body": " Show that of holds for vectors and .  "
 },
 {
   "id": "prob-prob2",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-prob2",
+  "url": "Section-Linear-Transformations.html#prob-prob2",
   "type": "Exercise",
-  "number": "6.2.4.2",
+  "number": "6.2.7.2",
   "title": "",
   "body": " Use a counter-example to prove of .  "
 },
 {
   "id": "prob-imageoflincomb",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-imageoflincomb",
+  "url": "Section-Linear-Transformations.html#prob-imageoflincomb",
   "type": "Exercise",
-  "number": "6.2.4.3",
+  "number": "6.2.7.3",
   "title": "",
   "body": " Suppose is a linear transformation such that and . Find the image of .      "
 },
 {
   "id": "prob-notlinear",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-notlinear",
+  "url": "Section-Linear-Transformations.html#prob-notlinear",
   "type": "Exercise",
-  "number": "6.2.4.4",
+  "number": "6.2.7.4",
   "title": "",
   "body": " Let be a fixed vector. Define , by .   Describe the effect of this transformation by sketching and for at least four vectors and a fixed vector of your choice.    Is a linear transformation?     "
 },
 {
   "id": "prob-projectiontrans",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-projectiontrans",
+  "url": "Section-Linear-Transformations.html#prob-projectiontrans",
   "type": "Exercise",
-  "number": "6.2.4.5",
+  "number": "6.2.7.5",
   "title": "",
   "body": " Define , by This transformation is called an {orthogonal projection } onto the -plane. Show that is a linear transformation.  "
 },
 {
   "id": "prob-imagesofijk",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-imagesofijk",
+  "url": "Section-Linear-Transformations.html#prob-imagesofijk",
   "type": "Exercise",
-  "number": "6.2.4.6",
+  "number": "6.2.7.6",
   "title": "",
   "body": " Suppose a linear transformation maps Find the image of under .      "
 },
 {
   "id": "prob-idtrans",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-idtrans",
+  "url": "Section-Linear-Transformations.html#prob-idtrans",
   "type": "Exercise",
-  "number": "6.2.4.7",
+  "number": "6.2.7.7",
   "title": "",
   "body": " Prove   "
 },
 {
   "id": "prob-zerotrans",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-zerotrans",
+  "url": "Section-Linear-Transformations.html#prob-zerotrans",
   "type": "Exercise",
-  "number": "6.2.4.8",
+  "number": "6.2.7.8",
   "title": "",
   "body": " Prove   "
 },
 {
   "id": "domaincodomain1",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#domaincodomain1",
+  "url": "Section-Linear-Transformations.html#domaincodomain1",
   "type": "Exercise",
-  "number": "6.2.4.9",
+  "number": "6.2.7.9",
   "title": "",
   "body": "     Domain: , where .  Codomain: , where .  "
 },
 {
   "id": "prob-domaincodomain2",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-domaincodomain2",
+  "url": "Section-Linear-Transformations.html#prob-domaincodomain2",
   "type": "Exercise",
-  "number": "6.2.4.10",
+  "number": "6.2.7.10",
   "title": "",
   "body": "    "
 },
 {
   "id": "prob-evaluateT",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-evaluateT",
+  "url": "Section-Linear-Transformations.html#prob-evaluateT",
   "type": "Exercise",
-  "number": "6.2.4.11",
+  "number": "6.2.7.11",
   "title": "",
   "body": " Suppose that a linear transformation is such that Find .      "
 },
 {
   "id": "prob-standardmatrix",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-standardmatrix",
+  "url": "Section-Linear-Transformations.html#prob-standardmatrix",
   "type": "Exercise",
-  "number": "6.2.4.12",
+  "number": "6.2.7.12",
   "title": "",
   "body": " Suppose that a linear transformation is such that . Find the standard matrix of .      "
 },
 {
   "id": "prob-standardmatrix1",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-standardmatrix1",
+  "url": "Section-Linear-Transformations.html#prob-standardmatrix1",
   "type": "Exercise",
-  "number": "6.2.4.13",
+  "number": "6.2.7.13",
   "title": "",
   "body": "  doubles the component of every vector and triples the component.      "
 },
 {
   "id": "prob-standardmatrix2",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-standardmatrix2",
+  "url": "Section-Linear-Transformations.html#prob-standardmatrix2",
   "type": "Exercise",
-  "number": "6.2.4.14",
+  "number": "6.2.7.14",
   "title": "",
   "body": "  reverses the direction of each vector.      "
 },
 {
   "id": "prob-standardmatrix5",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-standardmatrix5",
+  "url": "Section-Linear-Transformations.html#prob-standardmatrix5",
   "type": "Exercise",
-  "number": "6.2.4.15",
+  "number": "6.2.7.15",
   "title": "",
   "body": "  doubles the length of each vector.      "
 },
 {
   "id": "prob-standardmatrix3",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-standardmatrix3",
+  "url": "Section-Linear-Transformations.html#prob-standardmatrix3",
   "type": "Exercise",
-  "number": "6.2.4.16",
+  "number": "6.2.7.16",
   "title": "",
   "body": "  projects each vector onto the -axis. (e.g. ).      "
 },
 {
   "id": "prob-standardmatrix4",
   "level": "2",
-  "url": "Section-Introduction-to-Linear-Transformations.html#prob-standardmatrix4",
+  "url": "Section-Linear-Transformations.html#prob-standardmatrix4",
   "type": "Exercise",
-  "number": "6.2.4.17",
+  "number": "6.2.7.17",
   "title": "",
   "body": "  projects each vector onto the -axis. (e.g. )      "
+},
+{
+  "id": "imagerankoflintrans1",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#imagerankoflintrans1",
+  "type": "Exercise",
+  "number": "6.2.7.18",
+  "title": "",
+  "body": "  ,              is a line in .   (T)    .       .       is a plane in .        "
+},
+{
+  "id": "prob-imagerankoflintrans2",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#prob-imagerankoflintrans2",
+  "type": "Exercise",
+  "number": "6.2.7.19",
+  "title": "",
+  "body": "  ,       .       is a line in .   (T)    is a line in .       .       is a plane in .   (T)   .  "
+},
+{
+  "id": "prob-sametrans",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#prob-sametrans",
+  "type": "Exercise",
+  "number": "6.2.7.20",
+  "title": "",
+  "body": " Suppose linear transformations and are such that Does this mean that and are the same transformation? Justify your claim.  "
+},
+{
+  "id": "kerandnullityT1",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#kerandnullityT1",
+  "type": "Exercise",
+  "number": "6.2.7.21",
+  "title": "",
+  "body": "  ,       .       .       .       is a plane in .       is a line in .        "
+},
+{
+  "id": "prob-kerandnullityT2",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#prob-kerandnullityT2",
+  "type": "Exercise",
+  "number": "6.2.7.22",
+  "title": "",
+  "body": "  ,       .       .       is a line in .        "
+},
+{
+  "id": "prob-kerandnullityT3",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#prob-kerandnullityT3",
+  "type": "Exercise",
+  "number": "6.2.7.23",
+  "title": "",
+  "body": "  ,       is a plane in .       is a line in .       is a line in .       .       .      .  "
+},
+{
+  "id": "prob-ranknullityT4",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#prob-ranknullityT4",
+  "type": "Exercise",
+  "number": "6.2.7.24",
+  "title": "",
+  "body": " Suppose a linear transformation is such that is a plane in . What is the rank and nulity of ?       "
+},
+{
+  "id": "prob-ranknullityT5",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#prob-ranknullityT5",
+  "type": "Exercise",
+  "number": "6.2.7.25",
+  "title": "",
+  "body": " Suppose a linear transformation is such that for all in . What is the rank and nulity of ?       "
+},
+{
+  "id": "prob-findimkergivenrref",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#prob-findimkergivenrref",
+  "type": "Exercise",
+  "number": "6.2.7.26",
+  "title": "",
+  "body": " Let be a linear transformation with standard matrix Find and if the reduced row-echelon form of is   "
+},
+{
+  "id": "prob-findimageandkernellintrans",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#prob-findimageandkernellintrans",
+  "type": "Exercise",
+  "number": "6.2.7.27",
+  "title": "",
+  "body": " Let and let be a linear transformation defined by . Find and .  "
+},
+{
+  "id": "prob-ranknullitytrans",
+  "level": "2",
+  "url": "Section-Linear-Transformations.html#prob-ranknullitytrans",
+  "type": "Exercise",
+  "number": "6.2.7.28",
+  "title": "",
+  "body": " Suppose a linear transformation is induced by a matrix . Let be a linear transformation induced by . Find , if . Prove your claim.  "
 },
 {
   "id": "Section-Composition-and-Inverses-of-Linear-Transformations",
@@ -6378,8 +6594,8 @@ var ptx_lunr_docs = [
   "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html",
   "type": "Section",
   "number": "6.3",
-  "title": "Composition, Inverses, Images and Kernel",
-  "body": " Composition, Inverses, Images and Kernel  Note to Student: In this section we will often use , and to denote subspaces of , or any other finite-dimensional vector space, such as those we study later on.   Composition and Matrix Multiplication    Let , and be vector spaces, and let and be linear transformations. The composition of and is the transformation given by       Define (You should be able to verify that both transformations are linear.) Examine the effect of on vectors of .    From the computational standpoint, the situation is simple. This means that maps all vectors of to .  In addition to the computational approach, it is also useful to visualize what happens geometrically. First, observe that Therefore the image of any vector of under lies on the line determined by the vector . Even though is defined on all of , we are only interested in the action of on vectors along the line determined by . Our computations showed that all such vectors map to . The actions of individual transformations, as well as the composite transformation are shown below.   Composition of functions diagram        The composition of two linear transformations is linear.    Let and be linear transformations. We will show that is linear. For all vectors and of and scalars and we have:       Composition of linear transformations is associative. In other words, for linear transformations , and    Associativity drawn    We have .    For all in we have:     In this section we will consider linear transformations of and their standard matrices.    Let together with be linear transformations with standard matrices and , respectively. Then the composite transformation has a standard matrix given by the product .    For all in we have:        , we discussed a composite transformation given by: Express as a matrix transformation.    The standard matrix for is and the standard matrix for is The standard matrix for is the product     We conclude this section by revisiting the associative property of matrix multiplication. At the time matrix multiplication was introduced, we skipped the cumbersome proof that for appropriately sized matrices , and , we have (see ).  We are now in a position to prove this result with ease. Every matrix induces a linear transformation. The product of two matrices can be interpreted as a composition of transformations. Since function composition is associative, so is matrix multiplication. We formalize this observation as a theorem.   Associativity of Matrix Multiplication   Let , and be matrices of appropriate dimensions so that the product is defined. Then       Inverses of Linear Transformations   Define a linear transformation by . In other words, doubles every vector in . Now define by . What happens when we compose these two transformations?  Both composite transformations return the original vector . In other words, and . We say that is an inverse of , and is an inverse of .     Let and be vector spaces, and let be a linear transformation. A transformation satisfying and is called an inverse of . If has an inverse, is called invertible .      Let be a transformation defined by . (ow would you verify that is linear?). Show that given by is an inverse of .    We will show that . We leave it to the reader to verify that .     does not specifically require an inverse of a linear transformation to be linear, but it turns out that the requirement that and is sufficient to guarantee that is linear.    Suppose is an invertible linear transformation. Let be an inverse of . Then is linear.    The proof of this result is left to the reader. (See )      Linear Transformations of and the Standard Matrix of the Inverse Transformation  Every linear transformation is a matrix transformation (see ). If has an inverse , then by , is also a matrix transformation.  Let and denote the standard matrices of and , respectively. We see that if and only if In other words, and are inverse transformations if and only if and are matrix inverses.  Note that if is an inverse of , then and are square matrices, and .    Let be a linear transformation, and let be the standard matrix of .   (Existence of Inverses.) is invertible if and only if is invertible. If is invertible, then the inverse is induced by .    (Uniqueness of Inverses.) If is an inverse of , then is unique.       Part follows directly from the preceding discussion. Part follows from uniqueness of matrix inverses. ( .)    Please note that is only applicable in the context of linear transformations of and their standard matrices. The following example provides us with motivation to investigate inverses further, which we will do in the next section.   Let Define a linear transformation by Observe that is a basis of (why?). The information about the images of the basis vectors is sufficient to define a linear transformation. This is because every vector in can be expressed as a linear combination of the basis elements. The image, , can be found by applying the linearity properties.  At this point we know what transformation does, but it is still unclear what the matrix of this linear transformation is. Geometrically speaking, the domain of is a plane in and its codomain is .  Does have an inverse? We are not in a position to answer this question right now because does not apply to this situation.     The Image  In this section we will often use , and to denote subspaces of , or any other finite-dimensional vector space, such as those we study in a later chaper.    Let and be vector spaces, and let be a linear transformation. The image of , denoted by , is the set In other words, the image of consists of individual images of all vectors of .      Consider the linear transformation with standard matrix    Find .    Illustrate the action of with a sketch.        : Let then Thus, every element of the image can be written as a linear combination of the columns of . We conclude that Every column of is a scalar multiple of . Thus, The image of is a line in determined by the vector .   : The action of can be illustrated with a sketch.   Image of T graphed      In we observed that the image of the linear transformation was equal to the column space of its standard matrix. In general, it is easy to see that if is a linear transformation with standard matrix then the following relationship holds: In addition, by , we know that     Let be a linear transformation with standard matrix Find and .    As in , the image of is given by This time it is harder to detect the vectors that can be eliminated from the spanning set without affecting the span. We have to rely on the reduced row-echelon form of . We can see that , so . To identify vectors that span , we turn to . We identify the first three columns as pivot columns. These columns are linearly independent and span . Therefore,     By and , we know that for an matrix , is a subspace of . However, when vector spaces other than are involved, it is not yet clear that is a subspace of the codomain. The following theorem resolves this issue.    Let be a linear transformation. Then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose and are in . Then there are vectors and in such that and . Then This shows that is in . For any scalar , we have: This shows that is in .    We can now define the rank of a linear transformation.    The rank of a linear transformation , is the dimension of the image of .     This definition gives us the following relationship between the rank of a linear transformation and the rank of the standard matrix associated with it.           The Kernel of a Linear Transformation  Exactly as in the preceding section, we will often use , and to denote subspaces of , or any other finite-dimensional vector space, such as those we study in a later chaper.    Let and be vector spaces, and let be a linear transformation. The kernel of , denoted by , is the set In other words, the kernel of consists of all vectors of that map to in .    It is important to pay attention to the locations of the kernel and the image. We already proved that is a subspace of the codomain. In contrast, is located in the domain. (We will prove shortly that it is a subspace of the domain.)   Kernel diagram shown      Let be a linear transformation with standard matrix    Find .    Is a subspace of ? If so, find .        To find the kernel of , we need to find all vectors of that map to in . This amounts to solving the equation . Gauss-Jordan elimination yields: Thus, the kernel of consists of all elements of the form: We conclude that  : Since is the span of two vectors of , we know that is a subspace of . (See .) Observe that the two vectors in the spanning set are linearly independent. (How can we see this without performing computations?) Therefore .    Recall that the null space of a matrix is defined to be set of all solutions to the homogeneous equation . This means that if is a linear transformation with standard matrix then We know that of an matrix is a subspace of . (See .) We conclude this section by showing that even when vector spaces other than are involved, the kernel of a linear transformation is a subspace of the domain of the transformation.    Let be a linear transformation, then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose that and are in . Then, This shows that is in . For any scalar we have: This shows that is in .      The nullity of a linear transformation , is the dimension of the kernel of .     This definition gives us the following relationship between nullity of a linear transformation and the nullity of the standard matrix associated with it.           Rank-Nullity Theorem for Linear Transformations  In and , we found the image and the kernel of the linear transformation with standard matrix We also found that and Because of Rank-Nullity Theorem for matrices (Theorem ), it is not surprising that The following theorem is a generalization of this result.    Let be a linear transformation. Suppose , then     By , is a subspace of . There exists a basis for of the form . By , is a subspace of . Let be a basis for . We will show that is a basis for . For any vector in , we have: for some scalars  . Thus, By linearity, Therefore is in . Hence there are scalars  such that Thus, We conclude that   Now we need to show that is linearly independent. Suppose Applying to both sides, we get  But for , thus Since is linearly independent, it follows that each . But then implies that . Because is linearly independent, it follows that each . We conclude that is a basis for . Thus,        Let and be linear transformations with standard matrices respectively. Describe the actions of , , and geometrically, as in .    Let and be linear transformations with standard matrices respectively. Describe the actions of , , and geometrically, as in .    Complete the Explanation of by verifying that .    Let be a linear transformation given by Propose a candidate for the inverse of and verify your choice using .        Explain why linear transformation given by does not have an inverse.    Prove .    Suppose and are linear transformations with inverses and respectively. Prove that is the inverse of .      Describe the image and find the rank for each linear transformation with standard matrix given below.     ,              is a line in .   (T)    .       .       is a plane in .           ,       .       is a line in .   (T)    is a line in .       .       is a plane in .   (T)   .     Suppose linear transformations and are such that Does this mean that and are the same transformation? Justify your claim.     Describe the kernel and find the nullity for each linear transformation with standard matrix given below.     ,       .       .       .       is a plane in .       is a line in .           ,       .       .       is a line in .           ,       is a plane in .       is a line in .       is a line in .       .       .      .     Suppose a linear transformation is such that is a plane in . What is the rank and nulity of ?         Suppose a linear transformation is such that for all in . What is the rank and nulity of ?         Let be a linear transformation with standard matrix Find and if the reduced row-echelon form of is     Let and let be a linear transformation defined by . Find and .    Suppose a linear transformation is induced by a matrix . Let be a linear transformation induced by . Find , if . Prove your claim.    "
+  "title": "Extra Topic: Composition and Inverses",
+  "body": " Extra Topic: Composition and Inverses  Note to Student: In this section we will often use , and to denote subspaces of , or any other finite-dimensional vector space, such as those we study later on.   Composition and Matrix Multiplication    Let , and be vector spaces, and let and be linear transformations. The composition of and is the transformation given by       Define (You should be able to verify that both transformations are linear.) Examine the effect of on vectors of .    From the computational standpoint, the situation is simple. This means that maps all vectors of to .  In addition to the computational approach, it is also useful to visualize what happens geometrically. First, observe that Therefore the image of any vector of under lies on the line determined by the vector . Even though is defined on all of , we are only interested in the action of on vectors along the line determined by . Our computations showed that all such vectors map to . The actions of individual transformations, as well as the composite transformation are shown below.   Composition of functions diagram        The composition of two linear transformations is linear.    Let and be linear transformations. We will show that is linear. For all vectors and of and scalars and we have:       Composition of linear transformations is associative. In other words, for linear transformations , and    Associativity drawn    We have .    For all in we have:     In this section we will consider linear transformations of and their standard matrices.    Let together with be linear transformations with standard matrices and , respectively. Then the composite transformation has a standard matrix given by the product .    For all in we have:        , we discussed a composite transformation given by: Express as a matrix transformation.    The standard matrix for is and the standard matrix for is The standard matrix for is the product     We conclude this section by revisiting the associative property of matrix multiplication. At the time matrix multiplication was introduced, we skipped the cumbersome proof that for appropriately sized matrices , and , we have (see ).  We are now in a position to prove this result with ease. Every matrix induces a linear transformation. The product of two matrices can be interpreted as a composition of transformations. Since function composition is associative, so is matrix multiplication. We formalize this observation as a theorem.   Associativity of Matrix Multiplication   Let , and be matrices of appropriate dimensions so that the product is defined. Then       Inverses of Linear Transformations   Define a linear transformation by . In other words, doubles every vector in . Now define by . What happens when we compose these two transformations?  Both composite transformations return the original vector . In other words, and . We say that is an inverse of , and is an inverse of .     Let and be vector spaces, and let be a linear transformation. A transformation satisfying and is called an inverse of . If has an inverse, is called invertible .      Let be a transformation defined by . (ow would you verify that is linear?). Show that given by is an inverse of .    We will show that . We leave it to the reader to verify that .     does not specifically require an inverse of a linear transformation to be linear, but it turns out that the requirement that and is sufficient to guarantee that is linear.    Suppose is an invertible linear transformation. Let be an inverse of . Then is linear.    The proof of this result is left to the reader. (See )      Linear Transformations of and the Standard Matrix of the Inverse Transformation  Every linear transformation is a matrix transformation (see ). If has an inverse , then by , is also a matrix transformation.  Let and denote the standard matrices of and , respectively. We see that if and only if In other words, and are inverse transformations if and only if and are matrix inverses.  Note that if is an inverse of , then and are square matrices, and .    Let be a linear transformation, and let be the standard matrix of .   (Existence of Inverses.) is invertible if and only if is invertible. If is invertible, then the inverse is induced by .    (Uniqueness of Inverses.) If is an inverse of , then is unique.       Part follows directly from the preceding discussion. Part follows from uniqueness of matrix inverses. ( .)    Please note that is only applicable in the context of linear transformations of and their standard matrices. The following example provides us with motivation to investigate inverses further, which we will do in the next section.   Let Define a linear transformation by Observe that is a basis of (why?). The information about the images of the basis vectors is sufficient to define a linear transformation. This is because every vector in can be expressed as a linear combination of the basis elements. The image, , can be found by applying the linearity properties.  At this point we know what transformation does, but it is still unclear what the matrix of this linear transformation is. Geometrically speaking, the domain of is a plane in and its codomain is .  Does have an inverse? We are not in a position to answer this question right now because does not apply to this situation.      Let and be linear transformations with standard matrices respectively. Describe the actions of , , and geometrically, as in .    Let and be linear transformations with standard matrices respectively. Describe the actions of , , and geometrically, as in .    Complete the Explanation of by verifying that .    Let be a linear transformation given by Propose a candidate for the inverse of and verify your choice using .        Explain why linear transformation given by does not have an inverse.    Prove .    Suppose and are linear transformations with inverses and respectively. Prove that is the inverse of .    "
 },
 {
   "id": "def-compoflintrans",
@@ -6499,128 +6715,11 @@ var ptx_lunr_docs = [
   "body": " Let Define a linear transformation by Observe that is a basis of (why?). The information about the images of the basis vectors is sufficient to define a linear transformation. This is because every vector in can be expressed as a linear combination of the basis elements. The image, , can be found by applying the linearity properties.  At this point we know what transformation does, but it is still unclear what the matrix of this linear transformation is. Geometrically speaking, the domain of is a plane in and its codomain is .  Does have an inverse? We are not in a position to answer this question right now because does not apply to this situation.  "
 },
 {
-  "id": "def-imageofT",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#def-imageofT",
-  "type": "Definition",
-  "number": "6.3.12",
-  "title": "",
-  "body": "  Let and be vector spaces, and let be a linear transformation. The image of , denoted by , is the set In other words, the image of consists of individual images of all vectors of .   "
-},
-{
-  "id": "ex-image1",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#ex-image1",
-  "type": "Example",
-  "number": "6.3.13",
-  "title": "",
-  "body": "  Consider the linear transformation with standard matrix    Find .    Illustrate the action of with a sketch.        : Let then Thus, every element of the image can be written as a linear combination of the columns of . We conclude that Every column of is a scalar multiple of . Thus, The image of is a line in determined by the vector .   : The action of can be illustrated with a sketch.   Image of T graphed     "
-},
-{
-  "id": "ex-image2",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#ex-image2",
-  "type": "Example",
-  "number": "6.3.14",
-  "title": "",
-  "body": "  Let be a linear transformation with standard matrix Find and .    As in , the image of is given by This time it is harder to detect the vectors that can be eliminated from the spanning set without affecting the span. We have to rely on the reduced row-echelon form of . We can see that , so . To identify vectors that span , we turn to . We identify the first three columns as pivot columns. These columns are linearly independent and span . Therefore,    "
-},
-{
-  "id": "th-imagesubspace",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#th-imagesubspace",
-  "type": "Theorem",
-  "number": "6.3.15",
-  "title": "",
-  "body": "  Let be a linear transformation. Then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose and are in . Then there are vectors and in such that and . Then This shows that is in . For any scalar , we have: This shows that is in .   "
-},
-{
-  "id": "def-rankofT",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#def-rankofT",
-  "type": "Definition",
-  "number": "6.3.16",
-  "title": "",
-  "body": "  The rank of a linear transformation , is the dimension of the image of .    "
-},
-{
-  "id": "form-rankTrankA",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#form-rankTrankA",
-  "type": "Formula",
-  "number": "6.3.17",
-  "title": "",
-  "body": "      "
-},
-{
-  "id": "def-kernel",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#def-kernel",
-  "type": "Definition",
-  "number": "6.3.18",
-  "title": "",
-  "body": "  Let and be vector spaces, and let be a linear transformation. The kernel of , denoted by , is the set In other words, the kernel of consists of all vectors of that map to in .   "
-},
-{
-  "id": "ex-kernel",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#ex-kernel",
-  "type": "Example",
-  "number": "6.3.19",
-  "title": "",
-  "body": "  Let be a linear transformation with standard matrix    Find .    Is a subspace of ? If so, find .        To find the kernel of , we need to find all vectors of that map to in . This amounts to solving the equation . Gauss-Jordan elimination yields: Thus, the kernel of consists of all elements of the form: We conclude that  : Since is the span of two vectors of , we know that is a subspace of . (See .) Observe that the two vectors in the spanning set are linearly independent. (How can we see this without performing computations?) Therefore .   "
-},
-{
-  "id": "Subsection-The-Kernel-of-a-Linear-Transformation-7",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#Subsection-The-Kernel-of-a-Linear-Transformation-7",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "null space "
-},
-{
-  "id": "th-kersubspace",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#th-kersubspace",
-  "type": "Theorem",
-  "number": "6.3.20",
-  "title": "",
-  "body": "  Let be a linear transformation, then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose that and are in . Then, This shows that is in . For any scalar we have: This shows that is in .   "
-},
-{
-  "id": "def-nullityT",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#def-nullityT",
-  "type": "Definition",
-  "number": "6.3.21",
-  "title": "",
-  "body": "  The nullity of a linear transformation , is the dimension of the kernel of .    "
-},
-{
-  "id": "form-nullTnullA",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#form-nullTnullA",
-  "type": "Formula",
-  "number": "6.3.22",
-  "title": "",
-  "body": "      "
-},
-{
-  "id": "th-ranknullityforT",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#th-ranknullityforT",
-  "type": "Theorem",
-  "number": "6.3.23",
-  "title": "",
-  "body": "  Let be a linear transformation. Suppose , then     By , is a subspace of . There exists a basis for of the form . By , is a subspace of . Let be a basis for . We will show that is a basis for . For any vector in , we have: for some scalars  . Thus, By linearity, Therefore is in . Hence there are scalars  such that Thus, We conclude that   Now we need to show that is linearly independent. Suppose Applying to both sides, we get  But for , thus Since is linearly independent, it follows that each . But then implies that . Because is linearly independent, it follows that each . We conclude that is a basis for . Thus,    "
-},
-{
   "id": "prob-geometryoflintrans1",
   "level": "2",
   "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-geometryoflintrans1",
   "type": "Exercise",
-  "number": "6.3.7.1",
+  "number": "6.3.4.1",
   "title": "",
   "body": " Let and be linear transformations with standard matrices respectively. Describe the actions of , , and geometrically, as in .  "
 },
@@ -6629,7 +6728,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-geometryoflintrans2",
   "type": "Exercise",
-  "number": "6.3.7.2",
+  "number": "6.3.4.2",
   "title": "",
   "body": " Let and be linear transformations with standard matrices respectively. Describe the actions of , , and geometrically, as in .  "
 },
@@ -6638,7 +6737,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-completeinverseverify",
   "type": "Exercise",
-  "number": "6.3.7.3",
+  "number": "6.3.4.3",
   "title": "",
   "body": " Complete the Explanation of by verifying that .  "
 },
@@ -6647,7 +6746,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-candidateforinv",
   "type": "Exercise",
-  "number": "6.3.7.4",
+  "number": "6.3.4.4",
   "title": "",
   "body": " Let be a linear transformation given by Propose a candidate for the inverse of and verify your choice using .      "
 },
@@ -6656,7 +6755,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-noinversetrans",
   "type": "Exercise",
-  "number": "6.3.7.5",
+  "number": "6.3.4.5",
   "title": "",
   "body": " Explain why linear transformation given by does not have an inverse.  "
 },
@@ -6665,7 +6764,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-inverseislinear",
   "type": "Exercise",
-  "number": "6.3.7.6",
+  "number": "6.3.4.6",
   "title": "",
   "body": " Prove .  "
 },
@@ -6674,108 +6773,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-compofinvisinvofcomp",
   "type": "Exercise",
-  "number": "6.3.7.7",
+  "number": "6.3.4.7",
   "title": "",
   "body": " Suppose and are linear transformations with inverses and respectively. Prove that is the inverse of .  "
-},
-{
-  "id": "imagerankoflintrans1",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#imagerankoflintrans1",
-  "type": "Exercise",
-  "number": "6.3.7.8",
-  "title": "",
-  "body": "  ,              is a line in .   (T)    .       .       is a plane in .        "
-},
-{
-  "id": "prob-imagerankoflintrans2",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-imagerankoflintrans2",
-  "type": "Exercise",
-  "number": "6.3.7.9",
-  "title": "",
-  "body": "  ,       .       is a line in .   (T)    is a line in .       .       is a plane in .   (T)   .  "
-},
-{
-  "id": "prob-sametrans",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-sametrans",
-  "type": "Exercise",
-  "number": "6.3.7.10",
-  "title": "",
-  "body": " Suppose linear transformations and are such that Does this mean that and are the same transformation? Justify your claim.  "
-},
-{
-  "id": "kerandnullityT1",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#kerandnullityT1",
-  "type": "Exercise",
-  "number": "6.3.7.11",
-  "title": "",
-  "body": "  ,       .       .       .       is a plane in .       is a line in .        "
-},
-{
-  "id": "prob-kerandnullityT2",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-kerandnullityT2",
-  "type": "Exercise",
-  "number": "6.3.7.12",
-  "title": "",
-  "body": "  ,       .       .       is a line in .        "
-},
-{
-  "id": "prob-kerandnullityT3",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-kerandnullityT3",
-  "type": "Exercise",
-  "number": "6.3.7.13",
-  "title": "",
-  "body": "  ,       is a plane in .       is a line in .       is a line in .       .       .      .  "
-},
-{
-  "id": "prob-ranknullityT4",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-ranknullityT4",
-  "type": "Exercise",
-  "number": "6.3.7.14",
-  "title": "",
-  "body": " Suppose a linear transformation is such that is a plane in . What is the rank and nulity of ?       "
-},
-{
-  "id": "prob-ranknullityT5",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-ranknullityT5",
-  "type": "Exercise",
-  "number": "6.3.7.15",
-  "title": "",
-  "body": " Suppose a linear transformation is such that for all in . What is the rank and nulity of ?       "
-},
-{
-  "id": "prob-findimkergivenrref",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-findimkergivenrref",
-  "type": "Exercise",
-  "number": "6.3.7.16",
-  "title": "",
-  "body": " Let be a linear transformation with standard matrix Find and if the reduced row-echelon form of is   "
-},
-{
-  "id": "prob-findimageandkernellintrans",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-findimageandkernellintrans",
-  "type": "Exercise",
-  "number": "6.3.7.17",
-  "title": "",
-  "body": " Let and let be a linear transformation defined by . Find and .  "
-},
-{
-  "id": "prob-ranknullitytrans",
-  "level": "2",
-  "url": "Section-Composition-and-Inverses-of-Linear-Transformations.html#prob-ranknullitytrans",
-  "type": "Exercise",
-  "number": "6.3.7.18",
-  "title": "",
-  "body": " Suppose a linear transformation is induced by a matrix . Let be a linear transformation induced by . Find , if . Prove your claim.  "
 },
 {
   "id": "Section-Geometric-Transformations-of-the-Plane",
