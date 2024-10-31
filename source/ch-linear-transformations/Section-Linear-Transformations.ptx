@@ -1988,8 +1988,8 @@ We conclude that <m>\{\mathbf{u}_1,\ldots ,\mathbf{u}_s,\mathbf{v}_1,\ldots ,\ma
             Let <m>\mathbf{u}</m> be a fixed vector.  Define <m>T_{\mathbf{u}}:\R^2\rightarrow\R^2</m>, by <m>T_{\mathbf{u}}(\mathbf{x})=\mathbf{u}-\mathbf{x}</m>.
   <ol>
   <li>
-      <p> Describe the effect of this transformation by sketching <m><alert>x</alert></m> and <m>T_{\mathbf{u}}(<alert>x</alert>)</m> 
-        for at least four vectors <m><alert>x</alert></m> and a fixed vector <m>\mathbf{u}</m> of your choice. </p>
+      <p> Describe the effect of this transformation by sketching <m>{\bf x}</m> and <m>T_{\mathbf{u}}({\bf x})</m> 
+        for at least four vectors <m>{\bf x}</m> and a fixed vector <m>\mathbf{u}</m> of your choice. </p>
 </li>
   <li>
       <p> Is <m>T_{\mathbf{u}}</m> a linear transformation? </p>
@@ -2014,7 +2014,7 @@ y\\
 \end{bmatrix}.
 </me>  
 
-This transformation is called an <term>{orthogonal projection</term>} onto the <m>xy</m>-plane.  Show that <m>P_{xy}</m> is a linear transformation.
+This transformation is called an <term>orthogonal projection</term> onto the <m>xy</m>-plane.  Show that <m>P_{xy}</m> is a linear transformation.
         </p>
     </statement>
 </exercise>
@@ -2023,8 +2023,9 @@ This transformation is called an <term>{orthogonal projection</term>} onto the <
     <statement>
         <p>
             Suppose a linear transformation <m>T:\R^3\rightarrow\R^3</m> maps 
-            <me><alert>i</alert> \ \text{to} \ \begin{bmatrix}2\\-1\\0\end{bmatrix}, \quad \  <alert>j</alert> \ \text{to} \  to \begin{bmatrix}-2\\4\\1\end{bmatrix}, \quad \text{and} \quad
-                 <alert>k</alert> \ \text{to} \ \begin{bmatrix}3\\0\\-5\end{bmatrix}.
+            <me>
+                \mathbf{i} \ \text{to} \ \begin{bmatrix}2\\-1\\0\end{bmatrix}, \quad \  \mathbf{j} \ \text{to} \ \begin{bmatrix}-2\\4\\1\end{bmatrix}, \quad \text{and} \quad
+                \mathbf{k} \ \text{to} \ \begin{bmatrix}3\\0\\-5\end{bmatrix}.
             </me> 
         Find the image of <m>\begin{bmatrix}1\\1\\-2\end{bmatrix}</m> under <m>T</m>.
         </p>
