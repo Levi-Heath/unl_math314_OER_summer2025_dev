@@ -7414,7 +7414,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.2",
   "title": "Properties of the Determinant",
-  "body": " Properties of the Determinant  When we first introduced the determinant we motivated its definition for a matrix by the fact that the value of the determinant is zero if and only if the matrix is singular. We will soon be able to generalize this result to larger matrices, and will eventually establish a formula for the inverse of a nonsingular matrix in terms of determinants.  Recall that we can find the inverse of a matrix or establish that the inverse does not exist by using elementary row operations to carry the given matrix to its reduced row-echelon form. In order to start relating determinants to inverses we need to find out what elementary row operations do to the determinant of a matrix.   The Effects of Elementary Row Operations on the Determinant  Recall that there are three elementary row operations:   Switching the order of two rows    Multiplying a row by a non-zero constant    Adding a multiple of one row to another   Elementary row operations are used to carry a matrix to its reduced row-echelon form. In we established that elementary row operations are reversible.  In other words, if we know what elementary row operations carried to , we can undo each operation with another elementary row operation to carry back to . This will prove useful for computing the determinant. Computing the determinant of is easy. (Why?) If we know what elementary row operations carry back to , and what effect each of these operations has on the determinant of , we could find the determinant of .   Let     Find .         Construct matrix by switching the first and the third rows of .     Find .         Next, try switching consecutive rows. Construct matrix by interchanging the second and third rows of .     Find .         It appears that switching any two rows of a matrix produces a determinant that is negative of the determinant of the original matrix. Next, construct matrix by multiplying the last row of by :     Find .         It turns out that multiplying the first or the second row of by yields exactly the same result as this. Finally, construct matrix by adding twice row 3 to row 1.     Find .         This result is particularly surprising. Try a few more variations of this example to convince yourself that adding a multiple of one row to another row does not appear to affect the determinant.   The following theorem generalizes our observations.    Let be an matrix.   If is obtained from by interchanging two different rows, then     If is obtained from by multiplying one of the rows of by a non-zero constant . Then     If is obtained from by adding a multiple of one row of to another row, then        The proof of this theorem is relegated to another time. For a sketch of the proof, you can watch this video:   The following lemma is a useful consequence of and of .    Let be an matrix.   If has a row of zeros, then .    If two rows of are the same, then .    If one row of is a scalar multiple of another row, then .       We will prove . Parts and are left as exercises.  [Proof of Part ]: Suppose rows and of are the same. Let be a matrix obtained from by switching and . By and we know that . But and are the same, so . But then . We conclude that .    Because , we have the following counterpart of for columns.   Elementary Column Operations and the Determinant   Let be an matrix.   If is obtained from by interchanging two different columns, then     If is obtained from by multiplying one of the columns of by a non-zero constant . Then     If is obtained from by adding a multiple of one column of to another column, then          Computing the Determinant Using Elementary Row Operations  What we discovered about the effects of elementary row operations on the determinant will allow us to compute determinants without using the cumbersome process of cofactor expansion.  We discover these tricks throw concrete examples.    Suppose that a matrix is carried to the identity matrix by a sequence of elementary row operations listed below. Find .     Let's take a look at what happens to the determinant of one step at a time. Recall that ( ). This gives us Therefore .      Let Find by applying elementary row operations to reduce to its row-echelon form.     We stop when we get to a row-echelon form of because we can see that its determinant is (see ).  The following table summarizes the effect of each elementary row operation on the determinant. Since the determinant of the row-echelon form of in step 5 is , we have Therefore You should verify this result by direct computation using cofactors.       Properties of the Determinant  We begin by summarizing the properties of determinants we introduced in previous sections.       The determinant of the identity matrix is equal to 1. ( )    The determinant of a triangular matrix is equal to the product of the main diagonal entries. ( )    The determinant of the transpose is equal to the determinant of the matrix. ( )    If a matrix contains a row of zeros, then its determinant is equal to 0. ( )    If two rows of a matrix are the same, then the determinant of the matrix is equal to 0. ( )    If one row of a matrix is a scalar multiple of another row, then the determinant of the matrix is equal to 0. ( )    If is obtained from by interchanging two different rows, then     If is obtained from by multiplying one of the rows of by a non-zero constant . Then     If is obtained from by adding a multiple of one row of to another row, then    (The last three properties comprise )    In this section we will prove the following important results:   A square matrix is singular if and only if its determinant is equal to 0.    The determinant of a product is the product of the determinants.   To get us started, we need the following lemma.    Let be a square matrix, and let be an elementary matrix, then     Recall that if is obtained from using an elementary row operation, then the same elementary row operation carries to . There are three types of elementary row operations and three types of elementary matrices, so we will have to consider three cases.  Case 1. Suppose is obtained from by interchanging two rows, then so   Case 2. Suppose is obtained from by multiplying one of the rows of by a non-zero constant , then so   Case 3. Suppose is obtained from by adding a scalar multiple of one row to another row, then so     Recall that we first introduced determinants in the context of invertibility of matrices. Specifically, we found that is invertible if and only if (a logically equivalent statement is: is singular if and only if ). We are now in the position to prove this result for all square matrices.    A square matrix is singular if and only if .    Let be a square matrix. To determine whether is singular we need to find . In the section on elementary matrices, we found that there exist elementary matrices such that Therefore, By repeated application of , we find that Suppose that is singular, then . But then contains a row of zeros, and (see ). Since determinants of elementary matrices are non-zero, we conclude that .  Conversely, suppose , then It follows that , so is singular.    Let us see this in action in a concrete case.    Determine whether is an invertible matrix without using elementary row operations.     Compute the determinant of . You will find that . By we conclude that is not invertible.    We now draw our attention to products and how they behave for determinants.    Let and be square matrices, then     Suppose is invertible, then can be written as a product of elementary matrices, see also . Then, by repeated application of , we get Now suppose that is not invertible. Then is also not invertible. %Needs proof So, and . Thus .    The following theorem is a nice consequence of . We leave the proof to the reader, see .    Let be a nonsingular matrix, then        Prove .    Let be an matrix. Show that     Prove .   Apply of to a matrix that has two identical rows.    Prove that if one row of a matrix is a linear combination of two other rows of the matrix, then the determinant of the matrix is 0.    Find and using elementary row operations, where     and .     Each of the following matrices is an elementary matrix.   What elementary row operation does this matrix perform?    Compute the determinant of the matrix in two different ways:    By cofactor expansion.    By thinking about how the given matrix was obtained from the identity matrix.           See .                            Without doing written computations, determine whether the given matrix is singular.           is singular       is nonsingular             is singular       is nonsingular       Show that all matrices of the form are singular.    Find values of for which the given matrix is singular. List values of in an increasing order.        Suppose and are matrices such that and . Find each of the following.               Prove or give a counterexample.     Prove .    Suppose is an invertible matrix such that Find if we know that .        "
+  "body": " Properties of the Determinant  When we first introduced the determinant we motivated its definition for a matrix by the fact that the value of the determinant is zero if and only if the matrix is singular. We will soon be able to generalize this result to larger matrices, and will eventually establish a formula for the inverse of a nonsingular matrix in terms of determinants.  Recall that we can find the inverse of a matrix or establish that the inverse does not exist by using elementary row operations to carry the given matrix to its reduced row-echelon form. In order to start relating determinants to inverses we need to find out what elementary row operations do to the determinant of a matrix.   The Effects of Elementary Row Operations on the Determinant  Recall that there are three elementary row operations:   Switching the order of two rows    Multiplying a row by a non-zero constant    Adding a multiple of one row to another   Elementary row operations are used to carry a matrix to its reduced row-echelon form. In we established that elementary row operations are reversible.  In other words, if we know what elementary row operations carried to , we can undo each operation with another elementary row operation to carry back to . This will prove useful for computing the determinant. Computing the determinant of is easy. (Why?) If we know what elementary row operations carry back to , and what effect each of these operations has on the determinant of , we could find the determinant of .   Let     Find .         Construct matrix by switching the first and the third rows of .     Find .         Next, try switching consecutive rows. Construct matrix by interchanging the second and third rows of .     Find .         It appears that switching any two rows of a matrix produces a determinant that is negative of the determinant of the original matrix. Next, construct matrix by multiplying the last row of by :     Find .         It turns out that multiplying the first or the second row of by yields exactly the same result as this. Finally, construct matrix by adding twice row 3 to row 1.     Find .         This result is particularly surprising. Try a few more variations of this example to convince yourself that adding a multiple of one row to another row does not appear to affect the determinant.   The following theorem generalizes our observations.    Let be an matrix.   If is obtained from by interchanging two different rows, then     If is obtained from by multiplying one of the rows of by a non-zero constant . Then     If is obtained from by adding a multiple of one row of to another row, then        The proof of this theorem is relegated to another time. For a sketch of the proof, you can watch this video:   The following lemma is a useful consequence of and of .    Let be an matrix.   If has a row of zeros, then .    If two rows of are the same, then .    If one row of is a scalar multiple of another row, then .       We will prove . Parts and are left as exercises.  [Proof of Part ]: Suppose rows and of are the same. Let be a matrix obtained from by switching and . By and we know that . But and are the same, so . But then . We conclude that .    Because , we have the following counterpart of for columns.   Elementary Column Operations and the Determinant   Let be an matrix.   If is obtained from by interchanging two different columns, then     If is obtained from by multiplying one of the columns of by a non-zero constant . Then     If is obtained from by adding a multiple of one column of to another column, then          Computing the Determinant Using Elementary Row Operations  What we discovered about the effects of elementary row operations on the determinant will allow us to compute determinants without using the cumbersome process of cofactor expansion.  We discover these tricks throw concrete examples.    Suppose that a matrix is carried to the identity matrix by a sequence of elementary row operations listed below. Find .     Let's take a look at what happens to the determinant of one step at a time. Recall that ( ). This gives us Therefore .      Let Find by applying elementary row operations to reduce to its row-echelon form.     We stop when we get to a row-echelon form of because we can see that its determinant is (see ).  The following table summarizes the effect of each elementary row operation on the determinant. Since the determinant of the row-echelon form of in step 5 is , we have Therefore You should verify this result by direct computation using cofactors.       Properties of the Determinant  We begin by summarizing the properties of determinants we introduced in previous sections.       The determinant of the identity matrix is equal to 1. ( )    The determinant of a triangular matrix is equal to the product of the main diagonal entries. ( )    The determinant of the transpose is equal to the determinant of the matrix. ( )    If a matrix contains a row of zeros, then its determinant is equal to 0. ( )    If two rows of a matrix are the same, then the determinant of the matrix is equal to 0. ( )    If one row of a matrix is a scalar multiple of another row, then the determinant of the matrix is equal to 0. ( )    If is obtained from by interchanging two different rows, then     If is obtained from by multiplying one of the rows of by a non-zero constant . Then     If is obtained from by adding a multiple of one row of to another row, then    (The last three properties comprise )    In this section we will prove the following important results:   A square matrix is singular if and only if its determinant is equal to 0.    The determinant of a product is the product of the determinants.   To get us started, we need the following lemma.    Let be a square matrix, and let be an elementary matrix, then     Recall that if is obtained from using an elementary row operation, then the same elementary row operation carries to . There are three types of elementary row operations and three types of elementary matrices, so we will have to consider three cases.  Case 1. Suppose is obtained from by interchanging two rows, then so   Case 2. Suppose is obtained from by multiplying one of the rows of by a non-zero constant , then so   Case 3. Suppose is obtained from by adding a scalar multiple of one row to another row, then so     Recall that we first introduced determinants in the context of invertibility of matrices. Specifically, we found that is invertible if and only if (a logically equivalent statement is: is singular if and only if ). We are now in the position to prove this result for all square matrices.    A square matrix is singular if and only if .    Let be a square matrix. To determine whether is singular we need to find . In the section on elementary matrices, we found that there exist elementary matrices such that Therefore, By repeated application of , we find that Suppose that is singular, then . But then contains a row of zeros, and (see ). Since determinants of elementary matrices are non-zero, we conclude that .  Conversely, suppose , then It follows that , so is singular.    Let us see this in action in a concrete case.    Determine whether is an invertible matrix without using elementary row operations.     Compute the determinant of . You will find that . By we conclude that is not invertible.    We now draw our attention to products and how they behave for determinants.    Let and be square matrices, then     Suppose is invertible, then can be written as a product of elementary matrices, see also . Then, by repeated application of , we get Now suppose that is not invertible. Then is also not invertible. %Needs proof So, and . Thus .    The following theorem is a nice consequence of . We leave the proof to the reader, see .    Let be a nonsingular matrix, then        Prove .    Let be an matrix. Show that     Prove .   Apply of to a matrix that has two identical rows.    Prove that if one row of a matrix is a linear combination of two other rows of the matrix, then the determinant of the matrix is 0.    Find and using elementary row operations, where     and .     Each of the following matrices is an elementary matrix.   What elementary row operation does this matrix perform?    Compute the determinant of the matrix in two different ways:    By cofactor expansion.    By thinking about how the given matrix was obtained from the identity matrix.           See .                            Without doing written computations, determine whether the given matrix is singular.           is singular       is nonsingular             is singular       is nonsingular       Show that all matrices of the form are singular.    Find values of for which the given matrix is singular. List values of in an increasing order.        Suppose and are matrices such that and . Find each of the following.                                         Prove or give a counterexample.     Prove .    Suppose is an invertible matrix such that Find if we know that .        "
 },
 {
   "id": "init-rowswap",
@@ -7633,38 +7633,20 @@ var ptx_lunr_docs = [
   "body": " Find values of for which the given matrix is singular. List values of in an increasing order.      "
 },
 {
-  "id": "prob-detproduct1a",
+  "id": "prob-detproduct",
   "level": "2",
-  "url": "Section-Elementary-Row-Operations-and-the-Determinant.html#prob-detproduct1a",
+  "url": "Section-Elementary-Row-Operations-and-the-Determinant.html#prob-detproduct",
   "type": "Exercise",
   "number": "7.2.4.13",
   "title": "",
-  "body": " Suppose and are matrices such that and . Find each of the following.   "
-},
-{
-  "id": "prob-detproduct1b",
-  "level": "2",
-  "url": "Section-Elementary-Row-Operations-and-the-Determinant.html#prob-detproduct1b",
-  "type": "Exercise",
-  "number": "7.2.4.14",
-  "title": "",
-  "body": "    "
-},
-{
-  "id": "prob-detproduct1c",
-  "level": "2",
-  "url": "Section-Elementary-Row-Operations-and-the-Determinant.html#prob-detproduct1c",
-  "type": "Exercise",
-  "number": "7.2.4.15",
-  "title": "",
-  "body": "    "
+  "body": " Suppose and are matrices such that and . Find each of the following.                                       "
 },
 {
   "id": "prob-dettruefalse",
   "level": "2",
   "url": "Section-Elementary-Row-Operations-and-the-Determinant.html#prob-dettruefalse",
   "type": "Exercise",
-  "number": "7.2.4.16",
+  "number": "7.2.4.14",
   "title": "",
   "body": " Prove or give a counterexample.   "
 },
@@ -7673,7 +7655,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Elementary-Row-Operations-and-the-Determinant.html#prob-proofdetofinverse",
   "type": "Exercise",
-  "number": "7.2.4.17",
+  "number": "7.2.4.15",
   "title": "",
   "body": " Prove .  "
 },
@@ -7682,23 +7664,23 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Elementary-Row-Operations-and-the-Determinant.html#prob-detinvertible1",
   "type": "Exercise",
-  "number": "7.2.4.18",
+  "number": "7.2.4.16",
   "title": "",
   "body": " Suppose is an invertible matrix such that Find if we know that .      "
 },
 {
-  "id": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices",
+  "id": "Section-Cramers-Rule",
   "level": "1",
-  "url": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html",
+  "url": "Section-Cramers-Rule.html",
   "type": "Section",
   "number": "7.3",
-  "title": "Determinants and Inverses of Nonsingular Matrices",
-  "body": " Determinants and Inverses of Nonsingular Matrices  Combining results of and shows that the following statements about matrix are equivalent:    exists    Any equation has a unique solution        In this section, we take a closer look at the relationship between the determinants of nonsingular matrices , solutions to , and .   Cramer's Rule  We begin by establishing a formula that allows us to express the unique solution to the system in terms of the determinant of , for a nonsingular matrix . This formula is called Cramer's rule . Consider the system The system can be written as a matrix equation Using one of our standard methods for solving systems we find that Observe that the denominators in the expressions for and are the same and equal to .  A close examination shows that the numerators of expressions for and can also be interpreted as determinants of matrices. The numerator of the expression for is the determinant of the matrix formed by replacing the first column of The numerator of the expression for is the determinant of the matrix that is formed by replacing the second column of Thus, and can be written as  Note that a unique solution to the system exists if and only if the determinant of the coefficient matrix is not zero. It turns out that a solution to any square system can be expressed using ratios of determinants, provided that is nonsingular. The general formula for the component of the solution vector is To formalize this expression, we need to introduce some notation. Given a matrix and a vector we use to denote the matrix obtained from by replacing the column of with . In other words, Using our new notation, we can write the component of the solution vector as We will work through a couple of examples before proving this result as a theorem.    Solve using Cramer's rule if     We start by computing the determinant of . Next, we compute and .  We now compute the components of the solution vector. Finally, it is a good idea to verify that what we found is a solution to the system.       Solve using Cramer's rule if     Find the determinant of . Next, we compute for .   This gives us the solution vector You should verify that what you found really is a solution.    We are now ready to state and prove Cramer's rule as a theorem.    Let be a nonsingular matrix, and let be an vector. Then the components of the solution vector of are given by where is defined as in .    For this proof we will need to think of matrices in terms of their columns. Thus, We will also need the identity matrix . The columns of are standard unit vectors. Recall that Similarly, Observe that is the only non-zero entry in the row of . Cofactor expansion along the row gives us Now, consider the product  This gives us   By our earlier observation in , we have  is nonsingular, so . Thus     Finding the determinant is computationally expensive. Because Cramer's rule requires finding many determinants, it is not a computationally efficient way of solving a system of equations. However, Cramer's rule is often used for small systems in applications that arise in economics, natural, and social sciences, particularly when solving for only a subset of the variables.    Adjugate Formula for the Inverse of a Matrix  In we used the row reduction algorithm to show that if is nonsingular then This formula is a special case of a more general formula for finding inverse matrices. Just like the formula for a matrix, the general formula includes the coefficient and a matrix related to the original matrix. We will now derive the general formula using Cramer's rule.  Let be an nonsingular matrix. When looking for the inverse of , we look for a matrix such that . We will think of matrices in terms of their columns If then we must have This gives us systems of equations. Solution vectors to these systems are the columns of . Thus, the column of is By Cramer's rule But To find , we can expand along the column of . But the column of is the vector which has 1 in the spot and zeros everywhere else. Thus We now have Thus, The matrix of cofactors of is called the adjugate of . We write    Note the order of subscripts of in the adjugate matrix. The -entry of the adjugate matrix is .  We summarize our result as a theorem.    Let be a nonsingular square matrix, then       Use to find if     We begin by finding . One checks that The first column of has entries , and .   The second column of has entries , and . Now,   Next, we compute the third column of :   This gives us Compare this result to the answer in .        Use Cramer's rule to solve each of the following systems.                       Consider the equation    Solve for using Cramer's Rule.    If you had to solve for all four variables, which method would you use? Why?       is the solution for part (a).     Use Theorem to find the inverse of each of the following matrices.                       Show that the formula in is a special case of the formula in by showing that     "
+  "title": "Extra Topic: Cramer’s Rule",
+  "body": " Extra Topic: Cramer's Rule  Combining results of and shows that the following statements about matrix are equivalent:    exists    Any equation has a unique solution        In this section, we take a closer look at the relationship between the determinants of nonsingular matrices , solutions to , and .   Cramer's Rule  We begin by establishing a formula that allows us to express the unique solution to the system in terms of the determinant of , for a nonsingular matrix . This formula is called Cramer's rule . Consider the system The system can be written as a matrix equation Using one of our standard methods for solving systems we find that Observe that the denominators in the expressions for and are the same and equal to .  A close examination shows that the numerators of expressions for and can also be interpreted as determinants of matrices. The numerator of the expression for is the determinant of the matrix formed by replacing the first column of The numerator of the expression for is the determinant of the matrix that is formed by replacing the second column of Thus, and can be written as  Note that a unique solution to the system exists if and only if the determinant of the coefficient matrix is not zero. It turns out that a solution to any square system can be expressed using ratios of determinants, provided that is nonsingular. The general formula for the component of the solution vector is To formalize this expression, we need to introduce some notation. Given a matrix and a vector we use to denote the matrix obtained from by replacing the column of with . In other words, Using our new notation, we can write the component of the solution vector as We will work through a couple of examples before proving this result as a theorem.    Solve using Cramer's rule if     We start by computing the determinant of . Next, we compute and .  We now compute the components of the solution vector. Finally, it is a good idea to verify that what we found is a solution to the system.       Solve using Cramer's rule if     Find the determinant of . Next, we compute for .   This gives us the solution vector You should verify that what you found really is a solution.    We are now ready to state and prove Cramer's rule as a theorem.    Let be a nonsingular matrix, and let be an vector. Then the components of the solution vector of are given by where is defined as in .    For this proof we will need to think of matrices in terms of their columns. Thus, We will also need the identity matrix . The columns of are standard unit vectors. Recall that Similarly, Observe that is the only non-zero entry in the row of . Cofactor expansion along the row gives us Now, consider the product  This gives us   By our earlier observation in , we have  is nonsingular, so . Thus     Finding the determinant is computationally expensive. Because Cramer's rule requires finding many determinants, it is not a computationally efficient way of solving a system of equations. However, Cramer's rule is often used for small systems in applications that arise in economics, natural, and social sciences, particularly when solving for only a subset of the variables.    Adjugate Formula for the Inverse of a Matrix  In we used the row reduction algorithm to show that if is nonsingular then This formula is a special case of a more general formula for finding inverse matrices. Just like the formula for a matrix, the general formula includes the coefficient and a matrix related to the original matrix. We will now derive the general formula using Cramer's rule.  Let be an nonsingular matrix. When looking for the inverse of , we look for a matrix such that . We will think of matrices in terms of their columns If then we must have This gives us systems of equations. Solution vectors to these systems are the columns of . Thus, the column of is By Cramer's rule But To find , we can expand along the column of . But the column of is the vector which has 1 in the spot and zeros everywhere else. Thus We now have Thus, The matrix of cofactors of is called the adjugate of . We write    Note the order of subscripts of in the adjugate matrix. The -entry of the adjugate matrix is .  We summarize our result as a theorem.    Let be a nonsingular square matrix, then       Use to find if     We begin by finding . One checks that The first column of has entries , and .   The second column of has entries , and . Now,   Next, we compute the third column of :   This gives us Compare this result to the answer in .        Use Cramer's rule to solve each of the following systems.                       Consider the equation    Solve for using Cramer's Rule.    If you had to solve for all four variables, which method would you use? Why?       is the solution for part (a).     Use Theorem to find the inverse of each of the following matrices.                       Show that the formula in is a special case of the formula in by showing that     "
 },
 {
   "id": "Subsection-Cramers-Rule-2",
   "level": "2",
-  "url": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#Subsection-Cramers-Rule-2",
+  "url": "Section-Cramers-Rule.html#Subsection-Cramers-Rule-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -7707,7 +7689,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-cramer2by2",
   "level": "2",
-  "url": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#ex-cramer2by2",
+  "url": "Section-Cramers-Rule.html#ex-cramer2by2",
   "type": "Example",
   "number": "7.3.1",
   "title": "",
@@ -7716,7 +7698,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-cramer3by3",
   "level": "2",
-  "url": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#ex-cramer3by3",
+  "url": "Section-Cramers-Rule.html#ex-cramer3by3",
   "type": "Example",
   "number": "7.3.2",
   "title": "",
@@ -7725,7 +7707,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-cramer",
   "level": "2",
-  "url": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#th-cramer",
+  "url": "Section-Cramers-Rule.html#th-cramer",
   "type": "Theorem",
   "number": "7.3.3",
   "title": "",
@@ -7734,7 +7716,7 @@ var ptx_lunr_docs = [
 {
   "id": "Subsection-Adjugate-Formula-for-the-Inverse-of-a-Matrix-3",
   "level": "2",
-  "url": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#Subsection-Adjugate-Formula-for-the-Inverse-of-a-Matrix-3",
+  "url": "Section-Cramers-Rule.html#Subsection-Adjugate-Formula-for-the-Inverse-of-a-Matrix-3",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -7743,7 +7725,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-adjugateinverseformula",
   "level": "2",
-  "url": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#th-adjugateinverseformula",
+  "url": "Section-Cramers-Rule.html#th-adjugateinverseformula",
   "type": "Theorem",
   "number": "7.3.4",
   "title": "",
@@ -7752,7 +7734,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-inversebyadjugate",
   "level": "2",
-  "url": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#ex-inversebyadjugate",
+  "url": "Section-Cramers-Rule.html#ex-inversebyadjugate",
   "type": "Example",
   "number": "7.3.5",
   "title": "",
@@ -7761,7 +7743,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-cramer1",
   "level": "2",
-  "url": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#prob-cramer1",
+  "url": "Section-Cramers-Rule.html#prob-cramer1",
   "type": "Exercise",
   "number": "7.3.3.1",
   "title": "",
@@ -7770,7 +7752,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-cramer2",
   "level": "2",
-  "url": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#prob-cramer2",
+  "url": "Section-Cramers-Rule.html#prob-cramer2",
   "type": "Exercise",
   "number": "7.3.3.2",
   "title": "",
@@ -7779,7 +7761,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-cramer3",
   "level": "2",
-  "url": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#prob-cramer3",
+  "url": "Section-Cramers-Rule.html#prob-cramer3",
   "type": "Exercise",
   "number": "7.3.3.3",
   "title": "",
@@ -7788,7 +7770,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-adjinverse1",
   "level": "2",
-  "url": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#prob-adjinverse1",
+  "url": "Section-Cramers-Rule.html#prob-adjinverse1",
   "type": "Exercise",
   "number": "7.3.3.4",
   "title": "",
@@ -7797,7 +7779,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-adjinverse2",
   "level": "2",
-  "url": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#prob-adjinverse2",
+  "url": "Section-Cramers-Rule.html#prob-adjinverse2",
   "type": "Exercise",
   "number": "7.3.3.5",
   "title": "",
@@ -7806,7 +7788,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-2by2adjugate",
   "level": "2",
-  "url": "Section-Determinants-and-Inverses-of-Nonsingular-Matrices.html#prob-2by2adjugate",
+  "url": "Section-Cramers-Rule.html#prob-2by2adjugate",
   "type": "Exercise",
   "number": "7.3.3.6",
   "title": "",

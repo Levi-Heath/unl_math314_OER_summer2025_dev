@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Systems of Linear Equations</title>
+<title>Extra Topic: Cramer’s Rule</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -141,7 +141,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="Section-Cross-Product-and-its-Properties.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-book.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="Section-Introduction-to-Systems-of-Linear-Equations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="Section-Elementary-Row-Operations-and-the-Determinant.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="Chapter-The-Determinant.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="Section-Determinants-Areas-and-Volumes.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
 \newcommand{\Z}{\mathbb Z} 
 \newcommand{\Q}{\mathbb Q} 
 \newcommand{\R}{\mathbb R}
@@ -238,7 +238,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="Chapter-Systems-of-Linear-Equations.html" class="internal"><span class="codenumber">2</span> <span class="title">Systems of Linear Equations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
@@ -455,9 +455,9 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="Chapter-The-Determinant.html" class="internal"><span class="codenumber">7</span> <span class="title">The Determinant</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section-Finding-the-Determinant.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Finding the Determinant</span></a></div>
 <ul class="structural toc-item-list">
@@ -478,7 +478,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html#Section-Elementary-Row-Operations-and-the-Determinant-7" class="internal"><span class="codenumber">7.2.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
+<li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="Section-Cramers-Rule.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Extra Topic: Cramer’s Rule</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Cramers-Rule.html#Subsection-Cramers-Rule" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Cramer’s Rule</span></a></div></li>
@@ -628,23 +628,567 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="Chapter-Systems-of-Linear-Equations"><h2 class="heading">
-<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">2</span><span class="space"> </span><span class="title">Systems of Linear Equations</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Section-Cramers-Rule"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.3</span><span class="space"> </span><span class="title">Extra Topic: Cramer’s Rule</span>
 </h2>
-<article class="objectives goal-like" id="Chapter-Systems-of-Linear-Equations-3"><h2 class="heading"><span class="type">Objectives</span></h2>
+<div class="para logical" id="Section-Cramers-Rule-2">
+<div class="para">Combining results of <a href="Section-Elementary-Row-Operations-and-the-Determinant.html#th-detofsingularmatrix" class="xref" data-knowl="./knowl/xref/th-detofsingularmatrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.13">Theorem 7.2.13</a> and <a href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.html#th-nonsingularequivalency1" class="xref" data-knowl="./knowl/xref/th-nonsingularequivalency1.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.5">Theorem 4.2.5</a> shows that the following statements about matrix <span class="process-math">\(A\)</span> are equivalent:</div>
 <ul class="disc">
-<li id="Chapter-Systems-of-Linear-Equations-3-1-1"><div class="para" id="Chapter-Systems-of-Linear-Equations-3-1-1-1">Solve systems of linear equations using Gauss-Jordan elimination to reduce to echelon form.</div></li>
-<li id="Chapter-Systems-of-Linear-Equations-3-1-2"><div class="para" id="Chapter-Systems-of-Linear-Equations-3-1-2-1">Interpret existence and uniqueness of solutions geometrically.</div></li>
-<li id="Chapter-Systems-of-Linear-Equations-3-1-3"><div class="para" id="Chapter-Systems-of-Linear-Equations-3-1-3-1">Compute the rank of a matrix using Gaussian elimination.</div></li>
-<li id="Chapter-Systems-of-Linear-Equations-3-1-4"><div class="para" id="Chapter-Systems-of-Linear-Equations-3-1-4-1">Implement Jacobi’s method and the Gauss-Seidel method to solve linear systems.</div></li>
-</ul></article><nav class="summary-links"><ul>
-<li><a href="Section-Introduction-to-Systems-of-Linear-Equations.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction to Systems of Linear Equations</span></a></li>
-<li><a href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Augmented Matrix Notation and Elementary Row Operations</span></a></li>
-<li><a href="Section-Gaussian-Elimination-and-Rank.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Gaussian Elimination and Rank</span></a></li>
-<li><a href="Section-Applications-of-Systems-of-Linear-Equations.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Extra Topic: Applications of Systems of Linear Equations</span></a></li>
-</ul></nav></section></div>
+<li id="Section-Cramers-Rule-2-4-1"><div class="para" id="Section-Cramers-Rule-2-4-1-1">
+<span class="process-math">\(A^{-1}\)</span> exists</div></li>
+<li id="Section-Cramers-Rule-2-4-2"><div class="para" id="Section-Cramers-Rule-2-4-2-1">Any equation <span class="process-math">\(Ax=\mathbf{b}\)</span> has a unique solution</div></li>
+<li id="Section-Cramers-Rule-2-4-3"><div class="para" id="Section-Cramers-Rule-2-4-3-1"><span class="process-math">\(\displaystyle \det{A}\neq 0\)</span></div></li>
+</ul>
+<div class="para">In this section, we take a closer look at the relationship between the determinants of nonsingular matrices <span class="process-math">\(A\text{,}\)</span> solutions to <span class="process-math">\(A\mathbf{x}=\mathbf{b}\text{,}\)</span> and <span class="process-math">\(A^{-1}\text{.}\)</span>
+</div>
+</div>
+<section class="subsection" id="Subsection-Cramers-Rule"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.3.1</span><span class="space"> </span><span class="title">Cramer’s Rule</span>
+</h3>
+<div class="para logical" id="Subsection-Cramers-Rule-2">
+<div class="para">We begin by establishing a formula that allows us to express the unique solution to the system <span class="process-math">\(A\mathbf{x}=\mathbf{b}\)</span> in terms of the determinant of <span class="process-math">\(A\text{,}\)</span> for a nonsingular matrix <span class="process-math">\(A\text{.}\)</span> This formula is called <dfn class="terminology">Cramer’s rule</dfn>. Consider the system</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccc}
+ax\amp  +\amp by\amp =\amp e\\
+cx \amp  +\amp dy\amp = \amp f 
+\end{array}
+\end{equation*}
+</div>
+<div class="para">The system can be written as a matrix equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}e\\f\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Using one of our standard methods for solving systems we find that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x=\frac{ed-bf}{ad-bc}\quad\text{and}\quad y=\frac{af-ec}{ad-bc}.
+\end{equation*}
+</div>
+<div class="para">Observe that the denominators in the expressions for <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are the same and equal to <span class="process-math">\(\det{\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}}\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="Subsection-Cramers-Rule-3">
+<div class="para">A close examination shows that the numerators of expressions for <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> can also be interpreted as determinants of matrices. The numerator of the expression for <span class="process-math">\(x\)</span> is the determinant of the matrix formed by replacing the first column of</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix} \text{ with } \begin{bmatrix}e\\f\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">The numerator of the expression for <span class="process-math">\(y\)</span> is the determinant of the matrix that is formed by replacing the second column of</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix} \text{ with } \begin{bmatrix}e\\f\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Thus, <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> can be written as</div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-AiNotation.html ./knowl/xref/eq-cramerix.html">
+\begin{equation*}
+x=\frac{ed-bf}{ad-bc}=\frac{\begin{vmatrix}e\amp b\\f\amp d\end{vmatrix}}{\begin{vmatrix}a\amp b\\c\amp d\end{vmatrix}}\quad\text{and}\quad y=\frac{af-ec}{ad-bc}=\frac{\begin{vmatrix}a\amp e\\c\amp f\end{vmatrix}}{\begin{vmatrix}a\amp b\\c\amp d\end{vmatrix}}.
+\end{equation*}
+</div>
+<div class="para logical" id="Subsection-Cramers-Rule-5">
+<div class="para">It turns out that a solution to any square system <span class="process-math">\(A\mathbf{x}=\mathbf{b}\)</span> can be expressed using ratios of determinants, provided that <span class="process-math">\(A\)</span> is nonsingular.  The general formula for the <span class="process-math">\(i^{th}\)</span> component of the solution vector is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_i=\frac{\det{(\text{matrix } A \text{ with column } i \text{ replaced by } \mathbf{b})}}{\det{A}}.
+\end{equation*}
+</div>
+<div class="para">To formalize this expression, we need to introduce some notation.  Given a matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}
+| \amp  |\amp  \amp |\\
+\mathbf{a}_1 \amp  \mathbf{a}_2\amp \dots \amp \mathbf{a}_n\\
+| \amp  |\amp  \amp |
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">and a vector <span class="process-math">\(\mathbf{b}\)</span> we use</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_i(\mathbf{b})
+\end{equation*}
+</div>
+<div class="para">to denote the matrix obtained from <span class="process-math">\(A\)</span> by replacing the <span class="process-math">\(i^{th}\)</span> column of <span class="process-math">\(A\)</span> with <span class="process-math">\(\mathbf{b}\text{.}\)</span> In other words,</div>
+<div class="displaymath process-math" id="eq-AiNotation">
+\begin{equation}
+A_i(\mathbf{b})=\begin{bmatrix}
+| \amp  |\amp  \amp |\amp |\amp |\amp \amp |\\
+\mathbf{a}_1 \amp  \mathbf{a}_2\amp \dots \amp \mathbf{a}_{i-1}\amp \mathbf{b}\amp \mathbf{a}_{i+1}\amp \dots\amp \mathbf{a}_n\\
+| \amp  |\amp  \amp |\amp |\amp |\amp \amp |
+\end{bmatrix}\tag{7.3.1}
+\end{equation}
+</div>
+<div class="para">Using our new notation, we can write the <span class="process-math">\(i^{th}\)</span> component of the solution vector as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_i=\frac{\det{A_i(\mathbf{b})}}{\det{A}}
+\end{equation*}
+</div>
+<div class="para">We will work through a couple of examples before proving this result as a theorem.</div>
+</div>
+<details id="ex-cramer2by2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.3.1</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-cramer2by2-1-1">
+<div class="para">Solve <span class="process-math">\(A\mathbf{x}=\mathbf{b}\)</span> using Cramer’s rule if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}3\amp -1\\2\amp 5\end{bmatrix}\quad\text{and}\quad \mathbf{b}=\begin{bmatrix}-2\\4\end{bmatrix}.
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="ex-cramer2by2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="ex-cramer2by2-2-1">
+<div class="para">We start by computing the determinant of <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det{A}=\begin{vmatrix}3\amp -1\\2\amp 5\end{vmatrix}=(3)(5)-(-1)(2)=17.
+\end{equation*}
+</div>
+<div class="para">Next, we compute <span class="process-math">\(\det{A_1(\mathbf{b})}\)</span> and <span class="process-math">\(\det{A_2(\mathbf{b})}\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det{A_1(\mathbf{b})}=\begin{vmatrix}-2\amp -1\\4\amp 5\end{vmatrix}=(-2)(5)-(-1)(4)=-6,
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det{A_2(\mathbf{b})}=\begin{vmatrix}3\amp -2\\2\amp 4\end{vmatrix}=(3)(4)-(-2)(2)=16.
+\end{equation*}
+</div>
+<div class="para">We now compute the components of the solution vector.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_1=\frac{-6}{17}\quad\text{and}\quad x_2=\frac{16}{17}.
+\end{equation*}
+</div>
+<div class="para">Finally, it is a good idea to verify that what we found is a solution to the system.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}3\amp -1\\2\amp 5\end{bmatrix}\begin{bmatrix}-6/17\\16/17\end{bmatrix}=\begin{bmatrix}-18/17-16/17\\-12/17+80/17\end{bmatrix}=\begin{bmatrix}-34/17\\68/17\end{bmatrix}=\begin{bmatrix}-2\\4\end{bmatrix}.
+\end{equation*}
+</div>
+</div></div></details></div></article></details><details id="ex-cramer3by3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.3.2</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-cramer3by3-1-1">
+<div class="para">Solve <span class="process-math">\(A\mathbf{x}=\mathbf{b}\)</span> using Cramer’s rule if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}1\amp 2\amp -1\\-1\amp 1\amp 1\\0\amp 3\amp 1\end{bmatrix}\quad\text{and}\quad \mathbf{b}=\begin{bmatrix}-2\\3\\1\end{bmatrix}.
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="ex-cramer3by3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="ex-cramer3by3-2-1">
+<div class="para">Find the determinant of <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det{A}=\begin{vmatrix}1\amp 2\amp -1\\-1\amp 1\amp 1\\0\amp 3\amp 1\end{vmatrix}=3.
+\end{equation*}
+</div>
+<div class="para">Next, we compute <span class="process-math">\(\det{A_i(\mathbf{b})}\)</span> for <span class="process-math">\(i=1, 2, 3\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det{A_1(\mathbf{b})}=\begin{vmatrix}-2\amp 2\amp -1\\3\amp 1\amp 1\\1\amp 3\amp 1\end{vmatrix}=-8,
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det{A_2(\mathbf{b})}=\begin{vmatrix}1\amp -2\amp -1\\-1\amp 3\amp 1\\0\amp 1\amp 1\end{vmatrix}=1,
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det{A_3(\mathbf{b})}=\begin{vmatrix}1\amp 2\amp -2\\-1\amp 1\amp 3\\0\amp 3\amp 1\end{vmatrix}=0.
+\end{equation*}
+</div>
+<div class="para">This gives us the solution vector</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{x}=\begin{bmatrix}-8/3\\1/3\\0\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">You should verify that what you found really is a solution.</div>
+</div></div></details></div></article></details><div class="para" id="Subsection-Cramers-Rule-8">We are now ready to state and prove Cramer’s rule as a theorem.</div>
+<article class="theorem theorem-like" id="th-cramer"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.3.3</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="th-cramer-1-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be a nonsingular <span class="process-math">\(n\times n\)</span> matrix, and let <span class="process-math">\(\mathbf{b}\)</span> be an <span class="process-math">\(n\times 1\)</span> vector.  Then the components of the solution vector <span class="process-math">\(\mathbf{x}\)</span> of <span class="process-math">\(A\mathbf{x}=\mathbf{b}\)</span> are given by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-AiNotation.html">
+\begin{equation*}
+x_i=\frac{\det{A_i(\mathbf{b})}}{\det{A}}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(A_i(\mathbf{b})\)</span> is defined as in <a href="Section-Cramers-Rule.html#eq-AiNotation" class="xref" data-knowl="./knowl/xref/eq-AiNotation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.3.1">(7.3.1)</a>.</div>
+</div></article><details id="th-cramer-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th-cramer-2-1">
+<div class="para">For this proof we will need to think of matrices in terms of their columns.  Thus,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-cramerix.html">
+\begin{equation*}
+A=\begin{bmatrix}
+| \amp  |\amp  \amp |\\
+\mathbf{a}_1 \amp  \mathbf{a}_2\amp \dots\amp \mathbf{a}_n\\
+| \amp  |\amp  \amp |
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">We will also need the identity matrix <span class="process-math">\(I\text{.}\)</span>  The columns of <span class="process-math">\(I\)</span> are standard unit vectors.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-cramerix.html">
+\begin{equation*}
+I=\begin{bmatrix}
+| \amp  |\amp  \amp |\\
+\mathbf{e}_1 \amp  \mathbf{e}_2\amp \dots\amp \mathbf{e}_n\\
+| \amp  |\amp  \amp |
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Recall that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-cramerix.html">
+\begin{equation*}
+A_i(\mathbf{b})=\begin{bmatrix}
+| \amp  |\amp  \amp |\amp |\amp |\amp \amp |\\
+\mathbf{a}_1 \amp  \mathbf{a}_2\amp \dots \amp \mathbf{a}_{i-1}\amp \mathbf{b}\amp \mathbf{a}_{i+1}\amp \dots\amp \mathbf{a}_n\\
+| \amp  |\amp  \amp |\amp |\amp |\amp \amp |
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Similarly,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-cramerix.html">
+\begin{equation*}
+I_i(\mathbf{x})=\begin{bmatrix}
+| \amp  |\amp  \amp |\amp |\amp |\amp \amp |\\
+\mathbf{e}_1 \amp  \mathbf{e}_2\amp \dots \amp \mathbf{e}_{i-1}\amp \mathbf{x}\amp \mathbf{e}_{i+1}\amp \dots\amp \mathbf{e}_n\\
+| \amp  |\amp  \amp |\amp |\amp |\amp \amp |
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Observe that <span class="process-math">\(x_i\)</span> is the only non-zero entry in the <span class="process-math">\(i^{th}\)</span> row of <span class="process-math">\(I_i(\mathbf{x})\text{.}\)</span>  Cofactor expansion along the <span class="process-math">\(i^{th}\)</span> row gives us</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-cramerix.html" id="eq-cramerix">
+\begin{equation}
+\det{I_i(\mathbf{x})}=x_i.\tag{7.3.2}
+\end{equation}
+</div>
+<div class="para">Now, consider the product <span class="process-math">\(A\Big(I_i(\mathbf{x})\Big)\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-cramerix.html" id="th-cramer-2-1-13">
+\begin{align*}
+A\Big(I_i(\mathbf{x})\Big)\amp =\begin{bmatrix}
+| \amp  |\amp  \amp |\\
+\mathbf{a}_1 \amp  \mathbf{a}_2\amp \dots\amp \mathbf{a}_n\\
+| \amp  |\amp  \amp |
+\end{bmatrix}\begin{bmatrix}
+| \amp  |\amp  \amp |\amp |\amp |\amp \amp |\\
+\mathbf{e}_1 \amp \dots \amp \mathbf{e}_{i-1}\amp \mathbf{x}\amp \mathbf{e}_{i+1}\amp \dots\amp \mathbf{e}_n\\
+| \amp  |\amp  \amp |\amp |\amp |\amp \amp |
+\end{bmatrix} \\
+\amp =\begin{bmatrix}
+| \amp  |\amp  \amp |\amp |\amp |\amp \amp |\\
+\mathbf{a}_1 \amp  \mathbf{a}_2\amp \dots \amp \mathbf{a}_{i-1}\amp A\mathbf{x}\amp \mathbf{a}_{i+1}\amp \dots\amp \mathbf{a}_n\\
+| \amp  |\amp  \amp |\amp |\amp |\amp \amp |
+\end{bmatrix} \\
+\amp =\begin{bmatrix}
+| \amp  |\amp  \amp |\amp |\amp |\amp \amp |\\
+\mathbf{a}_1 \amp  \mathbf{a}_2\amp \dots \amp \mathbf{a}_{i-1}\amp \mathbf{b}\amp \mathbf{a}_{i+1}\amp \dots\amp \mathbf{a}_n\\
+| \amp  |\amp  \amp |\amp |\amp |\amp \amp |
+\end{bmatrix}=A_i(\mathbf{b}).  
+\end{align*}
+</div>
+<div class="para">This gives us</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-cramerix.html">
+\begin{equation*}
+AI_i(\mathbf{x})=A_i(\mathbf{b}),
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-cramerix.html">
+\begin{equation*}
+\det{AI_i(\mathbf{x})}=\det{A_i(\mathbf{b})},
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-cramerix.html">
+\begin{equation*}
+\det{A}\det{I_i(\mathbf{x})}=\det{A_i(\mathbf{b})}.
+\end{equation*}
+</div>
+<div class="para">By our earlier observation in <a href="Section-Cramers-Rule.html#eq-cramerix" class="xref" data-knowl="./knowl/xref/eq-cramerix.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.3.2">(7.3.2)</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-cramerix.html">
+\begin{equation*}
+\det{A}x_i=\det{A_i(\mathbf{b})}.
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(A\)</span> is nonsingular, so <span class="process-math">\(\det{A}\neq 0\text{.}\)</span>  Thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-cramerix.html">
+\begin{equation*}
+x_i=\frac{\det{A_i(\mathbf{b})}}{\det{A}}.
+\end{equation*}
+</div>
+</div></article></details><div class="para" id="Subsection-Cramers-Rule-10">Finding the determinant is computationally expensive.  Because Cramer’s rule requires finding many determinants, it is not a computationally efficient way of solving a system of equations.  However, Cramer’s rule is often used for small systems in applications that arise in economics, natural, and social sciences, particularly when solving for only a subset of the variables.</div></section><section class="subsection" id="Subsection-Adjugate-Formula-for-the-Inverse-of-a-Matrix"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.3.2</span><span class="space"> </span><span class="title">Adjugate Formula for the Inverse of a Matrix</span>
+</h3>
+<div class="para logical" id="Subsection-Adjugate-Formula-for-the-Inverse-of-a-Matrix-2">
+<div class="para">In <a href="Section-The-Inverse-of-a-Matrix.html#prob-inverseformula" class="xref" data-knowl="./knowl/xref/prob-inverseformula.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.4.3.9">Exercise 4.4.3.9</a> we used the row reduction algorithm to show that if</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-inverseformula.html">
+\begin{equation*}
+A=\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">is nonsingular then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-inverseformula.html" id="eq-twobytwoinverse">
+\begin{equation}
+A^{-1}=\frac{1}{\det{A}}\begin{bmatrix}d\amp -b\\-c\amp a\end{bmatrix}.\tag{7.3.3}
+\end{equation}
+</div>
+<div class="para">This formula is a special case of a more general formula for finding inverse matrices. Just like the formula for a <span class="process-math">\(2\times 2\)</span> matrix, the general formula  includes the coefficient <span class="process-math">\(\frac{1}{\det{A}}\)</span> and a matrix related to the original matrix.  We will now derive the general formula using Cramer’s rule.</div>
+</div>
+<div class="para logical" id="Subsection-Adjugate-Formula-for-the-Inverse-of-a-Matrix-3">
+<div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> nonsingular matrix. When looking for the inverse of <span class="process-math">\(A\text{,}\)</span> we look for a matrix <span class="process-math">\(X\)</span> such that <span class="process-math">\(AX=I\text{.}\)</span> We will think of matrices in terms of their columns</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I=\begin{bmatrix}
+| \amp  |\amp  \amp |\\
+\mathbf{e}_1 \amp  \mathbf{e}_2\amp \dots\amp \mathbf{e}_n\\
+| \amp  |\amp  \amp |
+\end{bmatrix}\quad\text{and}\quad X=\begin{bmatrix}
+| \amp  |\amp  \amp |\\
+\mathbf{x}_1 \amp  \mathbf{x}_2\amp \dots\amp \mathbf{x}_n\\
+| \amp  |\amp  \amp |
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(AX=I\)</span> then we must have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A\mathbf{x}_1=\mathbf{e}_1, \quad A\mathbf{x}_2=\mathbf{e}_2, \ \vdots \  A\mathbf{x}_n=\mathbf{e}_n.
+\end{equation*}
+</div>
+<div class="para">This gives us <span class="process-math">\(n\)</span> systems of equations.  Solution vectors to these systems are the columns of <span class="process-math">\(X\text{.}\)</span>  Thus, the <span class="process-math">\(j^{th}\)</span> column of <span class="process-math">\(X\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{x}_j=\begin{bmatrix}x_{1j}\\x_{2j}\\\vdots\\x_{nj}\end{bmatrix}\quad\text{such that}\quad A\mathbf{x}_j=\mathbf{e}_j.
+\end{equation*}
+</div>
+<div class="para">By Cramer’s rule</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_{ij}=\frac{\det{A_i(\mathbf{e}_j)}}{\det{A}}.
+\end{equation*}
+</div>
+<div class="para">But</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_i(\mathbf{e})=\begin{bmatrix}
+| \amp  |\amp  \amp |\amp |\amp |\amp \amp |\\
+\mathbf{a}_1 \amp  \mathbf{a}_2\amp \dots \amp \mathbf{a}_{i-1}\amp \mathbf{e}_j\amp \mathbf{a}_{i+1}\amp \dots\amp \mathbf{a}_n\\
+| \amp  |\amp  \amp |\amp |\amp |\amp \amp |
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">To find <span class="process-math">\(\det{A_i(\mathbf{e}_j)}\text{,}\)</span> we can expand along the <span class="process-math">\(i^{th}\)</span> column of <span class="process-math">\(A_i(\mathbf{e}_j)\text{.}\)</span>  But the <span class="process-math">\(i^{th}\)</span> column of <span class="process-math">\(A_i(\mathbf{e}_j)\)</span> is the vector <span class="process-math">\(\mathbf{e}_j\)</span> which has 1 in the <span class="process-math">\(j^{th}\)</span> spot and zeros everywhere else.  Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det{A_i(\mathbf{e}_j)}=(-1)^{i+j}\det{A_{ji}}=C_{ji}.
+\end{equation*}
+</div>
+<div class="para">We now have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{x}_j=\begin{bmatrix}C_{j1}/\det{A}\\C_{j2}/\det{A}\\\vdots\\C_{jn}/\det{A}\end{bmatrix}=\frac{1}{\det{A}}\begin{bmatrix}C_{j1}\\C_{j2}\\\vdots\\C_{jn}\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Thus,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^{-1}=X=\frac{1}{\det{A}}\begin{bmatrix}C_{11}\amp C_{21}\amp \ldots\amp C_{n1}\\C_{12}\amp C_{22}\amp \ldots\amp C_{n2}\\\vdots\amp \vdots\amp \ddots\amp \vdots\\
+C_{1n}\amp C_{2n}\amp \ldots\amp C_{nn}\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">The matrix of cofactors of <span class="process-math">\(A\)</span> is called the <dfn class="terminology">adjugate</dfn> of <span class="process-math">\(A\text{.}\)</span>  We write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{adj}(A)=\begin{bmatrix}C_{11}\amp C_{21}\amp \ldots\amp C_{n1}\\C_{12}\amp C_{22}\amp \ldots\amp C_{n2}\\\vdots\amp \vdots\amp \ddots\amp \vdots\\
+C_{1n}\amp C_{2n}\amp \ldots\amp C_{nn}\end{bmatrix}.
+\end{equation*}
+</div>
+</div>
+<div class="para" id="Subsection-Adjugate-Formula-for-the-Inverse-of-a-Matrix-4">
+<span class="process-math">\(\textbf{Warning:}\)</span> Note the order of subscripts of <span class="process-math">\(C\)</span> in the adjugate matrix.  The <span class="process-math">\((i,j)\)</span>-entry of the adjugate matrix is <span class="process-math">\(C_{ji}\text{.}\)</span>
+</div>
+<div class="para" id="Subsection-Adjugate-Formula-for-the-Inverse-of-a-Matrix-5">We summarize our result as a theorem.</div>
+<article class="theorem theorem-like" id="th-adjugateinverseformula"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.3.4</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="th-adjugateinverseformula-1-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be a nonsingular square matrix, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^{-1}=\frac{1}{\det{A}}\mbox{adj}(A).
+\end{equation*}
+</div>
+</div></article><details id="ex-inversebyadjugate" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.3.5</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-inversebyadjugate-1-1">
+<div class="para">Use <a href="Section-Cramers-Rule.html#th-adjugateinverseformula" class="xref" data-knowl="./knowl/xref/th-adjugateinverseformula.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.3.4">Theorem 7.3.4</a> to  find <span class="process-math">\(A^{-1}\)</span> if</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-adjugateinverseformula.html">
+\begin{equation*}
+A=\begin{bmatrix}1\amp -1\amp 2\\1\amp 1\amp 1\\1\amp 3\amp -1\end{bmatrix}.
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="ex-inversebyadjugate-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="ex-inversebyadjugate-2-1">
+<div class="para">We begin by finding <span class="process-math">\(\det{A}\text{.}\)</span> One checks that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-inverse3.html">
+\begin{equation*}
+\det{A}=-2.
+\end{equation*}
+</div>
+<div class="para">The first column of <span class="process-math">\(\mbox{adj}(A)\)</span> has entries <span class="process-math">\(C_{11}\text{,}\)</span> <span class="process-math">\(C_{12}\)</span> and <span class="process-math">\(C_{13}\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-inverse3.html">
+\begin{equation*}
+C_{11}=(-1)^{1+1}\begin{vmatrix}1\amp 1\\3\amp -1\end{vmatrix}=-4,
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-inverse3.html">
+\begin{equation*}
+C_{12}=(-1)^{1+2}\begin{vmatrix}1\amp 1\\1\amp -1\end{vmatrix}=2,
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-inverse3.html">
+\begin{equation*}
+C_{13}=(-1)^{1+3}\begin{vmatrix}1\amp 1\\1\amp 3\end{vmatrix}=2.
+\end{equation*}
+</div>
+<div class="para">The second column of <span class="process-math">\(\mbox{adj}(A)\)</span> has entries <span class="process-math">\(C_{21}\text{,}\)</span> <span class="process-math">\(C_{22}\)</span> and <span class="process-math">\(C_{23}\text{.}\)</span> Now,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-inverse3.html">
+\begin{equation*}
+C_{21}=(-1)^{2+1}\begin{vmatrix}-1\amp 2\\3\amp -1\end{vmatrix}=5,
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-inverse3.html">
+\begin{equation*}
+C_{22}=(-1)^{2+2}\begin{vmatrix}1\amp 2\\1\amp -1\end{vmatrix}=-3,
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-inverse3.html">
+\begin{equation*}
+C_{23}=(-1)^{2+3}\begin{vmatrix}1\amp -1\\1\amp 3\end{vmatrix}=-4.
+\end{equation*}
+</div>
+<div class="para">Next, we compute the third column of <span class="process-math">\(\mbox{adj}(A)\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-inverse3.html">
+\begin{equation*}
+C_{31}=-3,
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-inverse3.html">
+\begin{equation*}
+C_{32}=1,
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-inverse3.html">
+\begin{equation*}
+C_{33}=2.
+\end{equation*}
+</div>
+<div class="para">This gives us</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-inverse3.html">
+\begin{equation*}
+A^{-1}=\begin{bmatrix}2\amp -5/2\amp 3/2\\-1\amp 3/2\amp -1/2\\-1\amp 2\amp -1\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Compare this result to the answer in <a href="Section-The-Inverse-of-a-Matrix.html#ex-inverse3" class="xref" data-knowl="./knowl/xref/ex-inverse3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.8">Example 4.4.8</a>.</div>
+</div></div></details></div></article></details></section><section class="exercises" id="Section-Cramers-Rule-5"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">7.3.3</span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="Section-Cramers-Rule-5-1">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="Section-Cramers-Rule-5-1-1"><div class="para" id="Section-Cramers-Rule-5-1-1-1">Use Cramer’s rule to solve each of the following systems.</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="prob-cramer1"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para logical" id="prob-cramer1-1-1"><div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccccc}
+-3x\amp  +\amp 2y\amp =\amp 1\\
+2x \amp  -\amp y\amp = \amp 4 
+\end{array}
+\end{equation*}
+</div></div>
+<div class="solutions"><details id="prob-cramer1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-cramer1-2-1"><div class="displaymath process-math">
+\begin{equation*}
+x=9, \quad y=14.
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-cramer2"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="para logical" id="prob-cramer2-1-1"><div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}2\amp -5\amp 1\\6\amp 0\amp -2\\-3\amp 1\amp 1\end{bmatrix}\mathbf{x}=\begin{bmatrix}1\\4\\3\end{bmatrix}.
+\end{equation*}
+</div></div>
+<div class="solutions"><details id="prob-cramer2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-cramer2-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\mathbf{x}=\begin{bmatrix}28/5\\5\\74/5\end{bmatrix}.
+\end{equation*}
+</div></div></div></details></div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="prob-cramer3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="prob-cramer3-1-1">
+<div class="para">Consider the equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}1\amp 1\amp 1\amp 1\\2\amp 3\amp 2\amp -1\\3\amp -2\amp 3\amp -2\\2\amp 1\amp 1\amp 1\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}=\begin{bmatrix}10\\10\\0\\11\end{bmatrix}.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="prob-cramer3-1-1-2-1"><div class="para" id="prob-cramer3-1-1-2-1-1">Solve for <span class="process-math">\(x_2\)</span> using Cramer’s Rule.</div></li>
+<li id="prob-cramer3-1-1-2-2"><div class="para" id="prob-cramer3-1-1-2-2-1">If you had to solve for all four variables, which method would you use?  Why?</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="prob-cramer3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-cramer3-2-1">
+<span class="process-math">\(x_2 = 2 \)</span> is the solution for part (a).</div></div></details></div></article><div class="exercisegroup" id="Section-Cramers-Rule-5-3">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="Section-Cramers-Rule-5-3-1"><div class="para" id="Section-Cramers-Rule-5-3-1-1">Use Theorem <a href="Section-Cramers-Rule.html#th-adjugateinverseformula" class="xref" data-knowl="./knowl/xref/th-adjugateinverseformula.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.3.4">Theorem 7.3.4</a> to find the inverse of each of the following matrices.</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="prob-adjinverse1"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para logical" id="prob-adjinverse1-1-1"><div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}2\amp 7\\1\amp 3\end{bmatrix}.
+\end{equation*}
+</div></div>
+<div class="solutions"><details id="prob-adjinverse1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-adjinverse1-2-1"><div class="displaymath process-math">
+\begin{equation*}
+A^{-1}=\begin{bmatrix}-3\amp 7\\1\amp -2\end{bmatrix}.
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-adjinverse2"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para logical" id="prob-adjinverse2-1-1"><div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}2\amp 1\amp 4\\4\amp -2\amp 1\\0\amp 3\amp -1\end{bmatrix}.
+\end{equation*}
+</div></div>
+<div class="solutions"><details id="prob-adjinverse2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-adjinverse2-2-1"><div class="displaymath process-math">
+\begin{equation*}
+A^{-1}=\frac{1}{50}\begin{bmatrix}-1\amp 13\amp 9\\4\amp -2\amp 14\\12\amp -6\amp -8\end{bmatrix}.
+\end{equation*}
+</div></div></div></details></div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="prob-2by2adjugate"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="prob-2by2adjugate-1-1">
+<div class="para">Show that the formula in <a href="Section-Cramers-Rule.html#eq-twobytwoinverse" class="xref" data-knowl="./knowl/xref/eq-twobytwoinverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.3.3">(7.3.3)</a> is a special case of the formula in <a href="Section-Cramers-Rule.html#th-adjugateinverseformula" class="xref" data-knowl="./knowl/xref/th-adjugateinverseformula.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.3.4">Theorem 7.3.4</a> by showing that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-twobytwoinverse.html ./knowl/xref/th-adjugateinverseformula.html">
+\begin{equation*}
+\mbox{adj}\left(\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}\right)=\begin{bmatrix}d\amp -b\\-c\amp a\end{bmatrix}.
+\end{equation*}
+</div>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="Section-Cross-Product-and-its-Properties.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Section-Introduction-to-Systems-of-Linear-Equations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="Section-Elementary-Row-Operations-and-the-Determinant.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Section-Determinants-Areas-and-Volumes.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
