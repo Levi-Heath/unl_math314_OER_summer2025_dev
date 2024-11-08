@@ -17,7 +17,7 @@ In <xref ref="th-matrixtran"/>, we proved that any <m>n \times n</m>  matrix ind
         Let 
     <me>
     A=\begin{bmatrix} 2\amp  1\\ 1\amp 2\end{bmatrix}.
-    </me>. 
+    </me>
     
     The following animation helps us to visualize the matrix transformation associated with <m>A</m>.  Given a vector <m>\mathbf{x}</m> in <m>\R^2</m>, its image, <m>A\mathbf{x}</m>, is also in <m>\R^2</m>.  Advance the slider to see the images of the given vectors.
     </p>
@@ -1074,7 +1074,7 @@ A square matrix <m>A</m> is singular if and only if <m>\det{A}=0</m>.(see  <xref
 
     <answer>
         <p>
-        <me>1.</me>    
+        <me>1</me>    
         </p>
     </answer>
 </exercise>
@@ -1105,7 +1105,7 @@ Show that <m>\begin{bmatrix} \frac{\sqrt{2}}{2}\\ -\frac{\sqrt{2}}{2} i \end{bma
 
     <answer>
         <p>
-        <me>\frac{\sqrt{2}{2}}+\frac{\sqrt{2}{2}}i.</me>    
+        <me>\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}i</me>    
         </p>
     </answer>
        
@@ -1433,7 +1433,7 @@ Enter degree measure between 0 and 360.
     
         <introduction>
             <p>
-    The following set of problems deals with geometric interpretation of eigenvalues and eigenvectors, as well as linear transformations of the plane.  
+                The following set of problems deals with geometric interpretation of eigenvalues and eigenvectors, as well as linear transformations of the plane.  
             </p>
         </introduction>
     
