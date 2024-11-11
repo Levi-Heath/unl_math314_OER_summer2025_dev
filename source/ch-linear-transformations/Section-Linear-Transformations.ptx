@@ -2009,8 +2009,7 @@ y\\
 z
 \end{bmatrix} \right)=\begin{bmatrix}
 x\\
-y\\
-0
+y
 \end{bmatrix}.
 </me>  
 
