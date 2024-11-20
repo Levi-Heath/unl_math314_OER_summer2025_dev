@@ -679,7 +679,7 @@ In general, we can define an orthogonal projection of <m>\mathbf{x}</m> in <m>\R
 \mathbf{w}=\mbox{proj}_W(\mathbf{x}) = \mbox{proj}_{\mathbf{f}_1}\mathbf{x} + \mbox{proj}_{\mathbf{f}_2}\mathbf{x} + \dots + \mbox{proj}_{\mathbf{f}_m}\mathbf{x}
 </men>
 
-is called the <term>orthogonal projection</term> of <m>\mathbf{x}</m> onto <m>W</m>.  %The vector <m>\mathbf{x}-\mathbf{w}</m> is called the <term>component</term> of <m>\mathbf{x}</m> orthogonal to <m>\mathbf{w}</m>}.  We will write <m>\mathbf{w}^\perp = \mathbf{x}-\mathbf{w}</m>.
+is called the <term>orthogonal projection</term> of <m>\mathbf{x}</m> onto <m>W</m>. 
         </p>
     </statement>
 </definition>
