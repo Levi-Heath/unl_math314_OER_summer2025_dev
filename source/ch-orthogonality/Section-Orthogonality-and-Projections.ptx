@@ -297,7 +297,7 @@ The following exploration allows you to investigate the consequences.
 <figure>
   <caption>
   </caption>
-  <interactive xml:id="geogebra-ONB-interactive" platform="geogebra" width="100%" aspect="800:600">
+  <interactive xml:id="geogebra-ONB-interactive" platform="geogebra" width="200%" aspect="800:600">
     <slate xml:id="ONB-interactive" surface="geogebra" material="nsqzhsxv" aspect="800:600" />
   </interactive>
 </figure>
@@ -508,7 +508,7 @@ Use check-boxes to construct the sum of orthogonal projections of <m>\mathbf{x}<
 <figure>
   <caption>
   </caption>
-  <interactive xml:id="geogebra-Check-Ortho-Interactive" platform="geogebra" width="140%" aspect="950:800">
+  <interactive xml:id="geogebra-Check-Ortho-Interactive" platform="geogebra" width="200%" aspect="950:800">
     <slate xml:id="Check-Ortho-Interactive" surface="geogebra" material="hehqyayz" aspect="950:800" />
   </interactive>
 </figure>
