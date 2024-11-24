@@ -169,7 +169,7 @@ Some of the important subspaces we studied earlier are orthogonal complements of
 <figure>
   <caption>
   </caption>
-  <interactive xml:id="geogebra-Coordinate-Try" platform="geogebra" width="140%" aspect="950:800">
+  <interactive xml:id="geogebra-Coordinate-Try" platform="geogebra" width="160%" aspect="1000:800">
     <slate xml:id="Coordinate-Try" surface="geogebra" material="f6eavqxs" aspect="950:800" />
   </interactive>
 </figure>
@@ -199,10 +199,10 @@ Some of the important subspaces we studied earlier are orthogonal complements of
             Let <m>A</m> be an <m>m \times n</m> matrix.  Then we have:
 <ol>
 <li xml:id="th-4subspacesa">
-  <p>  <m>\mbox{null}(A) = (\mbox{row}(A))^\perp</m>; </p>
+  <p>  <m>(\mbox{row}(A))^\perp = \mbox{null}(A)</m>; </p>
 </li>
 <li xml:id="th-4subspacesb">
-  <p>  <m>\mbox{null}(A^T) = (\mbox{col}(A))^\perp</m>. </p>
+  <p>  <m>(\mbox{col}(A))^\perp = \mbox{null}(A^T)</m>. </p>
 </li>
 </ol>
         </p>
