@@ -39,7 +39,7 @@
 <xi:include href="Section-Orthogonal-Complements-and-Decompositions.ptx"/>
 <xi:include href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.ptx"/>
 <xi:include href="Section-QR-Factorization-and-Least-Square-Approximations.ptx"/>
-<xi:include href="Section-SVD-Decomposition.ptx"/>
+<xi:include href="Section-Singular-Value-Decomposition.ptx"/>
 <xi:include href="Section-Positive-Definite-Matrices.ptx"/>
 <xi:include href="Section-Curve-Fitting.ptx"/>
 </chapter>
