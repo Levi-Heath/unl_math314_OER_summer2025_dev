@@ -12196,18 +12196,18 @@ var ptx_lunr_docs = [
   "body": " If is an matrix, it can be proved that there exists a unique matrix satisfying the following four conditions: ; ; and are symmetric. The matrix is called the Moore-Penrose inverse.   If is square and invertible, show that .    If , show that .    If , show that . (Notice the appearance of the Moore-Penrose inverse arrived when we solve the normal equations, arriving at Equation ).     "
 },
 {
-  "id": "Section-SVD-Decomposition",
+  "id": "Section-Singular-Value-Decomposition",
   "level": "1",
-  "url": "Section-SVD-Decomposition.html",
+  "url": "Section-Singular-Value-Decomposition.html",
   "type": "Section",
   "number": "10.6",
-  "title": "SVD Decomposition",
-  "body": " SVD Decomposition  We begin this section with an important definition.    Let be an matrix. The singular values of are the square roots of the positive eigenvalues of     Singular Value Decomposition (SVD) can be thought of as a generalization of orthogonal diagonalization of a symmetric matrix to an arbitrary matrix. This decomposition is the focus of this section. The following is a useful result that will help when computing the SVD of matrices.    Let be an matrix. Then and have the same eigenvalues.    Suppose is an matrix, and suppose that is a nonzero eigenvalue of . Then there exists a nonzero vector such that Multiplying both sides of this equation by yields: Since and , , and thus by , ; thus , implying that .  Therefore is an eigenvector of corresponding to eigenvalue . An analogous argument can be used to show that every nonzero eigenvalue of is an eigenvalue of , thus completing the proof.    Given an matrix , we will see how to express as a product \\[ A=U\\Sigma V^T\\] where    is an orthogonal matrix whose columns are eigenvectors of .     is an orthogonal matrix whose columns are eigenvectors of .     is an matrix whose only nonzero values lie on its main diagonal, and are the singular values of .   How can we find such a decomposition? We are aiming to decompose in the following form: where is a block matrix of the form Thus and it follows that and so Similarly, Therefore, you would find an orthonormal basis of eigenvectors for make them the columns of a matrix such that the corresponding eigenvalues are decreasing. This gives You could then do the same for to get .  We formalize this discussion in the following theorem.   Singular Value Decomposition   Let be an matrix. Then there exist orthogonal matrices and of the appropriate size such that where is of the form and is a block matrix of the form for the the singular values of     There exists an orthonormal basis, such that where for and equals zero if Thus for  because For define by Thus Now, This means that when and when . Thus is an orthonormal set of vectors in Also, Using Gram-Schmidt, extend to an orthonormal basis for all of and let while Thus is the matrix which has the as columns and is defined as the matrix which has the as columns. Then  where is given in the statement of the theorem.    The SVD has as an immediate corollary which is given in the following interesting result.    Let be an matrix. Then the rank of (or of ) equals the number of singular values.    Let's compute the SVD of a simple matrix.    Let Find the SVD of .    To begin, we compute and .  Since is while is , and and have the same nonzero eigenvalues (by ), we compute the characteristic polynomial (because it is easier to compute than ). Therefore, the eigenvalues of are and . The eigenvalues of are , , and , and the singular values of are and . By convention, we list the eigenvalues (and corresponding singular values) in non increasing order (i.e., from largest to smallest).     To construct the matrix we need to find eigenvectors for . Since the eigenvalues of are distinct, the corresponding eigenvectors are orthogonal, and we need only normalize them.   : solve . so    : solve . so    : solve . so   With the eigenvectors found, let Then Also, and we use , , and to find . Since is orthogonal and , it follows that  Let , and let , where and are the two columns of . Then we have which implies that and . Thus, and Therefore, and       Find an SVD for .    Since is , is a matrix whose eigenvalues are easier to find than the eigenvalues of the matrix . Thus has eigenvalue , and the eigenvalues of are , , and . Furthermore, has only one singular value, .     To do so we find an eigenvector for and normalize it. In this case, finding a unit eigenvector is trivial: , and . Also, and we use , , and to find .  Now, with , and , where , , and are the columns of . Thus This gives us , so The vectors and are eigenvectors of corresponding to the eigenvalue . Instead of solving the system and then using the Gram-Schmidt process on the resulting set of two basic eigenvectors, the following approach may be used.  Find vectors and by first extending to a basis of , then using the Gram-Schmidt algorithm to orthogonalize the basis, and finally normalizing the vectors. Starting with instead of makes the arithmetic a bit easier. It is easy to verify that is a basis of . Set and apply the Gram-Schmidt algorithm to . This gives us Therefore, and Finally,       Find an SVD for the matrix     First consider  What are some eigenvalues and eigenvectors? Some computing shows that the eigenvalues are and . Furthermore, we can find a basis for each eigenspace. Thus the matrix is given by Next consider  Eigenvalues are and , and eigenspaces are Thus you can let be given by Let's check this.       This illustrates that if you have a good way to find the eigenvectors and eigenvalues for a Hermitian matrix which has nonnegative eigenvalues, then you also have a good way to find the SVD of an arbitrary matrix.  "
+  "title": "Singular Value Decomposition",
+  "body": " Singular Value Decomposition  We begin this section with an important definition.    Let be an matrix. The singular values of are the square roots of the positive eigenvalues of     Singular Value Decomposition (SVD) can be thought of as a generalization of orthogonal diagonalization of a symmetric matrix to an arbitrary matrix. This decomposition is the focus of this section. The following is a useful result that will help when computing the SVD of matrices.    Let be an matrix. Then and have the same eigenvalues.    Suppose is an matrix, and suppose that is a nonzero eigenvalue of . Then there exists a nonzero vector such that Multiplying both sides of this equation by yields: Since and , , and thus by , ; thus , implying that .  Therefore is an eigenvector of corresponding to eigenvalue . An analogous argument can be used to show that every nonzero eigenvalue of is an eigenvalue of , thus completing the proof.    Given an matrix , we will see how to express as a product \\[ A=U\\Sigma V^T\\] where    is an orthogonal matrix whose columns are eigenvectors of .     is an orthogonal matrix whose columns are eigenvectors of .     is an matrix whose only nonzero values lie on its main diagonal, and are the singular values of .   How can we find such a decomposition? We are aiming to decompose in the following form: where is a block matrix of the form Thus and it follows that and so Similarly, Therefore, you would find an orthonormal basis of eigenvectors for make them the columns of a matrix such that the corresponding eigenvalues are decreasing. This gives You could then do the same for to get .  We formalize this discussion in the following theorem.   Singular Value Decomposition   Let be an matrix. Then there exist orthogonal matrices and of the appropriate size such that where is of the form and is a block matrix of the form for the the singular values of     There exists an orthonormal basis, such that where for and equals zero if Thus for  because For define by Thus Now, This means that when and when . Thus is an orthonormal set of vectors in Also, Using Gram-Schmidt, extend to an orthonormal basis for all of and let while Thus is the matrix which has the as columns and is defined as the matrix which has the as columns. Then  where is given in the statement of the theorem.    The SVD has as an immediate corollary which is given in the following interesting result.    Let be an matrix. Then the rank of (or of ) equals the number of singular values.    Let's compute the SVD of a simple matrix.    Let Find the SVD of .    To begin, we compute and .  Since is while is , and and have the same nonzero eigenvalues (by ), we compute the characteristic polynomial (because it is easier to compute than ). Therefore, the eigenvalues of are and . The eigenvalues of are , , and , and the singular values of are and . By convention, we list the eigenvalues (and corresponding singular values) in non increasing order (i.e., from largest to smallest).     To construct the matrix we need to find eigenvectors for . Since the eigenvalues of are distinct, the corresponding eigenvectors are orthogonal, and we need only normalize them.   : solve . so    : solve . so    : solve . so   With the eigenvectors found, let Then Also, and we use , , and to find . Since is orthogonal and , it follows that  Let , and let , where and are the two columns of . Then we have which implies that and . Thus, and Therefore, and       Find an SVD for .    Since is , is a matrix whose eigenvalues are easier to find than the eigenvalues of the matrix . Thus has eigenvalue , and the eigenvalues of are , , and . Furthermore, has only one singular value, .     To do so we find an eigenvector for and normalize it. In this case, finding a unit eigenvector is trivial: , and . Also, and we use , , and to find .  Now, with , and , where , , and are the columns of . Thus This gives us , so The vectors and are eigenvectors of corresponding to the eigenvalue . Instead of solving the system and then using the Gram-Schmidt process on the resulting set of two basic eigenvectors, the following approach may be used.  Find vectors and by first extending to a basis of , then using the Gram-Schmidt algorithm to orthogonalize the basis, and finally normalizing the vectors. Starting with instead of makes the arithmetic a bit easier. It is easy to verify that is a basis of . Set and apply the Gram-Schmidt algorithm to . This gives us Therefore, and Finally,       Find an SVD for the matrix     First consider  What are some eigenvalues and eigenvectors? Some computing shows that the eigenvalues are and . Furthermore, we can find a basis for each eigenspace. Thus the matrix is given by Next consider  Eigenvalues are and , and eigenspaces are Thus you can let be given by Let's check this.       This illustrates that if you have a good way to find the eigenvectors and eigenvalues for a Hermitian matrix which has nonnegative eigenvalues, then you also have a good way to find the SVD of an arbitrary matrix.  "
 },
 {
   "id": "singularvalues",
   "level": "2",
-  "url": "Section-SVD-Decomposition.html#singularvalues",
+  "url": "Section-Singular-Value-Decomposition.html#singularvalues",
   "type": "Definition",
   "number": "10.6.1",
   "title": "",
@@ -12216,7 +12216,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-samenonzeroeigenvalues",
   "level": "2",
-  "url": "Section-SVD-Decomposition.html#lem-samenonzeroeigenvalues",
+  "url": "Section-Singular-Value-Decomposition.html#lem-samenonzeroeigenvalues",
   "type": "Lemma",
   "number": "10.6.2",
   "title": "",
@@ -12225,7 +12225,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-singvaldecomp",
   "level": "2",
-  "url": "Section-SVD-Decomposition.html#th-singvaldecomp",
+  "url": "Section-Singular-Value-Decomposition.html#th-singvaldecomp",
   "type": "Theorem",
   "number": "10.6.3",
   "title": "Singular Value Decomposition.",
@@ -12234,7 +12234,7 @@ var ptx_lunr_docs = [
 {
   "id": "cor-ranksingularvalues",
   "level": "2",
-  "url": "Section-SVD-Decomposition.html#cor-ranksingularvalues",
+  "url": "Section-Singular-Value-Decomposition.html#cor-ranksingularvalues",
   "type": "Corollary",
   "number": "10.6.4",
   "title": "",
@@ -12243,7 +12243,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-SVD2x3",
   "level": "2",
-  "url": "Section-SVD-Decomposition.html#ex-SVD2x3",
+  "url": "Section-Singular-Value-Decomposition.html#ex-SVD2x3",
   "type": "Example",
   "number": "10.6.5",
   "title": "",
@@ -12252,7 +12252,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-SVD3x1",
   "level": "2",
-  "url": "Section-SVD-Decomposition.html#ex-SVD3x1",
+  "url": "Section-Singular-Value-Decomposition.html#ex-SVD3x1",
   "type": "Example",
   "number": "10.6.6",
   "title": "",
@@ -12261,7 +12261,7 @@ var ptx_lunr_docs = [
 {
   "id": "SVDanother2x3",
   "level": "2",
-  "url": "Section-SVD-Decomposition.html#SVDanother2x3",
+  "url": "Section-Singular-Value-Decomposition.html#SVDanother2x3",
   "type": "Example",
   "number": "10.6.7",
   "title": "",
