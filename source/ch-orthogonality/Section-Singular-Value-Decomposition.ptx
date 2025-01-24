@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="Section-Singular-Value-Decomposition" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Singular Value Decomposition</title>
+    <title>Extra Topic: Singular Value Decomposition</title>
 
 
 
@@ -74,9 +74,7 @@ completing the proof.
 
 
 <p>
-Given an <m>m\times n</m> matrix <m>A</m>, we will see how to express <m>A</m> as a product
-\[ A=U\Sigma V^T\]
-where
+Given an <m>m\times n</m> matrix <m>A</m>, we will see how to express <m>A</m> as a product <m>A=U\Sigma V^T</m> where
 <ul>
 <li>
       <p> <m>U</m> is an <m>m\times m</m> orthogonal matrix whose columns are
