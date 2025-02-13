@@ -1166,7 +1166,7 @@ Because the row-echelon form has two nonzero rows, <m>\mbox{rank}(A) = 2</m>.
             </choice>}
             <choice correct="yes">
             <statement>
-                <p> <m>\mbox{rank}(A)=5</m>} </p>
+                <p> <m>\mbox{rank}(A)=5</m> </p>
             </statement>
             </choice>
             <choice>
