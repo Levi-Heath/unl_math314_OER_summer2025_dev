@@ -1155,16 +1155,24 @@ Because the row-echelon form has two nonzero rows, <m>\mbox{rank}(A) = 2</m>.
             </statement>
         <choices>
             <choice>
+            <statement>
                 <p> <m>\mbox{rank}(A)=7</m> </p>
+            </statement>
             </choice>
             <choice>
+            <statement>
                 <p> <m>\mbox{rank}(A)=6</m> </p>
+            </statement>
             </choice>}
             <choice correct="yes">
+            <statement>
                 <p> <m>\mbox{rank}(A)=5</m>} </p>
+            </statement>
             </choice>
             <choice>
+            <statement>
                 <p> All of the above </p>
+            </statement>
             </choice>
         </choices>
         </exercise>
@@ -1177,13 +1185,19 @@ Because the row-echelon form has two nonzero rows, <m>\mbox{rank}(A) = 2</m>.
             </statement>
         <choices>
             <choice correct="yes">
+            <statement>
                 <p> The system has a unique solution </p>
+            </statement>
             </choice>
             <choice>
+            <statement>
                 <p> The system has no solutions </p>
+            </statement>
             </choice>
             <choice>
+            <statement>
                 <p> The system has infinitely many solutions </p>
+            </statement>
             </choice>
         </choices>
         </exercise>
@@ -1196,19 +1210,29 @@ Because the row-echelon form has two nonzero rows, <m>\mbox{rank}(A) = 2</m>.
             </statement>
         <choices>
             <choice correct="yes">
-                <p> <m>\mbox{rank}(A)=5</m>} </p>
+                <statement>
+                    <p> <m>\mbox{rank}(A)=5</m> </p>
+                </statement>
             </choice>
             <choice correct="yes">
-                <p> <m>A</m> has at least <m>25</m> entries </p>
+                <statement>
+                    <p> <m>A</m> has at least <m>25</m> entries </p>
+                </statement>
             </choice>
             <choice correct="yes">
-                <p> Any row-echelon form of <m>A</m> will have exactly <m>5</m> nonzero rows </p>
+                <statement>
+                    <p> Any row-echelon form of <m>A</m> will have exactly <m>5</m> nonzero rows </p>
+                </statement>
             </choice>
             <choice>
-                <p> Some row-echelon forms of <m>A</m> may have more than <m>5</m> nonzero rows </p>
+                <statement>
+                    <p> Some row-echelon forms of <m>A</m> may have more than <m>5</m> nonzero rows </p>
+                </statement>
             </choice>
             <choice>
-                <p> Some row-echelon forms of <m>A</m> may have less than <m>5</m> nonzero rows </p>
+                <statement>
+                    <p> Some row-echelon forms of <m>A</m> may have less than <m>5</m> nonzero rows </p>
+                </statement>
             </choice>
         </choices>
         </exercise>
