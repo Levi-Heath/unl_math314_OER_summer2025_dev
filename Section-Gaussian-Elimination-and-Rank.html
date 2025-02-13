@@ -114,15 +114,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.4.7';
+eBookConfig.runestone_version = '7.5.6';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.4.7/prefix-runtime.92e98c7360cdb150.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.4.7/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.4.7/prefix-runestone.2e9039c7e9bfc458.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.4.7/prefix-347.f9add1ca35d5ad93.css">
-<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.4.7/prefix-runestone.82759e13f7f711fa.css">
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.5.6/prefix-runtime.82032a8574f6ce75.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.5.6/prefix-723.3e6434f80549315a.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.5.6/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.5.6/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.5.6/prefix-runestone.6a985cbf816db5c7.css">
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
@@ -603,7 +603,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html" class="internal"><span class="codenumber">10.5</span> <span class="title"><span class="process-math">\(QR\)</span> Factorization and Least Square Approximations</span></a></div>
+<div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Extra Topic: <span class="process-math">\(QR\)</span> Factorization and Least Square Approximations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html#Subsection-QR-Algorithm-for-approximating-eigenvalues" class="internal"><span class="codenumber">10.5.1</span> <span class="title">QR-Algorithm for approximating eigenvalues</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html#Subsection-Least-Squares-Approximation" class="internal"><span class="codenumber">10.5.2</span> <span class="title">Least-Squares Approximation</span></a></div></li>
@@ -612,7 +612,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html#Section-QR-Factorization-and-Least-Square-Approximations-19" class="internal"><span class="codenumber">10.5.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="Section-Singular-Value-Decomposition.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Singular Value Decomposition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Section-Singular-Value-Decomposition.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Extra Topic: Singular Value Decomposition</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section-Positive-Definite-Matrices.html" class="internal"><span class="codenumber">10.7</span> <span class="title">Extra Topic: Positive Definite Matrices</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Positive-Definite-Matrices.html#Section-Positive-Definite-Matrices-21" class="internal"><span class="codenumber">10.7</span> <span class="title">Exercises</span></a></div></li></ul>
@@ -1363,35 +1363,37 @@ D=\begin{bmatrix}1\amp 1\amp 2\\-1\amp -2\amp 1\\1\amp 0\amp 5\end{bmatrix}
 <article class="exercise exercise-like" id="prob-rankofmat5"><h4 class="heading"><span class="codenumber">23<span class="period">.</span></span></h4>
 <div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" id="prob-rankofmat5" data-multipleanswers="false">
 <div class="para" id="prob-rankofmat5-1-1">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(5\times 7\)</span> matrix.  Which of the following can be true?</div>
-<li data-component="answer" id="prob-rankofmat5_opt_a">
+<li data-component="answer" id="prob-rankofmat5_opt_a"><div class="para" id="prob-rankofmat5-2-1-1-1"><span class="process-math">\(\mbox{rank}(A)=7\)</span></div></li>
 <li data-component="feedback" id="prob-rankofmat5_opt_a">
-<li data-component="answer" id="prob-rankofmat5_opt_b">
+<li data-component="answer" id="prob-rankofmat5_opt_b"><div class="para" id="prob-rankofmat5-2-2-1-1"><span class="process-math">\(\mbox{rank}(A)=6\)</span></div></li>
 <li data-component="feedback" id="prob-rankofmat5_opt_b">
-<li data-component="answer" id="prob-rankofmat5_opt_c" data-correct="">
+<li data-component="answer" id="prob-rankofmat5_opt_c" data-correct=""><div class="para" id="prob-rankofmat5-2-3-1-1">
+<span class="process-math">\(\mbox{rank}(A)=5\)</span>}</div></li>
 <li data-component="feedback" id="prob-rankofmat5_opt_c">
-<li data-component="answer" id="prob-rankofmat5_opt_d">
+<li data-component="answer" id="prob-rankofmat5_opt_d"><div class="para" id="prob-rankofmat5-2-4-1-1">All of the above</div></li>
 <li data-component="feedback" id="prob-rankofmat5_opt_d">
 </ul></div></div></article><article class="exercise exercise-like" id="prob-4eq5un"><h4 class="heading"><span class="codenumber">24<span class="period">.</span></span></h4>
 <div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" id="prob-4eq5un" data-multipleanswers="false">
 <div class="para" id="prob-4eq5un-1-1">Suppose a linear system has <span class="process-math">\(4\)</span> equations and <span class="process-math">\(5\)</span> unknowns.  Which of the following is NOT a possibility?</div>
-<li data-component="answer" id="prob-4eq5un_opt_a" data-correct="">
+<li data-component="answer" id="prob-4eq5un_opt_a" data-correct=""><div class="para" id="prob-4eq5un-2-1-1-1">The system has a unique solution</div></li>
 <li data-component="feedback" id="prob-4eq5un_opt_a">
-<li data-component="answer" id="prob-4eq5un_opt_b">
+<li data-component="answer" id="prob-4eq5un_opt_b"><div class="para" id="prob-4eq5un-2-2-1-1">The system has no solutions</div></li>
 <li data-component="feedback" id="prob-4eq5un_opt_b">
-<li data-component="answer" id="prob-4eq5un_opt_c">
+<li data-component="answer" id="prob-4eq5un_opt_c"><div class="para" id="prob-4eq5un-2-3-1-1">The system has infinitely many solutions</div></li>
 <li data-component="feedback" id="prob-4eq5un_opt_c">
 </ul></div></div></article><article class="exercise exercise-like" id="prob-leadones"><h4 class="heading"><span class="codenumber">25<span class="period">.</span></span></h4>
 <div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" id="prob-leadones" data-multipleanswers="true">
 <div class="para" id="prob-leadones-1-1">Suppose <span class="process-math">\(A\)</span> is a matrix such that <span class="process-math">\(\mbox{rref}(A)\)</span> has <span class="process-math">\(5\)</span> leading <span class="process-math">\(1's\text{.}\)</span>  What do we know to be true about <span class="process-math">\(A\text{?}\)</span>  Select ALL that apply.</div>
-<li data-component="answer" id="prob-leadones_opt_a" data-correct="">
+<li data-component="answer" id="prob-leadones_opt_a" data-correct=""><div class="para" id="prob-leadones-2-1-1-1"><span class="process-math">\(\mbox{rank}(A)=5\)</span></div></li>
 <li data-component="feedback" id="prob-leadones_opt_a">
-<li data-component="answer" id="prob-leadones_opt_b" data-correct="">
+<li data-component="answer" id="prob-leadones_opt_b" data-correct=""><div class="para" id="prob-leadones-2-2-1-1">
+<span class="process-math">\(A\)</span> has at least <span class="process-math">\(25\)</span> entries</div></li>
 <li data-component="feedback" id="prob-leadones_opt_b">
-<li data-component="answer" id="prob-leadones_opt_c" data-correct="">
+<li data-component="answer" id="prob-leadones_opt_c" data-correct=""><div class="para" id="prob-leadones-2-3-1-1">Any row-echelon form of <span class="process-math">\(A\)</span> will have exactly <span class="process-math">\(5\)</span> nonzero rows</div></li>
 <li data-component="feedback" id="prob-leadones_opt_c">
-<li data-component="answer" id="prob-leadones_opt_d">
+<li data-component="answer" id="prob-leadones_opt_d"><div class="para" id="prob-leadones-2-4-1-1">Some row-echelon forms of <span class="process-math">\(A\)</span> may have more than <span class="process-math">\(5\)</span> nonzero rows</div></li>
 <li data-component="feedback" id="prob-leadones_opt_d">
-<li data-component="answer" id="prob-leadones_opt_e">
+<li data-component="answer" id="prob-leadones_opt_e"><div class="para" id="prob-leadones-2-5-1-1">Some row-echelon forms of <span class="process-math">\(A\)</span> may have less than <span class="process-math">\(5\)</span> nonzero rows</div></li>
 <li data-component="feedback" id="prob-leadones_opt_e">
 </ul></div></div></article><article class="exercise exercise-like" id="prob-rankaugvscoeff"><h4 class="heading"><span class="codenumber">26<span class="period">.</span></span></h4>
 <div class="para logical" id="prob-rankaugvscoeff-1-1">

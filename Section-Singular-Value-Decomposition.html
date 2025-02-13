@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Singular Value Decomposition</title>
+<title>Extra Topic: Singular Value Decomposition</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -114,15 +114,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.4.7';
+eBookConfig.runestone_version = '7.5.6';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.4.7/prefix-runtime.92e98c7360cdb150.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.4.7/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.4.7/prefix-runestone.2e9039c7e9bfc458.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.4.7/prefix-347.f9add1ca35d5ad93.css">
-<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.4.7/prefix-runestone.82759e13f7f711fa.css">
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.5.6/prefix-runtime.82032a8574f6ce75.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.5.6/prefix-723.3e6434f80549315a.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.5.6/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.5.6/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.5.6/prefix-runestone.6a985cbf816db5c7.css">
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
@@ -603,7 +603,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html" class="internal"><span class="codenumber">10.5</span> <span class="title"><span class="process-math">\(QR\)</span> Factorization and Least Square Approximations</span></a></div>
+<div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Extra Topic: <span class="process-math">\(QR\)</span> Factorization and Least Square Approximations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html#Subsection-QR-Algorithm-for-approximating-eigenvalues" class="internal"><span class="codenumber">10.5.1</span> <span class="title">QR-Algorithm for approximating eigenvalues</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html#Subsection-Least-Squares-Approximation" class="internal"><span class="codenumber">10.5.2</span> <span class="title">Least-Squares Approximation</span></a></div></li>
@@ -612,7 +612,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html#Section-QR-Factorization-and-Least-Square-Approximations-19" class="internal"><span class="codenumber">10.5.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="Section-Singular-Value-Decomposition.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Singular Value Decomposition</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="Section-Singular-Value-Decomposition.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Extra Topic: Singular Value Decomposition</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="Section-Positive-Definite-Matrices.html" class="internal"><span class="codenumber">10.7</span> <span class="title">Extra Topic: Positive Definite Matrices</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Positive-Definite-Matrices.html#Section-Positive-Definite-Matrices-21" class="internal"><span class="codenumber">10.7</span> <span class="title">Exercises</span></a></div></li></ul>
@@ -629,7 +629,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Section-Singular-Value-Decomposition"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">10.6</span><span class="space"> </span><span class="title">Singular Value Decomposition</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">10.6</span><span class="space"> </span><span class="title">Extra Topic: Singular Value Decomposition</span>
 </h2>
 <div class="para" id="Section-Singular-Value-Decomposition-2">We begin this section with an important definition.</div>
 <article class="definition definition-like" id="singularvalues"><h3 class="heading">
@@ -657,15 +657,15 @@ A(A^TA)\mathbf{x} \amp  =   A\lambda \mathbf{x}, \\
 <div class="para">Since <span class="process-math">\(\lambda\neq 0\)</span> and <span class="process-math">\(\mathbf{x}\neq 0_n\text{,}\)</span> <span class="process-math">\(\lambda \mathbf{x}\neq 0_n\text{,}\)</span> and thus by <a href="Section-Singular-Value-Decomposition.html#nonzero" class="xref" data-knowl="./knowl/xref/nonzero.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 10.6.1">(10.6.1)</a>, <span class="process-math">\((A^TA)\mathbf{x}\neq 0_m\text{;}\)</span> thus <span class="process-math">\(A^T(A\mathbf{x})\neq 0_m\text{,}\)</span> implying that <span class="process-math">\(A\mathbf{x}\neq 0_m\text{.}\)</span>
 </div>
 </div> <div class="para" id="lem-samenonzeroeigenvalues-2-2">Therefore <span class="process-math">\(A\mathbf{x}\)</span> is an eigenvector of <span class="process-math">\(AA^T\)</span> corresponding to eigenvalue <span class="process-math">\(\lambda\text{.}\)</span>  An analogous argument can be used to show that every nonzero eigenvalue of <span class="process-math">\(AA^T\)</span> is an eigenvalue of <span class="process-math">\(A^TA\text{,}\)</span> thus completing the proof.</div></article></details><div class="para logical" id="Section-Singular-Value-Decomposition-6">
-<div class="para">Given an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> we will see how to express <span class="process-math">\(A\)</span> as a product \[ A=U\Sigma V^T\] where</div>
+<div class="para">Given an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> we will see how to express <span class="process-math">\(A\)</span> as a product <span class="process-math">\(A=U\Sigma V^T\)</span> where</div>
 <ul class="disc">
-<li id="Section-Singular-Value-Decomposition-6-4-1"><div class="para" id="Section-Singular-Value-Decomposition-6-4-1-1">
+<li id="Section-Singular-Value-Decomposition-6-5-1"><div class="para" id="Section-Singular-Value-Decomposition-6-5-1-1">
 <span class="process-math">\(U\)</span> is an <span class="process-math">\(m\times m\)</span> orthogonal matrix whose columns are eigenvectors of <span class="process-math">\(AA^T\text{.}\)</span>
 </div></li>
-<li id="Section-Singular-Value-Decomposition-6-4-2"><div class="para" id="Section-Singular-Value-Decomposition-6-4-2-1">
+<li id="Section-Singular-Value-Decomposition-6-5-2"><div class="para" id="Section-Singular-Value-Decomposition-6-5-2-1">
 <span class="process-math">\(V\)</span> is an <span class="process-math">\(n\times n\)</span> orthogonal matrix whose columns are eigenvectors of <span class="process-math">\(A^TA\text{.}\)</span>
 </div></li>
-<li id="Section-Singular-Value-Decomposition-6-4-3"><div class="para" id="Section-Singular-Value-Decomposition-6-4-3-1">
+<li id="Section-Singular-Value-Decomposition-6-5-3"><div class="para" id="Section-Singular-Value-Decomposition-6-5-3-1">
 <span class="process-math">\(\Sigma\)</span> is an <span class="process-math">\(m\times n\)</span> matrix whose only nonzero values lie on its main diagonal, and are the singular values of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 </ul>
