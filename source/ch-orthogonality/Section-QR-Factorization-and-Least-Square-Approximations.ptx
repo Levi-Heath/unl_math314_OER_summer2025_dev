@@ -497,8 +497,8 @@ We conclude this section by showing that <m>QR</m>-factorization provides us wit
 <figure>
   <caption>
   </caption>
-  <interactive xml:id="geogebra-ADD-LINK_ID" platform="geogebra" width="100%" aspect="950:650">
-    <slate xml:id="ADD-LINK_ID" surface="geogebra" material="mm7wauhw" aspect="950:650" />
+  <interactive xml:id="geogebra-LeastSquares" platform="geogebra" width="150%" aspect="950:650">
+    <slate xml:id="LeastSquares" surface="geogebra" material="mm7wauhw" aspect="950:650" />
   </interactive>
 </figure>
 

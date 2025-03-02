@@ -19,7 +19,8 @@ In <xref ref="th-matrixtran"/>, we proved that any <m>n \times n</m>  matrix ind
     A=\begin{bmatrix} 2\amp  1\\ 1\amp 2\end{bmatrix}.
     </me>
     
-    The following animation helps us to visualize the matrix transformation associated with <m>A</m>.  Given a vector <m>\mathbf{x}</m> in <m>\R^2</m>, its image, <m>A\mathbf{x}</m>, is also in <m>\R^2</m>.  Advance the slider to see the images of the given vectors.
+    The following animation helps us to visualize the matrix transformation associated with <m>A</m>.  Given a vector <m>\mathbf{x}</m> in <m>\R^2</m>, its image, <m>A\mathbf{x}</m>, is also in <m>\R^2</m>.
+    Set slider to <m>0</m> to see input vectors <m>\mathbf{x}</m>; change it to <m>1</m> see their images <m>A\mathbf{x}</m>.
     </p>
 
 <figure>
@@ -27,8 +28,8 @@ In <xref ref="th-matrixtran"/>, we proved that any <m>n \times n</m>  matrix ind
     A larger version of this activity is available 
     <url href="https://www.geogebra.org/calculator/ub4kqvmz" visual="geogebra.org">here</url>.
   </caption>
-  <interactive xml:id="geogebra-ADD-LINK_ID" platform="geogebra" width="100%" aspect="800:600">
-    <slate xml:id="ADD-LINK_ID" surface="geogebra" material="ub4kqvmz" aspect="800:600" />
+  <interactive xml:id="geogebra-Geometry-of-Eigenvectors" platform="geogebra" width="125%" aspect="800:600">
+    <slate xml:id="Geometry-of-Eigenvectors" surface="geogebra" material="ub4kqvmz" aspect="800:600" />
   </interactive>
 </figure>
 
