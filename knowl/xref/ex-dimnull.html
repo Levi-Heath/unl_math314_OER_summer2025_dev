@@ -14,6 +14,47 @@
 <article class="example example-like"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.15</span><span class="period">.</span>
 </h4>
-<div class="para">Find a basis for <span class="process-math">\(\mbox{null}(A)\text{,}\)</span> where <span class="process-math">\(A\)</span> is the matrix in <a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#ex-basisrowspace" class="xref" data-knowl="./knowl/xref/ex-basisrowspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.3.5">Example 5.3.5</a>.</div></article><span class="incontext"><a class="internal" href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#ex-dimnull">in-context</a></span>
+<div class="para">Find a basis for <span class="process-math">\(\mbox{null}(A)\text{,}\)</span> where <span class="process-math">\(A\)</span> is the matrix in <a href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#ex-basisrowspace" class="xref" data-knowl="./knowl/xref/ex-basisrowspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.3.5">Example 5.3.5</a>.</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">Elements in the null space of <span class="process-math">\(A\)</span> are solutions to the equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}2\amp -1\amp 1\amp -4\amp 1\\1\amp 0\amp 3\amp 3\amp 0\\-2\amp 1\amp -1\amp 5\amp 2\\4\amp -1\amp 7\amp 2\amp 1\end{bmatrix}\mathbf{x}=\mathbf{0}
+\end{equation*}
+</div>
+<div class="para">Row reduction yields <span class="process-math">\(\mbox{rref}(A)\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}2\amp -1\amp 1\amp -4\amp 1\\1\amp 0\amp 3\amp 3\amp 0\\-2\amp 1\amp -1\amp 5\amp 2\\4\amp -1\amp 7\amp 2\amp 1\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp 0\amp 3\amp 0\amp -9\\0\amp 1\amp 5\amp 0\amp -31\\0\amp 0\amp 0\amp 1\amp 3\\0\amp 0\amp 0\amp 0\amp 0\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Therefore, elements of <span class="process-math">\(\mbox{null}(A)\)</span> are of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{x}=\begin{bmatrix}9t-3s\\31t-5s\\s\\-3t\\t\end{bmatrix}=\begin{bmatrix}-3\\-5\\1\\0\\0\end{bmatrix}s+\begin{bmatrix}9\\31\\0\\-3\\1\end{bmatrix}t
+\end{equation*}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{null}(A)=\mbox{span}\left( \begin{bmatrix}-3\\-5\\1\\0\\0\end{bmatrix}, \begin{bmatrix}9\\31\\0\\-3\\1\end{bmatrix}\right)
+\end{equation*}
+</div>
+<div class="para">Now we need to find a basis for <span class="process-math">\(\mbox{null}(A)\)</span> we need to find linearly independent vectors that span <span class="process-math">\(\mbox{null}(A)\text{.}\)</span>  Take a closer look at the vectors</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}-3\\-5\\{\color{red}\fbox{}}\\0\\{\color{blue}\fbox{}}\end{bmatrix}, \begin{bmatrix}9\\31\\{\color{red}\fbox{}}\\-3\\{\color{blue}\fbox{}}\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Because of the locations of <span class="process-math">\(1's\)</span> and <span class="process-math">\(0's\text{,}\)</span> it is clear that one vector is not a scalar multiple of the other.  Therefore the two vectors are linearly independent.  We conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{\begin{bmatrix}-3\\-5\\1\\0\\0\end{bmatrix}, \begin{bmatrix}9\\31\\0\\-3\\1\end{bmatrix}\right\}
+\end{equation*}
+</div>
+<div class="para">is a basis of <span class="process-math">\(\mbox{null}(A)\text{,}\)</span> and <span class="process-math">\(\mbox{dim}\Big(\mbox{null}(A)\Big)=2\text{.}\)</span>
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#ex-dimnull">in-context</a></span>
 </body>
 </html>
