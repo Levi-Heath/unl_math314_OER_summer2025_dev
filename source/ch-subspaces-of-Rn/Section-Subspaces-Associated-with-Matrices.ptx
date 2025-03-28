@@ -676,7 +676,7 @@ We conclude that <m>a_1\mathbf{x}_1+a_2\mathbf{x}_2</m> is also in <m>\mbox{null
             Find a basis for <m>\mbox{null}(A)</m>, where <m>A</m> is the matrix in <xref ref="ex-basisrowspace"/>.
        </p>
     </statement>
-    <explanation>
+    <solution>
         <p>
             Elements in the null space of <m>A</m> are solutions to the equation
 
@@ -717,7 +717,7 @@ Because of the locations of <m>1's</m> and <m>0's</m>, it is clear that one vect
 
 is a basis of <m>\mbox{null}(A)</m>, and <m>\mbox{dim}\Big(\mbox{null}(A)\Big)=2</m>.
        </p>
-    </explanation>
+    </solution>
 </example>
 
 
