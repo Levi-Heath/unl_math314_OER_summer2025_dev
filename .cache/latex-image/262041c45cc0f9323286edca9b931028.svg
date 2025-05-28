@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="128" height="129" viewBox="0 0 128 129">
+<g>
+<path transform="matrix(1.00006,0,0,-1.00002,63.86834,64.615978)" d="M-17.46143-62.8165V27.8936L17.46143 62.8165V-27.8936Z" fill="#0000ff" fill-opacity=".3"/>
+<path transform="matrix(1.00006,0,0,-1.00002,63.86834,64.615978)" stroke-width=".3985" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#0000ff" stroke-opacity=".3" d="M-17.46143-62.8165V27.8936L17.46143 62.8165V-27.8936Z"/>
+</g>
+<g>
+<path transform="matrix(1.00006,0,0,-1.00002,63.86834,64.615978)" d="M27.8936-17.46143H-62.8165L-27.8936 17.46143H62.8165Z" fill="#ff0000" fill-opacity=".3"/>
+<path transform="matrix(1.00006,0,0,-1.00002,63.86834,64.615978)" stroke-width=".3985" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#ff0000" stroke-opacity=".3" d="M27.8936-17.46143H-62.8165L-27.8936 17.46143H62.8165Z"/>
+</g>
+<g>
+<path transform="matrix(1.00006,0,0,-1.00002,63.86834,64.615978)" d="M27.8936 5.21606 62.8165 40.13896-27.8936-5.21606-62.8165-40.13896Z" fill="#7f807f" fill-opacity=".5"/>
+<path transform="matrix(1.00006,0,0,-1.00002,63.86834,64.615978)" stroke-width=".3985" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#7f807f" stroke-opacity=".5" d="M27.8936 5.21606 62.8165 40.13896-27.8936-5.21606-62.8165-40.13896Z"/>
+</g>
+<path transform="matrix(1.00006,0,0,-1.00002,63.86834,64.615978)" stroke-width=".3985" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#000000" d="M17.46143 17.46143-17.46143-17.46143"/>
+</svg>

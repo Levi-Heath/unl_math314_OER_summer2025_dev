@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="81" height="59" viewBox="0 0 81 59">
+<g>
+<path transform="matrix(1.00005,0,0,-1.00003,40.358118,29.721413)" d="M17.43344 6.09467H-39.26016L-17.43344 27.92139H39.26016Z" fill="#7f807f" fill-opacity=".5"/>
+<path transform="matrix(1.00005,0,0,-1.00003,40.358118,29.721413)" stroke-width=".3985" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#7f807f" stroke-opacity=".5" d="M17.43344 6.09467H-39.26016L-17.43344 27.92139H39.26016Z"/>
+</g>
+<g>
+<path transform="matrix(1.00005,0,0,-1.00003,40.358118,29.721413)" d="M17.43344-10.91336H-39.26016L-17.43344 10.91336H39.26016Z" fill="#ff0000" fill-opacity=".3"/>
+<path transform="matrix(1.00005,0,0,-1.00003,40.358118,29.721413)" stroke-width=".3985" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#ff0000" stroke-opacity=".3" d="M17.43344-10.91336H-39.26016L-17.43344 10.91336H39.26016Z"/>
+</g>
+<g>
+<path transform="matrix(1.00005,0,0,-1.00003,40.358118,29.721413)" d="M17.43344-27.92139H-39.26016L-17.43344-6.09467H39.26016Z" fill="#0000ff" fill-opacity=".3"/>
+<path transform="matrix(1.00005,0,0,-1.00003,40.358118,29.721413)" stroke-width=".3985" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#0000ff" stroke-opacity=".3" d="M17.43344-27.92139H-39.26016L-17.43344-6.09467H39.26016Z"/>
+</g>
+</svg>

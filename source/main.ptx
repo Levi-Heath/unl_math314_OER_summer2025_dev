@@ -11,15 +11,13 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-prelims/Chapter-Preliminaries.ptx" />
     <xi:include href="./ch-systems-of-lin-eqns/Chapter-Systems-of-Linear-Equations.ptx" />
-    <xi:include href="./ch-big-ideas-about-vectors/Chapter-Big-Ideas-about-Vectors.ptx" />
+    <xi:include href="./ch-vectors/Chapter-Vectors.ptx" />
     <xi:include href="./ch-matrices/Chapter-Matrices.ptx" />
     <xi:include href="./ch-subspaces-of-Rn/Chapter-Subspaces-of-Rn.ptx" />
-    <xi:include href="./ch-linear-transformations/Chapter-Linear-Transformations.ptx" />
+    <xi:include href="./ch-vector-spaces/Chapter-Vector-Spaces.ptx" />
     <xi:include href="./ch-the-determinant/Chapter-The-Determinant.ptx" />
     <xi:include href="./ch-eigenvalues-and-eigenvectors/Chapter-Eigenvalues-and-Eigenvectors.ptx" />
-    <xi:include href="./ch-vector-spaces/Chapter-Vector-Spaces.ptx" />
     <xi:include href="./ch-orthogonality/Chapter-Orthogonality.ptx" />
 
     <!-- Include backmatter -->
