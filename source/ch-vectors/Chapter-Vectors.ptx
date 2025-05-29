@@ -11,12 +11,27 @@
         <ul>
             <li>
                 <p>
-                    Express vectors as linear combinations of other vectors in <m> \mathbb{R}^n </m> in both algebraic and geometric settings.
+                    Define a vector in <m> \mathbb{R}^n </m> as an ordered list of numbers, and understand the geometric interpretation of vectors in <m> \mathbb{R}^2 </m> and <m> \mathbb{R}^3 </m>.
                 </p>
             </li>
             <li>
                 <p>
-                    Interpret a system of linear equations as an expression of one vector as a linear combination of other vectors in <m> \mathbb{R}^n </m>.
+                    Compute the magnitude of a vector and the unit vector in the direction of a given vector.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Perform vector operations in <m> \mathbb{R}^n </m>, including scalar multiplication, addition, and linear combinations.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Express vectors as linear combinations of other vectors in <m> \mathbb{R}^n </m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Interpret a system of linear equations as a vector equation.
                 </p>
             </li>
             <li>
@@ -34,6 +49,7 @@
 </objectives>
 
   <!-- include sections --> 
+<xi:include href="Section-Linear-Introduction-to-Vectors.ptx"/>
 <xi:include href="Section-Linear-Combinations-of-Vectors.ptx"/>
 <!--<xi:include href="Section-Span.ptx"/>-->
 <xi:include href="Section-Linear-Independence.ptx"/>

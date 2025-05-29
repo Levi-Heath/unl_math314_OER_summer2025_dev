@@ -11,7 +11,17 @@
         <ul>
             <li>
                 <p>
-                    Discuss orthogonal and orthonormal bases, Gram-Schmidt orthogonalization, orthogonal complements and projections. 
+                    Compute the dot product of two vectors, and understand the geometric interpretation of the dot product.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Define orthogonality in the context of vectors.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Discuss orthogonal and orthonormal bases, Gram-Schmidt orthogonalization, orthogonal complements, and projections. 
                 </p>
             </li>
             <li>
@@ -33,7 +43,7 @@
 </objectives>
 
   <!-- include sections --> 
-<!--<xi:include href="Section-Addition-and-Scalar-Multiplication-of-Matrices.ptx"/>-->
+<xi:include href="Section-The-Dot-Product.ptx"/>
 <xi:include href="Section-Orthogonality-and-Projections.ptx"/>
 <xi:include href="Section-Gram-Schmidt-Orthogonalization.ptx"/>
 <xi:include href="Section-Orthogonal-Complements-and-Decompositions.ptx"/>
