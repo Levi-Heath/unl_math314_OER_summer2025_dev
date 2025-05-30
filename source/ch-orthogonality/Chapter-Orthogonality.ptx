@@ -43,7 +43,7 @@
 </objectives>
 
   <!-- include sections --> 
-<xi:include href="Section-The-Dot-Product.ptx"/>
+<xi:include href="Section-Dot-Product.ptx"/>
 <xi:include href="Section-Orthogonality-and-Projections.ptx"/>
 <xi:include href="Section-Gram-Schmidt-Orthogonalization.ptx"/>
 <xi:include href="Section-Orthogonal-Complements-and-Decompositions.ptx"/>
