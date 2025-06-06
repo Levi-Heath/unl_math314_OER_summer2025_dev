@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,7 +19,7 @@
 </head>
 <body class="ignore-math">
 <article class="exploration project-like"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">10.5.1</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8.6.1</span><span class="period">.</span>
 </h4>
 <div class="para logical">
 <div class="para">Let</div>
@@ -23,7 +30,8 @@ A=\begin{bmatrix}3 \amp  1\\1 \amp  2\\1 \amp  2\end{bmatrix}\quad\text{and}\qua
 </div>
 <div class="para">Consider the matrix equation <span class="process-math">\(A\mathbf{x}=\mathbf{b}\text{.}\)</span> A quick examination of the last two rows should convince you that this equation has no solutions.  In other words, <span class="process-math">\(\mathbf{b}\)</span> is not in the span of the columns of <span class="process-math">\(A\text{.}\)</span> If <span class="process-math">\(\mathbf{z}\)</span> were an exact solution to <span class="process-math">\(A\mathbf{x}=\mathbf{b}\text{,}\)</span> then <span class="process-math">\(\mathbf{b}-A\mathbf{z}\)</span> would be <span class="process-math">\(\mathbf{0}\text{.}\)</span>
 </div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">Since the equation does not have a solution, we will attempt to find the next best thing to a solution by finding <span class="process-math">\(\mathbf{z}\)</span> such that <span class="process-math">\(\norm{\mathbf{b}-A\mathbf{z}}\)</span> is as small as possible.  The quantity</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -31,11 +39,13 @@ A=\begin{bmatrix}3 \amp  1\\1 \amp  2\\1 \amp  2\end{bmatrix}\quad\text{and}\qua
 \end{equation*}
 </div>
 <div class="para">is called the <em class="emphasis">error</em>. The following GeoGebra interactive will help you understand the geometry behind finding <span class="process-math">\(\mathbf{z}\text{.}\)</span> RIGHT-CLICK and DRAG to rotate the image for a better view.</div>
-</div> <figure class="figure figure-like"><iframe id="geogebra-LeastSquares" width="900" height="616" src="geogebra-LeastSquares-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.5.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para">Record your best guess for <span class="process-math">\(\mathbf{z}\)</span> -- you will have a chance to check your answer in <a href="Section-QR-Factorization-and-Least-Square-Approximations.html#ex-leastSquares1" class="xref" data-knowl="./knowl/xref/ex-leastSquares1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 10.5.10">Example 10.5.10</a>. Now, here is a few questions to keep you on yor toes.</div> <details class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">10.5.9</span><span class="period">.</span>
+</div>
+<figure class="figure figure-like"><iframe id="geogebra-LeastSquares" width="900" height="616" src="geogebra-LeastSquares-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.6.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para">Record your best guess for <span class="process-math">\(\mathbf{z}\)</span> -- you will have a chance to check your answer in <a href="Section-QR-Factorization-and-Least-Square-Approximations.html#ex-leastSquares1" class="xref" data-knowl="./knowl/xref/ex-leastSquares1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.6.10">Example 8.6.10</a>. Now, here is a few questions to keep you on yor toes.</div>
+<details class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">8.6.9</span><span class="period">.</span>
 </h5></summary><article class="problem example-like knowl__content"><div class="para logical">
 <div class="para">What did you discover about the geometry of minimizing <span class="process-math">\(\norm{\mathbf{b}-A\mathbf{z}}\text{?}\)</span> Select all that apply.</div>
-<ol class="decimal">
+<ol class="decimal" id="exp-leastSq1-5-1-1-2">
 <li><div class="para">
 <span class="process-math">\(\mathbf{z}\)</span> is orthogonal to the plane spanned by the columns of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
@@ -53,6 +63,6 @@ A=\begin{bmatrix}3 \amp  1\\1 \amp  2\\1 \amp  2\end{bmatrix}\quad\text{and}\qua
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para">Option (c) and (d).</div></div></details></div></article></details> <div class="para">Our geometric observations will help us develop a method for finding <span class="process-math">\(\mathbf{z}\)</span> .</div></article><span class="incontext"><a class="internal" href="Section-QR-Factorization-and-Least-Square-Approximations.html#exp-leastSq1">in-context</a></span>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para">Option (c) and (d).</div></div></details></div></article></details><div class="para">Our geometric observations will help us develop a method for finding <span class="process-math">\(\mathbf{z}\)</span> .</div></article><span class="incontext"><a class="internal" href="Section-QR-Factorization-and-Least-Square-Approximations.html#exp-leastSq1">in-context</a></span>
 </body>
 </html>

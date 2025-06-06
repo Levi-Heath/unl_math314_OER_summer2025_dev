@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,7 +19,7 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.11</span><span class="period">.</span>
 </h4>
 <div class="para logical">
 <div class="para">Solve the system of equations or determine that the system is inconsistent.</div>
@@ -36,7 +43,7 @@ x\amp  +\amp 4y\amp \amp \amp +\amp w\amp =\amp 1
 \end{array}\right]
 \end{equation*}
 </div>
-<div class="para">Our goal is to convert this matrix to its reduced row-echelon form by means of elementary row operations.  To do this, we will proceed from left to right and use leading entries to wipe out all entries above and below them.</div>
+<div class="para">Our goal is to convert this matrix to its reduced row echelon form by means of elementary row operations.  To do this, we will proceed from left to right and use leading entries to wipe out all entries above and below them.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sys20reducedrowechelon.html">
 \begin{equation*}
 \left[\begin{array}{cccc|c}  
@@ -87,7 +94,7 @@ x\amp  +\amp 4y\amp \amp \amp +\amp w\amp =\amp 1
 \end{array}\right]
 \end{equation*}
 </div>
-<div class="para">Our final matrix may not be quite as nice as the one in <a href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html#init-backsub-2-1" class="xref" data-knowl="./knowl/xref/eq-sys20reducedrowechelon.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2.6">(2.2.6)</a>, but it is in reduced row-echelon form.  Our next step is to convert our augmented matrix back to a system of equations.  We have:</div>
+<div class="para">Our final matrix may not be quite as nice as the one in <a href="Section-Introduction-to-Systems-of-Linear-Equations.html#init-backsub-2-1" class="xref" data-knowl="./knowl/xref/eq-sys20reducedrowechelon.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.6">(1.1.6)</a>, but it is in reduced row echelon form.  Our next step is to convert our augmented matrix back to a system of equations.  We have:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sys20reducedrowechelon.html">
 \begin{equation*}
 \begin{array}{ccccccccc}
@@ -108,15 +115,16 @@ x \amp  \amp \amp \amp \amp \amp \amp = \amp -3+(5/3)w \\
 \end{equation*}
 </div>
 <div class="para">Now we see that we can assign any value to <span class="process-math">\(w\text{,}\)</span> then compute <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> to obtain a solution to the system.  For example, let <span class="process-math">\(w=0\text{,}\)</span> then <span class="process-math">\(x=-3\text{,}\)</span> <span class="process-math">\(y=1\)</span> and <span class="process-math">\(z=7\text{,}\)</span> so <span class="process-math">\((-3, 1, 7, 0)\)</span> is a solution.  If we let <span class="process-math">\(w=3\text{,}\)</span> then <span class="process-math">\(x=2\text{,}\)</span> <span class="process-math">\(y=-1\)</span> and <span class="process-math">\(z=-2\text{,}\)</span> so <span class="process-math">\((2, -1, -2, 3)\)</span> is also a solution.   To capture all possibilities, we will let <span class="process-math">\(w=t\text{,}\)</span> where <span class="process-math">\(t\)</span> is an arbitrary <dfn class="terminology">parameter</dfn>.</div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">We can think of the solution set in two different ways.  First, the solution set is the set of all points of the form</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/form-paramlinend.html">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left(-3+\frac{5}{3}t, 1-\frac{2}{3}t, 7-3t, t\right)
 \end{equation*}
 </div>
 <div class="para">We can also think of the solution set in geometric terms by observing that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/form-paramlinend.html">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{align*}
 x\amp =-3+\frac{5}{3}t \\
 y\amp =1-\frac{2}{3}t \\
@@ -124,8 +132,8 @@ z\amp =7-3t \\
 w\amp =t 
 \end{align*}
 </div>
-<div class="para">is a set of parametric equations that describes a line in <span class="process-math">\(\R^4\text{.}\)</span>  (See <a href="Section-Lines-and-Planes.html#form-paramlinend" class="xref" data-knowl="./knowl/xref/form-paramlinend.html" data-reveal-label="Reveal" data-close-label="Close" title="Formula 1.3.5">Formula 1.3.5</a>  This means that the three hyperplanes given by the equations in the system intersect in a line, producing infinitely many solutions to the system.</div>
+<div class="para">is a set of parametric equations that describes a line in <span class="process-math">\(\R^4\text{.}\)</span>  (See <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "form-paramlinend" missing or not unique]</code>  This means that the three hyperplanes given by the equations in the system intersect in a line, producing infinitely many solutions to the system.</div>
 </div>
-</div></details></div></article><span class="incontext"><a class="internal" href="Section-Augmented-Matrix-Notation-and-Elementary-Row-Operations.html#ex-freevar1">in-context</a></span>
+</div></details></div></article><span class="incontext"><a class="internal" href="Section-Row-Echelon-Forms.html#ex-freevar1">in-context</a></span>
 </body>
 </html>

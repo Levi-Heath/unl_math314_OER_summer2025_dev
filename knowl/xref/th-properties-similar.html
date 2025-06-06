@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,11 +19,11 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.2.6</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.6</span><span class="period">.</span>
 </h3>
 <div class="para logical">
 <div class="para">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <span class="process-math">\(n\times n\)</span> matrices and <span class="process-math">\(A\sim B\text{,}\)</span> then</div>
-<ol class="decimal">
+<ol class="decimal" id="th-properties-similar-1-1-5">
 <li><div class="para"><span class="process-math">\(\det(A) = \det(B)\text{,}\)</span></div></li>
 <li><div class="para"><span class="process-math">\(\mbox{rank}(A) = \mbox{rank}(B)\text{,}\)</span></div></li>
 <li><div class="para"><span class="process-math">\(\mbox{tr}(A)= \mbox{tr}(B)\text{,}\)</span></div></li>
@@ -26,8 +33,11 @@
 <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have the same eigenvalues.</div></li>
 </ol>
 </div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">Let <span class="process-math">\(B = P^{-1}AP\)</span> for some invertible matrix <span class="process-math">\(P\text{.}\)</span>
-</div> <div class="para">For <a href="Section-Similar-and-Diagonalizable-Matrices.html#th-properties-similar-det" class="xref" data-knowl="./knowl/xref/th-properties-similar-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a>, <span class="process-math">\(\det B = \det(P^{-1}) \det A \det P = \det A\)</span> because <span class="process-math">\(\det(P^{-1}) = 1/ \det P\)</span> (see <a href="Section-Elementary-Row-Operations-and-the-Determinant.html#th-detofinverse" class="xref" data-knowl="./knowl/xref/th-detofinverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.16">Theorem 7.2.16</a>).</div> <div class="para">Similarly, for <a href="Section-Similar-and-Diagonalizable-Matrices.html#th-properties-similar-rank" class="xref" data-knowl="./knowl/xref/th-properties-similar-rank.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a>, <span class="process-math">\(\mbox{rank} B = \mbox{rank}(P^{-1}AP) = \mbox{rank} A\text{,}\)</span> because multiplication by an invertible matrix cannot change the rank.  To see this, note that any invertible matrix is a product of elementary matrices.  Multiplying by elementary matrices is equivalent to performing elementary row (column) operations on <span class="process-math">\(A\text{,}\)</span> which does not change the row (column) space, nor the rank.  It follows that similar matrices have the same rank.</div> <div class="para logical">
-<div class="para">For <a href="Section-Similar-and-Diagonalizable-Matrices.html#th-properties-similar-trace" class="xref" data-knowl="./knowl/xref/th-properties-similar-trace.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a>, we make use of <a href="Section-Similar-and-Diagonalizable-Matrices.html#th-trAB-trBA" class="xref" data-knowl="./knowl/xref/th-trAB-trBA.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.2.5">Theorem 8.2.5</a>:</div>
+</div>
+<div class="para">For <a href="Section-Similar-and-Diagonalizable-Matrices.html#th-properties-similar-det" class="xref" data-knowl="./knowl/xref/th-properties-similar-det.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a>, <span class="process-math">\(\det B = \det(P^{-1}) \det A \det P = \det A\)</span> because <span class="process-math">\(\det(P^{-1}) = 1/ \det P\)</span> (see <a href="Section-Elementary-Row-Operations-and-the-Determinant.html#th-detofinverse" class="xref" data-knowl="./knowl/xref/th-detofinverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.16">Theorem 6.2.16</a>).</div>
+<div class="para">Similarly, for <a href="Section-Similar-and-Diagonalizable-Matrices.html#th-properties-similar-rank" class="xref" data-knowl="./knowl/xref/th-properties-similar-rank.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a>, <span class="process-math">\(\mbox{rank} B = \mbox{rank}(P^{-1}AP) = \mbox{rank} A\text{,}\)</span> because multiplication by an invertible matrix cannot change the rank.  To see this, note that any invertible matrix is a product of elementary matrices.  Multiplying by elementary matrices is equivalent to performing elementary row (column) operations on <span class="process-math">\(A\text{,}\)</span> which does not change the row (column) space, nor the rank.  It follows that similar matrices have the same rank.</div>
+<div class="para logical">
+<div class="para">For <a href="Section-Similar-and-Diagonalizable-Matrices.html#th-properties-similar-trace" class="xref" data-knowl="./knowl/xref/th-properties-similar-trace.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">Item 3</a>, we make use of <a href="Section-Similar-and-Diagonalizable-Matrices.html#th-trAB-trBA" class="xref" data-knowl="./knowl/xref/th-trAB-trBA.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.5">Theorem 7.2.5</a>:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-properties-similar-trace.html ./knowl/xref/th-trAB-trBA.html ./knowl/xref/th-properties-similar-char-poly.html">
 \begin{equation*}
 \mbox{tr} (P^{-1}AP) = \mbox{tr}[P^{-1}(AP)] = \mbox{tr}[(AP)P^{-1}] = \mbox{tr} A.
@@ -42,6 +52,7 @@
 \end{align*}
 </div>
 <div class="para">so <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have the same characteristic equation.</div>
-</div> <div class="para">Finally, <a href="Section-Similar-and-Diagonalizable-Matrices.html#th-properties-similar-char-poly" class="xref" data-knowl="./knowl/xref/th-properties-similar-char-poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 4">Item 4</a> implies <a href="Section-Similar-and-Diagonalizable-Matrices.html#th-properties-similar-eig" class="xref" data-knowl="./knowl/xref/th-properties-similar-eig.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 5">Item 5</a> because the eigenvalues of a matrix are the roots of its characteristic polynomial.</div></article></details><span class="incontext"><a class="internal" href="Section-Similar-and-Diagonalizable-Matrices.html#th-properties-similar">in-context</a></span>
+</div>
+<div class="para">Finally, <a href="Section-Similar-and-Diagonalizable-Matrices.html#th-properties-similar-char-poly" class="xref" data-knowl="./knowl/xref/th-properties-similar-char-poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 4">Item 4</a> implies <a href="Section-Similar-and-Diagonalizable-Matrices.html#th-properties-similar-eig" class="xref" data-knowl="./knowl/xref/th-properties-similar-eig.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 5">Item 5</a> because the eigenvalues of a matrix are the roots of its characteristic polynomial.</div></article></details><span class="incontext"><a class="internal" href="Section-Similar-and-Diagonalizable-Matrices.html#th-properties-similar">in-context</a></span>
 </body>
 </html>

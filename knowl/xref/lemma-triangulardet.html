@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,9 +19,10 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.1.13</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.1.13</span><span class="period">.</span>
 </h4>
-<div class="para">If <span class="process-math">\(A\)</span> is a triangular matrix, then <span class="process-math">\(\det{A}\)</span> is equal to the product of its diagonal entries.</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">We proceed by induction on <span class="process-math">\(n\text{,}\)</span> where <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix.  It is easy to see that this result holds for <span class="process-math">\(n=1, 2\text{.}\)</span>  Suppose that the result holds for <span class="process-math">\((n-1)\times (n-1)\)</span> triangular matrices.  We need to show that it holds for <span class="process-math">\(n\times n\)</span> triangular matrices.</div> <div class="para logical">
+<div class="para">If <span class="process-math">\(A\)</span> is a triangular matrix, then <span class="process-math">\(\det{A}\)</span> is equal to the product of its diagonal entries.</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">We proceed by induction on <span class="process-math">\(n\text{,}\)</span> where <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix.  It is easy to see that this result holds for <span class="process-math">\(n=1, 2\text{.}\)</span>  Suppose that the result holds for <span class="process-math">\((n-1)\times (n-1)\)</span> triangular matrices.  We need to show that it holds for <span class="process-math">\(n\times n\)</span> triangular matrices.</div>
+<div class="para logical">
 <div class="para">Suppose <span class="process-math">\(A=[a_{ij}]\)</span> is a triangular matrix. Then, with the exception of <span class="process-math">\(a_{11}\text{,}\)</span> the entries in the first row (or column) of <span class="process-math">\(A\)</span> are guaranteed to be zeros. We will take advantage of these zeros and expand along the first row (or column) of <span class="process-math">\(A\text{.}\)</span>  As we do so, we obtain a single product of <span class="process-math">\(a_{11}\)</span> and the determinant of a minor matrix obtained by crossing out the first row and column of <span class="process-math">\(A\text{.}\)</span>  But this minor <span class="process-math">\((n-1)\times (n-1)\)</span> matrix is also a triangular matrix with diagonal etries <span class="process-math">\(a_{22}, a_{33},\ldots, a_{nn}\text{.}\)</span>  By induction hypothesis, its determinant is equal to the product of its diagonal entries, <span class="process-math">\(a_{22}\cdot a_{33}\cdot\ldots\cdot a_{nn}\text{.}\)</span>  Therefore</div>
 <div class="displaymath process-math">
 \begin{equation*}

@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,7 +19,7 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.16</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.16</span><span class="period">.</span>
 </h4>
 <div class="para logical">
 <div class="para">If possible, express the given vector as a linear combination of</div>
@@ -22,7 +29,7 @@
 \end{equation*}
 </div>
 <div class="para">Interpret your results geometrically.</div>
-<ol class="decimal">
+<ol class="decimal" id="ex-spanintro-1-1-2">
 <li><div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
 \mathbf{u}=\begin{bmatrix}2\\3\\5\end{bmatrix}.
@@ -37,7 +44,7 @@
 </div>
 <div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para logical">
-<div class="para">For <a href="Section-Linear-Combinations-of-Vectors.html#item-spanintro1" class="xref" data-knowl="./knowl/xref/item-spanintro1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a>, we need to find coefficients <span class="process-math">\(a_1\)</span> and <span class="process-math">\(a_2\)</span> such that <span class="process-math">\(\mathbf{u}=a_1\mathbf{v}_1+a_2\mathbf{v}_2\text{.}\)</span> To do this we need to solve the vector equation:</div>
+<div class="para">For <a href="Section-Linear-Combinations-of-Vectors-and-Span.html#item-spanintro1" class="xref" data-knowl="./knowl/xref/item-spanintro1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a>, we need to find coefficients <span class="process-math">\(a_1\)</span> and <span class="process-math">\(a_2\)</span> such that <span class="process-math">\(\mathbf{u}=a_1\mathbf{v}_1+a_2\mathbf{v}_2\text{.}\)</span> To do this we need to solve the vector equation:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-spanintro1.html">
 \begin{equation*}
 a_1\begin{bmatrix}-2\\-3\\4\end{bmatrix}+a_2\begin{bmatrix}2\\3\\2\end{bmatrix}=\begin{bmatrix}2\\3\\5\end{bmatrix}.
@@ -70,8 +77,10 @@ a_1\begin{bmatrix}-2\\-3\\4\end{bmatrix}+a_2\begin{bmatrix}2\\3\\2\end{bmatrix}=
 \end{equation*}
 </div>
 <div class="para">Observe that because vector <span class="process-math">\(\mathbf{u}\)</span> is a linear combination of <span class="process-math">\(\mathbf{v}_1\)</span> and <span class="process-math">\(\mathbf{v}_2\text{,}\)</span> <span class="process-math">\(\mathbf{u}\)</span> is the diagonal of a parallelogram whose sides are scalar multiples of <span class="process-math">\(\mathbf{v}_1\)</span> and <span class="process-math">\(\mathbf{v}_2\text{.}\)</span> As such, <span class="process-math">\(\mathbf{u}\)</span> lies in the same plane as <span class="process-math">\(\mathbf{v}_1\)</span> and <span class="process-math">\(\mathbf{v}_2\text{,}\)</span> as illustrated below.</div>
-</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/ex-spanintro-2-2.svg" role="img" class="contained" alt="Span of two vectors graphed"></div> <div class="para logical">
-<div class="para">For <a href="Section-Linear-Combinations-of-Vectors.html#item-spanintro2" class="xref" data-knowl="./knowl/xref/item-spanintro2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a>, we need to solve the following vector equation:</div>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/ex-spanintro-2-2.svg" role="img" class="contained" alt="Span of two vectors graphed"></div>
+<div class="para logical">
+<div class="para">For <a href="Section-Linear-Combinations-of-Vectors-and-Span.html#item-spanintro2" class="xref" data-knowl="./knowl/xref/item-spanintro2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a>, we need to solve the following vector equation:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-spanintro2.html">
 \begin{equation*}
 a_1\begin{bmatrix}-2\\-3\\4\end{bmatrix}+a_2\begin{bmatrix}2\\3\\2\end{bmatrix}=\begin{bmatrix}5\\5\\1\end{bmatrix}.
@@ -99,8 +108,10 @@ a_1\begin{bmatrix}-2\\-3\\4\end{bmatrix}+a_2\begin{bmatrix}2\\3\\2\end{bmatrix}=
 </div>
 <div class="para">We conclude that there are no solutions, and <span class="process-math">\(\mathbf{w}\)</span> is not a linear combination of <span class="process-math">\(\mathbf{v}_1\)</span> and <span class="process-math">\(\mathbf{v}_2\text{.}\)</span>
 </div>
-</div> <div class="para">Geometrically, this means that <span class="process-math">\(\mathbf{w}\)</span> is not the diagonal of any parallelogram whose sides are scalar multiples of <span class="process-math">\(\mathbf{v}_1\)</span> and <span class="process-math">\(\mathbf{v}_2\text{.}\)</span>  Thus, <span class="process-math">\(\mathbf{w}\)</span> does not lie in the plane determined by <span class="process-math">\(\mathbf{v}_1\)</span> and <span class="process-math">\(\mathbf{v}_2\text{.}\)</span>
-</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/ex-spanintro-2-5.svg" role="img" class="contained" alt="Three vectors graphed without span"></div>
-</div></details></div></article><span class="incontext"><a class="internal" href="Section-Linear-Combinations-of-Vectors.html#ex-spanintro">in-context</a></span>
+</div>
+<div class="para">Geometrically, this means that <span class="process-math">\(\mathbf{w}\)</span> is not the diagonal of any parallelogram whose sides are scalar multiples of <span class="process-math">\(\mathbf{v}_1\)</span> and <span class="process-math">\(\mathbf{v}_2\text{.}\)</span>  Thus, <span class="process-math">\(\mathbf{w}\)</span> does not lie in the plane determined by <span class="process-math">\(\mathbf{v}_1\)</span> and <span class="process-math">\(\mathbf{v}_2\text{.}\)</span>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/ex-spanintro-2-5.svg" role="img" class="contained" alt="Three vectors graphed without span"></div>
+</div></details></div></article><span class="incontext"><a class="internal" href="Section-Linear-Combinations-of-Vectors-and-Span.html#ex-spanintro">in-context</a></span>
 </body>
 </html>

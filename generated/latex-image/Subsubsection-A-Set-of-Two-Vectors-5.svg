@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="37pt" height="71pt" viewBox="0 0 37 71" version="1.1">
-<g id="surface1">
-<path style="fill:none;stroke-width:0.99628;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0.000690979 -0.000514569 L 21.386127 42.769501 " transform="matrix(1.00006,0,0,-1.00008,12.733684,46.456517)"/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,100%);fill-opacity:1;" d="M 35.414062 1.097656 L 31.277344 4.199219 L 34.121094 3.683594 L 35.414062 6.265625 "/>
-<path style="fill:none;stroke-width:0.99628;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(100%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0.000690979 -0.000514569 L -10.045581 -20.092657 " transform="matrix(1.00006,0,0,-1.00008,12.733684,46.456517)"/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 1.394531 69.136719 L 5.527344 66.035156 L 2.6875 66.550781 L 1.394531 63.96875 "/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="37" height="71" viewBox="0 0 37 71">
+<path transform="matrix(1.00002,0,0,-1.00008,12.732903,46.456518)" stroke-width=".99628" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#0000ff" d="M0 0 21.38554 42.77104"/>
+<path transform="matrix(.44717894,-.89443156,-.89437797,-.44720576,34.118864,3.682064)" d="M2.8892 0-1.73352 2.31136 0 0-1.73352-2.31136" fill="#0000ff"/>
+<path transform="matrix(1.00002,0,0,-1.00008,12.732903,46.456518)" stroke-width=".99628" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#ff0000" d="M0 0-10.04678-20.0935"/>
+<path transform="matrix(-.44717894,.89443156,.89437797,.44720576,2.6859313,66.55161)" d="M2.8892 0-1.73352 2.31136 0 0-1.73352-2.31136" fill="#ff0000"/>
 </svg>

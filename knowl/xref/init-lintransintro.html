@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,7 +19,7 @@
 </head>
 <body class="ignore-math">
 <article class="exploration project-like"><h3 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span>
 </h3>
 <div class="para logical">
 <div class="para">In this exercise we will introduce a very special type of transformation by contrasting the effects of two transformations on vectors of <span class="process-math">\(\R^2\text{.}\)</span>  We will see that some transformations have ``nice" properties, while others do not.  Define <span class="process-math">\(T_1\)</span> and <span class="process-math">\(T_2\)</span> as follows:</div>
@@ -40,8 +47,9 @@ y-2
 </div>
 <div class="para">Each of these transformations takes a vector in <span class="process-math">\(\R^2\text{,}\)</span> and maps it to another vector in <span class="process-math">\(\R^2\text{.}\)</span> To see if you understand how these transformations are defined, see if you can determine what these transformations do to the vector <span class="process-math">\([4,3]\text{.}\)</span>
 </div>
-</div> <details class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Problem</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="period">.</span>
+</div>
+<details class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span>
 </h4></summary><article class="problem example-like knowl__content"><div class="para logical">
 <div class="para">Compute the following two images:</div>
 <div class="displaymath process-math">
@@ -73,7 +81,7 @@ T_2\left(\begin{bmatrix}
 0\\
 1\end{bmatrix}.
 \end{equation*}
-</div></div></div></details></div></article></details> <div class="para logical">
+</div></div></div></details></div></article></details><div class="para logical">
 <div class="para">Now, let’s take the vector <span class="process-math">\([4,3]\)</span> and multiply it by a scalar, say <span class="process-math">\(7\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -121,7 +129,9 @@ T_1\left(7\begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para">Diagrammatically, this can be represented as follows.</div>
-</div> <div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="generated/latex-image/init-lintransintro-4.svg" role="img" class="contained" alt="T with domain and codomain pictured"></div> <div class="para logical">
+</div>
+<div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="generated/latex-image/init-lintransintro-4.svg" role="img" class="contained" alt="T with domain and codomain pictured"></div>
+<div class="para logical">
 <div class="para">You should try to verify that this property does not hold for transformation <span class="process-math">\(T_2\text{.}\)</span>  In other words,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-sum.html ./knowl/xref/lin2.html ./knowl/xref/prob-prob2.html">
 \begin{equation*}
@@ -137,16 +147,16 @@ T_2\left(7\begin{bmatrix}
 <div class="para">There is nothing special about the number <span class="process-math">\(7\text{,}\)</span> and it is not hard to prove that for any scalar <span class="process-math">\(k\)</span> and vector <span class="process-math">\(\mathbf{u}\)</span> of <span class="process-math">\(\R^2\text{,}\)</span> <span class="process-math">\(T_1\)</span> satisfies</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-sum.html ./knowl/xref/lin2.html ./knowl/xref/prob-prob2.html">
 \begin{equation}
-kT_1(\mathbf{u})= T_1(k\mathbf{u}).\tag{6.2.1}
+kT_1(\mathbf{u})= T_1(k\mathbf{u}).\tag{2.6.1}
 \end{equation}
 </div>
 <div class="para">It turns out that <span class="process-math">\(T_1\)</span> satisfies another important property. For all vectors <span class="process-math">\(\mathbf{u}\)</span> and <span class="process-math">\(\mathbf{v}\)</span> of <span class="process-math">\(\R^2\)</span> we have:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-sum.html ./knowl/xref/lin2.html ./knowl/xref/prob-prob2.html">
 \begin{equation}
-T_1(\mathbf{u}+\mathbf{v}) = T_1(\mathbf{u})+T_1(\mathbf{v})\tag{6.2.2}
+T_1(\mathbf{u}+\mathbf{v}) = T_1(\mathbf{u})+T_1(\mathbf{v})\tag{2.6.2}
 \end{equation}
 </div>
-<div class="para">We leave it to the reader to illustrate this property with a specific example (see <a href="Section-Linear-Transformations.html#prob-sum" class="xref" data-knowl="./knowl/xref/prob-sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 6.2.7.1">Exercise 6.2.7.1</a>).  We will show that <span class="process-math">\(T_1\)</span> satisfies <a href="Section-Linear-Transformations.html#lin2" class="xref" data-knowl="./knowl/xref/lin2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.2">(6.2.2)</a> in general. Let</div>
+<div class="para">We leave it to the reader to illustrate this property with a specific example (see <a href="Section-Linear-Transformations.html#prob-sum" class="xref" data-knowl="./knowl/xref/prob-sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.6.7.1">Exercise 2.6.7.1</a>).  We will show that <span class="process-math">\(T_1\)</span> satisfies <a href="Section-Linear-Transformations.html#lin2" class="xref" data-knowl="./knowl/xref/lin2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.6.2">(2.6.2)</a> in general. Let</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-sum.html ./knowl/xref/lin2.html ./knowl/xref/prob-prob2.html">
 \begin{equation*}
 \mathbf{u}=\begin{bmatrix}
@@ -196,10 +206,10 @@ v_2
 <div class="para">It turns out that <span class="process-math">\(T_2\)</span> fails to satisfy this property.  Can you prove that this is the case?  Remember that to prove that a property DOES NOT hold, it suffices to find a counter-example.  See if you can find vectors <span class="process-math">\(\mathbf{u}\)</span> and <span class="process-math">\(\mathbf{v}\)</span> such that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prob-sum.html ./knowl/xref/lin2.html ./knowl/xref/prob-prob2.html">
 \begin{equation}
-T_2(\mathbf{u}+\mathbf{v}) \neq T_2(\mathbf{u})+T_2(\mathbf{v}).\tag{6.2.3}
+T_2(\mathbf{u}+\mathbf{v}) \neq T_2(\mathbf{u})+T_2(\mathbf{v}).\tag{2.6.3}
 \end{equation}
 </div>
-<div class="para">See <a href="Section-Linear-Transformations.html#prob-prob2" class="xref" data-knowl="./knowl/xref/prob-prob2.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 6.2.7.2">Exercise 6.2.7.2</a> for more on this.</div>
+<div class="para">See <a href="Section-Linear-Transformations.html#prob-prob2" class="xref" data-knowl="./knowl/xref/prob-prob2.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.6.7.2">Exercise 2.6.7.2</a> for more on this.</div>
 </div></article><span class="incontext"><a class="internal" href="Section-Linear-Transformations.html#init-lintransintro">in-context</a></span>
 </body>
 </html>
