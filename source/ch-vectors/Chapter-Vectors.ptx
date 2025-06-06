@@ -31,27 +31,53 @@
             </li>
             <li>
                 <p>
+                    Describe the span of a set of vectors in <m> \mathbb{R}^n </m>.
+                </p>
+            </li>
+            <li>
+                <p>
                     Interpret a system of linear equations as a vector equation.
                 </p>
             </li>
             <li>
                 <p>
-                    Describe the span of a set of vectors in <m> \mathbb{R}^n </m>.
+                    Define the matrix-vector product as a linear combination of the columns of the matrix.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Express a solution to a system of linear equations as a sum of a particular solution and a solution to the associated homogeneous system.
                 </p>
             </li>
             <li>
                 <p>
                     Determine linear independence / dependence of a set of vectors in <m> \mathbb{R}^n </m>.
                 </p>
-            </li> 
-            
+            </li>
+            <li>
+                <p>
+                    Interpret a matrix as a linear transformation from <m>\mathbb{R}^n</m> to <m>\mathbb{R}^m</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Produce a matrix representation of a linear transformation given its action on the standard unit vectors.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Identify some basic geometric transformations of the plane.
+                </p>
+            </li>
         </ul>
 </objectives>
 
   <!-- include sections --> 
 <xi:include href="Section-Introduction-to-Vectors.ptx"/>
-<xi:include href="Section-Linear-Combinations-of-Vectors.ptx"/>
-<!--<xi:include href="Section-Span.ptx"/>-->
+<xi:include href="Section-Linear-Combinations-of-Vectors-and-Span.ptx"/>
+<xi:include href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.ptx"/>
+<xi:include href="Section-Homogeneous-Linear-Systems.ptx"/>
 <xi:include href="Section-Linear-Independence.ptx"/>
+<xi:include href="Section-Linear-Transformations.ptx"/>
   
 </chapter>

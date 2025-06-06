@@ -11,32 +11,32 @@
         <ul>
             <li>
                 <p>
-                Interpret a matrix as a linear transformation from <m>\mathbb{R}^n</m> to <m>\mathbb{R}^m</m>.
+                    Interpret a matrix as a linear transformation from <m>\mathbb{R}^n</m> to <m>\mathbb{R}^m</m>.
                 </p>
             </li>
             <li>
                 <p>
-                Produce a matrix representation of a linear transformation given its action on the standard unit vectors.
+                    Produce a matrix representation of a linear transformation given its action on the standard unit vectors.
                 </p>
             </li>
             <li>
                 <p>
-                Identify some basic geometric transformations of the plane.
+                    Identify some basic geometric transformations of the plane.
                 </p>
             </li>
             <li>
                 <p>
-                Discuss the kernel and image of the transformation geometrically and in terms of nullity and rank of the matrix. 
+                    Discuss the kernel and image of the transformation geometrically and in terms of nullity and rank of the matrix. 
                 </p>
             </li> 
             <li>
                 <p>
-                Give examples of linear transformations that are invertible or not invertible.
+                    Give examples of linear transformations that are invertible or not invertible.
                 </p>
             </li>
             <li>
                 <p>
-                Interpret a matrix product as a composition of linear transformations.
+                    Interpret a matrix product as a composition of linear transformations.
                 </p>
             </li>
         </ul>

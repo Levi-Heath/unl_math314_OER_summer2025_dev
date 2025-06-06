@@ -23,25 +23,10 @@
                 <p>
                 Discuss associativity and noncommutativity of matrix multiplication.
                 </p>
-            </li>
-            <li>
-                <p>
-                Interpret a matrix-vector product as a linear combination of the columns of the matrix.
-                </p>
             </li> 
             <li>
                 <p>
-                Employ block multiplication of matrices, when advantageous.
-                </p>
-            </li>
-            <li>
-                <p>
                     Compute the transpose of a matrix. 
-                </p>
-            </li>
-            <li>
-                <p>
-                    Express a solution to a system of linear equations as a sum of a particular solution and a solution to the associated homogeneous system.
                 </p>
             </li>
             <li>
@@ -68,12 +53,7 @@
 </objectives>
 
   <!-- include sections --> 
- <xi:include href="Section-Addition-and-Scalar-Multiplication-of-Matrices.ptx"/>
- <!--<xi:include href="Section-Matrix-Multiplication.ptx"/>-->
- <!--<xi:include href="Section-Block-Matrix-Multiplication.ptx"/>-->
-<!-- <xi:include href="Section-Transpose-of-a-Matrix.ptx"/>-->
- <xi:include href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.ptx"/>
- <xi:include href="Section-Homogeneous-Linear-Systems.ptx"/>
+ <xi:include href="Section-Matrix-Operations.ptx"/>
  <xi:include href="Section-The-Inverse-of-a-Matrix.ptx"/>
  <xi:include href="Section-Elementary-Matrices.ptx"/>
  <xi:include href="Section-LU-Factorization.ptx"/>
