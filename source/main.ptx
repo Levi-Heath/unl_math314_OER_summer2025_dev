@@ -14,7 +14,6 @@
     <xi:include href="./ch-systems-of-lin-eqns/Chapter-Systems-of-Linear-Equations.ptx" />
     <xi:include href="./ch-vectors/Chapter-Vectors.ptx" />
     <xi:include href="./ch-matrices/Chapter-Matrices.ptx" />
-    <xi:include href="./ch-subspaces-of-Rn/Chapter-Subspaces-of-Rn.ptx" />
     <xi:include href="./ch-vector-spaces/Chapter-Vector-Spaces.ptx" />
     <xi:include href="./ch-determinants/Chapter-Determinants.ptx" />
     <xi:include href="./ch-eigenvalues-and-eigenvectors/Chapter-Eigenvalues-and-Eigenvectors.ptx" />
