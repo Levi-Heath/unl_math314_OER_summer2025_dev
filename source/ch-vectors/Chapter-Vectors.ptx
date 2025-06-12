@@ -75,7 +75,7 @@
   <!-- include sections --> 
 <xi:include href="Section-Introduction-to-Vectors.ptx"/>
 <xi:include href="Section-Linear-Combinations-of-Vectors-and-Span.ptx"/>
-<xi:include href="Section-Linear-Systems-as-Matrix-and-Linear-Combination-Equations.ptx"/>
+<xi:include href="Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.ptx"/>
 <xi:include href="Section-Homogeneous-Linear-Systems.ptx"/>
 <xi:include href="Section-Linear-Independence.ptx"/>
 <xi:include href="Section-Linear-Transformations.ptx"/>
