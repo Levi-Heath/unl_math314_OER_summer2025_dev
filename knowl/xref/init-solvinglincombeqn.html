@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
+</h4>
+<div class="para">Express <span class="process-math">\(\begin{bmatrix}3\\ -4\end{bmatrix}\)</span> as a linear combination of <span class="process-math">\(\begin{bmatrix}-1\\ 3\end{bmatrix}\)</span> and <span class="process-math">\(\begin{bmatrix}-4\\ 2\end{bmatrix}\)</span> or determine if it is not possible.</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical">
+<div class="para">We need to solve for scalars <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_1\begin{bmatrix}-1\\3\end{bmatrix}+x_2\begin{bmatrix}-4\\2\end{bmatrix}=\begin{bmatrix}3\\-4\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Simplifying the left-hand side, we get the equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}-x_1-4x_2\\3x_1+2x_2\end{bmatrix}=\begin{bmatrix}3\\-4\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">This gives us the system of equations</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ccc}
+-x_1-4x_2 \amp = \amp 3 \\
+3x_1+2x_2 \amp = \amp -4
+\end{array}.
+\end{equation*}
+</div>
+<div class="para">Now we solve the system by row reducing the augmented matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c}
+-1 \amp -4 \amp 3 \\
+3 \amp 2 \amp -4
+\end{array}\right].
+\end{equation*}
+</div>
+<div class="para">The reduced row echelon form of this matrix is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cc|c}
+1 \amp 0 \amp -2 \\
+0 \amp 1 \amp -1
+\end{array}\right].
+\end{equation*}
+</div>
+<div class="para">The solution to the system is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_1 = -2, \quad x_2 = -1.
+\end{equation*}
+</div>
+<div class="para">So, we can express <span class="process-math">\(\begin{bmatrix}3\\-4\end{bmatrix}\)</span> as a linear combination of <span class="process-math">\(\begin{bmatrix}-1\\3\end{bmatrix}\)</span> and <span class="process-math">\(\begin{bmatrix}-4\\2\end{bmatrix}\)</span> as follows:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}3\\-4\end{bmatrix} = -2\begin{bmatrix}-1\\3\end{bmatrix} + (-1)\begin{bmatrix}-4\\2\end{bmatrix}.
+\end{equation*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="Section-Linear-Combinations-of-Vectors-and-Span.html#init-solvinglincombeqn">in-context</a></span>
+</body>
+</html>

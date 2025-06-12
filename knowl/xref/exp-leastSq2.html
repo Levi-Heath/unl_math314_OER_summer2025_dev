@@ -19,7 +19,7 @@
 </head>
 <body class="ignore-math">
 <article class="exploration project-like"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">8.6.2</span><span class="period">.</span>
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">7.6.2</span><span class="period">.</span>
 </h4>
 <div class="para">Consider the points <span class="process-math">\((1,1)\text{,}\)</span> <span class="process-math">\((2, 3)\)</span> and <span class="process-math">\((4,4)\text{.}\)</span>  These points do not lie on a straight line, but they have a general upward linear trend.  (Typically there would be many more points to consider, but we will limit our exploration to what we can do by hand.)  Our goal is to find a line that fits these points as closely as possible.</div>
 <div class="para logical">
@@ -31,7 +31,7 @@ a(2)\amp + b\amp = 3 \\
 a(4)\amp + b\amp = 4 
 \end{align*}
 </div>
-<div class="para">From the first part of this section we know how to find a best approximation.  By <a href="Section-QR-Factorization-and-Least-Square-Approximations.html#th-bestApprox" class="xref" data-knowl="./knowl/xref/th-bestApprox.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.12">Theorem 8.6.12</a>, we have</div>
+<div class="para">From the first part of this section we know how to find a best approximation.  By <a href="Section-QR-Factorization-and-Least-Square-Approximations.html#th-bestApprox" class="xref" data-knowl="./knowl/xref/th-bestApprox.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.6.12">Theorem 7.6.12</a>, we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-bestApprox.html">
 \begin{align*}
 \mathbf{z}=\begin{bmatrix}a\\b\end{bmatrix}\amp = \left(A^TA\right)^{-1}A^T\mathbf{b} \\
@@ -57,17 +57,17 @@ f(x)=\frac{13}{14}x+\frac{1}{2}.
 \begin{equation}
 \mathbf{b}-A\mathbf{z}=\begin{bmatrix}1\\3\\4\end{bmatrix}-\begin{bmatrix}(13/14)(1)+1/2\\(13/14)(2)+1/2\\{(13/14)(4)+1/2}\end{bmatrix}\approx\begin{bmatrix}
 -0.43\\0.64\\-0.21
-\end{bmatrix}.\tag{8.6.4}
+\end{bmatrix}.\tag{7.6.4}
 \end{equation}
 </div>
 <div class="para">Observe that each entry of <span class="process-math">\(\mathbf{b}-A\mathbf{z}\)</span> is the signed vertical distance between a particular point and the line. Instead of computing the error, <span class="process-math">\(\norm{\mathbf{b}-A\mathbf{z}}\text{,}\)</span> we compute <span class="process-math">\(\norm{\mathbf{b}-A\mathbf{z}}^2\)</span> to avoid the square root.</div>
 <div class="displaymath process-math">
 \begin{equation}
-\norm{\mathbf{b}-A\mathbf{z}}^2=(-0.43)^2+0.64^2+(-0.21)^2\approx 0.64.\tag{8.6.5}
+\norm{\mathbf{b}-A\mathbf{z}}^2=(-0.43)^2+0.64^2+(-0.21)^2\approx 0.64.\tag{7.6.5}
 \end{equation}
 </div>
 <div class="para">Minimizing <span class="process-math">\(\norm{\mathbf{b}-A\mathbf{z}}\)</span> also minimizes <span class="process-math">\(\norm{\mathbf{b}-A\mathbf{z}}^2\text{.}\)</span> Therefore, what we have minimized is the sum of squares of the vertical distances between the data points and the line. The following GeoGebra interactive will help you explore this idea.</div>
 </div>
-<figure class="figure figure-like"><iframe id="geogebra-Regression-interaction" width="780" height="534" src="geogebra-Regression-interaction-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.6.15<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><span class="incontext"><a class="internal" href="Section-QR-Factorization-and-Least-Square-Approximations.html#exp-leastSq2">in-context</a></span>
+<figure class="figure figure-like"><iframe id="geogebra-Regression-interaction" width="780" height="534" src="geogebra-Regression-interaction-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.6.15<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><span class="incontext"><a class="internal" href="Section-QR-Factorization-and-Least-Square-Approximations.html#exp-leastSq2">in-context</a></span>
 </body>
 </html>
