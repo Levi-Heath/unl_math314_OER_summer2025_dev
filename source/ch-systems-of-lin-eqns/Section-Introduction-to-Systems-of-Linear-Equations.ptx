@@ -22,7 +22,7 @@
 
         <exploration xml:id="init-systwoeqs1">
             <p> 
-                The purpose of this problem is to formalize what you may already know (perhaps under a different name) about <term>elementary row operations</term> as means of solving systems of linear equations.  Consider the system
+                This problem formalizes what you may already know (perhaps under a different name) about <term>elementary row operations</term> as means of solving systems of linear equations.  Consider the system
                 <me>
                     \begin{matrix}
                     2x\amp   -\amp   y\amp  =\amp  -4\\
