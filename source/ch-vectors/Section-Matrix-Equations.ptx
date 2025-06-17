@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Linear Systems as Linear Combination and Matrix Equations</title>
+<section xml:id="Section-Matrix-Equations" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Matrix Equations</title>
 
     <exploration xml:id="init-matrixmultsyseq">
         <p>
