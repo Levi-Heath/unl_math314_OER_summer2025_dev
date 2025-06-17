@@ -1906,7 +1906,70 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.3",
   "title": "Matrix Equations",
-  "body": " Matrix Equations   Consider the linear system Let's construct the coefficient matrix and multiply it by on the right: Observe that each component of the product vector corresponds to one of the equations in the system. Let . Then  is a matrix equation that corresponds to our system of equations.   In general, a system of linear equations can be written as a matrix equation as follows: Solving this matrix equation (or showing that a solution does not exist) amounts to finding the reduced row-echelon form of the augmented matrix   Being able to use matrices to rewrite and solve systems of equations is crucial, so here are two examples to get you into this mindset.    Given a linear system    Write the system as a matrix equation    Solve the system and the matrix equation       The matrix equation that corresponds to the system is The augmented matrix that corresponds to the original system and its reduced row-echelon form are This shows that the ordered pair is a solution to the system. We conclude that is a solution to the matrix equation in . A quick verification confirms this       Let Solve .    We write the equation in augmented matrix form and apply elementary row operations to find its reduced row-echelon form. One way to obtain a solution is to convert this to a system of equations. It is not necessary to write the system down, but it helps to think about it as you write out your solution vector. We see that and are leading variables because they correspond to leading 1s in the reduced row-echelon form , while and are free variables. We start by assigning parameters and to and , respectively, then solve for and . We can now write the solution vector as follows     The solution given in is an example of a general solution because it accounts for all of the solutions to the system. Letting and take on specific values produces particular solutions . For example, is a particular solution that corresponds to , .   Singular and Nonsingular Matrices  Our examples so far involved non-square matrices. Square matrices, however, play a very important role in linear algebra. This section will focus on square matrices. We start the paragraph with an example to motivate.    Let Solve .    We apply elementary row operations to bring the augmented matrix to its reduced row-echelon form. We can immediately see that the solution vector is     Observe that the left-hand side of the augmented matrix in is the identity matrix . This means that .  The elementary row operations that carried to were not dependent on the vector . In fact, the same row reduction process can be applied to the matrix equation for any vector to obtain a unique solution.    Given a matrix such that , the system will never be inconsistent because we will never have a row like this: . Neither will we have infinitely many solutions because there will never be free variables. Matrices such as deserve special attention.    A square matrix is said to be nonsingular provided that . Otherwise we say that is singular .    Non-singular matrices have many useful properties.    The following statements are equivalent for an matrix .   is nonsingular     has a unique solution for any in      has only the trivial solution        We will prove equivalence of the three statements by showing that   [Proof of ]: Suppose . Given any vector in , the augmented matrix can be carried to its reduced row-echelon form . Uniqueness of the reduced row-echelon form guarantees that is the unique solution of .  [Proof of ]: Suppose has a unique solution for all vectors . Then has a unique solution. But is always a solution to . Therefore is the only solution.  [Proof of ]: Suppose has only the trivial solution. This means that is the only solution of . But then, we know that the augmented matrix can be reduced to . The same row operations will carry to .      Not all square matrices are nonsingular. For example,     By , a matrix equation involving a singular matrix cannot have a unique solution. The following example illustrates the two scenarios that arise when solving equations that involve singular matrices.    Let Solve the equation for each case of below or show that hte system is inconsistent.                For , row reduction gives us There are infinitely many solutions and they all have the following form:   For , the vector is changed and the row operations that take to its reduced row-echelon form produce a in the last row of the vector on the right, which shows that the system is inconsistent.       A Linear System as a Linear Combination Equation  Recall that the product of a matrix and a vector can be interpreted as a linear combination of the columns of the matrix. For example,     For each given matrix and vector , determine whether is a linear combination of the columns of . If possible, express as a linear combination of the columns of .                For , we are looking for such that Solving this equation amounts to finding such that . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are So, is a solution to the matrix equation. We conclude that is a linear combination of the columns of , and write   For We begin by attempting to solve the matrix equation . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are This shows that this matrix equation has no solutions. We conclude that is not a linear combination of the columns of .        Given the system of linear equations below, write (a) the corresponding matrix equation, and (b) the corresponding linear combination equation. DO NOT SOLVE.       Use an augmented matrix and elementary row operations to find coefficients and that make the expression true, or demonstrate that such coefficients do not exist.                      The system is inconsistent and no exist.       In each problem below determine whether vector is in the span of the given set of vectors.     and    The vector is not in the span.       and     The vector is in the span.       and     The vector is not in the span.      "
+  "body": " Matrix Equations   Matrix-Vector Multiplication  In the previous section, we saw that a linear comination equation can be expressed as a system of linear equations. Linear combinations are not the only type of equations that can be reinterpreted as systems of linear equations. In this section, we will introduce matrix equations , which are another representation of a system of linear equations. Before we do that, we need to introduce the concept of matrix-vector multiplication .   Matrix-vector multiplication or the matrix-vector product is an operation between a matrix and a vector that produces another vector, their product . The formal definition requires dense notation, so we work through an example before presenting it.    Let   The matrix-vector product is a linear combination of the columns of with coefficients given by the entries in . For this example, We can also compute the product one entry at a time. First, let's focus on the first row of . Next, let's look a the second row of . Finally, let's do the third row of .       Let be an matrix, and let be an vector. The product is the vector given by: or, equivalently,     We can now make a couple of observations about the matrix-vector product. The first observation is part of the definition, but it is still worth pointing out.   In order for the product to exist, and must have compatible dimensions. In particular, vector must have as many components as the number of columns of (otherwise, we would not be have a well-defined linear combination of the columns). So, if is an matrix, must be an vector. If we write these dimensions next to each other, we will notice that the inner dimensions ( ) must match, while the outer dimensions, and , give us the dimensions of the product.      Let's find another matrix-vector product.    Let Find .           Matrix Equations  Given an matrix and an constant vector , a matrix equation is an equation of the form . The solution, if it exists, is an vector that satisfies the equation.   Consider the linear system Let's construct the coefficient matrix and multiply it by on the right: Observe that each component of the product vector corresponds to one of the equations in the system. Let . Then  is a matrix equation that corresponds to our system of equations.   In general, a system of linear equations can be written as a matrix equation as follows: Solving this matrix equation (or showing that a solution does not exist) amounts to finding the reduced row-echelon form of the augmented matrix   Being able to use matrices to rewrite and solve systems of equations is crucial, so here are two examples to get you into this mindset.    Given a linear system    Write the system as a matrix equation    Solve the system and the matrix equation       The matrix equation that corresponds to the system is The augmented matrix that corresponds to the original system and its reduced row-echelon form are This shows that the ordered pair is a solution to the system. We conclude that is a solution to the matrix equation in . A quick verification confirms this       Let Solve .    We write the equation in augmented matrix form and apply elementary row operations to find its reduced row-echelon form. One way to obtain a solution is to convert this to a system of equations. It is not necessary to write the system down, but it helps to think about it as you write out your solution vector. We see that and are leading variables because they correspond to leading 1s in the reduced row-echelon form , while and are free variables. We start by assigning parameters and to and , respectively, then solve for and . We can now write the solution vector as follows     The solution given in is an example of a general solution because it accounts for all of the solutions to the system. Letting and take on specific values produces particular solutions . For example, is a particular solution that corresponds to , .    Singular and Nonsingular Matrices  Our examples so far involved non-square matrices. Square matrices, however, play a very important role in linear algebra. This section will focus on square matrices. We start the paragraph with an example to motivate.    Let Solve .    We apply elementary row operations to bring the augmented matrix to its reduced row-echelon form. We can immediately see that the solution vector is     Observe that the left-hand side of the augmented matrix in is the identity matrix . This means that .  The elementary row operations that carried to were not dependent on the vector . In fact, the same row reduction process can be applied to the matrix equation for any vector to obtain a unique solution.    Given a matrix such that , the system will never be inconsistent because we will never have a row like this: . Neither will we have infinitely many solutions because there will never be free variables. Matrices such as deserve special attention.    A square matrix is said to be nonsingular provided that . Otherwise we say that is singular .    Non-singular matrices have many useful properties.    The following statements are equivalent for an matrix .   is nonsingular     has a unique solution for any in      has only the trivial solution        We will prove equivalence of the three statements by showing that   [Proof of ]: Suppose . Given any vector in , the augmented matrix can be carried to its reduced row-echelon form . Uniqueness of the reduced row-echelon form guarantees that is the unique solution of .  [Proof of ]: Suppose has a unique solution for all vectors . Then has a unique solution. But is always a solution to . Therefore is the only solution.  [Proof of ]: Suppose has only the trivial solution. This means that is the only solution of . But then, we know that the augmented matrix can be reduced to . The same row operations will carry to .      Not all square matrices are nonsingular. For example,     By , a matrix equation involving a singular matrix cannot have a unique solution. The following example illustrates the two scenarios that arise when solving equations that involve singular matrices.    Let Solve the equation for each case of below or show that hte system is inconsistent.                For , row reduction gives us There are infinitely many solutions and they all have the following form:   For , the vector is changed and the row operations that take to its reduced row-echelon form produce a in the last row of the vector on the right, which shows that the system is inconsistent.       Connection to Linear Combination Equations  Recall that the product of a matrix and a vector can be interpreted as a linear combination of the columns of the matrix. For example,     For each given matrix and vector , determine whether is a linear combination of the columns of . If possible, express as a linear combination of the columns of .                For , we are looking for such that Solving this equation amounts to finding such that . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are So, is a solution to the matrix equation. We conclude that is a linear combination of the columns of , and write   For We begin by attempting to solve the matrix equation . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are This shows that this matrix equation has no solutions. We conclude that is not a linear combination of the columns of .        Given the system of linear equations below, write (a) the corresponding matrix equation, and (b) the corresponding linear combination equation. DO NOT SOLVE.       Use an augmented matrix and elementary row operations to find coefficients and that make the expression true, or demonstrate that such coefficients do not exist.                      The system is inconsistent and no exist.       In each problem below determine whether vector is in the span of the given set of vectors.     and    The vector is not in the span.       and     The vector is in the span.       and     The vector is not in the span.      "
+},
+{
+  "id": "Subsection-Matrix-Vector-Multiplication-2",
+  "level": "2",
+  "url": "Section-Matrix-Equations.html#Subsection-Matrix-Vector-Multiplication-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "matrix equations matrix-vector multiplication "
+},
+{
+  "id": "Subsection-Matrix-Vector-Multiplication-3",
+  "level": "2",
+  "url": "Section-Matrix-Equations.html#Subsection-Matrix-Vector-Multiplication-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Matrix-vector multiplication matrix-vector product "
+},
+{
+  "id": "exp-matrixvectormultdef",
+  "level": "2",
+  "url": "Section-Matrix-Equations.html#exp-matrixvectormultdef",
+  "type": "Example",
+  "number": "2.3.1",
+  "title": "",
+  "body": "  Let   The matrix-vector product is a linear combination of the columns of with coefficients given by the entries in . For this example, We can also compute the product one entry at a time. First, let's focus on the first row of . Next, let's look a the second row of . Finally, let's do the third row of .    "
+},
+{
+  "id": "def-matrixvectormult",
+  "level": "2",
+  "url": "Section-Matrix-Equations.html#def-matrixvectormult",
+  "type": "Definition",
+  "number": "2.3.2",
+  "title": "",
+  "body": "  Let be an matrix, and let be an vector. The product is the vector given by: or, equivalently,    "
+},
+{
+  "id": "Subsection-Matrix-Vector-Multiplication-7",
+  "level": "2",
+  "url": "Section-Matrix-Equations.html#Subsection-Matrix-Vector-Multiplication-7",
+  "type": "Observation",
+  "number": "2.3.3",
+  "title": "",
+  "body": " In order for the product to exist, and must have compatible dimensions. In particular, vector must have as many components as the number of columns of (otherwise, we would not be have a well-defined linear combination of the columns). So, if is an matrix, must be an vector. If we write these dimensions next to each other, we will notice that the inner dimensions ( ) must match, while the outer dimensions, and , give us the dimensions of the product.   "
+},
+{
+  "id": "ex-matrixvectormultpractice",
+  "level": "2",
+  "url": "Section-Matrix-Equations.html#ex-matrixvectormultpractice",
+  "type": "Example",
+  "number": "2.3.4",
+  "title": "",
+  "body": "  Let Find .        "
+},
+{
+  "id": "Subsection-Matrix-Equations-2",
+  "level": "2",
+  "url": "Section-Matrix-Equations.html#Subsection-Matrix-Equations-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "matrix equation "
 },
 {
   "id": "init-matrixmultsyseq",
@@ -1922,7 +1985,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#ex-linsysmatrixmult",
   "type": "Example",
-  "number": "2.3.1",
+  "number": "2.3.5",
   "title": "",
   "body": "  Given a linear system    Write the system as a matrix equation    Solve the system and the matrix equation       The matrix equation that corresponds to the system is The augmented matrix that corresponds to the original system and its reduced row-echelon form are This shows that the ordered pair is a solution to the system. We conclude that is a solution to the matrix equation in . A quick verification confirms this    "
 },
@@ -1931,14 +1994,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#ex-solveAxequalb",
   "type": "Example",
-  "number": "2.3.2",
+  "number": "2.3.6",
   "title": "",
   "body": "  Let Solve .    We write the equation in augmented matrix form and apply elementary row operations to find its reduced row-echelon form. One way to obtain a solution is to convert this to a system of equations. It is not necessary to write the system down, but it helps to think about it as you write out your solution vector. We see that and are leading variables because they correspond to leading 1s in the reduced row-echelon form , while and are free variables. We start by assigning parameters and to and , respectively, then solve for and . We can now write the solution vector as follows    "
 },
 {
-  "id": "Section-Matrix-Equations-7",
+  "id": "Subsection-Matrix-Equations-8",
   "level": "2",
-  "url": "Section-Matrix-Equations.html#Section-Matrix-Equations-7",
+  "url": "Section-Matrix-Equations.html#Subsection-Matrix-Equations-8",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1949,7 +2012,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#ex-nonsingularintro",
   "type": "Example",
-  "number": "2.3.3",
+  "number": "2.3.7",
   "title": "",
   "body": "  Let Solve .    We apply elementary row operations to bring the augmented matrix to its reduced row-echelon form. We can immediately see that the solution vector is    "
 },
@@ -1958,7 +2021,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#def-nonsingularmatrix",
   "type": "Definition",
-  "number": "2.3.4",
+  "number": "2.3.8",
   "title": "",
   "body": "  A square matrix is said to be nonsingular provided that . Otherwise we say that is singular .   "
 },
@@ -1967,7 +2030,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#th-nonsingularequivalency1",
   "type": "Theorem",
-  "number": "2.3.5",
+  "number": "2.3.9",
   "title": "",
   "body": "  The following statements are equivalent for an matrix .   is nonsingular     has a unique solution for any in      has only the trivial solution        We will prove equivalence of the three statements by showing that   [Proof of ]: Suppose . Given any vector in , the augmented matrix can be carried to its reduced row-echelon form . Uniqueness of the reduced row-echelon form guarantees that is the unique solution of .  [Proof of ]: Suppose has a unique solution for all vectors . Then has a unique solution. But is always a solution to . Therefore is the only solution.  [Proof of ]: Suppose has only the trivial solution. This means that is the only solution of . But then, we know that the augmented matrix can be reduced to . The same row operations will carry to .   "
 },
@@ -1976,7 +2039,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#Subsection-Singular-and-Nonsingular-Matrices-10",
   "type": "Remark",
-  "number": "2.3.6",
+  "number": "2.3.10",
   "title": "",
   "body": "  Not all square matrices are nonsingular. For example,    "
 },
@@ -1985,7 +2048,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#ex-infinfeasible",
   "type": "Example",
-  "number": "2.3.7",
+  "number": "2.3.11",
   "title": "",
   "body": "  Let Solve the equation for each case of below or show that hte system is inconsistent.                For , row reduction gives us There are infinitely many solutions and they all have the following form:   For , the vector is changed and the row operations that take to its reduced row-echelon form produce a in the last row of the vector on the right, which shows that the system is inconsistent.    "
 },
@@ -1994,7 +2057,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#ex-linearcombofcols2",
   "type": "Example",
-  "number": "2.3.8",
+  "number": "2.3.12",
   "title": "",
   "body": "  For each given matrix and vector , determine whether is a linear combination of the columns of . If possible, express as a linear combination of the columns of .                For , we are looking for such that Solving this equation amounts to finding such that . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are So, is a solution to the matrix equation. We conclude that is a linear combination of the columns of , and write   For We begin by attempting to solve the matrix equation . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are This shows that this matrix equation has no solutions. We conclude that is not a linear combination of the columns of .   "
 },
@@ -2003,16 +2066,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#prob-systomatrixeq",
   "type": "Exercise",
-  "number": "2.3.3.1",
+  "number": "2.3.5.1",
   "title": "",
   "body": "  Given the system of linear equations below, write (a) the corresponding matrix equation, and (b) the corresponding linear combination equation. DO NOT SOLVE.    "
 },
 {
-  "id": "Section-Matrix-Equations-10-2-2",
+  "id": "Section-Matrix-Equations-6-2-2",
   "level": "2",
-  "url": "Section-Matrix-Equations.html#Section-Matrix-Equations-10-2-2",
+  "url": "Section-Matrix-Equations.html#Section-Matrix-Equations-6-2-2",
   "type": "Exercise",
-  "number": "2.3.3.2",
+  "number": "2.3.5.2",
   "title": "",
   "body": "           "
 },
@@ -2021,7 +2084,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#prob-lincombeq2",
   "type": "Exercise",
-  "number": "2.3.3.3",
+  "number": "2.3.5.3",
   "title": "",
   "body": "       The system is inconsistent and no exist.   "
 },
@@ -2030,7 +2093,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#spanofvect1",
   "type": "Exercise",
-  "number": "2.3.3.4",
+  "number": "2.3.5.4",
   "title": "",
   "body": "  and    The vector is not in the span.   "
 },
@@ -2039,7 +2102,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#prob-spanofvect2",
   "type": "Exercise",
-  "number": "2.3.3.5",
+  "number": "2.3.5.5",
   "title": "",
   "body": "   and     The vector is in the span.   "
 },
@@ -2048,7 +2111,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#prob-spanofvect3",
   "type": "Exercise",
-  "number": "2.3.3.6",
+  "number": "2.3.5.6",
   "title": "",
   "body": "   and     The vector is not in the span.   "
 },
