@@ -1621,18 +1621,18 @@ var ptx_lunr_docs = [
   "body": "  Let . Apply the concepts from this section to find a vector that points in the same direction as and whose length is 5.        "
 },
 {
-  "id": "Section-Linear-Combinations-of-Vectors-and-Span",
+  "id": "Section-Linear-Combination-Equations-and-Span",
   "level": "1",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html",
+  "url": "Section-Linear-Combination-Equations-and-Span.html",
   "type": "Section",
   "number": "2.2",
-  "title": "Linear Combinations of Vectors and Span",
-  "body": " Linear Combinations of Vectors and Span  When studying vectors, the two main operations we have learned about are vector addition and scalar multiplication. Both are involved in the important concept of a linear combination of vectors.    A vector is said to be a linear combination of vectors if for some scalars .    For example, is a linear combination of , and because     Moving forward, vectors will also be written in horizontal notation instead of vertical. This is mainly for notational reasons. For instance, the vector would instead in midtext be denoted by . This is justified, as any point in in can be thought of as the vector starting from the orign and with direction .     Visualizing Linear Combinations in and   Answer the questions below using the GeoGebra interactive. To use the interactive, you can   change vectors and by dragging the tips of these vectors.    change the coefficients and of the linear combination by using sliders.            Let and . Find and such that            Let and . Find and such that            Use the same vectors and as in the previous part. Do you think it is possible to express any vector in as a linear combination of and ?           Let and . Do you think it is possible to express any vector in as a linear combination of and . Argue why\/why not and write?          Visualizing linear combinations of vectors in is more difficult than doing so in . The following GeoGebra interactive will help you do this.   To use the interactive, define vectors , and . Use sliders to change the coefficients and of the linear combination. The linear combination is shown as the pink vector along the diagonal of the parallelepiped. RIGHT-CLICK and DRAG the left panel to rotate the image.          Solving Linear Combination Equations  A linear combination equation is an equation of the form where and are vectors in , and are unknowns.    Express as a linear combination of and or determine if it is not possible.    We need to solve for scalars and such that Simplifying the left-hand side, we get the equation This gives us the system of equations Now we solve the system by row reducing the corresponding augmented matrix: Hence, the solution to the system is and , and we can express as a linear combination of and as follows:     To solve the linear combination equation in , we reinterpreted it as a system of linear equations. In general, the linear combination equation corresponds to the system of equations Hence, to solve the linear combination equation , we can row reduce the augmented matrix The resulting row echelon form will give us the solution to the linear combination equation. If the system is consistent, then is a linear combination of the vectors If the system is inconsistent, then is not a linear combination of the vectors .    Can the vector be written as a linear combination of vectors and ?    We will start with a geometric approach.  Three vectors drawn   Observe that and are scalar multiples of each other and lie on the same line. A linear combination of and has the form: This shows that all linear combinations of and will be scalar multiples of , and therefore lie on the same line as . Since does not lie on the line determined by it cannot be expressed as a linear combination of and .  We can also address this question algebraically. To express as a linear combination of and , we need to solve the equation. This corresponds to the system of equations and augmented matrix Let's row reduce this matrix to see if the system is consistent: As we reduce the augmented matrix, notice that there is a pivot in the last column. This means the system is inconsistent, and therefore cannot be written as a linear combination of and .      Express as a linear combination of and . Interpret your results geometrically.    We need to find scalars and such that Write down the augmented matrix for this equation and row reduce: Hence, and . Now we can write as a linear combination of and as follows: Geometrically, this means that the vector is the diagonal of the parallelogram determined by and .  The original vectors and are shown below together with the parallelogram and its diagonal.   Paralellogram with diagonal drawn        If possible, express as a linear combination of and .    We are looking for coefficients and such that This translates into the system of linear equations Solving this system for and yields and . We conclude that is a linear combination of and . Specifically, we have       Set up a system of equations that can be used to express as a linear combination of , , and , or to determine that such a combination does not exist.       We are looking for , , and such that This translates into the following system of equations:       The Linear Span  Recall that a vector is said to be a linear combination of vectors if one has for some scalars . Let's look at an explicit example to demystify this notion.    If possible, express the vectors as a linear combination of Interpret your results geometrically.    For , we need to find coefficients and such that . To do this we need to solve the linear combination equation: Now we write the corresponding augmented matrix and reduce it to reduced row echelon form. Hence, , , and we can express as a linear combination of and as follows: Observe that because vector is a linear combination of and , is the diagonal of a parallelogram whose sides are scalar multiples of and . As such, lies in the same plane as and , as illustrated below.   Span of two vectors graphed    For , we need to solve the following vector equation: Writing the equation in augmented matrix form and applying elementary row operations gives us the following reduced row echelon form: We conclude that there are no solutions, and is not a linear combination of and .  Geometrically, this means that is not the diagonal of any parallelogram whose sides are scalar multiples of and . Thus, does not lie in the plane determined by and .   Three vectors graphed without span      In we expressed as a linear combination of and , and concluded that lies in the plane determined by and . We say that is in the span of and . In fact, every vector in the plane determined by and is in the span of and . We say that and  span the plane .  In contrast, vector of is not a linear combination of and . So, we say is not in the span of and .  The following video takes another look at using our new vocabulary.     Let be vectors in . The set of all linear combinations of is called the span of . We write and we say that vectors  span  . Any vector in is said to be in the span of . The set is called a spanning set for the space .    The definition is rather formal even with all the preceding examples and geometric intuition. We highly recommend Working through the examples below in detail.    Describe     The span of is the set of all linear combinations of . Since we are looking for linear combinations of only one vector, we are really looking for all of its scalar multiples. So, the span will be the set of all vectors of the form . All such vectors lie on the line determined by .   Vector and its span graphed        Describe     First, observe that and are not scalar multiples of each other.   Two vectors graphed    Geometrically, we can use to express any vector of as a linear combination of and , indicating that the two vectors span all of .  To verify this claim algebraically we will show that an arbitrary vector of can be written as a linear combination of and .  Consider the vector equation: This corresponds to the system: Writing the system in augmented matrix form and applying elementary row operations gives us the following reduced row-echelon form: This shows that every vector of can be written as a linear combination of and : We conclude that       Describe     First, observe that are not scalar multiples of each other.   Two relevant vectors drawn    The span of and consists of elements of the form Geometrically, we can interpret all such linear combinations as diagonals of parallelograms determined by scalar multiples of and . All such diagonals will lie in the plane determined by and . Let this plane be called . A portion of is shown below.   Span of previous two vectors drawn    Because can be applied to vectors that lie in just as easily as it can be applied to vectors of , we conclude that every vector in can be expressed as a linear combination of and . Thus,         Solve a system of linear equations to express as a linear combination of and .    System of linear equations: Values of and : Linear Combination:       Use to express as a linear combination of and .    Linear Combination:       Use two different approaches (algebraic and geometric) to explain why the vector cannot be expressed as a linear combination of vectors and .      We have seen applied to vectors in . The same process can, in certain cases be applied to vectors in . In both parts of this problem you will be asked to follow the steps in to express one vector as a linear combination of two given vectors. Then you will be asked to identify the condition which makes it possible to do so.  The following GeoGebra interactive shows vectors , and . RIGHT-CLICK and DRAG to rotate the image.           Can be expressed as a linear combination of and ?      No, because is not between and  .     Yes, because all three vectors are in the same plane.      Yes, because all three vectors are in the same plane, AND and are not collinear.        Use the navigation bar at the bottom of the interactive window to view construction steps of applied to vectors , and (right-click and drag to rotate the image). Use the final image to express as a linear combination of (blue) and (red).           The following GeoGebra interactive shows vectors , , and . RIGHT-CLICK and DRAG to rotate the image. Use geometry to explain why cannot be expressed as a linear combination of and .          We can also show that is not a linear combination of and algebraically by attempting to solve a system of equations corresponding to Set up the system of equations Find the reduced row echelon form.         Choose the best description for each set below.            Plane in       Line in       Line in                              Plane in       Line in       Line in                              Plane in       Line in       Line in                        Which of the following pairs of sets are equal?                                    Let . Give an example of at least one vector such that , do NOT span a plane in . Describe .      Prove or disprove. The zero vector of is contained in the span of any collection of vectors of .     "
+  "title": "Linear Combination Equations and Span",
+  "body": " Linear Combination Equations and Span  When studying vectors, the two main operations we have learned about are vector addition and scalar multiplication. Both are involved in the important concept of a linear combination of vectors.    A vector is said to be a linear combination of vectors if for some scalars .    For example, is a linear combination of , and because     Moving forward, vectors will also be written in horizontal notation instead of vertical. This is mainly for notational reasons. For instance, the vector would instead in midtext be denoted by . This is justified, as any point in in can be thought of as the vector starting from the orign and with direction .     Visualizing Linear Combinations in and   Answer the questions below using the GeoGebra interactive. To use the interactive, you can   change vectors and by dragging the tips of these vectors.    change the coefficients and of the linear combination by using sliders.            Let and . Find and such that            Let and . Find and such that            Use the same vectors and as in the previous part. Do you think it is possible to express any vector in as a linear combination of and ?           Let and . Do you think it is possible to express any vector in as a linear combination of and . Argue why\/why not and write?          Visualizing linear combinations of vectors in is more difficult than doing so in . The following GeoGebra interactive will help you do this.   To use the interactive, define vectors , and . Use sliders to change the coefficients and of the linear combination. The linear combination is shown as the pink vector along the diagonal of the parallelepiped. RIGHT-CLICK and DRAG the left panel to rotate the image.          Solving Linear Combination Equations  A linear combination equation is an equation of the form where and are vectors in , and are unknowns.    Express as a linear combination of and or determine if it is not possible.    We need to solve for scalars and such that Simplifying the left-hand side, we get the equation This gives us the system of equations Now we solve the system by row reducing the corresponding augmented matrix: Hence, the solution to the system is and , and we can express as a linear combination of and as follows:     To solve the linear combination equation in , we reinterpreted it as a system of linear equations. In general, the linear combination equation corresponds to the system of equations Hence, to solve the linear combination equation , we can row reduce the augmented matrix The resulting row echelon form will give us the solution to the linear combination equation. If the system is consistent, then is a linear combination of the vectors If the system is inconsistent, then is not a linear combination of the vectors .    Can the vector be written as a linear combination of vectors and ?    We will start with a geometric approach.  Three vectors drawn   Observe that and are scalar multiples of each other and lie on the same line. A linear combination of and has the form: This shows that all linear combinations of and will be scalar multiples of , and therefore lie on the same line as . Since does not lie on the line determined by it cannot be expressed as a linear combination of and .  We can also address this question algebraically. To express as a linear combination of and , we need to solve the equation. This corresponds to the system of equations and augmented matrix Let's row reduce this matrix to see if the system is consistent: As we reduce the augmented matrix, notice that there is a pivot in the last column. This means the system is inconsistent, and therefore cannot be written as a linear combination of and .      Express as a linear combination of and . Interpret your results geometrically.    We need to find scalars and such that Write down the augmented matrix for this equation and row reduce: Hence, and . Now we can write as a linear combination of and as follows: Geometrically, this means that the vector is the diagonal of the parallelogram determined by and .  The original vectors and are shown below together with the parallelogram and its diagonal.   Paralellogram with diagonal drawn        If possible, express as a linear combination of and .    We are looking for coefficients and such that This translates into the system of linear equations Solving this system for and yields and . We conclude that is a linear combination of and . Specifically, we have       Set up a system of equations that can be used to express as a linear combination of , , and , or to determine that such a combination does not exist.       We are looking for , , and such that This translates into the following system of equations:       The Linear Span  Recall that a vector is said to be a linear combination of vectors if one has for some scalars . Let's look at an explicit example to demystify this notion.    If possible, express the vectors as a linear combination of Interpret your results geometrically.    For , we need to find coefficients and such that . To do this we need to solve the linear combination equation: Now we write the corresponding augmented matrix and reduce it to reduced row echelon form. Hence, , , and we can express as a linear combination of and as follows: Observe that because vector is a linear combination of and , is the diagonal of a parallelogram whose sides are scalar multiples of and . As such, lies in the same plane as and , as illustrated below.   Span of two vectors graphed    For , we need to solve the following vector equation: Writing the equation in augmented matrix form and applying elementary row operations gives us the following reduced row echelon form: We conclude that there are no solutions, and is not a linear combination of and .  Geometrically, this means that is not the diagonal of any parallelogram whose sides are scalar multiples of and . Thus, does not lie in the plane determined by and .   Three vectors graphed without span      In we expressed as a linear combination of and , and concluded that lies in the plane determined by and . We say that is in the span of and . In fact, every vector in the plane determined by and is in the span of and . We say that and  span the plane .  In contrast, vector of is not a linear combination of and . So, we say is not in the span of and .  The following video takes another look at using our new vocabulary.     Let be vectors in . The set of all linear combinations of is called the span of . We write and we say that vectors  span  . Any vector in is said to be in the span of . The set is called a spanning set for the space .    The definition is rather formal even with all the preceding examples and geometric intuition. We highly recommend Working through the examples below in detail.    Describe     The span of is the set of all linear combinations of . Since we are looking for linear combinations of only one vector, we are really looking for all of its scalar multiples. So, the span will be the set of all vectors of the form . All such vectors lie on the line determined by .   Vector and its span graphed        Describe     First, observe that and are not scalar multiples of each other.   Two vectors graphed    Geometrically, we can use to express any vector of as a linear combination of and , indicating that the two vectors span all of .  To verify this claim algebraically we will show that an arbitrary vector of can be written as a linear combination of and .  Consider the vector equation: This corresponds to the system: Writing the system in augmented matrix form and applying elementary row operations gives us the following reduced row-echelon form: This shows that every vector of can be written as a linear combination of and : We conclude that       Describe     First, observe that are not scalar multiples of each other.   Two relevant vectors drawn    The span of and consists of elements of the form Geometrically, we can interpret all such linear combinations as diagonals of parallelograms determined by scalar multiples of and . All such diagonals will lie in the plane determined by and . Let this plane be called . A portion of is shown below.   Span of previous two vectors drawn    Because can be applied to vectors that lie in just as easily as it can be applied to vectors of , we conclude that every vector in can be expressed as a linear combination of and . Thus,         Solve a system of linear equations to express as a linear combination of and .    System of linear equations: Values of and : Linear Combination:       Use to express as a linear combination of and .    Linear Combination:       Use two different approaches (algebraic and geometric) to explain why the vector cannot be expressed as a linear combination of vectors and .      We have seen applied to vectors in . The same process can, in certain cases be applied to vectors in . In both parts of this problem you will be asked to follow the steps in to express one vector as a linear combination of two given vectors. Then you will be asked to identify the condition which makes it possible to do so.  The following GeoGebra interactive shows vectors , and . RIGHT-CLICK and DRAG to rotate the image.           Can be expressed as a linear combination of and ?      No, because is not between and  .     Yes, because all three vectors are in the same plane.      Yes, because all three vectors are in the same plane, AND and are not collinear.        Use the navigation bar at the bottom of the interactive window to view construction steps of applied to vectors , and (right-click and drag to rotate the image). Use the final image to express as a linear combination of (blue) and (red).           The following GeoGebra interactive shows vectors , , and . RIGHT-CLICK and DRAG to rotate the image. Use geometry to explain why cannot be expressed as a linear combination of and .          We can also show that is not a linear combination of and algebraically by attempting to solve a system of equations corresponding to Set up the system of equations Find the reduced row echelon form.         Choose the best description for each set below.            Plane in       Line in       Line in                              Plane in       Line in       Line in                              Plane in       Line in       Line in                        Which of the following pairs of sets are equal?                                    Let . Give an example of at least one vector such that , do NOT span a plane in . Describe .      Prove or disprove. The zero vector of is contained in the span of any collection of vectors of .     "
 },
 {
-  "id": "Section-Linear-Combinations-of-Vectors-and-Span-2",
+  "id": "Section-Linear-Combination-Equations-and-Span-2",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#Section-Linear-Combinations-of-Vectors-and-Span-2",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#Section-Linear-Combination-Equations-and-Span-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1641,16 +1641,16 @@ var ptx_lunr_docs = [
 {
   "id": "def-lincomb",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#def-lincomb",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#def-lincomb",
   "type": "Definition",
   "number": "2.2.1",
   "title": "",
   "body": "  A vector is said to be a linear combination of vectors if for some scalars .   "
 },
 {
-  "id": "Section-Linear-Combinations-of-Vectors-and-Span-5",
+  "id": "Section-Linear-Combination-Equations-and-Span-5",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#Section-Linear-Combinations-of-Vectors-and-Span-5",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#Section-Linear-Combination-Equations-and-Span-5",
   "type": "Remark",
   "number": "2.2.2",
   "title": "",
@@ -1659,7 +1659,7 @@ var ptx_lunr_docs = [
 {
   "id": "exp-linCombR2",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#exp-linCombR2",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#exp-linCombR2",
   "type": "Exploration",
   "number": "2.2.1",
   "title": "",
@@ -1668,7 +1668,7 @@ var ptx_lunr_docs = [
 {
   "id": "exp-linCombR3",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#exp-linCombR3",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#exp-linCombR3",
   "type": "Exploration",
   "number": "2.2.2",
   "title": "",
@@ -1677,7 +1677,7 @@ var ptx_lunr_docs = [
 {
   "id": "subsec-Solving-Linear-Combination-Equations-2",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#subsec-Solving-Linear-Combination-Equations-2",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#subsec-Solving-Linear-Combination-Equations-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1686,7 +1686,7 @@ var ptx_lunr_docs = [
 {
   "id": "init-solvinglincombeqn",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#init-solvinglincombeqn",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#init-solvinglincombeqn",
   "type": "Exploration",
   "number": "2.2.3",
   "title": "",
@@ -1695,7 +1695,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-lincombgeometry2",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#ex-lincombgeometry2",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#ex-lincombgeometry2",
   "type": "Example",
   "number": "2.2.9",
   "title": "",
@@ -1704,7 +1704,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-lincombgeometry1",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#ex-lincombgeometry1",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#ex-lincombgeometry1",
   "type": "Example",
   "number": "2.2.10",
   "title": "",
@@ -1713,7 +1713,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-lincombalgebra1",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#ex-lincombalgebra1",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#ex-lincombalgebra1",
   "type": "Example",
   "number": "2.2.11",
   "title": "",
@@ -1722,7 +1722,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-lincombalgebra2",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#ex-lincombalgebra2",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#ex-lincombalgebra2",
   "type": "Example",
   "number": "2.2.12",
   "title": "",
@@ -1731,7 +1731,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-spanintro",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#ex-spanintro",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#ex-spanintro",
   "type": "Example",
   "number": "2.2.13",
   "title": "",
@@ -1740,7 +1740,7 @@ var ptx_lunr_docs = [
 {
   "id": "Section-Span-4",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#Section-Span-4",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#Section-Span-4",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1749,7 +1749,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-span",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#def-span",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#def-span",
   "type": "Definition",
   "number": "2.2.14",
   "title": "",
@@ -1758,7 +1758,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-describespan",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#ex-describespan",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#ex-describespan",
   "type": "Example",
   "number": "2.2.15",
   "title": "",
@@ -1767,7 +1767,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-spanr2",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#ex-spanr2",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#ex-spanr2",
   "type": "Example",
   "number": "2.2.16",
   "title": "",
@@ -1776,7 +1776,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-spanoftwovectors",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#ex-spanoftwovectors",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#ex-spanoftwovectors",
   "type": "Example",
   "number": "2.2.17",
   "title": "",
@@ -1785,7 +1785,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-lincombtwovectors1",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#prob-lincombtwovectors1",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#prob-lincombtwovectors1",
   "type": "Exercise",
   "number": "2.2.4.1",
   "title": "",
@@ -1794,7 +1794,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-lincombtwovectors2",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#prob-lincombtwovectors2",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#prob-lincombtwovectors2",
   "type": "Exercise",
   "number": "2.2.4.2",
   "title": "",
@@ -1803,34 +1803,34 @@ var ptx_lunr_docs = [
 {
   "id": "prob-lincombtwovectors3",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#prob-lincombtwovectors3",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#prob-lincombtwovectors3",
   "type": "Exercise",
   "number": "2.2.4.3",
   "title": "",
   "body": "  Use two different approaches (algebraic and geometric) to explain why the vector cannot be expressed as a linear combination of vectors and .   "
 },
 {
-  "id": "Section-Linear-Combinations-of-Vectors-and-Span-9-4",
+  "id": "Section-Linear-Combination-Equations-and-Span-9-4",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#Section-Linear-Combinations-of-Vectors-and-Span-9-4",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#Section-Linear-Combination-Equations-and-Span-9-4",
   "type": "Exercise",
   "number": "2.2.4.4",
   "title": "",
   "body": "  We have seen applied to vectors in . The same process can, in certain cases be applied to vectors in . In both parts of this problem you will be asked to follow the steps in to express one vector as a linear combination of two given vectors. Then you will be asked to identify the condition which makes it possible to do so.  The following GeoGebra interactive shows vectors , and . RIGHT-CLICK and DRAG to rotate the image.        "
 },
 {
-  "id": "Section-Linear-Combinations-of-Vectors-and-Span-9-5",
+  "id": "Section-Linear-Combination-Equations-and-Span-9-5",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#Section-Linear-Combinations-of-Vectors-and-Span-9-5",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#Section-Linear-Combination-Equations-and-Span-9-5",
   "type": "Exercise",
   "number": "2.2.4.5",
   "title": "",
   "body": "  Can be expressed as a linear combination of and ?      No, because is not between and  .     Yes, because all three vectors are in the same plane.      Yes, because all three vectors are in the same plane, AND and are not collinear.     "
 },
 {
-  "id": "Section-Linear-Combinations-of-Vectors-and-Span-9-6",
+  "id": "Section-Linear-Combination-Equations-and-Span-9-6",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#Section-Linear-Combinations-of-Vectors-and-Span-9-6",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#Section-Linear-Combination-Equations-and-Span-9-6",
   "type": "Exercise",
   "number": "2.2.4.6",
   "title": "",
@@ -1839,7 +1839,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-lincombtwovectors4b",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#prob-lincombtwovectors4b",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#prob-lincombtwovectors4b",
   "type": "Exercise",
   "number": "2.2.4.7",
   "title": "",
@@ -1848,7 +1848,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-describespan1",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#prob-describespan1",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#prob-describespan1",
   "type": "Exercise",
   "number": "2.2.4.8",
   "title": "",
@@ -1857,7 +1857,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-describespan2",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#prob-describespan2",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#prob-describespan2",
   "type": "Exercise",
   "number": "2.2.4.9",
   "title": "",
@@ -1866,7 +1866,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-describespan3",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#prob-describespan3",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#prob-describespan3",
   "type": "Exercise",
   "number": "2.2.4.10",
   "title": "",
@@ -1875,7 +1875,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-equalsets",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#prob-equalsets",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#prob-equalsets",
   "type": "Exercise",
   "number": "2.2.4.11",
   "title": "",
@@ -1884,7 +1884,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-notinspan",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#prob-notinspan",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#prob-notinspan",
   "type": "Exercise",
   "number": "2.2.4.12",
   "title": "",
@@ -1893,25 +1893,25 @@ var ptx_lunr_docs = [
 {
   "id": "prob-zeroinspan",
   "level": "2",
-  "url": "Section-Linear-Combinations-of-Vectors-and-Span.html#prob-zeroinspan",
+  "url": "Section-Linear-Combination-Equations-and-Span.html#prob-zeroinspan",
   "type": "Exercise",
   "number": "2.2.4.13",
   "title": "",
   "body": "  Prove or disprove. The zero vector of is contained in the span of any collection of vectors of .   "
 },
 {
-  "id": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations",
+  "id": "Section-Matrix-Equations",
   "level": "1",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html",
+  "url": "Section-Matrix-Equations.html",
   "type": "Section",
   "number": "2.3",
-  "title": "Linear Systems as Linear Combination and Matrix Equations",
-  "body": " Linear Systems as Linear Combination and Matrix Equations   Consider the linear system Let's construct the coefficient matrix and multiply it by on the right: Observe that each component of the product vector corresponds to one of the equations in the system. Let . Then  is a matrix equation that corresponds to our system of equations.   In general, a system of linear equations can be written as a matrix equation as follows: Solving this matrix equation (or showing that a solution does not exist) amounts to finding the reduced row-echelon form of the augmented matrix   Being able to use matrices to rewrite and solve systems of equations is crucial, so here are two examples to get you into this mindset.    Given a linear system    Write the system as a matrix equation    Solve the system and the matrix equation       The matrix equation that corresponds to the system is The augmented matrix that corresponds to the original system and its reduced row-echelon form are This shows that the ordered pair is a solution to the system. We conclude that is a solution to the matrix equation in . A quick verification confirms this       Let Solve .    We write the equation in augmented matrix form and apply elementary row operations to find its reduced row-echelon form. One way to obtain a solution is to convert this to a system of equations. It is not necessary to write the system down, but it helps to think about it as you write out your solution vector. We see that and are leading variables because they correspond to leading 1s in the reduced row-echelon form , while and are free variables. We start by assigning parameters and to and , respectively, then solve for and . We can now write the solution vector as follows     The solution given in is an example of a general solution because it accounts for all of the solutions to the system. Letting and take on specific values produces particular solutions . For example, is a particular solution that corresponds to , .   Singular and Nonsingular Matrices  Our examples so far involved non-square matrices. Square matrices, however, play a very important role in linear algebra. This section will focus on square matrices. We start the paragraph with an example to motivate.    Let Solve .    We apply elementary row operations to bring the augmented matrix to its reduced row-echelon form. We can immediately see that the solution vector is     Observe that the left-hand side of the augmented matrix in is the identity matrix . This means that .  The elementary row operations that carried to were not dependent on the vector . In fact, the same row reduction process can be applied to the matrix equation for any vector to obtain a unique solution.    Given a matrix such that , the system will never be inconsistent because we will never have a row like this: . Neither will we have infinitely many solutions because there will never be free variables. Matrices such as deserve special attention.    A square matrix is said to be nonsingular provided that . Otherwise we say that is singular .    Non-singular matrices have many useful properties.    The following statements are equivalent for an matrix .   is nonsingular     has a unique solution for any in      has only the trivial solution        We will prove equivalence of the three statements by showing that   [Proof of ]: Suppose . Given any vector in , the augmented matrix can be carried to its reduced row-echelon form . Uniqueness of the reduced row-echelon form guarantees that is the unique solution of .  [Proof of ]: Suppose has a unique solution for all vectors . Then has a unique solution. But is always a solution to . Therefore is the only solution.  [Proof of ]: Suppose has only the trivial solution. This means that is the only solution of . But then, we know that the augmented matrix can be reduced to . The same row operations will carry to .      Not all square matrices are nonsingular. For example,     By , a matrix equation involving a singular matrix cannot have a unique solution. The following example illustrates the two scenarios that arise when solving equations that involve singular matrices.    Let Solve the equation for each case of below or show that hte system is inconsistent.                For , row reduction gives us There are infinitely many solutions and they all have the following form:   For , the vector is changed and the row operations that take to its reduced row-echelon form produce a in the last row of the vector on the right, which shows that the system is inconsistent.       A Linear System as a Linear Combination Equation  Recall that the product of a matrix and a vector can be interpreted as a linear combination of the columns of the matrix. For example,     For each given matrix and vector , determine whether is a linear combination of the columns of . If possible, express as a linear combination of the columns of .                For , we are looking for such that Solving this equation amounts to finding such that . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are So, is a solution to the matrix equation. We conclude that is a linear combination of the columns of , and write   For We begin by attempting to solve the matrix equation . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are This shows that this matrix equation has no solutions. We conclude that is not a linear combination of the columns of .        Given the system of linear equations below, write (a) the corresponding matrix equation, and (b) the corresponding linear combination equation. DO NOT SOLVE.       Use an augmented matrix and elementary row operations to find coefficients and that make the expression true, or demonstrate that such coefficients do not exist.                      The system is inconsistent and no exist.       In each problem below determine whether vector is in the span of the given set of vectors.     and    The vector is not in the span.       and     The vector is in the span.       and     The vector is not in the span.      "
+  "title": "Matrix Equations",
+  "body": " Matrix Equations   Consider the linear system Let's construct the coefficient matrix and multiply it by on the right: Observe that each component of the product vector corresponds to one of the equations in the system. Let . Then  is a matrix equation that corresponds to our system of equations.   In general, a system of linear equations can be written as a matrix equation as follows: Solving this matrix equation (or showing that a solution does not exist) amounts to finding the reduced row-echelon form of the augmented matrix   Being able to use matrices to rewrite and solve systems of equations is crucial, so here are two examples to get you into this mindset.    Given a linear system    Write the system as a matrix equation    Solve the system and the matrix equation       The matrix equation that corresponds to the system is The augmented matrix that corresponds to the original system and its reduced row-echelon form are This shows that the ordered pair is a solution to the system. We conclude that is a solution to the matrix equation in . A quick verification confirms this       Let Solve .    We write the equation in augmented matrix form and apply elementary row operations to find its reduced row-echelon form. One way to obtain a solution is to convert this to a system of equations. It is not necessary to write the system down, but it helps to think about it as you write out your solution vector. We see that and are leading variables because they correspond to leading 1s in the reduced row-echelon form , while and are free variables. We start by assigning parameters and to and , respectively, then solve for and . We can now write the solution vector as follows     The solution given in is an example of a general solution because it accounts for all of the solutions to the system. Letting and take on specific values produces particular solutions . For example, is a particular solution that corresponds to , .   Singular and Nonsingular Matrices  Our examples so far involved non-square matrices. Square matrices, however, play a very important role in linear algebra. This section will focus on square matrices. We start the paragraph with an example to motivate.    Let Solve .    We apply elementary row operations to bring the augmented matrix to its reduced row-echelon form. We can immediately see that the solution vector is     Observe that the left-hand side of the augmented matrix in is the identity matrix . This means that .  The elementary row operations that carried to were not dependent on the vector . In fact, the same row reduction process can be applied to the matrix equation for any vector to obtain a unique solution.    Given a matrix such that , the system will never be inconsistent because we will never have a row like this: . Neither will we have infinitely many solutions because there will never be free variables. Matrices such as deserve special attention.    A square matrix is said to be nonsingular provided that . Otherwise we say that is singular .    Non-singular matrices have many useful properties.    The following statements are equivalent for an matrix .   is nonsingular     has a unique solution for any in      has only the trivial solution        We will prove equivalence of the three statements by showing that   [Proof of ]: Suppose . Given any vector in , the augmented matrix can be carried to its reduced row-echelon form . Uniqueness of the reduced row-echelon form guarantees that is the unique solution of .  [Proof of ]: Suppose has a unique solution for all vectors . Then has a unique solution. But is always a solution to . Therefore is the only solution.  [Proof of ]: Suppose has only the trivial solution. This means that is the only solution of . But then, we know that the augmented matrix can be reduced to . The same row operations will carry to .      Not all square matrices are nonsingular. For example,     By , a matrix equation involving a singular matrix cannot have a unique solution. The following example illustrates the two scenarios that arise when solving equations that involve singular matrices.    Let Solve the equation for each case of below or show that hte system is inconsistent.                For , row reduction gives us There are infinitely many solutions and they all have the following form:   For , the vector is changed and the row operations that take to its reduced row-echelon form produce a in the last row of the vector on the right, which shows that the system is inconsistent.       A Linear System as a Linear Combination Equation  Recall that the product of a matrix and a vector can be interpreted as a linear combination of the columns of the matrix. For example,     For each given matrix and vector , determine whether is a linear combination of the columns of . If possible, express as a linear combination of the columns of .                For , we are looking for such that Solving this equation amounts to finding such that . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are So, is a solution to the matrix equation. We conclude that is a linear combination of the columns of , and write   For We begin by attempting to solve the matrix equation . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are This shows that this matrix equation has no solutions. We conclude that is not a linear combination of the columns of .        Given the system of linear equations below, write (a) the corresponding matrix equation, and (b) the corresponding linear combination equation. DO NOT SOLVE.       Use an augmented matrix and elementary row operations to find coefficients and that make the expression true, or demonstrate that such coefficients do not exist.                      The system is inconsistent and no exist.       In each problem below determine whether vector is in the span of the given set of vectors.     and    The vector is not in the span.       and     The vector is in the span.       and     The vector is not in the span.      "
 },
 {
   "id": "init-matrixmultsyseq",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#init-matrixmultsyseq",
+  "url": "Section-Matrix-Equations.html#init-matrixmultsyseq",
   "type": "Exploration",
   "number": "2.3.1",
   "title": "",
@@ -1920,7 +1920,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-linsysmatrixmult",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#ex-linsysmatrixmult",
+  "url": "Section-Matrix-Equations.html#ex-linsysmatrixmult",
   "type": "Example",
   "number": "2.3.1",
   "title": "",
@@ -1929,16 +1929,16 @@ var ptx_lunr_docs = [
 {
   "id": "ex-solveAxequalb",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#ex-solveAxequalb",
+  "url": "Section-Matrix-Equations.html#ex-solveAxequalb",
   "type": "Example",
   "number": "2.3.2",
   "title": "",
   "body": "  Let Solve .    We write the equation in augmented matrix form and apply elementary row operations to find its reduced row-echelon form. One way to obtain a solution is to convert this to a system of equations. It is not necessary to write the system down, but it helps to think about it as you write out your solution vector. We see that and are leading variables because they correspond to leading 1s in the reduced row-echelon form , while and are free variables. We start by assigning parameters and to and , respectively, then solve for and . We can now write the solution vector as follows    "
 },
 {
-  "id": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations-7",
+  "id": "Section-Matrix-Equations-7",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations-7",
+  "url": "Section-Matrix-Equations.html#Section-Matrix-Equations-7",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1947,7 +1947,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-nonsingularintro",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#ex-nonsingularintro",
+  "url": "Section-Matrix-Equations.html#ex-nonsingularintro",
   "type": "Example",
   "number": "2.3.3",
   "title": "",
@@ -1956,7 +1956,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-nonsingularmatrix",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#def-nonsingularmatrix",
+  "url": "Section-Matrix-Equations.html#def-nonsingularmatrix",
   "type": "Definition",
   "number": "2.3.4",
   "title": "",
@@ -1965,7 +1965,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-nonsingularequivalency1",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#th-nonsingularequivalency1",
+  "url": "Section-Matrix-Equations.html#th-nonsingularequivalency1",
   "type": "Theorem",
   "number": "2.3.5",
   "title": "",
@@ -1974,7 +1974,7 @@ var ptx_lunr_docs = [
 {
   "id": "Subsection-Singular-and-Nonsingular-Matrices-10",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#Subsection-Singular-and-Nonsingular-Matrices-10",
+  "url": "Section-Matrix-Equations.html#Subsection-Singular-and-Nonsingular-Matrices-10",
   "type": "Remark",
   "number": "2.3.6",
   "title": "",
@@ -1983,7 +1983,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-infinfeasible",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#ex-infinfeasible",
+  "url": "Section-Matrix-Equations.html#ex-infinfeasible",
   "type": "Example",
   "number": "2.3.7",
   "title": "",
@@ -1992,7 +1992,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-linearcombofcols2",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#ex-linearcombofcols2",
+  "url": "Section-Matrix-Equations.html#ex-linearcombofcols2",
   "type": "Example",
   "number": "2.3.8",
   "title": "",
@@ -2001,16 +2001,16 @@ var ptx_lunr_docs = [
 {
   "id": "prob-systomatrixeq",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#prob-systomatrixeq",
+  "url": "Section-Matrix-Equations.html#prob-systomatrixeq",
   "type": "Exercise",
   "number": "2.3.3.1",
   "title": "",
   "body": "  Given the system of linear equations below, write (a) the corresponding matrix equation, and (b) the corresponding linear combination equation. DO NOT SOLVE.    "
 },
 {
-  "id": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations-10-2-2",
+  "id": "Section-Matrix-Equations-10-2-2",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations-10-2-2",
+  "url": "Section-Matrix-Equations.html#Section-Matrix-Equations-10-2-2",
   "type": "Exercise",
   "number": "2.3.3.2",
   "title": "",
@@ -2019,7 +2019,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-lincombeq2",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#prob-lincombeq2",
+  "url": "Section-Matrix-Equations.html#prob-lincombeq2",
   "type": "Exercise",
   "number": "2.3.3.3",
   "title": "",
@@ -2028,7 +2028,7 @@ var ptx_lunr_docs = [
 {
   "id": "spanofvect1",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#spanofvect1",
+  "url": "Section-Matrix-Equations.html#spanofvect1",
   "type": "Exercise",
   "number": "2.3.3.4",
   "title": "",
@@ -2037,7 +2037,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-spanofvect2",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#prob-spanofvect2",
+  "url": "Section-Matrix-Equations.html#prob-spanofvect2",
   "type": "Exercise",
   "number": "2.3.3.5",
   "title": "",
@@ -2046,7 +2046,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-spanofvect3",
   "level": "2",
-  "url": "Section-Linear-Systems-as-Linear-Combination-and-Matrix-Equations.html#prob-spanofvect3",
+  "url": "Section-Matrix-Equations.html#prob-spanofvect3",
   "type": "Exercise",
   "number": "2.3.3.6",
   "title": "",
