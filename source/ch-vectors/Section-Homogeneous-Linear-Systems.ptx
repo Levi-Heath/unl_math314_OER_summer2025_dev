@@ -495,7 +495,7 @@ If possible, find a solution of <m>A\mathbf{x}=\mathbf{b}</m> and express it as 
         <theorem xml:id="th-lindeplincombofother">
             <statement>
                 <p>
-                    Let <m>\mathbf{v}_1,\mathbf{v}_2,\dots ,\mathbf{v}_k</m> be  a set of vectors in <m>\R^n</m> containing two or more vectors.  The following conditions are equivalent.
+                    Let <m>\left\{\mathbf{v}_1,\mathbf{v}_2,\dots ,\mathbf{v}_k\right\}</m> be a set of vectors in <m>\R^n</m> containing two or more vectors.  The following conditions are equivalent.
                     <ol>
                         <li xml:id="th-lindeplincombofother-a">
                             <p>
@@ -568,6 +568,34 @@ If possible, find a solution of <m>A\mathbf{x}=\mathbf{b}</m> and express it as 
                 It is a logical consequence that if one of the conditions is false, both must be false.
             </p>
         </proof>
+
+        Recall that the span of a set of vectors is the set of all linear combinations of those vectors.
+
+        <corollary xml:id="cor-span-of-lin-dependent-vectors">
+            <statement>
+                <p>
+                    Let <m>X=\left\{\mathbf{v}_1,\mathbf{v}_2,\dots ,\mathbf{v}_k\right\}</m> be a set of vectors in <m>\R^n</m>.
+                    <ul>
+                        <li>
+                            <p>
+                                If <m>X</m> is linearly dependent, then by <xref ref="th-lindeplincombofother"/> there is a vector 
+                                <m>\mathbf{v}_j</m> in <m>X</m> that can be written as a linear combination of the other vectors in <m>X</m>
+                                and therefore
+                                <me>
+                                    \text{span}(X)=\text{span}\left(\mathbf{v}_1,\mathbf{v}_2,\ldots ,\mathbf{v}_{j-1},\mathbf{v}_{j+1},\ldots ,\mathbf{v}_k\right).
+                                </me>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                If <m>X</m> is linearly independent, then no vector in <m>X</m> can be written as a linear combination of 
+                                the others and hence the span of <m>X</m> cannot be written as a span of set with fewer vectors.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </statement>
+        </corollary>
     </subsection>
 
 
@@ -707,635 +735,607 @@ If possible, find a solution of <m>A\mathbf{x}=\mathbf{b}</m> and express it as 
 
 
 
-<exercises>
+    <exercises>
 
-<exercisegroup>
-    <introduction>
-        <p>
- For each matrix <m>A</m> and vector <m>\mathbf{b}</m> below, find a solution to <m>A\mathbf{x}=\mathbf{b}</m> and  express your solution as a sum of a particular solution and a general solution to the associated homogeneous system.
-        </p>
-    </introduction>
+        <exercisegroup>
+            <introduction>
+                <p>
+                    For each matrix <m>A</m> and vector <m>\mathbf{b}</m> below, find a solution to <m>A\mathbf{x}=\mathbf{b}</m> and  express your solution as a sum of a particular solution and a general solution to the associated homogeneous system.
+                </p>
+            </introduction>
 
-<exercise xml:id="prob-hompluspart1">
-    <statement>
-        <p>
-            <me>
-    A=\begin{bmatrix}1\amp 1\amp 3\amp 1\\3\amp 4\amp 2\amp 1\end{bmatrix}\quad\text{and}\quad\mathbf{b}=\begin{bmatrix}6\\1\end{bmatrix}
-</me>
-        </p>
-    </statement>
-</exercise>
-
-<exercise xml:id="prob-hompluspart2">
-    <statement>
-        <p>
-            <me>
-    A=\begin{bmatrix}3\amp 2\amp 1\\1\amp -1\amp 1\\4\amp 1\amp 1\end{bmatrix}\quad\text{and}\quad\mathbf{b}=\begin{bmatrix}10\\2\\12\end{bmatrix}
-</me>
-        </p>
-    </statement>
-</exercise>
-
-
-<exercise xml:id="prob-infmanysolutionshom">
-    <statement>
-        <p>
-            Prove that a consistent system has infinitely many solutions if and only if the associated homogeneous system has infinitely many solutions.
-        </p>
-    </statement>
-</exercise>
-</exercisegroup>
-
-
-
-
-
-<exercisegroup>
-
-    <introduction>
-        <p>
-If possible, construct an example of each of the following.  If not possible, explain why.
-        </p>
-    </introduction>
-
-  <exercise xml:id="prob-homexample1">
-    <statement>
-        <p>
-            An inconsistent system with an associated homogeneous system that has infinitely many solutions.
-        </p>
-    </statement>
-</exercise>
-  
-  <exercise xml:id="prob-homexample2">
-    <statement>
-        <p>
-            An inconsistent system with an associated homogeneous system that has a unique (trivial) solution.
-        </p>
-    </statement>
-</exercise>
-</exercisegroup>
-
-
-
-<exercise xml:id="prob-lincombsolutions">
-    <statement>
-        <p>
-            Prove that a linear combination of any number of solutions of a homogeneous equation is a solution of the same equation.
-        </p>
-    </statement>
-</exercise>
-
-<exercise xml:id="prob-homogeneouspart1">
-    <statement>
-        <p>
-            Prove <xref ref="item-homogeneous1"/> of <xref ref="th-homogeneous"/>.
-        </p>
-    </statement>
-</exercise>
-
-
-    <!-- Exercises on Linear Independance -->
-            <exercise xml:id="prob-redundant1">
+            <exercise xml:id="prob-hompluspart1">
                 <statement>
                     <p>
-                        In <xref ref="exp-redundantVecs2"/> we considered the following set of vectors
                         <me>
-                            \left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}
+                            A=\begin{bmatrix}1\amp 1\amp 3\amp 1\\3\amp 4\amp 2\amp 1\end{bmatrix}\quad\text{and}\quad\mathbf{b}=\begin{bmatrix}6\\1\end{bmatrix}
                         </me>
-                        and demonstrated that <m>[4,4,-1]</m> is redundant by using the fact that it is a linear combination of the other two vectors.
-    
-                        <ol>
-                            <li>
-                                <p>
-                                    Express each of <m>[1,2,-1]</m> and <m>[2,0,1]</m> as a linear combination of the remaining vectors.
-                                </p>
-                                </li>
-    
-                          
-    
-                            <li>
-                                <p>
-                                    Which of the following is NOT true?
-                                </p>
-                            </li>
-                        </ol>
                     </p>
                 </statement>
-    
-    
-                            <choices>
-                                <choice>
-                                <statement>
-                                    <p>
-                                        If <m>\mathbf{w} </m> is in
-                                        <me>
-                                        \mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right),
-                                    </me>
-                                    
-                                    then <m>\mathbf{w}</m> is in 
-                                    <me>
-                                    \mbox{span}\left(\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right).
-                                    </me>
-                                    </p>
-                                </statement>
-                                </choice> 
-    
-                                
-                                <choice>
-                                <statement>
-                                    <p>
-                                        Both <m>[1,2,-1]</m> and <m>[2,0,1]</m> are redundant in 
-                                        <me>
-                                        \left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}.
-                                        </me>
-                                    </p>
-                                </statement>
-                                </choice>
-            
-                                <choice correct="yes">
-                                <statement>
-                                    <p>
-                                        We can remove <m>[1,2,-1]</m> and <m>[2,0,1]</m> from 
-                                    <me>
-                                    \left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}
-                                    </me> 
-                                    
-                                    at the same time without affecting the span.
-                                    </p>
-                                </statement>
-                                </choice>
-                            </choices>
-
-                            <answer>
-                                <p> 
-                                    <md>
-                                        <mrow>   \begin{bmatrix}1\\2\\-1\end{bmatrix} =-\frac{1}{2}\begin{bmatrix}2\\0\\1\end{bmatrix}+\frac{1}{2}\begin{bmatrix}4\\4\\-1\end{bmatrix}  </mrow>
-                                        <mrow>        \begin{bmatrix}2\\0\\1\end{bmatrix}=-2\begin{bmatrix}1\\2\\-1\end{bmatrix}+1\begin{bmatrix}4\\4\\-1\end{bmatrix}                 </mrow>
-                                    </md>
-                                </p>
-                            </answer>
             </exercise>
-    
-    
 
+            <exercise xml:id="prob-hompluspart2">
+                <statement>
+                    <p>
+                        <me>
+                            A=\begin{bmatrix}3\amp 2\amp 1\\1\amp -1\amp 1\\4\amp 1\amp 1\end{bmatrix}\quad\text{and}\quad\mathbf{b}=\begin{bmatrix}10\\2\\12\end{bmatrix}
+                        </me>
+                    </p>
+                </statement>
+            </exercise>
 
-
+            <exercise xml:id="prob-infmanysolutionshom">
+                <statement>
+                    <p>
+                        Prove that a consistent system has infinitely many solutions if and only if the associated homogeneous system has infinitely many solutions.
+                    </p>
+                </statement>
+            </exercise>
+        </exercisegroup>
 
 
         <exercisegroup>
-        <introduction>
-            <p>
-                Are the given vectors linearly independent?
-            </p>
-        </introduction>
+            <introduction>
+                <p>
+                    If possible, construct an example of each of the following.  If not possible, explain why.
+                </p>
+            </introduction>
 
-        <exercise>
+            <exercise xml:id="prob-homexample1">
+                <statement>
+                    <p>
+                        An inconsistent system with an associated homogeneous system that has infinitely many solutions.
+                    </p>
+                </statement>
+            </exercise>
+  
+            <exercise xml:id="prob-homexample2">
+                <statement>
+                    <p>
+                        An inconsistent system with an associated homogeneous system that has a unique (trivial) solution.
+                    </p>
+                </statement>
+            </exercise>
+        </exercisegroup>
+
+
+        <exercise xml:id="prob-lincombsolutions">
             <statement>
-                <p> 
-                    <me>
-                        \begin{bmatrix}-1\\0\end{bmatrix}, \begin{bmatrix}2\\3\end{bmatrix},\begin{bmatrix}4\\-1\end{bmatrix}
-                    </me>
+                <p>
+                    Prove that a linear combination of any number of solutions of a homogeneous equation is a solution of the same equation.
                 </p>
             </statement>
-            
+        </exercise>
 
-                    <choices>
-                        <choice>
+
+        <exercise xml:id="prob-homogeneouspart1">
+            <statement>
+                <p>
+                    Prove <xref ref="item-homogeneous1"/> of <xref ref="th-homogeneous"/>.
+                </p>
+            </statement>
+        </exercise>
+
+
+        <!-- Exercises on Linear Independance -->
+        <exercise xml:id="prob-redundant1">
+            <statement>
+                <p>
+                    Consider the following set of vectors:
+                    <me>
+                        \left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}.
+                    </me>
+
+                    <ol>
+                        <li>
+                            <p>
+                                Express each of the vectors in the set as a linear combination of the remaining vectors.
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                Which of the following is NOT true?
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+                
+            <choices>
+                <choice>
+                    <statement>
+                        <p>
+                            If <m>\mathbf{w} </m> is in
+                            <me>
+                                \mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right),
+                            </me>
+                            then <m>\mathbf{w}</m> is in 
+                            <me>
+                                \mbox{span}\left(\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right).
+                            </me>
+                        </p>
+                    </statement>
+                </choice> 
+        
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            We can remove <m>[1,2,-1]</m> and <m>[2,0,1]</m> from 
+                            <me>
+                                \left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}
+                            </me>                         
+                            at the same time without affecting the span.
+                        </p>
+                    </statement>
+                </choice>
+            </choices>
+
+            <answer>
+                <p> 
+                    <md>
+                        <mrow>   
+                            \begin{bmatrix}1\\2\\-1\end{bmatrix} 
+                                \amp = -\frac{1}{2}\begin{bmatrix}2\\0\\1\end{bmatrix}
+                                + \frac{1}{2}\begin{bmatrix}4\\4\\-1\end{bmatrix}
+                        </mrow>
+                        <mrow>
+                            \begin{bmatrix}2\\0\\1\end{bmatrix}
+                                \amp = -2\begin{bmatrix}1\\2\\-1\end{bmatrix}
+                                + 1\begin{bmatrix}4\\4\\-1\end{bmatrix}
+                        </mrow>
+                        <mrow>
+                            \begin{bmatrix}4\\4\\-1\end{bmatrix}
+                                \amp = 2\begin{bmatrix}1\\2\\-1\end{bmatrix}
+                                + 1\begin{bmatrix}2\\0\\1\end{bmatrix}
+                        </mrow>
+                    </md>
+                </p>
+            </answer>
+        </exercise>
+
+
+        <exercisegroup>
+            <introduction>
+                <p>
+                    Are the given vectors linearly independent?
+                </p>
+            </introduction>
+
+            <exercise>
+                <statement>
+                    <p> 
+                        <me>
+                            \begin{bmatrix}-1\\0\end{bmatrix}, \begin{bmatrix}2\\3\end{bmatrix},\begin{bmatrix}4\\-1\end{bmatrix}
+                        </me>
+                    </p>
+                </statement>
+            
+                <choices>
+                    <choice>
                         <statement>
                             <p>
                                 Yes
                             </p>
                         </statement>
-                        </choice>
+                    </choice>
 
-                        <choice correct="yes">
+                    <choice correct="yes">
                         <statement>
                             <p>
                                 No
                             </p>
                         </statement>
-                        </choice>
-                    </choices>
+                    </choice>
+                </choices>
 
                 <hint> 
-                <p> If we rewrite
-                    <me>
-                        c_1\begin{bmatrix}-1\\0\end{bmatrix}+c_2 \begin{bmatrix}2\\3\end{bmatrix}+c_3\begin{bmatrix}4\\-1\end{bmatrix}=\begin{bmatrix}0\\0\end{bmatrix}
-                    </me>
-                    as a system of linear equations, there will be more unknowns than equations.
-                </p>
-                </hint>
-        </exercise>
-
-
-        <exercise xml:id="prob-linindmultchoice2">
-            <statement>
-                <p>
-                    <me>
-                        \begin{bmatrix}1\\0\\5\end{bmatrix}, \begin{bmatrix}2\\2\\3\end{bmatrix},\begin{bmatrix}-1\\0\\1\end{bmatrix}
-                    </me>
-                </p>
-            </statement>
-
-                    <choices>
-                        <choice correct="yes">
-                        <statement>
-                            <p>
-                                Yes
-                            </p>
-                        </statement>
-                        </choice>
-
-                        <choice>
-                        <statement>
-                            <p>
-                                No
-                            </p>
-                        </statement>
-                        </choice>
-                    </choices>
-            
-            <hint>
-            <p>
-            If we let <m>A</m> be the matrix whose columns are these vectors, then <m>\mbox{rref}(A)</m> should tell us what we want to know.
-            </p>
-            </hint>
-        </exercise>
-
-
-
-        <exercise xml:id="prob-linindmultchoice3">
-            <statement>
-                <p>
-                    <me>
-                        \begin{bmatrix}3\\0\\5\end{bmatrix}, \begin{bmatrix}2\\0\\2\end{bmatrix},\begin{bmatrix}-1\\0\\-5\end{bmatrix}
-                    </me>
-                </p>
-            </statement>
-
-                    <choices>
-                        <choice>
-                        <statement>
-                            <p>
-                                Yes
-                            </p>
-                        </statement>
-                        </choice>
-
-                        <choice correct="yes">
-                        <statement>
-                            <p>
-                                No
-                            </p>
-                        </statement>
-                        </choice>
-                    </choices>
-                <hint>
-                <p>
-                    If we let <m>A</m> be the matrix whose columns are these vectors, then <m>\mbox{rref}(A)</m> should tell us what we want to know.
-                </p>
-                </hint>
-        </exercise>
-
-
-
-        <exercise xml:id="prob-linindmultchoice4">
-            <statement>
-                <p>
-                    <me>
-                        \begin{bmatrix}3\\1\\4\\1\end{bmatrix}, \begin{bmatrix}-2\\1\\1\\1\end{bmatrix}
-                    </me>
-                </p>
-            </statement>
-
-                    <choices>
-                        <choice correct="yes">
-                        <statement>
-                            <p>
-                                Yes
-                            </p>
-                        </statement>
-                        </choice>
-
-                        <choice>
-                        <statement>
-                            <p>
-                                No
-                            </p>
-                        </statement>
-                        </choice>
-                    </choices>
-                    <hint>
-                    <p>
-                    In a set of two vectors, the only way one could be redundant is if they are scalar multiples of each other.
+                    <p> If we rewrite
+                        <me>
+                            c_1\begin{bmatrix}-1\\0\end{bmatrix}+c_2 \begin{bmatrix}2\\3\end{bmatrix}+c_3\begin{bmatrix}4\\-1\end{bmatrix}=\begin{bmatrix}0\\0\end{bmatrix}
+                        </me>
+                        as a system of linear equations, there will be more unknowns than equations.
                     </p>
-                    </hint>
-        </exercise>
-    </exercisegroup>
-
-       <!-- <em>Problems <xref ref="prob-TFlinind1</em>-\ref{prob-TFlinind2"/>} True or False? -->
-
-
-
-
-        <exercisegroup xml:id="prob-TFlinind1">
-        <introduction>
-            <p>
-             True or false?   
-            </p>
-        </introduction>
-
-        <exercise>
-            <statement>
-                <p>
-                    Any set containing the zero vector is linearly dependent.
-                </p>
-            </statement>
-
-                    <choices>
-                        <choice correct="yes">
-                        <statement>
-                            <p>
-                                TRUE
-                            </p>
-                        </statement>
-                        </choice>
-
-                        <choice>
-                        <statement>
-                            <p>
-                                FALSE
-                            </p>
-                        </statement>
-                        </choice>
-                    </choices>
-                <hint>
-                <p>
-                Can the zero vector be removed from the set without changing the span?
-                </p>
-            </hint>
-        </exercise>
-
-
-        <exercise xml:id="prob-TFlinind2">
-            <statement>
-                <p>
-                    A set containing five vectors in <m>\R^2</m> is linearly dependent.
-                </p>
-            </statement>
-                    <choices>
-                        <choice correct="yes">
-                        <statement>
-                            <p>
-                                TRUE
-                            </p>
-                        </statement>
-                        </choice>
-
-                        <choice>
-                        <statement>
-                            <p>
-                                FALSE
-                            </p>
-                        </statement>
-                        </choice>
-                    </choices>
-
-                <hint>
-                <p>
-                If we rewrite  <xref ref="eq-defLinInd"/> for five vectors in <m>\R^2</m> as a system of equations, how many equations and unknowns will it have?  What does this imply about the number of solutions?
-                </p>
                 </hint>
-        </exercise>
-    </exercisegroup>
+            </exercise>
 
+
+            <exercise xml:id="prob-linindmultchoice2">
+                <statement>
+                    <p>
+                        <me>
+                            \begin{bmatrix}1\\0\\5\end{bmatrix}, \begin{bmatrix}2\\2\\3\end{bmatrix},\begin{bmatrix}-1\\0\\1\end{bmatrix}
+                        </me>
+                    </p>
+                </statement>
+
+                <choices>
+                    <choice correct="yes">
+                        <statement>
+                            <p>
+                                Yes
+                            </p>
+                        </statement>
+                    </choice>
+
+                    <choice>
+                        <statement>
+                            <p>
+                                No
+                            </p>
+                        </statement>
+                    </choice>
+                </choices>
+            
+                <hint>
+                    <p>
+                        If we let <m>A</m> be the matrix whose columns are these vectors, then <m>\mbox{rref}(A)</m> should tell us what we want to know.
+                    </p>
+                </hint>
+            </exercise>
+
+
+            <exercise xml:id="prob-linindmultchoice3">
+                <statement>
+                    <p>
+                        <me>
+                            \begin{bmatrix}3\\0\\5\end{bmatrix}, \begin{bmatrix}2\\0\\2\end{bmatrix},\begin{bmatrix}-1\\0\\-5\end{bmatrix}
+                        </me>
+                    </p>
+                </statement>
+
+                <choices>
+                    <choice>
+                        <statement>
+                            <p>
+                                Yes
+                            </p>
+                        </statement>
+                    </choice>
+
+                    <choice correct="yes">
+                        <statement>
+                            <p>
+                                No
+                            </p>
+                        </statement>
+                    </choice>
+                </choices>
+                
+                <hint>
+                    <p>
+                        If we let <m>A</m> be the matrix whose columns are these vectors, then <m>\mbox{rref}(A)</m> should tell us what we want to know.
+                    </p>
+                </hint>
+            </exercise>
+
+
+            <exercise xml:id="prob-linindmultchoice4">
+                <statement>
+                    <p>
+                        <me>
+                            \begin{bmatrix}3\\1\\4\\1\end{bmatrix}, \begin{bmatrix}-2\\1\\1\\1\end{bmatrix}
+                        </me>
+                    </p>
+                </statement>
+
+                <choices>
+                    <choice correct="yes">
+                        <statement>
+                            <p>
+                                Yes
+                            </p>
+                        </statement>
+                    </choice>
+
+                    <choice>
+                        <statement>
+                            <p>
+                                No
+                            </p>
+                        </statement>
+                    </choice>
+                </choices>
+                
+                <hint>
+                    <p>
+                        In a set of two vectors, the only way it can be linearly dependent is if one of the vectors is a scalar multiple of the other.
+                    </p>
+                </hint>
+            </exercise>
+        </exercisegroup>
+
+       
+        <exercisegroup xml:id="prob-TFlinind1">
+            <introduction>
+                <p>
+                True or false?   
+                </p>
+            </introduction>
+
+            <exercise>
+                <statement>
+                    <p>
+                        Any set containing the zero vector is linearly dependent.
+                    </p>
+                </statement>
+
+                <choices>
+                    <choice correct="yes">
+                        <statement>
+                            <p>
+                                TRUE
+                            </p>
+                        </statement>
+                    </choice>
+
+                    <choice>
+                        <statement>
+                            <p>
+                                FALSE
+                            </p>
+                        </statement>
+                    </choice>
+                </choices>
+
+                <hint>
+                    <p>
+                        Can the zero vector be removed from the set without changing the span?
+                    </p>
+                </hint>
+            </exercise>
+
+
+            <exercise xml:id="prob-TFlinind2">
+                <statement>
+                    <p>
+                        A set containing five vectors in <m>\R^2</m> is linearly dependent.
+                    </p>
+                </statement>
     
+                <choices>
+                    <choice correct="yes">
+                        <statement>
+                            <p>
+                                TRUE
+                            </p>
+                        </statement>
+                    </choice>
+
+                    <choice>
+                        <statement>
+                            <p>
+                                FALSE
+                            </p>
+                        </statement>
+                    </choice>
+                </choices>
+
+                <hint>
+                    <p>
+                        If we rewrite  <xref ref="eq-defLinInd"/> for five vectors in <m>\R^2</m> as a system of equations, how many equations and unknowns will it have?  What does this imply about the number of solutions?
+                    </p>
+                </hint>
+            </exercise>
+        </exercisegroup>
 
 
-
-    <!-- <em>Problems <xref ref="prob-linindmultchoice5</em>-\ref{prob-linindmultchoice7"/>} -->
         <exercisegroup xml:id="prob-linindmultchoice5">
-        <introduction>
-            <p>
-        Each problem below provides information about vectors <m>\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3</m>. If possible, determine whether the vectors are linearly dependent or independent.
-            </p>
-        </introduction>
-
-        <exercise>
-         <statement>
+            <introduction>
                 <p>
-                    <me>
-                        0\mathbf{v}_1+ 0\mathbf{v}_2+ 0\mathbf{v}_3=\mathbf{0}
-                    </me>
+                    Each problem below provides information about vectors <m>\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3</m>. If possible, determine whether the vectors are linearly dependent or independent.
                 </p>
-        </statement>
+            </introduction>
 
-                    <choices>
-                        <choice>
+            <exercise>
+                <statement>
+                    <p>
+                        <me>
+                            0\mathbf{v}_1+ 0\mathbf{v}_2+ 0\mathbf{v}_3=\mathbf{0}
+                        </me>
+                    </p>
+                </statement>
+
+                <choices>
+                    <choice>
                         <statement>
                             <p>
                                 The vectors are linearly independent
                             </p>
                         </statement>
-                        </choice>
+                    </choice>
 
-                        <choice>
+                    <choice>
                         <statement>
                             <p>
                                 The vectors are linearly dependent
                             </p>
                         </statement>
-                        </choice>
+                    </choice>
 
-                        <choice correct="yes">
+                    <choice correct="yes">
                         <statement>
                             <p>
                                 There is not enough information given to make a determination
                             </p>
                         </statement>
-                        </choice>
-                    </choices>
-        </exercise>
+                    </choice>
+                </choices>
+            </exercise>
 
 
-        <exercise xml:id="prob-linindmultchoice6">
-            <statement>
-                <p>
-                    <me>
-                        3\mathbf{v}_1+ 4\mathbf{v}_2- \mathbf{v}_3=\mathbf{0}
-                    </me>
-                </p>
-            </statement>
+            <exercise xml:id="prob-linindmultchoice6">
+                <statement>
+                    <p>
+                        <me>
+                            3\mathbf{v}_1+ 4\mathbf{v}_2- \mathbf{v}_3=\mathbf{0}
+                        </me>
+                    </p>
+                </statement>
 
-                    <choices>
-                        <choice>
+                <choices>
+                    <choice>
                         <statement>
                             <p>
                                 The vectors are linearly independent
                             </p>
                         </statement>
-                        </choice>
+                    </choice>
 
-                        <choice correct="yes">
+                    <choice correct="yes">
                         <statement>
                             <p>
                                 The vectors are linearly dependent
                             </p>
                         </statement>
-                        </choice>
+                    </choice>
 
-                        <choice>
+                    <choice>
                         <statement>
                             <p>
                                 There is not enough information given to make a determination
                             </p>
                         </statement>
-                        </choice>
-                    </choices>
-        </exercise>
+                    </choice>
+                </choices>
+            </exercise>
 
 
-        <exercise xml:id="prob-linindmultchoice7">
-            <statement>
-                <p>
-                    <me>
-                        2\mathbf{v}_1+ 0\mathbf{v}_2+ 0\mathbf{v}_3=\mathbf{0}
-                    </me>
-                </p>
-            </statement>
+            <exercise xml:id="prob-linindmultchoice7">
+                <statement>
+                    <p>
+                        <me>
+                            2\mathbf{v}_1+ 0\mathbf{v}_2+ 0\mathbf{v}_3=\mathbf{0}
+                        </me>
+                    </p>
+                </statement>
 
-                    <choices>
-                        <choice>
+                <choices>
+                    <choice>
                         <statement>
                             <p>
                                 The vectors are linearly independent
                             </p>
                         </statement>
-                        </choice>
+                    </choice>
 
-                        <choice correct="yes">
+                    <choice correct="yes">
                         <statement>
                             <p>
                                 The vectors are linearly dependent
                             </p>
                         </statement>
-                        </choice>
+                    </choice>
 
-                        <choice>
+                    <choice>
                         <statement>
                             <p>
                                 There is not enough information given to make a determination
                             </p>
                         </statement>
-                        </choice>
-                    </choices>
-        </exercise>
-    </exercisegroup>
+                    </choice>
+                </choices>
+            </exercise>
+        </exercisegroup>
 
 
-    <!--<em>Problems <xref ref="prob-linindmultchoice9</em>-\ref{prob-linindmultchoice10"/>}--> 
         <exercisegroup xml:id="prob-linindmultchoice9">
-        <introduction>
-            <p>
-            Each diagram below shows a collection of vectors.  Are the vectors linearly dependent or independent?    
-            </p>
-        </introduction>
+            <introduction>
+                <p>
+                Each diagram below shows a collection of vectors.  Are the vectors linearly dependent or independent?    
+                </p>
+            </introduction>
 
-        <exercise>
-        <statement>
-            <image width="50%">
-                <shortdescription>
-                Example with three vectors
-                </shortdescription>
-                <latex-image>
-                \begin{tikzpicture}[scale=0.8]
-                \draw[\lt -\gt ] (-2,0)--(2,0);
-                \draw[\lt -\gt ] (0,-2)--(0,2);
-                \draw[line width=2pt,blue,-stealth](0,0)--(1.5,1.5);
-                \draw[line width=2pt,-stealth](0,0)--(1,-1);
-                \draw[line width=2pt,red,-stealth](0,0)--(0,1.5);
-                   \end{tikzpicture}
-                                      </latex-image>
-                                  </image>
-        </statement>
+            <exercise>
+                <statement>
+                    <image width="50%">
+                        <shortdescription>
+                            Example with three vectors
+                        </shortdescription>
+                        <latex-image>
+                            \begin{tikzpicture}[scale=0.8]
+                                \draw[\lt -\gt ] (-2,0)--(2,0);
+                                \draw[\lt -\gt ] (0,-2)--(0,2);
+                                \draw[line width=2pt,blue,-stealth](0,0)--(1.5,1.5);
+                                \draw[line width=2pt,-stealth](0,0)--(1,-1);
+                                \draw[line width=2pt,red,-stealth](0,0)--(0,1.5);
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </statement>
 
-                    <choices>
-                        <choice>
+                <choices>
+                    <choice>
                         <statement>
                             <p>
                                 The vectors are linearly independent
                             </p>
                         </statement>
-                        </choice>
+                    </choice>
 
-                        <choice correct="yes">
+                    <choice correct="yes">
                         <statement>
                             <p>
                                 The vectors are linearly dependent
                             </p>
                         </statement>
-                        </choice>
+                    </choice>
 
-                        <choice>
+                    <choice>
                         <statement>
                             <p>
                                 There is not enough information given to make a determination
                             </p>
                         </statement>
-                        </choice>
-                    </choices>
-        </exercise>
+                    </choice>
+                </choices>
+            </exercise>
 
 
+            <exercise xml:id="prob-linindmultchoice10">
+                <statement>
+                    <image width="60%">
+                        <shortdescription>
+                            Example with two vectors
+                        </shortdescription>
+                        <latex-image>
+                            \begin{tikzpicture}[scale=0.8]
+                                \draw[\lt -\gt ] (-2.5,0)--(2.5,0);
+                                \draw[\lt -\gt ] (0,-1)--(0,2.5);
+                                \draw[line width=2pt,blue,-stealth](0,0)--(2,2);
+                                \draw[line width=2pt,red,-stealth](0,0)--(-1,1);
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </statement>
 
-
-        <exercise xml:id="prob-linindmultchoice10">
-        <statement>
-                <image width="60%">
-                    <shortdescription>
-                    Example with two vectors
-                    </shortdescription>
-                    <latex-image>
-  \begin{tikzpicture}[scale=0.8]
-\draw[\lt -\gt ] (-2.5,0)--(2.5,0);
-\draw[\lt -\gt ] (0,-1)--(0,2.5);
-\draw[line width=2pt,blue,-stealth](0,0)--(2,2);
-\draw[line width=2pt,red,-stealth](0,0)--(-1,1);
- \end{tikzpicture}
-                    </latex-image>
-                </image>
-        </statement>
-
-                    <choices>
-                        <choice correct="yes">
+                <choices>
+                    <choice correct="yes">
                         <statement>
                             <p>
                                 The vectors are linearly independent
                             </p>
                         </statement>
-                        </choice>
+                    </choice>
 
-                        <choice>
+                    <choice>
                         <statement>
                             <p>
                                 The vectors are linearly dependent
                             </p>
                         </statement>
-                        </choice>
+                    </choice>
 
-                        <choice>
+                    <choice>
                         <statement>
                             <p>
                                 There is not enough information given to make a determination
                             </p>
                         </statement>
-                        </choice>
-                    </choices>
-        </exercise>
-    </exercisegroup>
-
-
-
+                    </choice>
+                </choices>
+            </exercise>
+        </exercisegroup>
 
 
         <exercise xml:id="prob-Adding1OK">
@@ -1364,8 +1364,5 @@ If possible, construct an example of each of the following.  If not possible, ex
                 </p>
             </statement>
         </exercise>
-</exercises>
-
- 
-
+    </exercises>
 </section>
