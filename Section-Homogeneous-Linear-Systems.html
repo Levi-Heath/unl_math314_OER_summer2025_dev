@@ -905,7 +905,7 @@ c_1\begin{bmatrix}2\\1\\4\end{bmatrix}+c_2\begin{bmatrix}-3\\1\\1\end{bmatrix}=\
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.12</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="th-lindeplincombofother-1-1">
-<div class="para">Let <span class="process-math">\(\mathbf{v}_1,\mathbf{v}_2,\dots ,\mathbf{v}_k\)</span> be  a set of vectors in <span class="process-math">\(\R^n\)</span> containing two or more vectors.  The following conditions are equivalent.</div>
+<div class="para">Let <span class="process-math">\(\left\{\mathbf{v}_1,\mathbf{v}_2,\dots ,\mathbf{v}_k\right\}\)</span> be a set of vectors in <span class="process-math">\(\R^n\)</span> containing two or more vectors.  The following conditions are equivalent.</div>
 <ol class="decimal" id="th-lindeplincombofother-1-1-3">
 <li id="th-lindeplincombofother-a"><div class="para" id="th-lindeplincombofother-a-1">
 <span class="process-math">\(\mathbf{v}_1,\mathbf{v}_2,\dots ,\mathbf{v}_k\)</span> are linearly dependent.</div></li>
@@ -958,7 +958,24 @@ a_1\mathbf{v}_1+a_2\mathbf{v}_2+\cdots +a_{j-1}\mathbf{v}_{j-1}-\mathbf{v}_{j}+a
 </div>
 <div class="para">Hence, <span class="process-math">\(x_1=a_1, x_2=a_2, \ldots, x_{j-1}=a_{j-1}, x_{j}=-1, x_{j+1}=a_{j+1},\ldots, x_k=a_k\)</span> is a non-trivial solution to the homogeneous linear combination equation <a href="Section-Homogeneous-Linear-Systems.html#eq-homoglincomb" class="internal" title="Equation">Equation </a>. This shows that the vectors <span class="process-math">\(\mathbf{v}_1,\mathbf{v}_2,\dots ,\mathbf{v}_k\)</span> are linearly dependent.</div>
 </div>
-<div class="para" id="Subsection-Linear-Independence-7-3">These two parts of the proof show that if one of the conditions is true, both must be true. It is a logical consequence that if one of the conditions is false, both must be false.</div></article></details></section><section class="subsection" id="Subsection-Geometry-of-Linearly-Dependent-and-Linearly-Independent-Vectors"><h3 class="heading hide-type">
+<div class="para" id="Subsection-Linear-Independence-7-3">These two parts of the proof show that if one of the conditions is true, both must be true. It is a logical consequence that if one of the conditions is false, both must be false.</div></article></details><article class="corollary theorem-like" id="cor-span-of-lin-dependent-vectors"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.4.13</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="cor-span-of-lin-dependent-vectors-1-1">
+<div class="para">Let <span class="process-math">\(X=\left\{\mathbf{v}_1,\mathbf{v}_2,\dots ,\mathbf{v}_k\right\}\)</span> be a set of vectors in <span class="process-math">\(\R^n\text{.}\)</span>
+</div>
+<ul class="disc" id="cor-span-of-lin-dependent-vectors-1-1-3">
+<li id="cor-span-of-lin-dependent-vectors-1-1-3-1"><div class="para logical" id="cor-span-of-lin-dependent-vectors-1-1-3-1-1">
+<div class="para">If <span class="process-math">\(X\)</span> is linearly dependent, then by <a href="Section-Homogeneous-Linear-Systems.html#th-lindeplincombofother" class="xref" data-knowl="./knowl/xref/th-lindeplincombofother.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.4.12">Theorem 2.4.12</a> there is a vector <span class="process-math">\(\mathbf{v}_j\)</span> in <span class="process-math">\(X\)</span> that can be written as a linear combination of the other vectors in <span class="process-math">\(X\)</span> and therefore</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-lindeplincombofother.html">
+\begin{equation*}
+\text{span}(X)=\text{span}\left(\mathbf{v}_1,\mathbf{v}_2,\ldots ,\mathbf{v}_{j-1},\mathbf{v}_{j+1},\ldots ,\mathbf{v}_k\right).
+\end{equation*}
+</div>
+</div></li>
+<li id="cor-span-of-lin-dependent-vectors-1-1-3-2"><div class="para" id="cor-span-of-lin-dependent-vectors-1-1-3-2-1">If <span class="process-math">\(X\)</span> is linearly independent, then no vector in <span class="process-math">\(X\)</span> can be written as a linear combination of the others and hence the span of <span class="process-math">\(X\)</span> cannot be written as a span of set with fewer vectors.</div></li>
+</ul>
+</div></article></section><section class="subsection" id="Subsection-Geometry-of-Linearly-Dependent-and-Linearly-Independent-Vectors"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="space"> </span><span class="title">Geometry of Linearly Dependent and Linearly Independent Vectors</span>
 </h3>
 <div class="para" id="Subsection-Geometry-of-Linearly-Dependent-and-Linearly-Independent-Vectors-2">Theorem <a href="Section-Homogeneous-Linear-Systems.html#th-lindeplincombofother" class="xref" data-knowl="./knowl/xref/th-lindeplincombofother.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.4.12">Theorem 2.4.12</a> gives us a convenient way of looking at linear dependence/independence geometrically. When looking at two or more vectors, we ask, “Can one of the vectors be written as a linear combination of the others?” If the answer is “YES”, then the vectors are linearly dependent.</div>
@@ -1023,16 +1040,15 @@ A=\begin{bmatrix}3\amp 2\amp 1\\1\amp -1\amp 1\\4\amp 1\amp 1\end{bmatrix}\quad\
 <div class="para" id="prob-homogeneouspart1-1-1">Prove <a href="Section-Homogeneous-Linear-Systems.html#item-homogeneous1" class="xref" data-knowl="./knowl/xref/item-homogeneous1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a> of <a href="Section-Homogeneous-Linear-Systems.html#th-homogeneous" class="xref" data-knowl="./knowl/xref/th-homogeneous.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.4.7">Theorem 2.4.7</a>.</div></article><article class="exercise exercise-like" id="prob-redundant1"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
 <div class="exercise-statement"><div class="para logical" id="prob-redundant1-1-1">
-<div class="para">In <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "exp-redundantVecs2" missing or not unique]</code> we considered the following set of vectors</div>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="para">Consider the following set of vectors:</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}
+\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}.
 \end{equation*}
 </div>
-<div class="para">and demonstrated that <span class="process-math">\([4,4,-1]\)</span> is redundant by using the fact that it is a linear combination of the other two vectors.</div>
-<ol class="lower-alpha lower-alpha-level-1" id="prob-redundant1-1-1-4">
-<li id="prob-redundant1-1-1-4-1"><div class="para" id="prob-redundant1-1-1-4-1-1">Express each of <span class="process-math">\([1,2,-1]\)</span> and <span class="process-math">\([2,0,1]\)</span> as a linear combination of the remaining vectors.</div></li>
-<li id="prob-redundant1-1-1-4-2"><div class="para" id="prob-redundant1-1-1-4-2-1">Which of the following is NOT true?</div></li>
+<ol class="lower-alpha lower-alpha-level-1" id="prob-redundant1-1-1-2">
+<li id="prob-redundant1-1-1-2-1"><div class="para" id="prob-redundant1-1-1-2-1-1">Express each of the vectors in the set as a linear combination of the remaining vectors.</div></li>
+<li id="prob-redundant1-1-1-2-2"><div class="para" id="prob-redundant1-1-1-2-2-1">Which of the following is NOT true?</div></li>
 </ol>
 </div></div>
 <ul data-component="multiplechoice" class="exercise-interactives" id="rs-prob-redundant1" data-multipleanswers="false">
@@ -1051,16 +1067,7 @@ A=\begin{bmatrix}3\amp 2\amp 1\\1\amp -1\amp 1\\4\amp 1\amp 1\end{bmatrix}\quad\
 </div>
 </div></li>
 <li data-component="feedback" id="rs-prob-redundant1_opt_a">
-<li data-component="answer" id="rs-prob-redundant1_opt_b"><div class="para logical" id="prob-redundant1-2-2-1-1">
-<div class="para">Both <span class="process-math">\([1,2,-1]\)</span> and <span class="process-math">\([2,0,1]\)</span> are redundant in</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}.
-\end{equation*}
-</div>
-</div></li>
-<li data-component="feedback" id="rs-prob-redundant1_opt_b">
-<li data-component="answer" id="rs-prob-redundant1_opt_c" data-correct=""><div class="para logical" id="prob-redundant1-2-3-1-1">
+<li data-component="answer" id="rs-prob-redundant1_opt_b" data-correct=""><div class="para logical" id="prob-redundant1-2-2-1-1">
 <div class="para">We can remove <span class="process-math">\([1,2,-1]\)</span> and <span class="process-math">\([2,0,1]\)</span> from</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1069,14 +1076,21 @@ A=\begin{bmatrix}3\amp 2\amp 1\\1\amp -1\amp 1\\4\amp 1\amp 1\end{bmatrix}\quad\
 </div>
 <div class="para">at the same time without affecting the span.</div>
 </div></li>
-<li data-component="feedback" id="rs-prob-redundant1_opt_c">
+<li data-component="feedback" id="rs-prob-redundant1_opt_b">
 </ul>
 </div></div>
 <div class="solutions"><details id="prob-redundant1-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-redundant1-3-1"><div class="displaymath process-math" id="prob-redundant1-3-1-1">
-\begin{gather*}
-\begin{bmatrix}1\\2\\-1\end{bmatrix} =-\frac{1}{2}\begin{bmatrix}2\\0\\1\end{bmatrix}+\frac{1}{2}\begin{bmatrix}4\\4\\-1\end{bmatrix}  \\
-\begin{bmatrix}2\\0\\1\end{bmatrix}=-2\begin{bmatrix}1\\2\\-1\end{bmatrix}+1\begin{bmatrix}4\\4\\-1\end{bmatrix}                 
-\end{gather*}
+\begin{align*}
+\begin{bmatrix}1\\2\\-1\end{bmatrix} 
+\amp = -\frac{1}{2}\begin{bmatrix}2\\0\\1\end{bmatrix}
++ \frac{1}{2}\begin{bmatrix}4\\4\\-1\end{bmatrix}\\
+\begin{bmatrix}2\\0\\1\end{bmatrix}
+\amp = -2\begin{bmatrix}1\\2\\-1\end{bmatrix}
++ 1\begin{bmatrix}4\\4\\-1\end{bmatrix}\\
+\begin{bmatrix}4\\4\\-1\end{bmatrix}
+\amp = 2\begin{bmatrix}1\\2\\-1\end{bmatrix}
++ 1\begin{bmatrix}2\\0\\1\end{bmatrix}
+\end{align*}
 </div></div></div></details></div></article><div class="exercisegroup" id="Section-Homogeneous-Linear-Systems-9-6">
 <h4 class="heading"><span class="title">Exercise Group.</span></h4>
 <div class="introduction" id="Section-Homogeneous-Linear-Systems-9-6-1"><div class="para" id="Section-Homogeneous-Linear-Systems-9-6-1-1">Are the given vectors linearly independent?</div></div>
@@ -1145,7 +1159,7 @@ c_1\begin{bmatrix}-1\\0\end{bmatrix}+c_2 \begin{bmatrix}2\\3\end{bmatrix}+c_3\be
 <li data-component="feedback" id="rs-prob-linindmultchoice4_opt_b">
 </ul>
 </div></div>
-<div class="solutions"><details id="prob-linindmultchoice4-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="prob-linindmultchoice4-3-1">In a set of two vectors, the only way one could be redundant is if they are scalar multiples of each other.</div></div></details></div></article>
+<div class="solutions"><details id="prob-linindmultchoice4-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="prob-linindmultchoice4-3-1">In a set of two vectors, the only way it can be linearly dependent is if one of the vectors is a scalar multiple of the other.</div></div></details></div></article>
 </div>
 </div>
 <div class="exercisegroup" id="prob-TFlinind1">
