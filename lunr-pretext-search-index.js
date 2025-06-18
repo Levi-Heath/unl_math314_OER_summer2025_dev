@@ -2122,7 +2122,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.4",
   "title": "Homogeneous Linear Systems",
-  "body": " Homogeneous Linear Systems    A system of linear equations is called homogeneous if the system can be written in the form     A homogeneous linear system is always consistent because is a solution. This solution is called the trivial solution . Geometrically, a homogeneous system can be interpreted as a collection of lines or planes (or hyperplanes) passing through the origin. Thus, they will always have the origin in common, but may have other points in common as well.  If is the coefficient matrix for a homogeneous system, then the system can be written as a matrix equation . The augmented matrix that represents the system looks like this As we perform elementary row operations, the entries to the right of the vertical bar remain . It is customary to omit writing them down and apply elementary row operations to the coefficient matrix only.    Solve the given homogeneous system and interpret your solution geometrically.     We start by rewriting this system as a matrix equation We will proceed to find the reduced row-echelon form of the matrix as usual, but will omit writing the zeros to the right of the vertical bar.  and are leading variables, and is a free variable. We let and solve for and . Each of the equations in the original system represents a plane through the origin in . The system has infinitely many solutions. Geometrically, we can interpret these solutions as points lying on the line shared by the three planes. The above solution is a parametric representation of this line. Use the GeoGebra demo below to take a better look at the system. (RIGHT-CLICK and DRAG to rotate the image.)             General and Particular Solutions    Given any linear system , the system is called the associated homogeneous system .    It turns out that there is a relationship between solutions of and solutions of the associated homogeneous system.   Let Consider the matrix equation . Row reduction produces the following. We conclude that .    Let's take a more careful look at . Rewrite onto its parametric form.         We now see that the solution vector is made up of two distinct parts:   one specific vector     infinitely many scalar multiples of .     The vector is an example of a particular solution . This particular ``particular solution\" corresponds to . We can find any number of particular solutions by letting assume different values. For example, the particular solution that corresponds to is . Let be any particular solution of . It turns out that all vectors of the form are solutions of . We can verify this as follows This shows that the specific vector is not very special, as any solution of can be used in its place. The vector , however, is special. Note that So and all of its scalar multiples are solutions to the associated homogeneous system.     In we found that the general solution of the equation has the form: It turns out that the general solution of any linear system can be written in this format. formalizes this result.      Suppose is a particular solution of .   If is a solution of the associated homogeneous system, then is a solution of .    If is a solution of , then there exists a solution of the associated homogeneous system, , such that .       We will prove part . The proof of part is left to the reader.  [Proof of ]: Let , then and       Let If possible, find a solution of and express it as a sum of a particular solution and the general solution of the associated homogeneous system. ( )    First, we obtain the reduced row-echelon form So In this case         For each matrix and vector below, find a solution to and express your solution as a sum of a particular solution and a general solution to the associated homogeneous system.                   Prove that a consistent system has infinitely many solutions if and only if the associated homogeneous system has infinitely many solutions.       If possible, construct an example of each of the following. If not possible, explain why.     An inconsistent system with an associated homogeneous system that has infinitely many solutions.      An inconsistent system with an associated homogeneous system that has a unique (trivial) solution.       Prove that a linear combination of any number of solutions of a homogeneous equation is a solution of the same equation.      Prove of .     "
+  "body": " Homogeneous Linear Systems    A system of linear equations is called homogeneous if the system can be written in the form     A homogeneous linear system is always consistent because is a solution. This solution is called the trivial solution . Geometrically, a homogeneous system can be interpreted as a collection of lines or planes (or hyperplanes) passing through the origin. Thus, they will always have the origin in common, but may have other points in common as well.  If is the coefficient matrix for a homogeneous system, then the system can be written as a matrix equation . The augmented matrix that represents the system looks like this As we perform elementary row operations, the entries to the right of the vertical bar remain . It is customary to omit writing them down and apply elementary row operations to the coefficient matrix only.    Solve the given homogeneous system and interpret your solution geometrically.     We start by rewriting this system as a matrix equation We will proceed to find the reduced row echelon form of the matrix as usual, but will omit writing the zeros to the right of the vertical bar.  and are leading variables, and is a free variable. We let and solve for and . Each of the equations in the original system represents a plane through the origin in . The system has infinitely many solutions. Geometrically, we can interpret these solutions as points lying on the line shared by the three planes. The above solution is a parametric representation of this line. Use the GeoGebra demo below to take a better look at the system. (RIGHT-CLICK and DRAG to rotate the image.)             General and Particular Solutions    Given any linear system , the system is called the associated homogeneous system .    It turns out that there is a relationship between solutions of and solutions of the associated homogeneous system.   Let Consider the matrix equation . Row reduction produces the following. We conclude that .    Let's take a more careful look at . Rewrite onto its parametric form.         We now see that the solution vector is made up of two distinct parts:   one specific vector     infinitely many scalar multiples of .     The vector is an example of a particular solution . This particular ``particular solution\" corresponds to . We can find any number of particular solutions by letting assume different values. For example, the particular solution that corresponds to is . Let be any particular solution of . It turns out that all vectors of the form are solutions of . We can verify this as follows This shows that the specific vector is not very special, as any solution of can be used in its place. The vector , however, is special. Note that So and all of its scalar multiples are solutions to the associated homogeneous system.     In we found that the general solution of the equation has the form: It turns out that the general solution of any linear system can be written in this format. formalizes this result.      Suppose is a particular solution of .   If is a solution of the associated homogeneous system, then is a solution of .    If is a solution of , then there exists a solution of the associated homogeneous system, , such that .       We will prove part . The proof of part is left to the reader.  [Proof of ]: Let , then and       Let If possible, find a solution of and express it as a sum of a particular solution and the general solution of the associated homogeneous system. ( )    First, we obtain the reduced row echelon form So In this case       Linear Independence  Homogeneous linear systems allow us to define a very important concept: linear independence .   Linear Independence   Let be vectors of . We say that the set is linearly independent if the only solution to the homogeneous linear combination equation is the trivial solution  .  If, in addition to the trivial solution, a non-trivial solution (not all are zero) exists, then the set is called linearly dependent .     Given a set of vectors we can now ask the following questions:   Are the vectors in linearly dependent according to ?    Can we write one element of as a linear combination of the others?   It turns out that these questions are equivalent. In other words, if the answer to one of them is ``YES\", the answer to the other is also ``YES\". Conversely, if the answer to one of them is ``NO\", then the answer to the other is also ``NO\". We will start by illustrating this idea with an example, then conclude this section by formally proving the equivalency.     What can we say about the following sets of vectors in light of Remark ?                We will start by addressing linear independence for . To do so, we will solve the linear combination equation Clearly is a solution to the equation. The question is whether another solution exists. The linear combination equation translates into the following system: Writing the system in augmented matrix form and applying elementary row operations gives us the following reduced row echelon form: This shows that has infinitely many solutions: Since there are infinitely many solutions, we conclude that the vectors are linearly dependent.  Now to address part of the remark. We can use the solution to the homogeneous linear combination equation to write one of the vectors as a linear combination of the others. Letting , we obtain the following: Now we solve for one of the vectors: This would not be possible if a nontrivial solution to the equation did not exist. Therefore, we conclude the answer to both questions in is ``YES\".  For part To address linear independence, we need to solve the equation Converting the equation to augmented matrix form and performing row reduction gives us This shows that is the only solution. Therefore the two vectors are linearly independent. Furthermore, we cannot write one of the vectors as a linear combination of the other. Do you see that the only way this would be possible with a set of two vectors is if they were scalar multiples of each other?  So the answer to both questions in is ``NO\".      Let be a set of vectors in containing two or more vectors. The following conditions are equivalent.    are linearly dependent.    One of can be expressed as a linear combination of the others.        For   , if are linearly dependent, then has a non-trivial solution. In other words at least one of the constants, say , does not equal zero. This allows us to solve for : Do you see why it was important to have one of the constants nonzero? This shows that may be expressed as a linear combination of the other vectors.  For the implication   , suppose is a linear combination of . We will show that the vectors are linearly dependent. That is, there is a non-trivial solution to the homogeneous linear combination equation Since is a linear combination of , we can write for some constants . We can now subtract from both sides of the equation to get: Hence, is a non-trivial solution to the homogeneous linear combination equation . This shows that the vectors are linearly dependent.  These two parts of the proof show that if one of the conditions is true, both must be true. It is a logical consequence that if one of the conditions is false, both must be false.     Geometry of Linearly Dependent and Linearly Independent Vectors  Theorem gives us a convenient way of looking at linear dependence\/independence geometrically. When looking at two or more vectors, we ask, Can one of the vectors be written as a linear combination of the others? If the answer is YES , then the vectors are linearly dependent.   A Set of Two Vectors  Two vectors are linearly dependent if and only if one is a scalar multiple of the other. Two nonzero linearly dependent vectors may look like this:   Two vectors that lie on the same line and point in the same direction.    or like this:   Two vectors that lie on the same line, but point in opposite directions.    Two linearly independent vectors will look like this:   Two vectors that do not lie on the same line.      A Set of Three Vectors  Given a set of three nonzero vectors, we have the following possibilities:    (Linearly Dependent Vectors) The three vectors are scalar multiples of each other.   Three vectors that lie on the same line.      (Linearly Dependent Vectors) Two of the vectors are scalar multiples of each other.   Two vectors that lie on the same line and one that lies on a different line.      (Linearly Dependent Vectors) One vector can be viewed as the diagonal of a parallelogram determined by scalar multiples of the other two vectors. All three vectors lie in the same plane.   Three vectors that lie in the same plane, with one vector being the diagonal of a parallelogram formed by the other two.      (Linearly Independent Vectors) A set of three vectors is linearly independent if the vectors do not lie in the same plane. For example, vectors , and are linearly independent.         For each matrix and vector below, find a solution to and express your solution as a sum of a particular solution and a general solution to the associated homogeneous system.                   Prove that a consistent system has infinitely many solutions if and only if the associated homogeneous system has infinitely many solutions.       If possible, construct an example of each of the following. If not possible, explain why.     An inconsistent system with an associated homogeneous system that has infinitely many solutions.      An inconsistent system with an associated homogeneous system that has a unique (trivial) solution.       Prove that a linear combination of any number of solutions of a homogeneous equation is a solution of the same equation.      Prove of .       In we considered the following set of vectors and demonstrated that is redundant by using the fact that it is a linear combination of the other two vectors.   Express each of and as a linear combination of the remaining vectors.    Which of the following is NOT true?         If is in then is in       Both and are redundant in       We can remove and from at the same time without affecting the span.             Are the given vectors linearly independent?            Yes      No      If we rewrite as a system of linear equations, there will be more unknowns than equations.             Yes      No      If we let be the matrix whose columns are these vectors, then should tell us what we want to know.             Yes      No      If we let be the matrix whose columns are these vectors, then should tell us what we want to know.             Yes      No      In a set of two vectors, the only way one could be redundant is if they are scalar multiples of each other.        True or false?     Any set containing the zero vector is linearly dependent.      TRUE      FALSE      Can the zero vector be removed from the set without changing the span?      A set containing five vectors in is linearly dependent.      TRUE      FALSE      If we rewrite for five vectors in as a system of equations, how many equations and unknowns will it have? What does this imply about the number of solutions?        Each problem below provides information about vectors . If possible, determine whether the vectors are linearly dependent or independent.            The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination               The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination               The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination          Each diagram below shows a collection of vectors. Are the vectors linearly dependent or independent?      Example with three vectors        The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination         Example with two vectors        The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination         Suppose is a linearly independent set in , and that is not in . Prove that is also linearly independent.      Suppose is a linearly independent set of vectors. Prove that the set is also linearly independent.      Suppose is a linearly independent set of vectors in . Is the following set dependent or independent ? Prove your claim.     "
 },
 {
   "id": "def-homogeneous",
@@ -2149,7 +2149,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "2.4.2",
   "title": "",
-  "body": "  Solve the given homogeneous system and interpret your solution geometrically.     We start by rewriting this system as a matrix equation We will proceed to find the reduced row-echelon form of the matrix as usual, but will omit writing the zeros to the right of the vertical bar.  and are leading variables, and is a free variable. We let and solve for and . Each of the equations in the original system represents a plane through the origin in . The system has infinitely many solutions. Geometrically, we can interpret these solutions as points lying on the line shared by the three planes. The above solution is a parametric representation of this line. Use the GeoGebra demo below to take a better look at the system. (RIGHT-CLICK and DRAG to rotate the image.)           "
+  "body": "  Solve the given homogeneous system and interpret your solution geometrically.     We start by rewriting this system as a matrix equation We will proceed to find the reduced row echelon form of the matrix as usual, but will omit writing the zeros to the right of the vertical bar.  and are leading variables, and is a free variable. We let and solve for and . Each of the equations in the original system represents a plane through the origin in . The system has infinitely many solutions. Geometrically, we can interpret these solutions as points lying on the line shared by the three planes. The above solution is a parametric representation of this line. Use the GeoGebra demo below to take a better look at the system. (RIGHT-CLICK and DRAG to rotate the image.)           "
 },
 {
   "id": "def-asshomsys",
@@ -2194,14 +2194,68 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "2.4.8",
   "title": "",
-  "body": "  Let If possible, find a solution of and express it as a sum of a particular solution and the general solution of the associated homogeneous system. ( )    First, we obtain the reduced row-echelon form So In this case    "
+  "body": "  Let If possible, find a solution of and express it as a sum of a particular solution and the general solution of the associated homogeneous system. ( )    First, we obtain the reduced row echelon form So In this case    "
+},
+{
+  "id": "Subsection-Linear-Independence-2",
+  "level": "2",
+  "url": "Section-Homogeneous-Linear-Systems.html#Subsection-Linear-Independence-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "linear independence "
+},
+{
+  "id": "def-linearindependence",
+  "level": "2",
+  "url": "Section-Homogeneous-Linear-Systems.html#def-linearindependence",
+  "type": "Definition",
+  "number": "2.4.9",
+  "title": "Linear Independence.",
+  "body": " Linear Independence   Let be vectors of . We say that the set is linearly independent if the only solution to the homogeneous linear combination equation is the trivial solution  .  If, in addition to the trivial solution, a non-trivial solution (not all are zero) exists, then the set is called linearly dependent .   "
+},
+{
+  "id": "LinIndEquiv",
+  "level": "2",
+  "url": "Section-Homogeneous-Linear-Systems.html#LinIndEquiv",
+  "type": "Remark",
+  "number": "2.4.10",
+  "title": "",
+  "body": " Given a set of vectors we can now ask the following questions:   Are the vectors in linearly dependent according to ?    Can we write one element of as a linear combination of the others?   It turns out that these questions are equivalent. In other words, if the answer to one of them is ``YES\", the answer to the other is also ``YES\". Conversely, if the answer to one of them is ``NO\", then the answer to the other is also ``NO\". We will start by illustrating this idea with an example, then conclude this section by formally proving the equivalency.  "
+},
+{
+  "id": "ex-linind",
+  "level": "2",
+  "url": "Section-Homogeneous-Linear-Systems.html#ex-linind",
+  "type": "Example",
+  "number": "2.4.11",
+  "title": "",
+  "body": "  What can we say about the following sets of vectors in light of Remark ?                We will start by addressing linear independence for . To do so, we will solve the linear combination equation Clearly is a solution to the equation. The question is whether another solution exists. The linear combination equation translates into the following system: Writing the system in augmented matrix form and applying elementary row operations gives us the following reduced row echelon form: This shows that has infinitely many solutions: Since there are infinitely many solutions, we conclude that the vectors are linearly dependent.  Now to address part of the remark. We can use the solution to the homogeneous linear combination equation to write one of the vectors as a linear combination of the others. Letting , we obtain the following: Now we solve for one of the vectors: This would not be possible if a nontrivial solution to the equation did not exist. Therefore, we conclude the answer to both questions in is ``YES\".  For part To address linear independence, we need to solve the equation Converting the equation to augmented matrix form and performing row reduction gives us This shows that is the only solution. Therefore the two vectors are linearly independent. Furthermore, we cannot write one of the vectors as a linear combination of the other. Do you see that the only way this would be possible with a set of two vectors is if they were scalar multiples of each other?  So the answer to both questions in is ``NO\".   "
+},
+{
+  "id": "th-lindeplincombofother",
+  "level": "2",
+  "url": "Section-Homogeneous-Linear-Systems.html#th-lindeplincombofother",
+  "type": "Theorem",
+  "number": "2.4.12",
+  "title": "",
+  "body": "  Let be a set of vectors in containing two or more vectors. The following conditions are equivalent.    are linearly dependent.    One of can be expressed as a linear combination of the others.      "
+},
+{
+  "id": "Subsection-Linear-Independence-7",
+  "level": "2",
+  "url": "Section-Homogeneous-Linear-Systems.html#Subsection-Linear-Independence-7",
+  "type": "Proof",
+  "number": "2.4.2.1",
+  "title": "",
+  "body": " For   , if are linearly dependent, then has a non-trivial solution. In other words at least one of the constants, say , does not equal zero. This allows us to solve for : Do you see why it was important to have one of the constants nonzero? This shows that may be expressed as a linear combination of the other vectors.  For the implication   , suppose is a linear combination of . We will show that the vectors are linearly dependent. That is, there is a non-trivial solution to the homogeneous linear combination equation Since is a linear combination of , we can write for some constants . We can now subtract from both sides of the equation to get: Hence, is a non-trivial solution to the homogeneous linear combination equation . This shows that the vectors are linearly dependent.  These two parts of the proof show that if one of the conditions is true, both must be true. It is a logical consequence that if one of the conditions is false, both must be false.  "
 },
 {
   "id": "prob-hompluspart1",
   "level": "2",
   "url": "Section-Homogeneous-Linear-Systems.html#prob-hompluspart1",
   "type": "Exercise",
-  "number": "2.4.2.1",
+  "number": "2.4.4.1",
   "title": "",
   "body": "      "
 },
@@ -2210,7 +2264,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Homogeneous-Linear-Systems.html#prob-hompluspart2",
   "type": "Exercise",
-  "number": "2.4.2.2",
+  "number": "2.4.4.2",
   "title": "",
   "body": "      "
 },
@@ -2219,7 +2273,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Homogeneous-Linear-Systems.html#prob-infmanysolutionshom",
   "type": "Exercise",
-  "number": "2.4.2.3",
+  "number": "2.4.4.3",
   "title": "",
   "body": "  Prove that a consistent system has infinitely many solutions if and only if the associated homogeneous system has infinitely many solutions.   "
 },
@@ -2228,7 +2282,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Homogeneous-Linear-Systems.html#prob-homexample1",
   "type": "Exercise",
-  "number": "2.4.2.4",
+  "number": "2.4.4.4",
   "title": "",
   "body": "  An inconsistent system with an associated homogeneous system that has infinitely many solutions.   "
 },
@@ -2237,7 +2291,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Homogeneous-Linear-Systems.html#prob-homexample2",
   "type": "Exercise",
-  "number": "2.4.2.5",
+  "number": "2.4.4.5",
   "title": "",
   "body": "  An inconsistent system with an associated homogeneous system that has a unique (trivial) solution.   "
 },
@@ -2246,7 +2300,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Homogeneous-Linear-Systems.html#prob-lincombsolutions",
   "type": "Exercise",
-  "number": "2.4.2.6",
+  "number": "2.4.4.6",
   "title": "",
   "body": "  Prove that a linear combination of any number of solutions of a homogeneous equation is a solution of the same equation.   "
 },
@@ -2255,241 +2309,142 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Homogeneous-Linear-Systems.html#prob-homogeneouspart1",
   "type": "Exercise",
-  "number": "2.4.2.7",
+  "number": "2.4.4.7",
   "title": "",
   "body": "  Prove of .   "
 },
 {
-  "id": "Section-Linear-Independence",
-  "level": "1",
-  "url": "Section-Linear-Independence.html",
-  "type": "Section",
-  "number": "2.5",
-  "title": "Linear Independence",
-  "body": " Linear Independence  If a friend told you that they have a line spanned by , and , you would probably think that your friend's description is a little excessive. After all, should one of the above vectors not ne sufficient to describe the line? A line can be described as a span of one vector, but it can also be described as a span of two or more vectors. There are many advantages, however, to using the most efficient description possible. In this section we will begin to explore what makes a description ``more efficient.\"   Redundant Vectors   Consider the following collection of vectors:     What is the span of these vectors?   A line.    All of .    A parallelogram.    A parallelipiped.       Option b: All of     In this Exploration we will examine what can happen to the span of a collection of vectors when a vector is removed from the collection.  First, let's remove from     Which of the following is true?    .     is a line.          is a parallelogram.       Option b: is a line.      Removing from does what?   It changes the span.    It does not change the span.       Option a: It does change the span.    Now let's remove from the original collection of vectors.    Which of the following is true?    .     is a line.     is the right side of the coordinate plane.     is a parallelogram.       Option a: .      Removing from does what?   It changes the span.    It does not change the span.       Option b: It does change the span.     As you just discovered, removing a vector from a collection of vectors may or may not affect the span of the collection. We will refer to vectors that can be removed from a collection without changing the span as redundant . In , is redundant , while is not.    Let be a set of vectors in . If we can remove one vector without changing the span of this set, then that vector is redundant . In other words, if we say that is a redundant element of , or simply redundant.    Our next goal is to see what causes of to be redundant. The answer lies not in the vector itself, but in its relationship to the other vectors.  Observe that . In other words, is a scalar multiple of another vector in the set. To see why this matters, let's pick an arbitrary vector in The vector is in the span because it can be written as a linear combination of the three vectors as follows But is not essential to this linear combination because it can be replaced with , as shown below. Regardless of what vector we write as a linear combination of , and , we will always be able to replace with , placing into the span of and , and making redundant. Similarly, writing makes redundant.  We conclude that only one of and is needed to maintain the span of the original three vectors. We have The left-most collection in this expression contains redundant vectors; the other two collections do not. In we found one vector to be redundant because we could replace it with a scalar multiple of another vector in the set. The following Exploration delves into what happens when a vector in a given set is a linear combination of the other vectors.   Consider the set of vectors The three vectors are shown below. RIGHT-CLICK and DRAG to rotate the interactive graph.        is   A line.    A plane.    All of         Option b: A plane.   Can we remove one of the vectors from the set without changing the span? Observe that we can write as a linear combination of the other two vectors This means that we can write any vector in as a linear combination of only and by replacing with the expression in . For example, We have We conclude that vector is redundant. Can each of the other two vectors in the set be considered redundant? You will address this later in the practice problems. .   Collections of vectors that do not contain redundant vectors are very important in linear algebra. We will refer to such collections as linearly independent . Collections of vectors that contain redundant vectors will be called linearly dependent . The following section offers a definition that will allow us to easily determine linear dependence and independence of vectors.    Linear Independence   Linear Independence   Let be vectors of . We say that the set is linearly independent if the only solution to is the trivial solution  .  If, in addition to the trivial solution, a non-trivial solution (not all are zero) exists, then the set is called linearly dependent .     Given a set of vectors we can now ask the following questions:   Are the vectors in linearly dependent according to ?    Can we write one element of as a linear combination of the others?    Does contain redundant vectors?   It turns out that these questions are equivalent. In other words, if the answer to one of them is ``YES\", the answer to the other two is also ``YES\". Conversely, if the answer to one of them is ``NO\", then the answer to the other two is also ``NO\". We will start by illustrating this idea with an example, then conclude this section by formally proving the equivalency.     What can we say about the following sets of vectors in light of Remark ?                We will start by addressing linear independence for . To do so, we will solve the vector equation Clearly is a solution to the equation. The question is whether another solution exists. The vector equation translates into the following system: Writing the system in augmented matrix form and applying elementary row operations gives us the following reduced row-echelon form: This shows that ( ) has infinitely many solutions: Letting , we obtain the following: We conclude that the vectors are linearly dependent.  Observe that allows us to solve for one of the vectors and express it as a linear combination of the others. For example, This would not be possible if a nontrivial solution to the equation did not exist. Using the linear combination in and the argument of , we conclude that is redundant in We find that the answer to all questions in is ``YES\".  For part To address linear independence, we need to solve the equation Converting the equation to augmented matrix form and performing row reduction gives us This shows that is the only solution. Therefore the two vectors are linearly independent. Furthermore, we cannot write one of the vectors as a linear combination of the other. Do you see that the only way this would be possible with a set of two vectors is if they were scalar multiples of each other?  Finally, we observe that removing either vector would change the span from a plane in to a line in , so the answer to all three questions in is ``NO\".      Let be a set of vectors in containing two or more vectors. The following conditions are equivalent.    are linearly dependent.    One of can be expressed as a linear combination of the others.    The set contains redundant vectors.        For   , if are linearly dependent, then has a non-trivial solution. In other words at least one of the constants, say , does not equal zero. This allows us to solve for : Do you see why it was important to have one of the constants nonzero? This shows that may be expressed as a linear combination of the other vectors.  For the implication   , suppose is a linear combination of . We will show that is redundant by showing that To show equality of the two spans we will pick a vector in the left span and show that it is also an element of the span on the right. Then, we will pick a vector in the right span and show that it is also an element of the span on the left, and we will conclude that the sets are equal.  Observe that if is in , then it has to be in . (Why?) Now suppose is in . We need to show that is also in . By assumption, we can write as Since is in , we have Substituting the expression in for and simplifying, we obtain the following This shows that is in . We now have which shows that is redundant.  We now show the implication   holds. Suppose that is redundant, so that Consider a vector in  Since the span contains ALL possible linear combinations of , we may choose such that .  By assumption, is also in . Therefore, we can express as a linear combination We complete the proof by showing there exists a non-trivial solution to Subtracting expression from we obtain Recall that we ensured that . This implies that we have a non-trivial solution to . These three parts of the proof show that if one of the conditions is true, all three must be true.  It is a logical consequence that if one of the three conditions is false, all three must be false.     Geometry of Linearly Dependent and Linearly Independent Vectors  Theorem gives us a convenient ways of looking at linear dependence\/independence geometrically. When looking at two or more vectors, we ask, ``can one of the vectors be written as a linear combination of the others?\" We can also ask, ``is one of the vectors redundant?'' If the answer to either of these questions is ``YES\", then the vectors are linearly dependent.   A Set of Two Vectors  Two vectors are linearly dependent if and only if one is a scalar multiple of the other. Two nonzero linearly dependent vectors may look like this:   Two vectors drawn    or like this:   One vector flipped    Two linearly independent vectors will look like this:   One vector rotated      A Set of Three Vectors  Given a set of three nonzero vectors, we have the following possibilities:    (Linearly Dependent Vectors) The three vectors are scalar multiples of each other.         (Linearly Dependent Vectors) Two of the vectors are scalar multiples of each other.         (Linearly Dependent Vectors) One vector can be viewed as the diagonal of a parallelogram determined by scalar multiples of the other two vectors. All three vectors lie in the same plane.         (Linearly Independent Vectors) A set of three vectors is linearly independent if the vectors do not lie in the same plane. For example, vectors , and are linearly independent.          In we considered the following set of vectors and demonstrated that is redundant by using the fact that it is a linear combination of the other two vectors.   Express each of and as a linear combination of the remaining vectors.    Which of the following is NOT true?         If is in then is in       Both and are redundant in       We can remove and from at the same time without affecting the span.             Are the given vectors linearly independent?            Yes      No      If we rewrite as a system of linear equations, there will be more unknowns than equations.             Yes      No      If we let be the matrix whose columns are these vectors, then should tell us what we want to know.             Yes      No      If we let be the matrix whose columns are these vectors, then should tell us what we want to know.             Yes      No      In a set of two vectors, the only way one could be redundant is if they are scalar multiples of each other.        True or false?     Any set containing the zero vector is linearly dependent.      TRUE      FALSE      Can the zero vector be removed from the set without changing the span?      A set containing five vectors in is linearly dependent.      TRUE      FALSE      If we rewrite for five vectors in as a system of equations, how many equations and unknowns will it have? What does this imply about the number of solutions?        Each problem below provides information about vectors . If possible, determine whether the vectors are linearly dependent or independent.            The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination               The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination               The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination          Each diagram below shows a collection of vectors. Are the vectors linearly dependent or independent?      Example with three vectors        The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination         Example with two vectors        The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination         Suppose is a linearly independent set in , and that is not in . Prove that is also linearly independent.      Suppose is a linearly independent set of vectors. Prove that the set is also linearly independent.      Suppose is a linearly independent set of vectors in . Is the following set dependent or independent ? Prove your claim.     "
-},
-{
-  "id": "exp-redundantVecs1",
-  "level": "2",
-  "url": "Section-Linear-Independence.html#exp-redundantVecs1",
-  "type": "Exploration",
-  "number": "2.5.1",
-  "title": "",
-  "body": " Consider the following collection of vectors:     What is the span of these vectors?   A line.    All of .    A parallelogram.    A parallelipiped.       Option b: All of     In this Exploration we will examine what can happen to the span of a collection of vectors when a vector is removed from the collection.  First, let's remove from     Which of the following is true?    .     is a line.          is a parallelogram.       Option b: is a line.      Removing from does what?   It changes the span.    It does not change the span.       Option a: It does change the span.    Now let's remove from the original collection of vectors.    Which of the following is true?    .     is a line.     is the right side of the coordinate plane.     is a parallelogram.       Option a: .      Removing from does what?   It changes the span.    It does not change the span.       Option b: It does change the span.    "
-},
-{
-  "id": "Subsection-Redundant-Vectors-3",
-  "level": "2",
-  "url": "Section-Linear-Independence.html#Subsection-Redundant-Vectors-3",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "redundant redundant "
-},
-{
-  "id": "def-redundant",
-  "level": "2",
-  "url": "Section-Linear-Independence.html#def-redundant",
-  "type": "Definition",
-  "number": "2.5.6",
-  "title": "",
-  "body": "  Let be a set of vectors in . If we can remove one vector without changing the span of this set, then that vector is redundant . In other words, if we say that is a redundant element of , or simply redundant.   "
-},
-{
-  "id": "exp-redundantVecs2",
-  "level": "2",
-  "url": "Section-Linear-Independence.html#exp-redundantVecs2",
-  "type": "Exploration",
-  "number": "2.5.2",
-  "title": "",
-  "body": " Consider the set of vectors The three vectors are shown below. RIGHT-CLICK and DRAG to rotate the interactive graph.        is   A line.    A plane.    All of         Option b: A plane.   Can we remove one of the vectors from the set without changing the span? Observe that we can write as a linear combination of the other two vectors This means that we can write any vector in as a linear combination of only and by replacing with the expression in . For example, We have We conclude that vector is redundant. Can each of the other two vectors in the set be considered redundant? You will address this later in the practice problems. .  "
-},
-{
-  "id": "Subsection-Redundant-Vectors-9",
-  "level": "2",
-  "url": "Section-Linear-Independence.html#Subsection-Redundant-Vectors-9",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "linearly independent linearly dependent "
-},
-{
-  "id": "def-linearindependence",
-  "level": "2",
-  "url": "Section-Linear-Independence.html#def-linearindependence",
-  "type": "Definition",
-  "number": "2.5.9",
-  "title": "Linear Independence.",
-  "body": " Linear Independence   Let be vectors of . We say that the set is linearly independent if the only solution to is the trivial solution  .  If, in addition to the trivial solution, a non-trivial solution (not all are zero) exists, then the set is called linearly dependent .   "
-},
-{
-  "id": "LinIndEquiv",
-  "level": "2",
-  "url": "Section-Linear-Independence.html#LinIndEquiv",
-  "type": "Remark",
-  "number": "2.5.10",
-  "title": "",
-  "body": " Given a set of vectors we can now ask the following questions:   Are the vectors in linearly dependent according to ?    Can we write one element of as a linear combination of the others?    Does contain redundant vectors?   It turns out that these questions are equivalent. In other words, if the answer to one of them is ``YES\", the answer to the other two is also ``YES\". Conversely, if the answer to one of them is ``NO\", then the answer to the other two is also ``NO\". We will start by illustrating this idea with an example, then conclude this section by formally proving the equivalency.  "
-},
-{
-  "id": "ex-linind",
-  "level": "2",
-  "url": "Section-Linear-Independence.html#ex-linind",
-  "type": "Example",
-  "number": "2.5.11",
-  "title": "",
-  "body": "  What can we say about the following sets of vectors in light of Remark ?                We will start by addressing linear independence for . To do so, we will solve the vector equation Clearly is a solution to the equation. The question is whether another solution exists. The vector equation translates into the following system: Writing the system in augmented matrix form and applying elementary row operations gives us the following reduced row-echelon form: This shows that ( ) has infinitely many solutions: Letting , we obtain the following: We conclude that the vectors are linearly dependent.  Observe that allows us to solve for one of the vectors and express it as a linear combination of the others. For example, This would not be possible if a nontrivial solution to the equation did not exist. Using the linear combination in and the argument of , we conclude that is redundant in We find that the answer to all questions in is ``YES\".  For part To address linear independence, we need to solve the equation Converting the equation to augmented matrix form and performing row reduction gives us This shows that is the only solution. Therefore the two vectors are linearly independent. Furthermore, we cannot write one of the vectors as a linear combination of the other. Do you see that the only way this would be possible with a set of two vectors is if they were scalar multiples of each other?  Finally, we observe that removing either vector would change the span from a plane in to a line in , so the answer to all three questions in is ``NO\".   "
-},
-{
-  "id": "th-lindeplincombofother",
-  "level": "2",
-  "url": "Section-Linear-Independence.html#th-lindeplincombofother",
-  "type": "Theorem",
-  "number": "2.5.12",
-  "title": "",
-  "body": "  Let be a set of vectors in containing two or more vectors. The following conditions are equivalent.    are linearly dependent.    One of can be expressed as a linear combination of the others.    The set contains redundant vectors.      "
-},
-{
-  "id": "Subsection-Linear-Independence-6",
-  "level": "2",
-  "url": "Section-Linear-Independence.html#Subsection-Linear-Independence-6",
-  "type": "Proof",
-  "number": "2.5.2.1",
-  "title": "",
-  "body": " For   , if are linearly dependent, then has a non-trivial solution. In other words at least one of the constants, say , does not equal zero. This allows us to solve for : Do you see why it was important to have one of the constants nonzero? This shows that may be expressed as a linear combination of the other vectors.  For the implication   , suppose is a linear combination of . We will show that is redundant by showing that To show equality of the two spans we will pick a vector in the left span and show that it is also an element of the span on the right. Then, we will pick a vector in the right span and show that it is also an element of the span on the left, and we will conclude that the sets are equal.  Observe that if is in , then it has to be in . (Why?) Now suppose is in . We need to show that is also in . By assumption, we can write as Since is in , we have Substituting the expression in for and simplifying, we obtain the following This shows that is in . We now have which shows that is redundant.  We now show the implication   holds. Suppose that is redundant, so that Consider a vector in  Since the span contains ALL possible linear combinations of , we may choose such that .  By assumption, is also in . Therefore, we can express as a linear combination We complete the proof by showing there exists a non-trivial solution to Subtracting expression from we obtain Recall that we ensured that . This implies that we have a non-trivial solution to . These three parts of the proof show that if one of the conditions is true, all three must be true.  It is a logical consequence that if one of the three conditions is false, all three must be false.  "
-},
-{
   "id": "prob-redundant1",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-redundant1",
+  "url": "Section-Homogeneous-Linear-Systems.html#prob-redundant1",
   "type": "Exercise",
-  "number": "2.5.4.1",
+  "number": "2.4.4.8",
   "title": "",
   "body": "  In we considered the following set of vectors and demonstrated that is redundant by using the fact that it is a linear combination of the other two vectors.   Express each of and as a linear combination of the remaining vectors.    Which of the following is NOT true?         If is in then is in       Both and are redundant in       We can remove and from at the same time without affecting the span.          "
 },
 {
-  "id": "prob-linindmultchoice1-2-2",
+  "id": "Section-Homogeneous-Linear-Systems-9-6-2",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-linindmultchoice1-2-2",
+  "url": "Section-Homogeneous-Linear-Systems.html#Section-Homogeneous-Linear-Systems-9-6-2",
   "type": "Exercise",
-  "number": "2.5.4.2",
+  "number": "2.4.4.9",
   "title": "",
   "body": "         Yes      No      If we rewrite as a system of linear equations, there will be more unknowns than equations.   "
 },
 {
   "id": "prob-linindmultchoice2",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-linindmultchoice2",
+  "url": "Section-Homogeneous-Linear-Systems.html#prob-linindmultchoice2",
   "type": "Exercise",
-  "number": "2.5.4.3",
+  "number": "2.4.4.10",
   "title": "",
   "body": "         Yes      No      If we let be the matrix whose columns are these vectors, then should tell us what we want to know.   "
 },
 {
   "id": "prob-linindmultchoice3",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-linindmultchoice3",
+  "url": "Section-Homogeneous-Linear-Systems.html#prob-linindmultchoice3",
   "type": "Exercise",
-  "number": "2.5.4.4",
+  "number": "2.4.4.11",
   "title": "",
   "body": "         Yes      No      If we let be the matrix whose columns are these vectors, then should tell us what we want to know.   "
 },
 {
   "id": "prob-linindmultchoice4",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-linindmultchoice4",
+  "url": "Section-Homogeneous-Linear-Systems.html#prob-linindmultchoice4",
   "type": "Exercise",
-  "number": "2.5.4.5",
+  "number": "2.4.4.12",
   "title": "",
   "body": "         Yes      No      In a set of two vectors, the only way one could be redundant is if they are scalar multiples of each other.   "
 },
 {
   "id": "prob-TFlinind1-2",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-TFlinind1-2",
+  "url": "Section-Homogeneous-Linear-Systems.html#prob-TFlinind1-2",
   "type": "Exercise",
-  "number": "2.5.4.6",
+  "number": "2.4.4.13",
   "title": "",
   "body": "  Any set containing the zero vector is linearly dependent.      TRUE      FALSE      Can the zero vector be removed from the set without changing the span?   "
 },
 {
   "id": "prob-TFlinind2",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-TFlinind2",
+  "url": "Section-Homogeneous-Linear-Systems.html#prob-TFlinind2",
   "type": "Exercise",
-  "number": "2.5.4.7",
+  "number": "2.4.4.14",
   "title": "",
   "body": "  A set containing five vectors in is linearly dependent.      TRUE      FALSE      If we rewrite for five vectors in as a system of equations, how many equations and unknowns will it have? What does this imply about the number of solutions?   "
 },
 {
   "id": "prob-linindmultchoice5-2",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-linindmultchoice5-2",
+  "url": "Section-Homogeneous-Linear-Systems.html#prob-linindmultchoice5-2",
   "type": "Exercise",
-  "number": "2.5.4.8",
+  "number": "2.4.4.15",
   "title": "",
   "body": "         The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination     "
 },
 {
   "id": "prob-linindmultchoice6",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-linindmultchoice6",
+  "url": "Section-Homogeneous-Linear-Systems.html#prob-linindmultchoice6",
   "type": "Exercise",
-  "number": "2.5.4.9",
+  "number": "2.4.4.16",
   "title": "",
   "body": "         The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination     "
 },
 {
   "id": "prob-linindmultchoice7",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-linindmultchoice7",
+  "url": "Section-Homogeneous-Linear-Systems.html#prob-linindmultchoice7",
   "type": "Exercise",
-  "number": "2.5.4.10",
+  "number": "2.4.4.17",
   "title": "",
   "body": "         The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination     "
 },
 {
   "id": "prob-linindmultchoice9-2",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-linindmultchoice9-2",
+  "url": "Section-Homogeneous-Linear-Systems.html#prob-linindmultchoice9-2",
   "type": "Exercise",
-  "number": "2.5.4.11",
+  "number": "2.4.4.18",
   "title": "",
   "body": "   Example with three vectors        The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination     "
 },
 {
   "id": "prob-linindmultchoice10",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-linindmultchoice10",
+  "url": "Section-Homogeneous-Linear-Systems.html#prob-linindmultchoice10",
   "type": "Exercise",
-  "number": "2.5.4.12",
+  "number": "2.4.4.19",
   "title": "",
   "body": "   Example with two vectors        The vectors are linearly independent      The vectors are linearly dependent      There is not enough information given to make a determination     "
 },
 {
   "id": "prob-Adding1OK",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-Adding1OK",
+  "url": "Section-Homogeneous-Linear-Systems.html#prob-Adding1OK",
   "type": "Exercise",
-  "number": "2.5.4.13",
+  "number": "2.4.4.20",
   "title": "",
   "body": "  Suppose is a linearly independent set in , and that is not in . Prove that is also linearly independent.   "
 },
 {
   "id": "prob-OtherLinearComb",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-OtherLinearComb",
+  "url": "Section-Homogeneous-Linear-Systems.html#prob-OtherLinearComb",
   "type": "Exercise",
-  "number": "2.5.4.14",
+  "number": "2.4.4.21",
   "title": "",
   "body": "  Suppose is a linearly independent set of vectors. Prove that the set is also linearly independent.   "
 },
 {
   "id": "prob-OtherLinearComb2",
   "level": "2",
-  "url": "Section-Linear-Independence.html#prob-OtherLinearComb2",
+  "url": "Section-Homogeneous-Linear-Systems.html#prob-OtherLinearComb2",
   "type": "Exercise",
-  "number": "2.5.4.15",
+  "number": "2.4.4.22",
   "title": "",
   "body": "  Suppose is a linearly independent set of vectors in . Is the following set dependent or independent ? Prove your claim.   "
 },
@@ -2498,7 +2453,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "Section-Linear-Transformations.html",
   "type": "Section",
-  "number": "2.6",
+  "number": "2.5",
   "title": "Linear Transformations",
   "body": " Linear Transformations  We start by reviewing the definition of a function.    Let and be sets. A function  from into , denoted by assigns to each element of , an element of . Moreover, we use the the following terminology.  The set is called the domain of , and the set is called the codomain .  If , we say that  maps to  , and is the image of .  The collection of images of all points of is called the image of under , or the image of . (It is also known as the range of .)    In algebra and calculus you worked with functions whose domain and codomain were each the set of all real numbers. In linear algebra, we call our functions transformations . The domain and codomain of a transformation are vector spaces .   In this exercise we will introduce a very special type of transformation by contrasting the effects of two transformations on vectors of . We will see that some transformations have ``nice\" properties, while others do not. Define and as follows:  Each of these transformations takes a vector in , and maps it to another vector in . To see if you understand how these transformations are defined, see if you can determine what these transformations do to the vector .    Compute the following two images:          Now, let's take the vector and multiply it by a scalar, say . Now let's compare how and ``handle\" this product. Starting with , we compute: Observe that multiplying the original vector by , then applying , has the same effect as applying to the original vector, then multiplying the image by . In other words, Diagrammatically, this can be represented as follows.   T with domain and codomain pictured    You should try to verify that this property does not hold for transformation . In other words, There is nothing special about the number , and it is not hard to prove that for any scalar and vector of , satisfies It turns out that satisfies another important property. For all vectors and of we have: We leave it to the reader to illustrate this property with a specific example (see ). We will show that satisfies in general. Let then It turns out that fails to satisfy this property. Can you prove that this is the case? Remember that to prove that a property DOES NOT hold, it suffices to find a counter-example. See if you can find vectors and such that See for more on this.   Transformations satisfying and , like , are called linear transformations . Transformations like are not linear. You have encountered several linear transformations in the form of matrix transformations previously.    A transformation is called a linear transformation if the following are true for all vectors and in , and scalars .      Equations and of the above definition can be illustrated diagrammatically as follows.   Linearity drawn as function diagram     Continuation of above      The properties and are often combined into a single property, namely       Suppose is a linear transformation such that Find each of the following:                 : Because is a linear transformation, it satisfies . We compute:  Observe that By we have:       In we were given the images of two vectors, and , under a linear transformation .  Based on this information, we were able to determine the images of two additional vectors: and . The reason we were able to determine and is because and can be written as unique linear combinations of and .      Can every vector of be written as a linear combination of and ?    Yes.      Is the information provided in sufficient to determine the image of every vector in under ?    Yes.      Suppose is a transformation such that Determine whether is a linear transformation.    Observe that If were a linear transformation, then we would have: But according to the given, Since we conclude that transformation is not linear.    In we introduced a transformation which turned out to be non-linear. It took some work to show that is not linear. The following theorem would have made our work easier.    Let be a linear transformation. Then    . In other words, linear transformations map the zero vector to the zero vector.     maps any line in to a line (or the zero vector) in .       To prove , let be any vector in . By linearity of , we have: Part will become evident after the next section by combinining observations there with .      Use to show that transformation of is not linear.    Recall that was defined by We evaluate at : Since , is not linear.     Linear Transformations Induced by Matrices  Recall that a transformation defined by , where is some matrix, is called a matrix transformation (or transformation induced by ). As we had discovered in the precedng sectiion, all matrix transformations are linear. We now formalize this result as a theorem.    Let be an matrix. Define by . Then is a linear transformation.    Let and be vectors in , and let be a scalar. By properties of matrix multiplication we have:  Therefore is a linear transformation.      Let be a linear transformation induced by    Find and .    Find the image of .         is a matrix, so for the expression to make sense, has to be a vector. Thus, the domain of is ( ). The product is a vector. The codomain of is ( ). By , the image of consists of images of all individual vectors in under .  Every vector in can be written as for some real numbers and . Consider the image of : This shows that the range, or the image, of consists of all linear combinations of the columns of . In other words, the image of is the span of vectors and . The two vectors are not scalar multiples of each other, therefore they span a plane in .      Let be a linear transformation induced by    Find and .    Find and draw the image of .       For part : and .  For : To find the image of , we will take a slightly different approach from what we did in .  Let be an arbitrary vector of . The image of is given by This shows that the image of every vector in is a scalar multiple of . This means that the image of is a line in .   Line generated is graphed        Linear Transformations of Subspaces of   defines a linear transformation as a map from into . We will now make this definition more general by allowing the domain and the codomain of the transformation to be subspaces of and . Eventually, a linear transformation will be defined as a mapping between vector spaces.    Let and be subspaces of and . Let be a transformation. We call  linear transformation if for all vectors and in , and scalars , the following two rules hold:        Let be a subspace of consisting of all vectors in the -plane. Let be a subspace of consisting of all vectors along the -axis. Do a quick verification that and are subspaces of . Define a transformation by Show that is a linear transformation, and describe its action geometrically.    Consider two arbitrary elements and of . Verification of the fact that is similar, and we omit the details.  We have shown that is a linear transformation. maps all vectors in the -plane to the -axis. The following diagram helps us visualize the action of on a specific vector.   [1,2,0] acted on by T    We can investigate further. Recall that is defined by Next, we ask you to consider the diagram below and try solve the following problem.        Choose the proper answer for each of the statements below.   Is the image of the line under a line, a plane, the zero vector or all of ?    is the image of the orange part of the domain (the front triangle) the positive -axis, the negative -axis, the zero vector or the entire -axis?    is the image of the purple part of the domain (the back triangle) the positive -axis, the negative -axis, the zero vector or the entire -axis?          The image of the line under is the the zero vector.    The image of the orange part of the domain (the front triangle) is the positive -axis.    The image of the purple part of the domain (the back triangle) is the negative -axis.         We conclude this section by introducing two simple but important transformations.    The identity transformation on , denoted by , is a transformation that maps each element of to itself. In other words, is a transformation such that       The zero transformation , , maps every element of the domain to the zero vector. In other words, is a transformation such that       The identity transformation is linear.    Left to the reader. (See )      The zero transformation is linear.    Left to the reader. (See )      Standard Matrix of a Linear Transformation from to  In the preceding sections, we learned several important properties of matrix transformations of and subspaces of . Let's summarize the main points.    For a matrix transformation , induced by an matrix we have the following results:    is linear. (Theorem ) This means that for vectors and in and scalars and in .    Columns of are the images of the standard unit vectors of under .      The action of on all of the elements of is completely determined by where maps the standard unit vectors. (See Examples and )       The last point in the summary is so important that it is worth illustrating again.    Let be a linear transformation. Suppose that the only information we have about this transformation is that Is this information sufficient to determine the image of ?    Observe that We find by using the fact that is linear: Because of properties of linear transformations, the information about the images of the standard unit vectors proved to be sufficient for us to determine the image of .    In , there was nothing special about the vector . Any vector of can be written as a unique linear combination of the standard unit vectors . Therefore, the image of any vector under a linear transformation is uniquely determined by the images of . Knowing allows us to construct a matrix , with as columns, that induces transformation . We formalize this idea in a theorem.    Let be a linear transformation. Then is a matrix transformation with as a matrix that induces .    Observe that Because is linear, we have Thus, for every in , we have .     shows that every matrix transformation is linear. states that every linear transformation from into is a matrix transformation. We combine these results in a corollary.    A transformation is a linear transformation if and only if it is a matrix transformation.    The results of this section rely on the fact that every vector of can be written as a unique linear combination of the standard unit vectors . These vectors form the standard basis for . Later on, when we encounter transformations of arbitrary bases, we will observe that the matrix used to represent a linear transformation depends on a choice of basis. Since we are using the standard basis, it is natural to name the matrix in accordingly.    The matrix in is known as the standard matrix of the linear transformation  .     The standard matrix of a linear transformation such that is      Find the standard matrix of a linear transformation such that and .    We use the images of and as columns of the matrix. The standard matrix of is       Find the standard matrix of a linear transformation , where     In this example we are not given the images of the standard basis vectors and . However, we can find the images of and by expressing and as linear combinations of and , then apply the fact that is linear. Let's start with the easy one. Therefore, by linearity of , we have: This gives us the first column of the standard matrix for .  You can solve the vector equation to express as a linear combination of and as follows: By linearity of , This gives us the second column of the standard matrix. Putting all of the information together, we get the following standard matrix for :       The Image  In this section we will often use , and to denote subspaces of , or any other finite-dimensional vector space, such as those we study in a later chaper.    Let and be vector spaces, and let be a linear transformation. The image of , denoted by , is the set In other words, the image of consists of individual images of all vectors of .      Consider the linear transformation with standard matrix    Find .    Illustrate the action of with a sketch.        : Let then Thus, every element of the image can be written as a linear combination of the columns of . We conclude that Every column of is a scalar multiple of . Thus, The image of is a line in determined by the vector .   : The action of can be illustrated with a sketch.   Image of T graphed      In we observed that the image of the linear transformation was equal to the column space of its standard matrix. In general, it is easy to see that if is a linear transformation with standard matrix then the following relationship holds: In addition, by , we know that     Let be a linear transformation with standard matrix Find and .    As in , the image of is given by This time it is harder to detect the vectors that can be eliminated from the spanning set without affecting the span. We have to rely on the reduced row-echelon form of . We can see that , so . To identify vectors that span , we turn to . We identify the first three columns as pivot columns. These columns are linearly independent and span . Therefore,     By and , we know that for an matrix , is a subspace of . However, when vector spaces other than are involved, it is not yet clear that is a subspace of the codomain. The following theorem resolves this issue.    Let be a linear transformation. Then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose and are in . Then there are vectors and in such that and . Then This shows that is in . For any scalar , we have: This shows that is in .    We can now define the rank of a linear transformation.    The rank of a linear transformation , is the dimension of the image of .     This definition gives us the following relationship between the rank of a linear transformation and the rank of the standard matrix associated with it.           The Kernel of a Linear Transformation  Exactly as in the preceding section, we will often use , and to denote subspaces of , or any other finite-dimensional vector space, such as those we study in a later chaper.    Let and be vector spaces, and let be a linear transformation. The kernel of , denoted by , is the set In other words, the kernel of consists of all vectors of that map to in .    It is important to pay attention to the locations of the kernel and the image. We already proved that is a subspace of the codomain. In contrast, is located in the domain. (We will prove shortly that it is a subspace of the domain.)   Kernel diagram shown      Let be a linear transformation with standard matrix    Find .    Is a subspace of ? If so, find .        To find the kernel of , we need to find all vectors of that map to in . This amounts to solving the equation . Gauss-Jordan elimination yields: Thus, the kernel of consists of all elements of the form: We conclude that  : Since is the span of two vectors of , we know that is a subspace of . (See .) Observe that the two vectors in the spanning set are linearly independent. (How can we see this without performing computations?) Therefore .    Recall that the null space of a matrix is defined to be set of all solutions to the homogeneous equation . This means that if is a linear transformation with standard matrix then We know that of an matrix is a subspace of . (See .) We conclude this section by showing that even when vector spaces other than are involved, the kernel of a linear transformation is a subspace of the domain of the transformation.    Let be a linear transformation, then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose that and are in . Then, This shows that is in . For any scalar we have: This shows that is in .      The nullity of a linear transformation , is the dimension of the kernel of .     This definition gives us the following relationship between nullity of a linear transformation and the nullity of the standard matrix associated with it.           Rank-Nullity Theorem for Linear Transformations  In and , we found the image and the kernel of the linear transformation with standard matrix We also found that and Because of Rank-Nullity Theorem for matrices (Theorem ), it is not surprising that The following theorem is a generalization of this result.    Let be a linear transformation. Suppose , then     By , is a subspace of . There exists a basis for of the form . By , is a subspace of . Let be a basis for . We will show that is a basis for . For any vector in , we have: for some scalars  . Thus, By linearity, Therefore is in . Hence there are scalars  such that Thus, We conclude that   Now we need to show that is linearly independent. Suppose Applying to both sides, we get  But for , thus Since is linearly independent, it follows that each . But then implies that . Because is linearly independent, it follows that each . We conclude that is a basis for . Thus,         Show that of holds for vectors and .      Use a counter-example to prove of .      Suppose is a linear transformation such that and . Find the image of .           Let be a fixed vector. Define , by .   Describe the effect of this transformation by sketching and for at least four vectors and a fixed vector of your choice.    Is a linear transformation?         Define , by This transformation is called an orthogonal projection onto the -plane. Show that is a linear transformation.      Suppose a linear transformation maps Find the image of under .           Prove       Prove       For each matrix below, find the domain together with codomain of the linear transformation induced by ; then find and draw the image of (Hint: See .)          Domain: , where .  Codomain: , where .               Suppose that a linear transformation is such that Find .           Suppose that a linear transformation is such that . Find the standard matrix of .           Find the standard matrix of each linear transformation described below.      doubles the component of every vector and triples the component.            reverses the direction of each vector.            doubles the length of each vector.            projects each vector onto the -axis. (e.g. ).            projects each vector onto the -axis. (e.g. )             Describe the image and find the rank for each linear transformation with standard matrix given below.      ,               is a line in .   (T)    .       .       is a plane in .              ,        .       is a line in .   (T)    is a line in .       .       is a plane in .   (T)    .       Suppose linear transformations and are such that Does this mean that and are the same transformation? Justify your claim.      Describe the kernel and find the nullity for each linear transformation with standard matrix given below.      ,        .       .       .       is a plane in .       is a line in .              ,        .       .       is a line in .              ,        is a plane in .       is a line in .       is a line in .       .       .       .       Suppose a linear transformation is such that is a plane in . What is the rank and nulity of ?            Suppose a linear transformation is such that for all in . What is the rank and nulity of ?            Let be a linear transformation with standard matrix Find and if the reduced row-echelon form of is       Let and let be a linear transformation defined by . Find and .      Suppose a linear transformation is induced by a matrix . Let be a linear transformation induced by . Find , if . Prove your claim.     "
 },
@@ -2507,7 +2462,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-function",
   "type": "Definition",
-  "number": "2.6.1",
+  "number": "2.5.1",
   "title": "",
   "body": "  Let and be sets. A function  from into , denoted by assigns to each element of , an element of . Moreover, we use the the following terminology.  The set is called the domain of , and the set is called the codomain .  If , we say that  maps to  , and is the image of .  The collection of images of all points of is called the image of under , or the image of . (It is also known as the range of .)   "
 },
@@ -2525,7 +2480,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#init-lintransintro",
   "type": "Exploration",
-  "number": "2.6.1",
+  "number": "2.5.1",
   "title": "",
   "body": " In this exercise we will introduce a very special type of transformation by contrasting the effects of two transformations on vectors of . We will see that some transformations have ``nice\" properties, while others do not. Define and as follows:  Each of these transformations takes a vector in , and maps it to another vector in . To see if you understand how these transformations are defined, see if you can determine what these transformations do to the vector .    Compute the following two images:          Now, let's take the vector and multiply it by a scalar, say . Now let's compare how and ``handle\" this product. Starting with , we compute: Observe that multiplying the original vector by , then applying , has the same effect as applying to the original vector, then multiplying the image by . In other words, Diagrammatically, this can be represented as follows.   T with domain and codomain pictured    You should try to verify that this property does not hold for transformation . In other words, There is nothing special about the number , and it is not hard to prove that for any scalar and vector of , satisfies It turns out that satisfies another important property. For all vectors and of we have: We leave it to the reader to illustrate this property with a specific example (see ). We will show that satisfies in general. Let then It turns out that fails to satisfy this property. Can you prove that this is the case? Remember that to prove that a property DOES NOT hold, it suffices to find a counter-example. See if you can find vectors and such that See for more on this.  "
 },
@@ -2543,7 +2498,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-lin",
   "type": "Definition",
-  "number": "2.6.3",
+  "number": "2.5.3",
   "title": "",
   "body": "  A transformation is called a linear transformation if the following are true for all vectors and in , and scalars .     "
 },
@@ -2552,7 +2507,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#combinedLinearDef",
   "type": "Remark",
-  "number": "2.6.4",
+  "number": "2.5.4",
   "title": "",
   "body": "  The properties and are often combined into a single property, namely    "
 },
@@ -2561,7 +2516,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-lintransfirst",
   "type": "Example",
-  "number": "2.6.5",
+  "number": "2.5.5",
   "title": "",
   "body": "  Suppose is a linear transformation such that Find each of the following:                 : Because is a linear transformation, it satisfies . We compute:  Observe that By we have:    "
 },
@@ -2570,7 +2525,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#basisIsSufficient",
   "type": "Observation",
-  "number": "2.6.6",
+  "number": "2.5.6",
   "title": "",
   "body": "  In we were given the images of two vectors, and , under a linear transformation .  Based on this information, we were able to determine the images of two additional vectors: and . The reason we were able to determine and is because and can be written as unique linear combinations of and .   "
 },
@@ -2579,7 +2534,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#Section-Linear-Transformations-14",
   "type": "Problem",
-  "number": "2.6.7",
+  "number": "2.5.7",
   "title": "",
   "body": "  Can every vector of be written as a linear combination of and ?    Yes.   "
 },
@@ -2588,7 +2543,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#Section-Linear-Transformations-15",
   "type": "Problem",
-  "number": "2.6.8",
+  "number": "2.5.8",
   "title": "",
   "body": "  Is the information provided in sufficient to determine the image of every vector in under ?    Yes.   "
 },
@@ -2597,7 +2552,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-lineartrans1",
   "type": "Example",
-  "number": "2.6.9",
+  "number": "2.5.9",
   "title": "",
   "body": "  Suppose is a transformation such that Determine whether is a linear transformation.    Observe that If were a linear transformation, then we would have: But according to the given, Since we conclude that transformation is not linear.   "
 },
@@ -2606,7 +2561,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-zerotozero",
   "type": "Theorem",
-  "number": "2.6.10",
+  "number": "2.5.10",
   "title": "",
   "body": "  Let be a linear transformation. Then    . In other words, linear transformations map the zero vector to the zero vector.     maps any line in to a line (or the zero vector) in .       To prove , let be any vector in . By linearity of , we have: Part will become evident after the next section by combinining observations there with .   "
 },
@@ -2615,7 +2570,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-zerotozero",
   "type": "Example",
-  "number": "2.6.11",
+  "number": "2.5.11",
   "title": "",
   "body": "  Use to show that transformation of is not linear.    Recall that was defined by We evaluate at : Since , is not linear.   "
 },
@@ -2624,7 +2579,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-matrixtran",
   "type": "Theorem",
-  "number": "2.6.12",
+  "number": "2.5.12",
   "title": "",
   "body": "  Let be an matrix. Define by . Then is a linear transformation.    Let and be vectors in , and let be a scalar. By properties of matrix multiplication we have:  Therefore is a linear transformation.   "
 },
@@ -2633,7 +2588,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-lineartrans2",
   "type": "Example",
-  "number": "2.6.13",
+  "number": "2.5.13",
   "title": "",
   "body": "  Let be a linear transformation induced by    Find and .    Find the image of .         is a matrix, so for the expression to make sense, has to be a vector. Thus, the domain of is ( ). The product is a vector. The codomain of is ( ). By , the image of consists of images of all individual vectors in under .  Every vector in can be written as for some real numbers and . Consider the image of : This shows that the range, or the image, of consists of all linear combinations of the columns of . In other words, the image of is the span of vectors and . The two vectors are not scalar multiples of each other, therefore they span a plane in .   "
 },
@@ -2642,7 +2597,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-lineartrans3",
   "type": "Example",
-  "number": "2.6.14",
+  "number": "2.5.14",
   "title": "",
   "body": "  Let be a linear transformation induced by    Find and .    Find and draw the image of .       For part : and .  For : To find the image of , we will take a slightly different approach from what we did in .  Let be an arbitrary vector of . The image of is given by This shows that the image of every vector in is a scalar multiple of . This means that the image of is a line in .   Line generated is graphed     "
 },
@@ -2651,7 +2606,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-lin2",
   "type": "Definition",
-  "number": "2.6.15",
+  "number": "2.5.15",
   "title": "",
   "body": "  Let and be subspaces of and . Let be a transformation. We call  linear transformation if for all vectors and in , and scalars , the following two rules hold:     "
 },
@@ -2660,7 +2615,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-subspacetransex1",
   "type": "Example",
-  "number": "2.6.16",
+  "number": "2.5.16",
   "title": "",
   "body": "  Let be a subspace of consisting of all vectors in the -plane. Let be a subspace of consisting of all vectors along the -axis. Do a quick verification that and are subspaces of . Define a transformation by Show that is a linear transformation, and describe its action geometrically.    Consider two arbitrary elements and of . Verification of the fact that is similar, and we omit the details.  We have shown that is a linear transformation. maps all vectors in the -plane to the -axis. The following diagram helps us visualize the action of on a specific vector.   [1,2,0] acted on by T    We can investigate further. Recall that is defined by Next, we ask you to consider the diagram below and try solve the following problem.        Choose the proper answer for each of the statements below.   Is the image of the line under a line, a plane, the zero vector or all of ?    is the image of the orange part of the domain (the front triangle) the positive -axis, the negative -axis, the zero vector or the entire -axis?    is the image of the purple part of the domain (the back triangle) the positive -axis, the negative -axis, the zero vector or the entire -axis?          The image of the line under is the the zero vector.    The image of the orange part of the domain (the front triangle) is the positive -axis.    The image of the purple part of the domain (the back triangle) is the negative -axis.        "
 },
@@ -2669,7 +2624,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-idtransonrn",
   "type": "Definition",
-  "number": "2.6.18",
+  "number": "2.5.18",
   "title": "",
   "body": "  The identity transformation on , denoted by , is a transformation that maps each element of to itself. In other words, is a transformation such that    "
 },
@@ -2678,7 +2633,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-zerotransonrn",
   "type": "Definition",
-  "number": "2.6.19",
+  "number": "2.5.19",
   "title": "",
   "body": "  The zero transformation , , maps every element of the domain to the zero vector. In other words, is a transformation such that    "
 },
@@ -2687,7 +2642,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-idlintrans",
   "type": "Theorem",
-  "number": "2.6.20",
+  "number": "2.5.20",
   "title": "",
   "body": "  The identity transformation is linear.    Left to the reader. (See )   "
 },
@@ -2696,7 +2651,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-zerolintrans",
   "type": "Theorem",
-  "number": "2.6.21",
+  "number": "2.5.21",
   "title": "",
   "body": "  The zero transformation is linear.    Left to the reader. (See )   "
 },
@@ -2705,7 +2660,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#sum-matrixTrans",
   "type": "Fact",
-  "number": "2.6.22",
+  "number": "2.5.22",
   "title": "",
   "body": "  For a matrix transformation , induced by an matrix we have the following results:    is linear. (Theorem ) This means that for vectors and in and scalars and in .    Columns of are the images of the standard unit vectors of under .      The action of on all of the elements of is completely determined by where maps the standard unit vectors. (See Examples and )      "
 },
@@ -2714,7 +2669,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-imageofatransformation",
   "type": "Example",
-  "number": "2.6.23",
+  "number": "2.5.23",
   "title": "",
   "body": "  Let be a linear transformation. Suppose that the only information we have about this transformation is that Is this information sufficient to determine the image of ?    Observe that We find by using the fact that is linear: Because of properties of linear transformations, the information about the images of the standard unit vectors proved to be sufficient for us to determine the image of .   "
 },
@@ -2723,7 +2678,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-matlin",
   "type": "Theorem",
-  "number": "2.6.24",
+  "number": "2.5.24",
   "title": "",
   "body": "  Let be a linear transformation. Then is a matrix transformation with as a matrix that induces .    Observe that Because is linear, we have Thus, for every in , we have .   "
 },
@@ -2732,7 +2687,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#cor-lintransmattrans",
   "type": "Corollary",
-  "number": "2.6.25",
+  "number": "2.5.25",
   "title": "",
   "body": "  A transformation is a linear transformation if and only if it is a matrix transformation.   "
 },
@@ -2750,7 +2705,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-standardmatoflintrans",
   "type": "Definition",
-  "number": "2.6.26",
+  "number": "2.5.26",
   "title": "",
   "body": "  The matrix in is known as the standard matrix of the linear transformation  .   "
 },
@@ -2759,7 +2714,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-findmatrix2",
   "type": "Example",
-  "number": "2.6.27",
+  "number": "2.5.27",
   "title": "",
   "body": " The standard matrix of a linear transformation such that is   "
 },
@@ -2768,7 +2723,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-findmatrix",
   "type": "Example",
-  "number": "2.6.28",
+  "number": "2.5.28",
   "title": "",
   "body": "  Find the standard matrix of a linear transformation such that and .    We use the images of and as columns of the matrix. The standard matrix of is    "
 },
@@ -2777,7 +2732,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-transNoStBases",
   "type": "Example",
-  "number": "2.6.29",
+  "number": "2.5.29",
   "title": "",
   "body": "  Find the standard matrix of a linear transformation , where     In this example we are not given the images of the standard basis vectors and . However, we can find the images of and by expressing and as linear combinations of and , then apply the fact that is linear. Let's start with the easy one. Therefore, by linearity of , we have: This gives us the first column of the standard matrix for .  You can solve the vector equation to express as a linear combination of and as follows: By linearity of , This gives us the second column of the standard matrix. Putting all of the information together, we get the following standard matrix for :    "
 },
@@ -2786,7 +2741,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-imageofT",
   "type": "Definition",
-  "number": "2.6.30",
+  "number": "2.5.30",
   "title": "",
   "body": "  Let and be vector spaces, and let be a linear transformation. The image of , denoted by , is the set In other words, the image of consists of individual images of all vectors of .   "
 },
@@ -2795,7 +2750,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-image1",
   "type": "Example",
-  "number": "2.6.31",
+  "number": "2.5.31",
   "title": "",
   "body": "  Consider the linear transformation with standard matrix    Find .    Illustrate the action of with a sketch.        : Let then Thus, every element of the image can be written as a linear combination of the columns of . We conclude that Every column of is a scalar multiple of . Thus, The image of is a line in determined by the vector .   : The action of can be illustrated with a sketch.   Image of T graphed     "
 },
@@ -2804,7 +2759,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-image2",
   "type": "Example",
-  "number": "2.6.32",
+  "number": "2.5.32",
   "title": "",
   "body": "  Let be a linear transformation with standard matrix Find and .    As in , the image of is given by This time it is harder to detect the vectors that can be eliminated from the spanning set without affecting the span. We have to rely on the reduced row-echelon form of . We can see that , so . To identify vectors that span , we turn to . We identify the first three columns as pivot columns. These columns are linearly independent and span . Therefore,    "
 },
@@ -2813,7 +2768,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-imagesubspace",
   "type": "Theorem",
-  "number": "2.6.33",
+  "number": "2.5.33",
   "title": "",
   "body": "  Let be a linear transformation. Then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose and are in . Then there are vectors and in such that and . Then This shows that is in . For any scalar , we have: This shows that is in .   "
 },
@@ -2822,7 +2777,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-rankofT",
   "type": "Definition",
-  "number": "2.6.34",
+  "number": "2.5.34",
   "title": "",
   "body": "  The rank of a linear transformation , is the dimension of the image of .    "
 },
@@ -2831,7 +2786,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#form-rankTrankA",
   "type": "Formula",
-  "number": "2.6.35",
+  "number": "2.5.35",
   "title": "",
   "body": "      "
 },
@@ -2840,7 +2795,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-kernel",
   "type": "Definition",
-  "number": "2.6.36",
+  "number": "2.5.36",
   "title": "",
   "body": "  Let and be vector spaces, and let be a linear transformation. The kernel of , denoted by , is the set In other words, the kernel of consists of all vectors of that map to in .   "
 },
@@ -2849,7 +2804,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-kernel",
   "type": "Example",
-  "number": "2.6.37",
+  "number": "2.5.37",
   "title": "",
   "body": "  Let be a linear transformation with standard matrix    Find .    Is a subspace of ? If so, find .        To find the kernel of , we need to find all vectors of that map to in . This amounts to solving the equation . Gauss-Jordan elimination yields: Thus, the kernel of consists of all elements of the form: We conclude that  : Since is the span of two vectors of , we know that is a subspace of . (See .) Observe that the two vectors in the spanning set are linearly independent. (How can we see this without performing computations?) Therefore .   "
 },
@@ -2867,7 +2822,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-kersubspace",
   "type": "Theorem",
-  "number": "2.6.38",
+  "number": "2.5.38",
   "title": "",
   "body": "  Let be a linear transformation, then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose that and are in . Then, This shows that is in . For any scalar we have: This shows that is in .   "
 },
@@ -2876,7 +2831,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-nullityT",
   "type": "Definition",
-  "number": "2.6.39",
+  "number": "2.5.39",
   "title": "",
   "body": "  The nullity of a linear transformation , is the dimension of the kernel of .    "
 },
@@ -2885,7 +2840,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#form-nullTnullA",
   "type": "Formula",
-  "number": "2.6.40",
+  "number": "2.5.40",
   "title": "",
   "body": "      "
 },
@@ -2894,7 +2849,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-ranknullityforT",
   "type": "Theorem",
-  "number": "2.6.41",
+  "number": "2.5.41",
   "title": "",
   "body": "  Let be a linear transformation. Suppose , then     By , is a subspace of . There exists a basis for of the form . By , is a subspace of . Let be a basis for . We will show that is a basis for . For any vector in , we have: for some scalars  . Thus, By linearity, Therefore is in . Hence there are scalars  such that Thus, We conclude that   Now we need to show that is linearly independent. Suppose Applying to both sides, we get  But for , thus Since is linearly independent, it follows that each . But then implies that . Because is linearly independent, it follows that each . We conclude that is a basis for . Thus,    "
 },
@@ -2903,7 +2858,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-sum",
   "type": "Exercise",
-  "number": "2.6.7.1",
+  "number": "2.5.7.1",
   "title": "",
   "body": "  Show that of holds for vectors and .   "
 },
@@ -2912,7 +2867,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-prob2",
   "type": "Exercise",
-  "number": "2.6.7.2",
+  "number": "2.5.7.2",
   "title": "",
   "body": "  Use a counter-example to prove of .   "
 },
@@ -2921,7 +2876,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-imageoflincomb",
   "type": "Exercise",
-  "number": "2.6.7.3",
+  "number": "2.5.7.3",
   "title": "",
   "body": "  Suppose is a linear transformation such that and . Find the image of .        "
 },
@@ -2930,7 +2885,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-notlinear",
   "type": "Exercise",
-  "number": "2.6.7.4",
+  "number": "2.5.7.4",
   "title": "",
   "body": "  Let be a fixed vector. Define , by .   Describe the effect of this transformation by sketching and for at least four vectors and a fixed vector of your choice.    Is a linear transformation?      "
 },
@@ -2939,7 +2894,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-projectiontrans",
   "type": "Exercise",
-  "number": "2.6.7.5",
+  "number": "2.5.7.5",
   "title": "",
   "body": "  Define , by This transformation is called an orthogonal projection onto the -plane. Show that is a linear transformation.   "
 },
@@ -2948,7 +2903,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-imagesofijk",
   "type": "Exercise",
-  "number": "2.6.7.6",
+  "number": "2.5.7.6",
   "title": "",
   "body": "  Suppose a linear transformation maps Find the image of under .        "
 },
@@ -2957,7 +2912,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-idtrans",
   "type": "Exercise",
-  "number": "2.6.7.7",
+  "number": "2.5.7.7",
   "title": "",
   "body": "  Prove    "
 },
@@ -2966,7 +2921,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-zerotrans",
   "type": "Exercise",
-  "number": "2.6.7.8",
+  "number": "2.5.7.8",
   "title": "",
   "body": "  Prove    "
 },
@@ -2975,7 +2930,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#domaincodomain1",
   "type": "Exercise",
-  "number": "2.6.7.9",
+  "number": "2.5.7.9",
   "title": "",
   "body": "       Domain: , where .  Codomain: , where .   "
 },
@@ -2984,7 +2939,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-domaincodomain2",
   "type": "Exercise",
-  "number": "2.6.7.10",
+  "number": "2.5.7.10",
   "title": "",
   "body": "      "
 },
@@ -2993,7 +2948,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-evaluateT",
   "type": "Exercise",
-  "number": "2.6.7.11",
+  "number": "2.5.7.11",
   "title": "",
   "body": "  Suppose that a linear transformation is such that Find .        "
 },
@@ -3002,7 +2957,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-standardmatrix",
   "type": "Exercise",
-  "number": "2.6.7.12",
+  "number": "2.5.7.12",
   "title": "",
   "body": "  Suppose that a linear transformation is such that . Find the standard matrix of .        "
 },
@@ -3011,7 +2966,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-standardmatrix1",
   "type": "Exercise",
-  "number": "2.6.7.13",
+  "number": "2.5.7.13",
   "title": "",
   "body": "   doubles the component of every vector and triples the component.        "
 },
@@ -3020,7 +2975,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-standardmatrix2",
   "type": "Exercise",
-  "number": "2.6.7.14",
+  "number": "2.5.7.14",
   "title": "",
   "body": "   reverses the direction of each vector.        "
 },
@@ -3029,7 +2984,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-standardmatrix5",
   "type": "Exercise",
-  "number": "2.6.7.15",
+  "number": "2.5.7.15",
   "title": "",
   "body": "   doubles the length of each vector.        "
 },
@@ -3038,7 +2993,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-standardmatrix3",
   "type": "Exercise",
-  "number": "2.6.7.16",
+  "number": "2.5.7.16",
   "title": "",
   "body": "   projects each vector onto the -axis. (e.g. ).        "
 },
@@ -3047,7 +3002,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-standardmatrix4",
   "type": "Exercise",
-  "number": "2.6.7.17",
+  "number": "2.5.7.17",
   "title": "",
   "body": "   projects each vector onto the -axis. (e.g. )        "
 },
@@ -3056,7 +3011,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#imagerankoflintrans1",
   "type": "Exercise",
-  "number": "2.6.7.18",
+  "number": "2.5.7.18",
   "title": "",
   "body": "   ,               is a line in .   (T)    .       .       is a plane in .          "
 },
@@ -3065,7 +3020,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-imagerankoflintrans2",
   "type": "Exercise",
-  "number": "2.6.7.19",
+  "number": "2.5.7.19",
   "title": "",
   "body": "   ,        .       is a line in .   (T)    is a line in .       .       is a plane in .   (T)    .   "
 },
@@ -3074,7 +3029,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-sametrans",
   "type": "Exercise",
-  "number": "2.6.7.20",
+  "number": "2.5.7.20",
   "title": "",
   "body": "  Suppose linear transformations and are such that Does this mean that and are the same transformation? Justify your claim.   "
 },
@@ -3083,7 +3038,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#kerandnullityT1",
   "type": "Exercise",
-  "number": "2.6.7.21",
+  "number": "2.5.7.21",
   "title": "",
   "body": "   ,        .       .       .       is a plane in .       is a line in .          "
 },
@@ -3092,7 +3047,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-kerandnullityT2",
   "type": "Exercise",
-  "number": "2.6.7.22",
+  "number": "2.5.7.22",
   "title": "",
   "body": "   ,        .       .       is a line in .          "
 },
@@ -3101,7 +3056,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-kerandnullityT3",
   "type": "Exercise",
-  "number": "2.6.7.23",
+  "number": "2.5.7.23",
   "title": "",
   "body": "   ,        is a plane in .       is a line in .       is a line in .       .       .       .   "
 },
@@ -3110,7 +3065,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-ranknullityT4",
   "type": "Exercise",
-  "number": "2.6.7.24",
+  "number": "2.5.7.24",
   "title": "",
   "body": "  Suppose a linear transformation is such that is a plane in . What is the rank and nulity of ?         "
 },
@@ -3119,7 +3074,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-ranknullityT5",
   "type": "Exercise",
-  "number": "2.6.7.25",
+  "number": "2.5.7.25",
   "title": "",
   "body": "  Suppose a linear transformation is such that for all in . What is the rank and nulity of ?         "
 },
@@ -3128,7 +3083,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-findimkergivenrref",
   "type": "Exercise",
-  "number": "2.6.7.26",
+  "number": "2.5.7.26",
   "title": "",
   "body": "  Let be a linear transformation with standard matrix Find and if the reduced row-echelon form of is    "
 },
@@ -3137,7 +3092,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-findimageandkernellintrans",
   "type": "Exercise",
-  "number": "2.6.7.27",
+  "number": "2.5.7.27",
   "title": "",
   "body": "  Let and let be a linear transformation defined by . Find and .   "
 },
@@ -3146,7 +3101,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-ranknullitytrans",
   "type": "Exercise",
-  "number": "2.6.7.28",
+  "number": "2.5.7.28",
   "title": "",
   "body": "  Suppose a linear transformation is induced by a matrix . Let be a linear transformation induced by . Find , if . Prove your claim.   "
 },
