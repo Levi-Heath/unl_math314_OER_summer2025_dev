@@ -160,6 +160,63 @@
                 </p>
             </answer>
         </example>
+
+        <example xml:id="ex-matrixvectormultidentity">
+            <statement>
+                <p>
+                    Compute the matrix-vector product
+                    <me>
+                        \begin{bmatrix} 
+                            1 \amp 0 \amp 0 \amp 0\\
+                            0 \amp 1 \amp 0 \amp 0\\
+                            0 \amp 0 \amp 1 \amp 0\\
+                            0 \amp 0 \amp 0 \amp 1
+                        \end{bmatrix}
+                        \begin{bmatrix} 
+                            x_1\\ x_2\\ x_3\\ x_4
+                        \end{bmatrix}.
+                    </me>
+                </p>
+            </statement>
+            <answer>
+                <p>
+                    The matrix-vector product is
+                    <me>
+                        \begin{bmatrix} 
+                            1 \amp 0 \amp 0 \amp 0\\
+                            0 \amp 1 \amp 0 \amp 0\\
+                            0 \amp 0 \amp 1 \amp 0\\
+                            0 \amp 0 \amp 0 \amp 1
+                        \end{bmatrix}
+                        \begin{bmatrix} 
+                            x_1\\ x_2\\ x_3\\ x_4
+                        \end{bmatrix}
+                        =x_1\begin{bmatrix} 
+                            1\\ 0\\ 0\\ 0
+                        \end{bmatrix}
+                        +x_2\begin{bmatrix} 
+                            0\\ 1\\ 0\\ 0
+                        \end{bmatrix}
+                        +x_3\begin{bmatrix} 
+                            0\\ 0\\ 1\\ 0
+                        \end{bmatrix}
+                        +x_4\begin{bmatrix} 
+                            0\\ 0\\ 0\\ 1
+                        \end{bmatrix}
+                        =\begin{bmatrix} 
+                            x_1\\ x_2\\ x_3\\ x_4
+                        \end{bmatrix}.
+                    </me>
+                </p>
+            </answer>
+        </example>
+        
+        <p>
+            In the previous example, we see that the matrix-vector product of any vector with a square matrix with one's along its diagonal 
+            and zeros elsewhere is the vector itself. For this reason, we call such a matrix the <term>identity matrix</term> and denote the 
+            <m>n\times n</m> indentity matrix by <m>I_n</m>. In general, if <m>\mathbf{x}</m> is a vector in <m>\R</m>, then the 
+            matrix-vector product <m>I_n\mathbf{x}=\mathbf{x}</m>.
+        </p>
     </subsection>
 
 

@@ -4,77 +4,76 @@
     <title>Linear Transformations</title>
 
 
-
- 
-
-<p>
-We start by reviewing the definition of a function.
-</p>
-
-
-
-<definition xml:id="def-function">
-
-    <statement>
-        <p>
-            Let <m>V</m> and <m>W</m> be sets.  A <term>function</term> <m>f</m> from <m>V</m> into <m>W</m>, denoted by 
-
-<me>
-    f:V\rightarrow W
-</me>
-
-assigns to each element <m>x</m> of <m>V</m>, an element <m>y=f(x)</m> of <m>W</m>.  Moreover, we use the the following terminology.
-</p> 
-
-<p>
-The set <m>V</m> is called the <term>domain</term> of <m>f</m>, and the set <m>W</m> is called the <term>codomain</term>.
-</p>
-
-<p>
-If <m>y=f(x)</m>, we say that <m>x</m> <term>maps to</term> <m>y</m>, and <m>y</m> is the <term>image</term> of <m>x</m>.
-</p>
-
-<p>
-The collection of images of all points of <m>V</m> is called the <term>image</term> of <m>V</m> under <m>f</m>, or the <term>image</term> of <m>f</m>.  (It is also known as the <term> range</term> of <m>f</m>.)
-</p>
-    </statement>
-</definition>
-
-<p>
-In algebra and calculus you worked with functions <m>f:\R\rightarrow\R</m> whose domain and codomain were each the set of all real numbers.  In linear algebra, we call our functions <term>transformations</term>.  The domain and codomain of a transformation are <term>vector spaces</term>.  
-</p>
-
-
-<exploration xml:id="init-lintransintro">
     <p>
-        In this exercise we will introduce a very special type of transformation by contrasting the effects of two transformations on vectors of <m>\R^2</m>.  We will see that some transformations have ``nice" properties, while others do not.  Define <m>T_1</m> and <m>T_2</m> as follows:
-
-<me>
-    T_1:\R^2\rightarrow\R^2; \quad   T_1\left(\begin{bmatrix}
-    x\\
-    y
-    \end{bmatrix}\right)=\begin{bmatrix}
-    x-y\\
-    x
-    \end{bmatrix},
-</me>
+        We start by reviewing the definition of a function.
+    </p>
 
 
 
-<me>
-    T_2:\R^2\rightarrow\R^2; \quad    T_2\left(\begin{bmatrix}
-    x\\
-    y
-    \end{bmatrix}\right)=\begin{bmatrix}
-    -x+y+1\\
-    y-2
-    \end{bmatrix}.
-</me>
+    <definition xml:id="def-function">
+
+        <statement>
+            <p>
+                Let <m>V</m> and <m>W</m> be sets.  A <term>function</term> <m>f</m> from <m>V</m> into <m>W</m>, denoted by 
+
+                <me>
+                    f:V\rightarrow W
+                </me>
+
+                assigns to each element <m>x</m> of <m>V</m>, an element <m>y=f(x)</m> of <m>W</m>.  Moreover, we use the the following terminology.    
+            </p> 
+
+            <p>
+                The set <m>V</m> is called the <term>domain</term> of <m>f</m>, and the set <m>W</m> is called the <term>codomain</term>.
+            </p>
+
+            <p>
+                If <m>y=f(x)</m>, we say that <m>x</m> <term>maps to</term> <m>y</m>, and <m>y</m> is the <term>image</term> of <m>x</m>.
+            </p>
+
+            <p>
+                The collection of images of all points of <m>V</m> is called the <term>image</term> of <m>V</m> under <m>f</m>, or the <term>image</term> of <m>f</m>.  (It is also known as the <term> range</term> of <m>f</m>.)
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        In algebra and calculus you worked with functions <m>f:\R\to\R</m> whose domain and codomain were each the set of all real numbers.  
+        In linear algebra, we call our functions <term>transformations</term>.  
+        In this section, we study transformations <m>T:\R^n\to\R^m </m>. 
+    </p>
 
 
-Each of these transformations takes a vector in <m>\R^2</m>, and maps it to another vector in <m>\R^2</m>.  
-To see if you understand how these transformations are defined, see if you can determine what these transformations do to the vector <m>[4,3]</m>. 
-</p>
+    <exploration xml:id="init-lintransintro">
+        <p>
+            In this exercise we will introduce a very special type of transformation by contrasting the effects of two transformations on vectors of <m>\R^2</m>.  We will see that some transformations have ``nice" properties, while others do not.  Define <m>T_1</m> and <m>T_2</m> as follows:
+
+        <me>
+            T_1:\R^2\rightarrow\R^2; \quad   T_1\left(\begin{bmatrix}
+            x\\
+            y
+            \end{bmatrix}\right)=\begin{bmatrix}
+            x-y\\
+            x
+            \end{bmatrix},
+        </me>
+
+
+
+        <me>
+            T_2:\R^2\rightarrow\R^2; \quad    T_2\left(\begin{bmatrix}
+            x\\
+            y
+            \end{bmatrix}\right)=\begin{bmatrix}
+            -x+y+1\\
+            y-2
+            \end{bmatrix}.
+        </me>
+
+
+        Each of these transformations takes a vector in <m>\R^2</m>, and maps it to another vector in <m>\R^2</m>.  
+        To see if you understand how these transformations are defined, see if you can determine what these transformations do to the vector <m>[4,3]</m>. 
+    </p>
 
 
 <problem>
@@ -659,95 +658,82 @@ Since <m>T_2(\mathbf{0})\neq\mathbf{0}</m>, <m>T_2</m> is not linear.
 
 
 
-<subsection xml:id="Subsection-Linear-Transformations-Induced-by-Matrices">
-    <title>Linear Transformations Induced by Matrices</title>
 
-<p> 
-Recall that a transformation <m>T:\R^n\rightarrow\R^m</m> defined by <m>T(\mathbf{v})=A\mathbf{v}</m>, where <m>A</m> is some <m>m\times n</m> matrix, 
-is called a matrix transformation (or transformation induced by <m>A</m>).  As we had discovered in the precedng sectiion, all matrix transformations are linear.  
-We now formalize this result as a theorem.
-</p>
+    <theorem xml:id="th-matrixtran">
+        <statement>
+            <p>
+                Let <m>A</m> be an <m>m\times n</m> matrix.  Define <m>T:\R^n\rightarrow\R^m</m> by <m>T(\mathbf{v})=A\mathbf{v}</m>.  
+                Then <m>T</m> is a linear transformation.
+            </p>
+        </statement>
 
- <theorem xml:id="th-matrixtran">
-
-    <statement>
-        <p>
-            Let <m>A</m> be an <m>m\times n</m> matrix.  Define <m>T:\R^n\rightarrow\R^m</m> by <m>T(\mathbf{v})=A\mathbf{v}</m>.  
-            Then <m>T</m> is a linear transformation.
-        </p>
-    </statement>
-
-
-<proof>
-    <p>  Let <m>\mathbf{u}</m> and <m>\mathbf{v}</m> be vectors in <m>\R^n</m>, and let <m>k</m> be a scalar.  By properties of matrix multiplication we have:
-
-<me>
-    T(\mathbf{u}+\mathbf{v})=A(\mathbf{u}+\mathbf{v})=A\mathbf{u}+A\mathbf{v}=T(\mathbf{u})+T(\mathbf{v}),
-</me>
+        <proof>
+            <p>  
+                Let <m>\mathbf{u}</m> and <m>\mathbf{v}</m> be vectors in <m>\R^n</m>, and let <m>k</m> be a scalar.  By properties of matrix multiplication we have:
+                <me>
+                    T(\mathbf{u}+\mathbf{v})=A(\mathbf{u}+\mathbf{v})=A\mathbf{u}+A\mathbf{v}=T(\mathbf{u})+T(\mathbf{v}),
+                </me>
+                <me>
+                    T(k\mathbf{u})=A(k\mathbf{u})=kA\mathbf{u}=kT(\mathbf{u}).
+                </me>
+                Therefore <m>T</m> is a linear transformation.
+            </p>
+        </proof>
+    </theorem>
 
 
-<me>
-    T(k\mathbf{u})=A(k\mathbf{u})=kA\mathbf{u}=kT(\mathbf{u}).
-</me>
+    <example xml:id="ex-lineartrans2">
+        <statement>
+            <p>
+                Let <m>T:\R^n\rightarrow\R^m</m> be a linear transformation induced by 
+    <me>
+        A=\begin{bmatrix}
+    2\amp 0\\
+    1\amp 4\\
+    0\amp 1
+    \end{bmatrix}
+    </me>
 
-Therefore <m>T</m> is a linear transformation.
+    <ol>
+    <li xml:id="item-exlineartrans2a">
+    <p> 
+    Find <m>n</m> and <m>m</m>.
     </p>
-</proof>
-</theorem>
+    </li>
+    <li xml:id="item-exlineartrans2d">
+    <p> 
+    Find the image of <m>T</m>.
+    </p>
+    </li>
+    </ol>
+        </p>
+        </statement>
+
+        <answer>
+            <p>
+                <xref ref="item-exlineartrans2a"/> <m>A</m> is a <m>3\times 2</m> matrix, so for the expression <m>T(\mathbf{x})=A\mathbf{x}</m> to make sense, <m>\mathbf{x}</m> has to be a <m>2\times 1</m> vector.  Thus, the domain of <m>T</m> is <m>\R^2</m> (<m>n=2</m>).  The product <m>A\mathbf{x}</m> is a <m>3\times 1</m> vector.  The codomain of <m>T</m> is <m>\R^3</m> (<m>m=3</m>).
+
+    <xref ref="item-exlineartrans2d"/>  By <xref ref="def-function"/>, the image of <m>T</m> consists of images of all individual vectors in <m>\R^2</m> under <m>T</m>.  
+            </p> 
+            
+            <p> 
+            Every vector <m>\mathbf{v}</m>  in <m>\R^2</m> can be written as <m>\mathbf{v}=a\mathbf{i}+b\mathbf{j}</m> for some real numbers  <m>a</m> and <m>b</m>.  
+            Consider the image of <m>\mathbf{v}</m>:
+
+    <me>
+        T(\mathbf{v})=T(a\mathbf{i}+b\mathbf{j})=aT(\mathbf{i})+bT(\mathbf{j})=a\begin{bmatrix}2\\1\\0\end{bmatrix}+b\begin{bmatrix}0\\4\\1\end{bmatrix}.
+    </me>
+
+    This shows that the range, or the image, of <m>T</m> consists of all linear combinations of the columns of <m>A</m>.  
+    In other words, the image of <m>T</m> is the span of vectors <m>[2,1,0]</m> and <m>[0,4,1]</m>. 
+    The two vectors are not scalar multiples of each other, therefore they span a plane in <m>\R^3</m>.
+        </p>
+        </answer>
+    </example>
+    
 
 
-<example xml:id="ex-lineartrans2">
-    <statement>
-        <p>
-            Let <m>T:\R^n\rightarrow\R^m</m> be a linear transformation induced by 
-<me>
-    A=\begin{bmatrix}
-2\amp 0\\
-1\amp 4\\
-0\amp 1
-\end{bmatrix}
-</me>
-
-<ol>
-<li xml:id="item-exlineartrans2a">
-  <p> 
-Find <m>n</m> and <m>m</m>.
-</p>
-</li>
-<li xml:id="item-exlineartrans2d">
-  <p> 
-Find the image of <m>T</m>.
-</p>
-</li>
-</ol>
-       </p>
-    </statement>
-
-    <answer>
-        <p>
-            <xref ref="item-exlineartrans2a"/> <m>A</m> is a <m>3\times 2</m> matrix, so for the expression <m>T(\mathbf{x})=A\mathbf{x}</m> to make sense, <m>\mathbf{x}</m> has to be a <m>2\times 1</m> vector.  Thus, the domain of <m>T</m> is <m>\R^2</m> (<m>n=2</m>).  The product <m>A\mathbf{x}</m> is a <m>3\times 1</m> vector.  The codomain of <m>T</m> is <m>\R^3</m> (<m>m=3</m>).
-
-<xref ref="item-exlineartrans2d"/>  By <xref ref="def-function"/>, the image of <m>T</m> consists of images of all individual vectors in <m>\R^2</m> under <m>T</m>.  
-        </p> 
-        
-        <p> 
-        Every vector <m>\mathbf{v}</m>  in <m>\R^2</m> can be written as <m>\mathbf{v}=a\mathbf{i}+b\mathbf{j}</m> for some real numbers  <m>a</m> and <m>b</m>.  
-        Consider the image of <m>\mathbf{v}</m>:
-
-<me>
-    T(\mathbf{v})=T(a\mathbf{i}+b\mathbf{j})=aT(\mathbf{i})+bT(\mathbf{j})=a\begin{bmatrix}2\\1\\0\end{bmatrix}+b\begin{bmatrix}0\\4\\1\end{bmatrix}.
-</me>
-
-This shows that the range, or the image, of <m>T</m> consists of all linear combinations of the columns of <m>A</m>.  
-In other words, the image of <m>T</m> is the span of vectors <m>[2,1,0]</m> and <m>[0,4,1]</m>. 
-The two vectors are not scalar multiples of each other, therefore they span a plane in <m>\R^3</m>.
-       </p>
-    </answer>
-</example>
- 
-
-
-<example xml:id="ex-lineartrans3">
+    <example xml:id="ex-lineartrans3">
     <statement>
         <p>
             Let <m>T:\R^n\rightarrow\R^m</m> be a linear transformation induced by
@@ -816,18 +802,7 @@ This shows that the image of every vector in <m>\R^3</m> is a scalar multiple of
 </image>
  
     </answer>
-</example>
-</subsection>
-
-
-
-
-
-
-
-
-
-
+    </example>
 
 
 
