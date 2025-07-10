@@ -3,6 +3,14 @@
 <section xml:id="Section-Row-Echelon-Forms" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Row Echelon Forms</title>
 
+    <p>
+    In the last section, we admitted that systems of linear equations may not have a unique solution, but we did not explain what to do about it.
+    Now we will cover all possible solutions of a system, including systems with no solution at all.  
+    In the first subsection, we work out what a <q>fully reduced</q> system should look like and then, in the second subsection, we describe how to use Gaussian elimination to get this form.
+    Finally, the last subsection describes the solution set of the <q>fully reduced</q> matrix when the solution is not unique or when there is no solution.
+    </p>
+
+
     <subsection xml:id="Subsection-Row-Echelon-and-Reduced-Row-Echelon-Forms">
         <title>Row Echelon and Reduced Row Echelon Forms</title>
 
