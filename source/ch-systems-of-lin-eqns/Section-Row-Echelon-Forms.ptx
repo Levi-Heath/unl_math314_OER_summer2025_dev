@@ -10,14 +10,17 @@
     Finally, the last subsection describes the solution set of the <q>fully reduced</q> matrix when the solution is not unique or when there is no solution.
     </p>
 
-
     <subsection xml:id="Subsection-Row-Echelon-and-Reduced-Row-Echelon-Forms">
-        <title>Row Echelon and Reduced Row Echelon Forms</title>
+        <title>Row Echelon Form and Reduced Row Echelon Form</title>
+
+        <p>
+        Before looking for a <q>reduced form</q>, we need a name for for the first non-zero entry in a row of a matrix.  Using this name, we can then define the first special form for a matrix.
+        </p>
 
         <definition xml:id="def-leadentry">
             <statement>
                 <p>
-                    The first non-zero entry in a row of a matrix (when read from left to right) is called the <term>leading entry</term>.  When the leading entry is 1, we refer to it as a <term>leading 1</term>.
+                    The first non-zero entry in a row of a matrix (when read from left to right) is called the <term>leading entry</term>.  When the leading entry is 1, we call it a <term>leading 1</term>.
                 </p>
             </statement>
         </definition>
@@ -105,7 +108,8 @@
         <p>
             Perhaps you may be asking some questions. 
             Can every augmented matrix be reduced to a row echelon or reduced row echelon form?  
-            If so, is the row echelon or reduced row echelon form unique?
+            If so, is the row echelon or reduced row echelon form unique?  
+            We will answer the second question in this subsection and the first question in the next subsection.
         </p>
 
         <exploration xml:id="init-gaussianelim1">
@@ -831,7 +835,7 @@
             We say that <m>x</m>, <m>y</m> and <m>z</m> are the <term>leading variables</term>.  
             The free variable <m>w</m> is not a leading variable. 
             In fact, free variables always correspond to a column in the reduced row echelon form of the augmented matrix which does not have a leading 1. 
-            This gives us a method for indetifying free variables. 
+            This gives us a method for identifying free variables. 
         </p>
 
         <example xml:id="ex-rrefinfmanysolutionssys">
