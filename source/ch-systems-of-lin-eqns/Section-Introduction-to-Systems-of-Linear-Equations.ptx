@@ -14,7 +14,7 @@
         
         <p>
             When you were first introduced to systems of equations, you learned to solve for one variable in terms of the other(s), then substitute.  
-            Here, we will introduce another method.  
+            Here, we will introduce a systematic method, an algorithm, to solve systems of linear equations.  
             This alternative method, called <term>Gaussian elimination</term>, involves adding multiples of one equation to another equation in order to eliminate one of the variables.  
             This method will form the foundation for an algorithm we will develop for solving linear systems and performing other computations related to systems. 
             Let's explore this in <xref ref="init-systwoeqs1"/>.
@@ -40,9 +40,9 @@
                     \end{matrix}
                 </me>
         
-                Note that this step eliminates <m>y</m> from the second equation.  
+                We choose this row operation because the resulting equation has a zero coefficient for <m>y</m>.  
         
-                Next we multiply both sides of the second equation by <m>\frac{1}{7}</m>. 
+                Next, we make the coefficient of <m>x</m> equal to 1 by multiplying both sides of the second equation by <m>\frac{1}{7}</m>. 
                 <me>
                     \frac{1}{7}R_2\rightarrow R_2
                 </me>
@@ -106,7 +106,7 @@
         </exploration>
 
         <p>
-            In <xref ref="init-systwoeqs1"/> we introduced elementary row operations and the notation associated with them. We now make these definitions formal.
+            In <xref ref="init-systwoeqs1"/> we introduced elementary row operations and the notation associated with them. We now define these formally.
         </p>
 
         <definition xml:id="def-elemrowops">
@@ -150,14 +150,19 @@
         </definition>
 
         <p>
-            As we applied elementary row operations to the system in <xref ref="init-systwoeqs1"/>, the system changed, but a quick check will convince you that all six systems have the same solution: <m>(-1, 2)</m>.  The six systems are said to be <term>equivalent</term>.  
+            As we applied elementary row operations to the system in <xref ref="init-systwoeqs1"/>, the system changed, but you can check that the six systems in the exploration all have the same solution: <m>(-1, 2)</m>.  We say two systems are <term>equivalent</term> if they have exactly the same solutions.  So the six systems are equivalent.   
+        </p>
+        
+        <p>    
+            Applying elementary row operations always produces an equivalent system; we will show this in <xref ref="th-elemRowOpsEquivSys"/> at the end of this section.
+            So we can use a sequence of elementary row operations to find, step-by-step, simpler and simpler equivalent systems.  
         </p>
 
         <p>
-            It turns out that if a system of equations is transformed into another system through a sequence of elementary row operations, the new system will be equivalent to the original system, in other words, both systems will have the same solution(s).  We will formalize this statement as <xref ref="th-elemRowOpsEquivSys"/> at the end of this section.
+            Next, we use the language of elementary row operations to solve a larger systems of equations.
         </p>
 
-        <example xml:id="ex-threeeqthreevars1">
+        <exploration xml:id="ex-threeeqthreevars1">
             <statement>
             <p>
                 Solve the system of equations using elementary row operations.
@@ -169,10 +174,9 @@
                     \end{array}
                 </me>
             </p>
-            </statement>
-            <answer>
-                <p>
-            It may be daunting to think about how to begin.  But keep in mind the desired end-result.  What we want is to use elementary row operations to transform the given system into something like this
+
+            <p>
+            It may be daunting to think about how to begin.  But keep in mind the desired end-result.  What we want to do is to use elementary row operations to transform the given system into something like this
         
         <me>
             \begin{array}{ccccccc}
@@ -181,8 +185,11 @@
              \amp   \amp  \amp  \amp   z\amp  =\amp   c
             \end{array}
         </me>
-        
+            </p>
             
+            </statement>
+            <answer>
+            <p>
         We will accomplish this by using a convenient variable in one row to ``wipe out" this variable from the other two rows.  For example, we can use <m>x</m> in the third equation to wipe out <m>3x</m> in the first equation and <m>2x</m> in the second equation.  To do this, multiply the third row by <m>-3</m> and add it to the top row, then multiply the third row by <m>-2</m> and add it to the second row.  We now have:
         
         <me>
@@ -292,8 +299,8 @@
         Thus the system has a unique solution <m>(1, 2, -1)</m>.
                 </p>
             </answer>
-        </example>
-        
+        </exploration>
+
         <p>
         At this point you may be wondering whether it will always be possible to take a system of three equations and three unknowns and use elementary row operations to transform it to a system of the form
         <me>
@@ -303,12 +310,17 @@
              \amp   \amp  \amp  \amp  z\amp  =\amp  c
             \end{array}
         </me>
-        The short answer to this question is NO.  The existence of an equivalent system of this form implies that the original system has a unique solution <m>(a, b, c)</m>.  However, it is possible for a system to have no solutions or to have infinitely many solutions.  We will study these different possibilities from an algebraic perspective in subsequent sections.  For now, we will attempt to gain insight into existence and uniqueness of solutions through geometry.     
+        The short answer to this question is NO.  The existence of an equivalent system of this form implies that the original system has exactly one solution, namely <m>(a, b, c)</m>.  However, it is possible for a system to have no solutions or to have infinitely many solutions.  We will study these different possibilities from an algebraic perspective in subsequent sections.  For now, we will attempt to gain insight into existence and uniqueness of solutions through geometry.     
         </p>
     </subsection>
 
     <subsection xml:id="Subsection-Augmented-Matrix-Notation">
         <title>Augmented Matrix Notation</title>
+
+        <p>
+            It is time consuming to rewrite each equation, with all variable names and plus signs, after each row operation. 
+            So let's find a more efficient method for performing elementary row operations. 
+        </p>
 
         <p>
             Recall that the following three operations performed on a linear system are called <term>elementary row operations</term>
@@ -331,10 +343,6 @@
             </ul>
             </p>
             
-            <p>
-                Rewriting full equations after each row operation is time consuming. 
-                So let's find a more efficient method for performing elementary row operations. 
-            </p>
 
             <exploration xml:id="init-augmentedmatrixex">
                 <statement>
@@ -546,41 +554,7 @@
             </exploration>
             
             <p>
-                <xref ref="init-augmentedmatrixex"/> introduced us to some vocabulary terms.  
-                Let's formalize our definitions. A <term>matrix</term> is a rectangular array of numbers.
-                Every linear system 
-                <me>
-                    \begin{array}{ccccccccc}
-                    a_{11}x_1 \amp + \amp a_{12}x_2\amp +\amp \ldots\amp +\amp a_{1n}x_n\amp = \amp b_1 \\
-                    a_{21}x_1 \amp + \amp a_{22}x_2\amp +\amp \ldots\amp +\amp a_{2n}x_n\amp = \amp b_2 \\
-                    \amp \amp \amp \amp \vdots\amp \amp \amp \amp  \\
-                    a_{m1}x_1 \amp + \amp a_{m2}x_2\amp +\amp \ldots\amp +\amp a_{mn}x_n\amp = \amp b_m
-                    \end{array}
-                </me>
-                can be written in the <term>augmented matrix form</term> as follows:
-                <me>
-                    \left[\begin{array}{cccc|c}  
-                        a_{11}\amp a_{12}\amp \ldots\amp a_{1n}\amp b_1\\a_{21}\amp a_{22}\amp \ldots\amp a_{2n}\amp b_2\\\vdots\amp \vdots\amp \ddots\amp \vdots\amp \vdots\\a_{m1}\amp a_{m2}\amp \ldots\amp a_{mn}\amp b_m
-                    \end{array}\right]
-                </me>
-                The array to the left of the vertical bar is called the <term>coefficient matrix</term> of the linear system and is often given a capital letter name, like <m>A</m>.  The vertical array to the right of the bar is called a <term>constant vector</term>.
-                <me>
-                    A=\begin{bmatrix}a_{11}\amp a_{12}\amp \ldots\amp a_{1n}\\a_{21}\amp a_{22}\amp \ldots\amp a_{2n}\\\vdots\amp \vdots\amp \ddots\amp \vdots\\a_{m1}\amp a_{m2}\amp \ldots\amp a_{mn}\end{bmatrix}\quad\text{and}\quad\mathbf{b}=\begin{bmatrix}b_1\\b_2\\\vdots\\b_m\end{bmatrix}
-                </me>
-                The <term>dimension of a matrix</term> with <m>m</m> rows and <m>n</m> columns is <m>m\times n</m>, 
-                read <q><m>m</m> by <m>n</m>.</q> Hence, in <xref ref="init-augmentedmatrixex"/>, the dimension of the 
-                coefficient matrix <m>A</m> is <m>4\times 4</m>, the dimension of the constant vector <m>\mathbf{b}</m> 
-                is <m>4\times 1</m>, and the dimension of the augmented matrix is <m>4\times 5</m>.
-            </p>
-            <p>
-                We will sometimes use the following notation to represent an augmented matrix.
-                <me>
-                    \left[\begin{array}{c|c}  
-                        A \amp  \mathbf{b}\\
-                    \end{array}\right]
-                </me>
-                The same elementary row operations that we perform on a system of equations can be performed on the corresponding augmented matrix, or any matrix for that matter. 
-                If a matrix can be obtained from another matrix by means of elementary row operations, we say that the two matrices are <term>row-equivalent</term>.  
+            We will regularly use the language of coefficient matrix and augmented matrix introduced in this exploration.
             </p>
 
             <exploration xml:id="init-backsub">
@@ -1087,6 +1061,10 @@
     <subsection xml:id="Subsection-General-Systems-of-Linear-Equations">
         <title>General Systems of Linear Equations</title>
 
+        <p> 
+        Here we collect together all of the definitions from this section, written as generally as possible.
+        </p>
+
         <definition xml:id="def-lineq">
             <statement>
                 <p>
@@ -1097,18 +1075,22 @@
         </me>
         
         where <m>a_1,\ldots ,a_n</m> and <m>b</m> are constants.
+        We call <m>a_i</m> the <term>coefficient</term> of <m>x_i</m> in the equation, and we call <m>b</m> the <term>constant term</term>.
                 </p>
             </statement>
         </definition>
 
         <p>
-            An <m>n</m>-tuple 
+            An <m>n</m>-tuple of numbers
             <me>
-            (x_1, x_2,\ldots ,x_n)
-            </me> 
-            
-            is a <term>solution</term> to the equation <m>a_1x_1+a_2x_2+\ldots +a_nx_n=b</m> provided that it turns the equation into a true statement.  The set of all <m>n</m>-tuples that are solutions to a given equation is called the <term>graph</term> of the equation. The graph of a linear equation in two variables is a line in <m>\R^2</m>.  The graph of a linear equation in three variables is a plane in <m>\R^3</m>.  In <m>\R^n</m>, for <m>n\gt3</m>, we say that the graph of a linear equation is a <term>hyperplane</term>. A hyperplane cannot be visualized, but we can still talk about intersections of hyperplanes and their other attributes in algebraic terms.  
-            </p>
+            (z_1, z_2,\ldots ,z_n)
+            </me>
+
+            is a <term>solution</term> to the equation <m>a_1x_1+a_2x_2+\ldots +a_nx_n=b</m> provided that, when we set <m>x_1</m> equal to <m>z_1</m> and so on, the equation becomes a true statement.
+        </p>
+        <p>
+        The set of all <m>n</m>-tuples that are solutions to a given equation is called the <term>graph</term> of the equation. The graph of a linear equation in two variables is a line in <m>\R^2</m>.  The graph of a linear equation in three variables is a plane in <m>\R^3</m>.  In <m>\R^n</m>, for <m>n\gt3</m>, we say that the graph of a linear equation is a <term>hyperplane</term>. A hyperplane cannot be visualized, but we can still talk about intersections of hyperplanes and their other attributes in algebraic terms.  
+        </p>
             
             <p>
             A linear system of <m>m</m> equations and <m>n</m> unknowns is typically written as follows
@@ -1123,36 +1105,67 @@
             </p>
             
             <p>
-            A <term>solution to a system</term> of linear equations in <m>n</m> variables is an <m>n</m>-tuple that satisfies every equation in  the system.  All solutions to a system of equations, taken together, form a <term>solution set</term>.
+            A <term>solution to a system</term> of linear equations in <m>n</m> variables is an <m>n</m>-tuple that satisfies every equation in  the system.  All solutions to a system of equations, taken together, form its <term>solution set</term>.
+            We say that a system of equations is <term>consistent</term> if it has at least one solution, and <term>inconsistent</term> if it has no solutions.  If a system is consistent, we say that it has a <term>unique solution</term> if there is exactly one solution, or <term>infinitely many solutions</term> if there are infinitely many solutions.
             </p>
             
             <definition xml:id="def-equivsystems">
+
                 <statement>
                     <p> 
-                        Two systems of linear equations are said to be equivalent if they have the same solution set.
+                        Two systems of linear equations are said to be <term>equivalent</term> if they have the same solution set.
                     </p>
                 </statement>
             </definition>
+
+            <p>
+                The <term>augmented matrix</term> of a linear system of <m>m</m> equations and <m>n</m> unknowns is
+                <me>
+                    \left[\begin{array}{cccc|c}  
+                        a_{11}\amp a_{12}\amp \ldots\amp a_{1n}\amp b_1\\a_{21}\amp a_{22}\amp \ldots\amp a_{2n}\amp b_2\\\vdots\amp \vdots\amp \ddots\amp \vdots\amp \vdots\\a_{m1}\amp a_{m2}\amp \ldots\amp a_{mn}\amp b_m
+                    \end{array}\right]
+                </me>
+                The array to the left of the vertical bar is called the <term>coefficient matrix</term> of the linear system and is often given a capital letter name, like <m>A</m>.  The vertical array to the right of the bar is called a <term>constant vector</term>.
+                <me>
+                    A=\begin{bmatrix}a_{11}\amp a_{12}\amp \ldots\amp a_{1n}\\a_{21}\amp a_{22}\amp \ldots\amp a_{2n}\\\vdots\amp \vdots\amp \ddots\amp \vdots\\a_{m1}\amp a_{m2}\amp \ldots\amp a_{mn}\end{bmatrix}\quad\text{and}\quad\mathbf{b}=\begin{bmatrix}b_1\\b_2\\\vdots\\b_m\end{bmatrix}
+                </me>
+                The <term>dimension of a matrix</term> with <m>m</m> rows and <m>n</m> columns is <m>m\times n</m>, 
+                read <q><m>m</m> by <m>n</m>.</q>
+            </p>
+            <p>
+                We will sometimes use the following notation to represent an augmented matrix.
+                <me>
+                    \left[\begin{array}{c|c}  
+                        A \amp  \mathbf{b}\\
+                    \end{array}\right]
+                </me>
+      
+            </p>
             
             <p>
-            Recall that to solve systems of equations in this section, we utilized three <term>elementary row operations</term>.  These operations are:
+            The same elementary row operations that we perform on a system of equations can be performed on the corresponding augmented matrix, or any matrix for that matter. 
+            We have three <term>elementary row operations</term>, namely
             <ol>
             <li xml:id="item-rowswap">
                 <p>
-                    Switching the order of two equations
+                    Switching the order of two rows/equations
                 </p>
             </li>
             <li xml:id="item-constantmult">
                 <p>
-                    Multiplying both sides of an equation by the same non-zero constant
+                    Multiplying a row, or both sides of an equation, by the same non-zero constant
                 </p>
             </li>
             <li xml:id="item-addrow">
                 <p>
-                    Adding a multiple of one equation to another
+                    Adding a multiple of one row/equation to another
                 </p>
             </li>
             </ol>
+            </p>
+
+            <p>
+            If a matrix can be obtained from another matrix by means of elementary row operations, we say that the two matrices are <term>row-equivalent</term>.  
             </p>
             
             <theorem xml:id="th-elemRowOpsEquivSys">
@@ -1399,6 +1412,45 @@
               </hint>
             </exercise>
             
+            <exercise xml:id="prob-prob-equivsystems1">
+                <statement>
+                   <p>
+                    Suppose that we have two solutions, call them <m>(g,h)</m> and <m>(p,q)</m> to the following system:
+            
+            <me>
+                \begin{array}{ccccc}
+                  ax \amp  + \amp   by\amp  = \amp   e\\
+                  cx\amp   + \amp   dy\amp  =\amp   f      
+                \end{array}
+            </me>
+            </p>
+            <ol>
+                <li>
+                    <p>
+                        Show that <m>(g-p,h-q)</m> is a solution to the system
+                        <me>
+                            \begin{array}{ccccc}
+                              ax \amp  + \amp   by\amp  = \amp   0\\
+                              cx\amp   + \amp   dy\amp  =\amp   0      
+                            \end{array}
+                        </me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Show that for any number $t$, <m>(p+t(g-p),q+t(h-q))</m> is a solution to the system
+                        <me>
+                            \begin{array}{ccccc}
+                              ax \amp  + \amp   by\amp  = \amp   e\\
+                              cx\amp   + \amp   dy\amp  =\amp   f      
+                            \end{array}
+                        </me>
+                    </p>
+                </li>
+            </ol>
+              </statement>
+            </exercise>
+
             <exercise xml:id="prob-prob-equivsystems1">
                 <statement>
                    <p>
