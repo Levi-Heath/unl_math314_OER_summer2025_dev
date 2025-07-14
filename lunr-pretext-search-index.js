@@ -25,7 +25,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Introduction to Systems of Linear Equations",
-  "body": " Introduction to Systems of Linear Equations  You are probably familiar with the concept of a system of linear equations and with some methods for solving such systems. In this section, we will look at the algebra and geometry of finding and interpreting solutions of systems of linear equations. We will start with two-variable and three-variable systems, then move on to systems involving more variables.   Algebra of Linear Systems  When you were first introduced to systems of equations, you learned to solve for one variable in terms of the other(s), then substitute. Here, we will introduce another method. This alternative method, called Gaussian elimination , involves adding multiples of one equation to another equation in order to eliminate one of the variables. This method will form the foundation for an algorithm we will develop for solving linear systems and performing other computations related to systems. Let's explore this in .   This problem formalizes what you may already know (perhaps under a different name) about elementary row operations as means of solving systems of linear equations. Consider the system We will begin by adding twice the first row to the second row, and replacing the second row with the sum.  Note that this step eliminates from the second equation. Next we multiply both sides of the second equation by .  We now know . Our next goal is to determine by eliminating from the first equation. To this end, we subtract twice the second row from the first row and replace the first row with the difference.  Next we multiply both sides of the first equation by .  Finally, we can switch the order of equations in order to display in the top row.  This solution can be written as an ordered pair .   In we introduced elementary row operations and the notation associated with them. We now make these definitions formal.   Elementary Row Operations   The following three operations performed on a linear system are called elementary row operations .   Switching the order of equations (rows) and :     Multiplying both sides of equation (row) by the same non-zero constant, , and replacing equation with the result:     Adding times equation (row) to equation (row) , and replacing equation with the result:        As we applied elementary row operations to the system in , the system changed, but a quick check will convince you that all six systems have the same solution: . The six systems are said to be equivalent .  It turns out that if a system of equations is transformed into another system through a sequence of elementary row operations, the new system will be equivalent to the original system, in other words, both systems will have the same solution(s). We will formalize this statement as at the end of this section.    Solve the system of equations using elementary row operations.     It may be daunting to think about how to begin. But keep in mind the desired end-result. What we want is to use elementary row operations to transform the given system into something like this We will accomplish this by using a convenient variable in one row to ``wipe out\" this variable from the other two rows. For example, we can use in the third equation to wipe out in the first equation and in the second equation. To do this, multiply the third row by and add it to the top row, then multiply the third row by and add it to the second row. We now have: In the previous step was a convenient variable to use because the coefficient in front of was 1. We no longer have a variable with coefficient 1. We could create a coefficient of 1 using division, but that would lead to fractions, making computations cumbersome. Instead, we will subtract twice the second row from the first row. This gives us: Next we add seven times the first row to the second row, and subtract four times the first row from the third row. Now we divide both sides of the second row by . Adding times the second row to the first row and subtracting times the second row from the third row gives us Finally, rearranging the rows gives us  Thus the system has a unique solution .    At this point you may be wondering whether it will always be possible to take a system of three equations and three unknowns and use elementary row operations to transform it to a system of the form The short answer to this question is NO. The existence of an equivalent system of this form implies that the original system has a unique solution . However, it is possible for a system to have no solutions or to have infinitely many solutions. We will study these different possibilities from an algebraic perspective in subsequent sections. For now, we will attempt to gain insight into existence and uniqueness of solutions through geometry.    Augmented Matrix Notation  Recall that the following three operations performed on a linear system are called elementary row operations    Switching the order of two equations    Multiplying both sides of an equation by the same non-zero constant    Adding a multiple of one equation to another     Rewriting full equations after each row operation is time consuming. So let's find a more efficient method for performing elementary row operations.    The linear system in this Exploration comes from Jim Hefferon's Linear Algebra .  Consider the linear system Our goal is to use elementary row operations to transform this system into an equivalent system of the form We have to keep in mind that given an arbitrary system, an equivalent system of this form may not exist (we will talk a lot more about this later). However, it does exist in this case, and we would like to find a more efficient way of getting to it than having to write and rewrite our equations at each step.    We start by subtracting twice row 1 from row 2. ( ) Next, we add row 3 to row 1. ( ) Subtract twice row 2 from row 4. ( ) Divide row 4 by . ( ) We will do three operations in one step.    We now exchange rows 2 and 3. ( ) If we drop all of the zero terms, we have: Now we see that is the solution.  Observe that throughout the entire process, variables , , and remained in place; only the coefficients in front of the variables and the entries on the right changed. Let's try to recreate this process without writing down the variables. We can capture the original system in as follows: The side to the left of the vertical bar is called the coefficient matrix , while the side to the right of the bar is a vector that consists of constants on the right side of the system. The coefficient matrix, together with the vector, is called an augmented matrix .  We can capture all of the elementary row operations we performed earlier as follows:    The last augmented matrix corresponds to systems in and , and we can easily see the solution.     introduced us to some vocabulary terms. Let's formalize our definitions. A matrix is a rectangular array of numbers. Every linear system can be written in the augmented matrix form as follows: The array to the left of the vertical bar is called the coefficient matrix of the linear system and is often given a capital letter name, like . The vertical array to the right of the bar is called a constant vector . The dimension of a matrix with rows and columns is , read by . Hence, in , the dimension of the coefficient matrix is , the dimension of the constant vector is , and the dimension of the augmented matrix is .  We will sometimes use the following notation to represent an augmented matrix. The same elementary row operations that we perform on a system of equations can be performed on the corresponding augmented matrix, or any matrix for that matter. If a matrix can be obtained from another matrix by means of elementary row operations, we say that the two matrices are row-equivalent .   Consider the system Recall that in we converted the given system to an augmented matrix form, then performed elementary row operations until we arrived at a ``convenient\" form. We then converted the ``convenient\" augmented matrix back to a system of equations and identified a solution.  The term ``convenient\" is open to interpretation. In this problem we will explore two ``convenient\" forms. Each one will lead to a definition. The augmented matrix in has the same convenient form as the one in . This augmented matrix corresponds to the system This gives us the solution .  While the augmented matrix in was certainly ``convenient\", we could have converted back to the equation format a little earlier. Let's take a look at the augmented matrix in . Converting to a system of equations gives us Substituting into the second equation and solving for gives us Now substituting and into the first equation results in This process is called back substitution and it produces the same solution as we obtained earlier.   Observe that the coefficient matrices in and have the same format: 1's along the diagonal, zeros above and below the 1's. The other ``convenient\" format, exhibited by the coefficient matrix in , also has zeros below the diagonal, but not all of the diagonal entries are 1's and some of the entries above the diagonal are not zero. Each of these formats gives rise to a definition. These definitions are the topic of the next section.    Geometry of Linear Systems in Two Variables   offers an example of a linear system of two equations and two unknowns (variables) with a unique solution. Geometrically, the graph of each equation is a line in . The point is a solution to both equations, so it must lie on both lines. The graph below shows the two lines intersecting at .      Given a system of two equations with two unknowns, there are three possible geometric outcomes.   First, the graphs of the two equations intersect at a point. If this is the case, the system has exactly one solution. We say that the system is consistent and has a unique solution .        Second, the two lines may have no points in common. If this is the case, the system has no solutions. We say that the system is inconsistent .        Finally, the two lines may coincide. In this case, there are infinitely many points that satisfy both equations simultaneously. We say that the system is consistent and has infinitely many solutions.         The following examples are in-depth full runs on linear systems of equations.    Solve the system of equations and interpret your results geometrically.     We will use elementary row operations. Adding twice the first equation to the second equation gives us This is where we run into a problem: there are no values of and that satisfy the second equation. We conclude that the system is inconsistent. Plotting the two lines in the same coordinate plane shows that the two lines are parallel.          Solve the system of equations and interpret your results geometrically.     To eliminate from the second equation, we subtract one quarter of the first equation from the second. This gives us Unlike the situation in , any combination of and satisfies the second equation. So, any ordered pair that satisfies the first equation will satisfy the second equation. Thus, the solution set for this system is the same as the set of all solutions of .  When we plot the two equations of the original system, we find that the two lines coincide.        Given a linear system in two variables and more than two equations, we have a variety of geometric possibilities. In terms of the number of solutions, there are three possibilities.   First, it is possible for the graphs of all equations in the system to intersect at a single point, giving us a unique solution.        Second, it is possible for the graphs to have no points common to all of them. If this is the case, the system is inconsistent.              Finally, it is possible for all of the lines to coincide, giving us infinitely many solutions.       Geometry of Linear Systems in Three Variables  In , we solved the following linear system of three equations and three unknowns We found that the system has a unique solution . The graph of each equation is a plane. The three planes intersect at a single point, as shown in the figure.      Given a linear system of three equations in three variables, there are three ways in which the system can be consistent.   First, the three planes could intersect at a single point, giving us a unique solution.        Second, the three planes can intersect in a line, forming a paddle-wheel shape. In this case, every point along the line of intersection is a solution to the system, giving us infinitely many solutions.        Finally, the three planes can coincide. If this is the case, there are infinitely many solutions.       There are four ways for a system to be inconsistent. They are depicted below.                      General Systems of Linear Equations    A linear equation in variables is an equation that can be written in the form where and are constants.    An -tuple is a solution to the equation provided that it turns the equation into a true statement. The set of all -tuples that are solutions to a given equation is called the graph of the equation. The graph of a linear equation in two variables is a line in . The graph of a linear equation in three variables is a plane in . In , for , we say that the graph of a linear equation is a hyperplane . A hyperplane cannot be visualized, but we can still talk about intersections of hyperplanes and their other attributes in algebraic terms.  A linear system of equations and unknowns is typically written as follows   A solution to a system of linear equations in variables is an -tuple that satisfies every equation in the system. All solutions to a system of equations, taken together, form a solution set .    Two systems of linear equations are said to be equivalent if they have the same solution set.    Recall that to solve systems of equations in this section, we utilized three elementary row operations . These operations are:   Switching the order of two equations    Multiplying both sides of an equation by the same non-zero constant    Adding a multiple of one equation to another       Given a system of linear equations, any of the three elementary row operations performed on the system produces an equivalent system.    Clearly, the order of equations does not affect the solution set, so produces an equivalent system. Next, you learned years ago that multiplying both sides of an equation by a non-zero constant does not change its solution set, which establishes that produces an equivalent system. To see that produces an equivalent system, note that if we add a multiple of an equation to another equation in the system, we are adding the same thing to both sides, which does not change the solution set of that equation, nor of the system.        Give a graphical illustration of each of the following scenarios for a system of three equations and two unknowns:   The system of three equations is inconsistent, but a combination of any two of the three equations forms a consistent system.    The system is consistent and has a unique solution.    The system is consistent and has infinitely many solutions.    The system is inconsistent and no two equations form a consistent system.         Solve each system of linear equations or demonstrate that a solution does not exist, and interpret your results geometrically.                                     Consider the following system of equations.      Find all possible values of k such that this system has no solution.           Find all possible values of such that this system has infinitely many solutions.            Why is there a non-zero provision in of ? Why is there not a non-zero provision in ?      Suppose the following system was obtained from system by adding twice the second row of to the first row. Find system .           The following figures show a geometric depiction of two equivalent systems. (The systems are equivalent because they have the same solution set.) Can the first system be transformed into the second system by elementary row operations? If so, how?              Begin by carrying the first system to Then carry this system to the second system. (If you can figure out how to carry the second system to this one, you should be able to reverse the process.)      Consider the system of equations Show that if is a solution to this system, and if we apply elementary row operation to the system, then will be a solution to the new system of equations.      Demonstrate that elementary row operations are reversible by answering the following questions. Be specific about the elementary row operation that you would use.   Suppose we obtained system (B) from system (A) by swapping two equations. How would we obtain system (A) from system (B)?    Suppose we obtained system (B) from system (A) by multiplying one of the equations of (A) by a non-zero constant . How would we obtain system (A) from system (B)?    Suppose we obtained system (B) from system (A) by adding a multiple of one of the equations of (A) to another. How would we obtain system (A) from system (B)?        "
+  "body": " Introduction to Systems of Linear Equations  You are probably familiar with the concept of a system of linear equations and with some methods for solving such systems. In this section, we will look at the algebra and geometry of finding and interpreting solutions of systems of linear equations. We will start with two-variable and three-variable systems, then move on to systems involving more variables.   Algebra of Linear Systems  When you were first introduced to systems of equations, you learned to solve for one variable in terms of the other(s), then substitute. Here, we will introduce a systematic method, an algorithm, to solve systems of linear equations. This alternative method, called Gaussian elimination , involves adding multiples of one equation to another equation in order to eliminate one of the variables. This method will form the foundation for an algorithm we will develop for solving linear systems and performing other computations related to systems. Let's explore this in .   This problem formalizes what you may already know (perhaps under a different name) about elementary row operations as means of solving systems of linear equations. Consider the system We will begin by adding twice the first row to the second row, and replacing the second row with the sum.  We choose this row operation because the resulting equation has a zero coefficient for . Next, we make the coefficient of equal to 1 by multiplying both sides of the second equation by .  We now know . Our next goal is to determine by eliminating from the first equation. To this end, we subtract twice the second row from the first row and replace the first row with the difference.  Next we multiply both sides of the first equation by .  Finally, we can switch the order of equations in order to display in the top row.  This solution can be written as an ordered pair .   In we introduced elementary row operations and the notation associated with them. We now define these formally.   Elementary Row Operations   The following three operations performed on a linear system are called elementary row operations .   Switching the order of equations (rows) and :     Multiplying both sides of equation (row) by the same non-zero constant, , and replacing equation with the result:     Adding times equation (row) to equation (row) , and replacing equation with the result:        As we applied elementary row operations to the system in , the system changed, but you can check that the six systems in the exploration all have the same solution: . We say two systems are equivalent if they have exactly the same solutions. So the six systems are equivalent.  Applying elementary row operations always produces an equivalent system; we will show this in at the end of this section. So we can use a sequence of elementary row operations to find, step-by-step, simpler and simpler equivalent systems.  Next, we use the language of elementary row operations to solve a larger systems of equations.    Solve the system of equations using elementary row operations.   It may be daunting to think about how to begin. But keep in mind the desired end-result. What we want to do is to use elementary row operations to transform the given system into something like this     We will accomplish this by using a convenient variable in one row to ``wipe out\" this variable from the other two rows. For example, we can use in the third equation to wipe out in the first equation and in the second equation. To do this, multiply the third row by and add it to the top row, then multiply the third row by and add it to the second row. We now have: In the previous step was a convenient variable to use because the coefficient in front of was 1. We no longer have a variable with coefficient 1. We could create a coefficient of 1 using division, but that would lead to fractions, making computations cumbersome. Instead, we will subtract twice the second row from the first row. This gives us: Next we add seven times the first row to the second row, and subtract four times the first row from the third row. Now we divide both sides of the second row by . Adding times the second row to the first row and subtracting times the second row from the third row gives us Finally, rearranging the rows gives us  Thus the system has a unique solution .    At this point you may be wondering whether it will always be possible to take a system of three equations and three unknowns and use elementary row operations to transform it to a system of the form The short answer to this question is NO. The existence of an equivalent system of this form implies that the original system has exactly one solution, namely . However, it is possible for a system to have no solutions or to have infinitely many solutions. We will study these different possibilities from an algebraic perspective in subsequent sections. For now, we will attempt to gain insight into existence and uniqueness of solutions through geometry.    Augmented Matrix Notation  It is time consuming to rewrite each equation, with all variable names and plus signs, after each row operation. So let's find a more efficient method for performing elementary row operations.  Recall that the following three operations performed on a linear system are called elementary row operations    Switching the order of two equations    Multiplying both sides of an equation by the same non-zero constant    Adding a multiple of one equation to another       The linear system in this Exploration comes from Jim Hefferon's Linear Algebra .  Consider the linear system Our goal is to use elementary row operations to transform this system into an equivalent system of the form We have to keep in mind that given an arbitrary system, an equivalent system of this form may not exist (we will talk a lot more about this later). However, it does exist in this case, and we would like to find a more efficient way of getting to it than having to write and rewrite our equations at each step.    We start by subtracting twice row 1 from row 2. ( ) Next, we add row 3 to row 1. ( ) Subtract twice row 2 from row 4. ( ) Divide row 4 by . ( ) We will do three operations in one step.    We now exchange rows 2 and 3. ( ) If we drop all of the zero terms, we have: Now we see that is the solution.  Observe that throughout the entire process, variables , , and remained in place; only the coefficients in front of the variables and the entries on the right changed. Let's try to recreate this process without writing down the variables. We can capture the original system in as follows: The side to the left of the vertical bar is called the coefficient matrix , while the side to the right of the bar is a vector that consists of constants on the right side of the system. The coefficient matrix, together with the vector, is called an augmented matrix .  We can capture all of the elementary row operations we performed earlier as follows:    The last augmented matrix corresponds to systems in and , and we can easily see the solution.    We will regularly use the language of coefficient matrix and augmented matrix introduced in this exploration.   Consider the system Recall that in we converted the given system to an augmented matrix form, then performed elementary row operations until we arrived at a ``convenient\" form. We then converted the ``convenient\" augmented matrix back to a system of equations and identified a solution.  The term ``convenient\" is open to interpretation. In this problem we will explore two ``convenient\" forms. Each one will lead to a definition. The augmented matrix in has the same convenient form as the one in . This augmented matrix corresponds to the system This gives us the solution .  While the augmented matrix in was certainly ``convenient\", we could have converted back to the equation format a little earlier. Let's take a look at the augmented matrix in . Converting to a system of equations gives us Substituting into the second equation and solving for gives us Now substituting and into the first equation results in This process is called back substitution and it produces the same solution as we obtained earlier.   Observe that the coefficient matrices in and have the same format: 1's along the diagonal, zeros above and below the 1's. The other ``convenient\" format, exhibited by the coefficient matrix in , also has zeros below the diagonal, but not all of the diagonal entries are 1's and some of the entries above the diagonal are not zero. Each of these formats gives rise to a definition. These definitions are the topic of the next section.    Geometry of Linear Systems in Two Variables   offers an example of a linear system of two equations and two unknowns (variables) with a unique solution. Geometrically, the graph of each equation is a line in . The point is a solution to both equations, so it must lie on both lines. The graph below shows the two lines intersecting at .      Given a system of two equations with two unknowns, there are three possible geometric outcomes.   First, the graphs of the two equations intersect at a point. If this is the case, the system has exactly one solution. We say that the system is consistent and has a unique solution .        Second, the two lines may have no points in common. If this is the case, the system has no solutions. We say that the system is inconsistent .        Finally, the two lines may coincide. In this case, there are infinitely many points that satisfy both equations simultaneously. We say that the system is consistent and has infinitely many solutions.         The following examples are in-depth full runs on linear systems of equations.    Solve the system of equations and interpret your results geometrically.     We will use elementary row operations. Adding twice the first equation to the second equation gives us This is where we run into a problem: there are no values of and that satisfy the second equation. We conclude that the system is inconsistent. Plotting the two lines in the same coordinate plane shows that the two lines are parallel.          Solve the system of equations and interpret your results geometrically.     To eliminate from the second equation, we subtract one quarter of the first equation from the second. This gives us Unlike the situation in , any combination of and satisfies the second equation. So, any ordered pair that satisfies the first equation will satisfy the second equation. Thus, the solution set for this system is the same as the set of all solutions of .  When we plot the two equations of the original system, we find that the two lines coincide.        Given a linear system in two variables and more than two equations, we have a variety of geometric possibilities. In terms of the number of solutions, there are three possibilities.   First, it is possible for the graphs of all equations in the system to intersect at a single point, giving us a unique solution.        Second, it is possible for the graphs to have no points common to all of them. If this is the case, the system is inconsistent.              Finally, it is possible for all of the lines to coincide, giving us infinitely many solutions.       Geometry of Linear Systems in Three Variables  In , we solved the following linear system of three equations and three unknowns We found that the system has a unique solution . The graph of each equation is a plane. The three planes intersect at a single point, as shown in the figure.      Given a linear system of three equations in three variables, there are three ways in which the system can be consistent.   First, the three planes could intersect at a single point, giving us a unique solution.        Second, the three planes can intersect in a line, forming a paddle-wheel shape. In this case, every point along the line of intersection is a solution to the system, giving us infinitely many solutions.        Finally, the three planes can coincide. If this is the case, there are infinitely many solutions.       There are four ways for a system to be inconsistent. They are depicted below.                      General Systems of Linear Equations  Here we collect together all of the definitions from this section, written as generally as possible.    A linear equation in variables is an equation that can be written in the form where and are constants. We call the coefficient of in the equation, and we call the constant term .    An -tuple of numbers is a solution to the equation provided that, when we set equal to and so on, the equation becomes a true statement.  The set of all -tuples that are solutions to a given equation is called the graph of the equation. The graph of a linear equation in two variables is a line in . The graph of a linear equation in three variables is a plane in . In , for , we say that the graph of a linear equation is a hyperplane . A hyperplane cannot be visualized, but we can still talk about intersections of hyperplanes and their other attributes in algebraic terms.  A linear system of equations and unknowns is typically written as follows   A solution to a system of linear equations in variables is an -tuple that satisfies every equation in the system. All solutions to a system of equations, taken together, form its solution set . We say that a system of equations is consistent if it has at least one solution, and inconsistent if it has no solutions. If a system is consistent, we say that it has a unique solution if there is exactly one solution, or infinitely many solutions if there are infinitely many solutions.    Two systems of linear equations are said to be equivalent if they have the same solution set.    The augmented matrix of a linear system of equations and unknowns is The array to the left of the vertical bar is called the coefficient matrix of the linear system and is often given a capital letter name, like . The vertical array to the right of the bar is called a constant vector . The dimension of a matrix with rows and columns is , read by .   We will sometimes use the following notation to represent an augmented matrix.   The same elementary row operations that we perform on a system of equations can be performed on the corresponding augmented matrix, or any matrix for that matter. We have three elementary row operations , namely   Switching the order of two rows\/equations    Multiplying a row, or both sides of an equation, by the same non-zero constant    Adding a multiple of one row\/equation to another     If a matrix can be obtained from another matrix by means of elementary row operations, we say that the two matrices are row-equivalent .    Given a system of linear equations, any of the three elementary row operations performed on the system produces an equivalent system.    Clearly, the order of equations does not affect the solution set, so produces an equivalent system. Next, you learned years ago that multiplying both sides of an equation by a non-zero constant does not change its solution set, which establishes that produces an equivalent system. To see that produces an equivalent system, note that if we add a multiple of an equation to another equation in the system, we are adding the same thing to both sides, which does not change the solution set of that equation, nor of the system.        Give a graphical illustration of each of the following scenarios for a system of three equations and two unknowns:   The system of three equations is inconsistent, but a combination of any two of the three equations forms a consistent system.    The system is consistent and has a unique solution.    The system is consistent and has infinitely many solutions.    The system is inconsistent and no two equations form a consistent system.         Solve each system of linear equations or demonstrate that a solution does not exist, and interpret your results geometrically.                                     Consider the following system of equations.      Find all possible values of k such that this system has no solution.           Find all possible values of such that this system has infinitely many solutions.            Why is there a non-zero provision in of ? Why is there not a non-zero provision in ?      Suppose the following system was obtained from system by adding twice the second row of to the first row. Find system .           The following figures show a geometric depiction of two equivalent systems. (The systems are equivalent because they have the same solution set.) Can the first system be transformed into the second system by elementary row operations? If so, how?              Begin by carrying the first system to Then carry this system to the second system. (If you can figure out how to carry the second system to this one, you should be able to reverse the process.)      Suppose that we have two solutions, call them and to the following system:     Show that is a solution to the system     Show that for any number $t$, is a solution to the system         Consider the system of equations Show that if is a solution to this system, and if we apply elementary row operation to the system, then will be a solution to the new system of equations.      Demonstrate that elementary row operations are reversible by answering the following questions. Be specific about the elementary row operation that you would use.   Suppose we obtained system (B) from system (A) by swapping two equations. How would we obtain system (A) from system (B)?    Suppose we obtained system (B) from system (A) by multiplying one of the equations of (A) by a non-zero constant . How would we obtain system (A) from system (B)?    Suppose we obtained system (B) from system (A) by adding a multiple of one of the equations of (A) to another. How would we obtain system (A) from system (B)?        "
 },
 {
   "id": "Section-Introduction-to-Systems-of-Linear-Equations-2",
@@ -52,7 +52,7 @@ var ptx_lunr_docs = [
   "type": "Exploration",
   "number": "1.1.1",
   "title": "",
-  "body": " This problem formalizes what you may already know (perhaps under a different name) about elementary row operations as means of solving systems of linear equations. Consider the system We will begin by adding twice the first row to the second row, and replacing the second row with the sum.  Note that this step eliminates from the second equation. Next we multiply both sides of the second equation by .  We now know . Our next goal is to determine by eliminating from the first equation. To this end, we subtract twice the second row from the first row and replace the first row with the difference.  Next we multiply both sides of the first equation by .  Finally, we can switch the order of equations in order to display in the top row.  This solution can be written as an ordered pair .  "
+  "body": " This problem formalizes what you may already know (perhaps under a different name) about elementary row operations as means of solving systems of linear equations. Consider the system We will begin by adding twice the first row to the second row, and replacing the second row with the sum.  We choose this row operation because the resulting equation has a zero coefficient for . Next, we make the coefficient of equal to 1 by multiplying both sides of the second equation by .  We now know . Our next goal is to determine by eliminating from the first equation. To this end, we subtract twice the second row from the first row and replace the first row with the difference.  Next we multiply both sides of the first equation by .  Finally, we can switch the order of equations in order to display in the top row.  This solution can be written as an ordered pair .  "
 },
 {
   "id": "def-elemrowops",
@@ -76,15 +76,15 @@ var ptx_lunr_docs = [
   "id": "ex-threeeqthreevars1",
   "level": "2",
   "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#ex-threeeqthreevars1",
-  "type": "Example",
+  "type": "Exploration",
   "number": "1.1.2",
   "title": "",
-  "body": "  Solve the system of equations using elementary row operations.     It may be daunting to think about how to begin. But keep in mind the desired end-result. What we want is to use elementary row operations to transform the given system into something like this We will accomplish this by using a convenient variable in one row to ``wipe out\" this variable from the other two rows. For example, we can use in the third equation to wipe out in the first equation and in the second equation. To do this, multiply the third row by and add it to the top row, then multiply the third row by and add it to the second row. We now have: In the previous step was a convenient variable to use because the coefficient in front of was 1. We no longer have a variable with coefficient 1. We could create a coefficient of 1 using division, but that would lead to fractions, making computations cumbersome. Instead, we will subtract twice the second row from the first row. This gives us: Next we add seven times the first row to the second row, and subtract four times the first row from the third row. Now we divide both sides of the second row by . Adding times the second row to the first row and subtracting times the second row from the third row gives us Finally, rearranging the rows gives us  Thus the system has a unique solution .   "
+  "body": "  Solve the system of equations using elementary row operations.   It may be daunting to think about how to begin. But keep in mind the desired end-result. What we want to do is to use elementary row operations to transform the given system into something like this     We will accomplish this by using a convenient variable in one row to ``wipe out\" this variable from the other two rows. For example, we can use in the third equation to wipe out in the first equation and in the second equation. To do this, multiply the third row by and add it to the top row, then multiply the third row by and add it to the second row. We now have: In the previous step was a convenient variable to use because the coefficient in front of was 1. We no longer have a variable with coefficient 1. We could create a coefficient of 1 using division, but that would lead to fractions, making computations cumbersome. Instead, we will subtract twice the second row from the first row. This gives us: Next we add seven times the first row to the second row, and subtract four times the first row from the third row. Now we divide both sides of the second row by . Adding times the second row to the first row and subtracting times the second row from the third row gives us Finally, rearranging the rows gives us  Thus the system has a unique solution .   "
 },
 {
-  "id": "Subsection-Augmented-Matrix-Notation-2",
+  "id": "Subsection-Augmented-Matrix-Notation-3",
   "level": "2",
-  "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Augmented-Matrix-Notation-2",
+  "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Augmented-Matrix-Notation-3",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -95,34 +95,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#init-augmentedmatrixex",
   "type": "Exploration",
-  "number": "1.1.2",
+  "number": "1.1.3",
   "title": "",
   "body": "  The linear system in this Exploration comes from Jim Hefferon's Linear Algebra .  Consider the linear system Our goal is to use elementary row operations to transform this system into an equivalent system of the form We have to keep in mind that given an arbitrary system, an equivalent system of this form may not exist (we will talk a lot more about this later). However, it does exist in this case, and we would like to find a more efficient way of getting to it than having to write and rewrite our equations at each step.    We start by subtracting twice row 1 from row 2. ( ) Next, we add row 3 to row 1. ( ) Subtract twice row 2 from row 4. ( ) Divide row 4 by . ( ) We will do three operations in one step.    We now exchange rows 2 and 3. ( ) If we drop all of the zero terms, we have: Now we see that is the solution.  Observe that throughout the entire process, variables , , and remained in place; only the coefficients in front of the variables and the entries on the right changed. Let's try to recreate this process without writing down the variables. We can capture the original system in as follows: The side to the left of the vertical bar is called the coefficient matrix , while the side to the right of the bar is a vector that consists of constants on the right side of the system. The coefficient matrix, together with the vector, is called an augmented matrix .  We can capture all of the elementary row operations we performed earlier as follows:    The last augmented matrix corresponds to systems in and , and we can easily see the solution.   "
-},
-{
-  "id": "Subsection-Augmented-Matrix-Notation-5",
-  "level": "2",
-  "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Augmented-Matrix-Notation-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "matrix augmented matrix form coefficient matrix constant vector dimension of a matrix "
-},
-{
-  "id": "Subsection-Augmented-Matrix-Notation-6",
-  "level": "2",
-  "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Augmented-Matrix-Notation-6",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "row-equivalent "
 },
 {
   "id": "init-backsub",
   "level": "2",
   "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#init-backsub",
   "type": "Exploration",
-  "number": "1.1.3",
+  "number": "1.1.4",
   "title": "",
   "body": " Consider the system Recall that in we converted the given system to an augmented matrix form, then performed elementary row operations until we arrived at a ``convenient\" form. We then converted the ``convenient\" augmented matrix back to a system of equations and identified a solution.  The term ``convenient\" is open to interpretation. In this problem we will explore two ``convenient\" forms. Each one will lead to a definition. The augmented matrix in has the same convenient form as the one in . This augmented matrix corresponds to the system This gives us the solution .  While the augmented matrix in was certainly ``convenient\", we could have converted back to the equation format a little earlier. Let's take a look at the augmented matrix in . Converting to a system of equations gives us Substituting into the second equation and solving for gives us Now substituting and into the first equation results in This process is called back substitution and it produces the same solution as we obtained earlier.  "
 },
@@ -140,7 +122,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#ex-systwoeqs2",
   "type": "Example",
-  "number": "1.1.3",
+  "number": "1.1.2",
   "title": "",
   "body": "  Solve the system of equations and interpret your results geometrically.     We will use elementary row operations. Adding twice the first equation to the second equation gives us This is where we run into a problem: there are no values of and that satisfy the second equation. We conclude that the system is inconsistent. Plotting the two lines in the same coordinate plane shows that the two lines are parallel.       "
 },
@@ -149,7 +131,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#ex-systwoeqs3infmany",
   "type": "Example",
-  "number": "1.1.4",
+  "number": "1.1.3",
   "title": "",
   "body": "  Solve the system of equations and interpret your results geometrically.     To eliminate from the second equation, we subtract one quarter of the first equation from the second. This gives us Unlike the situation in , any combination of and satisfies the second equation. So, any ordered pair that satisfies the first equation will satisfy the second equation. Thus, the solution set for this system is the same as the set of all solutions of .  When we plot the two equations of the original system, we find that the two lines coincide.       "
 },
@@ -158,18 +140,18 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#def-lineq",
   "type": "Definition",
-  "number": "1.1.5",
+  "number": "1.1.4",
   "title": "",
-  "body": "  A linear equation in variables is an equation that can be written in the form where and are constants.   "
+  "body": "  A linear equation in variables is an equation that can be written in the form where and are constants. We call the coefficient of in the equation, and we call the constant term .   "
 },
 {
-  "id": "Subsection-General-Systems-of-Linear-Equations-3",
+  "id": "Subsection-General-Systems-of-Linear-Equations-4",
   "level": "2",
-  "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-General-Systems-of-Linear-Equations-3",
+  "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-General-Systems-of-Linear-Equations-4",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "solution graph hyperplane "
+  "body": "solution "
 },
 {
   "id": "Subsection-General-Systems-of-Linear-Equations-5",
@@ -178,16 +160,7 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "solution to a system solution set "
-},
-{
-  "id": "def-equivsystems",
-  "level": "2",
-  "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#def-equivsystems",
-  "type": "Definition",
-  "number": "1.1.6",
-  "title": "",
-  "body": "  Two systems of linear equations are said to be equivalent if they have the same solution set.   "
+  "body": "graph hyperplane "
 },
 {
   "id": "Subsection-General-Systems-of-Linear-Equations-7",
@@ -196,14 +169,50 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
+  "body": "solution to a system solution set consistent inconsistent unique solution infinitely many solutions "
+},
+{
+  "id": "def-equivsystems",
+  "level": "2",
+  "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#def-equivsystems",
+  "type": "Definition",
+  "number": "1.1.5",
+  "title": "",
+  "body": "  Two systems of linear equations are said to be equivalent if they have the same solution set.   "
+},
+{
+  "id": "Subsection-General-Systems-of-Linear-Equations-9",
+  "level": "2",
+  "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-General-Systems-of-Linear-Equations-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "augmented matrix coefficient matrix constant vector dimension of a matrix "
+},
+{
+  "id": "Subsection-General-Systems-of-Linear-Equations-11",
+  "level": "2",
+  "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-General-Systems-of-Linear-Equations-11",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
   "body": "elementary row operations "
+},
+{
+  "id": "Subsection-General-Systems-of-Linear-Equations-12",
+  "level": "2",
+  "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-General-Systems-of-Linear-Equations-12",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "row-equivalent "
 },
 {
   "id": "th-elemRowOpsEquivSys",
   "level": "2",
   "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#th-elemRowOpsEquivSys",
   "type": "Theorem",
-  "number": "1.1.7",
+  "number": "1.1.6",
   "title": "",
   "body": "  Given a system of linear equations, any of the three elementary row operations performed on the system produces an equivalent system.    Clearly, the order of equations does not affect the solution set, so produces an equivalent system. Next, you learned years ago that multiplying both sides of an equation by a non-zero constant does not change its solution set, which establishes that produces an equivalent system. To see that produces an equivalent system, note that if we add a multiple of an equation to another equation in the system, we are adding the same thing to both sides, which does not change the solution set of that equation, nor of the system.   "
 },
@@ -295,6 +304,15 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1.1.6.10",
   "title": "",
+  "body": "  Suppose that we have two solutions, call them and to the following system:     Show that is a solution to the system     Show that for any number $t$, is a solution to the system      "
+},
+{
+  "id": "prob-prob-equivsystems1",
+  "level": "2",
+  "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#prob-prob-equivsystems1",
+  "type": "Exercise",
+  "number": "1.1.6.11",
+  "title": "",
   "body": "  Consider the system of equations Show that if is a solution to this system, and if we apply elementary row operation to the system, then will be a solution to the new system of equations.   "
 },
 {
@@ -302,7 +320,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Introduction-to-Systems-of-Linear-Equations.html#prob-elemrowopsreverse",
   "type": "Exercise",
-  "number": "1.1.6.11",
+  "number": "1.1.6.12",
   "title": "",
   "body": "  Demonstrate that elementary row operations are reversible by answering the following questions. Be specific about the elementary row operation that you would use.   Suppose we obtained system (B) from system (A) by swapping two equations. How would we obtain system (A) from system (B)?    Suppose we obtained system (B) from system (A) by multiplying one of the equations of (A) by a non-zero constant . How would we obtain system (A) from system (B)?    Suppose we obtained system (B) from system (A) by adding a multiple of one of the equations of (A) to another. How would we obtain system (A) from system (B)?      "
 },
@@ -313,7 +331,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.2",
   "title": "Row Echelon Forms",
-  "body": " Row Echelon Forms   Row Echelon and Reduced Row Echelon Forms    The first non-zero entry in a row of a matrix (when read from left to right) is called the leading entry . When the leading entry is 1, we refer to it as a leading 1 .     Row Echelon Form   A matrix is said to be in row echelon form if:   All entries below each leading entry are 0.    Each leading entry is in a column to the right of the leading entries in the rows above it.    All rows of zeros, if there are any, are located below non-zero rows.       The term row echelon form can be applied to matrices whether or not they are augmented matrices (matrices with the vertical bar). For example, both the coefficient matrix and the augmented matrix in are in row echelon form. Note that the leading entries form a staircase pattern. All entries below the leading entries are zero, but the entries above the leading entries are not all zero.  Below are two more examples of matrices in row echelon form. The leading entries of each matrix are boxed.   The difference between the coefficient matrix in and the coefficient matrix in is that the leading entries of the matrix in are all 1's, and the matrix has zeros above each leading 1. This motivates our next definition.   Reduced Row Echelon Form   A matrix that is already in row echelon form is said to be in reduced row echelon form if:   Each leading entry is     All entries above and below each leading are        The following two matrices are in reduced row echelon form . Note that there are 's below and above each leading . When solving linear systems using the augmented matrix notation, our goal will be to transform the augmented matrix into a row echelon or reduced row echelon form. The reduced row echelon form of is denoted by . As we transform the augmented matrix to its reduced row echelon form, the coefficient matrix (the matrix to the left of the bar) also gets transformed to its reduced row echelon form, .  Perhaps you may be asking some questions. Can every augmented matrix be reduced to a row echelon or reduced row echelon form? If so, is the row echelon or reduced row echelon form unique?   Solve the following system of equations. We create an augmented matrix corresponding to the system and apply row operations until the matrix is in row echelon form.  Note that the elementary row operations that lead to were not prescribed. We may employ row-operations in a different manner and obtain a different matrix in row echelon form. For example, suppose for some reason we had begun by switching the first and third rows. Next we would reduce this matrix to row echelon form, perhaps in this way:  The augmented matrices in and are clearly not the same, but both are in row echelon form. If we write the systems of equations corresponding to and , we can employ back substitution to solve them. The matrix in corresponds to The matrix in corresponds to Because both systems are equivalent to the original system, it is not surprising that back substitution yields the same solution for both systems.        It is clear from that a row echelon form corresponding to a matrix is not unique. But what about the reduced row echelon form?   In this problem we revisit the system Following the steps we took to get , but taking the process a little further, we get the reduced row echelon form.   Do you think it is possible to start with and obtain the same reduced row echelon form? Try to justify your response. If possible, find the elementary row operations that take to the reduced row echelon form in .   You will be asked to fill in the elementary row operations in .   Our observations in are summarized in the following diagram.      We observed that a row echelon form associated with a matrix is not unique. In contrast, we also saw how different sequences of elementary row operations lead to the same solution set and the same reduced row echelon form. It turns out that the reduced row echelon form of a matrix is unique.    The reduced row echelon form of a matrix is unique.    A proof of this result can be found in .  The reduced row echelon form of a matrix is an instance of a row echelon form of the matrix. While a given matrix may have multiple row echelon forms, all row echelon forms will share one characteristic: the number of nonzero rows in a row echelon form of the given matrix will be the same. We will prove this result in .    Gaussian and Gauss-Jordan Elimination   Gaussian Elimination   The process of using the elementary row operations on a matrix to transform it into row echelon form is called Gaussian Elimination .    As we saw in the previous section, it is possible to follow different sequences of row operations to arrive at various row echelon forms. However, it was not clear whether it is always possible to find a row echelon form. The following algorithm takes any matrix (or augmented matrix) and transforms it into row echelon form:   Gaussian Algorithm   Let be an matrix. Set initially.   Step 1. If consists entirely of zeros, stop; is already in row echelon form.    Step 2. Otherwise, find the first column from the left containing a nonzero entry in row or below row . This column will be called a pivot column . Go down the pivot column, beginning with row . Pick the topmost nonzero entry and call it . If is not in row , switch rows so that moves to row . Now is the leading entry in its row. We will also refer to as a pivot .    Step 3. By subtracting multiples of the row containing from rows below it, make each entry below zero.    Step 4. Set . If then stop; is in row echelon form.   Repeat steps 1--4 on the matrix consisting of the remaining rows. When the process stops, will be in row echelon form.    Gaussian Algorithm guarantees that every matrix will have a row echelon form.    Use the Gaussian Algorithm to find a row echelon form of if     Following Step 2, we choose the first entry, , as our pivot. We then perform step 3, using the top row to get zeros in all entries below the . The first row is now complete, and we repeat the process on the rows below it. We identify as a pivot entry in the second column and move the row containing to be directly below the first completed row. We then use the to make each entry below the a zero. This time the algorithm terminates since row 3 and row 4 are zero rows.     Gauss-Jordan Elimination   The process of using the elementary row operations on a matrix to transform it into reduced row echelon form is called Gauss-Jordan elimination .    Given a matrix in row echelon form, it is easy to bring it the reduced row echelon form. For example, continuing with , we can start where we left off and compute . From our earlier computations we have: Now we create leading and use them to to wipe out all non-zero entries above them. The following modification to the Gaussian Algorithm produces the reduced row echelon form of a matrix. This algorithm guarantees the existence of the reduced row echelon form.   Gauss-Jordan Algorithm   Let be an matrix. Follow the steps of the Gaussian Algorithm but modify Step 2 to create leading by multiplying the row containing by . When the Gaussian Algorithm terminates, subtract multiples of the rows containing leading from the rows above to make all entries above the pivots zero.    The algorithm is an essential tool in linear algebra. An fully detailed example is provided below.    Use the Gauss-Jordan Algorithm to solve the system      We convert the reduced row echelon form to a system of equations and find the solution. The last equation contributes nothing to the system so we omit writing it down. The solution is     The Gauss-Jordan Algorithm guarantees the existence of the reduced row echelon form for all matrices. When doing computations by hand, however, the algorithm may not always be the optimal method of finding a row echelon form or the reduced row echelon form because the procedure often leads to fractions early in the process. The following video shows how to arrive at the same reduced row echelon form for the matrix in without doing any fraction arithmetic. You will see that we still employ row operations, but in a different order.   The video highlights the fact that regardless of what sequence of elementary row operations we take to arrive at the reduced row echelon form, the end result is the same.    Solutions to Systems of Equations  We now have an efficient and algorithmic way to solve systems of linear equations by row reducing a corresponding augmented matrix to its reduced row echelon form. Now we turn our attention to exploring how to use the reduced row echelon form to find solutions to systems of equations. Specifically, when there are infinitely many solutions or no solutions.   Let's solve the system of equations below.   We begin by rewriting the system in the augmented matrix form. Our goal is to convert this matrix to its reduced row echelon form by means of elementary row operations. To do this, we will proceed from left to right and use leading entries to wipe out all entries above and below them.   Our final matrix may not be quite as nice as the one in , but it is in reduced row echelon form. Our next step is to convert our augmented matrix back to a system of equations. We have: We will rewrite the system as follows: Now we see that there are infinitely many solutions because we can assign any value to , then compute , and to obtain a solution to the system. For example, let , then , and , so is a solution. If we let , then , and , so is also a solution. To emphasize that we can let be any real number, we call it a free variable .  We write the solution set to this system as the following: This describes all the points in of the form    Observe that in , we called variable a free variable because it can be any real number. Notice that the variables , and correspond to the leading in the reduced row echelon. We say that , and are the leading variables . The free variable is not a leading variable. In fact, free variables always correspond to a column in the reduced row echelon form of the augmented matrix which does not have a leading 1. This gives us a method for indetifying free variables.    Solve the system of equations.     We rewrite the system in the augmented matrix form and transform it to reduced row echelon form. We leave the details of the elementary row operations to the reader and state the final result. The augmented column does not have a leading 1 in the reduced row echelon form, so we know the system is consistent. To write down the solution, we note that and are leading variables and is a free variable. Converting the augmented matrix back to a system of equations we get To complete the problem, we solve for the leading variables in terms of the free variables. Since the last equation contributes nothing, we will remove it and rewrite the system as Hence, the solutions to this system are points of the form We can also write the solutions as     We now can solve and write down the solution to any consistent system using the reduced row echelon form of an augmented matrix. We can also use row echelon forms to determine if a system is inconsistent.   In this exploration, we will solve the system of equations below or determine that the system is inconsistent.   We rewrite the system in augmented matrix form and transform it to reduced row echelon form. We leave the details of the elementary row operations to the reader and state the final result. Converting back to a system of linear equations, we get The last equation in this system clearly has no solutions. We conclude that this system (and the original system) is inconsistent.    Note that the last row of the reduced row echelon form in looks like this This row corresponds to the equation which clearly has no solutions.  In general, if the reduced row echelon form of the augmented matrix contains a row we can conclude that the system is inconsistent.    So long as the reduced row echelon form of an augmented matrix does not contain a leading 1 in the last column, the system is consistent. Furthermore, if the reduced row echelon form has a leading 1 in every column except the last column, then the system has a unique solution. If the reduced row echelon form has a leading 1 in the last column, but not in every other column, then the system has infinitely many solutions.       Determine whether each augmented matrix shown below is in reduced row echelon form.            Yes      No               Yes      No               Yes      No               Yes      No               Yes      No         Show that applying Gauss-Jordan elimination to the matrix in yields the same reduced row-echelon form as the matrix we obtained in .      Follow the indicated steps of the Gauss-Jordan algorithm to transform the matrix to its reduced row-echelon form.                                                                                                                   The following reduction steps do not follow the algorithm but are easier for a human to carry out because they use fewer fractions. Follow the indicated steps to transform the matrix to its reduced row-echelon form. Steps will unfold automatically as you enter correct answers.                                                       and                                    Exchange rows.            Fill in the steps that lead to the reduced row echelon form in .      Fill in the steps that lead to the reduced row echelon form in .      Suppose a system of equations has the following reduced row echelon form What can you say about the system?      The system is inconsistent      The system has infinitely many solutions      The system has a unique solution      We would have to examine the original system to make the final determination        Solve each system of equations.                              Suppose a linear system has equations and unknowns. Which of the following is NOT a possibility?      The system has a unique solution      The system has no solutions      The system has infinitely many solutions         W. Keith Nicholson, Linear Algebra with Applications , Lyryx 2018, Open Edition, p 15-17.    Thomas Yuster, The Reduced Row Echelon Form of a Matrix is Unique: a Simple Proof, Mathematics Magazine, vol. 57, no. 2 (Mar. 1984), pp. 93-94.    "
+  "body": " Row Echelon Forms  In the last section, we admitted that systems of linear equations may not have a unique solution, but we did not explain what to do about it. Now we will cover all possible solutions of a system, including systems with no solution at all. In the first subsection, we work out what a fully reduced system should look like and then, in the second subsection, we describe how to use Gaussian elimination to get this form. Finally, the last subsection describes the solution set of the fully reduced matrix when the solution is not unique or when there is no solution.   Row Echelon Form and Reduced Row Echelon Form  Before looking for a reduced form , we need a name for for the first non-zero entry in a row of a matrix. Using this name, we can then define the first special form for a matrix.    The first non-zero entry in a row of a matrix (when read from left to right) is called the leading entry . When the leading entry is 1, we call it a leading 1 .     Row Echelon Form   A matrix is said to be in row echelon form if:   All entries below each leading entry are 0.    Each leading entry is in a column to the right of the leading entries in the rows above it.    All rows of zeros, if there are any, are located below non-zero rows.       The term row echelon form can be applied to matrices whether or not they are augmented matrices (matrices with the vertical bar). For example, both the coefficient matrix and the augmented matrix in are in row echelon form. Note that the leading entries form a staircase pattern. All entries below the leading entries are zero, but the entries above the leading entries are not all zero.  Below are two more examples of matrices in row echelon form. The leading entries of each matrix are boxed.   The difference between the coefficient matrix in and the coefficient matrix in is that the leading entries of the matrix in are all 1's, and the matrix has zeros above each leading 1. This motivates our next definition.   Reduced Row Echelon Form   A matrix that is already in row echelon form is said to be in reduced row echelon form if:   Each leading entry is     All entries above and below each leading are        The following two matrices are in reduced row echelon form . Note that there are 's below and above each leading . When solving linear systems using the augmented matrix notation, our goal will be to transform the augmented matrix into a row echelon or reduced row echelon form. The reduced row echelon form of is denoted by . As we transform the augmented matrix to its reduced row echelon form, the coefficient matrix (the matrix to the left of the bar) also gets transformed to its reduced row echelon form, .  Perhaps you may be asking some questions. Can every augmented matrix be reduced to a row echelon or reduced row echelon form? If so, is the row echelon or reduced row echelon form unique? We will answer the second question in this subsection and the first question in the next subsection.   Solve the following system of equations. We create an augmented matrix corresponding to the system and apply row operations until the matrix is in row echelon form.  Note that the elementary row operations that lead to were not prescribed. We may employ row-operations in a different manner and obtain a different matrix in row echelon form. For example, suppose for some reason we had begun by switching the first and third rows. Next we would reduce this matrix to row echelon form, perhaps in this way:  The augmented matrices in and are clearly not the same, but both are in row echelon form. If we write the systems of equations corresponding to and , we can employ back substitution to solve them. The matrix in corresponds to The matrix in corresponds to Because both systems are equivalent to the original system, it is not surprising that back substitution yields the same solution for both systems.        It is clear from that a row echelon form corresponding to a matrix is not unique. But what about the reduced row echelon form?   In this problem we revisit the system Following the steps we took to get , but taking the process a little further, we get the reduced row echelon form.   Do you think it is possible to start with and obtain the same reduced row echelon form? Try to justify your response. If possible, find the elementary row operations that take to the reduced row echelon form in .   You will be asked to fill in the elementary row operations in .   Our observations in are summarized in the following diagram.      We observed that a row echelon form associated with a matrix is not unique. In contrast, we also saw how different sequences of elementary row operations lead to the same solution set and the same reduced row echelon form. It turns out that the reduced row echelon form of a matrix is unique.    The reduced row echelon form of a matrix is unique.    A proof of this result can be found in .  The reduced row echelon form of a matrix is an instance of a row echelon form of the matrix. While a given matrix may have multiple row echelon forms, all row echelon forms will share one characteristic: the number of nonzero rows in a row echelon form of the given matrix will be the same. We will prove this result in .    Gaussian and Gauss-Jordan Elimination   Gaussian Elimination   The process of using the elementary row operations on a matrix to transform it into row echelon form is called Gaussian Elimination .    As we saw in the previous section, it is possible to follow different sequences of row operations to arrive at various row echelon forms. However, it was not clear whether it is always possible to find a row echelon form. The following algorithm takes any matrix (or augmented matrix) and transforms it into row echelon form:   Gaussian Algorithm   Let be an matrix. Set initially.   Step 1. If consists entirely of zeros, stop; is already in row echelon form.    Step 2. Otherwise, find the first column from the left containing a nonzero entry in row or below row . This column will be called a pivot column . Go down the pivot column, beginning with row . Pick the topmost nonzero entry and call it . If is not in row , switch rows so that moves to row . Now is the leading entry in its row. We will also refer to as a pivot .    Step 3. By subtracting multiples of the row containing from rows below it, make each entry below zero.    Step 4. Set . If then stop; is in row echelon form.   Repeat steps 1--4 on the matrix consisting of the remaining rows. When the process stops, will be in row echelon form.    Gaussian Algorithm guarantees that every matrix will have a row echelon form.    Use the Gaussian Algorithm to find a row echelon form of if     Following Step 2, we choose the first entry, , as our pivot. We then perform step 3, using the top row to get zeros in all entries below the . The first row is now complete, and we repeat the process on the rows below it. We identify as a pivot entry in the second column and move the row containing to be directly below the first completed row. We then use the to make each entry below the a zero. This time the algorithm terminates since row 3 and row 4 are zero rows.     Gauss-Jordan Elimination   The process of using the elementary row operations on a matrix to transform it into reduced row echelon form is called Gauss-Jordan elimination .    Given a matrix in row echelon form, it is easy to bring it the reduced row echelon form. For example, continuing with , we can start where we left off and compute . From our earlier computations we have: Now we create leading and use them to to wipe out all non-zero entries above them. The following modification to the Gaussian Algorithm produces the reduced row echelon form of a matrix. This algorithm guarantees the existence of the reduced row echelon form.   Gauss-Jordan Algorithm   Let be an matrix. Follow the steps of the Gaussian Algorithm but modify Step 2 to create leading by multiplying the row containing by . When the Gaussian Algorithm terminates, subtract multiples of the rows containing leading from the rows above to make all entries above the pivots zero.    The algorithm is an essential tool in linear algebra. An fully detailed example is provided below.    Use the Gauss-Jordan Algorithm to solve the system      We convert the reduced row echelon form to a system of equations and find the solution. The last equation contributes nothing to the system so we omit writing it down. The solution is     The Gauss-Jordan Algorithm guarantees the existence of the reduced row echelon form for all matrices. When doing computations by hand, however, the algorithm may not always be the optimal method of finding a row echelon form or the reduced row echelon form because the procedure often leads to fractions early in the process. The following video shows how to arrive at the same reduced row echelon form for the matrix in without doing any fraction arithmetic. You will see that we still employ row operations, but in a different order.   The video highlights the fact that regardless of what sequence of elementary row operations we take to arrive at the reduced row echelon form, the end result is the same.    Solutions to Systems of Equations  We now have an efficient and algorithmic way to solve systems of linear equations by row reducing a corresponding augmented matrix to its reduced row echelon form. Now we turn our attention to exploring how to use the reduced row echelon form to find solutions to systems of equations. Specifically, when there are infinitely many solutions or no solutions.   Let's solve the system of equations below.   We begin by rewriting the system in the augmented matrix form. Our goal is to convert this matrix to its reduced row echelon form by means of elementary row operations. To do this, we will proceed from left to right and use leading entries to wipe out all entries above and below them.   Our final matrix may not be quite as nice as the one in , but it is in reduced row echelon form. Our next step is to convert our augmented matrix back to a system of equations. We have: We will rewrite the system as follows: Now we see that there are infinitely many solutions because we can assign any value to , then compute , and to obtain a solution to the system. For example, let , then , and , so is a solution. If we let , then , and , so is also a solution. To emphasize that we can let be any real number, we call it a free variable .  We write the solution set to this system as the following: This describes all the points in of the form    Observe that in , we called variable a free variable because it can be any real number. Notice that the variables , and correspond to the leading in the reduced row echelon. We say that , and are the leading variables . The free variable is not a leading variable. In fact, free variables always correspond to a column in the reduced row echelon form of the augmented matrix which does not have a leading 1. This gives us a method for identifying free variables.    Solve the system of equations.     We rewrite the system in the augmented matrix form and transform it to reduced row echelon form. We leave the details of the elementary row operations to the reader and state the final result. The augmented column does not have a leading 1 in the reduced row echelon form, so we know the system is consistent. To write down the solution, we note that and are leading variables and is a free variable. Converting the augmented matrix back to a system of equations we get To complete the problem, we solve for the leading variables in terms of the free variables. Since the last equation contributes nothing, we will remove it and rewrite the system as Hence, the solutions to this system are points of the form We can also write the solutions as     We now can solve and write down the solution to any consistent system using the reduced row echelon form of an augmented matrix. We can also use row echelon forms to determine if a system is inconsistent.   In this exploration, we will solve the system of equations below or determine that the system is inconsistent.   We rewrite the system in augmented matrix form and transform it to reduced row echelon form. We leave the details of the elementary row operations to the reader and state the final result. Converting back to a system of linear equations, we get The last equation in this system clearly has no solutions. We conclude that this system (and the original system) is inconsistent.    Note that the last row of the reduced row echelon form in looks like this This row corresponds to the equation which clearly has no solutions.  In general, if the reduced row echelon form of the augmented matrix contains a row we can conclude that the system is inconsistent.    So long as the reduced row echelon form of an augmented matrix does not contain a leading 1 in the last column, the system is consistent. Furthermore, if the reduced row echelon form has a leading 1 in every column except the last column, then the system has a unique solution. If the reduced row echelon form has a leading 1 in the last column, but not in every other column, then the system has infinitely many solutions.       Determine whether each augmented matrix shown below is in reduced row echelon form.            Yes      No               Yes      No               Yes      No               Yes      No               Yes      No         Show that applying Gauss-Jordan elimination to the matrix in yields the same reduced row-echelon form as the matrix we obtained in .      Follow the indicated steps of the Gauss-Jordan algorithm to transform the matrix to its reduced row-echelon form.                                                                                                                   The following reduction steps do not follow the algorithm but are easier for a human to carry out because they use fewer fractions. Follow the indicated steps to transform the matrix to its reduced row-echelon form. Steps will unfold automatically as you enter correct answers.                                                       and                                    Exchange rows.            Fill in the steps that lead to the reduced row echelon form in .      Fill in the steps that lead to the reduced row echelon form in .      Suppose a system of equations has the following reduced row echelon form What can you say about the system?      The system is inconsistent      The system has infinitely many solutions      The system has a unique solution      We would have to examine the original system to make the final determination        Solve each system of equations.                              Suppose a linear system has equations and unknowns. Which of the following is NOT a possibility?      The system has a unique solution      The system has no solutions      The system has infinitely many solutions         W. Keith Nicholson, Linear Algebra with Applications , Lyryx 2018, Open Edition, p 15-17.    Thomas Yuster, The Reduced Row Echelon Form of a Matrix is Unique: a Simple Proof, Mathematics Magazine, vol. 57, no. 2 (Mar. 1984), pp. 93-94.    "
 },
 {
   "id": "def-leadentry",
@@ -322,7 +340,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.2.1",
   "title": "",
-  "body": "  The first non-zero entry in a row of a matrix (when read from left to right) is called the leading entry . When the leading entry is 1, we refer to it as a leading 1 .   "
+  "body": "  The first non-zero entry in a row of a matrix (when read from left to right) is called the leading entry . When the leading entry is 1, we call it a leading 1 .   "
 },
 {
   "id": "def-ref",
@@ -343,9 +361,9 @@ var ptx_lunr_docs = [
   "body": " Reduced Row Echelon Form   A matrix that is already in row echelon form is said to be in reduced row echelon form if:   Each leading entry is     All entries above and below each leading are       "
 },
 {
-  "id": "Subsection-Row-Echelon-and-Reduced-Row-Echelon-Forms-8",
+  "id": "Subsection-Row-Echelon-and-Reduced-Row-Echelon-Forms-9",
   "level": "2",
-  "url": "Section-Row-Echelon-Forms.html#Subsection-Row-Echelon-and-Reduced-Row-Echelon-Forms-8",
+  "url": "Section-Row-Echelon-Forms.html#Subsection-Row-Echelon-and-Reduced-Row-Echelon-Forms-9",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1906,7 +1924,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.3",
   "title": "Matrix Equations",
-  "body": " Matrix Equations   Matrix-Vector Multiplication  In the previous section, we saw that a linear comination equation can be expressed as a system of linear equations. Linear combinations are not the only type of equations that can be reinterpreted as systems of linear equations. In this section, we will introduce matrix equations , which are another representation of a system of linear equations. Before we do that, we need to introduce the concept of matrix-vector multiplication .   Matrix-vector multiplication or the matrix-vector product is an operation between a matrix and a vector that produces another vector, their product . The formal definition requires dense notation, so we work through an example before presenting it.    Let   The matrix-vector product is a linear combination of the columns of with coefficients given by the entries in . For this example, We can also compute the product one entry at a time. First, let's focus on the first row of . Next, let's look a the second row of . Finally, let's do the third row of .       Let be an matrix, and let be an vector. The product is the vector given by: or, equivalently,     We can now make a couple of observations about the matrix-vector product. The first observation is part of the definition, but it is still worth pointing out.   In order for the product to exist, and must have compatible dimensions. In particular, vector must have as many components as the number of columns of (otherwise, we would not be have a well-defined linear combination of the columns). So, if is an matrix, must be an vector. If we write these dimensions next to each other, we will notice that the inner dimensions ( ) must match, while the outer dimensions, and , give us the dimensions of the product.      Let's find another matrix-vector product.    Let Find .           Matrix Equations  Given an matrix and an constant vector , a matrix equation is an equation of the form . The solution, if it exists, is an vector that satisfies the equation.   Consider the linear system Let's construct the coefficient matrix and multiply it by on the right: Observe that each component of the product vector corresponds to one of the equations in the system. Let . Then  is a matrix equation that corresponds to our system of equations.   In general, a system of linear equations can be written as a matrix equation as follows: Solving this matrix equation (or showing that a solution does not exist) amounts to finding the reduced row-echelon form of the augmented matrix   Being able to use matrices to rewrite and solve systems of equations is crucial, so here are two examples to get you into this mindset.    Given a linear system    Write the system as a matrix equation    Solve the system and the matrix equation       The matrix equation that corresponds to the system is The augmented matrix that corresponds to the original system and its reduced row-echelon form are This shows that the ordered pair is a solution to the system. We conclude that is a solution to the matrix equation in . A quick verification confirms this       Let Solve .    We write the equation in augmented matrix form and apply elementary row operations to find its reduced row-echelon form. One way to obtain a solution is to convert this to a system of equations. It is not necessary to write the system down, but it helps to think about it as you write out your solution vector. We see that and are leading variables because they correspond to leading 1s in the reduced row-echelon form , while and are free variables. We start by assigning parameters and to and , respectively, then solve for and . We can now write the solution vector as follows     The solution given in is an example of a general solution because it accounts for all of the solutions to the system. Letting and take on specific values produces particular solutions . For example, is a particular solution that corresponds to , .    Singular and Nonsingular Matrices  Our examples so far involved non-square matrices. Square matrices, however, play a very important role in linear algebra. This section will focus on square matrices. We start the paragraph with an example to motivate.    Let Solve .    We apply elementary row operations to bring the augmented matrix to its reduced row-echelon form. We can immediately see that the solution vector is     Observe that the left-hand side of the augmented matrix in is the identity matrix . This means that .  The elementary row operations that carried to were not dependent on the vector . In fact, the same row reduction process can be applied to the matrix equation for any vector to obtain a unique solution.    Given a matrix such that , the system will never be inconsistent because we will never have a row like this: . Neither will we have infinitely many solutions because there will never be free variables. Matrices such as deserve special attention.    A square matrix is said to be nonsingular provided that . Otherwise we say that is singular .    Non-singular matrices have many useful properties.    The following statements are equivalent for an matrix .   is nonsingular     has a unique solution for any in      has only the trivial solution        We will prove equivalence of the three statements by showing that   [Proof of ]: Suppose . Given any vector in , the augmented matrix can be carried to its reduced row-echelon form . Uniqueness of the reduced row-echelon form guarantees that is the unique solution of .  [Proof of ]: Suppose has a unique solution for all vectors . Then has a unique solution. But is always a solution to . Therefore is the only solution.  [Proof of ]: Suppose has only the trivial solution. This means that is the only solution of . But then, we know that the augmented matrix can be reduced to . The same row operations will carry to .      Not all square matrices are nonsingular. For example,     By , a matrix equation involving a singular matrix cannot have a unique solution. The following example illustrates the two scenarios that arise when solving equations that involve singular matrices.    Let Solve the equation for each case of below or show that hte system is inconsistent.                For , row reduction gives us There are infinitely many solutions and they all have the following form:   For , the vector is changed and the row operations that take to its reduced row-echelon form produce a in the last row of the vector on the right, which shows that the system is inconsistent.       Connection to Linear Combination Equations  Recall that the product of a matrix and a vector can be interpreted as a linear combination of the columns of the matrix. For example,     For each given matrix and vector , determine whether is a linear combination of the columns of . If possible, express as a linear combination of the columns of .                For , we are looking for such that Solving this equation amounts to finding such that . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are So, is a solution to the matrix equation. We conclude that is a linear combination of the columns of , and write   For We begin by attempting to solve the matrix equation . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are This shows that this matrix equation has no solutions. We conclude that is not a linear combination of the columns of .        Given the system of linear equations below, write (a) the corresponding matrix equation, and (b) the corresponding linear combination equation. DO NOT SOLVE.       Use an augmented matrix and elementary row operations to find coefficients and that make the expression true, or demonstrate that such coefficients do not exist.                      The system is inconsistent and no exist.       In each problem below determine whether vector is in the span of the given set of vectors.     and    The vector is not in the span.       and     The vector is in the span.       and     The vector is not in the span.      "
+  "body": " Matrix Equations   Matrix-Vector Multiplication  In the previous section, we saw that a linear comination equation can be expressed as a system of linear equations. Linear combinations are not the only type of equations that can be reinterpreted as systems of linear equations. In this section, we will introduce matrix equations , which are another representation of a system of linear equations. Before we do that, we need to introduce the concept of matrix-vector multiplication .   Matrix-vector multiplication or the matrix-vector product is an operation between a matrix and a vector that produces another vector, their product . The formal definition requires dense notation, so we work through an example before presenting it.    Let   The matrix-vector product is a linear combination of the columns of with coefficients given by the entries in . For this example, We can also compute the product one entry at a time. First, let's focus on the first row of . Next, let's look a the second row of . Finally, let's do the third row of .       Let be an matrix, and let be an vector. The product is the vector given by: or, equivalently,     We can now make a couple of observations about the matrix-vector product. The first observation is part of the definition, but it is still worth pointing out.   In order for the product to exist, and must have compatible dimensions. In particular, vector must have as many components as the number of columns of (otherwise, we would not be have a well-defined linear combination of the columns). So, if is an matrix, must be an vector. If we write these dimensions next to each other, we will notice that the inner dimensions ( ) must match, while the outer dimensions, and , give us the dimensions of the product.      Let's find another matrix-vector product.    Let Find .           Compute the matrix-vector product     The matrix-vector product is     In the previous example, we see that the matrix-vector product of any vector with a square matrix with one's along its diagonal and zeros elsewhere is the vector itself. For this reason, we call such a matrix the identity matrix and denote the indentity matrix by . In general, if is a vector in , then the matrix-vector product .    Matrix Equations  Given an matrix and an constant vector , a matrix equation is an equation of the form . The solution, if it exists, is an vector that satisfies the equation.   Consider the linear system Let's construct the coefficient matrix and multiply it by on the right: Observe that each component of the product vector corresponds to one of the equations in the system. Let . Then  is a matrix equation that corresponds to our system of equations.   In general, a system of linear equations can be written as a matrix equation as follows: Solving this matrix equation (or showing that a solution does not exist) amounts to finding the reduced row-echelon form of the augmented matrix   Being able to use matrices to rewrite and solve systems of equations is crucial, so here are two examples to get you into this mindset.    Given a linear system    Write the system as a matrix equation    Solve the system and the matrix equation       The matrix equation that corresponds to the system is The augmented matrix that corresponds to the original system and its reduced row-echelon form are This shows that the ordered pair is a solution to the system. We conclude that is a solution to the matrix equation in . A quick verification confirms this       Let Solve .    We write the equation in augmented matrix form and apply elementary row operations to find its reduced row-echelon form. One way to obtain a solution is to convert this to a system of equations. It is not necessary to write the system down, but it helps to think about it as you write out your solution vector. We see that and are leading variables because they correspond to leading 1s in the reduced row-echelon form , while and are free variables. We start by assigning parameters and to and , respectively, then solve for and . We can now write the solution vector as follows     The solution given in is an example of a general solution because it accounts for all of the solutions to the system. Letting and take on specific values produces particular solutions . For example, is a particular solution that corresponds to , .    Singular and Nonsingular Matrices  Our examples so far involved non-square matrices. Square matrices, however, play a very important role in linear algebra. This section will focus on square matrices. We start the paragraph with an example to motivate.    Let Solve .    We apply elementary row operations to bring the augmented matrix to its reduced row-echelon form. We can immediately see that the solution vector is     Observe that the left-hand side of the augmented matrix in is the identity matrix . This means that .  The elementary row operations that carried to were not dependent on the vector . In fact, the same row reduction process can be applied to the matrix equation for any vector to obtain a unique solution.    Given a matrix such that , the system will never be inconsistent because we will never have a row like this: . Neither will we have infinitely many solutions because there will never be free variables. Matrices such as deserve special attention.    A square matrix is said to be nonsingular provided that . Otherwise we say that is singular .    Non-singular matrices have many useful properties.    The following statements are equivalent for an matrix .   is nonsingular     has a unique solution for any in      has only the trivial solution        We will prove equivalence of the three statements by showing that   [Proof of ]: Suppose . Given any vector in , the augmented matrix can be carried to its reduced row-echelon form . Uniqueness of the reduced row-echelon form guarantees that is the unique solution of .  [Proof of ]: Suppose has a unique solution for all vectors . Then has a unique solution. But is always a solution to . Therefore is the only solution.  [Proof of ]: Suppose has only the trivial solution. This means that is the only solution of . But then, we know that the augmented matrix can be reduced to . The same row operations will carry to .      Not all square matrices are nonsingular. For example,     By , a matrix equation involving a singular matrix cannot have a unique solution. The following example illustrates the two scenarios that arise when solving equations that involve singular matrices.    Let Solve the equation for each case of below or show that hte system is inconsistent.                For , row reduction gives us There are infinitely many solutions and they all have the following form:   For , the vector is changed and the row operations that take to its reduced row-echelon form produce a in the last row of the vector on the right, which shows that the system is inconsistent.       Connection to Linear Combination Equations  Recall that the product of a matrix and a vector can be interpreted as a linear combination of the columns of the matrix. For example,     For each given matrix and vector , determine whether is a linear combination of the columns of . If possible, express as a linear combination of the columns of .                For , we are looking for such that Solving this equation amounts to finding such that . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are So, is a solution to the matrix equation. We conclude that is a linear combination of the columns of , and write   For We begin by attempting to solve the matrix equation . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are This shows that this matrix equation has no solutions. We conclude that is not a linear combination of the columns of .        Given the system of linear equations below, write (a) the corresponding matrix equation, and (b) the corresponding linear combination equation. DO NOT SOLVE.       Use an augmented matrix and elementary row operations to find coefficients and that make the expression true, or demonstrate that such coefficients do not exist.                      The system is inconsistent and no exist.       In each problem below determine whether vector is in the span of the given set of vectors.     and    The vector is not in the span.       and     The vector is in the span.       and     The vector is not in the span.      "
 },
 {
   "id": "Subsection-Matrix-Vector-Multiplication-2",
@@ -1963,6 +1981,24 @@ var ptx_lunr_docs = [
   "body": "  Let Find .        "
 },
 {
+  "id": "ex-matrixvectormultidentity",
+  "level": "2",
+  "url": "Section-Matrix-Equations.html#ex-matrixvectormultidentity",
+  "type": "Example",
+  "number": "2.3.5",
+  "title": "",
+  "body": "  Compute the matrix-vector product     The matrix-vector product is    "
+},
+{
+  "id": "Subsection-Matrix-Vector-Multiplication-11",
+  "level": "2",
+  "url": "Section-Matrix-Equations.html#Subsection-Matrix-Vector-Multiplication-11",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "identity matrix "
+},
+{
   "id": "Subsection-Matrix-Equations-2",
   "level": "2",
   "url": "Section-Matrix-Equations.html#Subsection-Matrix-Equations-2",
@@ -1985,7 +2021,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#ex-linsysmatrixmult",
   "type": "Example",
-  "number": "2.3.5",
+  "number": "2.3.6",
   "title": "",
   "body": "  Given a linear system    Write the system as a matrix equation    Solve the system and the matrix equation       The matrix equation that corresponds to the system is The augmented matrix that corresponds to the original system and its reduced row-echelon form are This shows that the ordered pair is a solution to the system. We conclude that is a solution to the matrix equation in . A quick verification confirms this    "
 },
@@ -1994,7 +2030,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#ex-solveAxequalb",
   "type": "Example",
-  "number": "2.3.6",
+  "number": "2.3.7",
   "title": "",
   "body": "  Let Solve .    We write the equation in augmented matrix form and apply elementary row operations to find its reduced row-echelon form. One way to obtain a solution is to convert this to a system of equations. It is not necessary to write the system down, but it helps to think about it as you write out your solution vector. We see that and are leading variables because they correspond to leading 1s in the reduced row-echelon form , while and are free variables. We start by assigning parameters and to and , respectively, then solve for and . We can now write the solution vector as follows    "
 },
@@ -2012,7 +2048,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#ex-nonsingularintro",
   "type": "Example",
-  "number": "2.3.7",
+  "number": "2.3.8",
   "title": "",
   "body": "  Let Solve .    We apply elementary row operations to bring the augmented matrix to its reduced row-echelon form. We can immediately see that the solution vector is    "
 },
@@ -2021,7 +2057,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#def-nonsingularmatrix",
   "type": "Definition",
-  "number": "2.3.8",
+  "number": "2.3.9",
   "title": "",
   "body": "  A square matrix is said to be nonsingular provided that . Otherwise we say that is singular .   "
 },
@@ -2030,7 +2066,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#th-nonsingularequivalency1",
   "type": "Theorem",
-  "number": "2.3.9",
+  "number": "2.3.10",
   "title": "",
   "body": "  The following statements are equivalent for an matrix .   is nonsingular     has a unique solution for any in      has only the trivial solution        We will prove equivalence of the three statements by showing that   [Proof of ]: Suppose . Given any vector in , the augmented matrix can be carried to its reduced row-echelon form . Uniqueness of the reduced row-echelon form guarantees that is the unique solution of .  [Proof of ]: Suppose has a unique solution for all vectors . Then has a unique solution. But is always a solution to . Therefore is the only solution.  [Proof of ]: Suppose has only the trivial solution. This means that is the only solution of . But then, we know that the augmented matrix can be reduced to . The same row operations will carry to .   "
 },
@@ -2039,7 +2075,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#Subsection-Singular-and-Nonsingular-Matrices-10",
   "type": "Remark",
-  "number": "2.3.10",
+  "number": "2.3.11",
   "title": "",
   "body": "  Not all square matrices are nonsingular. For example,    "
 },
@@ -2048,7 +2084,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#ex-infinfeasible",
   "type": "Example",
-  "number": "2.3.11",
+  "number": "2.3.12",
   "title": "",
   "body": "  Let Solve the equation for each case of below or show that hte system is inconsistent.                For , row reduction gives us There are infinitely many solutions and they all have the following form:   For , the vector is changed and the row operations that take to its reduced row-echelon form produce a in the last row of the vector on the right, which shows that the system is inconsistent.    "
 },
@@ -2057,7 +2093,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Matrix-Equations.html#ex-linearcombofcols2",
   "type": "Example",
-  "number": "2.3.12",
+  "number": "2.3.13",
   "title": "",
   "body": "  For each given matrix and vector , determine whether is a linear combination of the columns of . If possible, express as a linear combination of the columns of .                For , we are looking for such that Solving this equation amounts to finding such that . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are So, is a solution to the matrix equation. We conclude that is a linear combination of the columns of , and write   For We begin by attempting to solve the matrix equation . The augmented matrix corresponding to this equation, together with its reduced row-echelon form are This shows that this matrix equation has no solutions. We conclude that is not a linear combination of the columns of .   "
 },
@@ -2458,20 +2494,164 @@ var ptx_lunr_docs = [
   "body": "  Suppose is a linearly independent set of vectors in . Is the following set dependent or independent ? Prove your claim.   "
 },
 {
+  "id": "Section-Matrix-Transformations",
+  "level": "1",
+  "url": "Section-Matrix-Transformations.html",
+  "type": "Section",
+  "number": "2.5",
+  "title": "Matrix Transformations",
+  "body": " Matrix Transformations   Functions from into  In the past you have worked with functions . Most of the time such functions were defined algebraically. For example, we can define by This function takes a number in the domain ( ) and maps it to the square of the number in the codomain (also ).  Previously, you might have visualized function by looking at its graph, the set of all points of the form in . In this course, we will find it more useful to look at functions diagrammatically. For instance, the diagram below shows that maps 2 to 4. We say that 4 is the image of 2 under .   Function Domain and Codmain    We will now consider functions that map into . We will refer to such functions as transformations . There are two ways of thinking of transformations.  A transformation can take a vector in and map it to a vector in , or it can map a point in to a point in . We think of transformations as acting on vectors or points interchangeably because every point can be interpreted as the tip of a vector Matrix multiplication will provide us with initial tools for defining some transformations.    Examples of Matrix Transformations  Consider the matrix The product of with a vector is a vector. We can define a transformation by . This transformation can be applied to every vector of . We will look at what it does to five vectors.    Vectors graphed     T and arrow drawn     T acted on vectors graphed     Even after looking at a handful of vectors it is often difficult to tell what the transformation actually accomplishes. This is why sometimes looking at points instead of vectors can be beneficial. If we consider every point in the left grid below as a tip of a vector, we can apply the transformation to each point to obtain the grid on the right.    Grid of points graphed         Applying to a grid of points helps us see that the entire plane was sheared by the transformation.  We can also analyze the action of algebraically. Start by finding the image of a generic vector . We immediately see that the component of the vector remains unchanged. We also see that the component increases (or decreases) by an increment that depends on . When considering as a transformation acting on points, we see that points located 1 unit above the -axis, get shifted to the right by 0.5. Points located 2 units above, get shifted to the right by 1. The higher the point, the greater the shift. Points with negative -coordinates get shifted to the left. In this fashion shears the entire plane.  Now that we have seen the effect of functions defined via matrix multiplication, we can better appreciate the term transformation , as such functions distort the domain and the shapes located in it. The following Exploration will help you visualize this.   Make your own shape by moving points in the left pane. (You can also move the entire figure by clicking and dragging the whole polygon.) The images of the points and the polygon under the transformation induced by are shown on the right.       Try each of the following matrices to determine what each transformation accomplishes. (Type pi into GeoGebra to get .)       Match the description of each transformation described below with a the matrix that induces it.   Horizontal shear.    Rotation by counterclockwise.    Reflection about the -axis.    Vertical Stretch.    Maps everything to a straight line.    Rotation through a angle.    Horizontal compression.    Reflection about the line .                                                      A matrix induces a transformation from into . An matrix can be multiplied by an vector on the right, with the resulting product being an vector. Therefore we can use an matrix to define a transformation The example below showcases this concretely.    Let . Define a transformation by . Find all vectors in the domain that map to .    We need to solve the system . We begin by forming an augmented matrix and finding its reduced row echelon form There are infinitely many solutions This means that as transforms into , all points along the line map to the origin.      Linearity of Matrix Transformations  Restating and of Section in terms of matrix-vector multiplication gives us  These two properties of matrix multiplications translate into analogous properties of matrix transformations. Suppose is a matrix transformation, then for all vectors , in and all constants in ,    In general, any transformation that satisfies and is called a linear transformation . As we have just seen, all matrix transformations are linear. We will study linear transformations in depth later in this chapter.    Where did Go?  In this section we will look at the images of standard unit vectors under a matrix transformation, and discuss why this information is helpful.   Let .    Find the following products:              Let be a matrix transformation induced by , then we can say that maps , and to the first, second and third columns of , respectively. This nice property is not limited to transformations induced by square matrices. Let be a linear transformation induced by     We will examine the effect of on the standard unit vectors , and . Try and compute      Observe that the image of is the first column of , the image of is the second column of , and the image of is the third column.     We formalize our findings in as follows.    In general, the linear transformation , induced by an matrix maps the standard unit vectors to the columns of . We summarize this observation by expressing columns of as images of vectors under .     Why is it that knowing the images of standard unit vectors under a matrix transformation is helpful? Consider the following example.    Let be a matrix transformation such that Find .    We will make use of linearity of matrix transformations.     Now, illustrates that a matrix transformation is completely determined by where it maps the standard unit vectors. This is true because we can express every vector in as a linear combination of the standard unit vectors, then use and to find the image of .      Let be a matrix transformation induced by the matrix . The GeoGebra window on the left shows the domain of , with standard unit vectors and , and a vector . The window on the right shows the codomain of , with the images of , and plotted.       To use this interactive, you can   Change the entries of matrix ;    Change vector by dragging its tip.     Choose your matrix . Visually verify the following claims:   The image of is the first column of matrix .    The image of is the second column of matrix .     Let . Complete the following statement by filling the blanks. After having done that, change vector by dragging its tip. Observe the image of and its relationship to the images of and . Then fill the blanks below for a general vector :     The expressions filled in are        Show that a matrix transformation maps to . In other words, .      Show that a matrix transformation maps a line in to a line (or the origin) in .    A line in can be expressed as . (See .)     "
+},
+{
+  "id": "Subsection-Functions-from-Rn-into-Rm-2",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#Subsection-Functions-from-Rn-into-Rm-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "domain maps codomain "
+},
+{
+  "id": "Subsection-Functions-from-Rn-into-Rm-3",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#Subsection-Functions-from-Rn-into-Rm-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "image of under "
+},
+{
+  "id": "Subsection-Functions-from-Rn-into-Rm-5",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#Subsection-Functions-from-Rn-into-Rm-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "transformations "
+},
+{
+  "id": "Subsection-Examples-of-Matrix-Transformations-6",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#Subsection-Examples-of-Matrix-Transformations-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "sheared "
+},
+{
+  "id": "Subsection-Examples-of-Matrix-Transformations-8",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#Subsection-Examples-of-Matrix-Transformations-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "transformation "
+},
+{
+  "id": "exp-shapeTransformation",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#exp-shapeTransformation",
+  "type": "Exploration",
+  "number": "2.5.1",
+  "title": "",
+  "body": " Make your own shape by moving points in the left pane. (You can also move the entire figure by clicking and dragging the whole polygon.) The images of the points and the polygon under the transformation induced by are shown on the right.       Try each of the following matrices to determine what each transformation accomplishes. (Type pi into GeoGebra to get .)       Match the description of each transformation described below with a the matrix that induces it.   Horizontal shear.    Rotation by counterclockwise.    Reflection about the -axis.    Vertical Stretch.    Maps everything to a straight line.    Rotation through a angle.    Horizontal compression.    Reflection about the line .                                                     "
+},
+{
+  "id": "ex-matrixTrans1",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#ex-matrixTrans1",
+  "type": "Example",
+  "number": "2.5.3",
+  "title": "",
+  "body": "  Let . Define a transformation by . Find all vectors in the domain that map to .    We need to solve the system . We begin by forming an augmented matrix and finding its reduced row echelon form There are infinitely many solutions This means that as transforms into , all points along the line map to the origin.   "
+},
+{
+  "id": "Subsection-Linearity-of-Matrix-Transformations-3",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#Subsection-Linearity-of-Matrix-Transformations-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "linear transformation "
+},
+{
+  "id": "exp-imagesOfijk",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#exp-imagesOfijk",
+  "type": "Exploration",
+  "number": "2.5.2",
+  "title": "",
+  "body": " Let .    Find the following products:              Let be a matrix transformation induced by , then we can say that maps , and to the first, second and third columns of , respectively. This nice property is not limited to transformations induced by square matrices. Let be a linear transformation induced by     We will examine the effect of on the standard unit vectors , and . Try and compute      Observe that the image of is the first column of , the image of is the second column of , and the image of is the third column.    "
+},
+{
+  "id": "obs-imagesofijk",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#obs-imagesofijk",
+  "type": "Observation",
+  "number": "2.5.6",
+  "title": "",
+  "body": "  In general, the linear transformation , induced by an matrix maps the standard unit vectors to the columns of . We summarize this observation by expressing columns of as images of vectors under .    "
+},
+{
+  "id": "ex-imageOfBasisVectors",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#ex-imageOfBasisVectors",
+  "type": "Example",
+  "number": "2.5.7",
+  "title": "",
+  "body": "  Let be a matrix transformation such that Find .    We will make use of linearity of matrix transformations.    "
+},
+{
+  "id": "Subsection-Where-did-i-go-8",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#Subsection-Where-did-i-go-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "completely determined "
+},
+{
+  "id": "exp-linCombStUnitVectors",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#exp-linCombStUnitVectors",
+  "type": "Exercise",
+  "number": "2.5.5.1",
+  "title": "",
+  "body": "  Let be a matrix transformation induced by the matrix . The GeoGebra window on the left shows the domain of , with standard unit vectors and , and a vector . The window on the right shows the codomain of , with the images of , and plotted.       To use this interactive, you can   Change the entries of matrix ;    Change vector by dragging its tip.     Choose your matrix . Visually verify the following claims:   The image of is the first column of matrix .    The image of is the second column of matrix .     Let . Complete the following statement by filling the blanks. After having done that, change vector by dragging its tip. Observe the image of and its relationship to the images of and . Then fill the blanks below for a general vector :     The expressions filled in are     "
+},
+{
+  "id": "prb-6-4",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#prb-6-4",
+  "type": "Exercise",
+  "number": "2.5.5.2",
+  "title": "",
+  "body": "  Show that a matrix transformation maps to . In other words, .   "
+},
+{
+  "id": "prb-linesToLines",
+  "level": "2",
+  "url": "Section-Matrix-Transformations.html#prb-linesToLines",
+  "type": "Exercise",
+  "number": "2.5.5.3",
+  "title": "",
+  "body": "  Show that a matrix transformation maps a line in to a line (or the origin) in .    A line in can be expressed as . (See .)   "
+},
+{
   "id": "Section-Linear-Transformations",
   "level": "1",
   "url": "Section-Linear-Transformations.html",
   "type": "Section",
-  "number": "2.5",
+  "number": "2.6",
   "title": "Linear Transformations",
-  "body": " Linear Transformations  We start by reviewing the definition of a function.    Let and be sets. A function  from into , denoted by assigns to each element of , an element of . Moreover, we use the the following terminology.  The set is called the domain of , and the set is called the codomain .  If , we say that  maps to  , and is the image of .  The collection of images of all points of is called the image of under , or the image of . (It is also known as the range of .)    In algebra and calculus you worked with functions whose domain and codomain were each the set of all real numbers. In linear algebra, we call our functions transformations . The domain and codomain of a transformation are vector spaces .   In this exercise we will introduce a very special type of transformation by contrasting the effects of two transformations on vectors of . We will see that some transformations have ``nice\" properties, while others do not. Define and as follows:  Each of these transformations takes a vector in , and maps it to another vector in . To see if you understand how these transformations are defined, see if you can determine what these transformations do to the vector .    Compute the following two images:          Now, let's take the vector and multiply it by a scalar, say . Now let's compare how and ``handle\" this product. Starting with , we compute: Observe that multiplying the original vector by , then applying , has the same effect as applying to the original vector, then multiplying the image by . In other words, Diagrammatically, this can be represented as follows.   T with domain and codomain pictured    You should try to verify that this property does not hold for transformation . In other words, There is nothing special about the number , and it is not hard to prove that for any scalar and vector of , satisfies It turns out that satisfies another important property. For all vectors and of we have: We leave it to the reader to illustrate this property with a specific example (see ). We will show that satisfies in general. Let then It turns out that fails to satisfy this property. Can you prove that this is the case? Remember that to prove that a property DOES NOT hold, it suffices to find a counter-example. See if you can find vectors and such that See for more on this.   Transformations satisfying and , like , are called linear transformations . Transformations like are not linear. You have encountered several linear transformations in the form of matrix transformations previously.    A transformation is called a linear transformation if the following are true for all vectors and in , and scalars .      Equations and of the above definition can be illustrated diagrammatically as follows.   Linearity drawn as function diagram     Continuation of above      The properties and are often combined into a single property, namely       Suppose is a linear transformation such that Find each of the following:                 : Because is a linear transformation, it satisfies . We compute:  Observe that By we have:       In we were given the images of two vectors, and , under a linear transformation .  Based on this information, we were able to determine the images of two additional vectors: and . The reason we were able to determine and is because and can be written as unique linear combinations of and .      Can every vector of be written as a linear combination of and ?    Yes.      Is the information provided in sufficient to determine the image of every vector in under ?    Yes.      Suppose is a transformation such that Determine whether is a linear transformation.    Observe that If were a linear transformation, then we would have: But according to the given, Since we conclude that transformation is not linear.    In we introduced a transformation which turned out to be non-linear. It took some work to show that is not linear. The following theorem would have made our work easier.    Let be a linear transformation. Then    . In other words, linear transformations map the zero vector to the zero vector.     maps any line in to a line (or the zero vector) in .       To prove , let be any vector in . By linearity of , we have: Part will become evident after the next section by combinining observations there with .      Use to show that transformation of is not linear.    Recall that was defined by We evaluate at : Since , is not linear.     Linear Transformations Induced by Matrices  Recall that a transformation defined by , where is some matrix, is called a matrix transformation (or transformation induced by ). As we had discovered in the precedng sectiion, all matrix transformations are linear. We now formalize this result as a theorem.    Let be an matrix. Define by . Then is a linear transformation.    Let and be vectors in , and let be a scalar. By properties of matrix multiplication we have:  Therefore is a linear transformation.      Let be a linear transformation induced by    Find and .    Find the image of .         is a matrix, so for the expression to make sense, has to be a vector. Thus, the domain of is ( ). The product is a vector. The codomain of is ( ). By , the image of consists of images of all individual vectors in under .  Every vector in can be written as for some real numbers and . Consider the image of : This shows that the range, or the image, of consists of all linear combinations of the columns of . In other words, the image of is the span of vectors and . The two vectors are not scalar multiples of each other, therefore they span a plane in .      Let be a linear transformation induced by    Find and .    Find and draw the image of .       For part : and .  For : To find the image of , we will take a slightly different approach from what we did in .  Let be an arbitrary vector of . The image of is given by This shows that the image of every vector in is a scalar multiple of . This means that the image of is a line in .   Line generated is graphed        Linear Transformations of Subspaces of   defines a linear transformation as a map from into . We will now make this definition more general by allowing the domain and the codomain of the transformation to be subspaces of and . Eventually, a linear transformation will be defined as a mapping between vector spaces.    Let and be subspaces of and . Let be a transformation. We call  linear transformation if for all vectors and in , and scalars , the following two rules hold:        Let be a subspace of consisting of all vectors in the -plane. Let be a subspace of consisting of all vectors along the -axis. Do a quick verification that and are subspaces of . Define a transformation by Show that is a linear transformation, and describe its action geometrically.    Consider two arbitrary elements and of . Verification of the fact that is similar, and we omit the details.  We have shown that is a linear transformation. maps all vectors in the -plane to the -axis. The following diagram helps us visualize the action of on a specific vector.   [1,2,0] acted on by T    We can investigate further. Recall that is defined by Next, we ask you to consider the diagram below and try solve the following problem.        Choose the proper answer for each of the statements below.   Is the image of the line under a line, a plane, the zero vector or all of ?    is the image of the orange part of the domain (the front triangle) the positive -axis, the negative -axis, the zero vector or the entire -axis?    is the image of the purple part of the domain (the back triangle) the positive -axis, the negative -axis, the zero vector or the entire -axis?          The image of the line under is the the zero vector.    The image of the orange part of the domain (the front triangle) is the positive -axis.    The image of the purple part of the domain (the back triangle) is the negative -axis.         We conclude this section by introducing two simple but important transformations.    The identity transformation on , denoted by , is a transformation that maps each element of to itself. In other words, is a transformation such that       The zero transformation , , maps every element of the domain to the zero vector. In other words, is a transformation such that       The identity transformation is linear.    Left to the reader. (See )      The zero transformation is linear.    Left to the reader. (See )      Standard Matrix of a Linear Transformation from to  In the preceding sections, we learned several important properties of matrix transformations of and subspaces of . Let's summarize the main points.    For a matrix transformation , induced by an matrix we have the following results:    is linear. (Theorem ) This means that for vectors and in and scalars and in .    Columns of are the images of the standard unit vectors of under .      The action of on all of the elements of is completely determined by where maps the standard unit vectors. (See Examples and )       The last point in the summary is so important that it is worth illustrating again.    Let be a linear transformation. Suppose that the only information we have about this transformation is that Is this information sufficient to determine the image of ?    Observe that We find by using the fact that is linear: Because of properties of linear transformations, the information about the images of the standard unit vectors proved to be sufficient for us to determine the image of .    In , there was nothing special about the vector . Any vector of can be written as a unique linear combination of the standard unit vectors . Therefore, the image of any vector under a linear transformation is uniquely determined by the images of . Knowing allows us to construct a matrix , with as columns, that induces transformation . We formalize this idea in a theorem.    Let be a linear transformation. Then is a matrix transformation with as a matrix that induces .    Observe that Because is linear, we have Thus, for every in , we have .     shows that every matrix transformation is linear. states that every linear transformation from into is a matrix transformation. We combine these results in a corollary.    A transformation is a linear transformation if and only if it is a matrix transformation.    The results of this section rely on the fact that every vector of can be written as a unique linear combination of the standard unit vectors . These vectors form the standard basis for . Later on, when we encounter transformations of arbitrary bases, we will observe that the matrix used to represent a linear transformation depends on a choice of basis. Since we are using the standard basis, it is natural to name the matrix in accordingly.    The matrix in is known as the standard matrix of the linear transformation  .     The standard matrix of a linear transformation such that is      Find the standard matrix of a linear transformation such that and .    We use the images of and as columns of the matrix. The standard matrix of is       Find the standard matrix of a linear transformation , where     In this example we are not given the images of the standard basis vectors and . However, we can find the images of and by expressing and as linear combinations of and , then apply the fact that is linear. Let's start with the easy one. Therefore, by linearity of , we have: This gives us the first column of the standard matrix for .  You can solve the vector equation to express as a linear combination of and as follows: By linearity of , This gives us the second column of the standard matrix. Putting all of the information together, we get the following standard matrix for :       The Image  In this section we will often use , and to denote subspaces of , or any other finite-dimensional vector space, such as those we study in a later chaper.    Let and be vector spaces, and let be a linear transformation. The image of , denoted by , is the set In other words, the image of consists of individual images of all vectors of .      Consider the linear transformation with standard matrix    Find .    Illustrate the action of with a sketch.        : Let then Thus, every element of the image can be written as a linear combination of the columns of . We conclude that Every column of is a scalar multiple of . Thus, The image of is a line in determined by the vector .   : The action of can be illustrated with a sketch.   Image of T graphed      In we observed that the image of the linear transformation was equal to the column space of its standard matrix. In general, it is easy to see that if is a linear transformation with standard matrix then the following relationship holds: In addition, by , we know that     Let be a linear transformation with standard matrix Find and .    As in , the image of is given by This time it is harder to detect the vectors that can be eliminated from the spanning set without affecting the span. We have to rely on the reduced row-echelon form of . We can see that , so . To identify vectors that span , we turn to . We identify the first three columns as pivot columns. These columns are linearly independent and span . Therefore,     By and , we know that for an matrix , is a subspace of . However, when vector spaces other than are involved, it is not yet clear that is a subspace of the codomain. The following theorem resolves this issue.    Let be a linear transformation. Then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose and are in . Then there are vectors and in such that and . Then This shows that is in . For any scalar , we have: This shows that is in .    We can now define the rank of a linear transformation.    The rank of a linear transformation , is the dimension of the image of .     This definition gives us the following relationship between the rank of a linear transformation and the rank of the standard matrix associated with it.           The Kernel of a Linear Transformation  Exactly as in the preceding section, we will often use , and to denote subspaces of , or any other finite-dimensional vector space, such as those we study in a later chaper.    Let and be vector spaces, and let be a linear transformation. The kernel of , denoted by , is the set In other words, the kernel of consists of all vectors of that map to in .    It is important to pay attention to the locations of the kernel and the image. We already proved that is a subspace of the codomain. In contrast, is located in the domain. (We will prove shortly that it is a subspace of the domain.)   Kernel diagram shown      Let be a linear transformation with standard matrix    Find .    Is a subspace of ? If so, find .        To find the kernel of , we need to find all vectors of that map to in . This amounts to solving the equation . Gauss-Jordan elimination yields: Thus, the kernel of consists of all elements of the form: We conclude that  : Since is the span of two vectors of , we know that is a subspace of . (See .) Observe that the two vectors in the spanning set are linearly independent. (How can we see this without performing computations?) Therefore .    Recall that the null space of a matrix is defined to be set of all solutions to the homogeneous equation . This means that if is a linear transformation with standard matrix then We know that of an matrix is a subspace of . (See .) We conclude this section by showing that even when vector spaces other than are involved, the kernel of a linear transformation is a subspace of the domain of the transformation.    Let be a linear transformation, then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose that and are in . Then, This shows that is in . For any scalar we have: This shows that is in .      The nullity of a linear transformation , is the dimension of the kernel of .     This definition gives us the following relationship between nullity of a linear transformation and the nullity of the standard matrix associated with it.           Rank-Nullity Theorem for Linear Transformations  In and , we found the image and the kernel of the linear transformation with standard matrix We also found that and Because of Rank-Nullity Theorem for matrices (Theorem ), it is not surprising that The following theorem is a generalization of this result.    Let be a linear transformation. Suppose , then     By , is a subspace of . There exists a basis for of the form . By , is a subspace of . Let be a basis for . We will show that is a basis for . For any vector in , we have: for some scalars  . Thus, By linearity, Therefore is in . Hence there are scalars  such that Thus, We conclude that   Now we need to show that is linearly independent. Suppose Applying to both sides, we get  But for , thus Since is linearly independent, it follows that each . But then implies that . Because is linearly independent, it follows that each . We conclude that is a basis for . Thus,         Show that of holds for vectors and .      Use a counter-example to prove of .      Suppose is a linear transformation such that and . Find the image of .           Let be a fixed vector. Define , by .   Describe the effect of this transformation by sketching and for at least four vectors and a fixed vector of your choice.    Is a linear transformation?         Define , by This transformation is called an orthogonal projection onto the -plane. Show that is a linear transformation.      Suppose a linear transformation maps Find the image of under .           Prove       Prove       For each matrix below, find the domain together with codomain of the linear transformation induced by ; then find and draw the image of (Hint: See .)          Domain: , where .  Codomain: , where .               Suppose that a linear transformation is such that Find .           Suppose that a linear transformation is such that . Find the standard matrix of .           Find the standard matrix of each linear transformation described below.      doubles the component of every vector and triples the component.            reverses the direction of each vector.            doubles the length of each vector.            projects each vector onto the -axis. (e.g. ).            projects each vector onto the -axis. (e.g. )             Describe the image and find the rank for each linear transformation with standard matrix given below.      ,               is a line in .   (T)    .       .       is a plane in .              ,        .       is a line in .   (T)    is a line in .       .       is a plane in .   (T)    .       Suppose linear transformations and are such that Does this mean that and are the same transformation? Justify your claim.      Describe the kernel and find the nullity for each linear transformation with standard matrix given below.      ,        .       .       .       is a plane in .       is a line in .              ,        .       .       is a line in .              ,        is a plane in .       is a line in .       is a line in .       .       .       .       Suppose a linear transformation is such that is a plane in . What is the rank and nulity of ?            Suppose a linear transformation is such that for all in . What is the rank and nulity of ?            Let be a linear transformation with standard matrix Find and if the reduced row-echelon form of is       Let and let be a linear transformation defined by . Find and .      Suppose a linear transformation is induced by a matrix . Let be a linear transformation induced by . Find , if . Prove your claim.     "
+  "body": " Linear Transformations  We start by reviewing the definition of a function.    Let and be sets. A function  from into , denoted by assigns to each element of , an element of . Moreover, we use the the following terminology.  The set is called the domain of , and the set is called the codomain .  If , we say that  maps to  , and is the image of .  The collection of images of all points of is called the image of under , or the image of . (It is also known as the range of .)    In algebra and calculus you worked with functions whose domain and codomain were each the set of all real numbers. In linear algebra, we call our functions transformations . In this section, we study transformations .   In this exercise we will introduce a very special type of transformation by contrasting the effects of two transformations on vectors of . We will see that some transformations have ``nice\" properties, while others do not. Define and as follows:  Each of these transformations takes a vector in , and maps it to another vector in . To see if you understand how these transformations are defined, see if you can determine what these transformations do to the vector .    Compute the following two images:          Now, let's take the vector and multiply it by a scalar, say . Now let's compare how and ``handle\" this product. Starting with , we compute: Observe that multiplying the original vector by , then applying , has the same effect as applying to the original vector, then multiplying the image by . In other words, Diagrammatically, this can be represented as follows.   T with domain and codomain pictured    You should try to verify that this property does not hold for transformation . In other words, There is nothing special about the number , and it is not hard to prove that for any scalar and vector of , satisfies It turns out that satisfies another important property. For all vectors and of we have: We leave it to the reader to illustrate this property with a specific example (see ). We will show that satisfies in general. Let then It turns out that fails to satisfy this property. Can you prove that this is the case? Remember that to prove that a property DOES NOT hold, it suffices to find a counter-example. See if you can find vectors and such that See for more on this.   Transformations satisfying and , like , are called linear transformations . Transformations like are not linear. You have encountered several linear transformations in the form of matrix transformations previously.    A transformation is called a linear transformation if the following are true for all vectors and in , and scalars .      Equations and of the above definition can be illustrated diagrammatically as follows.   Linearity drawn as function diagram     Continuation of above      The properties and are often combined into a single property, namely       Suppose is a linear transformation such that Find each of the following:                 : Because is a linear transformation, it satisfies . We compute:  Observe that By we have:       In we were given the images of two vectors, and , under a linear transformation .  Based on this information, we were able to determine the images of two additional vectors: and . The reason we were able to determine and is because and can be written as unique linear combinations of and .      Can every vector of be written as a linear combination of and ?    Yes.      Is the information provided in sufficient to determine the image of every vector in under ?    Yes.      Suppose is a transformation such that Determine whether is a linear transformation.    Observe that If were a linear transformation, then we would have: But according to the given, Since we conclude that transformation is not linear.    In we introduced a transformation which turned out to be non-linear. It took some work to show that is not linear. The following theorem would have made our work easier.    Let be a linear transformation. Then    . In other words, linear transformations map the zero vector to the zero vector.     maps any line in to a line (or the zero vector) in .       To prove , let be any vector in . By linearity of , we have: Part will become evident after the next section by combinining observations there with .      Use to show that transformation of is not linear.    Recall that was defined by We evaluate at : Since , is not linear.      Let be an matrix. Define by . Then is a linear transformation.    Let and be vectors in , and let be a scalar. By properties of matrix multiplication we have:  Therefore is a linear transformation.      Let be a linear transformation induced by    Find and .    Find the image of .         is a matrix, so for the expression to make sense, has to be a vector. Thus, the domain of is ( ). The product is a vector. The codomain of is ( ). By , the image of consists of images of all individual vectors in under .  Every vector in can be written as for some real numbers and . Consider the image of : This shows that the range, or the image, of consists of all linear combinations of the columns of . In other words, the image of is the span of vectors and . The two vectors are not scalar multiples of each other, therefore they span a plane in .      Let be a linear transformation induced by    Find and .    Find and draw the image of .       For part : and .  For : To find the image of , we will take a slightly different approach from what we did in .  Let be an arbitrary vector of . The image of is given by This shows that the image of every vector in is a scalar multiple of . This means that the image of is a line in .   Line generated is graphed       Linear Transformations of Subspaces of   defines a linear transformation as a map from into . We will now make this definition more general by allowing the domain and the codomain of the transformation to be subspaces of and . Eventually, a linear transformation will be defined as a mapping between vector spaces.    Let and be subspaces of and . Let be a transformation. We call  linear transformation if for all vectors and in , and scalars , the following two rules hold:        Let be a subspace of consisting of all vectors in the -plane. Let be a subspace of consisting of all vectors along the -axis. Do a quick verification that and are subspaces of . Define a transformation by Show that is a linear transformation, and describe its action geometrically.    Consider two arbitrary elements and of . Verification of the fact that is similar, and we omit the details.  We have shown that is a linear transformation. maps all vectors in the -plane to the -axis. The following diagram helps us visualize the action of on a specific vector.   [1,2,0] acted on by T    We can investigate further. Recall that is defined by Next, we ask you to consider the diagram below and try solve the following problem.        Choose the proper answer for each of the statements below.   Is the image of the line under a line, a plane, the zero vector or all of ?    is the image of the orange part of the domain (the front triangle) the positive -axis, the negative -axis, the zero vector or the entire -axis?    is the image of the purple part of the domain (the back triangle) the positive -axis, the negative -axis, the zero vector or the entire -axis?          The image of the line under is the the zero vector.    The image of the orange part of the domain (the front triangle) is the positive -axis.    The image of the purple part of the domain (the back triangle) is the negative -axis.         We conclude this section by introducing two simple but important transformations.    The identity transformation on , denoted by , is a transformation that maps each element of to itself. In other words, is a transformation such that       The zero transformation , , maps every element of the domain to the zero vector. In other words, is a transformation such that       The identity transformation is linear.    Left to the reader. (See )      The zero transformation is linear.    Left to the reader. (See )      Standard Matrix of a Linear Transformation from to  In the preceding sections, we learned several important properties of matrix transformations of and subspaces of . Let's summarize the main points.    For a matrix transformation , induced by an matrix we have the following results:    is linear. (Theorem ) This means that for vectors and in and scalars and in .    Columns of are the images of the standard unit vectors of under .      The action of on all of the elements of is completely determined by where maps the standard unit vectors. (See Examples and )       The last point in the summary is so important that it is worth illustrating again.    Let be a linear transformation. Suppose that the only information we have about this transformation is that Is this information sufficient to determine the image of ?    Observe that We find by using the fact that is linear: Because of properties of linear transformations, the information about the images of the standard unit vectors proved to be sufficient for us to determine the image of .    In , there was nothing special about the vector . Any vector of can be written as a unique linear combination of the standard unit vectors . Therefore, the image of any vector under a linear transformation is uniquely determined by the images of . Knowing allows us to construct a matrix , with as columns, that induces transformation . We formalize this idea in a theorem.    Let be a linear transformation. Then is a matrix transformation with as a matrix that induces .    Observe that Because is linear, we have Thus, for every in , we have .     shows that every matrix transformation is linear. states that every linear transformation from into is a matrix transformation. We combine these results in a corollary.    A transformation is a linear transformation if and only if it is a matrix transformation.    The results of this section rely on the fact that every vector of can be written as a unique linear combination of the standard unit vectors . These vectors form the standard basis for . Later on, when we encounter transformations of arbitrary bases, we will observe that the matrix used to represent a linear transformation depends on a choice of basis. Since we are using the standard basis, it is natural to name the matrix in accordingly.    The matrix in is known as the standard matrix of the linear transformation  .     The standard matrix of a linear transformation such that is      Find the standard matrix of a linear transformation such that and .    We use the images of and as columns of the matrix. The standard matrix of is       Find the standard matrix of a linear transformation , where     In this example we are not given the images of the standard basis vectors and . However, we can find the images of and by expressing and as linear combinations of and , then apply the fact that is linear. Let's start with the easy one. Therefore, by linearity of , we have: This gives us the first column of the standard matrix for .  You can solve the vector equation to express as a linear combination of and as follows: By linearity of , This gives us the second column of the standard matrix. Putting all of the information together, we get the following standard matrix for :       The Image  In this section we will often use , and to denote subspaces of , or any other finite-dimensional vector space, such as those we study in a later chaper.    Let and be vector spaces, and let be a linear transformation. The image of , denoted by , is the set In other words, the image of consists of individual images of all vectors of .      Consider the linear transformation with standard matrix    Find .    Illustrate the action of with a sketch.        : Let then Thus, every element of the image can be written as a linear combination of the columns of . We conclude that Every column of is a scalar multiple of . Thus, The image of is a line in determined by the vector .   : The action of can be illustrated with a sketch.   Image of T graphed      In we observed that the image of the linear transformation was equal to the column space of its standard matrix. In general, it is easy to see that if is a linear transformation with standard matrix then the following relationship holds: In addition, by , we know that     Let be a linear transformation with standard matrix Find and .    As in , the image of is given by This time it is harder to detect the vectors that can be eliminated from the spanning set without affecting the span. We have to rely on the reduced row-echelon form of . We can see that , so . To identify vectors that span , we turn to . We identify the first three columns as pivot columns. These columns are linearly independent and span . Therefore,     By and , we know that for an matrix , is a subspace of . However, when vector spaces other than are involved, it is not yet clear that is a subspace of the codomain. The following theorem resolves this issue.    Let be a linear transformation. Then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose and are in . Then there are vectors and in such that and . Then This shows that is in . For any scalar , we have: This shows that is in .    We can now define the rank of a linear transformation.    The rank of a linear transformation , is the dimension of the image of .     This definition gives us the following relationship between the rank of a linear transformation and the rank of the standard matrix associated with it.           The Kernel of a Linear Transformation  Exactly as in the preceding section, we will often use , and to denote subspaces of , or any other finite-dimensional vector space, such as those we study in a later chaper.    Let and be vector spaces, and let be a linear transformation. The kernel of , denoted by , is the set In other words, the kernel of consists of all vectors of that map to in .    It is important to pay attention to the locations of the kernel and the image. We already proved that is a subspace of the codomain. In contrast, is located in the domain. (We will prove shortly that it is a subspace of the domain.)   Kernel diagram shown      Let be a linear transformation with standard matrix    Find .    Is a subspace of ? If so, find .        To find the kernel of , we need to find all vectors of that map to in . This amounts to solving the equation . Gauss-Jordan elimination yields: Thus, the kernel of consists of all elements of the form: We conclude that  : Since is the span of two vectors of , we know that is a subspace of . (See .) Observe that the two vectors in the spanning set are linearly independent. (How can we see this without performing computations?) Therefore .    Recall that the null space of a matrix is defined to be set of all solutions to the homogeneous equation . This means that if is a linear transformation with standard matrix then We know that of an matrix is a subspace of . (See .) We conclude this section by showing that even when vector spaces other than are involved, the kernel of a linear transformation is a subspace of the domain of the transformation.    Let be a linear transformation, then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose that and are in . Then, This shows that is in . For any scalar we have: This shows that is in .      The nullity of a linear transformation , is the dimension of the kernel of .     This definition gives us the following relationship between nullity of a linear transformation and the nullity of the standard matrix associated with it.           Rank-Nullity Theorem for Linear Transformations  In and , we found the image and the kernel of the linear transformation with standard matrix We also found that and Because of Rank-Nullity Theorem for matrices (Theorem ), it is not surprising that The following theorem is a generalization of this result.    Let be a linear transformation. Suppose , then     By , is a subspace of . There exists a basis for of the form . By , is a subspace of . Let be a basis for . We will show that is a basis for . For any vector in , we have: for some scalars  . Thus, By linearity, Therefore is in . Hence there are scalars  such that Thus, We conclude that   Now we need to show that is linearly independent. Suppose Applying to both sides, we get  But for , thus Since is linearly independent, it follows that each . But then implies that . Because is linearly independent, it follows that each . We conclude that is a basis for . Thus,         Show that of holds for vectors and .      Use a counter-example to prove of .      Suppose is a linear transformation such that and . Find the image of .           Let be a fixed vector. Define , by .   Describe the effect of this transformation by sketching and for at least four vectors and a fixed vector of your choice.    Is a linear transformation?         Define , by This transformation is called an orthogonal projection onto the -plane. Show that is a linear transformation.      Suppose a linear transformation maps Find the image of under .           Prove       Prove       For each matrix below, find the domain together with codomain of the linear transformation induced by ; then find and draw the image of (Hint: See .)          Domain: , where .  Codomain: , where .               Suppose that a linear transformation is such that Find .           Suppose that a linear transformation is such that . Find the standard matrix of .           Find the standard matrix of each linear transformation described below.      doubles the component of every vector and triples the component.            reverses the direction of each vector.            doubles the length of each vector.            projects each vector onto the -axis. (e.g. ).            projects each vector onto the -axis. (e.g. )             Describe the image and find the rank for each linear transformation with standard matrix given below.      ,               is a line in .   (T)    .       .       is a plane in .              ,        .       is a line in .   (T)    is a line in .       .       is a plane in .   (T)    .       Suppose linear transformations and are such that Does this mean that and are the same transformation? Justify your claim.      Describe the kernel and find the nullity for each linear transformation with standard matrix given below.      ,        .       .       .       is a plane in .       is a line in .              ,        .       .       is a line in .              ,        is a plane in .       is a line in .       is a line in .       .       .       .       Suppose a linear transformation is such that is a plane in . What is the rank and nulity of ?            Suppose a linear transformation is such that for all in . What is the rank and nulity of ?            Let be a linear transformation with standard matrix Find and if the reduced row-echelon form of is       Let and let be a linear transformation defined by . Find and .      Suppose a linear transformation is induced by a matrix . Let be a linear transformation induced by . Find , if . Prove your claim.     "
 },
 {
   "id": "def-function",
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-function",
   "type": "Definition",
-  "number": "2.5.1",
+  "number": "2.6.1",
   "title": "",
   "body": "  Let and be sets. A function  from into , denoted by assigns to each element of , an element of . Moreover, we use the the following terminology.  The set is called the domain of , and the set is called the codomain .  If , we say that  maps to  , and is the image of .  The collection of images of all points of is called the image of under , or the image of . (It is also known as the range of .)   "
 },
@@ -2482,14 +2662,14 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "transformations vector spaces "
+  "body": "transformations "
 },
 {
   "id": "init-lintransintro",
   "level": "2",
   "url": "Section-Linear-Transformations.html#init-lintransintro",
   "type": "Exploration",
-  "number": "2.5.1",
+  "number": "2.6.1",
   "title": "",
   "body": " In this exercise we will introduce a very special type of transformation by contrasting the effects of two transformations on vectors of . We will see that some transformations have ``nice\" properties, while others do not. Define and as follows:  Each of these transformations takes a vector in , and maps it to another vector in . To see if you understand how these transformations are defined, see if you can determine what these transformations do to the vector .    Compute the following two images:          Now, let's take the vector and multiply it by a scalar, say . Now let's compare how and ``handle\" this product. Starting with , we compute: Observe that multiplying the original vector by , then applying , has the same effect as applying to the original vector, then multiplying the image by . In other words, Diagrammatically, this can be represented as follows.   T with domain and codomain pictured    You should try to verify that this property does not hold for transformation . In other words, There is nothing special about the number , and it is not hard to prove that for any scalar and vector of , satisfies It turns out that satisfies another important property. For all vectors and of we have: We leave it to the reader to illustrate this property with a specific example (see ). We will show that satisfies in general. Let then It turns out that fails to satisfy this property. Can you prove that this is the case? Remember that to prove that a property DOES NOT hold, it suffices to find a counter-example. See if you can find vectors and such that See for more on this.  "
 },
@@ -2507,7 +2687,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-lin",
   "type": "Definition",
-  "number": "2.5.3",
+  "number": "2.6.3",
   "title": "",
   "body": "  A transformation is called a linear transformation if the following are true for all vectors and in , and scalars .     "
 },
@@ -2516,7 +2696,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#combinedLinearDef",
   "type": "Remark",
-  "number": "2.5.4",
+  "number": "2.6.4",
   "title": "",
   "body": "  The properties and are often combined into a single property, namely    "
 },
@@ -2525,7 +2705,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-lintransfirst",
   "type": "Example",
-  "number": "2.5.5",
+  "number": "2.6.5",
   "title": "",
   "body": "  Suppose is a linear transformation such that Find each of the following:                 : Because is a linear transformation, it satisfies . We compute:  Observe that By we have:    "
 },
@@ -2534,7 +2714,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#basisIsSufficient",
   "type": "Observation",
-  "number": "2.5.6",
+  "number": "2.6.6",
   "title": "",
   "body": "  In we were given the images of two vectors, and , under a linear transformation .  Based on this information, we were able to determine the images of two additional vectors: and . The reason we were able to determine and is because and can be written as unique linear combinations of and .   "
 },
@@ -2543,7 +2723,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#Section-Linear-Transformations-14",
   "type": "Problem",
-  "number": "2.5.7",
+  "number": "2.6.7",
   "title": "",
   "body": "  Can every vector of be written as a linear combination of and ?    Yes.   "
 },
@@ -2552,7 +2732,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#Section-Linear-Transformations-15",
   "type": "Problem",
-  "number": "2.5.8",
+  "number": "2.6.8",
   "title": "",
   "body": "  Is the information provided in sufficient to determine the image of every vector in under ?    Yes.   "
 },
@@ -2561,7 +2741,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-lineartrans1",
   "type": "Example",
-  "number": "2.5.9",
+  "number": "2.6.9",
   "title": "",
   "body": "  Suppose is a transformation such that Determine whether is a linear transformation.    Observe that If were a linear transformation, then we would have: But according to the given, Since we conclude that transformation is not linear.   "
 },
@@ -2570,7 +2750,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-zerotozero",
   "type": "Theorem",
-  "number": "2.5.10",
+  "number": "2.6.10",
   "title": "",
   "body": "  Let be a linear transformation. Then    . In other words, linear transformations map the zero vector to the zero vector.     maps any line in to a line (or the zero vector) in .       To prove , let be any vector in . By linearity of , we have: Part will become evident after the next section by combinining observations there with .   "
 },
@@ -2579,7 +2759,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-zerotozero",
   "type": "Example",
-  "number": "2.5.11",
+  "number": "2.6.11",
   "title": "",
   "body": "  Use to show that transformation of is not linear.    Recall that was defined by We evaluate at : Since , is not linear.   "
 },
@@ -2588,7 +2768,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-matrixtran",
   "type": "Theorem",
-  "number": "2.5.12",
+  "number": "2.6.12",
   "title": "",
   "body": "  Let be an matrix. Define by . Then is a linear transformation.    Let and be vectors in , and let be a scalar. By properties of matrix multiplication we have:  Therefore is a linear transformation.   "
 },
@@ -2597,7 +2777,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-lineartrans2",
   "type": "Example",
-  "number": "2.5.13",
+  "number": "2.6.13",
   "title": "",
   "body": "  Let be a linear transformation induced by    Find and .    Find the image of .         is a matrix, so for the expression to make sense, has to be a vector. Thus, the domain of is ( ). The product is a vector. The codomain of is ( ). By , the image of consists of images of all individual vectors in under .  Every vector in can be written as for some real numbers and . Consider the image of : This shows that the range, or the image, of consists of all linear combinations of the columns of . In other words, the image of is the span of vectors and . The two vectors are not scalar multiples of each other, therefore they span a plane in .   "
 },
@@ -2606,7 +2786,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-lineartrans3",
   "type": "Example",
-  "number": "2.5.14",
+  "number": "2.6.14",
   "title": "",
   "body": "  Let be a linear transformation induced by    Find and .    Find and draw the image of .       For part : and .  For : To find the image of , we will take a slightly different approach from what we did in .  Let be an arbitrary vector of . The image of is given by This shows that the image of every vector in is a scalar multiple of . This means that the image of is a line in .   Line generated is graphed     "
 },
@@ -2615,7 +2795,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-lin2",
   "type": "Definition",
-  "number": "2.5.15",
+  "number": "2.6.15",
   "title": "",
   "body": "  Let and be subspaces of and . Let be a transformation. We call  linear transformation if for all vectors and in , and scalars , the following two rules hold:     "
 },
@@ -2624,7 +2804,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-subspacetransex1",
   "type": "Example",
-  "number": "2.5.16",
+  "number": "2.6.16",
   "title": "",
   "body": "  Let be a subspace of consisting of all vectors in the -plane. Let be a subspace of consisting of all vectors along the -axis. Do a quick verification that and are subspaces of . Define a transformation by Show that is a linear transformation, and describe its action geometrically.    Consider two arbitrary elements and of . Verification of the fact that is similar, and we omit the details.  We have shown that is a linear transformation. maps all vectors in the -plane to the -axis. The following diagram helps us visualize the action of on a specific vector.   [1,2,0] acted on by T    We can investigate further. Recall that is defined by Next, we ask you to consider the diagram below and try solve the following problem.        Choose the proper answer for each of the statements below.   Is the image of the line under a line, a plane, the zero vector or all of ?    is the image of the orange part of the domain (the front triangle) the positive -axis, the negative -axis, the zero vector or the entire -axis?    is the image of the purple part of the domain (the back triangle) the positive -axis, the negative -axis, the zero vector or the entire -axis?          The image of the line under is the the zero vector.    The image of the orange part of the domain (the front triangle) is the positive -axis.    The image of the purple part of the domain (the back triangle) is the negative -axis.        "
 },
@@ -2633,7 +2813,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-idtransonrn",
   "type": "Definition",
-  "number": "2.5.18",
+  "number": "2.6.18",
   "title": "",
   "body": "  The identity transformation on , denoted by , is a transformation that maps each element of to itself. In other words, is a transformation such that    "
 },
@@ -2642,7 +2822,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-zerotransonrn",
   "type": "Definition",
-  "number": "2.5.19",
+  "number": "2.6.19",
   "title": "",
   "body": "  The zero transformation , , maps every element of the domain to the zero vector. In other words, is a transformation such that    "
 },
@@ -2651,7 +2831,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-idlintrans",
   "type": "Theorem",
-  "number": "2.5.20",
+  "number": "2.6.20",
   "title": "",
   "body": "  The identity transformation is linear.    Left to the reader. (See )   "
 },
@@ -2660,7 +2840,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-zerolintrans",
   "type": "Theorem",
-  "number": "2.5.21",
+  "number": "2.6.21",
   "title": "",
   "body": "  The zero transformation is linear.    Left to the reader. (See )   "
 },
@@ -2669,7 +2849,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#sum-matrixTrans",
   "type": "Fact",
-  "number": "2.5.22",
+  "number": "2.6.22",
   "title": "",
   "body": "  For a matrix transformation , induced by an matrix we have the following results:    is linear. (Theorem ) This means that for vectors and in and scalars and in .    Columns of are the images of the standard unit vectors of under .      The action of on all of the elements of is completely determined by where maps the standard unit vectors. (See Examples and )      "
 },
@@ -2678,7 +2858,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-imageofatransformation",
   "type": "Example",
-  "number": "2.5.23",
+  "number": "2.6.23",
   "title": "",
   "body": "  Let be a linear transformation. Suppose that the only information we have about this transformation is that Is this information sufficient to determine the image of ?    Observe that We find by using the fact that is linear: Because of properties of linear transformations, the information about the images of the standard unit vectors proved to be sufficient for us to determine the image of .   "
 },
@@ -2687,7 +2867,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-matlin",
   "type": "Theorem",
-  "number": "2.5.24",
+  "number": "2.6.24",
   "title": "",
   "body": "  Let be a linear transformation. Then is a matrix transformation with as a matrix that induces .    Observe that Because is linear, we have Thus, for every in , we have .   "
 },
@@ -2696,7 +2876,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#cor-lintransmattrans",
   "type": "Corollary",
-  "number": "2.5.25",
+  "number": "2.6.25",
   "title": "",
   "body": "  A transformation is a linear transformation if and only if it is a matrix transformation.   "
 },
@@ -2714,7 +2894,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-standardmatoflintrans",
   "type": "Definition",
-  "number": "2.5.26",
+  "number": "2.6.26",
   "title": "",
   "body": "  The matrix in is known as the standard matrix of the linear transformation  .   "
 },
@@ -2723,7 +2903,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-findmatrix2",
   "type": "Example",
-  "number": "2.5.27",
+  "number": "2.6.27",
   "title": "",
   "body": " The standard matrix of a linear transformation such that is   "
 },
@@ -2732,7 +2912,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-findmatrix",
   "type": "Example",
-  "number": "2.5.28",
+  "number": "2.6.28",
   "title": "",
   "body": "  Find the standard matrix of a linear transformation such that and .    We use the images of and as columns of the matrix. The standard matrix of is    "
 },
@@ -2741,7 +2921,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-transNoStBases",
   "type": "Example",
-  "number": "2.5.29",
+  "number": "2.6.29",
   "title": "",
   "body": "  Find the standard matrix of a linear transformation , where     In this example we are not given the images of the standard basis vectors and . However, we can find the images of and by expressing and as linear combinations of and , then apply the fact that is linear. Let's start with the easy one. Therefore, by linearity of , we have: This gives us the first column of the standard matrix for .  You can solve the vector equation to express as a linear combination of and as follows: By linearity of , This gives us the second column of the standard matrix. Putting all of the information together, we get the following standard matrix for :    "
 },
@@ -2750,7 +2930,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-imageofT",
   "type": "Definition",
-  "number": "2.5.30",
+  "number": "2.6.30",
   "title": "",
   "body": "  Let and be vector spaces, and let be a linear transformation. The image of , denoted by , is the set In other words, the image of consists of individual images of all vectors of .   "
 },
@@ -2759,7 +2939,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-image1",
   "type": "Example",
-  "number": "2.5.31",
+  "number": "2.6.31",
   "title": "",
   "body": "  Consider the linear transformation with standard matrix    Find .    Illustrate the action of with a sketch.        : Let then Thus, every element of the image can be written as a linear combination of the columns of . We conclude that Every column of is a scalar multiple of . Thus, The image of is a line in determined by the vector .   : The action of can be illustrated with a sketch.   Image of T graphed     "
 },
@@ -2768,7 +2948,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-image2",
   "type": "Example",
-  "number": "2.5.32",
+  "number": "2.6.32",
   "title": "",
   "body": "  Let be a linear transformation with standard matrix Find and .    As in , the image of is given by This time it is harder to detect the vectors that can be eliminated from the spanning set without affecting the span. We have to rely on the reduced row-echelon form of . We can see that , so . To identify vectors that span , we turn to . We identify the first three columns as pivot columns. These columns are linearly independent and span . Therefore,    "
 },
@@ -2777,7 +2957,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-imagesubspace",
   "type": "Theorem",
-  "number": "2.5.33",
+  "number": "2.6.33",
   "title": "",
   "body": "  Let be a linear transformation. Then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose and are in . Then there are vectors and in such that and . Then This shows that is in . For any scalar , we have: This shows that is in .   "
 },
@@ -2786,7 +2966,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-rankofT",
   "type": "Definition",
-  "number": "2.5.34",
+  "number": "2.6.34",
   "title": "",
   "body": "  The rank of a linear transformation , is the dimension of the image of .    "
 },
@@ -2795,7 +2975,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#form-rankTrankA",
   "type": "Formula",
-  "number": "2.5.35",
+  "number": "2.6.35",
   "title": "",
   "body": "      "
 },
@@ -2804,7 +2984,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-kernel",
   "type": "Definition",
-  "number": "2.5.36",
+  "number": "2.6.36",
   "title": "",
   "body": "  Let and be vector spaces, and let be a linear transformation. The kernel of , denoted by , is the set In other words, the kernel of consists of all vectors of that map to in .   "
 },
@@ -2813,7 +2993,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#ex-kernel",
   "type": "Example",
-  "number": "2.5.37",
+  "number": "2.6.37",
   "title": "",
   "body": "  Let be a linear transformation with standard matrix    Find .    Is a subspace of ? If so, find .        To find the kernel of , we need to find all vectors of that map to in . This amounts to solving the equation . Gauss-Jordan elimination yields: Thus, the kernel of consists of all elements of the form: We conclude that  : Since is the span of two vectors of , we know that is a subspace of . (See .) Observe that the two vectors in the spanning set are linearly independent. (How can we see this without performing computations?) Therefore .   "
 },
@@ -2831,7 +3011,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-kersubspace",
   "type": "Theorem",
-  "number": "2.5.38",
+  "number": "2.6.38",
   "title": "",
   "body": "  Let be a linear transformation, then is a subspace of .    To show that is a subspace, we need to show that is closed under addition and scalar multiplication. Suppose that and are in . Then, This shows that is in . For any scalar we have: This shows that is in .   "
 },
@@ -2840,7 +3020,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#def-nullityT",
   "type": "Definition",
-  "number": "2.5.39",
+  "number": "2.6.39",
   "title": "",
   "body": "  The nullity of a linear transformation , is the dimension of the kernel of .    "
 },
@@ -2849,7 +3029,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#form-nullTnullA",
   "type": "Formula",
-  "number": "2.5.40",
+  "number": "2.6.40",
   "title": "",
   "body": "      "
 },
@@ -2858,7 +3038,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#th-ranknullityforT",
   "type": "Theorem",
-  "number": "2.5.41",
+  "number": "2.6.41",
   "title": "",
   "body": "  Let be a linear transformation. Suppose , then     By , is a subspace of . There exists a basis for of the form . By , is a subspace of . Let be a basis for . We will show that is a basis for . For any vector in , we have: for some scalars  . Thus, By linearity, Therefore is in . Hence there are scalars  such that Thus, We conclude that   Now we need to show that is linearly independent. Suppose Applying to both sides, we get  But for , thus Since is linearly independent, it follows that each . But then implies that . Because is linearly independent, it follows that each . We conclude that is a basis for . Thus,    "
 },
@@ -2867,7 +3047,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-sum",
   "type": "Exercise",
-  "number": "2.5.7.1",
+  "number": "2.6.6.1",
   "title": "",
   "body": "  Show that of holds for vectors and .   "
 },
@@ -2876,7 +3056,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-prob2",
   "type": "Exercise",
-  "number": "2.5.7.2",
+  "number": "2.6.6.2",
   "title": "",
   "body": "  Use a counter-example to prove of .   "
 },
@@ -2885,7 +3065,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-imageoflincomb",
   "type": "Exercise",
-  "number": "2.5.7.3",
+  "number": "2.6.6.3",
   "title": "",
   "body": "  Suppose is a linear transformation such that and . Find the image of .        "
 },
@@ -2894,7 +3074,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-notlinear",
   "type": "Exercise",
-  "number": "2.5.7.4",
+  "number": "2.6.6.4",
   "title": "",
   "body": "  Let be a fixed vector. Define , by .   Describe the effect of this transformation by sketching and for at least four vectors and a fixed vector of your choice.    Is a linear transformation?      "
 },
@@ -2903,7 +3083,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-projectiontrans",
   "type": "Exercise",
-  "number": "2.5.7.5",
+  "number": "2.6.6.5",
   "title": "",
   "body": "  Define , by This transformation is called an orthogonal projection onto the -plane. Show that is a linear transformation.   "
 },
@@ -2912,7 +3092,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-imagesofijk",
   "type": "Exercise",
-  "number": "2.5.7.6",
+  "number": "2.6.6.6",
   "title": "",
   "body": "  Suppose a linear transformation maps Find the image of under .        "
 },
@@ -2921,7 +3101,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-idtrans",
   "type": "Exercise",
-  "number": "2.5.7.7",
+  "number": "2.6.6.7",
   "title": "",
   "body": "  Prove    "
 },
@@ -2930,7 +3110,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-zerotrans",
   "type": "Exercise",
-  "number": "2.5.7.8",
+  "number": "2.6.6.8",
   "title": "",
   "body": "  Prove    "
 },
@@ -2939,7 +3119,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#domaincodomain1",
   "type": "Exercise",
-  "number": "2.5.7.9",
+  "number": "2.6.6.9",
   "title": "",
   "body": "       Domain: , where .  Codomain: , where .   "
 },
@@ -2948,7 +3128,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-domaincodomain2",
   "type": "Exercise",
-  "number": "2.5.7.10",
+  "number": "2.6.6.10",
   "title": "",
   "body": "      "
 },
@@ -2957,7 +3137,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-evaluateT",
   "type": "Exercise",
-  "number": "2.5.7.11",
+  "number": "2.6.6.11",
   "title": "",
   "body": "  Suppose that a linear transformation is such that Find .        "
 },
@@ -2966,7 +3146,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-standardmatrix",
   "type": "Exercise",
-  "number": "2.5.7.12",
+  "number": "2.6.6.12",
   "title": "",
   "body": "  Suppose that a linear transformation is such that . Find the standard matrix of .        "
 },
@@ -2975,7 +3155,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-standardmatrix1",
   "type": "Exercise",
-  "number": "2.5.7.13",
+  "number": "2.6.6.13",
   "title": "",
   "body": "   doubles the component of every vector and triples the component.        "
 },
@@ -2984,7 +3164,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-standardmatrix2",
   "type": "Exercise",
-  "number": "2.5.7.14",
+  "number": "2.6.6.14",
   "title": "",
   "body": "   reverses the direction of each vector.        "
 },
@@ -2993,7 +3173,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-standardmatrix5",
   "type": "Exercise",
-  "number": "2.5.7.15",
+  "number": "2.6.6.15",
   "title": "",
   "body": "   doubles the length of each vector.        "
 },
@@ -3002,7 +3182,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-standardmatrix3",
   "type": "Exercise",
-  "number": "2.5.7.16",
+  "number": "2.6.6.16",
   "title": "",
   "body": "   projects each vector onto the -axis. (e.g. ).        "
 },
@@ -3011,7 +3191,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-standardmatrix4",
   "type": "Exercise",
-  "number": "2.5.7.17",
+  "number": "2.6.6.17",
   "title": "",
   "body": "   projects each vector onto the -axis. (e.g. )        "
 },
@@ -3020,7 +3200,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#imagerankoflintrans1",
   "type": "Exercise",
-  "number": "2.5.7.18",
+  "number": "2.6.6.18",
   "title": "",
   "body": "   ,               is a line in .   (T)    .       .       is a plane in .          "
 },
@@ -3029,7 +3209,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-imagerankoflintrans2",
   "type": "Exercise",
-  "number": "2.5.7.19",
+  "number": "2.6.6.19",
   "title": "",
   "body": "   ,        .       is a line in .   (T)    is a line in .       .       is a plane in .   (T)    .   "
 },
@@ -3038,7 +3218,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-sametrans",
   "type": "Exercise",
-  "number": "2.5.7.20",
+  "number": "2.6.6.20",
   "title": "",
   "body": "  Suppose linear transformations and are such that Does this mean that and are the same transformation? Justify your claim.   "
 },
@@ -3047,7 +3227,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#kerandnullityT1",
   "type": "Exercise",
-  "number": "2.5.7.21",
+  "number": "2.6.6.21",
   "title": "",
   "body": "   ,        .       .       .       is a plane in .       is a line in .          "
 },
@@ -3056,7 +3236,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-kerandnullityT2",
   "type": "Exercise",
-  "number": "2.5.7.22",
+  "number": "2.6.6.22",
   "title": "",
   "body": "   ,        .       .       is a line in .          "
 },
@@ -3065,7 +3245,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-kerandnullityT3",
   "type": "Exercise",
-  "number": "2.5.7.23",
+  "number": "2.6.6.23",
   "title": "",
   "body": "   ,        is a plane in .       is a line in .       is a line in .       .       .       .   "
 },
@@ -3074,7 +3254,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-ranknullityT4",
   "type": "Exercise",
-  "number": "2.5.7.24",
+  "number": "2.6.6.24",
   "title": "",
   "body": "  Suppose a linear transformation is such that is a plane in . What is the rank and nulity of ?         "
 },
@@ -3083,7 +3263,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-ranknullityT5",
   "type": "Exercise",
-  "number": "2.5.7.25",
+  "number": "2.6.6.25",
   "title": "",
   "body": "  Suppose a linear transformation is such that for all in . What is the rank and nulity of ?         "
 },
@@ -3092,7 +3272,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-findimkergivenrref",
   "type": "Exercise",
-  "number": "2.5.7.26",
+  "number": "2.6.6.26",
   "title": "",
   "body": "  Let be a linear transformation with standard matrix Find and if the reduced row-echelon form of is    "
 },
@@ -3101,7 +3281,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-findimageandkernellintrans",
   "type": "Exercise",
-  "number": "2.5.7.27",
+  "number": "2.6.6.27",
   "title": "",
   "body": "  Let and let be a linear transformation defined by . Find and .   "
 },
@@ -3110,7 +3290,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Linear-Transformations.html#prob-ranknullitytrans",
   "type": "Exercise",
-  "number": "2.5.7.28",
+  "number": "2.6.6.28",
   "title": "",
   "body": "  Suppose a linear transformation is induced by a matrix . Let be a linear transformation induced by . Find , if . Prove your claim.   "
 },
