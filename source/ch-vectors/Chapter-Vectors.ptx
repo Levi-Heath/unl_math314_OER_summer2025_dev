@@ -77,6 +77,7 @@
 <xi:include href="Section-Linear-Combination-Equations-and-Span.ptx"/>
 <xi:include href="Section-Matrix-Equations.ptx"/>
 <xi:include href="Section-Homogeneous-Linear-Systems.ptx"/>
+<xi:include href="Section-Matrix-Transformations.ptx"/>
 <xi:include href="Section-Linear-Transformations.ptx"/>
   
 </chapter>
