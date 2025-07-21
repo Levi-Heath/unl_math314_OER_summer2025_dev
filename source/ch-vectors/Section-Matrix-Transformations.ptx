@@ -456,9 +456,9 @@ T(\mathbf{v}+\mathbf{w})=T(\mathbf{v})+T(\mathbf{w})
 </p>
 
 <p>
-In general, any transformation that satisfies <xref ref="matrixTransProp1"/> and <xref ref="matrixTransProp2"/> is called a <term>linear transformation</term>. 
- As we have just seen, all matrix transformations are linear.
-We will study linear transformations in depth later in this chapter.
+    In general, any transformation that satisfies <xref ref="matrixTransProp1"/> and <xref ref="matrixTransProp2"/> is called a <term>linear transformation</term>. 
+    As we have just seen, all matrix transformations are linear.
+    We will study linear transformations more in the next section and revisit them throughout the text.
 </p>
 </subsection>
 
@@ -613,6 +613,47 @@ Now, <xref ref="ex-imageOfBasisVectors"/> illustrates that a matrix transformati
 by where it maps the standard unit vectors.  This is true because we can express every vector <m>\mathbf{v}</m> in <m>\R^n</m> as a linear combination of the 
 standard unit vectors, then use <xref ref="matrixTransProp1"/> and <xref ref="matrixTransProp2"/> to find the image of <m>\mathbf{v}</m>.  
 </p>
+
+<p>
+    Recall in <xref ref="Section-Matrix-Equations"/> we defined the identity matrix <m>I_n</m> as the <m>n\times n</m> matrix whose <m>j^{th}</m> column is the standard unit vector <m>\mathbf{e}_j</m>.
+    The identity matrix induces a matrix transformation <m>T:\R^n\longrightarrow\R^n</m> such that <m>T(\mathbf{e}_j)=\mathbf{e}_j</m> for all <m>j=1,\ldots,n</m>.  
+    This transformation maps every vector in <m>\R^n</m> to itself. 
+    For this reason, we call it the <term>identity transformation</term>.
+</p>
+
+<example>
+    <statement>
+        <p>
+            Let <m>T:\R^3\longrightarrow\R^3</m> be the identity transformation, defined by <m>T(\mathbf{x})=I_3\mathbf{x}</m>.
+            Find <m>T\left(\begin{bmatrix}1\\2\\3\end{bmatrix}\right)</m>.
+        </p>
+    </statement>
+    <answer>
+        <p>
+            Observe:
+            <md>
+                <mrow> 
+                    T\left(\begin{bmatrix}1\\2\\3\end{bmatrix}\right) \amp = 
+                        \begin{bmatrix}
+                            1\amp 0\amp 0\\
+                            0\amp 1\amp 0\\
+                            0\amp 0\amp 1
+                        \end{bmatrix}
+                        \begin{bmatrix}1\\2\\3\end{bmatrix}
+                </mrow>
+                <mrow> 
+                    \amp = 1\begin{bmatrix}1\\0\\0\end{bmatrix}
+                        + 2\begin{bmatrix}0\\1\\0\end{bmatrix}
+                        + 3\begin{bmatrix}0\\0\\1\end{bmatrix}
+                </mrow>
+                <mrow> 
+                    \amp = \begin{bmatrix}1\\2\\3\end{bmatrix}.
+                </mrow>
+            </md>
+        </p>
+    </answer>
+</example>
+
 </subsection>
 
 
