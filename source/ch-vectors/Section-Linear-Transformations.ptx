@@ -448,7 +448,7 @@ By <xref ref="lintranscombinedprop"/> we have:
 <observation xml:id="basisIsSufficient">
 <statement>
 <p>
-In <xref ref="ex-lintransfirst"/> we were given the images of two vectors, <m>[1,2]</m> and <m>[0,-1]</m>, under a linear transformation <m>T</m>. 
+    In <xref ref="ex-lintransfirst"/> we were given the images of two vectors, <m>[1,2]</m> and <m>[0,-1]</m>, under a linear transformation <m>T</m>. 
 </p>
 
 <p>
@@ -959,9 +959,8 @@ Thus, for every <m>\mathbf{x}</m> in <m>\R^n</m>, we have <m>T(\mathbf{x})=A\mat
 </corollary>  
 
 <p>
-The results of this section rely on the fact that every vector of <m>\R^n</m> can be written as a unique linear combination of the standard unit vectors <m>\mathbf{e}_1,\mathbf{e}_2,\dots,\mathbf{e}_n</m>.  
-These vectors form the <term>standard basis</term> for <m>\R^n</m>. Later on, when we encounter transformations of arbitrary bases, we will observe that the matrix used to represent a linear transformation 
-depends on a choice of basis.  Since we are using the standard basis, it is natural to name the matrix in <xref ref="th-matlin"/> accordingly.
+    The results of this section rely on the fact that every vector of <m>\R^n</m> can be written as a unique linear combination of the standard unit vectors <m>\mathbf{e}_1,\mathbf{e}_2,\dots,\mathbf{e}_n</m>.  
+    Since we are using the standard unit vectors, it is natural to name the matrix in <xref ref="th-matlin"/> accordingly.
 </p>
 
 
@@ -1015,7 +1014,7 @@ depends on a choice of basis.  Since we are using the standard basis, it is natu
     </statement>
     <answer>
         <p>
-            In this example we are not given the images of the standard basis vectors <m>\mathbf{i}</m> and <m>\mathbf{j}</m>.  However, we can find the images of <m>\mathbf{i}</m> and <m>\mathbf{j}</m> by expressing <m>\mathbf{i}</m> and <m>\mathbf{j}</m> as linear combinations of <m>[3,1]</m> and <m>[-2,0]</m>, then apply the fact that <m>T</m> is linear.
+            In this example we are not given the images of the standard unit vectors <m>\mathbf{i}</m> and <m>\mathbf{j}</m>.  However, we can find the images of <m>\mathbf{i}</m> and <m>\mathbf{j}</m> by expressing <m>\mathbf{i}</m> and <m>\mathbf{j}</m> as linear combinations of <m>[3,1]</m> and <m>[-2,0]</m>, then apply the fact that <m>T</m> is linear.
 
 Let's start with the easy one.  
 
@@ -1060,8 +1059,259 @@ This gives us the second column of the standard matrix.  Putting all of the info
     </answer>
 </example>
 
+</subsection>
 
 
+
+<subsection xml:id="Subsection-Injective-and-Surjective-Linear-Transformations">
+    <title>Injective and Surjective Linear Transformations</title>
+
+    <p>
+        Given a linear transformation <m>T:\R^n\rightarrow \R^m</m>, we may ask the following questions:
+        <ol>
+            <li>
+                Given a vector <m>\mathbf{b}</m> in <m>\R^m</m> such that <m>T(\mathbf{x})=\mathbf{b}</m> 
+                for some <m>\mathbf{x}</m> in <m>\R^n</m>,  is <m>\mathbf{x}</m> unique?
+            </li>
+            <li>
+                Does every vector <m>\mathbf{b}</m> in <m>\R^m</m> have a pre-image in <m>\R^n</m> under <m>T</m>?
+            </li>
+        </ol>
+    </p>
+
+    <p>
+        The first question leads us to the concept of <term>injective</term> or <term>one-to-one</term> transformations.  The second question leads us to the concept of <term>one-to-one</term> transformations.  
+    </p>
+
+<definition xml:id="def-onetoone">
+    <statement>
+        <p>
+            A linear transformation <m>T:\R^n\rightarrow \R^m</m> is <term>injective</term> or sometimes called <term>one-to-one</term> 
+            if for every <m>\mathbf{b}</m> in <m>\R^m</m> is the image of at most one vector <m>\mathbf{x}</m> in <m>\R^n</m> under <m>T</m>.  In other words,
+            <me>
+                T(\mathbf{x}_1)=T(\mathbf{x}_2)\quad \text{implies that}\quad \mathbf{x}_1=\mathbf{x}_2.
+            </me>
+        </p>
+    </statement>
+</definition> 
+
+
+<example xml:id="ex-notonetoone">
+    <statement>
+        <p>
+            Determine if the transformation <m>T:\R^2\to\R^2</m> defined by
+            <me>
+                T(\mathbf{x})=\begin{bmatrix} 1\amp 1\\ 2\amp 2\end{bmatrix}\mathbf{x}
+            </me>
+            is injective.
+       </p>
+    </statement>
+    <answer>
+        <p>
+            This transformation is not injective. We can use any two vectors of the form <m>\begin{bmatrix}k\\-k\end{bmatrix}</m> to make our case.  
+            <me>
+                T\left(\begin{bmatrix}1\\-1\end{bmatrix}\right)=\mathbf{0}=T\left(\begin{bmatrix}-2\\2\end{bmatrix}\right)\quad \text{but}\quad\begin{bmatrix}1\\-1\end{bmatrix}\neq \begin{bmatrix}-2\\2\end{bmatrix}.
+            </me>
+            In other words, we have more than one vector that maps to the zero vector.
+       </p>
+    </answer>
+</example>
+
+<example xml:id="ex-onetoone1">
+    <p>
+        Consider the transformation <m>T:\R^2\to\R^3</m> with standard matrix
+        <me>
+            A = \begin{bmatrix}1\amp 0\\0\amp 1\\2\amp 0\end{bmatrix}.
+        </me>
+        Is <m>T</m> injective?
+    </p>
+    <answer>
+        <p>
+    Suppose
+
+    <me>
+        T\left(\begin{bmatrix}x_1\\x_2\end{bmatrix}\right)=T\left(\begin{bmatrix}y_1\\y_2\end{bmatrix}\right)
+    </me>
+
+    Then
+
+    <me>
+        \begin{bmatrix}1\amp 0\\0\amp 1\\2\amp 0\end{bmatrix}\begin{bmatrix}x_1\\x_2\end{bmatrix}=\begin{bmatrix}1\amp 0\\0\amp 1\\2\amp 0\end{bmatrix}\begin{bmatrix}y_1\\y_2\end{bmatrix}.
+    </me>
+
+
+    <me>
+        x_1\begin{bmatrix}1\\0\\2\end{bmatrix}+x_2\begin{bmatrix}0\\1\\0\end{bmatrix}=y_1\begin{bmatrix}1\\0\\2\end{bmatrix}+y_2\begin{bmatrix}0\\1\\0\end{bmatrix}.
+    </me>
+
+
+    <me>
+        (x_1-y_1)\begin{bmatrix}1\\0\\2\end{bmatrix}+(x_2-y_2)\begin{bmatrix}0\\1\\0\end{bmatrix}=\mathbf{0}.
+    </me>
+
+    It is clear that <m>\begin{bmatrix}1\\0\\2\end{bmatrix}</m> and <m>\begin{bmatrix}0\\1\\0\end{bmatrix}</m> are linearly independent.  Therefore, we must have <m>x_1-y_1=0</m> and <m>x_2-y_2=0</m>.  But then <m>x_1=y_1</m> and <m>x_2=y_2</m>, so 
+
+    <me>
+        \begin{bmatrix}x_1\\x_2\end{bmatrix}=\begin{bmatrix}y_1\\y_2\end{bmatrix}.
+    </me>
+
+        </p>
+    </answer>
+</example>
+
+<p>
+    The second question leads us to another concept: <term>surjective</term> or <term>onto</term> transformations.  A linear transformation is onto if every element of the codomain is an image of some element of the domain.
+</p>
+
+<definition xml:id="def-onto">
+    <statement>
+        <p>
+            A linear transformation <m>T:\R^n\rightarrow \R^m</m> is <term>surjective</term>, or sometimes called <term>onto</term>, 
+            if every vector <m>\mathbf{b}</m> in <m>\R^m</m> is the image of some vector <m>\mathbf{x}</m> in <m>\R^n</m>. 
+            That is, for each <m>\mathbf{b}</m> in <m>\R^m</m>, there exists an <m>\mathbf{x}</m> in <m>\R^n</m> such that <m>T(\mathbf{x})=\mathbf{b}</m>.
+        </p>
+    </statement>
+</definition>
+
+
+<p> 
+    Let's illustrate the concept of surjective transformations with a few examples.
+</p> 
+
+<example xml:id="ex-notonto2">
+    <statement>
+        <p>
+            The transformation in <xref ref="ex-onetoone1"/> is not onto.
+       </p>
+    </statement>
+    <answer>
+        <p>
+            No element of <m>\R^2</m> maps to <m>\begin{bmatrix}1\\1\\1\end{bmatrix}</m>.
+       </p>
+    </answer>
+</example>
+
+<example xml:id="ex-onto1">
+    <statement>
+        <p>
+            Determine if the linear transformation <m>T:\R^2\rightarrow \R^2</m> whose standard matrix is 
+            <me>
+                A=\begin{bmatrix}1\amp 0\\2\amp 1\end{bmatrix}
+            </me>
+            is surjective.
+       </p>
+    </statement>
+    <answer>
+        <p>
+            Let <m>\mathbf{b}</m> be an element of the codomain (<m>\R^2</m>).  We need to find <m>\mathbf{x}</m> in the domain (<m>\R^2</m>) such that <m>T(\mathbf{x})=\mathbf{b}</m>. 
+Observe that <m>A</m> is invertible, and 
+<me>
+    A^{-1}=\begin{bmatrix}1\amp 0\\-2\amp 1\end{bmatrix}.
+</me>
+
+ Let <m>\mathbf{x}=\begin{bmatrix}1\amp 0\\-2\amp 1\end{bmatrix}\mathbf{b}</m>, then 
+ 
+<me>
+    T(\mathbf{x})=\begin{bmatrix}1\amp 0\\2\amp 1\end{bmatrix}\left(\begin{bmatrix}1\amp 0\\-2\amp 1\end{bmatrix}\mathbf{b}\right)=I\mathbf{b}=\mathbf{b}.
+</me>
+       </p>
+    </answer>
+</example>
+
+<example xml:id="ex-onto2">
+    <statement>
+        <p>
+            Prove that the linear transformation <m>T:\R^3\rightarrow \R^2</m> induced by 
+<me>
+    A=\begin{bmatrix}1\amp 1\amp -1\\2\amp 3\amp -1\end{bmatrix}
+</me>
+ is onto.
+       </p>
+    </statement>
+    <answer>
+        <p>
+            Let <m>\mathbf{b}</m> be an element of <m>\R^2</m>.  We need to show that there exists <m>\mathbf{x}</m> in <m>\R^3</m> such that <m>T(\mathbf{x})=A\mathbf{x}=\mathbf{b}</m>. 
+Observe that
+ 
+<me>
+    \mbox{rref}(A)=\begin{bmatrix}1 \amp  0 \amp  -2\\0 \amp  1 \amp  1\end{bmatrix}.
+</me>
+
+ This means that <m>A\mathbf{x}=\mathbf{b}</m> has a solution (in fact, it has infinitely many solutions) for every <m>\mathbf{b}</m> in <m>\R^2</m>.  Therefore every <m>\mathbf{b}</m> in <m>\R^2</m> is an image of some <m>\mathbf{x}</m> in <m>\R^3</m>. We conclude that <m>T</m> is onto.
+       </p>
+    </answer>
+</example>
+
+<example xml:id="ex-subtosub">
+    <statement>
+        <p>
+            Let 
+<me>
+    V=\text{span}\left(\begin{bmatrix}1\\0\\0\end{bmatrix}, \begin{bmatrix}1\\1\\1\end{bmatrix}\right).
+</me>
+
+Define a linear transformation 
+<me>
+    T:V\rightarrow \R^2
+</me>
+
+by 
+<me>
+    T\left(\begin{bmatrix}1\\0\\0\end{bmatrix}\right)=\begin{bmatrix}1\\1\end{bmatrix}\quad \text{and} \quad T\left(\begin{bmatrix}1\\1\\1\end{bmatrix}\right)=\begin{bmatrix}0\\1\end{bmatrix}.
+</me>
+
+Show that <m>T</m> is injective and surjective.
+       </p>
+    </statement>
+    <answer>
+        <p>
+            We will now show that <m>T</m> is injective.  
+Suppose 
+
+<me>
+    T(\mathbf{u})=T(\mathbf{v})
+</me>
+
+for some <m>\mathbf{u}</m> and <m>\mathbf{v}</m> in <m>V</m>. Vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m> are in the span of <m>\begin{bmatrix}1\\0\\0\end{bmatrix}</m> and <m>\begin{bmatrix}1\\1\\1\end{bmatrix}</m>, so
+
+
+<me>
+    \mathbf{u}=a\begin{bmatrix}1\\0\\0\end{bmatrix}+b\begin{bmatrix}1\\1\\1\end{bmatrix}\quad\text{and}\quad \mathbf{v}=c\begin{bmatrix}1\\0\\0\end{bmatrix}+d\begin{bmatrix}1\\1\\1\end{bmatrix}
+</me>
+
+for some scalars <m>a, b, c, d</m>.
+
+
+<md>
+<mrow>    T(\mathbf{u}) \amp =aT\left(\begin{bmatrix}1\\0\\0\end{bmatrix}\right)+bT\left(\begin{bmatrix}1\\1\\1\end{bmatrix}\right)  =a\begin{bmatrix}1\\1\end{bmatrix}+b\begin{bmatrix}0\\1\end{bmatrix}  =\begin{bmatrix}a\\a+b\end{bmatrix}, </mrow> 
+<mrow>    T(\mathbf{v}) \amp =cT\left(\begin{bmatrix}1\\0\\0\end{bmatrix}\right)+dT\left(\begin{bmatrix}1\\1\\1\end{bmatrix}\right)  =c\begin{bmatrix}1\\1\end{bmatrix}+d\begin{bmatrix}0\\1\end{bmatrix}  =\begin{bmatrix}c\\c+d\end{bmatrix}. </mrow>
+</md>
+
+Thus,
+
+<me>
+    \begin{bmatrix}a\\a+b\end{bmatrix}=\begin{bmatrix}c\\c+d\end{bmatrix}.
+</me>
+
+This implies that <m>a=c</m> which, in turn, implies <m>b=d</m>.  This gives us <m>\mathbf{u}=\mathbf{v}</m>, and we conclude that <m>T</m> is injective.
+</p>
+
+<p> 
+Next we will show that <m>T</m> is onto.  
+The key observation is that vectors <m>[1,1]</m> and <m>[0,1]</m> span <m>\R^2</m>. This means that given a vector <m>\mathbf{v}</m> in <m>\R^2</m>, we can write <m>\mathbf{v}</m> as 
+<me>
+\mathbf{v}=a\begin{bmatrix}1\\1\end{bmatrix}+b\begin{bmatrix}0\\1\end{bmatrix}.
+</me> 
+
+But this means that 
+<m>
+\mathbf{v}=T\left(a\begin{bmatrix}1\\0\\0\end{bmatrix}+b\begin{bmatrix}1\\1\\1\end{bmatrix}\right).
+</m> 
+
+We conclude that <m>T</m> is onto.
+       </p>
+    </answer>
+</example>
 </subsection>
 
 
@@ -1310,6 +1560,69 @@ This transformation is called an <term>orthogonal projection</term> onto the <m>
     </exercisegroup> 
     
 
+    <!--Injective and Surjective exercises start here-->
+
+
+    <exercise xml:id="prob-injandsurj1">
+        <statement>
+            <p>
+                Show that a linear transformation <m>T:\R^2\rightarrow \R^2</m> with standard matrix 
+                <me>
+                A=\begin{bmatrix}2\amp -4\\-3\amp 6\end{bmatrix}
+                </me>
+                
+                is not injective.
+            </p>
+        </statement>
+
+    <hint>
+        <p>
+            Show that multiple vectors map to <m>\mathbf{0}</m>.
+        </p>
+    </hint>
+    </exercise>
+    
+    <exercise xml:id="prob-injandsurj2">
+        <statement>
+            <p>
+                Show that a linear transformation <m>T:\R^2\rightarrow \R^3</m> with standard matrix 
+            <me>
+            A=\begin{bmatrix}1\amp 2\\-1\amp 1\\0\amp 1\end{bmatrix}
+            </me>
+            
+            is not surjective.
+            </p>
+        </statement>
+
+        <hint>
+        <p>
+        Find <m>\mathbf{b}</m> such that <m>A\mathbf{x}=\mathbf{b}</m> has no solutions.
+        </p>
+        </hint>
+    </exercise>
+    
+    <exercise xml:id="prob-injandsurj3">
+        <statement>
+            <p>
+                Suppose that a linear transformation <m>T:\R^3\rightarrow \R^3</m> has a standard matrix <m>A</m> such that <m>\text{rref}(A)=I</m>.
+    
+    Prove that <m>T</m> is injective and surjective
+            </p>
+        </statement>
+
+        <hint>
+            <p>
+        For the injective verification, does <m>A\mathbf{x}=\mathbf{b}</m> have a solution for every <m>\mathbf{b}</m>?  
+            </p>
+        </hint>
+
+        <hint>
+            <p>
+        For the surjective verification, how many solutions does <m>A\mathbf{x}=\mathbf{b}</m> have?
+            </p>
+        </hint>
+
+    </exercise>
 
 
 </exercises>
