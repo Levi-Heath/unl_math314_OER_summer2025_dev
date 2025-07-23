@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="question example-like"><h4 class="heading">
+<span class="type">Question</span><span class="space"> </span><span class="codenumber">2.6.28</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(T\)</span> be a linear transformation from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span> with standard matrix <span class="process-math">\(A\text{.}\)</span> So, <span class="process-math">\(T(\mathbf{x})=A\mathbf{x}\)</span> for all <span class="process-math">\(\mathbf{x}\in\R^n\text{.}\)</span> We now turn our attention to the following questions:</div>
+<ol class="decimal" id="question-injectivesurjective-1-1-7">
+<li><div class="para">What are the conditions on <span class="process-math">\(A\)</span> that guarantee that <span class="process-math">\(T\)</span> is injective?</div></li>
+<li><div class="para">What are the conditions on <span class="process-math">\(A\)</span> that guarantee that <span class="process-math">\(T\)</span> is surjective?</div></li>
+</ol>
+</div>
+<div class="solutions"><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para">To answer the first question, we need to find conditions on <span class="process-math">\(A\)</span> that ensure that the solution to the matrix equation <span class="process-math">\(A\mathbf{x}=\mathbf{b}\)</span> has at most one solution. This is equivalent to saying the RREF of the augmented matrix <span class="process-math">\(\left[A|\mathbf{b}\right]\)</span> has no free variables or that the RREF of <span class="process-math">\(A\)</span> has a pivot in every column. Recall that if <span class="process-math">\(A\)</span> has a pivot in every column, then the columns of <span class="process-math">\(A\)</span> are linearly independent. Notice this was exactly the condition we used in <a href="Section-Linear-Transformations.html#ex-onetoone1" class="xref" data-knowl="./knowl/xref/ex-onetoone1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.6.25">Example 2.6.25</a> to show that the transformation was injective.</div>
+<div class="para">Now to answer the second question. We need to find conditions on <span class="process-math">\(A\)</span> that ensure that the matrix equation <span class="process-math">\(A\mathbf{x}=\mathbf{b}\)</span> has a solution for every <span class="process-math">\(\mathbf{b}\)</span> in <span class="process-math">\(\R^m\text{.}\)</span> We need at least one solution, so it will be okay if there are infinitely many solutions. Meaning, the condition will be different from our answer to <a href="Section-Linear-Transformations.html#item-when-injective" class="xref" data-knowl="./knowl/xref/item-when-injective.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a>. So, how do we guarantee that the matrix equation <span class="process-math">\(A\mathbf{x}=\mathbf{b}\)</span> always has a solution for every <span class="process-math">\(\mathbf{b}\text{?}\)</span> Well, the only time we could have no solution is when the RREF of the augmented matrix <span class="process-math">\(\left[A|\mathbf{b}\right]\)</span> has a row of the form <span class="process-math">\([0\ 0\ \dots\ 0\ | 1]\text{.}\)</span> To prevent this from happening, we need to ensure that the RREF of <span class="process-math">\(A\)</span> has a pivot in every row.</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="Section-Linear-Transformations.html#question-injectivesurjective">in-context</a></span>
+</body>
+</html>
