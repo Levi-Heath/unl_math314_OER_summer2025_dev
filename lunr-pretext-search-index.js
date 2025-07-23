@@ -4528,18 +4528,18 @@ var ptx_lunr_docs = [
   "body": "  Consider the stochastic matrix where and .   Show that is the steady-state vector for .    Show that converges to the matrix by first verifying inductively that for (it can be shown that the sequence of powers of any regular transition matrix converges to the matrix each of whose columns equals the steady-state vector for ).       Since and we get whence . Finally, , so converges to zero as increases.   "
 },
 {
-  "id": "Section--m-mathbb-R",
+  "id": "Section-Intro-to-Vector-Spaces",
   "level": "1",
-  "url": "Section--m-mathbb-R.html",
+  "url": "Section-Intro-to-Vector-Spaces.html",
   "type": "Section",
   "number": "4.1",
-  "title": "<span class=\"process-math\">\\(\\mathbb{R}^n\\)<\/span> and subspaces of <span class=\"process-math\">\\(\\R^n\\)<\/span>",
-  "body": "  and subspaces of   We are familiar with two operations that can be applied to vectors in , namely, addition of vectors and scalar multiplication. We learned that addition and scalar multiplication satisfy many nice properties (see ). These properties give an algebraic structure.  We begin this section by introducing another property, called closure . Adding closure to the properties we studied earlier allows us to show that satisfies all of the properties of a vector space .   Closure    A set is said to be closed under addition if for each element and the sum is also in .      A set is said to be closed under scalar multiplication if for each element and for each scalar the product is also in .    A few examples to warm up to the concepts will be given.   Let be the set of positive even integers. Then is closed under addition, because the sum of two even integers is again an even integer.    Let be the set of positive odd integers. Then is not closed under addition, for the sum of two odd integers need not be an odd integer (in fact, it will always be even).     Let be defined as the set of vectors in in the first quadrant (or on an axis on the boundary of the first quadrant). Written in symbols: Show that is closed under addition, but is not closed under scalar multiplication.    Suppose and are in . This means that . But then we have . Therefore is also in . We conclude that is closed under addition. is not closed under scalar multiplication because is not in .The figure below helps us see that the sum of any two vectors in also lies in .   X1 Sum Example graphed    The next picture pictures how negative multiples of a vector does not list in .   X1 Scalar Example graphed       Let be as in . Let In other words, is the set of vectors in in the third quadrant (or on an axis on the boundary of the third quadrant). Let consist of and combined. In other words, is the set of vectors in that are either in the first quadrant, the third quadrant, or lie along one of the axes, as shown below.   Y pictured    Then is closed under scalar multiplication, but is not closed under addition.     as a Vector Space  In we learned that vector addition and scalar multiplication in satisfy the following eight properties:  For all vectors , , , and scalars ,   Commutative Property of Addition: .    Associative Property of Addition: .    Existence of Additive Identity: .    Existence of Additive Inverse: .    Distributive Property over Vector Addition: .    Distributive Property over Scalar Addition: .    Associative Property for Scalar Multiplication: .    Multiplication by : .     In addition, observe that    is closed under addition (Why?)     is closed under scalar multiplication (Why?)   The eight properties of vector operations, together with closure, constitute the criteria for a set with two operations to be considered a vector space . So, is a vector space.  We will encounter other vector spaces later. Any vector space must be closed under both of its operations, and must satisfy the other eight properties in the list above.  In the chapter on abstract vector spaces, we will see that a wide variety of sets with a variety of operations are vector spaces (one important reason to study linear algebra). As we shall see, these sets and their operations may look very different, but the behavior of the elements under the two operations makes them vector spaces. For now, we simply focus on .    Subspaces of  Now that we understand what it means for a set to be closed under addition and scalar multiplication, we are ready for the main definition.    Suppose that is a nonempty subset of that is closed under addition and under scalar multiplication. Then is a subspace of .    We use the term subspace because it turns out that any subset of closed under both addition and scalar multiplication is also a vector space. In other words, by inheriting vector addition and scalar multiplication from , and satisfying the properties of closure, a subset of will automatically satisfy vector space properties. The proof is omitted until reaching abstract vector spaces.    Let be the set of vectors in on the axis. Then is a subspace of .    To verify this, note that any vector in is of the form . If we multiply such a vector by a scalar , we get a vector of the form which is clearly still in . This proves is closed under scalar multiplication. Next, note that so is closed under addition.    Recall that the span of a set of vectors is the set of all linear combinations of those vectors (see ). It is easy to see from this definition, that the span of any set of vectors in must be closed under both addition and scalar multiplication, and therefore the span of those vectors is a subspace of . This argument proves the following result, giving us an abundance of examples of subspaces:    Let be any set of vectors in . Then is a subspace of .    In particular, if we take to be the single vector , we have that is a subspace of . Geometrically, this subspace is a line in the direction of the vector . Similarly, the span of two vectors is a subspace of . If the two vectors are linearly independent, then the subspace is a plane in . Not every line or plane in is a subspace, however. The following important result provides us with a quick way to determine that some subsets are not subspaces.    If is a subspace of , then the zero vector is in .    Take any vector in , and note that is in because is closed under scalar multiplication.    The conclusion of shows that the only lines in that are subspaces are those that pass through the origin. The same holds true for planes and hyperplanes. For example, the plane in is not a subspace of , while any plane containing the origin is a subspace.    If is a subspace of , then for any vector , the opposite vector, , is also in .    The proof is similar to what was done for the previous theorem and is left as an exercise.      Let be the set of all vectors in whose components are non-negative.     Is closed under vector addition?    Yes.      Is closed under scalar multiplication?    No.       Let be the set of all vectors in that lie on either the -axis, the -axis, or the -axis.     Is closed under vector addition?    No.      Is closed under scalar multiplication?    Yes.       For each figure below, determine whether the set of vectors shown in the figure is closed under vector addition and scalar multiplication. Justify your responses.      consists of all vectors in in a slanted half-plane which has the -axis as a boundary.   V graphed as plane    Is closed under scalar multiplication? What about addition?    It is closed under addition but not under scalar multiplication.       consists of all vectors along the line, as shown.   New V graphed as plane    Is closed under scalar multiplication? What about addition?    It is closed under both addition and scalar multiplication.       Prove .      Let be an matrix. Let be the subset of consisting of all vectors such that . Prove that is a subspace of . (Note that this subspace is called the null space of the matrix and we will denote it .)     "
+  "title": "Introduction to Vector Spaces",
+  "body": " Introduction to Vector Spaces  We are familiar with two operations that can be applied to vectors in , namely, addition of vectors and scalar multiplication. We learned that addition and scalar multiplication satisfy many nice properties (see ). These properties give an algebraic structure.  We begin this section by introducing another property, called closure . Adding closure to the properties we studied earlier allows us to show that satisfies all of the properties of a vector space , which we will formally define in this section.   Closure    A set is said to be closed under addition if for each element and the sum is also in .      A set is said to be closed under scalar multiplication if for each element and for each scalar the product is also in .    A few examples to warm up to the concepts will be given.   Let be the set of positive even integers. Then is closed under addition, because the sum of two even integers is again an even integer.    Let be the set of positive odd integers. Then is not closed under addition, for the sum of two odd integers need not be an odd integer (in fact, it will always be even).     Let be defined as the set of vectors in in the first quadrant (or on an axis on the boundary of the first quadrant). Written in symbols: Show that is closed under addition, but is not closed under scalar multiplication.    Suppose and are in . This means that . But then we have . Therefore is also in . We conclude that is closed under addition. is not closed under scalar multiplication because is not in .The figure below helps us see that the sum of any two vectors in also lies in .   X1 Sum Example graphed    The next picture pictures how negative multiples of a vector does not list in .   X1 Scalar Example graphed       Let be as in . Let In other words, is the set of vectors in in the third quadrant (or on an axis on the boundary of the third quadrant). Let consist of and combined. In other words, is the set of vectors in that are either in the first quadrant, the third quadrant, or lie along one of the axes, as shown below.   Y pictured    Then is closed under scalar multiplication, but is not closed under addition.     Properties of Vector Spaces  So, we have now seen that is   closed under vector addition (why?),    closed under scalar multiplication (why?),   and satisfies the following properties:   Commutative Property of Addition:     Associative Property of Addition:     Existence of Additive Identity:     Existence of Additive Inverse:     Distributive Property over Vector Addition:     Distributive Property over Scalar Addition:     Associative Property for Scalar Multiplication:     Multiplication by :        All scalars in this text are assumed to be real numbers. Considering other scalars, such as complex numbers, is interesting and leads to the definition of complex vector spaces . We will not discuss complex vector spaces in this text, but you may encounter them in a future course or your professional career.    In the next two examples we will explore two sets other than endowed with addition and scalar multiplication and satisfying the same properties.   Let be the set of all matrices. Matrix addition and scalar multiplication were defined in chapter . Observe that the sum of two matrices is also an matrix. Likewise, a scalar multiple of an matrix is an matrix. Thus    is closed under matrix addition;     is closed under scalar multiplication.   In addition, and give us the following properties of matrix addition and scalar multiplication. Note that these properties are analogous to the eight vector properties above.   Commutative Property of Addition: .    Associative Property of Addition: .    Existence of Additive Identity: where is the zero matrix.    Existence of Additive Inverse: .    Distributive Property over Matrix Addition: .    Distributive Property over Scalar Addition: .    Associative Property for Scalar Multiplication: .    Multiplication by : .        Consider the set of all linear functions. This set includes all polynomials of degree and degree . We will use addition and scalar multiplication of polynomials as the two operations, and show that is closed under those operations and satisfies eight properties analogous to those of vectors of .    Elements of are functions given by (Note that and can be equal to zero.)  Given and in , it is easy to verify that is also in . This gives us closure under function addition. For any scalar , we have Therefore is in , and is closed under scalar multiplication. We now proceed to formulate eight properties analogous to those of vectors of .  Let , and be elements of given by , , and . Let and be scalars.   Commutative Property of Addition:   This property holds because     Associative property of Addition:   This property is easy to verify and is left to the reader.    Existence of additive identity:   The additive identity is given by . Note that is a vector in the space .    Existence of additive inverse:   The additive inverse of is a function given by . Note that is in .    Distributive Property over Vector Addition:   This property holds because     Distributive property over scalar addition:   This property holds because     Associative property for scalar multiplication:   This property holds because     Multiplication by   This follows from          Definition of a Vector Space  During and show us that there are many times in mathematics when we encounter a set with two operations (that we call addition and scalar multiplication) such that the set is closed under the two operations, and satisfies the same eight properties as . We will refer to such sets as vector spaces .    Let be a nonempty set. Suppose that elements of can be added together and multiplied by scalars. The set , together with operations of addition and scalar multiplication, is called a vector space provided that    is closed under addition,     is closed under scalar multiplication   and the following properties hold for , and in and scalars and :   Commutative Property of Addition:     Associative Property of Addition:\\quad     Existence of Additive Identity:     Existence of Additive Inverse:     Distributive Property over Vector Addition:     Distributive Property over Scalar Addition:     Associative Property for Scalar Multiplication:     Multiplication by :    We will refer to elements of as vectors .    When scalars and in the above definition are restricted to real numbers, as they are in this chapter, vector space may be referred to as a vector space over the real numbers .  We have already encountered two abstract vectors spaces before, viz.:    and are vector spaces (eee and ).   Sets of polynomials provide an important source of examples, so we review some basic facts. A polynomial with real coefficients in is an expression where are real numbers called the coefficients of the polynomial.  If all the coefficients are zero, the polynomial is called the zero polynomial and is denoted simply as .  If , the highest power of with a nonzero coefficient is called the degree of denoted as . The degree of the zero polynomial is not defined.  The coefficient itself is called the leading coefficient of . Hence , , and .  Let denote the set of all polynomials and suppose that are two polynomials in (possibly of different degrees). Then and are called equal (written ) if and only if all the corresponding coefficients are equal--- that is, one has , , , and so on. In particular, means , , , .  The set has an addition and scalar multiplication defined on it as follows: if and are as before and is a real number,   A ton of terminology was just introduced. They are underlined in the example below.     is a vector space.    It is easy to see that the sum of two polynomials is again a polynomial, and that a scalar multiple of a polynomial is a polynomial. Thus, is closed under addition and scalar multiplication. The other eight vector space properties are easily verified, and we conclude that is a vector space.      Let be the set of all degree two polynomials in . In other words, We claim that is not a vector space.    Observe that is not closed under addition. To see this, let and let . Then and are both elements of . However, is not an element of , as it is only a degree one polynomial. We require the coefficient of to be nonzero for a polynomial to be in , and this is not the case for . As an exercise, check the remaining vector space properties one-by-one to see which properties hold and which do not.    Set in is not a vector space, but if we make a slight modification, we can make it into a vector space.   Let be the set of polynomials of degree two or less. In other words, Note that contains the zero polynomial (let ). Unlike set in , is closed under polynomial addition and scalar multiplication. It is easy to verify that all vector space properties hold, so is a vector space.    Let be a natural number. Define to be the set of polynomials of degree or less than , then by reasoning similar to , is a vector space.     Subspaces    A nonempty subset of a vector space is called a subspace of , provided that is itself a vector space when given the same addition and scalar multiplication as .    An example to showcase this is in order.   In we demonstrated that is a vector space. From we know that is a vector space. But is a subset of , and uses the same operations of polynomial addition and scalar multiplication. Therefore is a subspace of .   Checking all ten properties to verify that a subset of a vector space is a subspace can be cumbersome. Fortunately we have the following theorem.   Subspace Test   Let be a nonempty subset of a vector space . If is closed under the operations of addition and scalar multiplication of , then is a subspace of .    To prove that closure is a sufficient condition for to be a subspace, we will need to show that closure under addition and scalar multiplication of guarantees that the remaining eight properties are satisfied automatically.  Observe that , , , , and hold for all elements of . Thus, these properties will hold for all elements of . We say that these properties are inherited from .  To prove we need to show that , which we know to be an element of , is contained in . Let be an element of (recall that is nonempty). We will show that in . Then, by closure under scalar multiplication, we will be able to conclude that must be in . Adding the additive inverse of to both sides gives us Thanks to and . By and  Because is closed under scalar multiplication is in . We know that every element of , being an element of , has an additive inverse in . We need to show that the additive inverse of every element of is contained in . Let be any element of . We will show that is the additive inverse of . Then by closure, will have to be contained in . To show that is the additive inverse of , we must show that . We compute: Thus is the additive inverse of . By closure, is in .    Let us activate the theorem in a couple of examples.    Let be the set of vectors in on the axis. Then is a subspace of .    To verify this, note that any vector in is of the form . If we multiply such a vector by a scalar , we get a vector of the form which is clearly still in . This proves is closed under scalar multiplication. Next, note that so is closed under addition.     Let be a fixed matrix in . Show that the set of all matrices that commute with under matrix multiplication is a subspace of .   The set consists of all matrices such that . First, observe that is not empty because is an element. Now we need to show that is closed under matrix addition and scalar multiplication. Suppose that and lie in . Then and . Then Therefore commutes with . Thus is in . We conclude that is closed under matrix addition. Now suppose is in . Let be a scalar, then Therefore commutes with . We conclude that is in , and is closed under scalar multiplication. Hence is a subspace of .      Suppose is a polynomial and is a number. Then the number obtained by replacing by in the expression for is called the evaluation of at . For example, if , then the evaluation of at is If , the number is called a root of .    To get used to the new terminology, let us look at an example in the context of polynomials.    Consider the set of all polynomials in that have as a root: Show that is a subspace of .    Observe that is not empty because is an element of . Suppose and lie in . Then and . We have for all , so and is closed under addition. The verification that is closed under scalar multiplication is similar.    The following important results provides us with a quick ways to determine that some subsets are not subspaces.    If is a subspace of a vector space , then the zero vector is in .    Take any vector in , and note that is in because is closed under scalar multiplication.    Consider lines in . Applying shows that the only lines in that are subspaces are those that pass through the origin. The same holds true for planes and hyperplanes. For example, the plane in is not a subspace of , while any plane containing the origin is a subspace.    If is a subspace of a vector space , then for any vector , the additive inverse, , is also in .    The proof is similar to what was done for the previous theorem and is left as an exercise.    Linear Combinations and Span  Just as we have seen in , the concepts of linear combinations and span are fundamental in understanding the structure of vector spaces. These concepts will be used extensively in the next section and in the rest of the text.    Let be a vector space and let be vectors in . A vector is said to be a linear combination of vectors if for some scalars .      Let be a vector space and let be vectors in . The set of all linear combinations of is called the span of . We write and we say that vectors  span  . Any vector in is said to be in the span of . The set is called a spanning set for .    We revisit the situation for some specific polynomials.    Consider and in . Determine whether and lie in     For , we want to determine if and exist such that Expanding the right hand side gives us: Combining like terms, we get: Setting this equal to and equating coefficients of powers of gives us a system of equations This system has the solution and , so is indeed in . Turning to , we are looking for and such that Again equating coefficients of powers of gives equations , , and . But in this case there is no solution, so is not in .      Let be a vector space. Let be any subset of . Then is a subspace of .    See .    The theorem above is very useful, as it allows us to conclude that the span of any set of vectors is a subspace of the vector space in which the vectors lie. This is a powerful tool in linear algebra. We can work with spans without having to verify all the properties of a subspace individually.    Verify that every line, plane, and hyperplane through the origin in is a subspace of .    This is a direct consequence of . For example, consider the line through the origin in spanned by the vector . The span of this vector is the set of all scalar multiples of , which is a subspace of . Similarly, any plane or hyperplane through the origin can be expressed as the span of two or more vectors, respectively, and thus is also a subspace.         Let be the set of all vectors in whose components are non-negative.     Is closed under vector addition?    Yes.      Is closed under scalar multiplication?    No.       Let be the set of all vectors in that lie on either the -axis, the -axis, or the -axis.     Is closed under vector addition?    No.      Is closed under scalar multiplication?    Yes.       For each figure below, determine whether the set of vectors shown in the figure is closed under vector addition and scalar multiplication. Justify your responses.      consists of all vectors in in a slanted half-plane which has the -axis as a boundary.   The graph of , a (half) plane in bounded by a line.    Is closed under scalar multiplication? What about addition?    It is closed under addition but not under scalar multiplication.       consists of all vectors along the line, as shown.   The graph of the line .    Is closed under scalar multiplication? What about addition?    It is closed under both addition and scalar multiplication.         Is the set of all points in a vector space under the given definitions of addition and scalar multiplication? In each case be specific about which vector space properties hold and which properties fail.     Addition: and scalar Multiplication:       Addition: and scalar Multiplication:       Addition: and scalar Multiplication:       Addition: and scalar Multiplication:        Let be the set of all real-valued functions whose domain is all real numbers. Define addition and scalar multiplication as follows: Verify that is a vector space.      A differential equation is an equation that contains derivatives. Consider the differential equation: A solution to such an equation is a function.   Verify that is a solution to .    Is a solution?    Is a solution?    Is a solution?    Let be the set of all solutions to . Prove that is a vector space.         In this problem we will check that the set of all complex numbers is in fact a vector space. Let be a complex number. Similarly, let , be complex numbers, and let and be real number scalars. Check that complex numbers are closed under addition and multiplication, and that they satisfy each of the vector space properties.        Prove .      Let be an matrix. Let be the subset of consisting of all vectors such that . Prove that is a subspace of . (Note that this subspace is called the null space of the matrix and we will denote it .)      Refer to and describe all elements of , where is a identity matrix.      Is the subset of all invertible matrices a subspace of ? Prove your claim.      Is the subset of all symmetric matrices a subspace of ? (eee .) Prove your claim.      Let be a subset of that consists of matrices that commute with every matrix in under matrix multiplication. In other words, Is a subspace of ?    Don't forget to check that is not empty!        List several elements of Suggest a spanning set for .      Describe how every element of looks like.      Prove .      "
 },
 {
-  "id": "Section--m-mathbb-R-3",
+  "id": "Section-Intro-to-Vector-Spaces-3",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#Section--m-mathbb-R-3",
+  "url": "Section-Intro-to-Vector-Spaces.html#Section-Intro-to-Vector-Spaces-3",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -4548,7 +4548,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-closedunderaddition",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#def-closedunderaddition",
+  "url": "Section-Intro-to-Vector-Spaces.html#def-closedunderaddition",
   "type": "Definition",
   "number": "4.1.1",
   "title": "",
@@ -4557,7 +4557,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-closedunderscalarmult",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#def-closedunderscalarmult",
+  "url": "Section-Intro-to-Vector-Spaces.html#def-closedunderscalarmult",
   "type": "Definition",
   "number": "4.1.2",
   "title": "",
@@ -4566,7 +4566,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-posevenint",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#ex-posevenint",
+  "url": "Section-Intro-to-Vector-Spaces.html#ex-posevenint",
   "type": "Example",
   "number": "4.1.3",
   "title": "",
@@ -4575,7 +4575,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-posoddint",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#ex-posoddint",
+  "url": "Section-Intro-to-Vector-Spaces.html#ex-posoddint",
   "type": "Example",
   "number": "4.1.4",
   "title": "",
@@ -4584,7 +4584,7 @@ var ptx_lunr_docs = [
 {
   "id": "Q1",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#Q1",
+  "url": "Section-Intro-to-Vector-Spaces.html#Q1",
   "type": "Example",
   "number": "4.1.5",
   "title": "",
@@ -4593,155 +4593,479 @@ var ptx_lunr_docs = [
 {
   "id": "Subsection-Closure-8",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#Subsection-Closure-8",
+  "url": "Section-Intro-to-Vector-Spaces.html#Subsection-Closure-8",
   "type": "Example",
   "number": "4.1.6",
   "title": "",
   "body": " Let be as in . Let In other words, is the set of vectors in in the third quadrant (or on an axis on the boundary of the third quadrant). Let consist of and combined. In other words, is the set of vectors in that are either in the first quadrant, the third quadrant, or lie along one of the axes, as shown below.   Y pictured    Then is closed under scalar multiplication, but is not closed under addition.  "
 },
 {
-  "id": "Subsection-Rn-as-a-Vector-Space-4",
+  "id": "Subsection-Properties-of-Vector-Spaces-3",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#Subsection-Rn-as-a-Vector-Space-4",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "vector space "
-},
-{
-  "id": "def-subspace",
-  "level": "2",
-  "url": "Section--m-mathbb-R.html#def-subspace",
-  "type": "Definition",
+  "url": "Section-Intro-to-Vector-Spaces.html#Subsection-Properties-of-Vector-Spaces-3",
+  "type": "Remark",
   "number": "4.1.7",
   "title": "",
-  "body": "  Suppose that is a nonempty subset of that is closed under addition and under scalar multiplication. Then is a subspace of .   "
+  "body": "  All scalars in this text are assumed to be real numbers. Considering other scalars, such as complex numbers, is interesting and leads to the definition of complex vector spaces . We will not discuss complex vector spaces in this text, but you may encounter them in a future course or your professional career.   "
 },
 {
-  "id": "Subsection-Subspaces-of-Rn-4",
+  "id": "ex-setofmatricesvectorspace",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#Subsection-Subspaces-of-Rn-4",
+  "url": "Section-Intro-to-Vector-Spaces.html#ex-setofmatricesvectorspace",
+  "type": "Example",
+  "number": "4.1.8",
+  "title": "",
+  "body": " Let be the set of all matrices. Matrix addition and scalar multiplication were defined in chapter . Observe that the sum of two matrices is also an matrix. Likewise, a scalar multiple of an matrix is an matrix. Thus    is closed under matrix addition;     is closed under scalar multiplication.   In addition, and give us the following properties of matrix addition and scalar multiplication. Note that these properties are analogous to the eight vector properties above.   Commutative Property of Addition: .    Associative Property of Addition: .    Existence of Additive Identity: where is the zero matrix.    Existence of Additive Inverse: .    Distributive Property over Matrix Addition: .    Distributive Property over Scalar Addition: .    Associative Property for Scalar Multiplication: .    Multiplication by : .     "
+},
+{
+  "id": "ex-linfunctionsvectspace",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#ex-linfunctionsvectspace",
+  "type": "Example",
+  "number": "4.1.9",
+  "title": "",
+  "body": "  Consider the set of all linear functions. This set includes all polynomials of degree and degree . We will use addition and scalar multiplication of polynomials as the two operations, and show that is closed under those operations and satisfies eight properties analogous to those of vectors of .    Elements of are functions given by (Note that and can be equal to zero.)  Given and in , it is easy to verify that is also in . This gives us closure under function addition. For any scalar , we have Therefore is in , and is closed under scalar multiplication. We now proceed to formulate eight properties analogous to those of vectors of .  Let , and be elements of given by , , and . Let and be scalars.   Commutative Property of Addition:   This property holds because     Associative property of Addition:   This property is easy to verify and is left to the reader.    Existence of additive identity:   The additive identity is given by . Note that is a vector in the space .    Existence of additive inverse:   The additive inverse of is a function given by . Note that is in .    Distributive Property over Vector Addition:   This property holds because     Distributive property over scalar addition:   This property holds because     Associative property for scalar multiplication:   This property holds because     Multiplication by   This follows from       "
+},
+{
+  "id": "Subsection-Definition-of-a-Vector-Space-2",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "subspace "
+  "body": "vector spaces "
+},
+{
+  "id": "def-vectorspacegeneral",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#def-vectorspacegeneral",
+  "type": "Definition",
+  "number": "4.1.10",
+  "title": "",
+  "body": "  Let be a nonempty set. Suppose that elements of can be added together and multiplied by scalars. The set , together with operations of addition and scalar multiplication, is called a vector space provided that    is closed under addition,     is closed under scalar multiplication   and the following properties hold for , and in and scalars and :   Commutative Property of Addition:     Associative Property of Addition:\\quad     Existence of Additive Identity:     Existence of Additive Inverse:     Distributive Property over Vector Addition:     Distributive Property over Scalar Addition:     Associative Property for Scalar Multiplication:     Multiplication by :    We will refer to elements of as vectors .   "
+},
+{
+  "id": "Subsection-Definition-of-a-Vector-Space-4",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "vector space over the real numbers "
+},
+{
+  "id": "ex-MLexamplesofvectspaces",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#ex-MLexamplesofvectspaces",
+  "type": "Example",
+  "number": "4.1.11",
+  "title": "",
+  "body": "  and are vector spaces (eee and ).  "
+},
+{
+  "id": "Subsection-Definition-of-a-Vector-Space-7",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "polynomial with real coefficients coefficients "
+},
+{
+  "id": "Subsection-Definition-of-a-Vector-Space-8",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "zero polynomial "
+},
+{
+  "id": "Subsection-Definition-of-a-Vector-Space-9",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "degree "
+},
+{
+  "id": "Subsection-Definition-of-a-Vector-Space-10",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space-10",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "leading coefficient "
+},
+{
+  "id": "Subsection-Definition-of-a-Vector-Space-11",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space-11",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "equal "
+},
+{
+  "id": "ex-pisavectorspace",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#ex-pisavectorspace",
+  "type": "Example",
+  "number": "4.1.12",
+  "title": "",
+  "body": "   is a vector space.    It is easy to see that the sum of two polynomials is again a polynomial, and that a scalar multiple of a polynomial is a polynomial. Thus, is closed under addition and scalar multiplication. The other eight vector space properties are easily verified, and we conclude that is a vector space.   "
+},
+{
+  "id": "ex-deg2onlynotavecspace",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#ex-deg2onlynotavecspace",
+  "type": "Example",
+  "number": "4.1.13",
+  "title": "",
+  "body": "  Let be the set of all degree two polynomials in . In other words, We claim that is not a vector space.    Observe that is not closed under addition. To see this, let and let . Then and are both elements of . However, is not an element of , as it is only a degree one polynomial. We require the coefficient of to be nonzero for a polynomial to be in , and this is not the case for . As an exercise, check the remaining vector space properties one-by-one to see which properties hold and which do not.   "
+},
+{
+  "id": "ex-deg-le-2vectorspace",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#ex-deg-le-2vectorspace",
+  "type": "Example",
+  "number": "4.1.14",
+  "title": "",
+  "body": " Let be the set of polynomials of degree two or less. In other words, Note that contains the zero polynomial (let ). Unlike set in , is closed under polynomial addition and scalar multiplication. It is easy to verify that all vector space properties hold, so is a vector space.  "
+},
+{
+  "id": "ex-pnisavectorspace",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#ex-pnisavectorspace",
+  "type": "Example",
+  "number": "4.1.15",
+  "title": "",
+  "body": " Let be a natural number. Define to be the set of polynomials of degree or less than , then by reasoning similar to , is a vector space.  "
+},
+{
+  "id": "def-subspaceabstract",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#def-subspaceabstract",
+  "type": "Definition",
+  "number": "4.1.16",
+  "title": "",
+  "body": "  A nonempty subset of a vector space is called a subspace of , provided that is itself a vector space when given the same addition and scalar multiplication as .   "
+},
+{
+  "id": "ex-subspaceabstract1",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#ex-subspaceabstract1",
+  "type": "Example",
+  "number": "4.1.17",
+  "title": "",
+  "body": " In we demonstrated that is a vector space. From we know that is a vector space. But is a subset of , and uses the same operations of polynomial addition and scalar multiplication. Therefore is a subspace of .  "
+},
+{
+  "id": "th-subspacetestabstract",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#th-subspacetestabstract",
+  "type": "Theorem",
+  "number": "4.1.18",
+  "title": "Subspace Test.",
+  "body": " Subspace Test   Let be a nonempty subset of a vector space . If is closed under the operations of addition and scalar multiplication of , then is a subspace of .    To prove that closure is a sufficient condition for to be a subspace, we will need to show that closure under addition and scalar multiplication of guarantees that the remaining eight properties are satisfied automatically.  Observe that , , , , and hold for all elements of . Thus, these properties will hold for all elements of . We say that these properties are inherited from .  To prove we need to show that , which we know to be an element of , is contained in . Let be an element of (recall that is nonempty). We will show that in . Then, by closure under scalar multiplication, we will be able to conclude that must be in . Adding the additive inverse of to both sides gives us Thanks to and . By and  Because is closed under scalar multiplication is in . We know that every element of , being an element of , has an additive inverse in . We need to show that the additive inverse of every element of is contained in . Let be any element of . We will show that is the additive inverse of . Then by closure, will have to be contained in . To show that is the additive inverse of , we must show that . We compute: Thus is the additive inverse of . By closure, is in .   "
 },
 {
   "id": "y-axis-subspace",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#y-axis-subspace",
+  "url": "Section-Intro-to-Vector-Spaces.html#y-axis-subspace",
   "type": "Example",
-  "number": "4.1.8",
+  "number": "4.1.19",
   "title": "",
   "body": "  Let be the set of vectors in on the axis. Then is a subspace of .    To verify this, note that any vector in is of the form . If we multiply such a vector by a scalar , we get a vector of the form which is clearly still in . This proves is closed under scalar multiplication. Next, note that so is closed under addition.   "
 },
 {
-  "id": "Subsection-Subspaces-of-Rn-6",
+  "id": "ex-centralizerofA",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#Subsection-Subspaces-of-Rn-6",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
+  "url": "Section-Intro-to-Vector-Spaces.html#ex-centralizerofA",
+  "type": "Example",
+  "number": "4.1.20",
   "title": "",
-  "body": "span "
+  "body": " Let be a fixed matrix in . Show that the set of all matrices that commute with under matrix multiplication is a subspace of .   The set consists of all matrices such that . First, observe that is not empty because is an element. Now we need to show that is closed under matrix addition and scalar multiplication. Suppose that and lie in . Then and . Then Therefore commutes with . Thus is in . We conclude that is closed under matrix addition. Now suppose is in . Let be a scalar, then Therefore commutes with . We conclude that is in , and is closed under scalar multiplication. Hence is a subspace of .   "
 },
 {
-  "id": "th-span-is-subspace",
+  "id": "Subsection-Subspaces-10",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#th-span-is-subspace",
-  "type": "Theorem",
-  "number": "4.1.9",
+  "url": "Section-Intro-to-Vector-Spaces.html#Subsection-Subspaces-10",
+  "type": "Remark",
+  "number": "4.1.21",
   "title": "",
-  "body": "  Let be any set of vectors in . Then is a subspace of .   "
+  "body": "  Suppose is a polynomial and is a number. Then the number obtained by replacing by in the expression for is called the evaluation of at . For example, if , then the evaluation of at is If , the number is called a root of .   "
+},
+{
+  "id": "ex-root3",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#ex-root3",
+  "type": "Example",
+  "number": "4.1.22",
+  "title": "",
+  "body": "  Consider the set of all polynomials in that have as a root: Show that is a subspace of .    Observe that is not empty because is an element of . Suppose and lie in . Then and . We have for all , so and is closed under addition. The verification that is closed under scalar multiplication is similar.   "
 },
 {
   "id": "th-zero-in-subspace",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#th-zero-in-subspace",
+  "url": "Section-Intro-to-Vector-Spaces.html#th-zero-in-subspace",
   "type": "Theorem",
-  "number": "4.1.10",
+  "number": "4.1.23",
   "title": "",
-  "body": "  If is a subspace of , then the zero vector is in .    Take any vector in , and note that is in because is closed under scalar multiplication.   "
+  "body": "  If is a subspace of a vector space , then the zero vector is in .    Take any vector in , and note that is in because is closed under scalar multiplication.   "
 },
 {
   "id": "th-opposite-in-subspace",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#th-opposite-in-subspace",
+  "url": "Section-Intro-to-Vector-Spaces.html#th-opposite-in-subspace",
   "type": "Theorem",
-  "number": "4.1.11",
+  "number": "4.1.24",
   "title": "",
-  "body": "  If is a subspace of , then for any vector , the opposite vector, , is also in .   "
+  "body": "  If is a subspace of a vector space , then for any vector , the additive inverse, , is also in .   "
+},
+{
+  "id": "def-lincombabstract",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#def-lincombabstract",
+  "type": "Definition",
+  "number": "4.1.25",
+  "title": "",
+  "body": "  Let be a vector space and let be vectors in . A vector is said to be a linear combination of vectors if for some scalars .   "
+},
+{
+  "id": "def-spanabstract",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#def-spanabstract",
+  "type": "Definition",
+  "number": "4.1.26",
+  "title": "",
+  "body": "  Let be a vector space and let be vectors in . The set of all linear combinations of is called the span of . We write and we say that vectors  span  . Any vector in is said to be in the span of . The set is called a spanning set for .   "
+},
+{
+  "id": "ex-inthespanpoly",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#ex-inthespanpoly",
+  "type": "Example",
+  "number": "4.1.27",
+  "title": "",
+  "body": "  Consider and in . Determine whether and lie in     For , we want to determine if and exist such that Expanding the right hand side gives us: Combining like terms, we get: Setting this equal to and equating coefficients of powers of gives us a system of equations This system has the solution and , so is indeed in . Turning to , we are looking for and such that Again equating coefficients of powers of gives equations , , and . But in this case there is no solution, so is not in .   "
+},
+{
+  "id": "th-spanisasubspaceabstract",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#th-spanisasubspaceabstract",
+  "type": "Theorem",
+  "number": "4.1.28",
+  "title": "",
+  "body": "  Let be a vector space. Let be any subset of . Then is a subspace of .    See .   "
+},
+{
+  "id": "Subsection-Linear-Combinations-and-Span-9",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#Subsection-Linear-Combinations-and-Span-9",
+  "type": "Example",
+  "number": "4.1.29",
+  "title": "",
+  "body": "  Verify that every line, plane, and hyperplane through the origin in is a subspace of .    This is a direct consequence of . For example, consider the line through the origin in spanned by the vector . The span of this vector is the set of all scalar multiples of , which is a subspace of . Similarly, any plane or hyperplane through the origin can be expressed as the span of two or more vectors, respectively, and thus is also a subspace.   "
 },
 {
   "id": "prob-Y-1",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#prob-Y-1",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-Y-1",
   "type": "Exercise",
-  "number": "4.1.4.1",
+  "number": "4.1.6.1",
   "title": "",
   "body": "  Is closed under vector addition?    Yes.   "
 },
 {
   "id": "prob-Y-2",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#prob-Y-2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-Y-2",
   "type": "Exercise",
-  "number": "4.1.4.2",
+  "number": "4.1.6.2",
   "title": "",
   "body": "  Is closed under scalar multiplication?    No.   "
 },
 {
   "id": "pr-R-3axes1",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#pr-R-3axes1",
+  "url": "Section-Intro-to-Vector-Spaces.html#pr-R-3axes1",
   "type": "Exercise",
-  "number": "4.1.4.3",
+  "number": "4.1.6.3",
   "title": "",
   "body": "  Is closed under vector addition?    No.   "
 },
 {
   "id": "pr-R-3axes2",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#pr-R-3axes2",
+  "url": "Section-Intro-to-Vector-Spaces.html#pr-R-3axes2",
   "type": "Exercise",
-  "number": "4.1.4.4",
+  "number": "4.1.6.4",
   "title": "",
   "body": "  Is closed under scalar multiplication?    Yes.   "
 },
 {
   "id": "prob-closedmultchoice1",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#prob-closedmultchoice1",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-closedmultchoice1",
   "type": "Exercise",
-  "number": "4.1.4.5",
+  "number": "4.1.6.5",
   "title": "",
-  "body": "   consists of all vectors in in a slanted half-plane which has the -axis as a boundary.   V graphed as plane    Is closed under scalar multiplication? What about addition?    It is closed under addition but not under scalar multiplication.   "
+  "body": "   consists of all vectors in in a slanted half-plane which has the -axis as a boundary.   The graph of , a (half) plane in bounded by a line.    Is closed under scalar multiplication? What about addition?    It is closed under addition but not under scalar multiplication.   "
 },
 {
   "id": "closedmultchoice2",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#closedmultchoice2",
+  "url": "Section-Intro-to-Vector-Spaces.html#closedmultchoice2",
   "type": "Exercise",
-  "number": "4.1.4.6",
+  "number": "4.1.6.6",
   "title": "",
-  "body": "   consists of all vectors along the line, as shown.   New V graphed as plane    Is closed under scalar multiplication? What about addition?    It is closed under both addition and scalar multiplication.   "
+  "body": "   consists of all vectors along the line, as shown.   The graph of the line .    Is closed under scalar multiplication? What about addition?    It is closed under both addition and scalar multiplication.   "
+},
+{
+  "id": "prob-abstractvectspace1",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-abstractvectspace1",
+  "type": "Exercise",
+  "number": "4.1.6.7",
+  "title": "",
+  "body": "  Addition: and scalar Multiplication:    "
+},
+{
+  "id": "prob-abstractvectspace2",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-abstractvectspace2",
+  "type": "Exercise",
+  "number": "4.1.6.8",
+  "title": "",
+  "body": "  Addition: and scalar Multiplication:    "
+},
+{
+  "id": "prob-abstractvectspace3",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-abstractvectspace3",
+  "type": "Exercise",
+  "number": "4.1.6.9",
+  "title": "",
+  "body": "  Addition: and scalar Multiplication:    "
+},
+{
+  "id": "prob-abstractvectspace4",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-abstractvectspace4",
+  "type": "Exercise",
+  "number": "4.1.6.10",
+  "title": "",
+  "body": "  Addition: and scalar Multiplication:    "
+},
+{
+  "id": "prob-abstractvectspace5",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-abstractvectspace5",
+  "type": "Exercise",
+  "number": "4.1.6.11",
+  "title": "",
+  "body": "  Let be the set of all real-valued functions whose domain is all real numbers. Define addition and scalar multiplication as follows: Verify that is a vector space.   "
+},
+{
+  "id": "prob-abstractvectspacediffeq",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-abstractvectspacediffeq",
+  "type": "Exercise",
+  "number": "4.1.6.12",
+  "title": "",
+  "body": "  A differential equation is an equation that contains derivatives. Consider the differential equation: A solution to such an equation is a function.   Verify that is a solution to .    Is a solution?    Is a solution?    Is a solution?    Let be the set of all solutions to . Prove that is a vector space.      "
+},
+{
+  "id": "prob-abstractvectspacecomplex",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-abstractvectspacecomplex",
+  "type": "Exercise",
+  "number": "4.1.6.13",
+  "title": "",
+  "body": "  In this problem we will check that the set of all complex numbers is in fact a vector space. Let be a complex number. Similarly, let , be complex numbers, and let and be real number scalars. Check that complex numbers are closed under addition and multiplication, and that they satisfy each of the vector space properties.   "
 },
 {
   "id": "prob-opposite-in-subspace",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#prob-opposite-in-subspace",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-opposite-in-subspace",
   "type": "Exercise",
-  "number": "4.1.4.7",
+  "number": "4.1.6.14",
   "title": "",
   "body": "  Prove .   "
 },
 {
   "id": "prob-null-A-is-subspace",
   "level": "2",
-  "url": "Section--m-mathbb-R.html#prob-null-A-is-subspace",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-null-A-is-subspace",
   "type": "Exercise",
-  "number": "4.1.4.8",
+  "number": "4.1.6.15",
   "title": "",
   "body": "  Let be an matrix. Let be the subset of consisting of all vectors such that . Prove that is a subspace of . (Note that this subspace is called the null space of the matrix and we will denote it .)   "
+},
+{
+  "id": "prob-abstractvectspace6",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-abstractvectspace6",
+  "type": "Exercise",
+  "number": "4.1.6.16",
+  "title": "",
+  "body": "  Refer to and describe all elements of , where is a identity matrix.   "
+},
+{
+  "id": "prob-abstractvectspace7",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-abstractvectspace7",
+  "type": "Exercise",
+  "number": "4.1.6.17",
+  "title": "",
+  "body": "  Is the subset of all invertible matrices a subspace of ? Prove your claim.   "
+},
+{
+  "id": "prob-symmetricsubspace",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-symmetricsubspace",
+  "type": "Exercise",
+  "number": "4.1.6.18",
+  "title": "",
+  "body": "  Is the subset of all symmetric matrices a subspace of ? (eee .) Prove your claim.   "
+},
+{
+  "id": "prob-abstractvectspace8",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-abstractvectspace8",
+  "type": "Exercise",
+  "number": "4.1.6.19",
+  "title": "",
+  "body": "  Let be a subset of that consists of matrices that commute with every matrix in under matrix multiplication. In other words, Is a subspace of ?    Don't forget to check that is not empty!   "
+},
+{
+  "id": "prob-abstractvectspace9",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-abstractvectspace9",
+  "type": "Exercise",
+  "number": "4.1.6.20",
+  "title": "",
+  "body": "  List several elements of Suggest a spanning set for .   "
+},
+{
+  "id": "prob-abstractvectspace10",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-abstractvectspace10",
+  "type": "Exercise",
+  "number": "4.1.6.21",
+  "title": "",
+  "body": "  Describe how every element of looks like.   "
+},
+{
+  "id": "prob-spanisasubspaceabstract",
+  "level": "2",
+  "url": "Section-Intro-to-Vector-Spaces.html#prob-spanisasubspaceabstract",
+  "type": "Exercise",
+  "number": "4.1.6.22",
+  "title": "",
+  "body": "  Prove .   "
 },
 {
   "id": "Bases-and-Dimension",
@@ -5041,18 +5365,18 @@ var ptx_lunr_docs = [
   "body": "  Let be a basis of . Suppose is a nonsingular matrix. Show that is also a basis of .   To show that spans , express as a linear combination of , and .  "
 },
 {
-  "id": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices",
+  "id": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations",
   "level": "1",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html",
   "type": "Section",
   "number": "4.3",
-  "title": "Subspaces of <span class=\"process-math\">\\(\\R^n\\)<\/span> Associated with Matrices",
-  "body": " Subspaces of Associated with Matrices   Row Space of a Matrix  Recall when learning Gaussian elimination, we observed that every row-echelon form of a given matrix has the same number of nonzero rows. This result suggests that there are certain characteristics associated with the rows of a matrix that are not affected by elementary row operations. We are now in the position to examine this question and to supply the proof we omitted earlier.    Let be an matrix. The row space of , denoted by , is the subspace of spanned by the rows of .     Consider the matrix Let and be the rows of : Then is a plane through containing and .   Row space plotted    We will use elementary row operations to reduce to ,namely Let and be the rows of : What do you think looks like? The following video will help us visualize and compare it to .   Based on what we observed in the video, we may conjecture that    New vectors for span added in above    But why does this make sense? Vectors and were obtained from and by repeated applications of elementary row operations. At every stage of the row reduction process, the rows of the matrix are linear combinations of and . Thus, at every stage of the row reduction process, the rows of the matrix lie in the span of and . Our next video shows a step-by-step row reduction process accompanied by sketches of vectors.    The observations made in makes a convincing case for the following theorem.    If matrix was obtained from matrix by applying an elementary row operation to then     Let be the rows of . There are three elementary row operations. Clearly, switching the order of vectors in will not affect the span. Suppose that was obtained from by multiplying the row of by a non-zero constant . We need to show that   To do this we will assume that some vector is in and show that is in . We will then assume that some vector is in and show that must be in .  Suppose that is in . Then But this implies So is in .  Now suppose is in , then But because , we can do the following: Therefore, is in .  We leave it to the reader to verify that adding a multiple of one row of to another does not change the row space. See also .)      If matrix was obtained from matrix by applying a sequence of elementary row operations to then     This follows from repeated applications of .             Let Find two distinct bases for .    By a basis for will also be a basis for . Row reduction gives us: Since the zero row contributes nothing to the span, we conclude that the nonzero rows of span . Therefore, a basis for the row space consists of the vecotrs It follows that the nonzero rows of are linearly independent.  To find a second basis for , observe that by the row space of any row-echelon form of will be equal to . Matrix has many row-echelon forms. Here is one of them: The nonzero rows of span . Once again the nonzero rows of are linearly independent. Thus the nonzero rows of form a basis for .    Our observations in can be generalized to all matrices. Given any matrix ,   The nonzero rows of are linearly independent (Why?) and span ( ).    The nonzero rows of any row-echelon form of are linearly independent (Why?) and span ( ).   Therefore nonzero rows of or the nonzero rows of any row-echelon form of constitute a basis of . Since all bases for must have the same number of elements ( ), we have just proved the following theorem.    All row-echelon forms of a given matrix have the same number of nonzero rows.    This result was first introduced without proof when learning of Guassian elimination, where we used it to define the rank of a matrix as the number of nonzero rows in its row-echelon forms. We can now update the definition of rank as follows.    For any matrix ,       Column Space of a Matrix    Let be an matrix. The column space of , denoted by , is the subspace of spanned by the columns of .     Let Our goal is to find a basis for . To do this we need to find a linearly independent subset of the columns of that spans .  Consider the linear relation: Solving this homogeneous equation amounts to finding . So, We now see that has infinitely many solutions.  Observe that the homogeneous equation has the same solution set as . In particular, , , , is a non-trivial solution of and . This means that the third column of and the third column of can be expressed as the first column minus the second column of their respective matrices.  We conclude that the third column of can be eliminated from the spanning set for and Having gotten rid of one of the vectors, we need to determine whether the remaining three vectors are linearly independent. To do this we need to find all solutions of Fortunately, we do not have to start from scratch. Observe that crossing out the third column in the previous row reduction process yields the desired reduced row-echelon form.   Matrix with column cut out    This time the reduced row-echelon form tells us that ( has only the trivial solution. We conclude that the three vectors are linearly independent and is a basis for .   The approach we took to find a basis for in uses the reduced row-echelon form of . It is true, however, that any row-echelon form of could have been used in place of . (Why?). We generalize the steps as follows:    Given a matrix , a basis for can be found as follows:   Find (or any row-echelon form of .)    Identify the pivot columns of (or ).    The columns of corresponding to the pivot columns of (or ) form a basis for .       Let be the columns of , and let be the columns of (or ). Observe that the equations  have the same solution set. This means that any non-trivial relation among the columns of (or ) translates into a non-trivial relation among the columns of . Likewise, any collection of linearly independent columns of (or ) corresponds to linearly independent columns of .  Now, the pivot columns of (or ) are linearly independent. Therefore the corresponding columns of are linearly independent whereas non-pivot columns can be expressed as linear combinations of the pivot columns, therefore they contribute nothing to the span and can be removed from the spanning set.    The proof of shows that the number of basis elements for the column space of a matrix is equal to the number of pivot columns. But the number of pivot columns is the same as the number of pivots in a row-echelon form, which is equal to the number of nonzero rows and the rank of the matrix. This gives us the following important result.    Let be a matrix.       We will return to matrix of and find a basis for .    We begin by finding . Columns , and of contain leading . Therefore columns , and of form a basis for .      The Null Space    Let be an matrix. The null space of , denoted by , is the set of all vectors in such that .    Before digging further, let us examine the notion through an example.    Find if     We need to solve the equation . Row reduction gives us We conclude that . Thus consists of all vectors of the form We might write or     The approach in allows us to make an important observation. Note that every scalar multiple of is contained in . This means that is closed under vector addition and scalar multiplication.  Recall that this property makes a subspace of . This result was first presented as . We now formalize it as a theorem.    Let be an matrix. Then is a subspace of .    To deduce that is closed under vector addition and scalar multiplication we will show that a linear combination of any two elements of is contained in .  Suppose and are in . Then and . But then We conclude that is also in .      Find a basis for , where is the matrix in .    Elements in the null space of are solutions to the equation Row reduction yields  Therefore, elements of are of the form Thus Now we need to find a basis for we need to find linearly independent vectors that span . Take a closer look at the vectors Because of the locations of and , it is clear that one vector is not a scalar multiple of the other. Therefore the two vectors are linearly independent. We conclude that is a basis of , and .    It is not a coincidence that the steps we used in produced linearly independent vectors, and it is worth while to try to understand why this procedure will always produce linearly independent vectors. Take a closer look at the elements of the null space: The parameter in the third component of produces a in the third component of the first vector and a in the third component of the second vector, while parameter in the fifth component of produces a in the fifth component of the second vector and a in the fifth component of the first vector. This makes it clear that the two vectors are linearly independent.  This pattern will hold for any number of parameters, each parameter producing a in exactly one vector and in the corresponding components of the other vectors. Therefore, vectors obtained in this way will always be linearly independent.    Rank and Nullity Theorem    Let be a matrix. The dimension of the null space of is called the nullity of .     We know that the dimension of the row space and the dimension of the column space of a matrix are the same and are equal to the rank of the matrix (or the number of nonzero rows in any row-echelon form of the matrix).  As we observed in , the dimension of the null space of a matrix is equal to the number of free variables in the solution vector of the homogeneous system associated with the matrix. Since the number of pivots and the number of free variables add up to the number of columns in a matrix ( ) we have the following significant result.    Let be an matrix. Then     We will see the geometric implications of this theorem when we study linear transformations.      In the following four problems, the matrix given below is studied.      Let Find .           Compute , and            Use and the procedure outlined in to find a basis for .    A basis for is       Use to find a basis for .    A basis for is        In the following four problems, we matrix in question is      Find .           Find     The answer is .      Use and the procedure outlined in to find a basis for .    A basis for is       Use to find a basis for .    A basis for is       Prove that       Find a basis for , where     Find a basis for the column space of a matrix whose columns are the given vectors.       In the next two problems, and refer to matrices of and .     Find a basis for , demonstrate that the Rank-Nullity Theorem (see ) holds for and explain how you can quickly tell that the vectors you selected for your basis are linearly independent.    Basis for        Find a basis for and demonstrate that the Rank-Nullity Theorem (see ) holds for .    Basis for :        Suppose matrix is such that      Follow the process used in to find a basis for . Explain why the basis elements obtained in this way are linearly independent.    Basis of       Let denote the columns of . Express as a linear combination of and .            Suppose is a matrix. Which of the following statements could be true?                                           Suppose is a matrix. Which of the following statements could be true?                                           Complete the proof of by showing that adding a scalar multiple of one row of a matrix to another row does not change the row space.     "
+  "title": "Subspaces Associated with Matrices and Linear Transformations",
+  "body": " Subspaces Associated with Matrices and Linear Transformations   Row Space of a Matrix  Recall when learning Gaussian elimination, we observed that every row-echelon form of a given matrix has the same number of nonzero rows. This result suggests that there are certain characteristics associated with the rows of a matrix that are not affected by elementary row operations. We are now in the position to examine this question and to supply the proof we omitted earlier.    Let be an matrix. The row space of , denoted by , is the subspace of spanned by the rows of .     Consider the matrix Let and be the rows of : Then is a plane through containing and .   Row space plotted    We will use elementary row operations to reduce to ,namely Let and be the rows of : What do you think looks like? The following video will help us visualize and compare it to .   Based on what we observed in the video, we may conjecture that    New vectors for span added in above    But why does this make sense? Vectors and were obtained from and by repeated applications of elementary row operations. At every stage of the row reduction process, the rows of the matrix are linear combinations of and . Thus, at every stage of the row reduction process, the rows of the matrix lie in the span of and . Our next video shows a step-by-step row reduction process accompanied by sketches of vectors.    The observations made in makes a convincing case for the following theorem.    If matrix was obtained from matrix by applying an elementary row operation to then     Let be the rows of . There are three elementary row operations. Clearly, switching the order of vectors in will not affect the span. Suppose that was obtained from by multiplying the row of by a non-zero constant . We need to show that   To do this we will assume that some vector is in and show that is in . We will then assume that some vector is in and show that must be in .  Suppose that is in . Then But this implies So is in .  Now suppose is in , then But because , we can do the following: Therefore, is in .  We leave it to the reader to verify that adding a multiple of one row of to another does not change the row space. See also .)      If matrix was obtained from matrix by applying a sequence of elementary row operations to then     This follows from repeated applications of .             Let Find two distinct bases for .    By a basis for will also be a basis for . Row reduction gives us: Since the zero row contributes nothing to the span, we conclude that the nonzero rows of span . Therefore, a basis for the row space consists of the vecotrs It follows that the nonzero rows of are linearly independent.  To find a second basis for , observe that by the row space of any row-echelon form of will be equal to . Matrix has many row-echelon forms. Here is one of them: The nonzero rows of span . Once again the nonzero rows of are linearly independent. Thus the nonzero rows of form a basis for .    Our observations in can be generalized to all matrices. Given any matrix ,   The nonzero rows of are linearly independent (Why?) and span ( ).    The nonzero rows of any row-echelon form of are linearly independent (Why?) and span ( ).   Therefore nonzero rows of or the nonzero rows of any row-echelon form of constitute a basis of . Since all bases for must have the same number of elements ( ), we have just proved the following theorem.    All row-echelon forms of a given matrix have the same number of nonzero rows.    This result was first introduced without proof when learning of Guassian elimination, where we used it to define the rank of a matrix as the number of nonzero rows in its row-echelon forms. We can now update the definition of rank as follows.    For any matrix ,       Column Space of a Matrix    Let be an matrix. The column space of , denoted by , is the subspace of spanned by the columns of .     Let Our goal is to find a basis for . To do this we need to find a linearly independent subset of the columns of that spans .  Consider the linear relation: Solving this homogeneous equation amounts to finding . So, We now see that has infinitely many solutions.  Observe that the homogeneous equation has the same solution set as . In particular, , , , is a non-trivial solution of and . This means that the third column of and the third column of can be expressed as the first column minus the second column of their respective matrices.  We conclude that the third column of can be eliminated from the spanning set for and Having gotten rid of one of the vectors, we need to determine whether the remaining three vectors are linearly independent. To do this we need to find all solutions of Fortunately, we do not have to start from scratch. Observe that crossing out the third column in the previous row reduction process yields the desired reduced row-echelon form.   Matrix with column cut out    This time the reduced row-echelon form tells us that ( has only the trivial solution. We conclude that the three vectors are linearly independent and is a basis for .   The approach we took to find a basis for in uses the reduced row-echelon form of . It is true, however, that any row-echelon form of could have been used in place of . (Why?). We generalize the steps as follows:    Given a matrix , a basis for can be found as follows:   Find (or any row-echelon form of .)    Identify the pivot columns of (or ).    The columns of corresponding to the pivot columns of (or ) form a basis for .       Let be the columns of , and let be the columns of (or ). Observe that the equations  have the same solution set. This means that any non-trivial relation among the columns of (or ) translates into a non-trivial relation among the columns of . Likewise, any collection of linearly independent columns of (or ) corresponds to linearly independent columns of .  Now, the pivot columns of (or ) are linearly independent. Therefore the corresponding columns of are linearly independent whereas non-pivot columns can be expressed as linear combinations of the pivot columns, therefore they contribute nothing to the span and can be removed from the spanning set.    The proof of shows that the number of basis elements for the column space of a matrix is equal to the number of pivot columns. But the number of pivot columns is the same as the number of pivots in a row-echelon form, which is equal to the number of nonzero rows and the rank of the matrix. This gives us the following important result.    Let be a matrix.       We will return to matrix of and find a basis for .    We begin by finding . Columns , and of contain leading . Therefore columns , and of form a basis for .      The Null Space    Let be an matrix. The null space of , denoted by , is the set of all vectors in such that .    Before digging further, let us examine the notion through an example.    Find if     We need to solve the equation . Row reduction gives us We conclude that . Thus consists of all vectors of the form We might write or     The approach in allows us to make an important observation. Note that every scalar multiple of is contained in . This means that is closed under vector addition and scalar multiplication.  Recall that this property makes a subspace of . This result was first presented as . We now formalize it as a theorem.    Let be an matrix. Then is a subspace of .    To deduce that is closed under vector addition and scalar multiplication we will show that a linear combination of any two elements of is contained in .  Suppose and are in . Then and . But then We conclude that is also in .      Find a basis for , where is the matrix in .    Elements in the null space of are solutions to the equation Row reduction yields  Therefore, elements of are of the form Thus Now we need to find a basis for we need to find linearly independent vectors that span . Take a closer look at the vectors Because of the locations of and , it is clear that one vector is not a scalar multiple of the other. Therefore the two vectors are linearly independent. We conclude that is a basis of , and .    It is not a coincidence that the steps we used in produced linearly independent vectors, and it is worth while to try to understand why this procedure will always produce linearly independent vectors. Take a closer look at the elements of the null space: The parameter in the third component of produces a in the third component of the first vector and a in the third component of the second vector, while parameter in the fifth component of produces a in the fifth component of the second vector and a in the fifth component of the first vector. This makes it clear that the two vectors are linearly independent.  This pattern will hold for any number of parameters, each parameter producing a in exactly one vector and in the corresponding components of the other vectors. Therefore, vectors obtained in this way will always be linearly independent.    Rank and Nullity Theorem    Let be a matrix. The dimension of the null space of is called the nullity of .     We know that the dimension of the row space and the dimension of the column space of a matrix are the same and are equal to the rank of the matrix (or the number of nonzero rows in any row-echelon form of the matrix).  As we observed in , the dimension of the null space of a matrix is equal to the number of free variables in the solution vector of the homogeneous system associated with the matrix. Since the number of pivots and the number of free variables add up to the number of columns in a matrix ( ) we have the following significant result.    Let be an matrix. Then     We will see the geometric implications of this theorem when we study linear transformations.      In the following four problems, the matrix given below is studied.      Let Find .           Compute , and            Use and the procedure outlined in to find a basis for .    A basis for is       Use to find a basis for .    A basis for is        In the following four problems, we matrix in question is      Find .           Find     The answer is .      Use and the procedure outlined in to find a basis for .    A basis for is       Use to find a basis for .    A basis for is       Prove that       Find a basis for , where     Find a basis for the column space of a matrix whose columns are the given vectors.       In the next two problems, and refer to matrices of and .     Find a basis for , demonstrate that the Rank-Nullity Theorem (see ) holds for and explain how you can quickly tell that the vectors you selected for your basis are linearly independent.    Basis for        Find a basis for and demonstrate that the Rank-Nullity Theorem (see ) holds for .    Basis for :        Suppose matrix is such that      Follow the process used in to find a basis for . Explain why the basis elements obtained in this way are linearly independent.    Basis of       Let denote the columns of . Express as a linear combination of and .            Suppose is a matrix. Which of the following statements could be true?                                           Suppose is a matrix. Which of the following statements could be true?                                           Complete the proof of by showing that adding a scalar multiple of one row of a matrix to another row does not change the row space.     "
 },
 {
   "id": "def-rowspace",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#def-rowspace",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#def-rowspace",
   "type": "Definition",
   "number": "4.3.1",
   "title": "",
@@ -5061,7 +5385,7 @@ var ptx_lunr_docs = [
 {
   "id": "init-rowspace",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#init-rowspace",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#init-rowspace",
   "type": "Exploration",
   "number": "4.3.1",
   "title": "",
@@ -5070,7 +5394,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-rowBrowA",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#th-rowBrowA",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#th-rowBrowA",
   "type": "Theorem",
   "number": "4.3.2",
   "title": "",
@@ -5079,7 +5403,7 @@ var ptx_lunr_docs = [
 {
   "id": "cor-rowequiv",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#cor-rowequiv",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#cor-rowequiv",
   "type": "Corollary",
   "number": "4.3.3",
   "title": "",
@@ -5088,7 +5412,7 @@ var ptx_lunr_docs = [
 {
   "id": "cor-rowArowrrefA",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#cor-rowArowrrefA",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#cor-rowArowrrefA",
   "type": "Corollary",
   "number": "4.3.4",
   "title": "",
@@ -5097,7 +5421,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-basisrowspace",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#ex-basisrowspace",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#ex-basisrowspace",
   "type": "Example",
   "number": "4.3.5",
   "title": "",
@@ -5106,7 +5430,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-samenumberofnonzerorows",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#th-samenumberofnonzerorows",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#th-samenumberofnonzerorows",
   "type": "Theorem",
   "number": "4.3.6",
   "title": "",
@@ -5115,7 +5439,7 @@ var ptx_lunr_docs = [
 {
   "id": "Subsection-Row-Space-of-a-Matrix-12",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#Subsection-Row-Space-of-a-Matrix-12",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#Subsection-Row-Space-of-a-Matrix-12",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -5124,7 +5448,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-dimofrowA",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#th-dimofrowA",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#th-dimofrowA",
   "type": "Definition",
   "number": "4.3.7",
   "title": "",
@@ -5133,7 +5457,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-colspace",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#def-colspace",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#def-colspace",
   "type": "Definition",
   "number": "4.3.8",
   "title": "",
@@ -5142,7 +5466,7 @@ var ptx_lunr_docs = [
 {
   "id": "init-colspace",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#init-colspace",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#init-colspace",
   "type": "Exploration",
   "number": "4.3.2",
   "title": "",
@@ -5151,7 +5475,7 @@ var ptx_lunr_docs = [
 {
   "id": "colspace",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#colspace",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#colspace",
   "type": "Algorithm",
   "number": "4.3.9",
   "title": "",
@@ -5160,7 +5484,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-dimroweqdimcoleqrank",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#th-dimroweqdimcoleqrank",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#th-dimroweqdimcoleqrank",
   "type": "Theorem",
   "number": "4.3.10",
   "title": "",
@@ -5169,7 +5493,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-basiscolspace",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#ex-basiscolspace",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#ex-basiscolspace",
   "type": "Example",
   "number": "4.3.11",
   "title": "",
@@ -5178,7 +5502,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-nullspace",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#def-nullspace",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#def-nullspace",
   "type": "Definition",
   "number": "4.3.12",
   "title": "",
@@ -5187,7 +5511,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-nullintro",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#ex-nullintro",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#ex-nullintro",
   "type": "Example",
   "number": "4.3.13",
   "title": "",
@@ -5196,7 +5520,7 @@ var ptx_lunr_docs = [
 {
   "id": "Subsection-The-Null-Space-6",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#Subsection-The-Null-Space-6",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#Subsection-The-Null-Space-6",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -5205,7 +5529,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-nullsubspacern",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#th-nullsubspacern",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#th-nullsubspacern",
   "type": "Theorem",
   "number": "4.3.14",
   "title": "",
@@ -5214,7 +5538,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-dimnull",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#ex-dimnull",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#ex-dimnull",
   "type": "Example",
   "number": "4.3.15",
   "title": "",
@@ -5223,7 +5547,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-matrixnullity",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#def-matrixnullity",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#def-matrixnullity",
   "type": "Definition",
   "number": "4.3.16",
   "title": "",
@@ -5232,7 +5556,7 @@ var ptx_lunr_docs = [
 {
   "id": "th-matrixranknullity",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#th-matrixranknullity",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#th-matrixranknullity",
   "type": "Theorem",
   "number": "4.3.17",
   "title": "",
@@ -5241,7 +5565,7 @@ var ptx_lunr_docs = [
 {
   "id": "colrowmatrixA1",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#colrowmatrixA1",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#colrowmatrixA1",
   "type": "Exercise",
   "number": "4.3.5.1",
   "title": "",
@@ -5250,7 +5574,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-colrowmatrixA2",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#prob-colrowmatrixA2",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#prob-colrowmatrixA2",
   "type": "Exercise",
   "number": "4.3.5.2",
   "title": "",
@@ -5259,7 +5583,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-colrowmatrixA3",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#prob-colrowmatrixA3",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#prob-colrowmatrixA3",
   "type": "Exercise",
   "number": "4.3.5.3",
   "title": "",
@@ -5268,7 +5592,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-colrowmatrixA4",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#prob-colrowmatrixA4",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#prob-colrowmatrixA4",
   "type": "Exercise",
   "number": "4.3.5.4",
   "title": "",
@@ -5277,7 +5601,7 @@ var ptx_lunr_docs = [
 {
   "id": "colrowmatrixB1",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#colrowmatrixB1",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#colrowmatrixB1",
   "type": "Exercise",
   "number": "4.3.5.5",
   "title": "",
@@ -5286,7 +5610,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-colrowmatrixB2",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#prob-colrowmatrixB2",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#prob-colrowmatrixB2",
   "type": "Exercise",
   "number": "4.3.5.6",
   "title": "",
@@ -5295,7 +5619,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-colrowmatrixB3",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#prob-colrowmatrixB3",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#prob-colrowmatrixB3",
   "type": "Exercise",
   "number": "4.3.5.7",
   "title": "",
@@ -5304,7 +5628,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-colrowmatrixB4",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#prob-colrowmatrixB4",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#prob-colrowmatrixB4",
   "type": "Exercise",
   "number": "4.3.5.8",
   "title": "",
@@ -5313,7 +5637,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-rankoftranspose",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#prob-rankoftranspose",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#prob-rankoftranspose",
   "type": "Exercise",
   "number": "4.3.5.9",
   "title": "",
@@ -5322,7 +5646,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-basisforV",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#prob-basisforV",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#prob-basisforV",
   "type": "Exercise",
   "number": "4.3.5.10",
   "title": "",
@@ -5331,7 +5655,7 @@ var ptx_lunr_docs = [
 {
   "id": "nullABC1",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#nullABC1",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#nullABC1",
   "type": "Exercise",
   "number": "4.3.5.11",
   "title": "",
@@ -5340,7 +5664,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-nullABC2",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#prob-nullABC2",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#prob-nullABC2",
   "type": "Exercise",
   "number": "4.3.5.12",
   "title": "",
@@ -5349,7 +5673,7 @@ var ptx_lunr_docs = [
 {
   "id": "nulM1",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#nulM1",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#nulM1",
   "type": "Exercise",
   "number": "4.3.5.13",
   "title": "",
@@ -5358,7 +5682,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-nullM2",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#prob-nullM2",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#prob-nullM2",
   "type": "Exercise",
   "number": "4.3.5.14",
   "title": "",
@@ -5367,7 +5691,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-truefalse3by5",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#prob-truefalse3by5",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#prob-truefalse3by5",
   "type": "Exercise",
   "number": "4.3.5.15",
   "title": "",
@@ -5376,7 +5700,7 @@ var ptx_lunr_docs = [
 {
   "id": "prob-truefalse7by3",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#prob-truefalse7by3",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#prob-truefalse7by3",
   "type": "Exercise",
   "number": "4.3.5.16",
   "title": "",
@@ -5385,1278 +5709,18 @@ var ptx_lunr_docs = [
 {
   "id": "prob-proofofrowBrowA",
   "level": "2",
-  "url": "Section-Subspaces-of-m-R-n-m-Associated-with-Matrices.html#prob-proofofrowBrowA",
+  "url": "Section-Subspaces-Associated-with-Matrices-and-Linear-Transformations.html#prob-proofofrowBrowA",
   "type": "Exercise",
   "number": "4.3.5.17",
   "title": "",
   "body": "  Complete the proof of by showing that adding a scalar multiple of one row of a matrix to another row does not change the row space.   "
 },
 {
-  "id": "Section-Abstract-Vector-Spaces",
-  "level": "1",
-  "url": "Section-Abstract-Vector-Spaces.html",
-  "type": "Section",
-  "number": "4.4",
-  "title": "Abstract Vector Spaces",
-  "body": " Abstract Vector Spaces  When we examined subspaces of we discussed as a vector space and introduced the notion of a subspace of . In this section we will consider sets other than that have two operations and satisfy the same properties as . Such sets, together with the operations of addition and scalar multiplication, will also be called vector spaces.   Properties of Vector Spaces  Recall that is said to be a vector space because    is closed under vector addition,     is closed under scalar multiplication,   and satisfies the following properties:   Commutative Property of Addition:     Associative Property of Addition:     Existence of Additive Identity:     Existence of Additive Inverse:     Distributive Property over Vector Addition:     Distributive Property over Scalar Addition:     Associative Property for Scalar Multiplication:     Multiplication by :        All scalars in this chapter are assumed to be real numbers. Complex scalars are considered later.    In the next two examples we will explore two sets other than endowed with addition and scalar multiplication and satisfying the same properties.   Let be the set of all matrices. Matrix addition and scalar multiplication were defined in chapter . Observe that the sum of two matrices is also an matrix. Likewise, a scalar multiple of an matrix is an matrix. Thus    is closed under matrix addition;     is closed under scalar multiplication.   In addition, and give us the following properties of matrix addition and scalar multiplication. Note that these properties are analogous to the eight vector properties above.   Commutative Property of Addition: .    Associative Property of Addition: .    Existence of Additive Identity: where is the zero matrix.    Existence of Additive Inverse: .    Distributive Property over Matrix Addition: .    Distributive Property over Scalar Addition: .    Associative Property for Scalar Multiplication: .    Multiplication by : .        Consider the set of all linear functions. This set includes all polynomials of degree and degree . We will use addition and scalar multiplication of polynomials as the two operations, and show that is closed under those operations and satisfies eight properties analogous to those of vectors of .    Elements of are functions given by (Note that and can be equal to zero.)  Given and in , it is easy to verify that is also in . This gives us closure under function addition. For any scalar , we have Therefore is in , and is closed under scalar multiplication. We now proceed to formulate eight properties analogous to those of vectors of .  Let , and be elements of given by , , and . Let and be scalars.   Commutative Property of Addition:   This property holds because     Associative property of Addition:   This property is easy to verify and is left to the reader.    Existence of additive identity:   The additive identity is given by . Note that is a vector in the space .    Existence of additive inverse:   The additive inverse of is a function given by . Note that is in .    Distributive Property over Vector Addition:   This property holds because     Distributive property over scalar addition:   This property holds because     Associative property for scalar multiplication:   This property holds because     Multiplication by   This follows from          Definition of a Vector Space  During and show us that there are many times in mathematics when we encounter a set with two operations (that we call addition and scalar multiplication) such that the set is closed under the two operations, and satisfies the same eight properties as . We will refer to such sets as vector spaces .    Let be a nonempty set. Suppose that elements of can be added together and multiplied by scalars. The set , together with operations of addition and scalar multiplication, is called a vector space provided that    is closed under addition,     is closed under scalar multiplication   and the following properties hold for , and in and scalars and :   Commutative Property of Addition:     Associative Property of Addition:\\quad     Existence of Additive Identity:     Existence of Additive Inverse:     Distributive Property over Vector Addition:     Distributive Property over Scalar Addition:     Associative Property for Scalar Multiplication:     Multiplication by :    We will refer to elements of as vectors .    When scalars and in the above definition are restricted to real numbers, as they are in this chapter, vector space may be referred to as a vector space over the real numbers .  We have already encountered two abstract vectors spaces before, viz.:    and are vector spaces (eee and ).   Sets of polynomials provide an important source of examples, so we review some basic facts. A polynomial with real coefficients in is an expression where are real numbers called the coefficients of the polynomial.  If all the coefficients are zero, the polynomial is called the zero polynomial and is denoted simply as .  If , the highest power of with a nonzero coefficient is called the degree of denoted as . The degree of the zero polynomial is not defined.  The coefficient itself is called the leading coefficient of . Hence , , and .  Let denote the set of all polynomials and suppose that are two polynomials in (possibly of different degrees). Then and are called equal (written ) if and only if all the corresponding coefficients are equal--- that is, one has , , , and so on. In particular, means , , , .  The set has an addition and scalar multiplication defined on it as follows: if and are as before and is a real number,   A ton of terminology was just introduced. They are underlined in the example below.     is a vector space.    It is easy to see that the sum of two polynomials is again a polynomial, and that a scalar multiple of a polynomial is a polynomial. Thus, is closed under addition and scalar multiplication. The other eight vector space properties are easily verified, and we conclude that is a vector space.      Let be the set of all degree two polynomials in . In other words, We claim that is not a vector space.    Observe that is not closed under addition. To see this, let and let . Then and are both elements of . However, is not an element of , as it is only a degree one polynomial. We require the coefficient of to be nonzero for a polynomial to be in , and this is not the case for . As an exercise, check the remaining vector space properties one-by-one to see which properties hold and which do not.    Set in is not a vector space, but if we make a slight modification, we can make it into a vector space.   Let be the set of polynomials of degree two or less. In other words, Note that contains the zero polynomial (let ). Unlike set in , is closed under polynomial addition and scalar multiplication. It is easy to verify that all vector space properties hold, so is a vector space.    Let be a natural number. Define to be the set of polynomials of degree or less than , then by reasoning similar to , is a vector space.     Subspaces    A nonempty subset of a vector space is called a subspace of , provided that is itself a vector space when given the same addition and scalar multiplication as .    An example to showcase this is in order.   In we demonstrated that is a vector space. From we know that is a vector space. But is a subset of , and uses the same operations of polynomial addition and scalar multiplication. Therefore is a subspace of .   Checking all ten properties to verify that a subset of a vector space is a subspace can be cumbersome. Fortunately we have the following theorem.   Subspace Test   Let be a nonempty subset of a vector space . If is closed under the operations of addition and scalar multiplication of , then is a subspace of .    To prove that closure is a sufficient condition for to be a subspace, we will need to show that closure under addition and scalar multiplication of guarantees that the remaining eight properties are satisfied automatically.  Observe that , , , , and hold for all elements of . Thus, these properties will hold for all elements of . We say that these properties are inherited from .  To prove we need to show that , which we know to be an element of , is contained in . Let be an element of (recall that is nonempty). We will show that in . Then, by closure under scalar multiplication, we will be able to conclude that must be in . Adding the additive inverse of to both sides gives us Thanks to and . By and  Because is closed under scalar multiplication is in . We know that every element of , being an element of , has an additive inverse in . We need to show that the additive inverse of every element of is contained in . Let be any element of . We will show that is the additive inverse of . Then by closure, will have to be contained in . To show that is the additive inverse of , we must show that . We compute: Thus is the additive inverse of . By closure, is in .    Let us activate the theorem in an example.   Let be a fixed matrix in . Show that the set of all matrices that commute with under matrix multiplication is a subspace of .   The set consists of all matrices such that . First, observe that is not empty because is an element. Now we need to show that is closed under matrix addition and scalar multiplication. Suppose that and lie in . Then and . Then Therefore commutes with . Thus is in . We conclude that is closed under matrix addition. Now suppose is in . Let be a scalar, then Therefore commutes with . We conclude that is in , and is closed under scalar multiplication. Hence is a subspace of .      Suppose is a polynomial and is a number. Then the number obtained by replacing by in the expression for is called the evaluation of at . For example, if , then the evaluation of at is If , the number is called a root of .    To get used to the new terminology, let us look at an example in the context of polynomials.    Consider the set of all polynomials in that have as a root: Show that is a subspace of .    Observe that is not empty because is an element of . Suppose and lie in . Then and . We have for all , so and is closed under addition. The verification that is closed under scalar multiplication is similar.      Linear Combinations and Span    Let be a vector space and let be vectors in . A vector is said to be a linear combination of vectors if for some scalars .      Let be a vector space and let be vectors in . The set of all linear combinations of is called the span of . We write and we say that vectors  span  . Any vector in is said to be in the span of . The set is called a spanning set for .    We revisit the situation for some specific polynomials.    Consider and in . Determine whether and lie in     For , we want to determine if and exist such that Expanding the right hand side gives us: Combining like terms, we get: Setting this equal to and equating coefficients of powers of gives us a system of equations This system has the solution and , so is indeed in . Turning to , we are looking for and such that Again equating coefficients of powers of gives equations , , and . But in this case there is no solution, so is not in .      Let be a vector space. Let be any subset of . Then is a subspace of .    See .      Bases and Dimension of Abstract Vector Spaces   When working with and subspaces of we developed several fundamental ideas including span , linear independence , bases and dimension . We will find that these concepts generalize easily to abstract vector spaces and that analogous results hold in these new settings.   Linear Independence   Let be a vector space. Let be vectors of . We say that the set is linearly independent if the only solution to is the trivial solution  .  If, in addition to the trivial solution, a non-trivial solution (not all are zero) exists, then we say that the set is linearly dependent .    Let us examine this abstract version of bases in the context of polynomials, to get a feeling for these concepts.    Show that is linearly independent in .    Consider the linear combination equation The constant term, as well as the coefficients in front of and , must be equal to . This gives us the following system of equations. The only solution is . We conclude that is linearly independent in .      Bases and Dimension  Recall that our motivation for defining a basis of a subspace of was to have a collection of vectors such that every vector of the subspace can be expressed as a unique linear combination of the vectors in that collection. Definition of a basis ( ) generalizes to abstract vector spaces as follows.    Let be a vector space. A set of vectors of is called a basis of provided that         is linearly independent.         Let be a vector space, and let be a basis for . Then every element of has a unique representation as linear combination of the elements of .    By the definition of a basis, we know that can be written as a linear combination of . Suppose there are two such representations. Then,  But then we have: Because are linearly independent, we have for . Consequently for .    In chapter , we defined the dimension of a subspace of to be the number of elements in a basis ( ). We will adopt this definition for abstract vector spaces. As before, to ensure that dimension is well-defined we need to establish that this definition is independent of our choice of a basis. The proof of the following theorem is identical to the proof of its counterpart in ( ).    Let be a vector space. Suppose and be two bases of . Then .    Now we can state the definition of dimensions for abstract vector spaces.    Let be a subspace of a vector space . The dimension of is the number, , of elements in any basis of . We write     In our discussions up to this point, we have always assumed that a basis is nonempty and hence that the dimension of the space is at least . However, the zero space has no basis. To accommodate for this, we will say that the zero vector space is defined to have dimension : Our insistence that amounts to saying that the empty set of vectors is a basis of . Thus the statement that ``the dimension of a vector space is the number of vectors in any basis'' holds even for the zero space.    Recall that the vector space consists of all matrices (see . Find a basis and the dimension of .    Let consist of matrices with exactly one entry equal to and all other entries equal to . It is clear that every matrix can be written as a linear combination of elements of . It is also easy to see that the elements of are linearly independent. Thus is a basis for . The set contains elements, so .      Recall that is the set of all polynomials of degree or less (see . Show that and that is a basis of .    Each polynomial is clearly a linear combination of , so . Suppose , then . So is linearly independent and is therefore a basis containing vectors. Thus, .      Consider the subset of . It was shown in of that is a subspace for any choice of the matrix . Let Show that and find a basis of .    Suppose is in . Then  This gives us two relationships: We can now express a generic element of as Let The set is linearly independent (see ) Every element of can be written as a linear combination of elements of . Thus . Therefore is a basis of , and .      In of you demonstrated that the set of all symmetric matrices is a subspace of . Let be a subspace of consisting of all symmetric matrices. Find the dimension of .    A matrix is symmetric if . In other words, a matrix is symmetric when entries directly across the main diagonal are equal, so each symmetric matrix has the form Hence the set spans . The reader can verify that is linearly independent. Thus is a basis of , so .      Finite-Dimensional Vector Spaces  Our definition of dimension of a vector space depends on the vector space having a basis. In this section we will establish that any vector space spanned by finitely many vectors has a basis.    A vector space is said to be finite-dimensional if it is spanned by finitely many vectors.    Given a finite-dimensional vector space we will find a basis for by starting with a linearly independent subset of and expanding it to a basis. The following results are more general versions of and , and . The proofs are identical and we will omit them.    Let be a vector space spanned by vectors. If a linearly independent subset of contains vectors, then .      Let be a vector space. Let be a linearly independent subset of . If is not in , then is linearly independent.      Let be a finite-dimensional vector space. Any linearly independent subset of can be expanded to a basis of .      Coordinate Vectors  Recall that in the context of (and subspaces of ) the requirement that elements of a basis be linearly independent guarantees that every element of the vector space has a unique representation in terms of the elements of the basis. (See Theorem of Introduction to Bases ) We proved the same property for abstract vector spaces in Theorem .  Uniqueness of representation in terms of the elements of a basis allows us to associate every element of a vector space with a unique coordinate vector with respect to a given basis. Coordinate vectors were first introduced in Introduction to Bases . We now give a formal definition.    Let be a vector space, and let be a basis for . If , then the vector in whose components are the coefficients is said to be the coordinate vector for with respect to . We denote the coordinate vector by and write:       The order of in which vectors appear in of is important. Switching the order of these vectors would switch the order of the coordinate vector components. For this reason, we will often use the term ordered basis to describe in the context of coordinate vectors.    Coordinate vectors may seem abstract as described above. In examples, however, one can nearly always pinpoint exactly what the coordinates are. Some examples will emphaize this:   The coordinate vector for in with respect to the ordered basis is Now let's change the order of the elements in . The coordinate vector for with respect to the ordered basis is      Show that the set is a basis for . Keep the order of elements in and find the coordinate vector for with respect to the ordered basis .    We will begin by showing that the elements of are linearly independent. Suppose Then This gives us the following system of equations: The solution is unique. We conclude that is linearly independent.  Next, we need to show that spans . To this end, we will consider a generic element of and attempt to express it as a linear combination of the elements of . then Setting the coefficients of like terms equal to each other gives us Solving this linear system of , and gives us (You should verify this.) This shows that every element of can be written as a linear combination of elements of . Therefore is a basis for . To find the coordinate vector for with respect to we need to express as a linear combination of the elements of . Fortunately, we have already done all the necessary work. For , , and . This gives us the coefficients of the linear combination: , , . We now write as a linear combination The coordinate vector for with respect to is       Recall that the set of all symmetric matrices is a subspace of . In , we demonstrated that is a basis for . Let . Observe that is an element of .   Find the coordinate vector with respect to the ordered basis for .    Let be another ordered basis for . Find the coordinate vector for with respect to .       We write as a linear combination of the elements of . Thus, the coordinate vector with respect to is The coordinate vector with respect to is     Coordinate vectors will play a vital role in establishing one of the most fundamental results in linear algebra, that all -dimensional vector spaces have the same structure as . In , for instance, we will show that is essentially the same as .      Is the set of all points in a vector space under the given definitions of addition and scalar multiplication? In each case be specific about which vector space properties hold and which properties fail.     Addition: and scalar Multiplication:       Addition: and scalar Multiplication:       Addition: and scalar Multiplication:       Addition: and scalar Multiplication:        Let be the set of all real-valued functions whose domain is all real numbers. Define addition and scalar multiplication as follows: Verify that is a vector space.      A differential equation is an equation that contains derivatives. Consider the differential equation: A solution to such an equation is a function.   Verify that is a solution to .    Is a solution?    Is a solution?    Is a solution?    Let be the set of all solutions to . Prove that is a vector space.         In this problem we will check that the set of all complex numbers is in fact a vector space. Let be a complex number. Similarly, let , be complex numbers, and let and be real number scalars. Check that complex numbers are closed under addition and multiplication, and that they satisfy each of the vector space properties.      Refer to and describe all elements of , where is a identity matrix.      Is the subset of all invertible matrices a subspace of ? Prove your claim.      Is the subset of all symmetric matrices a subspace of ? (eee .) Prove your claim.      Let be a subset of that consists of matrices that commute with every matrix in under matrix multiplication. In other words, Is a subspace of ?    Don't forget to check that is not empty!      List several elements of Suggest a spanning set for .      Describe how every element of looks liike.      Prove .       Prove that set of is linearly independent.      Show that each of the following sets of vectors is linearly independent.                           Show that each set in - is a basis for its respective vector space.      Find the coordinate vector for with respect to the given ordered basis of .                              Find the coordinate vector for with respect to the ordered basis            Let be a vector space of dimension . Suppose is linearly independent in . Show that is a basis for .     "
-},
-{
-  "id": "Subsection-Properties-of-Vector-Spaces-3",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#Subsection-Properties-of-Vector-Spaces-3",
-  "type": "Remark",
-  "number": "4.4.1",
-  "title": "",
-  "body": "  All scalars in this chapter are assumed to be real numbers. Complex scalars are considered later.   "
-},
-{
-  "id": "ex-setofmatricesvectorspace",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-setofmatricesvectorspace",
-  "type": "Example",
-  "number": "4.4.2",
-  "title": "",
-  "body": " Let be the set of all matrices. Matrix addition and scalar multiplication were defined in chapter . Observe that the sum of two matrices is also an matrix. Likewise, a scalar multiple of an matrix is an matrix. Thus    is closed under matrix addition;     is closed under scalar multiplication.   In addition, and give us the following properties of matrix addition and scalar multiplication. Note that these properties are analogous to the eight vector properties above.   Commutative Property of Addition: .    Associative Property of Addition: .    Existence of Additive Identity: where is the zero matrix.    Existence of Additive Inverse: .    Distributive Property over Matrix Addition: .    Distributive Property over Scalar Addition: .    Associative Property for Scalar Multiplication: .    Multiplication by : .     "
-},
-{
-  "id": "ex-linfunctionsvectspace",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-linfunctionsvectspace",
-  "type": "Example",
-  "number": "4.4.3",
-  "title": "",
-  "body": "  Consider the set of all linear functions. This set includes all polynomials of degree and degree . We will use addition and scalar multiplication of polynomials as the two operations, and show that is closed under those operations and satisfies eight properties analogous to those of vectors of .    Elements of are functions given by (Note that and can be equal to zero.)  Given and in , it is easy to verify that is also in . This gives us closure under function addition. For any scalar , we have Therefore is in , and is closed under scalar multiplication. We now proceed to formulate eight properties analogous to those of vectors of .  Let , and be elements of given by , , and . Let and be scalars.   Commutative Property of Addition:   This property holds because     Associative property of Addition:   This property is easy to verify and is left to the reader.    Existence of additive identity:   The additive identity is given by . Note that is a vector in the space .    Existence of additive inverse:   The additive inverse of is a function given by . Note that is in .    Distributive Property over Vector Addition:   This property holds because     Distributive property over scalar addition:   This property holds because     Associative property for scalar multiplication:   This property holds because     Multiplication by   This follows from       "
-},
-{
-  "id": "Subsection-Definition-of-a-Vector-Space-2",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "vector spaces "
-},
-{
-  "id": "def-vectorspacegeneral",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#def-vectorspacegeneral",
-  "type": "Definition",
-  "number": "4.4.4",
-  "title": "",
-  "body": "  Let be a nonempty set. Suppose that elements of can be added together and multiplied by scalars. The set , together with operations of addition and scalar multiplication, is called a vector space provided that    is closed under addition,     is closed under scalar multiplication   and the following properties hold for , and in and scalars and :   Commutative Property of Addition:     Associative Property of Addition:\\quad     Existence of Additive Identity:     Existence of Additive Inverse:     Distributive Property over Vector Addition:     Distributive Property over Scalar Addition:     Associative Property for Scalar Multiplication:     Multiplication by :    We will refer to elements of as vectors .   "
-},
-{
-  "id": "Subsection-Definition-of-a-Vector-Space-4",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space-4",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "vector space over the real numbers "
-},
-{
-  "id": "ex-MLexamplesofvectspaces",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-MLexamplesofvectspaces",
-  "type": "Example",
-  "number": "4.4.5",
-  "title": "",
-  "body": "  and are vector spaces (eee and ).  "
-},
-{
-  "id": "Subsection-Definition-of-a-Vector-Space-7",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space-7",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "polynomial with real coefficients coefficients "
-},
-{
-  "id": "Subsection-Definition-of-a-Vector-Space-8",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space-8",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "zero polynomial "
-},
-{
-  "id": "Subsection-Definition-of-a-Vector-Space-9",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space-9",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "degree "
-},
-{
-  "id": "Subsection-Definition-of-a-Vector-Space-10",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space-10",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "leading coefficient "
-},
-{
-  "id": "Subsection-Definition-of-a-Vector-Space-11",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space-11",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "equal "
-},
-{
-  "id": "ex-pisavectorspace",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-pisavectorspace",
-  "type": "Example",
-  "number": "4.4.6",
-  "title": "",
-  "body": "   is a vector space.    It is easy to see that the sum of two polynomials is again a polynomial, and that a scalar multiple of a polynomial is a polynomial. Thus, is closed under addition and scalar multiplication. The other eight vector space properties are easily verified, and we conclude that is a vector space.   "
-},
-{
-  "id": "ex-deg2onlynotavecspace",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-deg2onlynotavecspace",
-  "type": "Example",
-  "number": "4.4.7",
-  "title": "",
-  "body": "  Let be the set of all degree two polynomials in . In other words, We claim that is not a vector space.    Observe that is not closed under addition. To see this, let and let . Then and are both elements of . However, is not an element of , as it is only a degree one polynomial. We require the coefficient of to be nonzero for a polynomial to be in , and this is not the case for . As an exercise, check the remaining vector space properties one-by-one to see which properties hold and which do not.   "
-},
-{
-  "id": "ex-deg-le-2vectorspace",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-deg-le-2vectorspace",
-  "type": "Example",
-  "number": "4.4.8",
-  "title": "",
-  "body": " Let be the set of polynomials of degree two or less. In other words, Note that contains the zero polynomial (let ). Unlike set in , is closed under polynomial addition and scalar multiplication. It is easy to verify that all vector space properties hold, so is a vector space.  "
-},
-{
-  "id": "ex-pnisavectorspace",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-pnisavectorspace",
-  "type": "Example",
-  "number": "4.4.9",
-  "title": "",
-  "body": " Let be a natural number. Define to be the set of polynomials of degree or less than , then by reasoning similar to , is a vector space.  "
-},
-{
-  "id": "def-subspaceabstract",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#def-subspaceabstract",
-  "type": "Definition",
-  "number": "4.4.10",
-  "title": "",
-  "body": "  A nonempty subset of a vector space is called a subspace of , provided that is itself a vector space when given the same addition and scalar multiplication as .   "
-},
-{
-  "id": "ex-subspaceabstract1",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-subspaceabstract1",
-  "type": "Example",
-  "number": "4.4.11",
-  "title": "",
-  "body": " In we demonstrated that is a vector space. From we know that is a vector space. But is a subset of , and uses the same operations of polynomial addition and scalar multiplication. Therefore is a subspace of .  "
-},
-{
-  "id": "th-subspacetestabstract",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#th-subspacetestabstract",
-  "type": "Theorem",
-  "number": "4.4.12",
-  "title": "Subspace Test.",
-  "body": " Subspace Test   Let be a nonempty subset of a vector space . If is closed under the operations of addition and scalar multiplication of , then is a subspace of .    To prove that closure is a sufficient condition for to be a subspace, we will need to show that closure under addition and scalar multiplication of guarantees that the remaining eight properties are satisfied automatically.  Observe that , , , , and hold for all elements of . Thus, these properties will hold for all elements of . We say that these properties are inherited from .  To prove we need to show that , which we know to be an element of , is contained in . Let be an element of (recall that is nonempty). We will show that in . Then, by closure under scalar multiplication, we will be able to conclude that must be in . Adding the additive inverse of to both sides gives us Thanks to and . By and  Because is closed under scalar multiplication is in . We know that every element of , being an element of , has an additive inverse in . We need to show that the additive inverse of every element of is contained in . Let be any element of . We will show that is the additive inverse of . Then by closure, will have to be contained in . To show that is the additive inverse of , we must show that . We compute: Thus is the additive inverse of . By closure, is in .   "
-},
-{
-  "id": "ex-centralizerofA",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-centralizerofA",
-  "type": "Example",
-  "number": "4.4.13",
-  "title": "",
-  "body": " Let be a fixed matrix in . Show that the set of all matrices that commute with under matrix multiplication is a subspace of .   The set consists of all matrices such that . First, observe that is not empty because is an element. Now we need to show that is closed under matrix addition and scalar multiplication. Suppose that and lie in . Then and . Then Therefore commutes with . Thus is in . We conclude that is closed under matrix addition. Now suppose is in . Let be a scalar, then Therefore commutes with . We conclude that is in , and is closed under scalar multiplication. Hence is a subspace of .   "
-},
-{
-  "id": "Subsection-Subspaces-9",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#Subsection-Subspaces-9",
-  "type": "Remark",
-  "number": "4.4.14",
-  "title": "",
-  "body": "  Suppose is a polynomial and is a number. Then the number obtained by replacing by in the expression for is called the evaluation of at . For example, if , then the evaluation of at is If , the number is called a root of .   "
-},
-{
-  "id": "ex-root3",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-root3",
-  "type": "Example",
-  "number": "4.4.15",
-  "title": "",
-  "body": "  Consider the set of all polynomials in that have as a root: Show that is a subspace of .    Observe that is not empty because is an element of . Suppose and lie in . Then and . We have for all , so and is closed under addition. The verification that is closed under scalar multiplication is similar.   "
-},
-{
-  "id": "def-lincombabstract",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#def-lincombabstract",
-  "type": "Definition",
-  "number": "4.4.16",
-  "title": "",
-  "body": "  Let be a vector space and let be vectors in . A vector is said to be a linear combination of vectors if for some scalars .   "
-},
-{
-  "id": "def-spanabstract",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#def-spanabstract",
-  "type": "Definition",
-  "number": "4.4.17",
-  "title": "",
-  "body": "  Let be a vector space and let be vectors in . The set of all linear combinations of is called the span of . We write and we say that vectors  span  . Any vector in is said to be in the span of . The set is called a spanning set for .   "
-},
-{
-  "id": "ex-inthespanpoly",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-inthespanpoly",
-  "type": "Example",
-  "number": "4.4.18",
-  "title": "",
-  "body": "  Consider and in . Determine whether and lie in     For , we want to determine if and exist such that Expanding the right hand side gives us: Combining like terms, we get: Setting this equal to and equating coefficients of powers of gives us a system of equations This system has the solution and , so is indeed in . Turning to , we are looking for and such that Again equating coefficients of powers of gives equations , , and . But in this case there is no solution, so is not in .   "
-},
-{
-  "id": "th-spanisasubspaceabstract",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#th-spanisasubspaceabstract",
-  "type": "Theorem",
-  "number": "4.4.19",
-  "title": "",
-  "body": "  Let be a vector space. Let be any subset of . Then is a subspace of .    See .   "
-},
-{
-  "id": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces-2",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#Section-Bases-and-Dimension-of-Abstract-Vector-Spaces-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "span linear independence bases dimension "
-},
-{
-  "id": "def-linearindependenceabstract",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#def-linearindependenceabstract",
-  "type": "Definition",
-  "number": "4.4.20",
-  "title": "Linear Independence.",
-  "body": " Linear Independence   Let be a vector space. Let be vectors of . We say that the set is linearly independent if the only solution to is the trivial solution  .  If, in addition to the trivial solution, a non-trivial solution (not all are zero) exists, then we say that the set is linearly dependent .   "
-},
-{
-  "id": "ex-polyindset",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-polyindset",
-  "type": "Example",
-  "number": "4.4.21",
-  "title": "",
-  "body": "  Show that is linearly independent in .    Consider the linear combination equation The constant term, as well as the coefficients in front of and , must be equal to . This gives us the following system of equations. The only solution is . We conclude that is linearly independent in .   "
-},
-{
-  "id": "def-basisabstract",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#def-basisabstract",
-  "type": "Definition",
-  "number": "4.4.22",
-  "title": "",
-  "body": "  Let be a vector space. A set of vectors of is called a basis of provided that         is linearly independent.      "
-},
-{
-  "id": "th-uniquerep",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#th-uniquerep",
-  "type": "Theorem",
-  "number": "4.4.23",
-  "title": "",
-  "body": "  Let be a vector space, and let be a basis for . Then every element of has a unique representation as linear combination of the elements of .    By the definition of a basis, we know that can be written as a linear combination of . Suppose there are two such representations. Then,  But then we have: Because are linearly independent, we have for . Consequently for .   "
-},
-{
-  "id": "Subsection-Bases-and-Dimension-5",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#Subsection-Bases-and-Dimension-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "dimension "
-},
-{
-  "id": "th-dimwelldefinedabstract",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#th-dimwelldefinedabstract",
-  "type": "Theorem",
-  "number": "4.4.24",
-  "title": "",
-  "body": "  Let be a vector space. Suppose and be two bases of . Then .   "
-},
-{
-  "id": "def-dimensionabstract",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#def-dimensionabstract",
-  "type": "Definition",
-  "number": "4.4.25",
-  "title": "",
-  "body": "  Let be a subspace of a vector space . The dimension of is the number, , of elements in any basis of . We write    "
-},
-{
-  "id": "ex-dimofM",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-dimofM",
-  "type": "Example",
-  "number": "4.4.26",
-  "title": "",
-  "body": "  Recall that the vector space consists of all matrices (see . Find a basis and the dimension of .    Let consist of matrices with exactly one entry equal to and all other entries equal to . It is clear that every matrix can be written as a linear combination of elements of . It is also easy to see that the elements of are linearly independent. Thus is a basis for . The set contains elements, so .   "
-},
-{
-  "id": "ex-dimofP",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-dimofP",
-  "type": "Example",
-  "number": "4.4.27",
-  "title": "",
-  "body": "  Recall that is the set of all polynomials of degree or less (see . Show that and that is a basis of .    Each polynomial is clearly a linear combination of , so . Suppose , then . So is linearly independent and is therefore a basis containing vectors. Thus, .   "
-},
-{
-  "id": "ex-CAbasis",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-CAbasis",
-  "type": "Example",
-  "number": "4.4.28",
-  "title": "",
-  "body": "  Consider the subset of . It was shown in of that is a subspace for any choice of the matrix . Let Show that and find a basis of .    Suppose is in . Then  This gives us two relationships: We can now express a generic element of as Let The set is linearly independent (see ) Every element of can be written as a linear combination of elements of . Thus . Therefore is a basis of , and .   "
-},
-{
-  "id": "ex-symmetricmatsubspace",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-symmetricmatsubspace",
-  "type": "Example",
-  "number": "4.4.29",
-  "title": "",
-  "body": "  In of you demonstrated that the set of all symmetric matrices is a subspace of . Let be a subspace of consisting of all symmetric matrices. Find the dimension of .    A matrix is symmetric if . In other words, a matrix is symmetric when entries directly across the main diagonal are equal, so each symmetric matrix has the form Hence the set spans . The reader can verify that is linearly independent. Thus is a basis of , so .   "
-},
-{
-  "id": "def-findimvectorspace",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#def-findimvectorspace",
-  "type": "Definition",
-  "number": "4.4.30",
-  "title": "",
-  "body": "  A vector space is said to be finite-dimensional if it is spanned by finitely many vectors.   "
-},
-{
-  "id": "lemma-atmostnlinindinabstract",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#lemma-atmostnlinindinabstract",
-  "type": "Lemma",
-  "number": "4.4.31",
-  "title": "",
-  "body": "  Let be a vector space spanned by vectors. If a linearly independent subset of contains vectors, then .   "
-},
-{
-  "id": "lemma-expandinglinindsetabstract",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#lemma-expandinglinindsetabstract",
-  "type": "Lemma",
-  "number": "4.4.32",
-  "title": "",
-  "body": "  Let be a vector space. Let be a linearly independent subset of . If is not in , then is linearly independent.   "
-},
-{
-  "id": "th-expandtobasisabstract",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#th-expandtobasisabstract",
-  "type": "Theorem",
-  "number": "4.4.33",
-  "title": "",
-  "body": "  Let be a finite-dimensional vector space. Any linearly independent subset of can be expanded to a basis of .   "
-},
-{
-  "id": "Subsection-Coordinate-Vectors-3",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#Subsection-Coordinate-Vectors-3",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "coordinate vector "
-},
-{
-  "id": "def-coordvector",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#def-coordvector",
-  "type": "Definition",
-  "number": "4.4.34",
-  "title": "",
-  "body": "  Let be a vector space, and let be a basis for . If , then the vector in whose components are the coefficients is said to be the coordinate vector for with respect to . We denote the coordinate vector by and write:    "
-},
-{
-  "id": "coordVectorOrder",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#coordVectorOrder",
-  "type": "Remark",
-  "number": "4.4.35",
-  "title": "",
-  "body": "  The order of in which vectors appear in of is important. Switching the order of these vectors would switch the order of the coordinate vector components. For this reason, we will often use the term ordered basis to describe in the context of coordinate vectors.   "
-},
-{
-  "id": "ex-coordvectorinpolyvectspace",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-coordvectorinpolyvectspace",
-  "type": "Example",
-  "number": "4.4.36",
-  "title": "",
-  "body": " The coordinate vector for in with respect to the ordered basis is Now let's change the order of the elements in . The coordinate vector for with respect to the ordered basis is   "
-},
-{
-  "id": "ex-coordvectorinpolyvectspace2",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-coordvectorinpolyvectspace2",
-  "type": "Example",
-  "number": "4.4.37",
-  "title": "",
-  "body": "  Show that the set is a basis for . Keep the order of elements in and find the coordinate vector for with respect to the ordered basis .    We will begin by showing that the elements of are linearly independent. Suppose Then This gives us the following system of equations: The solution is unique. We conclude that is linearly independent.  Next, we need to show that spans . To this end, we will consider a generic element of and attempt to express it as a linear combination of the elements of . then Setting the coefficients of like terms equal to each other gives us Solving this linear system of , and gives us (You should verify this.) This shows that every element of can be written as a linear combination of elements of . Therefore is a basis for . To find the coordinate vector for with respect to we need to express as a linear combination of the elements of . Fortunately, we have already done all the necessary work. For , , and . This gives us the coefficients of the linear combination: , , . We now write as a linear combination The coordinate vector for with respect to is    "
-},
-{
-  "id": "ex-symmmatsubspace",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#ex-symmmatsubspace",
-  "type": "Example",
-  "number": "4.4.38",
-  "title": "",
-  "body": "  Recall that the set of all symmetric matrices is a subspace of . In , we demonstrated that is a basis for . Let . Observe that is an element of .   Find the coordinate vector with respect to the ordered basis for .    Let be another ordered basis for . Find the coordinate vector for with respect to .       We write as a linear combination of the elements of . Thus, the coordinate vector with respect to is The coordinate vector with respect to is    "
-},
-{
-  "id": "prob-abstractvectspace1",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-abstractvectspace1",
-  "type": "Exercise",
-  "number": "4.4.9.1",
-  "title": "",
-  "body": "  Addition: and scalar Multiplication:    "
-},
-{
-  "id": "prob-abstractvectspace2",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-abstractvectspace2",
-  "type": "Exercise",
-  "number": "4.4.9.2",
-  "title": "",
-  "body": "  Addition: and scalar Multiplication:    "
-},
-{
-  "id": "prob-abstractvectspace3",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-abstractvectspace3",
-  "type": "Exercise",
-  "number": "4.4.9.3",
-  "title": "",
-  "body": "  Addition: and scalar Multiplication:    "
-},
-{
-  "id": "prob-abstractvectspace4",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-abstractvectspace4",
-  "type": "Exercise",
-  "number": "4.4.9.4",
-  "title": "",
-  "body": "  Addition: and scalar Multiplication:    "
-},
-{
-  "id": "prob-abstractvectspace5",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-abstractvectspace5",
-  "type": "Exercise",
-  "number": "4.4.9.5",
-  "title": "",
-  "body": "  Let be the set of all real-valued functions whose domain is all real numbers. Define addition and scalar multiplication as follows: Verify that is a vector space.   "
-},
-{
-  "id": "prob-abstractvectspacediffeq",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-abstractvectspacediffeq",
-  "type": "Exercise",
-  "number": "4.4.9.6",
-  "title": "",
-  "body": "  A differential equation is an equation that contains derivatives. Consider the differential equation: A solution to such an equation is a function.   Verify that is a solution to .    Is a solution?    Is a solution?    Is a solution?    Let be the set of all solutions to . Prove that is a vector space.      "
-},
-{
-  "id": "prob-abstractvectspacecomplex",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-abstractvectspacecomplex",
-  "type": "Exercise",
-  "number": "4.4.9.7",
-  "title": "",
-  "body": "  In this problem we will check that the set of all complex numbers is in fact a vector space. Let be a complex number. Similarly, let , be complex numbers, and let and be real number scalars. Check that complex numbers are closed under addition and multiplication, and that they satisfy each of the vector space properties.   "
-},
-{
-  "id": "prob-abstractvectspace6",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-abstractvectspace6",
-  "type": "Exercise",
-  "number": "4.4.9.8",
-  "title": "",
-  "body": "  Refer to and describe all elements of , where is a identity matrix.   "
-},
-{
-  "id": "prob-abstractvectspace7",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-abstractvectspace7",
-  "type": "Exercise",
-  "number": "4.4.9.9",
-  "title": "",
-  "body": "  Is the subset of all invertible matrices a subspace of ? Prove your claim.   "
-},
-{
-  "id": "prob-symmetricsubspace",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-symmetricsubspace",
-  "type": "Exercise",
-  "number": "4.4.9.10",
-  "title": "",
-  "body": "  Is the subset of all symmetric matrices a subspace of ? (eee .) Prove your claim.   "
-},
-{
-  "id": "prob-abstractvectspace8",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-abstractvectspace8",
-  "type": "Exercise",
-  "number": "4.4.9.11",
-  "title": "",
-  "body": "  Let be a subset of that consists of matrices that commute with every matrix in under matrix multiplication. In other words, Is a subspace of ?    Don't forget to check that is not empty!   "
-},
-{
-  "id": "prob-abstractvectspace9",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-abstractvectspace9",
-  "type": "Exercise",
-  "number": "4.4.9.12",
-  "title": "",
-  "body": "  List several elements of Suggest a spanning set for .   "
-},
-{
-  "id": "prob-abstractvectspace10",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-abstractvectspace10",
-  "type": "Exercise",
-  "number": "4.4.9.13",
-  "title": "",
-  "body": "  Describe how every element of looks liike.   "
-},
-{
-  "id": "prob-spanisasubspaceabstract",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-spanisasubspaceabstract",
-  "type": "Exercise",
-  "number": "4.4.9.14",
-  "title": "",
-  "body": "  Prove .   "
-},
-{
-  "id": "prob-CABlinind",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-CABlinind",
-  "type": "Exercise",
-  "number": "4.4.9.15",
-  "title": "",
-  "body": "  Prove that set of is linearly independent.   "
-},
-{
-  "id": "prob-linindabstractvsp1",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-linindabstractvsp1",
-  "type": "Exercise",
-  "number": "4.4.9.16",
-  "title": "",
-  "body": "      "
-},
-{
-  "id": "prob-linindabstractvsp2",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-linindabstractvsp2",
-  "type": "Exercise",
-  "number": "4.4.9.17",
-  "title": "",
-  "body": "      "
-},
-{
-  "id": "prob-linindabstractvsp3",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-linindabstractvsp3",
-  "type": "Exercise",
-  "number": "4.4.9.18",
-  "title": "",
-  "body": "      "
-},
-{
-  "id": "prob-linindabstractvsp123",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-linindabstractvsp123",
-  "type": "Exercise",
-  "number": "4.4.9.19",
-  "title": "",
-  "body": "  Show that each set in - is a basis for its respective vector space.   "
-},
-{
-  "id": "prob-coordvectors1",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-coordvectors1",
-  "type": "Exercise",
-  "number": "4.4.9.20",
-  "title": "",
-  "body": "           "
-},
-{
-  "id": "prob-coordvectors2",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-coordvectors2",
-  "type": "Exercise",
-  "number": "4.4.9.21",
-  "title": "",
-  "body": "           "
-},
-{
-  "id": "prob-coordvectors3",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-coordvectors3",
-  "type": "Exercise",
-  "number": "4.4.9.22",
-  "title": "",
-  "body": "  Find the coordinate vector for with respect to the ordered basis         "
-},
-{
-  "id": "prob-basisforabstractvectspace",
-  "level": "2",
-  "url": "Section-Abstract-Vector-Spaces.html#prob-basisforabstractvectspace",
-  "type": "Exercise",
-  "number": "4.4.9.23",
-  "title": "",
-  "body": "  Let be a vector space of dimension . Suppose is linearly independent in . Show that is a basis for .   "
-},
-{
-  "id": "Section-Linear-Transformations-of-Abstract-Vector-Spaces",
-  "level": "1",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html",
-  "type": "Section",
-  "number": "4.5",
-  "title": "Linear Transformations of Abstract Vector Spaces",
-  "body": " Linear Transformations of Abstract Vector Spaces  Recall that a transformation is called a linear transformation if the following are true for all vectors and in , and scalars .  We generalize this definition as follows.    Let and be vector spaces. A transformation is called a linear transformation if the following are true for all vectors and in , and scalars .      This generalization allows for more interesting examples to be studied. For example:    Recall that is the set of all matrices. In , we demonstrated that together with operations of matrix addition and scalar multiplication is a vector space. Let be a transformation defined by where is fixed matrix. Show that is a linear transformation.    We verify the linearity properties using properties of matrix-matrix and matrix-scalar multiplication (see ). For and in and a scalar we have: together with       Recall that is the set of polynomials of degree or less than . In , we showed that together with operations of polynomial addition and scalar multiplication is a vector space. Suppose is a linear transformation such that   Find the image of under .           Let be a transformation such that . Show that is not linear.    To show that is not linear it suffices to find two matrices and such that .  Observe that if we pick and so that each has rank we would have while . Clearly .  This argument is sufficient, but if we want to have a specific example, we can find one.  Let Then and Thus, .     Linear Transformations and Bases   Suppose we want to define a linear transformation by Is this information sufficient to define ? To answer this question we will try to determine what does to an arbitrary vector of . If is a vector in , then can be uniquely expressed as a linear combination of and  By linearity of we have This shows that the image of every vector of under is completely determined by the action of on the standard unit vectors and . Vectors and form a standard basis of . What if we want to use a different basis? Let be our basis of choice for . (How would you verify that is a basis of ?) And suppose we want to define a linear transformation by Is this enough information to define ? Because form a basis of , every element of can be written as a unique linear combination We can find as follows: Again, we see how a linear transformation is completely determined by its action on a basis. assures us that given a basis, every vector has a unique representation as a linear combination of the basis vectors. Imagine what would happen if this were not the case.  In the first part of this exploration, for instance, we might have been able to represent as and ( or ). This would have resulted in mapping to two different elements: and , implying that is not even a function.   Let be a basis of a vector space . To define a linear transformation , it is sufficient to state the image of each basis vector under . Once the images of the basis vectors are established, we can determine the images of all vectors of as follows: Given any vector of , write as a linear combination of the elements of  Then     Coordinate Vectors  Transformations that map vectors to their coordinate vectors will prove to be of great importance. In this section we will prove that such transformations are linear and give several examples. If is a vector space, and is an ordered basis for then any vector of can be uniquely expressed as for some scalars . Vector in given by is said to be the coordinate vector for with respect to the ordered basis (see ). It turns out that the transformation defined by is linear. Before we prove linearity of , consider the following examples.    Consider . Let be an ordered basis for (You should do a quick mental check that is a legitimate basis). Define by . Find     We need to find the coordinate vector for with respect to . Firstly, This gives us:       Recall that is the set of polynomials of degree or less than . In , we showed that is a vector space.   Let be an ordered basis for . (It is easy to verify that is a basis.) If is given by , find     Let be an ordered basis for - In (see ), you demonstrated that is a basis.) If is given by , find         We express as a linear combination of elements of . Therefore Note that it is important to keep the basis elements in the same order in which they are listed, as the order of components of the coordinate vector depends on the order of the basis elements. We conclude that For : Our goal is to express as a linear combination of the elements of . Thus, we need to find coefficients , and such that This gives us a system of linear equations: Solving the system yields , and . Thus       Let be an -dimensional vector space, and let be an ordered basis for . Then given by is a linear transformation.     First observe that of guarantees that there is only one way to represent each element of as a linear combination of elements of . Thus each element of maps to exactly one element of , as long as the order in which elements of appear is taken into account. This proves that is a function, or a transformation.  We will now prove that is linear. Let be an element of . We will first show that . Suppose , then can be written as a unique linear combination: We have: We leave it to the reader to verify that (see ).   In our final example, we will consider in the context of a basis of the codomain, as well as a basis of the domain. This will later help us tackle the question of the matrix of associated with bases other than the standard one.    Let  and Because each of and is linearly independent, let be ordered bases of and , respectively. Define a linear transformation by    Verify that is in and find the coordinate vector .    Find and the coordinate vector .       For , we need to express as a linear combination of and . This can be done by observation or by solving the equation We find that and , so . Thus is in . The coordinate vector for with respect to the ordered basis is For , by linearity of we have The coordinate vector for with respect to the ordered basis is       Inverses of a Linear Transformations  In , we examined a linear transformation that doubles all input vectors, and its inverse , that halves all input vectors. We observed that the composite functions and are both identity transformations. Diagrammatically, we can represent and as follows:   Idea of inverse diagram    This gives us a way of thinking about an inverse of as a transformation that ``undoes\" the action of by ``reversing\" the mapping arrows. We will now use these intuitive ideas to understand which linear transformations are invertible and which are not.  Given an arbitrary linear transformation , ``reversing the arrows\" may not always result in a transformation. Recall that transformations are functions. The figures below show two ways in which our attempt to ``reverse\" may fail to produce a function. First, if two distinct vectors and map to the same vector in , then reversing the arrows gives us a mapping that is clearly not a function.          Second, observe that our definition of an inverse of requires that the domain of the inverse transformation be (remember the inverse is intuitively the opposite one!)). If there is a vector in that is not an image of any vector in , then cannot be in the domain of an inverse transformation.      We now illustrate these potential issues with specific examples.    Let be a linear transformation whose standard matrix is Does have an inverse? Show that multiple vectors of the domain map to in the codomain.    The matrix is not invertible, so does not have an inverse. We now dig a little deeper to get additional insights into why does not have an inverse. Observe that all vectors of the form map to . To verify this, use matrix multiplication: This shows that there are infinitely many vectors that map to . So, ``reversing the arrows\" would not result in a function. (See Figure 1)      Let be a linear transformation whose standard matrix is Does have an inverse? Show that there exists a vector in such that no vector of maps to .    The matrix is not invertible (it's not even a square matrix!), so does not have an inverse. We now get another insight into why is not invertible. To find a vector such that no vector of maps to , we need to find for which the matrix equation has no solution.  Let . Gauss-Jordan elimination yields: Now, has a solution if and only if . Since we do not want to have a solution, all we need to do is pick values , and such that . Let . Then no element of maps to . This shows that we cannot ``reverse the arrows\" in an attempt to produce an inverse of . (See Figure 2)    Our next goal is to develop vocabulary that would allow us to discuss issues illustrated in Figures and .    Existence and Uniqueness of Inverses    Let and be vector spaces, and let be a linear transformation. Then has an inverse if and only if is one-to-one and onto.    We will first assume that is one-to-one and onto, and show that there exists a transformation such that and .  Because is onto, for every in , there exists in such that . Moreover, because is one-to-one, vector is the only vector that maps to . To stress this, we will say that for every , there exists such that . (Since every maps to exactly one , this notation makes sense for elements of as well.) We can now define by . Then We conclude that and . Therefore is an inverse of . We will now assume that has an inverse and show that must be one-to-one and onto. Suppose then but then We conclude that is one-to-one. Now suppose that is in . We need to show that some element of maps to . Let . Then We conclude that is onto.    The theorem together with its proof is all very formal. In practice, one can verify whether an inverse exists by verifying onto and one-to-one (often easier than pinpointing an inverse). Here is a case in point:    Transformation in is invertible.    We demonstrated that is one-to-one and onto. By , has an inverse. Recall that was introduced to demonstrate that is not always directly applicable. We now have additional tools. assures us that has an inverse, but does not help us find it. We will visit this problem again in later sections and find an inverse of .    Having an inverse refers to as an inverse of , implying that there may be more than one such transformation . We will now show that if such a transformation exists, it is unique. This will allow us to refer to it as the inverse of and to start using to denote the unique inverse of .    If is a linear transformation, and is an inverse of . Then is unique.    Let be a linear transformation. If is an inverse of , then satisfies Suppose there is another transformation, , such that We now show that .         Suppose is a linear transformation such that Find .           Define by . (Recall that denotes the trace of , which is the sum of the main diagonal entries of .) Find            Is a linear transformation? If so, prove it. If not, give a counterexample.      Define by Find            Is a linear transformation? If so, prove it. If not, give a counterexample.      This problem requires the knowledge of how to compute a determinant (for a quick reminder, chapter ). Define by . Find            Is a linear transformation? If so, prove it. If not, give a counterexample.      Define by (in other words, maps a polynomial to its derivative). Find            Is a linear transformation? If so, prove it. If not, give a counterexample.      Recall that the set of all symmetric matrices is a subspace of . In , we demonstrated that is a basis for . Define by . Find             Let be a subspace of with a basis . Find the coordinate vector, , for .           If the order of the basis elements in was switched to form a new basis How would this affect the coordinate vector?           In , you demonstrated that is a basis for . Define by . Find              Let and be vector spaces, and let and be ordered bases of and , respectively. Suppose is a linear transformation such that:    If , express as a linear combination of vectors of . Now, Find and .           Complete the proof of .       Define a transformation by Show that is a linear transformation that has an inverse.    You will need to demonstrate that is one-to-one and onto.      Let Define a linear transformation by Prove that has an inverse.     "
-},
-{
-  "id": "Section-Linear-Transformations-of-Abstract-Vector-Spaces-2",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Section-Linear-Transformations-of-Abstract-Vector-Spaces-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "linear transformation "
-},
-{
-  "id": "def-lintransgeneral",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#def-lintransgeneral",
-  "type": "Definition",
-  "number": "4.5.1",
-  "title": "",
-  "body": "  Let and be vector spaces. A transformation is called a linear transformation if the following are true for all vectors and in , and scalars .     "
-},
-{
-  "id": "ex-abstvectsplintransM22",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#ex-abstvectsplintransM22",
-  "type": "Example",
-  "number": "4.5.2",
-  "title": "",
-  "body": "  Recall that is the set of all matrices. In , we demonstrated that together with operations of matrix addition and scalar multiplication is a vector space. Let be a transformation defined by where is fixed matrix. Show that is a linear transformation.    We verify the linearity properties using properties of matrix-matrix and matrix-scalar multiplication (see ). For and in and a scalar we have: together with    "
-},
-{
-  "id": "ex-abstvecsplintrans2",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#ex-abstvecsplintrans2",
-  "type": "Example",
-  "number": "4.5.3",
-  "title": "",
-  "body": "  Recall that is the set of polynomials of degree or less than . In , we showed that together with operations of polynomial addition and scalar multiplication is a vector space. Suppose is a linear transformation such that   Find the image of under .        "
-},
-{
-  "id": "ex-nonlinabstvectsp",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#ex-nonlinabstvectsp",
-  "type": "Example",
-  "number": "4.5.4",
-  "title": "",
-  "body": "  Let be a transformation such that . Show that is not linear.    To show that is not linear it suffices to find two matrices and such that .  Observe that if we pick and so that each has rank we would have while . Clearly .  This argument is sufficient, but if we want to have a specific example, we can find one.  Let Then and Thus, .   "
-},
-{
-  "id": "init-tij",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#init-tij",
-  "type": "Exploration",
-  "number": "4.5.1",
-  "title": "",
-  "body": " Suppose we want to define a linear transformation by Is this information sufficient to define ? To answer this question we will try to determine what does to an arbitrary vector of . If is a vector in , then can be uniquely expressed as a linear combination of and  By linearity of we have This shows that the image of every vector of under is completely determined by the action of on the standard unit vectors and . Vectors and form a standard basis of . What if we want to use a different basis? Let be our basis of choice for . (How would you verify that is a basis of ?) And suppose we want to define a linear transformation by Is this enough information to define ? Because form a basis of , every element of can be written as a unique linear combination We can find as follows: Again, we see how a linear transformation is completely determined by its action on a basis. assures us that given a basis, every vector has a unique representation as a linear combination of the basis vectors. Imagine what would happen if this were not the case.  In the first part of this exploration, for instance, we might have been able to represent as and ( or ). This would have resulted in mapping to two different elements: and , implying that is not even a function.  "
-},
-{
-  "id": "Subsection-Coordinate-Vectors-2",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Subsection-Coordinate-Vectors-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "coordinate vector "
-},
-{
-  "id": "ex-abstvectsplintranscoordvect1",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#ex-abstvectsplintranscoordvect1",
-  "type": "Example",
-  "number": "4.5.5",
-  "title": "",
-  "body": "  Consider . Let be an ordered basis for (You should do a quick mental check that is a legitimate basis). Define by . Find     We need to find the coordinate vector for with respect to . Firstly, This gives us:    "
-},
-{
-  "id": "ex-abstvectsplintranspoly",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#ex-abstvectsplintranspoly",
-  "type": "Example",
-  "number": "4.5.6",
-  "title": "",
-  "body": "  Recall that is the set of polynomials of degree or less than . In , we showed that is a vector space.   Let be an ordered basis for . (It is easy to verify that is a basis.) If is given by , find     Let be an ordered basis for - In (see ), you demonstrated that is a basis.) If is given by , find         We express as a linear combination of elements of . Therefore Note that it is important to keep the basis elements in the same order in which they are listed, as the order of components of the coordinate vector depends on the order of the basis elements. We conclude that For : Our goal is to express as a linear combination of the elements of . Thus, we need to find coefficients , and such that This gives us a system of linear equations: Solving the system yields , and . Thus    "
-},
-{
-  "id": "th-coordvectmappinglinear",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#th-coordvectmappinglinear",
-  "type": "Theorem",
-  "number": "4.5.7",
-  "title": "",
-  "body": "  Let be an -dimensional vector space, and let be an ordered basis for . Then given by is a linear transformation.   "
-},
-{
-  "id": "Subsection-Coordinate-Vectors-6",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Subsection-Coordinate-Vectors-6",
-  "type": "Proof",
-  "number": "4.5.2.1",
-  "title": "",
-  "body": " First observe that of guarantees that there is only one way to represent each element of as a linear combination of elements of . Thus each element of maps to exactly one element of , as long as the order in which elements of appear is taken into account. This proves that is a function, or a transformation.  We will now prove that is linear. Let be an element of . We will first show that . Suppose , then can be written as a unique linear combination: We have: We leave it to the reader to verify that (see ).  "
-},
-{
-  "id": "ex-subtosub1",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#ex-subtosub1",
-  "type": "Example",
-  "number": "4.5.8",
-  "title": "",
-  "body": "  Let  and Because each of and is linearly independent, let be ordered bases of and , respectively. Define a linear transformation by    Verify that is in and find the coordinate vector .    Find and the coordinate vector .       For , we need to express as a linear combination of and . This can be done by observation or by solving the equation We find that and , so . Thus is in . The coordinate vector for with respect to the ordered basis is For , by linearity of we have The coordinate vector for with respect to the ordered basis is    "
-},
-{
-  "id": "ex-notonetoone",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#ex-notonetoone",
-  "type": "Example",
-  "number": "4.5.9",
-  "title": "",
-  "body": "  Let be a linear transformation whose standard matrix is Does have an inverse? Show that multiple vectors of the domain map to in the codomain.    The matrix is not invertible, so does not have an inverse. We now dig a little deeper to get additional insights into why does not have an inverse. Observe that all vectors of the form map to . To verify this, use matrix multiplication: This shows that there are infinitely many vectors that map to . So, ``reversing the arrows\" would not result in a function. (See Figure 1)   "
-},
-{
-  "id": "ex-notonto",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#ex-notonto",
-  "type": "Example",
-  "number": "4.5.10",
-  "title": "",
-  "body": "  Let be a linear transformation whose standard matrix is Does have an inverse? Show that there exists a vector in such that no vector of maps to .    The matrix is not invertible (it's not even a square matrix!), so does not have an inverse. We now get another insight into why is not invertible. To find a vector such that no vector of maps to , we need to find for which the matrix equation has no solution.  Let . Gauss-Jordan elimination yields: Now, has a solution if and only if . Since we do not want to have a solution, all we need to do is pick values , and such that . Let . Then no element of maps to . This shows that we cannot ``reverse the arrows\" in an attempt to produce an inverse of . (See Figure 2)   "
-},
-{
-  "id": "th-isomeansinvert",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#th-isomeansinvert",
-  "type": "Theorem",
-  "number": "4.5.11",
-  "title": "",
-  "body": "  Let and be vector spaces, and let be a linear transformation. Then has an inverse if and only if is one-to-one and onto.    We will first assume that is one-to-one and onto, and show that there exists a transformation such that and .  Because is onto, for every in , there exists in such that . Moreover, because is one-to-one, vector is the only vector that maps to . To stress this, we will say that for every , there exists such that . (Since every maps to exactly one , this notation makes sense for elements of as well.) We can now define by . Then We conclude that and . Therefore is an inverse of . We will now assume that has an inverse and show that must be one-to-one and onto. Suppose then but then We conclude that is one-to-one. Now suppose that is in . We need to show that some element of maps to . Let . Then We conclude that is onto.   "
-},
-{
-  "id": "ex-subtosubinvert",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#ex-subtosubinvert",
-  "type": "Example",
-  "number": "4.5.12",
-  "title": "",
-  "body": "  Transformation in is invertible.    We demonstrated that is one-to-one and onto. By , has an inverse. Recall that was introduced to demonstrate that is not always directly applicable. We now have additional tools. assures us that has an inverse, but does not help us find it. We will visit this problem again in later sections and find an inverse of .   "
-},
-{
-  "id": "Subsection-Existence-of-Inverses-5",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#Subsection-Existence-of-Inverses-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "an "
-},
-{
-  "id": "th-inverseisunique",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#th-inverseisunique",
-  "type": "Theorem",
-  "number": "4.5.13",
-  "title": "",
-  "body": "  If is a linear transformation, and is an inverse of . Then is unique.    Let be a linear transformation. If is an inverse of , then satisfies Suppose there is another transformation, , such that We now show that .    "
-},
-{
-  "id": "prob-lintransP2toM22",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-lintransP2toM22",
-  "type": "Exercise",
-  "number": "4.5.5.1",
-  "title": "",
-  "body": "  Suppose is a linear transformation such that Find .        "
-},
-{
-  "id": "prob-tracelintrans1",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-tracelintrans1",
-  "type": "Exercise",
-  "number": "4.5.5.2",
-  "title": "",
-  "body": "  Define by . (Recall that denotes the trace of , which is the sum of the main diagonal entries of .) Find         "
-},
-{
-  "id": "prob-tracelintrans2",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-tracelintrans2",
-  "type": "Exercise",
-  "number": "4.5.5.3",
-  "title": "",
-  "body": "  Is a linear transformation? If so, prove it. If not, give a counterexample.   "
-},
-{
-  "id": "prob-lintransr2toM22part1",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-lintransr2toM22part1",
-  "type": "Exercise",
-  "number": "4.5.5.4",
-  "title": "",
-  "body": "  Define by Find         "
-},
-{
-  "id": "prob-lintransr2toM22part2",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-lintransr2toM22part2",
-  "type": "Exercise",
-  "number": "4.5.5.5",
-  "title": "",
-  "body": "  Is a linear transformation? If so, prove it. If not, give a counterexample.   "
-},
-{
-  "id": "prob-detlintrans1",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-detlintrans1",
-  "type": "Exercise",
-  "number": "4.5.5.6",
-  "title": "",
-  "body": "  This problem requires the knowledge of how to compute a determinant (for a quick reminder, chapter ). Define by . Find         "
-},
-{
-  "id": "prob-detlintrans2",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-detlintrans2",
-  "type": "Exercise",
-  "number": "4.5.5.7",
-  "title": "",
-  "body": "  Is a linear transformation? If so, prove it. If not, give a counterexample.   "
-},
-{
-  "id": "prob-lintransderivative1",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-lintransderivative1",
-  "type": "Exercise",
-  "number": "4.5.5.8",
-  "title": "",
-  "body": "  Define by (in other words, maps a polynomial to its derivative). Find         "
-},
-{
-  "id": "prob-lintransderivative2",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-lintransderivative2",
-  "type": "Exercise",
-  "number": "4.5.5.9",
-  "title": "",
-  "body": "  Is a linear transformation? If so, prove it. If not, give a counterexample.   "
-},
-{
-  "id": "prob-symmMatLinTrans",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-symmMatLinTrans",
-  "type": "Exercise",
-  "number": "4.5.5.10",
-  "title": "",
-  "body": "  Recall that the set of all symmetric matrices is a subspace of . In , we demonstrated that is a basis for . Define by . Find          "
-},
-{
-  "id": "prob-coordvector",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-coordvector",
-  "type": "Exercise",
-  "number": "4.5.5.11",
-  "title": "",
-  "body": "  Let be a subspace of with a basis . Find the coordinate vector, , for .        "
-},
-{
-  "id": "prob-switchbasisorder",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-switchbasisorder",
-  "type": "Exercise",
-  "number": "4.5.5.12",
-  "title": "",
-  "body": "  If the order of the basis elements in was switched to form a new basis How would this affect the coordinate vector?        "
-},
-{
-  "id": "prob-polylintranscoordvect",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-polylintranscoordvect",
-  "type": "Exercise",
-  "number": "4.5.5.13",
-  "title": "",
-  "body": "  In , you demonstrated that is a basis for . Define by . Find           "
-},
-{
-  "id": "prob-lintransandbasis4",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-lintransandbasis4",
-  "type": "Exercise",
-  "number": "4.5.5.14",
-  "title": "",
-  "body": "  Let and be vector spaces, and let and be ordered bases of and , respectively. Suppose is a linear transformation such that:    If , express as a linear combination of vectors of . Now, Find and .        "
-},
-{
-  "id": "prob-completeproofoflin",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-completeproofoflin",
-  "type": "Exercise",
-  "number": "4.5.5.15",
-  "title": "",
-  "body": "  Complete the proof of .   "
-},
-{
-  "id": "prob-inverses1",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-inverses1",
-  "type": "Exercise",
-  "number": "4.5.5.16",
-  "title": "",
-  "body": "  Define a transformation by Show that is a linear transformation that has an inverse.    You will need to demonstrate that is one-to-one and onto.   "
-},
-{
-  "id": "prob-inverses2",
-  "level": "2",
-  "url": "Section-Linear-Transformations-of-Abstract-Vector-Spaces.html#prob-inverses2",
-  "type": "Exercise",
-  "number": "4.5.5.17",
-  "title": "",
-  "body": "  Let Define a linear transformation by Prove that has an inverse.   "
-},
-{
-  "id": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces",
-  "level": "1",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html",
-  "type": "Section",
-  "number": "4.6",
-  "title": "Bases and Dimension of Abstract Vector Spaces",
-  "body": " Bases and Dimension of Abstract Vector Spaces   Linear Independence  When working with and subspaces of we developed several fundamental ideas including span , linear independence , bases and dimension . We will find that these concepts generalize easily to abstract vector spaces and that analogous results hold in these new settings.   Linear Independence   Let be a vector space. Let be vectors of . We say that the set is linearly independent if the only solution to is the trivial solution  .  If, in addition to the trivial solution, a non-trivial solution (not all are zero) exists, then we say that the set is linearly dependent .    Let us examine this abstract version of bases in the context of polynomials, to get a feeling for these concepts.    Show that is linearly independent in .    Consider the linear combination equation The constant term, as well as the coefficients in front of and , must be equal to . This gives us the following system of equations. The only solution is . We conclude that is linearly independent in .      Bases and Dimension  Recall that our motivation for defining a basis of a subspace of was to have a collection of vectors such that every vector of the subspace can be expressed as a unique linear combination of the vectors in that collection. Definition of a basis ( ) generalizes to abstract vector spaces as follows.    Let be a vector space. A set of vectors of is called a basis of provided that         is linearly independent.         Let be a vector space, and let be a basis for . Then every element of has a unique representation as linear combination of the elements of .    By the definition of a basis, we know that can be written as a linear combination of . Suppose there are two such representations. Then,  But then we have: Because are linearly independent, we have for . Consequently for .    In chapter , we defined the dimension of a subspace of to be the number of elements in a basis ( ). We will adopt this definition for abstract vector spaces. As before, to ensure that dimension is well-defined we need to establish that this definition is independent of our choice of a basis. The proof of the following theorem is identical to the proof of its counterpart in ( ).    Let be a vector space. Suppose and be two bases of . Then .    Now we can state the definition of dimensions for abstract vector spaces.    Let be a subspace of a vector space . The dimension of is the number, , of elements in any basis of . We write     In our discussions up to this point, we have always assumed that a basis is nonempty and hence that the dimension of the space is at least . However, the zero space has no basis. To accommodate for this, we will say that the zero vector space is defined to have dimension : Our insistence that amounts to saying that the empty set of vectors is a basis of . Thus the statement that ``the dimension of a vector space is the number of vectors in any basis'' holds even for the zero space.    Recall that the vector space consists of all matrices (see . Find a basis and the dimension of .    Let consist of matrices with exactly one entry equal to and all other entries equal to . It is clear that every matrix can be written as a linear combination of elements of . It is also easy to see that the elements of are linearly independent. Thus is a basis for . The set contains elements, so .      Recall that is the set of all polynomials of degree or less (see . Show that and that is a basis of .    Each polynomial is clearly a linear combination of , so . Suppose , then . So is linearly independent and is therefore a basis containing vectors. Thus, .      Consider the subset of . It was shown in of that is a subspace for any choice of the matrix . Let Show that and find a basis of .    Suppose is in . Then  This gives us two relationships: We can now express a generic element of as Let The set is linearly independent (see ) Every element of can be written as a linear combination of elements of . Thus . Therefore is a basis of , and .      In of you demonstrated that the set of all symmetric matrices is a subspace of . Let be a subspace of consisting of all symmetric matrices. Find the dimension of .    A matrix is symmetric if . In other words, a matrix is symmetric when entries directly across the main diagonal are equal, so each symmetric matrix has the form Hence the set spans . The reader can verify that is linearly independent. Thus is a basis of , so .      Finite-Dimensional Vector Spaces  Our definition of dimension of a vector space depends on the vector space having a basis. In this section we will establish that any vector space spanned by finitely many vectors has a basis.    A vector space is said to be finite-dimensional if it is spanned by finitely many vectors.    Given a finite-dimensional vector space we will find a basis for by starting with a linearly independent subset of and expanding it to a basis. The following results are more general versions of and , and . The proofs are identical and we will omit them.    Let be a vector space spanned by vectors. If a linearly independent subset of contains vectors, then .      Let be a vector space. Let be a linearly independent subset of . If is not in , then is linearly independent.      Let be a finite-dimensional vector space. Any linearly independent subset of can be expanded to a basis of .      Coordinate Vectors  Recall that in the context of (and subspaces of ) the requirement that elements of a basis be linearly independent guarantees that every element of the vector space has a unique representation in terms of the elements of the basis. (See Theorem of Introduction to Bases ) We proved the same property for abstract vector spaces in Theorem .  Uniqueness of representation in terms of the elements of a basis allows us to associate every element of a vector space with a unique coordinate vector with respect to a given basis. Coordinate vectors were first introduced in Introduction to Bases . We now give a formal definition.    Let be a vector space, and let be a basis for . If , then the vector in whose components are the coefficients is said to be the coordinate vector for with respect to . We denote the coordinate vector by and write:       The order of in which vectors appear in of is important. Switching the order of these vectors would switch the order of the coordinate vector components. For this reason, we will often use the term ordered basis to describe in the context of coordinate vectors.    Coordinate vectors may seem abstract as described above. In examples, however, one can nearly always pinpoint exactly what the coordinates are. Some examples will emphaize this:   The coordinate vector for in with respect to the ordered basis is Now let's change the order of the elements in . The coordinate vector for with respect to the ordered basis is      Show that the set is a basis for . Keep the order of elements in and find the coordinate vector for with respect to the ordered basis .    We will begin by showing that the elements of are linearly independent. Suppose Then This gives us the following system of equations: The solution is unique. We conclude that is linearly independent.  Next, we need to show that spans . To this end, we will consider a generic element of and attempt to express it as a linear combination of the elements of . then Setting the coefficients of like terms equal to each other gives us Solving this linear system of , and gives us (You should verify this.) This shows that every element of can be written as a linear combination of elements of . Therefore is a basis for . To find the coordinate vector for with respect to we need to express as a linear combination of the elements of . Fortunately, we have already done all the necessary work. For , , and . This gives us the coefficients of the linear combination: , , . We now write as a linear combination The coordinate vector for with respect to is       Recall that the set of all symmetric matrices is a subspace of . In , we demonstrated that is a basis for . Let . Observe that is an element of .   Find the coordinate vector with respect to the ordered basis for .    Let be another ordered basis for . Find the coordinate vector for with respect to .       We write as a linear combination of the elements of . Thus, the coordinate vector with respect to is The coordinate vector with respect to is     Coordinate vectors will play a vital role in establishing one of the most fundamental results in linear algebra, that all -dimensional vector spaces have the same structure as . In , for instance, we will show that is essentially the same as .      Prove that set of is linearly independent.      Show that each of the following sets of vectors is linearly independent.                           Show that each set in - is a basis for its respective vector space.      Find the coordinate vector for with respect to the given ordered basis of .                              Find the coordinate vector for with respect to the ordered basis            Let be a vector space of dimension . Suppose is linearly independent in . Show that is a basis for .     "
-},
-{
-  "id": "Subsection-Linear-Independence-2",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#Subsection-Linear-Independence-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "span linear independence bases dimension "
-},
-{
-  "id": "def-linearindependenceabstract",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#def-linearindependenceabstract",
-  "type": "Definition",
-  "number": "4.6.1",
-  "title": "Linear Independence.",
-  "body": " Linear Independence   Let be a vector space. Let be vectors of . We say that the set is linearly independent if the only solution to is the trivial solution  .  If, in addition to the trivial solution, a non-trivial solution (not all are zero) exists, then we say that the set is linearly dependent .   "
-},
-{
-  "id": "ex-polyindset",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#ex-polyindset",
-  "type": "Example",
-  "number": "4.6.2",
-  "title": "",
-  "body": "  Show that is linearly independent in .    Consider the linear combination equation The constant term, as well as the coefficients in front of and , must be equal to . This gives us the following system of equations. The only solution is . We conclude that is linearly independent in .   "
-},
-{
-  "id": "def-basisabstract",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#def-basisabstract",
-  "type": "Definition",
-  "number": "4.6.3",
-  "title": "",
-  "body": "  Let be a vector space. A set of vectors of is called a basis of provided that         is linearly independent.      "
-},
-{
-  "id": "th-uniquerep",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#th-uniquerep",
-  "type": "Theorem",
-  "number": "4.6.4",
-  "title": "",
-  "body": "  Let be a vector space, and let be a basis for . Then every element of has a unique representation as linear combination of the elements of .    By the definition of a basis, we know that can be written as a linear combination of . Suppose there are two such representations. Then,  But then we have: Because are linearly independent, we have for . Consequently for .   "
-},
-{
-  "id": "Subsection-Bases-and-Dimension-5",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#Subsection-Bases-and-Dimension-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "dimension "
-},
-{
-  "id": "th-dimwelldefinedabstract",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#th-dimwelldefinedabstract",
-  "type": "Theorem",
-  "number": "4.6.5",
-  "title": "",
-  "body": "  Let be a vector space. Suppose and be two bases of . Then .   "
-},
-{
-  "id": "def-dimensionabstract",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#def-dimensionabstract",
-  "type": "Definition",
-  "number": "4.6.6",
-  "title": "",
-  "body": "  Let be a subspace of a vector space . The dimension of is the number, , of elements in any basis of . We write    "
-},
-{
-  "id": "ex-dimofM",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#ex-dimofM",
-  "type": "Example",
-  "number": "4.6.7",
-  "title": "",
-  "body": "  Recall that the vector space consists of all matrices (see . Find a basis and the dimension of .    Let consist of matrices with exactly one entry equal to and all other entries equal to . It is clear that every matrix can be written as a linear combination of elements of . It is also easy to see that the elements of are linearly independent. Thus is a basis for . The set contains elements, so .   "
-},
-{
-  "id": "ex-dimofP",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#ex-dimofP",
-  "type": "Example",
-  "number": "4.6.8",
-  "title": "",
-  "body": "  Recall that is the set of all polynomials of degree or less (see . Show that and that is a basis of .    Each polynomial is clearly a linear combination of , so . Suppose , then . So is linearly independent and is therefore a basis containing vectors. Thus, .   "
-},
-{
-  "id": "ex-CAbasis",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#ex-CAbasis",
-  "type": "Example",
-  "number": "4.6.9",
-  "title": "",
-  "body": "  Consider the subset of . It was shown in of that is a subspace for any choice of the matrix . Let Show that and find a basis of .    Suppose is in . Then  This gives us two relationships: We can now express a generic element of as Let The set is linearly independent (see ) Every element of can be written as a linear combination of elements of . Thus . Therefore is a basis of , and .   "
-},
-{
-  "id": "ex-symmetricmatsubspace",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#ex-symmetricmatsubspace",
-  "type": "Example",
-  "number": "4.6.10",
-  "title": "",
-  "body": "  In of you demonstrated that the set of all symmetric matrices is a subspace of . Let be a subspace of consisting of all symmetric matrices. Find the dimension of .    A matrix is symmetric if . In other words, a matrix is symmetric when entries directly across the main diagonal are equal, so each symmetric matrix has the form Hence the set spans . The reader can verify that is linearly independent. Thus is a basis of , so .   "
-},
-{
-  "id": "def-findimvectorspace",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#def-findimvectorspace",
-  "type": "Definition",
-  "number": "4.6.11",
-  "title": "",
-  "body": "  A vector space is said to be finite-dimensional if it is spanned by finitely many vectors.   "
-},
-{
-  "id": "lemma-atmostnlinindinabstract",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#lemma-atmostnlinindinabstract",
-  "type": "Lemma",
-  "number": "4.6.12",
-  "title": "",
-  "body": "  Let be a vector space spanned by vectors. If a linearly independent subset of contains vectors, then .   "
-},
-{
-  "id": "lemma-expandinglinindsetabstract",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#lemma-expandinglinindsetabstract",
-  "type": "Lemma",
-  "number": "4.6.13",
-  "title": "",
-  "body": "  Let be a vector space. Let be a linearly independent subset of . If is not in , then is linearly independent.   "
-},
-{
-  "id": "th-expandtobasisabstract",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#th-expandtobasisabstract",
-  "type": "Theorem",
-  "number": "4.6.14",
-  "title": "",
-  "body": "  Let be a finite-dimensional vector space. Any linearly independent subset of can be expanded to a basis of .   "
-},
-{
-  "id": "Subsection-Coordinate-Vectors-3",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#Subsection-Coordinate-Vectors-3",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "coordinate vector "
-},
-{
-  "id": "def-coordvector",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#def-coordvector",
-  "type": "Definition",
-  "number": "4.6.15",
-  "title": "",
-  "body": "  Let be a vector space, and let be a basis for . If , then the vector in whose components are the coefficients is said to be the coordinate vector for with respect to . We denote the coordinate vector by and write:    "
-},
-{
-  "id": "coordVectorOrder",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#coordVectorOrder",
-  "type": "Remark",
-  "number": "4.6.16",
-  "title": "",
-  "body": "  The order of in which vectors appear in of is important. Switching the order of these vectors would switch the order of the coordinate vector components. For this reason, we will often use the term ordered basis to describe in the context of coordinate vectors.   "
-},
-{
-  "id": "ex-coordvectorinpolyvectspace",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#ex-coordvectorinpolyvectspace",
-  "type": "Example",
-  "number": "4.6.17",
-  "title": "",
-  "body": " The coordinate vector for in with respect to the ordered basis is Now let's change the order of the elements in . The coordinate vector for with respect to the ordered basis is   "
-},
-{
-  "id": "ex-coordvectorinpolyvectspace2",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#ex-coordvectorinpolyvectspace2",
-  "type": "Example",
-  "number": "4.6.18",
-  "title": "",
-  "body": "  Show that the set is a basis for . Keep the order of elements in and find the coordinate vector for with respect to the ordered basis .    We will begin by showing that the elements of are linearly independent. Suppose Then This gives us the following system of equations: The solution is unique. We conclude that is linearly independent.  Next, we need to show that spans . To this end, we will consider a generic element of and attempt to express it as a linear combination of the elements of . then Setting the coefficients of like terms equal to each other gives us Solving this linear system of , and gives us (You should verify this.) This shows that every element of can be written as a linear combination of elements of . Therefore is a basis for . To find the coordinate vector for with respect to we need to express as a linear combination of the elements of . Fortunately, we have already done all the necessary work. For , , and . This gives us the coefficients of the linear combination: , , . We now write as a linear combination The coordinate vector for with respect to is    "
-},
-{
-  "id": "ex-symmmatsubspace",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#ex-symmmatsubspace",
-  "type": "Example",
-  "number": "4.6.19",
-  "title": "",
-  "body": "  Recall that the set of all symmetric matrices is a subspace of . In , we demonstrated that is a basis for . Let . Observe that is an element of .   Find the coordinate vector with respect to the ordered basis for .    Let be another ordered basis for . Find the coordinate vector for with respect to .       We write as a linear combination of the elements of . Thus, the coordinate vector with respect to is The coordinate vector with respect to is    "
-},
-{
-  "id": "prob-CABlinind",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#prob-CABlinind",
-  "type": "Exercise",
-  "number": "4.6.5.1",
-  "title": "",
-  "body": "  Prove that set of is linearly independent.   "
-},
-{
-  "id": "prob-linindabstractvsp1",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#prob-linindabstractvsp1",
-  "type": "Exercise",
-  "number": "4.6.5.2",
-  "title": "",
-  "body": "      "
-},
-{
-  "id": "prob-linindabstractvsp2",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#prob-linindabstractvsp2",
-  "type": "Exercise",
-  "number": "4.6.5.3",
-  "title": "",
-  "body": "      "
-},
-{
-  "id": "prob-linindabstractvsp3",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#prob-linindabstractvsp3",
-  "type": "Exercise",
-  "number": "4.6.5.4",
-  "title": "",
-  "body": "      "
-},
-{
-  "id": "prob-linindabstractvsp123",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#prob-linindabstractvsp123",
-  "type": "Exercise",
-  "number": "4.6.5.5",
-  "title": "",
-  "body": "  Show that each set in - is a basis for its respective vector space.   "
-},
-{
-  "id": "prob-coordvectors1",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#prob-coordvectors1",
-  "type": "Exercise",
-  "number": "4.6.5.6",
-  "title": "",
-  "body": "           "
-},
-{
-  "id": "prob-coordvectors2",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#prob-coordvectors2",
-  "type": "Exercise",
-  "number": "4.6.5.7",
-  "title": "",
-  "body": "           "
-},
-{
-  "id": "prob-coordvectors3",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#prob-coordvectors3",
-  "type": "Exercise",
-  "number": "4.6.5.8",
-  "title": "",
-  "body": "  Find the coordinate vector for with respect to the ordered basis         "
-},
-{
-  "id": "prob-basisforabstractvectspace",
-  "level": "2",
-  "url": "Section-Bases-and-Dimension-of-Abstract-Vector-Spaces.html#prob-basisforabstractvectspace",
-  "type": "Exercise",
-  "number": "4.6.5.9",
-  "title": "",
-  "body": "  Let be a vector space of dimension . Suppose is linearly independent in . Show that is a basis for .   "
-},
-{
   "id": "Section-Isomorphic-Vector-Spaces",
   "level": "1",
   "url": "Section-Isomorphic-Vector-Spaces.html",
   "type": "Section",
-  "number": "4.7",
+  "number": "4.4",
   "title": "Extra Topic: Isomorphic Vector Spaces",
   "body": " Extra Topic: Isomorphic Vector Spaces  A vector space is defined as a collection of objects together with operations of addition and scalar multiplication that follow certain rules . In our study of abstract vector spaces, we have encountered spaces that appeared very different from each other. Just how different are they? Does , a vector space whose elements have the form , have anything in common with ? Is fundamentally different from ?  To answer these questions, we will have to look beyond the superficial appearance of the elements of a vector space and delve into its structure. The ``structure\" of a vector space is determined by how the elements of the vector space interact with each other through the operations of addition and scalar multiplication.  Let us return to the question of what has in common with . Consider two typical elements of : We can add these elements together or multiply each one by a scalar But suppose we get tired of having to write down every time. Could we leave off the and represent by ? If we do this, expressions , and would be mimicked by the following expressions involving vectors of :   It appears that we should be able to switch back and forth between and , translating questions and answers from one space to the other and back again.   Picture of isomorphism    We begin to suspect that and have the same ``structure\". Spaces such as and are said to be isomorphic . This term is derived from the Greek ``iso,\" meaning ``same,\" and ``morphe,\" meaning ``form.\" The term captures the idea that isomorphic vector spaces have the same structure. Before we present a precise definition of the term, we need to better understand what we mean by ``switching back and forth\" between spaces. The following Exploration will help us formulate this vague notion in terms of transformations.   Recall that the set of all polynomials of degree or less, together with polynomial addition and scalar multiplication, is a vector space, denoted by . Let . You should do a quick mental check that is a basis of . Define a transformation by You may have recognized as the transformation that maps each element of to its coordinate vector with respect to the ordered basis . Transformation has several nice properties:   By , is linear.    It is easy to verify that is one-to-one and onto (see .)    By , has an inverse.   Our goal is to investigate and illustrate what these properties mean for transformation , and for the relationship between and . First, observe that being one-to-one and onto establishes ``pairings\" between elements of and in such a way that every element of one vector space is uniquely matched with exactly one element of the other vector space, as shown in the diagram below.   The above isomorphism elaborated    Second, the fact that (and ) are linear will allow us to translate questions related to linear combinations in one of the vector spaces to equivalent questions in the other vector space, then translate answers back to the original vector space. To make this statement concrete, consider the following problem:  Let Find . The answer is, of course Easy. But suppose for a moment that we did not know how to add polynomials, or that we found the process extremely difficult, or maybe instead of we had another vector space that we did not want to deal with. It turns out that we can use and to answer the addition question. We will start by applying to and separately: Next, we add the images of and in : This maneuver allows us to avoid the addition question in and answer the question in instead. We use to translate the answer back to : All of this relies on linearity. Here is a formal justification for the process. Try to spot where linearity is used.     Which transition in the above calculation requires linearity?      From to .      From to .      From to .      From to .       Invertible linear transformations, such as transformation of , are useful because they preserve the structure of interactions between elements as we move back and forth between two vector spaces, allowing us to answer questions about one vector space in a different vector space. In particular, any question related to linear combinations can be addressed in this fashion. This includes questions concerning linear independence, span, basis and dimension.    Let and be vector spaces. If there exists an invertible linear transformation we say that and are isomorphic and write .  The invertible linear transformation is called an isomorphism .    It is worth pointing out that if is an isomorphism, then , being linear and invertible, is also an isomorphism.  While all this has been fairly abstract, previous examples do have this content attached to them.   Our earlier discussion suggests that . We postpone the proof until .     shows that .     Show that and are isomorphic.    We will start by finding a plausible candidate for an isomorphism. Define by We will first show that is a linear transformation, then verify that is invertible. and We can show that is one-to-one and onto, and therefore has an inverse. We can also observe directly that is given by We conclude that is an isomorphism, and .    Isomorphism in establishes the fact that . However, there is nothing special about , as there are many other isomorphisms from to . Just for fun, try to verify that each of the following is an isomorphism.     The Coordinate Vector Isomorphism  In we made good use of a transformation that maps every element of to its coordinate vector in . We observed that this transformation is linear and invertible, therefore it is an isomorphism. The following example generalizes this result.    Let be an -dimensional vector space, and let be an ordered basis for . Then given by is an isomorphism.    We leave the proof of this result to the reader (see ).      Properties of Isomorphic Vector Spaces and Isomorphisms  In this section we will illustrate properties of isomorphisms with specific examples. Formal proofs of properties will be presented in the next section.   In we defined a transformation by We later observed that is an isomorphism. We will now examine the effect of on two different bases of . Let (Recall that is a basis of by ). First, Clearly, the images of the elements of form a basis of . Now we consider . It is easy to verify that are linearly independent and span . Therefore the images of the elements of from a basis of .   We can try any number of bases of and we will find that the image of each basis of is a basis of . In general, we have the following result:    An isomorphism maps a basis of the domain to a basis of the codomain. (We will state this result more formally as Theorem in the next section.)    Isomorphisms preserve bases, but more generally, they preserve linear independence.    If is an isomorphism, then the subset of is linearly independent if and only if is linearly independent in . We will state and prove this result as .    The example below flags up the idea that there is little differences between the abstract case and the concrete one in .    Let be a vector space, and let be an ordered basis of . Let Are linearly independent?    We could approach this question head-on by considering the vector equation to see if the only solution is the trivial one (see ). Instead, we will use isomorphisms.  Observe that we do not know anything about aside from the fact that it has four basis vectors. Vectors , , are given in terms of these basis vectors. This should give us an idea for constructing an isomorphism between and . Consider such that . Then  By , is an isomorphism. This means that , , are linearly independent if and only if their coordinate vectors are linearly independent. There are multiple ways of determining whether are linearly independent. One way is to find the reduced row echelon form of The matrix reduces as follows: We see that the rank of the matrix is . We conclude that the column vectors are not linearly independent. Thus, the vectors , and are not linearly independent.      Proofs of Isomorphism Properties  Recall that a transformation is one-to-one provided that implies that We will show that images of linearly independent vectors under one-to-one linear transformations are linearly independent.    Let be a one-to-one linear transformation. Suppose is linearly independent in . Then is linearly independent in .    Suppose satisfy We will show that for each , we must have . By linearity, we have: By , . Therefore, Because is one-to-one, we conclude that By assumption, is linearly independent. Therefore for .    Recall that a transformation is onto provided that every vector of the codomain of is the image of some vector in the domain of . We will show that an onto linear transformation maps sets that span the domain to sets that span the codomain.    Let be an onto linear transformation. Suppose . Then .    Suppose is an element of . To show that spans , we will express as a linear combination of .  Because is onto, for some in . But . Therefore, for some scalar coefficients . By linearity, we have: Thus, is in the span of .    We will now combine the results of and to obtain a result about the effect of isomorphisms on a basis.    Let be an isomorphism. Suppose is a basis for . Then is a basis for .     Left to the reader. See .     Suppose is an isomorphism, then the subset ' of is linearly independent if and only if is linearly independent in .    We have already proved one direction of this this ``if and only if\" statement as .  To prove the other direction, suppose that are linearly independent vectors in . We need to show that this implies that are linearly independent in . Observe that if is an isomorphism, then is also an isomorphism. Thus, by , are linearly independent. But this means that are linearly independent.      Let , and be vector spaces. Suppose and are isomorphisms. Then is an isomorphism.     The proof is left to the reader (see ).     Finite-dimensional Vector Spaces    Let and be finite-dimensional vector spaces. Then     First, assume that . Then there exists an isomorphism . Suppose and let be a basis for . By , is a basis for . Therefore .  Conversely, suppose , and let be bases for and , respectively. Define a linear transformation by for . To show that is an isomorphism, we need to prove that is one-to-one and onto. Suppose for some vectors , in . We know that  for some scalars 's and 's. Thus, By linearity of ,  But are linearly independent, so for all . Therefore for all . We conclude that . We now show that is onto. Suppose that is an element of . Then for some scalars 's. But then We conclude that is an image of an element of , so is onto.    From this theorem follows an important corollary that shows why we spent so much time trying to understand in this course.    Every -dimensional vector space is isomorphic to .    The corollary in examples makes it less surprising:   The span of any two linearly independent vectors in is isomorphic to .   Plane isomorphic to a subspace of R3 drawn     Drawing above continued            Recall that . Since , we conclude that is not isomorphic to .        Prove that transformation of is one-to-one and onto.      Verify that given by of is an isomorphism.      Do without using isomorphisms.      Let Is linearly independent in ?    Yes!      Let Is a basis for ?    No!      Prove .      Let be a vector space, and suppose is a basis for . What can we conclude about ? Check ALL that apply.      We cannot conclude anything about because we do not know what is.       .       .       .       .       -        Which of the followng statements are true? Check ALL that apply.       .       .       .       .       .        Verify that of is an isomorphism.    You may find the proof of T helpful.      Prove that the composition of two isomorphisms is an isomorphism (see also ).      Prove that a linear transformation is one-to-one if and only if .     "
 },
@@ -6674,7 +5738,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#init-isomorph",
   "type": "Exploration",
-  "number": "4.7.1",
+  "number": "4.4.1",
   "title": "",
   "body": " Recall that the set of all polynomials of degree or less, together with polynomial addition and scalar multiplication, is a vector space, denoted by . Let . You should do a quick mental check that is a basis of . Define a transformation by You may have recognized as the transformation that maps each element of to its coordinate vector with respect to the ordered basis . Transformation has several nice properties:   By , is linear.    It is easy to verify that is one-to-one and onto (see .)    By , has an inverse.   Our goal is to investigate and illustrate what these properties mean for transformation , and for the relationship between and . First, observe that being one-to-one and onto establishes ``pairings\" between elements of and in such a way that every element of one vector space is uniquely matched with exactly one element of the other vector space, as shown in the diagram below.   The above isomorphism elaborated    Second, the fact that (and ) are linear will allow us to translate questions related to linear combinations in one of the vector spaces to equivalent questions in the other vector space, then translate answers back to the original vector space. To make this statement concrete, consider the following problem:  Let Find . The answer is, of course Easy. But suppose for a moment that we did not know how to add polynomials, or that we found the process extremely difficult, or maybe instead of we had another vector space that we did not want to deal with. It turns out that we can use and to answer the addition question. We will start by applying to and separately: Next, we add the images of and in : This maneuver allows us to avoid the addition question in and answer the question in instead. We use to translate the answer back to : All of this relies on linearity. Here is a formal justification for the process. Try to spot where linearity is used.     Which transition in the above calculation requires linearity?      From to .      From to .      From to .      From to .      "
 },
@@ -6683,7 +5747,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#def-isomorphism",
   "type": "Definition",
-  "number": "4.7.2",
+  "number": "4.4.2",
   "title": "",
   "body": "  Let and be vector spaces. If there exists an invertible linear transformation we say that and are isomorphic and write .  The invertible linear transformation is called an isomorphism .   "
 },
@@ -6692,7 +5756,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#ex-lisor2",
   "type": "Example",
-  "number": "4.7.3",
+  "number": "4.4.3",
   "title": "",
   "body": " Our earlier discussion suggests that . We postpone the proof until .  "
 },
@@ -6701,7 +5765,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#ex-p2isor3",
   "type": "Example",
-  "number": "4.7.4",
+  "number": "4.4.4",
   "title": "",
   "body": "  shows that .  "
 },
@@ -6710,7 +5774,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#ex-isomorphexample1",
   "type": "Example",
-  "number": "4.7.5",
+  "number": "4.4.5",
   "title": "",
   "body": "  Show that and are isomorphic.    We will start by finding a plausible candidate for an isomorphism. Define by We will first show that is a linear transformation, then verify that is invertible. and We can show that is one-to-one and onto, and therefore has an inverse. We can also observe directly that is given by We conclude that is an isomorphism, and .   "
 },
@@ -6719,7 +5783,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#ex-coordmapiso",
   "type": "Theorem",
-  "number": "4.7.6",
+  "number": "4.4.6",
   "title": "",
   "body": "  Let be an -dimensional vector space, and let be an ordered basis for . Then given by is an isomorphism.    We leave the proof of this result to the reader (see ).   "
 },
@@ -6728,7 +5792,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#init-basestobasesiso",
   "type": "Exploration",
-  "number": "4.7.2",
+  "number": "4.4.2",
   "title": "",
   "body": " In we defined a transformation by We later observed that is an isomorphism. We will now examine the effect of on two different bases of . Let (Recall that is a basis of by ). First, Clearly, the images of the elements of form a basis of . Now we consider . It is easy to verify that are linearly independent and span . Therefore the images of the elements of from a basis of .  "
 },
@@ -6737,7 +5801,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#Subsection-Properties-of-Isomorphic-Vector-Spaces-and-Isomorphisms-5",
   "type": "Fact",
-  "number": "4.7.7",
+  "number": "4.4.7",
   "title": "",
   "body": "  An isomorphism maps a basis of the domain to a basis of the codomain. (We will state this result more formally as Theorem in the next section.)   "
 },
@@ -6746,7 +5810,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#Subsection-Properties-of-Isomorphic-Vector-Spaces-and-Isomorphisms-7",
   "type": "Fact",
-  "number": "4.7.8",
+  "number": "4.4.8",
   "title": "",
   "body": "  If is an isomorphism, then the subset of is linearly independent if and only if is linearly independent in . We will state and prove this result as .   "
 },
@@ -6755,7 +5819,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#ex-inverseimageoflinind",
   "type": "Example",
-  "number": "4.7.9",
+  "number": "4.4.9",
   "title": "",
   "body": "  Let be a vector space, and let be an ordered basis of . Let Are linearly independent?    We could approach this question head-on by considering the vector equation to see if the only solution is the trivial one (see ). Instead, we will use isomorphisms.  Observe that we do not know anything about aside from the fact that it has four basis vectors. Vectors , , are given in terms of these basis vectors. This should give us an idea for constructing an isomorphism between and . Consider such that . Then  By , is an isomorphism. This means that , , are linearly independent if and only if their coordinate vectors are linearly independent. There are multiple ways of determining whether are linearly independent. One way is to find the reduced row echelon form of The matrix reduces as follows: We see that the rank of the matrix is . We conclude that the column vectors are not linearly independent. Thus, the vectors , and are not linearly independent.   "
 },
@@ -6773,7 +5837,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#th-onetoonelinind",
   "type": "Theorem",
-  "number": "4.7.10",
+  "number": "4.4.10",
   "title": "",
   "body": "  Let be a one-to-one linear transformation. Suppose is linearly independent in . Then is linearly independent in .    Suppose satisfy We will show that for each , we must have . By linearity, we have: By , . Therefore, Because is one-to-one, we conclude that By assumption, is linearly independent. Therefore for .   "
 },
@@ -6791,7 +5855,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#th-ontospan",
   "type": "Theorem",
-  "number": "4.7.11",
+  "number": "4.4.11",
   "title": "",
   "body": "  Let be an onto linear transformation. Suppose . Then .    Suppose is an element of . To show that spans , we will express as a linear combination of .  Because is onto, for some in . But . Therefore, for some scalar coefficients . By linearity, we have: Thus, is in the span of .   "
 },
@@ -6800,7 +5864,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#th-bijectionsbasis",
   "type": "Theorem",
-  "number": "4.7.12",
+  "number": "4.4.12",
   "title": "",
   "body": "  Let be an isomorphism. Suppose is a basis for . Then is a basis for .   "
 },
@@ -6809,7 +5873,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#Subsection-Proofs-of-Isomorphism-Properties-8",
   "type": "Proof",
-  "number": "4.7.3.1",
+  "number": "4.4.3.1",
   "title": "",
   "body": " Left to the reader. See .  "
 },
@@ -6818,7 +5882,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#th-linindtolinindiso",
   "type": "Theorem",
-  "number": "4.7.13",
+  "number": "4.4.13",
   "title": "",
   "body": "  Suppose is an isomorphism, then the subset ' of is linearly independent if and only if is linearly independent in .    We have already proved one direction of this this ``if and only if\" statement as .  To prove the other direction, suppose that are linearly independent vectors in . We need to show that this implies that are linearly independent in . Observe that if is an isomorphism, then is also an isomorphism. Thus, by , are linearly independent. But this means that are linearly independent.   "
 },
@@ -6827,7 +5891,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#th-isocompisiso",
   "type": "Theorem",
-  "number": "4.7.14",
+  "number": "4.4.14",
   "title": "",
   "body": "  Let , and be vector spaces. Suppose and are isomorphisms. Then is an isomorphism.   "
 },
@@ -6836,7 +5900,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#Subsection-Proofs-of-Isomorphism-Properties-11",
   "type": "Proof",
-  "number": "4.7.3.2",
+  "number": "4.4.3.2",
   "title": "",
   "body": " The proof is left to the reader (see ).  "
 },
@@ -6845,7 +5909,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#th-ndimspacesisorn",
   "type": "Theorem",
-  "number": "4.7.15",
+  "number": "4.4.15",
   "title": "",
   "body": "  Let and be finite-dimensional vector spaces. Then     First, assume that . Then there exists an isomorphism . Suppose and let be a basis for . By , is a basis for . Therefore .  Conversely, suppose , and let be bases for and , respectively. Define a linear transformation by for . To show that is an isomorphism, we need to prove that is one-to-one and onto. Suppose for some vectors , in . We know that  for some scalars 's and 's. Thus, By linearity of ,  But are linearly independent, so for all . Therefore for all . We conclude that . We now show that is onto. Suppose that is an element of . Then for some scalars 's. But then We conclude that is an image of an element of , so is onto.   "
 },
@@ -6854,7 +5918,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#cor-ndimisotorn",
   "type": "Corollary",
-  "number": "4.7.16",
+  "number": "4.4.16",
   "title": "",
   "body": "  Every -dimensional vector space is isomorphic to .   "
 },
@@ -6863,7 +5927,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#ex-planeisoplane",
   "type": "Example",
-  "number": "4.7.17",
+  "number": "4.4.17",
   "title": "",
   "body": " The span of any two linearly independent vectors in is isomorphic to .   Plane isomorphic to a subspace of R3 drawn     Drawing above continued    "
 },
@@ -6872,7 +5936,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#ex-p2isor3b",
   "type": "Example",
-  "number": "4.7.18",
+  "number": "4.4.18",
   "title": "",
   "body": "       Recall that . Since , we conclude that is not isomorphic to .   "
 },
@@ -6881,7 +5945,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#prob-Tonetooneonto",
   "type": "Exercise",
-  "number": "4.7.5.1",
+  "number": "4.4.5.1",
   "title": "",
   "body": "  Prove that transformation of is one-to-one and onto.   "
 },
@@ -6890,7 +5954,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#prob-tauone",
   "type": "Exercise",
-  "number": "4.7.5.2",
+  "number": "4.4.5.2",
   "title": "",
   "body": "  Verify that given by of is an isomorphism.   "
 },
@@ -6899,7 +5963,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#prob-noiso",
   "type": "Exercise",
-  "number": "4.7.5.3",
+  "number": "4.4.5.3",
   "title": "",
   "body": "  Do without using isomorphisms.   "
 },
@@ -6908,7 +5972,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#prob-useisoshowlinind",
   "type": "Exercise",
-  "number": "4.7.5.4",
+  "number": "4.4.5.4",
   "title": "",
   "body": "  Let Is linearly independent in ?    Yes!   "
 },
@@ -6917,7 +5981,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#prob-basism22iso",
   "type": "Exercise",
-  "number": "4.7.5.5",
+  "number": "4.4.5.5",
   "title": "",
   "body": "  Let Is a basis for ?    No!   "
 },
@@ -6926,7 +5990,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#prob-bijectionsbasisproof",
   "type": "Exercise",
-  "number": "4.7.5.6",
+  "number": "4.4.5.6",
   "title": "",
   "body": "  Prove .   "
 },
@@ -6935,7 +5999,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#prob-chooseisospace",
   "type": "Exercise",
-  "number": "4.7.5.7",
+  "number": "4.4.5.7",
   "title": "",
   "body": "  Let be a vector space, and suppose is a basis for . What can we conclude about ? Check ALL that apply.      We cannot conclude anything about because we do not know what is.       .       .       .       .       -     "
 },
@@ -6944,7 +6008,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#prob-pickisospaces",
   "type": "Exercise",
-  "number": "4.7.5.8",
+  "number": "4.4.5.8",
   "title": "",
   "body": "  Which of the followng statements are true? Check ALL that apply.       .       .       .       .       .     "
 },
@@ -6953,7 +6017,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#prob-verifyisomorphism",
   "type": "Exercise",
-  "number": "4.7.5.9",
+  "number": "4.4.5.9",
   "title": "",
   "body": "  Verify that of is an isomorphism.    You may find the proof of T helpful.   "
 },
@@ -6962,7 +6026,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#prob-isocompisisoproof",
   "type": "Exercise",
-  "number": "4.7.5.10",
+  "number": "4.4.5.10",
   "title": "",
   "body": "  Prove that the composition of two isomorphisms is an isomorphism (see also ).   "
 },
@@ -6971,7 +6035,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Section-Isomorphic-Vector-Spaces.html#kerneliszero",
   "type": "Exercise",
-  "number": "4.7.5.11",
+  "number": "4.4.5.11",
   "title": "",
   "body": "  Prove that a linear transformation is one-to-one if and only if .   "
 },
