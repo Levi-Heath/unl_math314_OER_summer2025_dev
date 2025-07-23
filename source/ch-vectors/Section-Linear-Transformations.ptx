@@ -1067,20 +1067,22 @@ This gives us the second column of the standard matrix.  Putting all of the info
     <title>Injective and Surjective Linear Transformations</title>
 
     <p>
-        Given a linear transformation <m>T:\R^n\rightarrow \R^m</m>, we may ask the following questions:
+        Given a linear transformation <m>T:\R^n\rightarrow \R^m</m>, it is natural to ask the following questions:
         <ol>
             <li>
                 Given a vector <m>\mathbf{b}</m> in <m>\R^m</m> such that <m>T(\mathbf{x})=\mathbf{b}</m> 
-                for some <m>\mathbf{x}</m> in <m>\R^n</m>,  is <m>\mathbf{x}</m> unique?
+                for some <m>\mathbf{x}</m> in <m>\R^n</m>,  is <m>\mathbf{x}</m> unique? 
+                That is, does each <m>\mathbf{x}</m> map to a unique vector in <m>\R^m</m>? 
             </li>
             <li>
-                Does every vector <m>\mathbf{b}</m> in <m>\R^m</m> have a pre-image in <m>\R^n</m> under <m>T</m>?
+                Does every vector <m>\mathbf{b}</m> in <m>\R^m</m> have a pre-image in <m>\R^n</m> under <m>T</m>? 
+                Meaning, is every vector in <m>\R^m</m> mapped to by <m>T</m>?  
             </li>
         </ol>
     </p>
 
     <p>
-        The first question leads us to the concept of <term>injective</term> or <term>one-to-one</term> transformations.  The second question leads us to the concept of <term>one-to-one</term> transformations.  
+        The first question leads us to the concept of <term>injective</term> transformations.
     </p>
 
 <definition xml:id="def-onetoone">
@@ -1093,8 +1095,7 @@ This gives us the second column of the standard matrix.  Putting all of the info
             </me>
         </p>
     </statement>
-</definition> 
-
+</definition>
 
 <example xml:id="ex-notonetoone">
     <statement>
@@ -1160,7 +1161,7 @@ This gives us the second column of the standard matrix.  Putting all of the info
 </example>
 
 <p>
-    The second question leads us to another concept: <term>surjective</term> or <term>onto</term> transformations.  A linear transformation is onto if every element of the codomain is an image of some element of the domain.
+    The second question leads us to another concept: <term>surjective</term> transformations.
 </p>
 
 <definition xml:id="def-onto">
@@ -1175,7 +1176,7 @@ This gives us the second column of the standard matrix.  Putting all of the info
 
 
 <p> 
-    Let's illustrate the concept of surjective transformations with a few examples.
+    Let's illustrate the concept of surjective transformations with an example.
 </p> 
 
 <example xml:id="ex-notonto2">
@@ -1191,6 +1192,83 @@ This gives us the second column of the standard matrix.  Putting all of the info
     </answer>
 </example>
 
+<p>
+    In <xref ref="ex-notonetoone"/> and <xref ref="ex-notonto2"/>, we saw that showing a transformation is not injective or not surjective only takes a single counterexample.
+    However, to show a transformation is injective or surjective, we need to prove that the property holds for all vectors in the domain or codomain, like we did in <xref ref="ex-onetoone1"/>.
+    Fortunately, we have some tools from our study of linear systems that will helps us.
+</p>
+
+<p>
+    By <xref ref="th-matlin"/>, every linear transformation <m>T:\R^n\to\R^m</m> is a matrix transformation with standard matrix <m>A</m>.
+    The properties of the standard matrix <m>A</m> can help us determine if <m>T</m> is injective or surjective.
+</p>
+
+<question xml:id="question-injectivesurjective">
+    <statement>
+        <p>
+            Let <m>T</m> be a linear transformation from <m>\R^n</m> to <m>\R^m</m> with standard matrix <m>A</m>.
+            So, <m>T(\mathbf{x})=A\mathbf{x}</m> for all <m>\mathbf{x}\in\R^n</m>.
+            We now turn our attention to the following questions:
+            <ol>
+                <li xml:id="item-when-injective">
+                    <p>
+                        What are the conditions on <m>A</m> that guarantee that <m>T</m> is injective?
+                    </p>
+                </li>
+                <li xml:id="item-when-surjective">
+                    <p>
+                        What are the conditions on <m>A</m> that guarantee that <m>T</m> is surjective?
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            To answer the first question, we need to find conditions on <m>A</m> that ensure that the solution to the matrix equation <m>A\mathbf{x}=\mathbf{b}</m> has at most one solution.
+            This is equivalent to saying the RREF of the augmented matrix <m>\left[A|\mathbf{b}\right]</m> has no free variables or that the RREF of <m>A</m> has a pivot in every column.
+            Recall that if <m>A</m> has a pivot in every column, then the columns of <m>A</m> are linearly independent. 
+            Notice this was exactly the condition we used in <xref ref="ex-onetoone1"/> to show that the transformation was injective.
+        </p>
+
+        <p>
+            Now to answer the second question.
+            We need to find conditions on <m>A</m> that ensure that the matrix equation <m>A\mathbf{x}=\mathbf{b}</m> has a solution for every <m>\mathbf{b}</m> in <m>\R^m</m>.
+            We need at least one solution, so it will be okay if there are infinitely many solutions. 
+            Meaning, the condition will be different from our answer to <xref ref="item-when-injective"/>.
+            So, how do we guarantee that the matrix equation <m>A\mathbf{x}=\mathbf{b}</m> always has a solution for every <m>\mathbf{b}</m>?
+            Well, the only time we could have no solution is when the RREF of the augmented matrix <m>\left[A|\mathbf{b}\right]</m> has a row of the form <m>[0\ 0\ \dots\ 0\ | 1]</m>.
+            To prevent this from happening, we need to ensure that the RREF of <m>A</m> has a pivot in every row.
+        </p>
+    </answer>
+</question>
+
+
+<p>
+    We summarize the answers to <xref ref="question-injectivesurjective"/> in the following theorem.
+</p>
+
+<theorem xml:id="thm-injectivesurjective">
+    <statement>
+        <p>
+            Let <m>T:\R^n\to\R^m</m> be a linear transformation with standard matrix <m>A</m>. Then:
+            <ul>
+                <li>
+                    <m>T</m> is injective if and only if the RREF of <m>A</m> has a pivot in every column.
+                </li>
+                <li>
+                    <m>T</m> is surjective if and only if the RREF of <m>A</m> has a pivot in every row.
+                </li>
+            </ul>
+        </p>
+    </statement>
+</theorem>
+
+
+<p>
+    Now let's apply <xref ref="thm-injectivesurjective"/> to some examples.
+</p>
+
 <example xml:id="ex-onto1">
     <statement>
         <p>
@@ -1203,17 +1281,11 @@ This gives us the second column of the standard matrix.  Putting all of the info
     </statement>
     <answer>
         <p>
-            Let <m>\mathbf{b}</m> be an element of the codomain (<m>\R^2</m>).  We need to find <m>\mathbf{x}</m> in the domain (<m>\R^2</m>) such that <m>T(\mathbf{x})=\mathbf{b}</m>. 
-Observe that <m>A</m> is invertible, and 
-<me>
-    A^{-1}=\begin{bmatrix}1\amp 0\\-2\amp 1\end{bmatrix}.
-</me>
-
- Let <m>\mathbf{x}=\begin{bmatrix}1\amp 0\\-2\amp 1\end{bmatrix}\mathbf{b}</m>, then 
- 
-<me>
-    T(\mathbf{x})=\begin{bmatrix}1\amp 0\\2\amp 1\end{bmatrix}\left(\begin{bmatrix}1\amp 0\\-2\amp 1\end{bmatrix}\mathbf{b}\right)=I\mathbf{b}=\mathbf{b}.
-</me>
+            The RREF of <m>A</m> is 
+            <me>
+                \mbox{rref}(A)=\begin{bmatrix}1\amp 0\\0\amp 1\end{bmatrix}.
+            </me>
+            Since the RREF of <m>A</m> has a pivot in every row, we conclude that <m>T</m> is surjective.
        </p>
     </answer>
 </example>
@@ -1221,102 +1293,25 @@ Observe that <m>A</m> is invertible, and
 <example xml:id="ex-onto2">
     <statement>
         <p>
-            Prove that the linear transformation <m>T:\R^3\rightarrow \R^2</m> induced by 
-<me>
-    A=\begin{bmatrix}1\amp 1\amp -1\\2\amp 3\amp -1\end{bmatrix}
-</me>
- is onto.
+            Determine if the linear transformation <m>T:\R^3\rightarrow \R^2</m> induced by 
+            <me>
+                A=\begin{bmatrix}1\amp 1\amp -1\\2\amp 3\amp -1\end{bmatrix}
+            </me>
+            is injective, surjective, or both.
        </p>
     </statement>
     <answer>
         <p>
-            Let <m>\mathbf{b}</m> be an element of <m>\R^2</m>.  We need to show that there exists <m>\mathbf{x}</m> in <m>\R^3</m> such that <m>T(\mathbf{x})=A\mathbf{x}=\mathbf{b}</m>. 
-Observe that
- 
-<me>
-    \mbox{rref}(A)=\begin{bmatrix}1 \amp  0 \amp  -2\\0 \amp  1 \amp  1\end{bmatrix}.
-</me>
-
- This means that <m>A\mathbf{x}=\mathbf{b}</m> has a solution (in fact, it has infinitely many solutions) for every <m>\mathbf{b}</m> in <m>\R^2</m>.  Therefore every <m>\mathbf{b}</m> in <m>\R^2</m> is an image of some <m>\mathbf{x}</m> in <m>\R^3</m>. We conclude that <m>T</m> is onto.
-       </p>
-    </answer>
-</example>
-
-<example xml:id="ex-subtosub">
-    <statement>
-        <p>
-            Let 
-<me>
-    V=\text{span}\left(\begin{bmatrix}1\\0\\0\end{bmatrix}, \begin{bmatrix}1\\1\\1\end{bmatrix}\right).
-</me>
-
-Define a linear transformation 
-<me>
-    T:V\rightarrow \R^2
-</me>
-
-by 
-<me>
-    T\left(\begin{bmatrix}1\\0\\0\end{bmatrix}\right)=\begin{bmatrix}1\\1\end{bmatrix}\quad \text{and} \quad T\left(\begin{bmatrix}1\\1\\1\end{bmatrix}\right)=\begin{bmatrix}0\\1\end{bmatrix}.
-</me>
-
-Show that <m>T</m> is injective and surjective.
-       </p>
-    </statement>
-    <answer>
-        <p>
-            We will now show that <m>T</m> is injective.  
-Suppose 
-
-<me>
-    T(\mathbf{u})=T(\mathbf{v})
-</me>
-
-for some <m>\mathbf{u}</m> and <m>\mathbf{v}</m> in <m>V</m>. Vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m> are in the span of <m>\begin{bmatrix}1\\0\\0\end{bmatrix}</m> and <m>\begin{bmatrix}1\\1\\1\end{bmatrix}</m>, so
-
-
-<me>
-    \mathbf{u}=a\begin{bmatrix}1\\0\\0\end{bmatrix}+b\begin{bmatrix}1\\1\\1\end{bmatrix}\quad\text{and}\quad \mathbf{v}=c\begin{bmatrix}1\\0\\0\end{bmatrix}+d\begin{bmatrix}1\\1\\1\end{bmatrix}
-</me>
-
-for some scalars <m>a, b, c, d</m>.
-
-
-<md>
-<mrow>    T(\mathbf{u}) \amp =aT\left(\begin{bmatrix}1\\0\\0\end{bmatrix}\right)+bT\left(\begin{bmatrix}1\\1\\1\end{bmatrix}\right)  =a\begin{bmatrix}1\\1\end{bmatrix}+b\begin{bmatrix}0\\1\end{bmatrix}  =\begin{bmatrix}a\\a+b\end{bmatrix}, </mrow> 
-<mrow>    T(\mathbf{v}) \amp =cT\left(\begin{bmatrix}1\\0\\0\end{bmatrix}\right)+dT\left(\begin{bmatrix}1\\1\\1\end{bmatrix}\right)  =c\begin{bmatrix}1\\1\end{bmatrix}+d\begin{bmatrix}0\\1\end{bmatrix}  =\begin{bmatrix}c\\c+d\end{bmatrix}. </mrow>
-</md>
-
-Thus,
-
-<me>
-    \begin{bmatrix}a\\a+b\end{bmatrix}=\begin{bmatrix}c\\c+d\end{bmatrix}.
-</me>
-
-This implies that <m>a=c</m> which, in turn, implies <m>b=d</m>.  This gives us <m>\mathbf{u}=\mathbf{v}</m>, and we conclude that <m>T</m> is injective.
-</p>
-
-<p> 
-Next we will show that <m>T</m> is onto.  
-The key observation is that vectors <m>[1,1]</m> and <m>[0,1]</m> span <m>\R^2</m>. This means that given a vector <m>\mathbf{v}</m> in <m>\R^2</m>, we can write <m>\mathbf{v}</m> as 
-<me>
-\mathbf{v}=a\begin{bmatrix}1\\1\end{bmatrix}+b\begin{bmatrix}0\\1\end{bmatrix}.
-</me> 
-
-But this means that 
-<m>
-\mathbf{v}=T\left(a\begin{bmatrix}1\\0\\0\end{bmatrix}+b\begin{bmatrix}1\\1\\1\end{bmatrix}\right).
-</m> 
-
-We conclude that <m>T</m> is onto.
+            The RREF of <m>A</m> is 
+            <me>
+                \mbox{rref}(A)=\begin{bmatrix}1\amp 0\amp -2\\0\amp 1\amp 1\end{bmatrix}.
+            </me>
+            Since the RREF of <m>A</m> has a pivot in every row, we conclude that <m>T</m> is surjective.
+            However, since the RREF of <m>A</m> does not have a pivot in every column, we conclude that <m>T</m> is not injective.
        </p>
     </answer>
 </example>
 </subsection>
-
-
-
-
 
 
 
