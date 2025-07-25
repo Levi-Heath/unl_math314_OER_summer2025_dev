@@ -559,11 +559,90 @@ The coordinate vector for <m>T(\mathbf{v})</m> with respect to the ordered basis
 
 
 <subsection xml:id="The-Matrix-of-a-Linear-Transformation">
-    <title>The Matrix of a Linear Transformation</title>
+    <title>Matrix Representation of a Linear Transformation</title>
 
     <p>
-        In this section we will define and learn how to compute the matrix of a linear transformation with respect to bases of the domain and codomain.  
+        In this section we will define and learn how to compute the matrix representation of a linear transformation with respect to bases of the domain and codomain.
+        We've already defined and computed the matrix representation of linear transformations <m>T:\R^n\to\R^m</m> with respect to the standard bases for <m>\R^n</m> and <m>\R^m</m>.
+        Recall that the standard matrix of a transformation <m>T:\R^n\to\R^m</m> is the matrix <m>A</m> whose columns are the images of the standard basis vectors of <m>\R^n</m> under <m>T</m>.
+        That is,
+        <me>
+            A = \begin{bmatrix}T(\mathbf{e}_1) \amp T(\mathbf{e}_2) \amp \cdots \amp T(\mathbf{e}_n)\end{bmatrix},
+        </me>
+        where <m>\mathbf{e}_1, \ldots, \mathbf{e}_n</m> are the standard basis vectors of <m>\R^n</m>.
     </p>
+
+    <p>
+        Now we extend this idea to linear transformations between vector spaces with arbitrary bases.
+    </p>
+
+    <definition xml:id="def-matrixrepresentation">
+        <statement>
+            <p>
+                Let <m>V</m> and <m>W</m> be vector spaces with ordered bases <m>\mathcal{B}=\{\mathbf{b}_1, \ldots, \mathbf{b}_n\}</m> and <m>\mathcal{C}=\{\mathbf{c}_1, \ldots, \mathbf{c}_m\}</m>, respectively.
+                The matrix representation of a linear transformation <m>T:V\to W</m> with respect to the bases <m>\mathcal{B}</m> and <m>\mathcal{C}</m> is defined as the matrix whose columns are the coordinate vectors of the images of the basis vectors of <m>V</m> under <m>T</m>.
+                In other words, the matrix representation of <m>T</m> is given by
+                <me>
+                    A_{\mathcal{C}\leftarrow\mathcal{B}} = \begin{bmatrix} [T(\mathbf{b}_1)]_{\mathcal{C}} \amp [T(\mathbf{b}_2)]_{\mathcal{C}} \amp \cdots \amp [T(\mathbf{b}_n)]_{\mathcal{C}} \end{bmatrix}.
+                </me>
+                Here, <m>[T(\mathbf{b}_i)]_{\mathcal{C}}</m> is the coordinate vector of <m>T(\mathbf{b}_i)</m> with respect to the basis <m>\mathcal{C}=\{\mathbf{c}_1, \ldots, \mathbf{c}_m\}</m>.
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        Denote the standard basis of <m>\R^n</m> by <m>\mathcal{E}_n=\{\mathbf{e}_1, \ldots, \mathbf{e}_n\}</m>.
+        With this new notation, we can express the standard matrix of <m>T</m> as <m>A_{\mathcal{E}_m\leftarrow\mathcal{E}_n}</m>.
+    </p>
+
+    <p>
+        The matrix representation of a linear transformation with respect to bases is a powerful tool that allows us to work with linear transformations in a more structured way, especially when dealing with different bases.
+        It provides a bridge between the abstract concept of linear transformations and the concrete computations involving matrices.
+        Let's practice finding matrix representations to get comfortable with this new tool.
+    </p>
+
+    <example>
+        <statement>
+            <p>
+                Consider the transformation <m>T:\mathbb{P}^2\to\mathbb{M}_{2,2}</m> defined by
+                <me>
+                    T(1) = \begin{bmatrix}1 \amp 0 \\ 0 \amp 2\end{bmatrix}, \quad T(x) = \begin{bmatrix}1 \amp -1 \\ 5 \amp 0\end{bmatrix}, \quad T(x^2) = \begin{bmatrix}1 \amp 1 \\ 1 \amp 1\end{bmatrix}.
+                </me>
+                Find the matrix representation of <m>T</m> with respect to the bases <m>\mathcal{B} = \{1, x, x^2\}</m> and <m>\mathcal{C} = \left\{\begin{bmatrix}1 \amp 0 \\ 0 \amp 0\end{bmatrix}, \begin{bmatrix}0 \amp 1 \\ 0 \amp 0\end{bmatrix}, \begin{bmatrix}0 \amp 0 \\ 1 \amp 0\end{bmatrix}, \begin{bmatrix}0 \amp 0 \\ 0 \amp 1\end{bmatrix}\right\}</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                The matrix representation of <m>T</m> with respect to the bases <m>\mathcal{B}</m> and <m>\mathcal{C}</m> is given by
+                <me>
+                    A_{\mathcal{C}\leftarrow\mathcal{B}} = \begin{bmatrix} [T(1)]_{\mathcal{C}} \amp [T(x)]_{\mathcal{C}} \amp [T(x^2)]_{\mathcal{C}} \end{bmatrix}.
+                </me>
+                Note that we need to compute the coordinate vectors of <m>T(1)</m>, <m>T(x)</m>, and <m>T(x^2)</m> with respect to the basis <m>\mathcal{C}</m>.
+                Observe:
+                <md>
+                    <mrow> T(1) \amp = 1\begin{bmatrix}1\amp 0\\ 0\amp 0\end{bmatrix} + 0\begin{bmatrix}0\amp 1\\ 0\amp 0\end{bmatrix} + 0\begin{bmatrix}0\amp 0\\ 1\amp 0\end{bmatrix} + 2\begin{bmatrix}0\amp 0\\ 0\amp 1\end{bmatrix} </mrow>
+                    <mrow> T(x) \amp = 1\begin{bmatrix}1\amp 0\\ 0\amp 0\end{bmatrix} + -1\begin{bmatrix}0\amp 1\\ 0\amp 0\end{bmatrix} + 5\begin{bmatrix}0\amp 0\\ 1\amp 0\end{bmatrix} + 0\begin{bmatrix}0\amp 0\\ 0\amp 1\end{bmatrix} </mrow>
+                    <mrow> T(x^2) \amp = 1\begin{bmatrix}1\amp 0\\ 0\amp 0\end{bmatrix} + 1\begin{bmatrix}0\amp 1\\ 0\amp 0\end{bmatrix} + 1\begin{bmatrix}0\amp 0\\ 1\amp 0\end{bmatrix} + 1\begin{bmatrix}0\amp 0\\ 0\amp 1\end{bmatrix} </mrow>
+                </md>
+                So each coordinate vector is
+                <md>
+                    <mrow>[T(1)]_{\mathcal{C}} \amp = \begin{bmatrix}1 \\ 0 \\ 0 \\ 2\end{bmatrix}</mrow>
+                    <mrow>[T(x)]_{\mathcal{C}} \amp = \begin{bmatrix}1 \\ -1 \\ 5 \\ 0\end{bmatrix}</mrow>
+                    <mrow>[T(x^2)]_{\mathcal{C}} \amp = \begin{bmatrix}1 \\ 1 \\ 1 \\ 1\end{bmatrix}</mrow>
+                </md>
+                Therefore, the matrix representation is
+                <me>
+                    A_{\mathcal{C}\leftarrow\mathcal{B}} = 
+                    \begin{bmatrix}
+                        1 \amp 1 \amp 1 \\ 
+                        0 \amp -1 \amp 1 \\ 
+                        0 \amp 5 \amp 1 \\ 
+                        2 \amp 0 \amp 1
+                    \end{bmatrix}.
+                </me>
+            </p>
+        </answer>
+    </example>
 
 </subsection>
 
