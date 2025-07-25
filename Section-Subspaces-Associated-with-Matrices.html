@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Subspaces Associated with Matrices</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Coordinated Linear Algebra">
+<meta property="book:author" content="Anna Davis">
+<meta property="book:author" content="Paul Zachlin">
+<meta property="book:author" content="Allan Donsig">
+<meta property="book:author" content="Levi Heath">
+<meta property="book:author" content="Mikkel Munkholm">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.9.2';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.cc203fa52565b593.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.014cb392a13bd045.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""><img src="external/images/cover.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Coordinated Linear Algebra</span></a></h1>
+<p class="byline">Anna Davis, Paul Zachlin, Allan Donsig, Levi Heath, Mikkel Munkholm</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="Bases-and-Dimension.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="Chapter-Vector-Spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="Section-Linear-Transformations-of-Vector-Spaces.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
+\newcommand{\Z}{\mathbb Z} 
+\newcommand{\Q}{\mathbb Q} 
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\dfn}{\textit}
+\newcommand{\id}{\text{id}}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Systems-of-Linear-Equations.html" class="internal"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction to Systems of Linear Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Algebra-of-Linear-Systems" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Algebra of Linear Systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Augmented-Matrix-Notation" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Augmented Matrix Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Geometry-of-Linear-Systems-in-Two-Variables" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Geometry of Linear Systems in Two Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-Geometry-of-Linear-Systems-in-Three-Variables" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Geometry of Linear Systems in Three Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Subsection-General-Systems-of-Linear-Equations" class="internal"><span class="codenumber">1.1.5</span> <span class="title">General Systems of Linear Equations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Introduction-to-Systems-of-Linear-Equations.html#Exercises-Introduction-to-Systems-of-Linear-Equations" class="internal"><span class="codenumber">1.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Row-Echelon-Forms.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Row Echelon Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Row-Echelon-Forms.html#Subsection-Row-Echelon-and-Reduced-Row-Echelon-Forms" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Row Echelon Form and Reduced Row Echelon Form</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Row-Echelon-Forms.html#Subsection-Gaussian-and-Gauss-Jordan-Elimination" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Gaussian and Gauss-Jordan Elimination</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Row-Echelon-Forms.html#Subsection-Solutions-to-Systems-of-Equations" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Solutions to Systems of Equations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Row-Echelon-Forms.html#Exercises-Row-Echelon-Forms" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="Section-Row-Echelon-Forms.html#Section-Row-Echelon-Forms-7" class="internal"><span class="codenumber">1.2.5</span> <span class="title">References</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Applications-of-Systems-of-Linear-Equations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Extra Topic: Applications of Systems of Linear Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Applications-of-Systems-of-Linear-Equations.html#Subsection-Network-Flows" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Network Flows</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Applications-of-Systems-of-Linear-Equations.html#Subsection-Electrical-Networks" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Electrical Networks</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Applications-of-Systems-of-Linear-Equations.html#Subsection-Chemical-Equations" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Chemical Equations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Applications-of-Systems-of-Linear-Equations.html#Exercises-Applications-of-Systems-of-Linear-Equations" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Vectors.html" class="internal"><span class="codenumber">2</span> <span class="title">Vectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction to Vectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-A-Brief-Introduction-to-Real-Space" class="internal"><span class="codenumber">2.1.1</span> <span class="title">A Brief Introduction to <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Distance-in-Real-Space" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Distance in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-What-is-a-Vector" class="internal"><span class="codenumber">2.1.3</span> <span class="title">What is a Vector?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vectors-in-Standard-Position" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Vectors in Standard Position</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vectors-in-3d" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Vectors in <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vectors-in-Real-Space" class="internal"><span class="codenumber">2.1.6</span> <span class="title">Vectors in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Section-Length-of-a-Vector" class="internal"><span class="codenumber">2.1.7</span> <span class="title">Length of a Vector</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Geometry-of-Scalar-Multiplication" class="internal"><span class="codenumber">2.1.8</span> <span class="title">Geometry of Scalar Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Algebra-of-Scalar-Multiplication" class="internal"><span class="codenumber">2.1.9</span> <span class="title">Algebra of Scalar Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Standard-Unit-Vectors-in-2d-and-3d" class="internal"><span class="codenumber">2.1.10</span> <span class="title">Standard Unit Vectors in <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-A-Vector-as-a-Linear-Combination-of-Standard-Unit-Vectors" class="internal"><span class="codenumber">2.1.11</span> <span class="title">A Vector as a Linear Combination of Standard Unit Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Standard-Unit-Vectors-in-Real-Space" class="internal"><span class="codenumber">2.1.12</span> <span class="title">Standard Unit Vectors in <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Section-Unit-Vector-in-the-Direction-of-a-Given-Vector" class="internal"><span class="codenumber">2.1.13</span> <span class="title">Unit Vector in the Direction of a Given Vector</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Geometry-of-Vector-Addition" class="internal"><span class="codenumber">2.1.14</span> <span class="title">Geometry of Vector Addition</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsubsection-Head-to-Tail-Addition-Method" class="internal"><span class="codenumber">2.1.14.1</span> <span class="title">“Head-to-Tail” Addition Method</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsubsection-Parallelogram-Addition-Method" class="internal"><span class="codenumber">2.1.14.2</span> <span class="title">Parallelogram Addition Method</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Algebra-of-Vector-Addition" class="internal"><span class="codenumber">2.1.15</span> <span class="title">Algebra of Vector Addition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Geometry-of-Vector-Addition-in-3d" class="internal"><span class="codenumber">2.1.16</span> <span class="title">Geometry of Vector Addition in <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Vector-Subtraction" class="internal"><span class="codenumber">2.1.17</span> <span class="title">Vector Subtraction</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Subsection-Properties-of-Vector-Addition-and-Scalar-Multiplication" class="internal"><span class="codenumber">2.1.18</span> <span class="title">Properties of Vector Addition and Scalar Multiplication</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Introduction-to-Vectors.html#Exercises-Introduction-to-Vectors" class="internal"><span class="codenumber">2.1.19</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Linear-Combination-Equations-and-Span.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Linear Combination Equations and Span</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Combination-Equations-and-Span.html#Subsection-Visualizing-Linear-Combinations-in-2d-and-3d" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Visualizing Linear Combinations in <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Combination-Equations-and-Span.html#subsec-Solving-Linear-Combination-Equations" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Solving Linear Combination Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Combination-Equations-and-Span.html#Section-Span" class="internal"><span class="codenumber">2.2.3</span> <span class="title">The Linear Span</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Linear-Combination-Equations-and-Span.html#Section-Linear-Combination-Equations-and-Span-9" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Matrix-Equations.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Matrix Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Equations.html#Subsection-Matrix-Vector-Multiplication" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Matrix-Vector Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Equations.html#Subsection-Matrix-Equations" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Matrix Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Equations.html#Subsection-Singular-and-Nonsingular-Matrices" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Singular and Nonsingular Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Equations.html#Subsection-Connection-to-Linear-Combination-Equations" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Connection to Linear Combination Equations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Matrix-Equations.html#Section-Matrix-Equations-6" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Homogeneous Linear Systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html#Subsection-General-and-Particular-Solutions" class="internal"><span class="codenumber">2.4.1</span> <span class="title">General and Particular Solutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html#Subsection-Linear-Independence" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Linear Independence</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html#Subsection-Geometry-of-Linearly-Dependent-and-Linearly-Independent-Vectors" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Geometry of Linearly Dependent and Linearly Independent Vectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html#Subsubsection-A-Set-of-Two-Vectors" class="internal"><span class="codenumber">2.4.3.1</span> <span class="title">A Set of Two Vectors</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html#Subsubsection-A-Set-of-Three-Vectors" class="internal"><span class="codenumber">2.4.3.2</span> <span class="title">A Set of Three Vectors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Homogeneous-Linear-Systems.html#Section-Homogeneous-Linear-Systems-9" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Matrix-Transformations.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Matrix Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Subsection-Functions-from-Rn-into-Rm" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Functions from <span class="process-math">\(\R^n\)</span> into <span class="process-math">\(\R^m\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Subsection-Examples-of-Matrix-Transformations" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Examples of Matrix Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Subsection-Linearity-of-Matrix-Transformations" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Linearity of Matrix Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Subsection-Where-did-i-go" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Where did <span class="process-math">\(\mathbf{i}\)</span> Go?</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Matrix-Transformations.html#Section-Matrix-Transformations-6" class="internal"><span class="codenumber">2.5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Linear-Transformations.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Linear Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations.html#Section-Standard-Matrix-of-a-Linear-Transformation-from-m-R-n-m-to-m-R-m-m-" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Standard Matrix of a Linear Transformation from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations.html#Subsection-Injective-and-Surjective-Linear-Transformations" class="internal"><span class="codenumber">2.6.2</span> <span class="title">Injective and Surjective Linear Transformations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Linear-Transformations.html#Section-Linear-Transformations-25" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Matrices.html" class="internal"><span class="codenumber">3</span> <span class="title">Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Matrix-Operations.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Matrix Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Operations.html#Subsection-Addition-of-Matrices" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Addition - and Scalar multiplication of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section-Matrix-Operations.html#Subsection-Matrix-Multiplication" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Matrix Multiplication</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Matrix-Operations.html#Subsection-Matrix-Vector-Multiplication" class="internal"><span class="codenumber">3.1.2.1</span> <span class="title">Matrix-Vector Multiplication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Matrix-Operations.html#Subsection-Matrix-Matrix-Multiplication" class="internal"><span class="codenumber">3.1.2.2</span> <span class="title">Matrix-Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Matrix-Operations.html#Subsection-Properties-of-Matrix-Multiplication" class="internal"><span class="codenumber">3.1.2.3</span> <span class="title">Properties of Matrix Multiplication</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Matrix-Operations.html#Subsection-Transpose-of-a-Matrix" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Transpose of a Matrix</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Matrix-Operations.html#Section-Matrix-Operations-16" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-The-Inverse-of-a-Matrix.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Inverse of a Matrix</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-The-Inverse-of-a-Matrix.html#Subsection-Computing-the-Inverse" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Computing the Inverse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-The-Inverse-of-a-Matrix.html#Subsection-Inverse-of-a-2d-matrix" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Inverse of a <span class="process-math">\(2\times 2\)</span> Matrix</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-The-Inverse-of-a-Matrix.html#Section-The-Inverse-of-a-Matrix-15" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Elementary-Matrices.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Extra Topic: Elementary Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Matrices.html#Subsection-Inverses-of-Elementary-Matrices" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Inverses of Elementary Matrices</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Elementary-Matrices.html#Section-Elementary-Matrices-14" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-LU-Factorization.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Extra Topic: <span class="process-math">\(LU\)</span> Factorization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-LU-Factorization.html#Subsection-Finding-an-LU-factorization-by-the-Multiplier-Method" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Finding an <span class="process-math">\(LU\)</span> factorization by the Multiplier Method</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-LU-Factorization.html#Section-LU-Factorization-10" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Application-to-Markov-Chains.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Extra Topic: Application to Markov Chains</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Application-to-Markov-Chains.html#Subsection-Steady-State-Vector" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Steady State Vector</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Application-to-Markov-Chains.html#Section-Application-to-Markov-Chains-20" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="Chapter-Vector-Spaces.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector Spaces</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Intro-to-Vector-Spaces.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Introduction to Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Intro-to-Vector-Spaces.html#Subsection-Closure" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Closure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Intro-to-Vector-Spaces.html#Subsection-Properties-of-Vector-Spaces" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Properties of Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Intro-to-Vector-Spaces.html#Subsection-Definition-of-a-Vector-Space" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Definition of a Vector Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Intro-to-Vector-Spaces.html#Subsection-Subspaces" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Intro-to-Vector-Spaces.html#Subsection-Linear-Combinations-and-Span" class="internal"><span class="codenumber">4.1.5</span> <span class="title">Linear Combinations and Span</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Intro-to-Vector-Spaces.html#Section-Intro-to-Vector-Spaces-9" class="internal"><span class="codenumber">4.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Bases-and-Dimension.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Bases and Dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Subsection-Coordinate-Vectors" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Coordinate Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Subsection-What-Constitutes-a-Basis" class="internal"><span class="codenumber">4.2.2</span> <span class="title">What Constitutes a Basis?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Subsection-Definition-of-a-Basis" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Definition of a Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Subsection-Exploring-Dimension" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exploring Dimension</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Subsection-Finite-Dimensional-Vector-Spaces" class="internal"><span class="codenumber">4.2.5</span> <span class="title">Finite-Dimensional Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Subsection-Coordinate-Vectors-Revisited" class="internal"><span class="codenumber">4.2.6</span> <span class="title">Coordinate Vectors Revisited</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Bases-and-Dimension.html#Bases-and-Dimension-8" class="internal"><span class="codenumber">4.2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="Section-Subspaces-Associated-with-Matrices.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Subspaces Associated with Matrices</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Subspaces-Associated-with-Matrices.html#Subsection-Row-Space-of-a-Matrix" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Row Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Subspaces-Associated-with-Matrices.html#Subsection-Column-Space-of-a-Matrix" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Column Space of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Subspaces-Associated-with-Matrices.html#Subsection-The-Null-Space" class="internal"><span class="codenumber">4.3.3</span> <span class="title">The Null Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Subspaces-Associated-with-Matrices.html#Subsection-Rank-and-Nullity-Theorem" class="internal"><span class="codenumber">4.3.4</span> <span class="title">Rank and Nullity Theorem</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Section-Subspaces-Associated-with-Matrices.html#Subsection-Subspaces-Associated-with-Matrix-Transformations" class="internal"><span class="codenumber">4.3.5</span> <span class="title">Subspaces Associated with Matrix Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Subspaces-Associated-with-Matrices.html#Subsubsection-The-Image-of-a-Matrix-Transformation" class="internal"><span class="codenumber">4.3.5.1</span> <span class="title">The Image of a Matrix Transformation</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Subspaces-Associated-with-Matrices.html#Subsubsection-The-Kernel-of-a-Matrix-Transformation" class="internal"><span class="codenumber">4.3.5.2</span> <span class="title">The Kernel of a Linear Transformation</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="Section-Subspaces-Associated-with-Matrices.html#Subsubsection-Rank-Nullity-Theorem-for-Linear-Transformations" class="internal"><span class="codenumber">4.3.5.3</span> <span class="title">Rank-Nullity Theorem for Linear Transformations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Subspaces-Associated-with-Matrices.html#Section-Subspaces-Associated-with-Matrices-7" class="internal"><span class="codenumber">4.3.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Linear-Transformations-of-Vector-Spaces.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Linear Transformations of Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Vector-Spaces.html#Subsection-Linear-Transformations-and-Bases" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Linear Transformations and Bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Vector-Spaces.html#Subsection-Coordinate-Vectors" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Coordinate Vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Vector-Spaces.html#The-Matrix-of-a-Linear-Transformation" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Matrix Representation of a Linear Transformation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Linear-Transformations-of-Vector-Spaces.html#Section-Linear-Transformations-of-Vector-Spaces-16" class="internal"><span class="codenumber">4.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Extra Topic: Isomorphic Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#The-Coordinate-Vector-Isomorphism" class="internal"><span class="codenumber">4.5.1</span> <span class="title">The Coordinate Vector Isomorphism</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#Subsection-Properties-of-Isomorphic-Vector-Spaces-and-Isomorphisms" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Properties of Isomorphic Vector Spaces and Isomorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#Subsection-Proofs-of-Isomorphism-Properties" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Proofs of Isomorphism Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#Subsection-Finite-dimensional-Vector-Spaces" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Finite-dimensional Vector Spaces</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Isomorphic-Vector-Spaces.html#Section-Isomorphic-Vector-Spaces-20" class="internal"><span class="codenumber">4.5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Determinants.html" class="internal"><span class="codenumber">5</span> <span class="title">Determinants</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Finding-the-Determinant.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Finding the Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-Cofactor-Expansion-Along-the-Top-Row" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Cofactor Expansion Along the Top Row</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-Cofactor-Expansion-Along-the-First-Column" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Cofactor Expansion Along the First Column</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-Cofactor-Expansion-Along-Any-Row-or-Column" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Cofactor Expansion Along Any Row or Column</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-A-Note-on-Equivalency" class="internal"><span class="codenumber">5.1.4</span> <span class="title">A Note on Equivalency</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Subsection-Determinants-of-Some-Special-Matrices" class="internal"><span class="codenumber">5.1.5</span> <span class="title">Determinants of Some Special Matrices</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Finding-the-Determinant.html#Section-Finding-the-Determinant-9" class="internal"><span class="codenumber">5.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Properties of the Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html#Subsection-The-Effects-of-Elementary-Row-Operations-on-the-Determinant" class="internal"><span class="codenumber">5.2.1</span> <span class="title">The Effects of Elementary Row Operations on the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html#Subsection-Computing-the-Determinant-Using-Elementary-Row-Operations" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Computing the Determinant Using Elementary Row Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html#Subsection-Properties-of-the-Determinant" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Elementary-Row-Operations-and-the-Determinant.html#Section-Elementary-Row-Operations-and-the-Determinant-7" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Cramers-Rule.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Extra Topic: Cramer’s Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Cramers-Rule.html#Subsection-Cramers-Rule" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Cramer’s Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Cramers-Rule.html#Subsection-Adjugate-Formula-for-the-Inverse-of-a-Matrix" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Adjugate Formula for the Inverse of a Matrix</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Cramers-Rule.html#Section-Cramers-Rule-5" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Extra Topic: Determinants, Areas, and Volumes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html#Subsection-2times2-Determinant-and-the-Area-of-a-Parallelogram" class="internal"><span class="codenumber">5.4.1</span> <span class="title"><span class="process-math">\(2\times 2\)</span> Determinant and the Area of a Parallelogram</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html#Subsection-3times3-Determinant-and-the-Volume-of-a-Parallelepiped" class="internal"><span class="codenumber">5.4.2</span> <span class="title"><span class="process-math">\(3\times 3\)</span> Determinant and the Volume of a Parallelepiped</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html#Subsection-Determinants-and-Linear-Transformations" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Determinants and Linear Transformations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Determinants-Areas-and-Volumes.html#Section-Determinants-Areas-and-Volumes-5" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Eigenvalues-and-Eigenvectors.html" class="internal"><span class="codenumber">6</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#Section-The-Characteristic-Equation" class="internal"><span class="codenumber">6.1.1</span> <span class="title">The Characteristic Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#Subsection-Eigenvalues" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#Subsection-Eigenvectors" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Eigenvectors</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Describing-Eigenvalues-and-Eigenvectors.html#Section-Describing-Eigenvalues-and-Eigenvectors-23" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Similar-and-Diagonalizable-Matrices.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Similar and Diagonalizable Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Similar-and-Diagonalizable-Matrices.html#Section-Diagonalizable-Matrices-and-Multiplicity" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Diagonalizable Matrices and Multiplicity</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Similar-and-Diagonalizable-Matrices.html#Section-Similar-and-Diagonalizable-Matrices-20" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Chapter-Orthogonality.html" class="internal"><span class="codenumber">7</span> <span class="title">Orthogonality</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Dot-Product.html" class="internal"><span class="codenumber">7.1</span> <span class="title">The Dot Product</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Dot-Product.html#Subsection-The-Dot-Product" class="internal"><span class="codenumber">7.1.1</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Dot-Product.html#Subsection-Orthogonal-Projections" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Orthogonal Projections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Dot-Product.html#Subsection-Distance-from-a-Point-to-a-Line" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Distance from a Point to a Line</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Dot-Product.html#Exercises-Dot-Product" class="internal"><span class="codenumber">7.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Orthogonality and Projections</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Subsection-Orthogonal-and-Orthonormal-Sets" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Orthogonal and Orthonormal Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Subsection-Orthogonal-and-Orthonormal-Bases" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Orthogonal and Orthonormal Bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Subsection-Orthogonal-Projection-onto-a-Subspace" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Orthogonal Projection onto a Subspace</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Subsection-Orthogonal-Decomposition-of-x" class="internal"><span class="codenumber">7.2.4</span> <span class="title">Orthogonal Decomposition of <span class="process-math">\(\mathbf{x}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Orthogonality-and-Projections.html#Section-Orthogonality-and-Projections-6" class="internal"><span class="codenumber">7.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Gram-Schmidt-Orthogonalization.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Gram-Schmidt Orthogonalization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Gram-Schmidt-Orthogonalization.html#Subsection-A-Visual-Guide-to-Creating-an-Orthogonal-Basis" class="internal"><span class="codenumber">7.3.1</span> <span class="title">A Visual Guide to Creating an Orthogonal Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Gram-Schmidt-Orthogonalization.html#Subsection-Gram-Schmidt-Orthogonalization-Algorithm" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Gram-Schmidt Orthogonalization Algorithm</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Gram-Schmidt-Orthogonalization.html#Section-Gram-Schmidt-Orthogonalization-5" class="internal"><span class="codenumber">7.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Orthogonal-Complements-and-Decompositions.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Orthogonal Complements and Decompositions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonal-Complements-and-Decompositions.html#Subsection-Orthogonal-Complements" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonal-Complements-and-Decompositions.html#Subsection-Orthogonal-Decomposition-Theorem" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Orthogonal Decomposition Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Orthogonal-Complements-and-Decompositions.html#Section-Orthogonal-Complements-and-Decompositions-4" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Orthogonal Matrices and Symmetric Matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html#Subsection-Orthogonal-Matrices" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Orthogonal Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html#Subsection-Symmetric-Matrices" class="internal"><span class="codenumber">7.5.2</span> <span class="title">Symmetric Matrices</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Orthogonal-Matrices-and-Symmetric-Matrices.html#Section-Orthogonal-Matrices-and-Symmetric-Matrices-5" class="internal"><span class="codenumber">7.5.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Extra Topic: <span class="process-math">\(QR\)</span> Factorization and Least Square Approximations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html#Subsection-QR-Algorithm-for-approximating-eigenvalues" class="internal"><span class="codenumber">7.6.1</span> <span class="title">QR-Algorithm for approximating eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html#Subsection-Least-Squares-Approximation" class="internal"><span class="codenumber">7.6.2</span> <span class="title">Least-Squares Approximation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html#Subsection-Application-of-Least-Squares-to-Curve-Fitting" class="internal"><span class="codenumber">7.6.3</span> <span class="title">Application of Least Squares to Curve Fitting</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html#Subsection-QR-Factorization-A-Quicker-Way-to-do-Least-Squares" class="internal"><span class="codenumber">7.6.4</span> <span class="title"><span class="process-math">\(QR\)</span>-Factorization: A Quicker Way to do Least Squares</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-QR-Factorization-and-Least-Square-Approximations.html#Section-QR-Factorization-and-Least-Square-Approximations-19" class="internal"><span class="codenumber">7.6.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Section-Singular-Value-Decomposition.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Extra Topic: Singular Value Decomposition</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Section-Curve-Fitting.html" class="internal"><span class="codenumber">7.8</span> <span class="title">Extra Topic: Curve Fitting</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Section-Curve-Fitting.html#Subsection-On-the-Dangers-of-Overfitting" class="internal"><span class="codenumber">7.8.1</span> <span class="title">On the Dangers of Overfitting</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Section-Curve-Fitting.html#Section-Curve-Fitting-9" class="internal"><span class="codenumber">7.8.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Section-Subspaces-Associated-with-Matrices"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.3</span><span class="space"> </span><span class="title">Subspaces Associated with Matrices</span>
+</h2>
+<section class="subsection" id="Subsection-Row-Space-of-a-Matrix"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="space"> </span><span class="title">Row Space of a Matrix</span>
+</h3>
+<div class="para" id="Subsection-Row-Space-of-a-Matrix-2">Recall when learning Gaussian elimination, we observed that every row-echelon form of a given matrix has the same number of nonzero rows.  This result suggests that there are certain characteristics associated with the rows of a matrix that are not affected by elementary row operations.  We are now in the position to examine this question and to supply the proof we omitted earlier.</div>
+<article class="definition definition-like" id="def-rowspace"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-rowspace-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix.  The <dfn class="terminology">row space</dfn> of <span class="process-math">\(A\text{,}\)</span> denoted by <span class="process-math">\(\mbox{row}(A)\text{,}\)</span> is the subspace of <span class="process-math">\(\R^n\)</span> spanned by the rows of <span class="process-math">\(A\text{.}\)</span>
+</div></article><article class="exploration project-like" id="init-rowspace"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="init-rowspace-1">
+<div class="para">Consider the matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}-2\amp 2\amp 1\\4\amp -2\amp 1\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(\mathbf{r}_1\)</span> and <span class="process-math">\(\mathbf{r}_2\)</span> be the rows of <span class="process-math">\(A\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{r}_1=\begin{bmatrix}-2\amp 2\amp 1\end{bmatrix},\quad \mathbf{r}_2=\begin{bmatrix}4\amp -2\amp 1\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(\mbox{row}(A)=\mbox{span}(\mathbf{r}_1, \mathbf{r}_2)\)</span> is a plane through <span class="process-math">\((0,0)\)</span> containing <span class="process-math">\(\mathbf{r}_1\)</span> and  <span class="process-math">\(\mathbf{r}_2\text{.}\)</span>
+</div>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-rowspace-2.svg" role="img" class="contained" alt="Row space plotted"></div>
+<div class="para logical" id="init-rowspace-3">
+<div class="para">We will use elementary row operations to reduce <span class="process-math">\(A\)</span> to <span class="process-math">\(\mbox{rref}(A)\text{,}\)</span>namely</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}-2\amp 2\amp 1\\4\amp -2\amp 1\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp 0\amp 1\\0\amp 1\amp 3/2\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(\mathbf{\rho}_1\)</span> and <span class="process-math">\(\mathbf{\rho}_2\)</span> be the rows of <span class="process-math">\(\mbox{rref}(A)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{\rho}_1=\begin{bmatrix}1\amp 0\amp 1\end{bmatrix},\quad \mathbf{\rho}_2=\begin{bmatrix}0\amp 1\amp 3/2\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">What do you think <span class="process-math">\(\mbox{span}(\mathbf{\rho}_1, \mathbf{\rho}_2)\)</span> looks like? The following video will help us visualize <span class="process-math">\(\mbox{span}(\mathbf{\rho}_1, \mathbf{\rho}_2)\)</span> and compare it to <span class="process-math">\(\mbox{span}(\mathbf{r}_1, \mathbf{r}_2)\text{.}\)</span>
+</div>
+</div>
+<div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/6wz-5G14jo8?&amp;modestbranding=1&amp;rel=0" id="init-rowspace-4"></iframe></div>
+<div class="para logical" id="init-rowspace-5">
+<div class="para">Based on what we observed in the video, we may conjecture that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{span}(\mathbf{\rho}_1, \mathbf{\rho}_2)=\mbox{span}(\mathbf{r}_1, \mathbf{r}_2)
+\end{equation*}
+</div>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-rowspace-6.svg" role="img" class="contained" alt="New vectors for span added in above"></div>
+<div class="para" id="init-rowspace-7">But why does this make sense?  Vectors <span class="process-math">\(\mathbf{\rho}_1\)</span> and <span class="process-math">\(\mathbf{\rho}_2\)</span> were obtained from <span class="process-math">\(\mathbf{r}_1\)</span> and <span class="process-math">\(\mathbf{r}_2\)</span> by repeated applications of elementary row operations.  At every stage of the row reduction process, the rows of the matrix are linear combinations of <span class="process-math">\(\mathbf{r}_1\)</span> and <span class="process-math">\(\mathbf{r}_2\text{.}\)</span>  Thus, at every stage of the row reduction process, the rows of the matrix lie in the span of <span class="process-math">\(\mathbf{r}_1\)</span> and <span class="process-math">\(\mathbf{r}_2\text{.}\)</span>  Our next video shows a step-by-step row reduction process accompanied by sketches of vectors.</div>
+<div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/KpoeWUQ3wkY?&amp;modestbranding=1&amp;rel=0" id="init-rowspace-8"></iframe></div></article><div class="para" id="Subsection-Row-Space-of-a-Matrix-5">The observations made in <a href="Section-Subspaces-Associated-with-Matrices.html#init-rowspace" class="xref" data-knowl="./knowl/xref/init-rowspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Exploration 4.3.1">Exploration 4.3.1</a> makes a convincing case for the following theorem.</div>
+<article class="theorem theorem-like" id="th-rowBrowA"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="th-rowBrowA-1-1">
+<div class="para">If matrix <span class="process-math">\(B\)</span> was obtained from matrix <span class="process-math">\(A\)</span> by applying an elementary row operation to <span class="process-math">\(A\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{row}(B)=\mbox{row}(A).
+\end{equation*}
+</div>
+</div></article><details id="th-rowBrowA-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th-rowBrowA-2-1">
+<div class="para">Let <span class="process-math">\(\mathbf{r}_1,\ldots ,\mathbf{r}_m\)</span> be the rows of <span class="process-math">\(A\text{.}\)</span> There are three elementary row operations.  Clearly, switching the order of vectors in <span class="process-math">\(\mbox{span}(\mathbf{r}_1,\ldots  ,\mathbf{r}_m)\)</span> will not affect the span. Suppose that <span class="process-math">\(B\)</span> was obtained from <span class="process-math">\(A\)</span> by multiplying the <span class="process-math">\(i^{th}\)</span> row of <span class="process-math">\(A\)</span> by a non-zero constant <span class="process-math">\(k\text{.}\)</span>  We need to show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)=\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="th-rowBrowA-2-2">
+<div class="para">To do this we will assume that some vector <span class="process-math">\(\mathbf{v}\)</span> is in</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)
+\end{equation*}
+</div>
+<div class="para">and show that <span class="process-math">\(\mathbf{v}\)</span> is in <span class="process-math">\(\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)\text{.}\)</span> We will then assume that some vector <span class="process-math">\(\mathbf{w}\)</span> is in</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)
+\end{equation*}
+</div>
+<div class="para">and show that <span class="process-math">\(\mathbf{w}\)</span> must be in <span class="process-math">\(\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="th-rowBrowA-2-3">
+<div class="para">Suppose that <span class="process-math">\(\mathbf{v}\)</span> is in <span class="process-math">\(\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)\text{.}\)</span>  Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{v}=a_1\mathbf{r}_1+\ldots +a_i(k\mathbf{r}_i)+\ldots +a_m\mathbf{r}_m
+\end{equation*}
+</div>
+<div class="para">But this implies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{v}=a_1\mathbf{r}_1+\ldots +(a_ik)\mathbf{r}_i+\ldots +a_m\mathbf{r}_m.
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(\mathbf{v}\)</span> is in <span class="process-math">\(\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="th-rowBrowA-2-4">
+<div class="para">Now suppose <span class="process-math">\(\mathbf{w}\)</span> is in <span class="process-math">\(\mbox{span}(\mathbf{r}_1,\ldots ,\mathbf{r}_i,\ldots ,\mathbf{r}_m)\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{w}=b_1\mathbf{r}_1+\ldots +b_i\mathbf{r}_i+\ldots +b_m\mathbf{r}_m.
+\end{equation*}
+</div>
+<div class="para">But because <span class="process-math">\(k\neq 0\text{,}\)</span> we can do the following:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{w}=b_1\mathbf{r}_1+\ldots +\frac{b_i}{k}(k\mathbf{r}_i)+\ldots +b_m\mathbf{r}_m.
+\end{equation*}
+</div>
+<div class="para">Therefore, <span class="process-math">\(\mathbf{w}\)</span> is in <span class="process-math">\(\mbox{span}(\mathbf{r}_1,\ldots ,k\mathbf{r}_i,\ldots ,\mathbf{r}_m)\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="th-rowBrowA-2-5">We leave it to the reader to verify that adding a multiple of one row of <span class="process-math">\(A\)</span> to another does not change the row space. See also <a href="Section-Subspaces-Associated-with-Matrices.html#prob-proofofrowBrowA" class="xref" data-knowl="./knowl/xref/prob-proofofrowBrowA.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.3.6.17">Exercise 4.3.6.17</a>.)</div></article></details><article class="corollary theorem-like" id="cor-rowequiv"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="cor-rowequiv-1-1">
+<div class="para">If matrix <span class="process-math">\(B\)</span> was obtained from matrix <span class="process-math">\(A\)</span> by applying a sequence of elementary row operations to <span class="process-math">\(A\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{row}(B)=\mbox{row}(A).
+\end{equation*}
+</div>
+</div></article><details id="cor-rowequiv-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-rowequiv-2-1">This follows from repeated applications of <a href="Section-Subspaces-Associated-with-Matrices.html#th-rowBrowA" class="xref" data-knowl="./knowl/xref/th-rowBrowA.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.2">Theorem 4.3.2</a>.</div></article></details><article class="corollary theorem-like" id="cor-rowArowrrefA"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="cor-rowArowrrefA-1-1"><div class="displaymath process-math">
+\begin{equation*}
+\mbox{row}(A)=\mbox{row}(\mbox{rref}(A)).
+\end{equation*}
+</div></div></article><details id="ex-basisrowspace" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.5</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-basisrowspace-1-1">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}2\amp -1\amp 1\amp -4\amp 1\\1\amp 0\amp 3\amp 3\amp 0\\-2\amp 1\amp -1\amp 5\amp 2\\4\amp -1\amp 7\amp 2\amp 1\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Find two distinct bases for <span class="process-math">\(\mbox{row}(A)\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details id="ex-basisrowspace-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical" id="ex-basisrowspace-2-1">
+<div class="para">By <a href="Section-Subspaces-Associated-with-Matrices.html#cor-rowArowrrefA" class="xref" data-knowl="./knowl/xref/cor-rowArowrrefA.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.3.4">Corollary 4.3.4</a> a basis for <span class="process-math">\(\mbox{row}(\mbox{rref}(A))\)</span> will also be a basis for <span class="process-math">\(\mbox{row}(A)\text{.}\)</span> Row reduction gives us:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-rowArowrrefA.html">
+\begin{equation*}
+\begin{bmatrix}2\amp -1\amp 1\amp -4\amp 1\\1\amp 0\amp 3\amp 3\amp 0\\-2\amp 1\amp -1\amp 5\amp 2\\4\amp -1\amp 7\amp 2\amp 1\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp 0\amp 3\amp 0\amp -9\\0\amp 1\amp 5\amp 0\amp -31\\0\amp 0\amp 0\amp 1\amp 3\\0\amp 0\amp 0\amp 0\amp 0\end{bmatrix}=\mbox{rref}(A).
+\end{equation*}
+</div>
+<div class="para">Since the zero row contributes nothing to the span, we conclude that the nonzero rows of <span class="process-math">\(\mbox{rref}(A)\)</span> span <span class="process-math">\(\mbox{row}(\mbox{rref}(A))\text{.}\)</span> Therefore, a basis for the row space consists of the vecotrs</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-rowArowrrefA.html">
+\begin{equation*}
+[1, 0, 3, 0, -9], \ 
+[0, 1, 5, 0, -3], \ 
+[0, 0, 0, 1, 3].
+\end{equation*}
+</div>
+<div class="para">It follows that the nonzero rows of <span class="process-math">\(\mbox{rref}(A)\)</span> are linearly independent.</div>
+</div>
+<div class="para logical" id="ex-basisrowspace-2-2">
+<div class="para">To find a second basis for <span class="process-math">\(\mbox{row}(A)\text{,}\)</span> observe that by <a href="Section-Subspaces-Associated-with-Matrices.html#cor-rowequiv" class="xref" data-knowl="./knowl/xref/cor-rowequiv.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.3.3">Corollary 4.3.3</a> the row space of <em class="emphasis">any</em> row-echelon form of <span class="process-math">\(A\)</span> will be equal to <span class="process-math">\(\mbox{row}(A)\text{.}\)</span> Matrix <span class="process-math">\(A\)</span> has many row-echelon forms.  Here is one of them:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-rowequiv.html">
+\begin{equation*}
+B=\begin{bmatrix}1\amp 0\amp 3\amp 3\amp 0\\0\amp -1\amp -5\amp -10\amp 1\\0\amp 0\amp 0\amp 1\amp 3\\0\amp 0\amp 0\amp 0\amp 0 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">The nonzero rows of <span class="process-math">\(B\)</span> span <span class="process-math">\(\mbox{row}(A)\text{.}\)</span>  Once again the nonzero rows of <span class="process-math">\(B\)</span> are linearly independent. Thus the nonzero rows of <span class="process-math">\(B\)</span> form a basis for <span class="process-math">\(\mbox{row}(A)\text{.}\)</span>
+</div>
+</div>
+</div></details></div></article></details><div class="para logical" id="Subsection-Row-Space-of-a-Matrix-10">
+<div class="para">Our observations in <a href="Section-Subspaces-Associated-with-Matrices.html#ex-basisrowspace" class="xref" data-knowl="./knowl/xref/ex-basisrowspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.5">Example 4.3.5</a> can be generalized to all matrices.  Given any matrix <span class="process-math">\(A\text{,}\)</span>
+</div>
+<ol class="decimal" id="Subsection-Row-Space-of-a-Matrix-10-3">
+<li id="Subsection-Row-Space-of-a-Matrix-10-3-1"><div class="para" id="Subsection-Row-Space-of-a-Matrix-10-3-1-1">The nonzero rows of <span class="process-math">\(\mbox{rref}(A)\)</span> are linearly independent (Why?) and span <span class="process-math">\(\mbox{row}(A)\)</span> (<a href="Section-Subspaces-Associated-with-Matrices.html#cor-rowArowrrefA" class="xref" data-knowl="./knowl/xref/cor-rowArowrrefA.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.3.4">Corollary 4.3.4</a>).</div></li>
+<li id="Subsection-Row-Space-of-a-Matrix-10-3-2"><div class="para" id="Subsection-Row-Space-of-a-Matrix-10-3-2-1">The nonzero rows of any row-echelon form of <span class="process-math">\(A\)</span> are linearly independent (Why?) and span <span class="process-math">\(\mbox{row}(A)\)</span> (<a href="Section-Subspaces-Associated-with-Matrices.html#cor-rowequiv" class="xref" data-knowl="./knowl/xref/cor-rowequiv.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.3.3">Corollary 4.3.3</a>).</div></li>
+</ol>
+<div class="para">Therefore nonzero rows of <span class="process-math">\(\mbox{rref}(A)\)</span> or the nonzero rows of any row-echelon form of <span class="process-math">\(A\)</span> constitute a basis of <span class="process-math">\(\mbox{row}(A)\text{.}\)</span> Since all bases for <span class="process-math">\(\mbox{row}(A)\)</span> must have the same number of elements ( <a href="Bases-and-Dimension.html#th-dimwelldefined" class="xref" data-knowl="./knowl/xref/th-dimwelldefined.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.17">Theorem 4.2.17</a>), we have just proved the following theorem.</div>
+</div>
+<article class="theorem theorem-like" id="th-samenumberofnonzerorows"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="th-samenumberofnonzerorows-1-1">All row-echelon forms of a given matrix have the same number of nonzero rows.</div></article><div class="para" id="Subsection-Row-Space-of-a-Matrix-12">This result was first introduced without proof when learning of Guassian elimination, where we used it to define the <dfn class="terminology">rank</dfn> of a matrix as the number of nonzero rows in its row-echelon forms. We can now update the definition of rank as follows.</div>
+<article class="definition definition-like" id="th-dimofrowA"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="th-dimofrowA-1-1">
+<div class="para">For any matrix <span class="process-math">\(A\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{rank}(A)=\mbox{dim}\Big(\mbox{row}(A)\Big).
+\end{equation*}
+</div>
+</div></article></section><section class="subsection" id="Subsection-Column-Space-of-a-Matrix"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="space"> </span><span class="title">Column Space of a Matrix</span>
+</h3>
+<article class="definition definition-like" id="def-colspace"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.8</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-colspace-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix.  The <dfn class="terminology">column space</dfn> of <span class="process-math">\(A\text{,}\)</span> denoted by <span class="process-math">\(\mbox{col}(A)\text{,}\)</span> is the subspace of <span class="process-math">\(\R^m\)</span> spanned by the columns of <span class="process-math">\(A\text{.}\)</span>
+</div></article><article class="exploration project-like" id="init-colspace"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="init-colspace-1">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B=\begin{bmatrix}2\amp -1\amp 3\amp 1\\1\amp -1\amp 2\amp 2\\1\amp 3\amp -2\amp -3\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Our goal is to find a basis for <span class="process-math">\(\mbox{col}(B)\text{.}\)</span>  To do this we need to find a linearly independent subset of the columns of <span class="process-math">\(B\)</span> that spans <span class="process-math">\(\mbox{col}(B)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="init-colspace-2">
+<div class="para">Consider the linear relation:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/init-colspaceB.html" id="init-colspaceB">
+\begin{equation}
+a_1\begin{bmatrix}2\\1\\1\end{bmatrix}+a_2\begin{bmatrix}-1\\-1\\3\end{bmatrix}+a_3\begin{bmatrix}3\\2\\-2\end{bmatrix}+a_4\begin{bmatrix}1\\2\\-3\end{bmatrix}=\mathbf{0}.\tag{4.3.1}
+\end{equation}
+</div>
+<div class="para">Solving this homogeneous equation amounts to finding <span class="process-math">\(\mbox{rref}(B)\text{.}\)</span> So,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/init-colspaceB.html">
+\begin{equation*}
+\begin{bmatrix}2\amp -1\amp 3\amp 1\\1\amp -1\amp 2\amp 2\\1\amp 3\amp -2\amp -3\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp 0\amp 1\amp 0\\0\amp 1\amp -1\amp 0\\0\amp 0\amp 0\amp 1\end{bmatrix}=\mbox{rref}(B).
+\end{equation*}
+</div>
+<div class="para">We now see that <a href="Section-Subspaces-Associated-with-Matrices.html#init-colspaceB" class="xref" data-knowl="./knowl/xref/init-colspaceB.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.3.1">(4.3.1)</a> has infinitely many solutions.</div>
+</div>
+<div class="para logical" id="init-colspace-3">
+<div class="para">Observe that the homogeneous equation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/init-colspaceB.html ./knowl/xref/init-colspaceB.html ./knowl/xref/init-colspaceR.html" id="init-colspaceR">
+\begin{equation}
+a_1\begin{bmatrix}1\\0\\0\end{bmatrix}+a_2\begin{bmatrix}0\\1\\0\end{bmatrix}+a_3\begin{bmatrix}1\\-1\\0\end{bmatrix}+a_4\begin{bmatrix}0\\0\\1\end{bmatrix}=\mathbf{0}.\tag{4.3.2}
+\end{equation}
+</div>
+<div class="para">has the same solution set as <a href="Section-Subspaces-Associated-with-Matrices.html#init-colspaceB" class="xref" data-knowl="./knowl/xref/init-colspaceB.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.3.1">(4.3.1)</a>. In particular, <span class="process-math">\(a_1=1\text{,}\)</span> <span class="process-math">\(a_2=-1\text{,}\)</span> <span class="process-math">\(a_3=-1\text{,}\)</span> <span class="process-math">\(a_4=0\)</span> is a non-trivial solution of <a href="Section-Subspaces-Associated-with-Matrices.html#init-colspaceB" class="xref" data-knowl="./knowl/xref/init-colspaceB.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.3.1">(4.3.1)</a> and <a href="Section-Subspaces-Associated-with-Matrices.html#init-colspaceR" class="xref" data-knowl="./knowl/xref/init-colspaceR.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.3.2">(4.3.2)</a>. This means that the third column of <span class="process-math">\(B\)</span> and the third column of <span class="process-math">\(\mbox{rref}(B)\)</span> can be expressed as the first column minus the second column of their respective matrices.</div>
+</div>
+<div class="para logical" id="init-colspace-4">
+<div class="para">We conclude that the third column of <span class="process-math">\(B\)</span> can be eliminated from the spanning set for <span class="process-math">\(\mbox{col}(B)\)</span> and</div>
+<div class="displaymath process-math" id="init-colspace-4-3">
+\begin{align*}
+\mbox{col}(B) \amp =\mbox{span}\left(\begin{bmatrix}2\\1\\1\end{bmatrix},\begin{bmatrix}-1\\-1\\3\end{bmatrix}, \begin{bmatrix}3\\2\\-2\end{bmatrix}, \begin{bmatrix}1\\2\\-3\end{bmatrix}\right) \\
+\amp =\mbox{span}\left(\begin{bmatrix}2\\1\\1\end{bmatrix},\begin{bmatrix}-1\\-1\\3\end{bmatrix}, \begin{bmatrix}1\\2\\-3\end{bmatrix}\right). 
+\end{align*}
+</div>
+<div class="para">Having gotten rid of one of the vectors, we need to determine whether the remaining three vectors are linearly independent.  To do this we need to find all solutions of</div>
+<div class="displaymath process-math" id="init-colspaceB2">
+\begin{equation}
+b_1\begin{bmatrix}2\\1\\1\end{bmatrix}+b_2\begin{bmatrix}-1\\-1\\3\end{bmatrix}+b_3\begin{bmatrix}1\\2\\-3\end{bmatrix}=\mathbf{0}.\tag{4.3.3}
+\end{equation}
+</div>
+<div class="para">Fortunately, we do not have to start from scratch.  Observe that crossing out the third column in the previous row reduction process yields the desired reduced row-echelon form.</div>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/latex-image/init-colspace-5.svg" role="img" class="contained" alt="Matrix with column cut out"></div>
+<div class="para logical" id="init-colspace-6">
+<div class="para">This time the reduced row-echelon form tells us that (<a href="Section-Subspaces-Associated-with-Matrices.html#init-colspaceB2" class="xref" data-knowl="./knowl/xref/init-colspaceB2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.3.3">(4.3.3)</a> has only the trivial solution.  We conclude that the three vectors are linearly independent and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/init-colspaceB2.html">
+\begin{equation*}
+\left\{\begin{bmatrix}2\\1\\1\end{bmatrix},\begin{bmatrix}-1\\-1\\3\end{bmatrix}, \begin{bmatrix}1\\2\\-3\end{bmatrix}\right\}
+\end{equation*}
+</div>
+<div class="para">is a basis for <span class="process-math">\(\mbox{col}(B)\text{.}\)</span>
+</div>
+</div></article><div class="para" id="Subsection-Column-Space-of-a-Matrix-4">The approach we took to find a basis for <span class="process-math">\(\mbox{col}(B)\)</span> in <a href="Section-Subspaces-Associated-with-Matrices.html#init-colspace" class="xref" data-knowl="./knowl/xref/init-colspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Exploration 4.3.2">Exploration 4.3.2</a> uses the reduced row-echelon form of <span class="process-math">\(B\text{.}\)</span> It is true, however, that <em class="emphasis">any</em> row-echelon form of <span class="process-math">\(B\)</span> could have been used in place of <span class="process-math">\(\mbox{rref}(B)\text{.}\)</span>  (Why?). We generalize the steps as follows:</div>
+<article class="algorithm theorem-like" id="colspace"><h4 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">4.3.9</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="colspace-1-1">
+<div class="para">Given a matrix <span class="process-math">\(B\text{,}\)</span> a basis for <span class="process-math">\(\mbox{col}(B)\)</span> can be found as follows:</div>
+<ol class="decimal" id="colspace-1-1-3">
+<li id="colspace-1-1-3-1"><div class="para" id="colspace-1-1-3-1-1">Find <span class="process-math">\(\mbox{rref}(B)\)</span> (or any row-echelon form <span class="process-math">\(B'\)</span> of <span class="process-math">\(B\text{.}\)</span>)</div></li>
+<li id="colspace-1-1-3-2"><div class="para" id="colspace-1-1-3-2-1">Identify the pivot columns of <span class="process-math">\(\mbox{rref}(B)\)</span> (or <span class="process-math">\(B'\)</span>).</div></li>
+<li id="colspace-1-1-3-3"><div class="para" id="colspace-1-1-3-3-1">The columns of <span class="process-math">\(B\)</span> corresponding to the pivot columns of <span class="process-math">\(\mbox{rref}(B)\)</span> (or <span class="process-math">\(B'\)</span>) form a basis for <span class="process-math">\(\mbox{col}(B)\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="colspace-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="colspace-2-1">
+<div class="para">Let <span class="process-math">\(\mathbf{b}_1,\ldots ,\mathbf{b}_n\)</span> be the columns of <span class="process-math">\(B\text{,}\)</span> and let <span class="process-math">\(\mathbf{b}'_1,\ldots ,\mathbf{b}'_n\)</span> be the columns of <span class="process-math">\(\mbox{rref}(B)\)</span> (or <span class="process-math">\(B'\)</span>). Observe that the equations</div>
+<div class="displaymath process-math" id="colspace-2-1-6">
+\begin{equation}
+a_1\mathbf{b}_1+\ldots +a_n\mathbf{b}_n=\mathbf{0}\tag{4.3.4}
+\end{equation}
+</div>
+<div class="displaymath process-math" id="colspace-2-1-7">
+\begin{equation}
+a_1\mathbf{b}'_1+\ldots +a_n\mathbf{b}'_n=\mathbf{0}\tag{4.3.5}
+\end{equation}
+</div>
+<div class="para">have the same solution set.  This means that any non-trivial relation among the columns of <span class="process-math">\(\mbox{rref}(B)\)</span> (or <span class="process-math">\(B'\)</span>) translates into a non-trivial relation among the columns of <span class="process-math">\(B\text{.}\)</span> Likewise, any collection of linearly independent columns of <span class="process-math">\(\mbox{rref}(B)\)</span> (or <span class="process-math">\(B'\)</span>) corresponds to linearly independent columns of <span class="process-math">\(B\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="colspace-2-2">Now, the pivot columns of <span class="process-math">\(\mbox{rref}(B)\)</span> (or <span class="process-math">\(B'\)</span>) are linearly independent.  Therefore the corresponding columns of <span class="process-math">\(B\)</span> are linearly independent whereas non-pivot columns can be expressed as linear combinations of the pivot columns, therefore they contribute nothing to the span and can be removed from the spanning set.</div></article></details><div class="para" id="Subsection-Column-Space-of-a-Matrix-6">The proof of <a href="Section-Subspaces-Associated-with-Matrices.html#colspace" class="xref" data-knowl="./knowl/xref/colspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 4.3.9">Algorithm 4.3.9</a> shows that the number of basis elements for the column space of a matrix is equal to the number of pivot columns.  But the number of pivot columns is the same as the number of pivots in a row-echelon form, which is equal to the number of nonzero rows and the rank of the matrix.  This gives us the following important result.</div>
+<article class="theorem theorem-like" id="th-dimroweqdimcoleqrank"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.10</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="th-dimroweqdimcoleqrank-1-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be a matrix.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{dim}\Big(\mbox{row}(A)\Big)=\mbox{rank}(A)=\mbox{dim}\Big(\mbox{col}(A)\Big).
+\end{equation*}
+</div>
+</div></article><details id="ex-basiscolspace" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.11</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-basiscolspace-1-1">We will return to matrix <span class="process-math">\(A\)</span> of <a href="Section-Subspaces-Associated-with-Matrices.html#ex-basisrowspace" class="xref" data-knowl="./knowl/xref/ex-basisrowspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.5">Example 4.3.5</a> and find a basis for <span class="process-math">\(\mbox{col}(A)\text{.}\)</span>
+</div></article></details></section><section class="subsection" id="Subsection-The-Null-Space"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="space"> </span><span class="title">The Null Space</span>
+</h3>
+<article class="definition definition-like" id="def-nullspace"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.12</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-nullspace-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix.  The <dfn class="terminology">null space</dfn> of <span class="process-math">\(A\text{,}\)</span> denoted by <span class="process-math">\(\mbox{null}(A)\text{,}\)</span> is the set of all vectors <span class="process-math">\(\mathbf{x}\)</span> in <span class="process-math">\(\R^n\)</span> such that <span class="process-math">\(A\mathbf{x}=\mathbf{0}\text{.}\)</span>
+</div></article><div class="para" id="Subsection-The-Null-Space-3">Before digging further, let us examine the notion through an example.</div>
+<details id="ex-nullintro" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.13</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-nullintro-1-1">
+<div class="para">Find <span class="process-math">\(\mbox{null}(A)\)</span> if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}3\amp -1\\-6\amp 2\end{bmatrix}.
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="ex-nullintro-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="ex-nullintro-2-1">
+<div class="para">We need to solve the equation <span class="process-math">\(A\mathbf{x}=\mathbf{0}\text{.}\)</span>  Row reduction gives us</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}3\amp -1\\-6\amp 2\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp -1/3\\0\amp 0\end{bmatrix}=\mbox{rref}(A).
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(\mathbf{x}=\begin{bmatrix}1/3\\1\end{bmatrix}t\text{.}\)</span> Thus <span class="process-math">\(\mbox{null}(A)\)</span> consists of all vectors of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+t \begin{bmatrix}1/3\\1\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">We might write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{null}(A)=\left\{\begin{bmatrix}1/3\\1\end{bmatrix}t\right\}
+\end{equation*}
+</div>
+<div class="para">or</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{null}(A)=\mbox{span}\left(\begin{bmatrix}1/3\\1\end{bmatrix}\right).
+\end{equation*}
+</div>
+</div></div></details></div></article></details><div class="para" id="Subsection-The-Null-Space-5">The approach in <a href="Section-Subspaces-Associated-with-Matrices.html#ex-nullintro" class="xref" data-knowl="./knowl/xref/ex-nullintro.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.13">Example 4.3.13</a> allows us to make an important observation. Note that every scalar multiple of <span class="process-math">\([1/3,1]\)</span> is contained in <span class="process-math">\(\mbox{null}(A)\text{.}\)</span> This means that <span class="process-math">\(\mbox{null}(A)\)</span> is closed under vector addition and scalar multiplication.</div>
+<div class="para" id="Subsection-The-Null-Space-6">Recall that this property makes <span class="process-math">\(\mbox{null}(A)\)</span> a <dfn class="terminology">subspace</dfn> of <span class="process-math">\(\R^n\text{.}\)</span> This result was first presented as <a href="Section-Intro-to-Vector-Spaces.html#prob-null-A-is-subspace" class="xref" data-knowl="./knowl/xref/prob-null-A-is-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.1.6.15">Exercise 4.1.6.15</a>. We now formalize it as a theorem.</div>
+<article class="theorem theorem-like" id="th-nullsubspacern"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.14</span><span class="period">.</span>
+</h4>
+<div class="para" id="th-nullsubspacern-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix.  Then <span class="process-math">\(\mbox{null}(A)\)</span> is a subspace of <span class="process-math">\(\R^n\text{.}\)</span>
+</div></article><details id="th-nullsubspacern-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th-nullsubspacern-2-1">To deduce that <span class="process-math">\(\mbox{null}(A)\)</span> is closed under vector addition and scalar multiplication we will show that a linear combination of any two elements of <span class="process-math">\(\mbox{null}(A)\)</span> is contained in <span class="process-math">\(\mbox{null}(A)\text{.}\)</span>
+</div>
+<div class="para logical" id="th-nullsubspacern-2-2">
+<div class="para">Suppose <span class="process-math">\(\mathbf{x}_1\)</span> and <span class="process-math">\(\mathbf{x}_2\)</span> are in <span class="process-math">\(\mbox{null}(A)\text{.}\)</span>  Then <span class="process-math">\(A\mathbf{x}_1=\mathbf{0}\)</span> and <span class="process-math">\(A\mathbf{x}_2=\mathbf{0}\text{.}\)</span>  But then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A(a_1\mathbf{x}_1+a_2\mathbf{x}_2)=a_1A\mathbf{x}_1+a_2A\mathbf{x}_2=\mathbf{0}
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(a_1\mathbf{x}_1+a_2\mathbf{x}_2\)</span> is also in <span class="process-math">\(\mbox{null}(A)\text{.}\)</span>
+</div>
+</div></article></details><details id="ex-dimnull" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.15</span><span class="period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-dimnull-1-1">Find a basis for <span class="process-math">\(\mbox{null}(A)\text{,}\)</span> where <span class="process-math">\(A\)</span> is the matrix in <a href="Section-Subspaces-Associated-with-Matrices.html#ex-basisrowspace" class="xref" data-knowl="./knowl/xref/ex-basisrowspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.5">Example 4.3.5</a>.</div>
+<div class="solutions"><details id="ex-dimnull-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="ex-dimnull-2-1">
+<div class="para">Elements in the null space of <span class="process-math">\(A\)</span> are solutions to the equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}2\amp -1\amp 1\amp -4\amp 1\\1\amp 0\amp 3\amp 3\amp 0\\-2\amp 1\amp -1\amp 5\amp 2\\4\amp -1\amp 7\amp 2\amp 1\end{bmatrix}\mathbf{x}=\mathbf{0}
+\end{equation*}
+</div>
+<div class="para">Row reduction yields <span class="process-math">\(\mbox{rref}(A)\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}2\amp -1\amp 1\amp -4\amp 1\\1\amp 0\amp 3\amp 3\amp 0\\-2\amp 1\amp -1\amp 5\amp 2\\4\amp -1\amp 7\amp 2\amp 1\end{bmatrix}\rightsquigarrow\begin{bmatrix}1\amp 0\amp 3\amp 0\amp -9\\0\amp 1\amp 5\amp 0\amp -31\\0\amp 0\amp 0\amp 1\amp 3\\0\amp 0\amp 0\amp 0\amp 0\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Therefore, elements of <span class="process-math">\(\mbox{null}(A)\)</span> are of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{x}=\begin{bmatrix}9t-3s\\31t-5s\\s\\-3t\\t\end{bmatrix}=\begin{bmatrix}-3\\-5\\1\\0\\0\end{bmatrix}s+\begin{bmatrix}9\\31\\0\\-3\\1\end{bmatrix}t
+\end{equation*}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{null}(A)=\mbox{span}\left( \begin{bmatrix}-3\\-5\\1\\0\\0\end{bmatrix}, \begin{bmatrix}9\\31\\0\\-3\\1\end{bmatrix}\right)
+\end{equation*}
+</div>
+<div class="para">Now we need to find a basis for <span class="process-math">\(\mbox{null}(A)\)</span> we need to find linearly independent vectors that span <span class="process-math">\(\mbox{null}(A)\text{.}\)</span>  Take a closer look at the vectors</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}-3\\-5\\{\color{red}\fbox{}}\\0\\{\color{blue}\fbox{}}\end{bmatrix}, \begin{bmatrix}9\\31\\{\color{red}\fbox{}}\\-3\\{\color{blue}\fbox{}}\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Because of the locations of <span class="process-math">\(1's\)</span> and <span class="process-math">\(0's\text{,}\)</span> it is clear that one vector is not a scalar multiple of the other.  Therefore the two vectors are linearly independent.  We conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{\begin{bmatrix}-3\\-5\\1\\0\\0\end{bmatrix}, \begin{bmatrix}9\\31\\0\\-3\\1\end{bmatrix}\right\}
+\end{equation*}
+</div>
+<div class="para">is a basis of <span class="process-math">\(\mbox{null}(A)\text{,}\)</span> and <span class="process-math">\(\mbox{dim}\Big(\mbox{null}(A)\Big)=2\text{.}\)</span>
+</div>
+</div></div></details></div></article></details><div class="para logical" id="Subsection-The-Null-Space-9">
+<div class="para">It is not a coincidence that the steps we used in <a href="Section-Subspaces-Associated-with-Matrices.html#ex-dimnull" class="xref" data-knowl="./knowl/xref/ex-dimnull.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.15">Example 4.3.15</a> produced linearly independent vectors, and it is worth while to try to understand why this procedure will always produce linearly independent vectors. Take a closer look at the elements of the null space:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-dimnull.html">
+\begin{equation*}
+\mathbf{x}=\begin{bmatrix}9t-3s\\31t-5s\\{\color{red}\fbox{}}\\-3t\\{\color{blue}\fbox{}}\end{bmatrix}=\begin{bmatrix}-3\\-5\\{\color{red}\fbox{}}\\0\\{\color{blue}\fbox{}}\end{bmatrix}s+\begin{bmatrix}9\\31\\{\color{red}\fbox{}}\\-3\\{\color{blue}\fbox{}}\end{bmatrix}t
+\end{equation*}
+</div>
+<div class="para">The parameter <span class="process-math">\(s\)</span> in the third component of <span class="process-math">\(\mathbf{x}\)</span> produces a <span class="process-math">\(1\)</span> in the third component of the first vector and a <span class="process-math">\(0\)</span> in the third component of the second vector, while parameter <span class="process-math">\(t\)</span> in the fifth component of <span class="process-math">\(\mathbf{x}\)</span> produces a <span class="process-math">\(1\)</span> in the fifth component of the second vector and a <span class="process-math">\(0\)</span> in the fifth component of the first vector. This makes it clear that the two vectors are linearly independent.</div>
+</div>
+<div class="para logical" id="Subsection-The-Null-Space-10">
+<div class="para">This pattern will hold for any number of parameters, each parameter producing a <span class="process-math">\(1\)</span> in exactly one vector and <span class="process-math">\(0's\)</span> in the corresponding components of the other vectors.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}\vdots \\t_1\\\vdots\\t_2\\\vdots\\t_3\\\vdots\\t_n\\\vdots \end{bmatrix}=\begin{bmatrix}\vdots \\1\\\vdots\\0\\\vdots\\0\\\vdots\\0\\\vdots \end{bmatrix}t_1+\ldots +\begin{bmatrix}\vdots \\0\\\vdots\\1\\\vdots\\0\\\vdots\\0\\\vdots \end{bmatrix}t_2+\ldots+\begin{bmatrix}\vdots \\0\\\vdots\\0\\\vdots\\1\\\vdots\\0\\\vdots \end{bmatrix}t_3+\ldots+\begin{bmatrix}\vdots \\0\\\vdots\\0\\\vdots\\0\\\vdots\\1\\\vdots \end{bmatrix}t_n
+\end{equation*}
+</div>
+<div class="para">Therefore, vectors obtained in this way will always be linearly independent.</div>
+</div></section><section class="subsection" id="Subsection-Rank-and-Nullity-Theorem"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="space"> </span><span class="title">Rank and Nullity Theorem</span>
+</h3>
+<article class="definition definition-like" id="def-matrixnullity"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.16</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-matrixnullity-1-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be a matrix.  The dimension of the null space of <span class="process-math">\(A\)</span> is called the <dfn class="terminology">nullity</dfn> of <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{dim}\Big(\mbox{null}(A)\Big)=\mbox{nullity}(A).
+\end{equation*}
+</div>
+</div></article><div class="para" id="Subsection-Rank-and-Nullity-Theorem-3">We know that the dimension of the row space and the dimension of the column space of a matrix are the same and are equal to the rank of the matrix (or the number of nonzero rows in any row-echelon form of the matrix).</div>
+<div class="para" id="Subsection-Rank-and-Nullity-Theorem-4">As we observed in <a href="Section-Subspaces-Associated-with-Matrices.html#ex-dimnull" class="xref" data-knowl="./knowl/xref/ex-dimnull.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.15">Example 4.3.15</a>, the dimension of the null space of a matrix is equal to the number of free variables in the solution vector of the homogeneous system associated with the matrix.  Since the number of pivots and the number of free variables add up to the number of columns in a matrix we have the following significant result.</div>
+<article class="theorem theorem-like" id="th-matrixranknullity"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.17</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="th-matrixranknullity-1-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix.  Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{rank}(A)+\mbox{nullity}(A)=n
+\end{equation*}
+</div>
+</div></article><div class="para" id="Subsection-Rank-and-Nullity-Theorem-6">We will see the geometric implications of this theorem when we study linear transformations.</div></section><section class="subsection" id="Subsection-Subspaces-Associated-with-Matrix-Transformations"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.3.5</span><span class="space"> </span><span class="title">Subspaces Associated with Matrix Transformations</span>
+</h3>
+<div class="para" id="Subsection-Subspaces-Associated-with-Matrix-Transformations-2">Recall that a matrix <span class="process-math">\(A\)</span> defines a linear transformation <span class="process-math">\(T:\R^n\to\R^m\)</span> by the rule <span class="process-math">\(T(\mathbf{x})=A\mathbf{x}\text{.}\)</span> The subspaces associated with the matrix <span class="process-math">\(A\)</span> have interesting interpretations in terms of the linear transformation <span class="process-math">\(T\text{.}\)</span>
+</div>
+<section class="subsubsection" id="Subsubsection-The-Image-of-a-Matrix-Transformation"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">4.3.5.1</span><span class="space"> </span><span class="title">The Image of a Matrix Transformation</span>
+</h4>
+<div class="para" id="Subsubsection-The-Image-of-a-Matrix-Transformation-2">In this section we will often use <span class="process-math">\(U\text{,}\)</span> <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> to denote subspaces of <span class="process-math">\(\R^n\text{,}\)</span> or any other finite-dimensional vector space, such as those we study in a later chaper.</div>
+<article class="definition definition-like" id="def-imageofT"><h5 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.18</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="def-imageofT-1-1">
+<div class="para">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces, and let <span class="process-math">\(T:V\rightarrow W\)</span> be a linear transformation.  The <dfn class="terminology">image</dfn> of <span class="process-math">\(T\text{,}\)</span> denoted by <span class="process-math">\(\mbox{im}(T)\text{,}\)</span> is the set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{im}(T)=\{T(\mathbf{v}):\mathbf{v}\in V\}.
+\end{equation*}
+</div>
+<div class="para">In other words, the image of <span class="process-math">\(T\)</span> consists of individual images of all vectors of <span class="process-math">\(V\text{.}\)</span>
+</div>
+</div></article><details id="ex-image1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.19</span><span class="period">.</span>
+</h5></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-image1-1-1">
+<div class="para">Consider the linear transformation <span class="process-math">\(T:\R^3\rightarrow \R^2\)</span> with standard matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}1\amp 2\amp 3\\2\amp 4\amp 6\end{bmatrix}.
+\end{equation*}
+</div>
+<ol class="decimal" id="ex-image1-1-1-3">
+<li id="item-impart1"><div class="para" id="item-impart1-1">Find <span class="process-math">\(\mbox{im}(T)\text{.}\)</span>
+</div></li>
+<li id="item-impart2"><div class="para" id="item-impart2-1">Illustrate the action of <span class="process-math">\(T\)</span> with a sketch.</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="ex-image1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical" id="ex-image1-2-1">
+<div class="para">
+<a href="Section-Subspaces-Associated-with-Matrices.html#item-impart1" class="xref" data-knowl="./knowl/xref/item-impart1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a>: Let <span class="process-math">\(\mathbf{v}=\begin{bmatrix}a\\b\\c\end{bmatrix}\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-impart1.html">
+\begin{equation*}
+T(\mathbf{v})=A\mathbf{v}=\begin{bmatrix}1\amp 2\amp 3\\2\amp 4\amp 6\end{bmatrix}\begin{bmatrix}a\\b\\c\end{bmatrix}=a\begin{bmatrix}1\\2\end{bmatrix}+b\begin{bmatrix}2\\4\end{bmatrix}+c\begin{bmatrix}3\\6\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Thus, every element of the image can be written as a linear combination of the columns of <span class="process-math">\(A\text{.}\)</span>  We conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-impart1.html">
+\begin{equation*}
+\mbox{im}(T)=\mbox{span}\left(\begin{bmatrix}1\\2\end{bmatrix}, \begin{bmatrix}2\\4\end{bmatrix}, \begin{bmatrix}3\\6\end{bmatrix}\right)=\mbox{col}(A).
+\end{equation*}
+</div>
+<div class="para">Every column of <span class="process-math">\(A\)</span> is a scalar multiple of <span class="process-math">\([1,2]\text{.}\)</span>  Thus,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-impart1.html">
+\begin{equation*}
+\mbox{im}(T)=\mbox{span}\left(\begin{bmatrix}1\\2\end{bmatrix}, \begin{bmatrix}2\\4\end{bmatrix}, \begin{bmatrix}3\\6\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}1\\2\end{bmatrix}\right).
+\end{equation*}
+</div>
+<div class="para">The image of <span class="process-math">\(T\)</span> is a line in <span class="process-math">\(\R^2\)</span> determined by the vector <span class="process-math">\([1,2]\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="ex-image1-2-2">
+<a href="Section-Subspaces-Associated-with-Matrices.html#item-impart2" class="xref" data-knowl="./knowl/xref/item-impart2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a>: The action of <span class="process-math">\(T\)</span> can be illustrated with a sketch.</div>
+<div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="generated/latex-image/ex-image1-2-3.svg" role="img" class="contained" alt="Image of T graphed"></div>
+</div></details></div></article></details><div class="para logical" id="Subsubsection-The-Image-of-a-Matrix-Transformation-5">
+<div class="para">In <a href="Section-Subspaces-Associated-with-Matrices.html#ex-image1" class="xref" data-knowl="./knowl/xref/ex-image1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.19">Example 4.3.19</a> we observed that the image of the linear transformation was equal to the column space of its standard matrix.  In general, it is easy to see that if <span class="process-math">\(T:\R^n\rightarrow \R^m\)</span> is a linear transformation with standard matrix <span class="process-math">\(A\)</span> then the following relationship holds:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-image1.html ./knowl/xref/th-dimroweqdimcoleqrank.html">
+\begin{equation*}
+\mbox{im}(T)=\mbox{col}(A).
+\end{equation*}
+</div>
+<div class="para">In addition, by <a href="Section-Subspaces-Associated-with-Matrices.html#th-dimroweqdimcoleqrank" class="xref" data-knowl="./knowl/xref/th-dimroweqdimcoleqrank.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.10">Theorem 4.3.10</a>, we know that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-image1.html ./knowl/xref/th-dimroweqdimcoleqrank.html">
+\begin{equation*}
+\mbox{dim}(\mbox{im}(T))=\mbox{dim}(\mbox{col}(A))=\mbox{rank}(A).
+\end{equation*}
+</div>
+</div>
+<details id="ex-image2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.20</span><span class="period">.</span>
+</h5></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-image2-1-1">
+<div class="para">Let <span class="process-math">\(T:\R^5\rightarrow \R^4\)</span> be a linear transformation with standard matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}1 \amp  2 \amp  2 \amp -1 \amp  0\\-1 \amp  3 \amp  1 \amp  0 \amp  -1\\3 \amp  0 \amp  0 \amp  3 \amp  6\\ 1 \amp  -1 \amp  1 \amp  -2 \amp  -1\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Find <span class="process-math">\(\mbox{im}(T)\)</span> and <span class="process-math">\(\mbox{dim}(\mbox{im}(T))\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details id="ex-image2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="ex-image2-2-1">
+<div class="para">As in <a href="Section-Subspaces-Associated-with-Matrices.html#ex-image1" class="xref" data-knowl="./knowl/xref/ex-image1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.19">Example 4.3.19</a>, the image of <span class="process-math">\(T\)</span> is given by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-image1.html ./knowl/xref/colspace.html">
+\begin{equation*}
+\mbox{im}(T)=\mbox{span}\left(\begin{bmatrix}1\\-1\\3\\1\end{bmatrix}, \begin{bmatrix}2\\3\\0\\-1\end{bmatrix}, \begin{bmatrix}2\\1\\0\\1\end{bmatrix}, \begin{bmatrix}-1\\0\\3\\-2\end{bmatrix}, \begin{bmatrix}0\\-1\\6\\-1\end{bmatrix}\right)=\mbox{col}(A).
+\end{equation*}
+</div>
+<div class="para">This time it is harder to detect the vectors that can be eliminated from the spanning set without affecting the span.  We have to rely on the reduced row-echelon form of <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-image1.html ./knowl/xref/colspace.html">
+\begin{equation*}
+\begin{bmatrix}1 \amp  2 \amp  2 \amp -1 \amp  0\\-1 \amp  3 \amp  1 \amp  0 \amp  -1\\3 \amp  0 \amp  0 \amp  3 \amp  6\\ 1 \amp  -1 \amp  1 \amp  -2 \amp  -1\end{bmatrix}  \rightsquigarrow \begin{bmatrix} 1 \amp  0 \amp  0 \amp  1 \amp  2\\0 \amp  1 \amp  0 \amp  1 \amp  1\\0 \amp  0 \amp  1 \amp  -2 \amp  -2\\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">We can see that <span class="process-math">\(\mbox{rank}(A)=3\text{,}\)</span> so <span class="process-math">\(\mbox{dim}(\mbox{im}(T))=3\text{.}\)</span> To identify vectors that span <span class="process-math">\(\mbox{im}(T)\text{,}\)</span> we turn to <a href="Section-Subspaces-Associated-with-Matrices.html#colspace" class="xref" data-knowl="./knowl/xref/colspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 4.3.9">Algorithm 4.3.9</a>.  We identify the first three columns as pivot columns.  These columns are linearly independent and span <span class="process-math">\(\mbox{col}(A)\text{.}\)</span>  Therefore,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-image1.html ./knowl/xref/colspace.html">
+\begin{equation*}
+\mbox{im}(T)=\mbox{col}(A)=\mbox{span}\left(\begin{bmatrix}1\\-1\\3\\1\end{bmatrix}, \begin{bmatrix}2\\3\\0\\-1\end{bmatrix}, \begin{bmatrix}2\\1\\0\\1\end{bmatrix}\right)
+\end{equation*}
+</div>
+</div></div></details></div></article></details><div class="para" id="Subsubsection-The-Image-of-a-Matrix-Transformation-7">By <a href="Section-Intro-to-Vector-Spaces.html#th-span-is-subspace" class="xref" data-knowl="./knowl/xref/th-span-is-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.28">Theorem 4.1.28</a> and <a href="Section-Subspaces-Associated-with-Matrices.html#def-colspace" class="xref" data-knowl="./knowl/xref/def-colspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.3.8">Definition 4.3.8</a>, we know that for an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(\mbox{col}(A)\)</span> is a subspace of <span class="process-math">\(\R^m\text{.}\)</span>  However, when vector spaces other than <span class="process-math">\(\R^m\)</span> are involved, it is not yet clear that <span class="process-math">\(\mbox{im}(T)\)</span> is a subspace of the codomain. The following theorem resolves this issue.</div>
+<article class="theorem theorem-like" id="th-imagesubspace"><h5 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.21</span><span class="period">.</span>
+</h5>
+<div class="para" id="th-imagesubspace-1-1">Let <span class="process-math">\(T:V\rightarrow W\)</span> be a linear transformation.  Then <span class="process-math">\(\mbox{im}(T)\)</span> is a subspace of <span class="process-math">\(W\text{.}\)</span>
+</div></article><details id="th-imagesubspace-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th-imagesubspace-2-1">
+<div class="para">To show that <span class="process-math">\(\mbox{im}(T)\)</span> is a subspace, we need to show that <span class="process-math">\(\mbox{im}(T)\)</span> is closed under addition and scalar multiplication. Suppose <span class="process-math">\(\mathbf{w}_1\)</span> and <span class="process-math">\(\mathbf{w}_2\)</span> are in <span class="process-math">\(\mbox{im}(T)\text{.}\)</span>  Then there are vectors <span class="process-math">\(\mathbf{v}_1\)</span> and <span class="process-math">\(\mathbf{v}_2\)</span> in <span class="process-math">\(V\)</span> such that <span class="process-math">\(T(\mathbf{v}_1)=\mathbf{w}_1\)</span> and <span class="process-math">\(T(\mathbf{v}_2)=\mathbf{w}_2\text{.}\)</span>  Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{w}_1+\mathbf{w}_2=T(\mathbf{v}_1)+T(\mathbf{v}_2)=T(\mathbf{v}_1+\mathbf{v}_2).
+\end{equation*}
+</div>
+<div class="para">This shows that <span class="process-math">\(\mathbf{w}_1+\mathbf{w}_2\)</span> is in <span class="process-math">\(\mbox{im}(T)\text{.}\)</span> For any scalar <span class="process-math">\(a\text{,}\)</span> we have:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a\mathbf{w}_1=aT(\mathbf{v}_1)=T(a\mathbf{v}_1).
+\end{equation*}
+</div>
+<div class="para">This shows that <span class="process-math">\(a\mathbf{w}_1\)</span> is in <span class="process-math">\(\mbox{im}(T)\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="Subsubsection-The-Image-of-a-Matrix-Transformation-9">We can now define the rank of a linear transformation.</div>
+<article class="definition definition-like" id="def-rankofT"><h5 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.22</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="def-rankofT-1-1">
+<div class="para">The <dfn class="terminology">rank</dfn> of a linear transformation <span class="process-math">\(T:V\rightarrow W\text{,}\)</span> is the dimension of the image of <span class="process-math">\(T\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{rank}(T)=\mbox{dim}(\mbox{im}(T)).
+\end{equation*}
+</div>
+</div></article><div class="para" id="Subsubsection-The-Image-of-a-Matrix-Transformation-11">This definition gives us the following relationship between the rank of a linear transformation <span class="process-math">\(T:\R^n\rightarrow\R^m\)</span> and the rank of the standard matrix <span class="process-math">\(A\)</span> associated with it.</div>
+<article class="identity theorem-like" id="form-rankTrankA"><h5 class="heading">
+<span class="type">Formula</span><span class="space"> </span><span class="codenumber">4.3.23</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="form-rankTrankA-1-1"><div class="displaymath process-math">
+\begin{equation*}
+\mbox{rank}(A) = \mbox{dim}(\mbox{col}(A))=\mbox{dim}(\mbox{im}(T))=\mbox{rank}(T).
+\end{equation*}
+</div></div></article></section><section class="subsubsection" id="Subsubsection-The-Kernel-of-a-Matrix-Transformation"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">4.3.5.2</span><span class="space"> </span><span class="title">The Kernel of a Linear Transformation</span>
+</h4>
+<div class="para" id="Subsubsection-The-Kernel-of-a-Matrix-Transformation-2">Exactly as in the preceding section, we will often use <span class="process-math">\(U\text{,}\)</span> <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> to denote subspaces of <span class="process-math">\(\R^n\text{,}\)</span> or any other finite-dimensional vector space, such as those we study in a later chaper.</div>
+<article class="definition definition-like" id="def-kernel"><h5 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.24</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="def-kernel-1-1">
+<div class="para">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces, and let <span class="process-math">\(T:V\rightarrow W\)</span> be a linear transformation.  The <dfn class="terminology">kernel</dfn> of <span class="process-math">\(T\text{,}\)</span> denoted by <span class="process-math">\(\mbox{ker}(T)\text{,}\)</span> is the set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{ker}(T)=\{\mathbf{v}:T(\mathbf{v})=\mathbf{0}\}.
+\end{equation*}
+</div>
+<div class="para">In other words, the kernel of <span class="process-math">\(T\)</span> consists of all vectors of <span class="process-math">\(V\)</span> that map to <span class="process-math">\(\mathbf{0}\)</span> in <span class="process-math">\(W\text{.}\)</span>
+</div>
+</div></article><div class="para" id="Subsubsection-The-Kernel-of-a-Matrix-Transformation-4">It is important to pay attention to the locations of the kernel and the image.  We already proved that <span class="process-math">\(\mbox{im}(T)\)</span> is a subspace of the codomain.  In contrast, <span class="process-math">\(\mbox{ker}(T)\)</span> is located in the domain.  (We will prove shortly that it is a subspace of the domain.)</div>
+<div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="generated/latex-image/Subsubsection-The-Kernel-of-a-Matrix-Transformation-5.svg" role="img" class="contained" alt="Kernel diagram shown"></div>
+<details id="ex-kernel" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.25</span><span class="period">.</span>
+</h5></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-kernel-1-1">
+<div class="para">Let <span class="process-math">\(T:\R^5\rightarrow \R^4\)</span> be a linear transformation with standard matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}1 \amp  2 \amp  2 \amp -1 \amp  0\\-1 \amp  3 \amp  1 \amp  0 \amp  -1\\3 \amp  0 \amp  0 \amp  3 \amp  6\\ 1 \amp  -1 \amp  1 \amp  -2 \amp  -1\end{bmatrix}. 
+\end{equation*}
+</div>
+<ol class="decimal" id="ex-kernel-1-1-3">
+<li id="item-kernelT"><div class="para" id="item-kernelT-1">Find <span class="process-math">\(\mbox{ker}(T)\text{.}\)</span>
+</div></li>
+<li id="item-dimkernelT"><div class="para" id="item-dimkernelT-1">Is <span class="process-math">\(\mbox{ker}(T)\)</span> a subspace of <span class="process-math">\(\R^5\text{?}\)</span>  If so, find <span class="process-math">\(\mbox{dim}(\mbox{ker}(T))\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="ex-kernel-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="ex-kernel-2-1">
+<div class="para">
+<a href="Section-Subspaces-Associated-with-Matrices.html#item-kernelT" class="xref" data-knowl="./knowl/xref/item-kernelT.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">Item 1</a> To find the kernel of <span class="process-math">\(T\text{,}\)</span> we need to find all vectors of <span class="process-math">\(\R^5\)</span> that map to <span class="process-math">\(\mathbf{0}\)</span> in <span class="process-math">\(\R^4\text{.}\)</span>  This amounts to solving the equation <span class="process-math">\(A\mathbf{x}=\mathbf{0}\text{.}\)</span> Gauss-Jordan elimination yields:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-kernelT.html ./knowl/xref/item-dimkernelT.html ./knowl/xref/th-span-is-subspace.html">
+\begin{equation*}
+\begin{bmatrix}1 \amp  2 \amp  2 \amp -1 \amp  0\\-1 \amp  3 \amp  1 \amp  0 \amp  -1\\3 \amp  0 \amp  0 \amp  3 \amp  6\\ 1 \amp  -1 \amp  1 \amp  -2 \amp  -1\end{bmatrix}  \rightsquigarrow \begin{bmatrix} 1 \amp  0 \amp  0 \amp  1 \amp  2\\0 \amp  1 \amp  0 \amp  1 \amp  1\\0 \amp  0 \amp  1 \amp  -2 \amp  -2\\ 0 \amp  0 \amp  0 \amp  0 \amp  0 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Thus, the kernel of <span class="process-math">\(T\)</span> consists of all elements of the form:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-kernelT.html ./knowl/xref/item-dimkernelT.html ./knowl/xref/th-span-is-subspace.html">
+\begin{equation*}
+\begin{bmatrix}-1\\-1\\2\\1\\0\end{bmatrix}s+\begin{bmatrix}-2\\-1\\2\\0\\1\end{bmatrix}t.
+\end{equation*}
+</div>
+<div class="para">We conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/item-kernelT.html ./knowl/xref/item-dimkernelT.html ./knowl/xref/th-span-is-subspace.html">
+\begin{equation*}
+\mbox{ker}(T)=\mbox{span}\left(\begin{bmatrix}-1\\-1\\2\\1\\0\end{bmatrix}, \begin{bmatrix}-2\\-1\\2\\0\\1\end{bmatrix}\right).
+\end{equation*}
+</div>
+<div class="para">
+<a href="Section-Subspaces-Associated-with-Matrices.html#item-dimkernelT" class="xref" data-knowl="./knowl/xref/item-dimkernelT.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">Item 2</a>:  Since <span class="process-math">\(\mbox{ker}(T)\)</span> is the span of two vectors of <span class="process-math">\(\R^5\text{,}\)</span> we know that <span class="process-math">\(\mbox{ker}(T)\)</span> is a subspace of <span class="process-math">\(\R^5\text{.}\)</span> (See <a href="Section-Intro-to-Vector-Spaces.html#th-span-is-subspace" class="xref" data-knowl="./knowl/xref/th-span-is-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.28">Theorem 4.1.28</a>.)  Observe that the two vectors in the spanning set are linearly independent. (How can we see this without performing computations?)  Therefore <span class="process-math">\(\mbox{dim}(\mbox{ker}(T))=2\text{.}\)</span>
+</div>
+</div></div></details></div></article></details><div class="para logical" id="Subsubsection-The-Kernel-of-a-Matrix-Transformation-7">
+<div class="para">Recall that the <dfn class="terminology">null space</dfn> of a matrix <span class="process-math">\(A\)</span> is defined to be set of all solutions to the homogeneous equation <span class="process-math">\(A\mathbf{x}=\mathbf{0}\text{.}\)</span> This means that  if <span class="process-math">\(T:\R^n\rightarrow \R^m\)</span> is a linear transformation with standard matrix <span class="process-math">\(A\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-nullsubspacern.html">
+\begin{equation*}
+\mbox{ker}(T)=\mbox{null}(A).
+\end{equation*}
+</div>
+<div class="para">We know that <span class="process-math">\(\mbox{null}(A)\)</span> of an <span class="process-math">\(m\times n\)</span> matrix is a subspace of <span class="process-math">\(\R^n\text{.}\)</span> (See <a href="Section-Subspaces-Associated-with-Matrices.html#th-nullsubspacern" class="xref" data-knowl="./knowl/xref/th-nullsubspacern.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.14">Theorem 4.3.14</a>.)  We conclude this section by showing that even when vector spaces other than <span class="process-math">\(\R^n\)</span> are involved, the kernel of a linear transformation is a subspace of the domain of the transformation.</div>
+</div>
+<article class="theorem theorem-like" id="th-kersubspace"><h5 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.26</span><span class="period">.</span>
+</h5>
+<div class="para" id="th-kersubspace-1-1">Let <span class="process-math">\(T:V\rightarrow W\)</span> be a linear transformation, then <span class="process-math">\(\mbox{ker}(T)\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>
+</div></article><details id="th-kersubspace-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th-kersubspace-2-1">
+<div class="para">To show that <span class="process-math">\(\mbox{ker}(T)\)</span> is a subspace, we need to show that <span class="process-math">\(\mbox{ker}(T)\)</span> is closed under addition and scalar multiplication. Suppose that <span class="process-math">\(\mathbf{v}_1\)</span> and <span class="process-math">\(\mathbf{v}_2\)</span> are in <span class="process-math">\(\mbox{ker}(T)\text{.}\)</span>  Then,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(\mathbf{v}_1+\mathbf{v}_2)=T(\mathbf{v}_1)+T(\mathbf{v}_2)=\mathbf{0}+\mathbf{0}=\mathbf{0}.
+\end{equation*}
+</div>
+<div class="para">This shows that <span class="process-math">\(\mathbf{v}_1+\mathbf{v}_2\)</span> is in <span class="process-math">\(\mbox{ker}(T)\text{.}\)</span> For any scalar <span class="process-math">\(a\)</span> we have:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(a\mathbf{v}_1)=aT(\mathbf{v}_1)=a\mathbf{0}=\mathbf{0}.
+\end{equation*}
+</div>
+<div class="para">This shows that <span class="process-math">\(a\mathbf{v}_1\)</span> is in <span class="process-math">\(\mbox{ker}(T)\text{.}\)</span>
+</div>
+</div></article></details><article class="definition definition-like" id="def-nullityT"><h5 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.27</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="def-nullityT-1-1">
+<div class="para">The <dfn class="terminology">nullity</dfn> of a linear transformation <span class="process-math">\(T:V\rightarrow W\text{,}\)</span> is the dimension of the kernel of <span class="process-math">\(T\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{nullity}(T)=\mbox{dim}(\mbox{ker}(T)).
+\end{equation*}
+</div>
+</div></article><div class="para" id="Subsubsection-The-Kernel-of-a-Matrix-Transformation-10">This definition gives us the following relationship between nullity of a linear transformation <span class="process-math">\(T:\R^n\rightarrow\R^m\)</span> and the nullity of the standard matrix <span class="process-math">\(A\)</span> associated with it.</div>
+<article class="identity theorem-like" id="form-nullTnullA"><h5 class="heading">
+<span class="type">Formula</span><span class="space"> </span><span class="codenumber">4.3.28</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="form-nullTnullA-1-1"><div class="displaymath process-math">
+\begin{equation*}
+\mbox{nullity}(A) = \mbox{dim}(\mbox{null}(A))=\mbox{dim}(\mbox{ker}(T))=\mbox{nullity}(T).
+\end{equation*}
+</div></div></article></section><section class="subsubsection" id="Subsubsection-Rank-Nullity-Theorem-for-Linear-Transformations"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber">4.3.5.3</span><span class="space"> </span><span class="title">Rank-Nullity Theorem for Linear Transformations</span>
+</h4>
+<div class="para logical" id="Subsubsection-Rank-Nullity-Theorem-for-Linear-Transformations-2">
+<div class="para">In <a href="Section-Subspaces-Associated-with-Matrices.html#ex-image2" class="xref" data-knowl="./knowl/xref/ex-image2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.20">Example 4.3.20</a> and <a href="Section-Subspaces-Associated-with-Matrices.html#ex-kernel" class="xref" data-knowl="./knowl/xref/ex-kernel.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.25">Example 4.3.25</a>, we found the image and the kernel of the linear transformation <span class="process-math">\(T:\R^5\rightarrow \R^4\)</span> with standard matrix</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-image2.html ./knowl/xref/ex-kernel.html ./knowl/xref/th-matrixranknullity.html">
+\begin{equation*}
+A=\begin{bmatrix}1 \amp  2 \amp  2 \amp -1 \amp  0\\-1 \amp  3 \amp  1 \amp  0 \amp  -1\\3 \amp  0 \amp  0 \amp  3 \amp  6\\ 1 \amp  -1 \amp  1 \amp  -2 \amp  -1\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">We also found that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-image2.html ./knowl/xref/ex-kernel.html ./knowl/xref/th-matrixranknullity.html">
+\begin{equation*}
+\mbox{rank}(T)=\mbox{dim}(\mbox{im}(T))=\mbox{dim}(\mbox{col}(A))=\mbox{rank}(A)=3
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-image2.html ./knowl/xref/ex-kernel.html ./knowl/xref/th-matrixranknullity.html">
+\begin{equation*}
+\mbox{nullity}(T)=\mbox{dim}(\mbox{ker}(T))=\mbox{dim}(\mbox{null}(A))=\mbox{nullity}(A)=2.
+\end{equation*}
+</div>
+<div class="para">Because of Rank-Nullity Theorem for matrices (Theorem <a href="Section-Subspaces-Associated-with-Matrices.html#th-matrixranknullity" class="xref" data-knowl="./knowl/xref/th-matrixranknullity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.17">Theorem 4.3.17</a>), it is not surprising that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-image2.html ./knowl/xref/ex-kernel.html ./knowl/xref/th-matrixranknullity.html">
+\begin{equation*}
+\mbox{rank}(T)+\mbox{nullity}(T)=3+2=5=\mbox{dim}(\R^5).
+\end{equation*}
+</div>
+<div class="para">The following theorem is a generalization of this result.</div>
+</div>
+<article class="theorem theorem-like" id="th-ranknullityforT"><h5 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.29</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="th-ranknullityforT-1-1">
+<div class="para">Let <span class="process-math">\(T:V\rightarrow W\)</span> be a linear transformation.  Suppose <span class="process-math">\(\mbox{dim}(V)=n\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{rank}(T)+\mbox{nullity}(T)=n.
+\end{equation*}
+</div>
+</div></article><details id="th-ranknullityforT-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th-ranknullityforT-2-1">
+<div class="para">By <a href="Section-Subspaces-Associated-with-Matrices.html#th-imagesubspace" class="xref" data-knowl="./knowl/xref/th-imagesubspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.21">Theorem 4.3.21</a>, <span class="process-math">\(\mbox{im}(T)\)</span> is a subspace of <span class="process-math">\(W\text{.}\)</span>  There exists a basis for <span class="process-math">\(\mbox{im}(T)\)</span> of the form <span class="process-math">\(\{T(\mathbf{v}_1), \ldots,T(\mathbf{v}_r)\}\text{.}\)</span>  By <a href="Section-Subspaces-Associated-with-Matrices.html#th-kersubspace" class="xref" data-knowl="./knowl/xref/th-kersubspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.26">Theorem 4.3.26</a>, <span class="process-math">\(\mbox{ker}(T)\)</span> is a subspace of <span class="process-math">\(V\text{.}\)</span>  Let <span class="process-math">\(\{\mathbf{u}_1,\ldots,\mathbf{u}_s\}\)</span> be a basis for <span class="process-math">\(\mbox{ker}(T)\text{.}\)</span> We will show that <span class="process-math">\(\{\mathbf{u}_1,\ldots ,\mathbf{u}_s, \mathbf{v}_1,\ldots ,\mathbf{v}_r\}\)</span> is a basis for <span class="process-math">\(V\text{.}\)</span> For any vector <span class="process-math">\(\mathbf{v}\)</span> in <span class="process-math">\(V\text{,}\)</span> we have:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-imagesubspace.html ./knowl/xref/th-kersubspace.html">
+\begin{equation*}
+T(\mathbf{v})=c_1T(\mathbf{v}_1)+\ldots +c_rT(\mathbf{v}_r)
+\end{equation*}
+</div>
+<div class="para">for some scalars <span class="process-math">\(c_i\)</span> <span class="process-math">\((1\leq i\leq r)\text{.}\)</span> Thus,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-imagesubspace.html ./knowl/xref/th-kersubspace.html">
+\begin{equation*}
+T(\mathbf{v})-\big(c_1T(\mathbf{v}_1)+\ldots +c_rT(\mathbf{v}_r)\big)=\mathbf{0}.
+\end{equation*}
+</div>
+<div class="para">By linearity,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-imagesubspace.html ./knowl/xref/th-kersubspace.html">
+\begin{equation*}
+T((\mathbf{v}-(c_1\mathbf{v}_1+\ldots +c_r\mathbf{v}_r))=\mathbf{0}.
+\end{equation*}
+</div>
+<div class="para">Therefore <span class="process-math">\(\mathbf{v}-(c_1\mathbf{v}_1+\ldots +c_r\mathbf{v}_r)\)</span> is in <span class="process-math">\(\mbox{ker}(T)\text{.}\)</span> Hence there are scalars <span class="process-math">\(a_i\)</span> <span class="process-math">\((1\leq i\leq s)\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-imagesubspace.html ./knowl/xref/th-kersubspace.html">
+\begin{equation*}
+\mathbf{v}-(c_1\mathbf{v}_1+\ldots +c_r\mathbf{v}_r)=a_1\mathbf{u}_1+\ldots +a_s\mathbf{u}_s.
+\end{equation*}
+</div>
+<div class="para">Thus,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-imagesubspace.html ./knowl/xref/th-kersubspace.html">
+\begin{equation*}
+\mathbf{v}=(c_1\mathbf{v}_1+\ldots +c_r\mathbf{v}_r)+(a_1\mathbf{u}_1+\ldots +a_s\mathbf{u}_s).
+\end{equation*}
+</div>
+<div class="para">We conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-imagesubspace.html ./knowl/xref/th-kersubspace.html">
+\begin{equation*}
+V=\mbox{span}(\mathbf{u}_1,\ldots ,\mathbf{u}_s, \mathbf{v}_1,\ldots ,\mathbf{v}_r).
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="th-ranknullityforT-2-2">
+<div class="para">Now we need to show that <span class="process-math">\(\{\mathbf{u}_1,\ldots ,\mathbf{u}_s, \mathbf{v}_1,\ldots ,\mathbf{v}_r\}\)</span> is linearly independent. Suppose</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/kerplusimproof.html" id="kerplusimproof">
+\begin{equation}
+c_1\mathbf{v}_1+\ldots +c_r\mathbf{v}_r+a_1\mathbf{u}_1+\ldots +a_s\mathbf{u}_s=\mathbf{0}.\tag{4.3.6}
+\end{equation}
+</div>
+<div class="para">Applying <span class="process-math">\(T\)</span> to both sides, we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/kerplusimproof.html">
+\begin{equation*}
+T(c_1\mathbf{v}_1+\ldots +c_r\mathbf{v}_r+a_1\mathbf{u}_1+\ldots +a_s\mathbf{u}_s)=T(\mathbf{0}),
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/kerplusimproof.html">
+\begin{equation*}
+c_1T(\mathbf{v}_1)+\ldots +c_rT(\mathbf{v}_r)+a_1T(\mathbf{u}_1)+\ldots +a_sT(\mathbf{u}_s)=\mathbf{0}.
+\end{equation*}
+</div>
+<div class="para">But <span class="process-math">\(T(\mathbf{u}_i)=\mathbf{0}\)</span> for <span class="process-math">\(1\leq i\leq s\text{,}\)</span> thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/kerplusimproof.html">
+\begin{equation*}
+c_1T(\mathbf{v}_1)+\ldots +c_rT(\mathbf{v}_r)=\mathbf{0}.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\{T(\mathbf{v}_1),\ldots ,T(\mathbf{v}_r)\}\)</span> is linearly independent, it follows that each <span class="process-math">\(c_i=0\text{.}\)</span> But then <a href="Section-Subspaces-Associated-with-Matrices.html#kerplusimproof" class="xref" data-knowl="./knowl/xref/kerplusimproof.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.3.6">(4.3.6)</a> implies that <span class="process-math">\(a_1\mathbf{u}_1+\ldots +a_s\mathbf{u}_s=\mathbf{0}\text{.}\)</span>  Because <span class="process-math">\(\{\mathbf{u}_1, \ldots ,\mathbf{u}_s\}\)</span> is linearly independent, it follows that each <span class="process-math">\(a_i=0\text{.}\)</span> We conclude that <span class="process-math">\(\{\mathbf{u}_1,\ldots ,\mathbf{u}_s,\mathbf{v}_1,\ldots ,\mathbf{v}_r\}\)</span> is a basis for <span class="process-math">\(V\text{.}\)</span>  Thus,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/kerplusimproof.html">
+\begin{equation*}
+\mbox{dim}(\mbox{ker}(T))+\mbox{dim}(\mbox{im}(T))=s+r=n.
+\end{equation*}
+</div>
+</div></article></details></section></section><section class="exercises" id="Section-Subspaces-Associated-with-Matrices-7"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">4.3.6</span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="Section-Subspaces-Associated-with-Matrices-7-1">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="Section-Subspaces-Associated-with-Matrices-7-1-1"><div class="para logical" id="Section-Subspaces-Associated-with-Matrices-7-1-1-1">
+<div class="para">In the following four problems, the matrix <span class="process-math">\(A\)</span> given below is studied.</div>
+<div class="displaymath process-math" id="MatA">
+\begin{equation}
+A=\begin{bmatrix}2\amp 0\amp 2\amp 4\\1\amp 3\amp -2\amp -1\\-1\amp -2\amp 1\amp 0\end{bmatrix}.\tag{4.3.7}
+\end{equation}
+</div>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="colrowmatrixA1"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para" id="colrowmatrixA1-1-1">Let Find <span class="process-math">\(\mbox{rref}(A)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="colrowmatrixA1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="colrowmatrixA1-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\mbox{rref}(A)=\begin{bmatrix}1\amp 0\amp 1\amp 2\\0\amp 1\amp -1\amp -1\\0\amp 0\amp 0\amp 0\end{bmatrix}.
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-colrowmatrixA2"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="para" id="prob-colrowmatrixA2-1-1">Compute <span class="process-math">\(\text{rank}(A)\text{,}\)</span> <span class="process-math">\(\text{dim}(\text{row}(A))\)</span> and <span class="process-math">\(\text{dim}(\text{col}(A)) \)</span>
+</div>
+<div class="solutions"><details id="prob-colrowmatrixA2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-colrowmatrixA2-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\mbox{rank}(A)=\mbox{dim}(\mbox{row}(A))=\mbox{dim}(\mbox{col}(A))=2.
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-colrowmatrixA3"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="para" id="prob-colrowmatrixA3-1-1">Use <span class="process-math">\(\mbox{rref}(A)\)</span> and the procedure outlined in <a href="Section-Subspaces-Associated-with-Matrices.html#ex-basisrowspace" class="xref" data-knowl="./knowl/xref/ex-basisrowspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.5">Example 4.3.5</a> to find a basis for <span class="process-math">\(\mbox{row}(A)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="prob-colrowmatrixA3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-colrowmatrixA3-2-1">
+<div class="para">A basis for <span class="process-math">\(\mbox{row}(A)\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{\begin{bmatrix}1\amp  0\amp  1 \amp  2\end{bmatrix},\begin{bmatrix}0 \amp  1\amp  -1 \amp -1\end{bmatrix} \right\}.
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="prob-colrowmatrixA4"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para" id="prob-colrowmatrixA4-1-1">Use <a href="Section-Subspaces-Associated-with-Matrices.html#colspace" class="xref" data-knowl="./knowl/xref/colspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 4.3.9">Algorithm 4.3.9</a> to find a basis for <span class="process-math">\(\mbox{col}(A)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="prob-colrowmatrixA4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-colrowmatrixA4-2-1">
+<div class="para">A basis for <span class="process-math">\(\mbox{col}(A) \)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{bmatrix}2\\1\\-1\end{bmatrix}, \begin{bmatrix}0\\3\\-2\end{bmatrix}\right\}.
+\end{equation*}
+</div>
+</div></div></details></div></article>
+</div>
+</div>
+<div class="exercisegroup" id="Section-Subspaces-Associated-with-Matrices-7-2">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="Section-Subspaces-Associated-with-Matrices-7-2-1"><div class="para logical" id="Section-Subspaces-Associated-with-Matrices-7-2-1-1">
+<div class="para">In the following four problems, we matrix in question is</div>
+<div class="displaymath process-math" id="MatB">
+\begin{equation}
+B=\begin{bmatrix}1\amp 2\amp 3\\-1\amp 1\amp 3\\2\amp 0\amp -2\\1\amp -2\amp -5\\0\amp 1\amp 2\end{bmatrix}.\tag{4.3.8}
+\end{equation}
+</div>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="colrowmatrixB1"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para" id="colrowmatrixB1-1-1">Find <span class="process-math">\(\mbox{rref}(B)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="colrowmatrixB1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="colrowmatrixB1-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\mbox{rref}(B)=\begin{bmatrix}1\amp 0\amp -1\\0\amp 1\amp 2\\0\amp 0\amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\end{bmatrix}.
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="prob-colrowmatrixB2"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para" id="prob-colrowmatrixB2-1-1">Find <span class="process-math">\(\mbox{rank}(B)=\mbox{dim}(\mbox{row}(B))=\mbox{dim}(\mbox{col}(B)).\)</span>
+</div>
+<div class="solutions"><details id="prob-colrowmatrixB2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-colrowmatrixB2-2-1">The answer is <span class="process-math">\(\mbox{rank}(B)=\mbox{dim}(\mbox{row}(B))=\mbox{dim}(\mbox{col}(B)) = 2 \text{.}\)</span>
+</div></div></details></div></article><article class="exercise exercise-like" id="prob-colrowmatrixB3"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="para" id="prob-colrowmatrixB3-1-1">Use <span class="process-math">\(\mbox{rref}(B)\)</span> and the procedure outlined in <a href="Section-Subspaces-Associated-with-Matrices.html#ex-basisrowspace" class="xref" data-knowl="./knowl/xref/ex-basisrowspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.5">Example 4.3.5</a> to find a basis for <span class="process-math">\(\mbox{row}(B)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="prob-colrowmatrixB3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-colrowmatrixB3-2-1">
+<div class="para">A basis for <span class="process-math">\(\mbox{row}(B)\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{\begin{bmatrix}1\amp  0\amp  -1\end{bmatrix},\begin{bmatrix}0 \amp  1\amp  2\end{bmatrix} \right\}.
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="prob-colrowmatrixB4"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="para" id="prob-colrowmatrixB4-1-1">Use <a href="Section-Subspaces-Associated-with-Matrices.html#colspace" class="xref" data-knowl="./knowl/xref/colspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 4.3.9">Algorithm 4.3.9</a> to find a basis for <span class="process-math">\(\mbox{col}(B)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="prob-colrowmatrixB4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-colrowmatrixB4-2-1">
+<div class="para">A basis for <span class="process-math">\(\mbox{col}(B)\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{bmatrix}1\\-1\\2\\1\\0\end{bmatrix}, \begin{bmatrix}2\\1\\0\\-2\\1\end{bmatrix}\right\}.
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="prob-rankoftranspose"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para" id="prob-rankoftranspose-1-1">Prove that <span class="process-math">\(\mbox{rank}(A)=\mbox{rank}(A^T)\)</span>
+</div></article><article class="exercise exercise-like" id="prob-basisforV"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para logical" id="prob-basisforV-1-1">
+<div class="para">Find a basis for <span class="process-math">\(V\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V=\mbox{span}\left( \begin{bmatrix}1\\0\\2\end{bmatrix}, \begin{bmatrix}-1\\2\\-1\end{bmatrix}, \begin{bmatrix}1\\2\\3\end{bmatrix}, \begin{bmatrix}3\\-1\\0\end{bmatrix}, \begin{bmatrix}3\\1\\1\end{bmatrix}\right).
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="prob-basisforV-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="prob-basisforV-2-1">Find a basis for the column space of a matrix whose columns are the given vectors.</div></div></details></div></article>
+</div>
+</div>
+<div class="exercisegroup" id="Section-Subspaces-Associated-with-Matrices-7-3">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="Section-Subspaces-Associated-with-Matrices-7-3-1"><div class="para" id="Section-Subspaces-Associated-with-Matrices-7-3-1-1">In the next two problems,  <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> refer to matrices of <a href="Section-Subspaces-Associated-with-Matrices.html#MatA" class="xref" data-knowl="./knowl/xref/MatA.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.3.7">(4.3.7)</a> and <a href="Section-Subspaces-Associated-with-Matrices.html#MatB" class="xref" data-knowl="./knowl/xref/MatB.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.3.8">(4.3.8)</a>.</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="nullABC1"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="para" id="nullABC1-1-1">Find a basis for <span class="process-math">\(\mbox{null}(A)\text{,}\)</span> demonstrate that the Rank-Nullity Theorem (see <a href="Section-Subspaces-Associated-with-Matrices.html#th-matrixranknullity" class="xref" data-knowl="./knowl/xref/th-matrixranknullity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.17">Theorem 4.3.17</a>) holds for <span class="process-math">\(A\)</span> and explain how you can quickly tell that the vectors you selected for your basis are linearly independent.</div>
+<div class="solutions"><details id="nullABC1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="nullABC1-2-1">
+<div class="para">Basis for <span class="process-math">\(\mbox{null}(A) \)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{bmatrix}-1\\1\\1\\0\end{bmatrix}, \begin{bmatrix}-2\\1\\0\\1\end{bmatrix}\right\}.
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="prob-nullABC2"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<div class="para" id="prob-nullABC2-1-1">Find a basis for <span class="process-math">\(\mbox{null}(B)\)</span> and demonstrate that the Rank-Nullity Theorem (see <a href="Section-Subspaces-Associated-with-Matrices.html#th-matrixranknullity" class="xref" data-knowl="./knowl/xref/th-matrixranknullity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.17">Theorem 4.3.17</a>) holds for <span class="process-math">\(B\text{.}\)</span>
+</div>
+<div class="solutions"><details id="prob-nullABC2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-nullABC2-2-1">
+<div class="para">Basis for <span class="process-math">\(\mbox{null}(B) \text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{bmatrix}1\\-2\\1\end{bmatrix}\right\}
+\end{equation*}
+</div>
+</div></div></details></div></article>
+</div>
+</div>
+<div class="exercisegroup" id="Section-Subspaces-Associated-with-Matrices-7-4">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="Section-Subspaces-Associated-with-Matrices-7-4-1"><div class="para logical" id="Section-Subspaces-Associated-with-Matrices-7-4-1-1">
+<div class="para">Suppose matrix <span class="process-math">\(M\)</span> is such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{rref}(M)=\begin{bmatrix}1\amp 0\amp 2\amp 0\amp 3\amp 1\\0\amp 1\amp -1\amp 0\amp 1\amp -2\\0\amp 0\amp 0\amp 1\amp -2\amp 1\\0\amp 0\amp 0\amp 0\amp 0\amp 0\end{bmatrix}
+\end{equation*}
+</div>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="nulM1"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<div class="para" id="nulM1-1-1">Follow the process used in  <a href="Section-Subspaces-Associated-with-Matrices.html#ex-dimnull" class="xref" data-knowl="./knowl/xref/ex-dimnull.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.15">Example 4.3.15</a> to find a basis for <span class="process-math">\(\mbox{null}(M)\text{.}\)</span>  Explain why the basis elements obtained in this way are linearly independent.</div>
+<div class="solutions"><details id="nulM1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="nulM1-2-1">Basis of <span class="process-math">\(\mbox{null}(M):\quad\left\{\begin{bmatrix}-2\\1\\1\\0\\0\\0\end{bmatrix}, \begin{bmatrix}-3\\-1\\0\\2\\1\\0\end{bmatrix}, \begin{bmatrix}-1\\2\\0\\-1\\0\\1\end{bmatrix} \right\}\)</span>
+</div></div></details></div></article><article class="exercise exercise-like" id="prob-nullM2"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
+<div class="para" id="prob-nullM2-1-1">Let <span class="process-math">\(\mathbf{v}_1,\ldots,\mathbf{v}_6\)</span> denote the columns of <span class="process-math">\(M\text{.}\)</span>  Express <span class="process-math">\(\mathbf{v}_3\)</span> as a linear combination of <span class="process-math">\(\mathbf{v}_1\)</span> and <span class="process-math">\(\mathbf{v}_2\text{.}\)</span>
+</div>
+<div class="solutions"><details id="prob-nullM2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-nullM2-2-1"><div class="displaymath process-math">
+\begin{equation*}
+\mathbf{v}_3=2\mathbf{v}_1+-1\mathbf{v}_2
+\end{equation*}
+</div></div></div></details></div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="prob-truefalse3by5"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement"><div class="para" id="prob-truefalse3by5-1-1">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(3\times 5\)</span> matrix.  Which of the following statements could be true?</div></div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-prob-truefalse3by5" data-multipleanswers="true">
+<li data-component="answer" id="rs-prob-truefalse3by5_opt_a"><div class="para" id="prob-truefalse3by5-2-1-1-1"><span class="process-math">\(\mbox{dim}(\mbox{col}(A))=5\)</span></div></li>
+<li data-component="feedback" id="rs-prob-truefalse3by5_opt_a">
+<li data-component="answer" id="rs-prob-truefalse3by5_opt_b" data-correct=""><div class="para" id="prob-truefalse3by5-2-2-1-1"><span class="process-math">\(\mbox{dim}(\mbox{row}(A))=3\)</span></div></li>
+<li data-component="feedback" id="rs-prob-truefalse3by5_opt_b">
+<li data-component="answer" id="rs-prob-truefalse3by5_opt_c"><div class="para" id="prob-truefalse3by5-2-3-1-1"><span class="process-math">\(\mbox{dim}(\mbox{null}(A))=1\)</span></div></li>
+<li data-component="feedback" id="rs-prob-truefalse3by5_opt_c">
+<li data-component="answer" id="rs-prob-truefalse3by5_opt_d" data-correct=""><div class="para" id="prob-truefalse3by5-2-4-1-1"><span class="process-math">\(\mbox{dim}(\mbox{null}(A))=2\)</span></div></li>
+<li data-component="feedback" id="rs-prob-truefalse3by5_opt_d">
+<li data-component="answer" id="rs-prob-truefalse3by5_opt_e" data-correct=""><div class="para" id="prob-truefalse3by5-2-5-1-1"><span class="process-math">\(\mbox{dim}(\mbox{null}(A))=3\)</span></div></li>
+<li data-component="feedback" id="rs-prob-truefalse3by5_opt_e">
+</ul>
+</div></div></article><article class="exercise exercise-like" id="prob-truefalse7by3"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement"><div class="para" id="prob-truefalse7by3-1-1">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(7\times 3\)</span> matrix.  Which of the following statements could be true?</div></div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-prob-truefalse7by3" data-multipleanswers="true">
+<li data-component="answer" id="rs-prob-truefalse7by3_opt_a" data-correct=""><div class="para" id="prob-truefalse7by3-2-1-1-1"><span class="process-math">\(\mbox{dim}(\mbox{col}(A))=3\)</span></div></li>
+<li data-component="feedback" id="rs-prob-truefalse7by3_opt_a">
+<li data-component="answer" id="rs-prob-truefalse7by3_opt_b" data-correct=""><div class="para" id="prob-truefalse7by3-2-2-1-1"><span class="process-math">\(\mbox{dim}(\mbox{row}(A))=3\)</span></div></li>
+<li data-component="feedback" id="rs-prob-truefalse7by3_opt_b">
+<li data-component="answer" id="rs-prob-truefalse7by3_opt_c"><div class="para" id="prob-truefalse7by3-2-3-1-1"><span class="process-math">\(\mbox{dim} (\mbox{row}(A))=7\)</span></div></li>
+<li data-component="feedback" id="rs-prob-truefalse7by3_opt_c">
+<li data-component="answer" id="rs-prob-truefalse7by3_opt_d" data-correct=""><div class="para" id="prob-truefalse7by3-2-4-1-1"><span class="process-math">\(\mbox{dim}(\mbox{null}(A))=0 \)</span></div></li>
+<li data-component="feedback" id="rs-prob-truefalse7by3_opt_d">
+<li data-component="answer" id="rs-prob-truefalse7by3_opt_e"><div class="para" id="prob-truefalse7by3-2-5-1-1"><span class="process-math">\(\mbox{dim}(\mbox{null}(A))=4\)</span></div></li>
+<li data-component="feedback" id="rs-prob-truefalse7by3_opt_e">
+</ul>
+</div></div></article><article class="exercise exercise-like" id="prob-proofofrowBrowA"><h4 class="heading"><span class="codenumber">17<span class="period">.</span></span></h4>
+<div class="para" id="prob-proofofrowBrowA-1-1">Complete the proof of <a href="Section-Subspaces-Associated-with-Matrices.html#th-rowBrowA" class="xref" data-knowl="./knowl/xref/th-rowBrowA.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.2">Theorem 4.3.2</a> by showing that adding a scalar multiple of one row of a matrix to another row does not change the row space.</div></article><div class="exercisegroup" id="Section-Subspaces-Associated-with-Matrices-7-8">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="Section-Subspaces-Associated-with-Matrices-7-8-1"><div class="para" id="Section-Subspaces-Associated-with-Matrices-7-8-1-1">For each matrix <span class="process-math">\(A\)</span> below, find the domain together with codomain of the linear transformation <span class="process-math">\(T:\R^n\rightarrow\R^m\)</span> induced by <span class="process-math">\(A\text{;}\)</span> then find and draw the image of <span class="process-math">\(T\)</span> (Hint: See <a href="Section-Linear-Transformations.html#ex-lineartrans3" class="xref" data-knowl="./knowl/xref/ex-lineartrans3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.6.14">Example 2.6.14</a>.)</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="domaincodomain1"><h5 class="heading"><span class="codenumber">18<span class="period">.</span></span></h5>
+<div class="para logical" id="domaincodomain1-1-1"><div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}0\amp 0\\1\amp 1\\2\amp 0\end{bmatrix}.
+\end{equation*}
+</div></div>
+<div class="solutions"><details id="domaincodomain1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="domaincodomain1-2-1">Domain: <span class="process-math">\(\R^n\text{,}\)</span> where <span class="process-math">\(n=2\text{.}\)</span>
+</div>
+<div class="para" id="domaincodomain1-2-2">Codomain: <span class="process-math">\(\R^m\text{,}\)</span> where <span class="process-math">\(m=3\text{.}\)</span>
+</div>
+</div></details></div></article><article class="exercise exercise-like" id="prob-domaincodomain2"><h5 class="heading"><span class="codenumber">19<span class="period">.</span></span></h5>
+<div class="para logical" id="prob-domaincodomain2-1-1"><div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}3\amp -1\\-3\amp 1\end{bmatrix}.
+\end{equation*}
+</div></div></article>
+</div>
+</div>
+<div class="exercisegroup" id="Section-Subspaces-Associated-with-Matrices-7-9">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="Section-Subspaces-Associated-with-Matrices-7-9-1"><div class="para" id="Section-Subspaces-Associated-with-Matrices-7-9-1-1">Describe the image and find the rank for each linear transformation <span class="process-math">\(T:\R^n\rightarrow \R^m\)</span> with standard matrix <span class="process-math">\(A\)</span> given below.</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="imagerankoflintrans1"><h5 class="heading"><span class="codenumber">20<span class="period">.</span></span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement"><div class="para logical" id="imagerankoflintrans1-1-1">
+<div class="para"><span class="process-math">\(T:\R^5\rightarrow \R^2\text{,}\)</span></div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}3\amp 2\amp 4\amp 7\amp 1\\-1\amp -9\amp 7\amp 6\amp 8\end{bmatrix}.
+\end{equation*}
+</div>
+</div></div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-imagerankoflintrans1" data-multipleanswers="false">
+<li data-component="answer" id="rs-imagerankoflintrans1_opt_a" data-correct=""><div class="para" id="imagerankoflintrans1-2-1-1-1"><span class="process-math">\(\mbox{im}(T)=\R^2.\)</span></div></li>
+<li data-component="feedback" id="rs-imagerankoflintrans1_opt_a">
+<li data-component="answer" id="rs-imagerankoflintrans1_opt_b"><div class="para" id="imagerankoflintrans1-2-2-1-1">
+<span class="process-math">\(\mbox{im}\)</span> is a line in <span class="process-math">\(\R^2\text{.}\)</span>
+</div></li>
+<li data-component="feedback" id="rs-imagerankoflintrans1_opt_b">
+<li data-component="answer" id="rs-imagerankoflintrans1_opt_c"><div class="para" id="imagerankoflintrans1-2-3-1-1"><span class="process-math">\(\mbox{im} (T)=\{\mathbf{0}\}\text{.}\)</span></div></li>
+<li data-component="feedback" id="rs-imagerankoflintrans1_opt_c">
+<li data-component="answer" id="rs-imagerankoflintrans1_opt_d"><div class="para" id="imagerankoflintrans1-2-4-1-1"><span class="process-math">\(\mbox{im}(T)=\R^5\text{.}\)</span></div></li>
+<li data-component="feedback" id="rs-imagerankoflintrans1_opt_d">
+<li data-component="answer" id="rs-imagerankoflintrans1_opt_e"><div class="para" id="imagerankoflintrans1-2-5-1-1">
+<span class="process-math">\(\mbox{im} (T)\)</span> is a plane in <span class="process-math">\(\R^5\text{.}\)</span>
+</div></li>
+<li data-component="feedback" id="rs-imagerankoflintrans1_opt_e">
+</ul>
+</div></div>
+<div class="solutions"><details id="imagerankoflintrans1-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="imagerankoflintrans1-3-1"><span class="process-math">\(\mbox{rank}(T)=2\)</span></div></div></details></div></article><article class="exercise exercise-like" id="prob-imagerankoflintrans2"><h5 class="heading"><span class="codenumber">21<span class="period">.</span></span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement"><div class="para logical" id="prob-imagerankoflintrans2-1-1">
+<div class="para"><span class="process-math">\(T:\R^2\rightarrow\R^3\text{,}\)</span></div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}1\amp 1\\1\amp 1\\1\amp 1\end{bmatrix}
+\end{equation*}
+</div>
+</div></div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-prob-imagerankoflintrans2" data-multipleanswers="false">
+<li data-component="answer" id="rs-prob-imagerankoflintrans2_opt_a"><div class="para" id="prob-imagerankoflintrans2-2-1-1-1"><span class="process-math">\(\mbox{im}(T)=\R^3\text{.}\)</span></div></li>
+<li data-component="feedback" id="rs-prob-imagerankoflintrans2_opt_a">
+<li data-component="answer" id="rs-prob-imagerankoflintrans2_opt_b"><div class="para" id="prob-imagerankoflintrans2-2-2-1-1">
+<span class="process-math">\(\mbox{im} \)</span> is a line in <span class="process-math">\(\R^2\text{.}\)</span>
+</div></li>
+<li data-component="feedback" id="rs-prob-imagerankoflintrans2_opt_b">
+<li data-component="answer" id="rs-prob-imagerankoflintrans2_opt_c" data-correct=""><div class="para" id="prob-imagerankoflintrans2-2-3-1-1">
+<span class="process-math">\(\mbox{im} (T)\)</span> is a line in <span class="process-math">\(\R^3\text{.}\)</span>
+</div></li>
+<li data-component="feedback" id="rs-prob-imagerankoflintrans2_opt_c">
+<li data-component="answer" id="rs-prob-imagerankoflintrans2_opt_d"><div class="para" id="prob-imagerankoflintrans2-2-4-1-1"><span class="process-math">\(\mbox{im}(T)=\{\mathbf{0}\}\text{.}\)</span></div></li>
+<li data-component="feedback" id="rs-prob-imagerankoflintrans2_opt_d">
+<li data-component="answer" id="rs-prob-imagerankoflintrans2_opt_e"><div class="para" id="prob-imagerankoflintrans2-2-5-1-1">
+<span class="process-math">\(\mbox{im} \)</span> is a plane in <span class="process-math">\(\R^3\text{.}\)</span>
+</div></li>
+<li data-component="feedback" id="rs-prob-imagerankoflintrans2_opt_e">
+</ul>
+</div></div>
+<div class="solutions"><details id="prob-imagerankoflintrans2-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-imagerankoflintrans2-3-1"><span class="process-math">\(\mbox{rank}(T)=1\text{.}\)</span></div></div></details></div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="prob-sametrans"><h4 class="heading"><span class="codenumber">22<span class="period">.</span></span></h4>
+<div class="para logical" id="prob-sametrans-1-1">
+<div class="para">Suppose linear transformations <span class="process-math">\(T:\R^2\rightarrow \R^2\)</span> and <span class="process-math">\(S:\R^2\rightarrow \R^2\)</span> are such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{im}(T)=\mbox{im}(S)=\mbox{span}\left(\begin{bmatrix}1\\-3\end{bmatrix}\right).
+\end{equation*}
+</div>
+<div class="para">Does this mean that <span class="process-math">\(T\)</span> and <span class="process-math">\(S\)</span> are the same transformation?  Justify your claim.</div>
+</div></article><div class="exercisegroup" id="Section-Subspaces-Associated-with-Matrices-7-11">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="Section-Subspaces-Associated-with-Matrices-7-11-1"><div class="para" id="Section-Subspaces-Associated-with-Matrices-7-11-1-1">Describe the kernel and find the nullity for each linear transformation <span class="process-math">\(T:\R^n\rightarrow \R^m\)</span> with standard matrix <span class="process-math">\(A\)</span> given below.</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="kerandnullityT1"><h5 class="heading"><span class="codenumber">23<span class="period">.</span></span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement"><div class="para logical" id="kerandnullityT1-1-1">
+<div class="para"><span class="process-math">\(T:\R^3\rightarrow \R^2\text{,}\)</span></div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}2\amp 1\amp 0\\-1\amp 1\amp -3\end{bmatrix}.
+\end{equation*}
+</div>
+</div></div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-kerandnullityT1" data-multipleanswers="false">
+<li data-component="answer" id="rs-kerandnullityT1_opt_a"><div class="para" id="kerandnullityT1-2-1-1-1"><span class="process-math">\(\mbox{ker}(T)=\R^3\text{.}\)</span></div></li>
+<li data-component="feedback" id="rs-kerandnullityT1_opt_a">
+<li data-component="answer" id="rs-kerandnullityT1_opt_b"><div class="para" id="kerandnullityT1-2-2-1-1"><span class="process-math">\(\mbox{ker}(T)=\{\mathbf{0}\}\text{.}\)</span></div></li>
+<li data-component="feedback" id="rs-kerandnullityT1_opt_b">
+<li data-component="answer" id="rs-kerandnullityT1_opt_c"><div class="para" id="kerandnullityT1-2-3-1-1"><span class="process-math">\(\mbox{ker}(T)=\R^2\text{.}\)</span></div></li>
+<li data-component="feedback" id="rs-kerandnullityT1_opt_c">
+<li data-component="answer" id="rs-kerandnullityT1_opt_d"><div class="para" id="kerandnullityT1-2-4-1-1">
+<span class="process-math">\(\mbox{ker}(T)\)</span> is a plane in <span class="process-math">\(\R^3\text{.}\)</span>
+</div></li>
+<li data-component="feedback" id="rs-kerandnullityT1_opt_d">
+<li data-component="answer" id="rs-kerandnullityT1_opt_e" data-correct=""><div class="para" id="kerandnullityT1-2-5-1-1">
+<span class="process-math">\(\mbox{ker}(T)\)</span> is a line in <span class="process-math">\(\R^3\text{.}\)</span>
+</div></li>
+<li data-component="feedback" id="rs-kerandnullityT1_opt_e">
+</ul>
+</div></div>
+<div class="solutions"><details id="kerandnullityT1-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="kerandnullityT1-3-1"><span class="process-math">\(\mbox{nullity}(T)=1\)</span></div></div></details></div></article><article class="exercise exercise-like" id="prob-kerandnullityT2"><h5 class="heading"><span class="codenumber">24<span class="period">.</span></span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement"><div class="para logical" id="prob-kerandnullityT2-1-1">
+<div class="para"><span class="process-math">\(T:\R^2\rightarrow \R^2\text{,}\)</span></div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}2\amp -1\\3\amp 0\end{bmatrix}.
+\end{equation*}
+</div>
+</div></div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-prob-kerandnullityT2" data-multipleanswers="false">
+<li data-component="answer" id="rs-prob-kerandnullityT2_opt_a"><div class="para" id="prob-kerandnullityT2-2-1-1-1"><span class="process-math">\(\mbox{ker}(T)=\R^2\text{.}\)</span></div></li>
+<li data-component="feedback" id="rs-prob-kerandnullityT2_opt_a">
+<li data-component="answer" id="rs-prob-kerandnullityT2_opt_b" data-correct=""><div class="para" id="prob-kerandnullityT2-2-2-1-1"><span class="process-math">\(\mbox{ker}(T)=\{\mathbf{0}\}\text{.}\)</span></div></li>
+<li data-component="feedback" id="rs-prob-kerandnullityT2_opt_b">
+<li data-component="answer" id="rs-prob-kerandnullityT2_opt_c"><div class="para" id="prob-kerandnullityT2-2-3-1-1">
+<span class="process-math">\(\mbox{ker}(T)\)</span> is a line in <span class="process-math">\(\R^2\text{.}\)</span>
+</div></li>
+<li data-component="feedback" id="rs-prob-kerandnullityT2_opt_c">
+</ul>
+</div></div>
+<div class="solutions"><details id="prob-kerandnullityT2-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-kerandnullityT2-3-1"><span class="process-math">\(\mbox{nullity}(T)=0\)</span></div></div></details></div></article><article class="exercise exercise-like" id="prob-kerandnullityT3"><h5 class="heading"><span class="codenumber">25<span class="period">.</span></span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement"><div class="para logical" id="prob-kerandnullityT3-1-1">
+<div class="para"><span class="process-math">\(T:\R^3\rightarrow \R^5\text{,}\)</span></div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}1\amp 2\amp -1\\1\amp 2\amp -1\\1\amp 2\amp -1\\1\amp 2\amp -1\\1\amp 2\amp -1\end{bmatrix}.
+\end{equation*}
+</div>
+</div></div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-prob-kerandnullityT3" data-multipleanswers="false">
+<li data-component="answer" id="rs-prob-kerandnullityT3_opt_a" data-correct=""><div class="para" id="prob-kerandnullityT3-2-1-1-1">
+<span class="process-math">\(\mbox{ker}(T)\)</span> is a plane in <span class="process-math">\(\R^3\text{.}\)</span>
+</div></li>
+<li data-component="feedback" id="rs-prob-kerandnullityT3_opt_a">
+<li data-component="answer" id="rs-prob-kerandnullityT3_opt_b"><div class="para" id="prob-kerandnullityT3-2-2-1-1">
+<span class="process-math">\(\mbox{ker}(T)\)</span> is a line in <span class="process-math">\(\R^3\text{.}\)</span>
+</div></li>
+<li data-component="feedback" id="rs-prob-kerandnullityT3_opt_b">
+<li data-component="answer" id="rs-prob-kerandnullityT3_opt_c"><div class="para" id="prob-kerandnullityT3-2-3-1-1">
+<span class="process-math">\(\mbox{ker} (T)\)</span> is a line in <span class="process-math">\(\R^5\text{.}\)</span>
+</div></li>
+<li data-component="feedback" id="rs-prob-kerandnullityT3_opt_c">
+<li data-component="answer" id="rs-prob-kerandnullityT3_opt_d"><div class="para" id="prob-kerandnullityT3-2-4-1-1"><span class="process-math">\(\mbox{ker}(T)=\R^3\text{.}\)</span></div></li>
+<li data-component="feedback" id="rs-prob-kerandnullityT3_opt_d">
+<li data-component="answer" id="rs-prob-kerandnullityT3_opt_e"><div class="para" id="prob-kerandnullityT3-2-5-1-1"><span class="process-math">\(\mbox{ker}(T)=\{\mathbf{0}\}\text{.}\)</span></div></li>
+<li data-component="feedback" id="rs-prob-kerandnullityT3_opt_e">
+</ul>
+</div></div>
+<div class="solutions"><details id="prob-kerandnullityT3-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="prob-kerandnullityT3-3-1"><span class="process-math">\(\mbox{nullity}(T)=2\text{.}\)</span></div></div></details></div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="prob-ranknullityT4"><h4 class="heading"><span class="codenumber">26<span class="period">.</span></span></h4>
+<div class="para" id="prob-ranknullityT4-1-1">Suppose a linear transformation <span class="process-math">\(T:\R^3\rightarrow \R^3\)</span> is such that <span class="process-math">\(\mbox{im}(T)\)</span> is a plane in <span class="process-math">\(\R^3\text{.}\)</span>  What is the rank and nulity of <span class="process-math">\(T\text{?}\)</span>
+</div>
+<div class="solutions"><details id="prob-ranknullityT4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-ranknullityT4-2-1">
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{rank}(T)=2
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{nullity}(T)=1
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="prob-ranknullityT5"><h4 class="heading"><span class="codenumber">27<span class="period">.</span></span></h4>
+<div class="para" id="prob-ranknullityT5-1-1">Suppose a linear transformation <span class="process-math">\(T:\R^5\rightarrow \R^5\)</span> is such that <span class="process-math">\(T(\mathbf{v})=\mathbf{0}\)</span> for all <span class="process-math">\(\mathbf{v}\)</span> in <span class="process-math">\(\R^5\text{.}\)</span> What is the rank and nulity of <span class="process-math">\(T\text{?}\)</span>
+</div>
+<div class="solutions"><details id="prob-ranknullityT5-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="prob-ranknullityT5-2-1">
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{rank}(T)=0
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mbox{nullity}(T)=5
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="prob-findimkergivenrref"><h4 class="heading"><span class="codenumber">28<span class="period">.</span></span></h4>
+<div class="para logical" id="prob-findimkergivenrref-1-1">
+<div class="para">Let <span class="process-math">\(T:\R^6\rightarrow \R^4\)</span> be a linear transformation with standard matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}2\amp -1\amp 1\amp -2\amp 1\amp 1\\1\amp 2\amp 3\amp 6\amp -4\amp 1\\0\amp 2\amp 2\amp 4\amp -2\amp -1\\1\amp 3\amp 2\amp 6\amp -3\amp 2\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Find <span class="process-math">\(\mbox{im}(T)\)</span> and <span class="process-math">\(\mbox{ker}(T)\)</span> if the reduced row-echelon form of <span class="process-math">\(A\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{rref}(A)=\begin{bmatrix}1\amp 0\amp 0\amp 1\amp -1\amp 0\\0\amp 1\amp 0\amp 1\amp 0\amp 0\\0\amp 0\amp 1\amp 1\amp -1\amp 0\\0\amp 0\amp 0\amp 0\amp 0\amp 1\end{bmatrix}
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="prob-findimageandkernellintrans"><h4 class="heading"><span class="codenumber">29<span class="period">.</span></span></h4>
+<div class="para logical" id="prob-findimageandkernellintrans-1-1">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V=\mbox{span}\left(\begin{bmatrix}1\\1\end{bmatrix}\right)
+\end{equation*}
+</div>
+<div class="para">and let <span class="process-math">\(T:V\rightarrow \R^2\)</span> be a linear transformation defined by <span class="process-math">\(T(\mathbf{v})=2\mathbf{v}\text{.}\)</span>  Find <span class="process-math">\(\mbox{im}(T)\)</span> and <span class="process-math">\(\mbox{ker}(T)\text{.}\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="prob-ranknullitytrans"><h4 class="heading"><span class="codenumber">30<span class="period">.</span></span></h4>
+<div class="para" id="prob-ranknullitytrans-1-1">Suppose a linear transformation <span class="process-math">\(T\)</span> is induced by a <span class="process-math">\(4\times 6\)</span> matrix <span class="process-math">\(A\text{.}\)</span>  Let <span class="process-math">\(S\)</span> be a linear transformation induced by <span class="process-math">\(A^T\text{.}\)</span>  Find <span class="process-math">\(\mbox{nullity}(S)\text{,}\)</span> if <span class="process-math">\(\mbox{nullity}(T)=3\text{.}\)</span>  Prove your claim.</div></article></section></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="Bases-and-Dimension.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="Section-Linear-Transformations-of-Vector-Spaces.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
