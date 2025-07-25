@@ -77,7 +77,6 @@
     <xi:include href="Section-Bases-and-Dimensions.ptx"/>
     <xi:include href="Section-Subspaces-Associated-with-Matrices.ptx"/>
     <xi:include href="Section-Linear-Transformations-of-Vector-Spaces.ptx"/>
-    <xi:include href="Section-Coordinate-Vectors.ptx"/>
     <xi:include href="Section-Isomorphic-Vector-Spaces.ptx"/>
 </chapter>
 
