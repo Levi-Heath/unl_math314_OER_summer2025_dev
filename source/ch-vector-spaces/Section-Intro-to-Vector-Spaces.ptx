@@ -976,7 +976,7 @@
         </answer>
     </example>
 
-    <theorem xml:id="th-spanisasubspaceabstract">
+    <theorem xml:id="th-span-is-subspace">
 
         <statement>
             <p>
@@ -1004,7 +1004,7 @@
         </statement>
         <answer>
             <p>
-                This is a direct consequence of <xref ref="th-spanisasubspaceabstract"/>.  
+                This is a direct consequence of <xref ref="th-span-is-subspace"/>.  
                 For example, consider the line through the origin in <m>\R^3</m> spanned by the vector <m>\mathbf{v} = [1,2,3]</m>.  
                 The span of this vector is the set of all scalar multiples of <m>\mathbf{v}</m>, which is a subspace of <m>\R^3</m>.  
                 Similarly, any plane or hyperplane through the origin can be expressed as the span of two or more vectors, respectively, and thus is also a subspace.
@@ -1362,7 +1362,7 @@
         <exercise xml:id="prob-spanisasubspaceabstract">
             <statement>
                 <p>
-                    Prove <xref ref="th-spanisasubspaceabstract"/>.
+                    Prove <xref ref="th-span-is-subspace"/>.
                 </p>
             </statement>
         </exercise>
