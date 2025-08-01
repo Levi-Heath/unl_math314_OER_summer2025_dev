@@ -4,8 +4,8 @@
     <title>Introduction to Vector Spaces</title>
 
     <p>
-        We are familiar with two operations that can be applied to vectors in <m>\R^n</m>, namely, addition of vectors and scalar multiplication. 
-        We learned that addition and scalar multiplication satisfy many nice properties (see <xref ref="th-vecproperties"/>). 
+        There are two operations on vectors in <m>\R^n</m>, namely, addition of vectors and scalar multiplication. 
+        We learned that addition and scalar multiplication satisfy a number of nice properties (see <xref ref="th-vecproperties"/>). 
         These properties give <m>\R^n</m> an algebraic structure.  
     </p>
 
