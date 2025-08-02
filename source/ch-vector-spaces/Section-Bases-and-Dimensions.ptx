@@ -873,7 +873,7 @@ Our insistence that <m>\mbox{dim}\{\mathbf{0}\} = 0</m> amounts to saying that t
 <example xml:id="ex-dimofM">
     <statement>
         <p>
-            Recall that the vector space <m>\mathbb{M}_{m,n}</m> consists of all <m>m\times n</m> matrices (see <xref ref="ex-MLexamplesofvectspaces"/>.  Find a basis and the dimension of <m>\mathbb{M}_{m,n}</m>.
+            Recall that the vector space <m>\mathbb{M}_{m,n}</m> consists of all <m>m\times n</m> matrices (see <xref ref="ex-setofmatricesvectorspace"/>).  Find a basis and the dimension of <m>\mathbb{M}_{m,n}</m>.
        </p>
     </statement>
     <answer>

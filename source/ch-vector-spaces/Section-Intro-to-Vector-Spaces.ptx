@@ -4,7 +4,7 @@
     <title>Introduction to Vector Spaces</title>
 
     <p>
-        There are two operations on vectors in <m>\R^n</m>, namely, addition of vectors and scalar multiplication. 
+        There are two operations on vectors in <m>\R^n</m>, namely, vector addition and scalar multiplication. 
         We learned that addition and scalar multiplication satisfy a number of nice properties (see <xref ref="th-vecproperties"/>). 
         These properties give <m>\R^n</m> an algebraic structure.  
     </p>
@@ -40,7 +40,7 @@
 
 
         <p> 
-        A few examples to warm up to the concepts will be given.
+        Here are a few examples and non-examples to understand these properties. 
         </p>
 
         <example xml:id="ex-posevenint">
@@ -223,13 +223,13 @@
     </remark>
 
     <p>
-        In the next two examples we will explore two sets other than <m>\R^n</m> endowed with addition and scalar multiplication and satisfying the same properties.
+        In the next two examples we will explore two sets other than <m>\R^n</m> endowed with vector addition and scalar multiplication and satisfying the same properties.
     </p> 
 
 
     <example xml:id="ex-setofmatricesvectorspace">
         <p>
-            Let <m>\mathbb{M}_{m,n}</m> be the set of all <m>m\times n</m> matrices.  Matrix addition and scalar multiplication were defined in chapter <m>4</m>.
+            Let <m>\mathbb{M}_{m,n}</m> be the set of all <m>m\times n</m> matrices.  Matrix addition and scalar multiplication were defined in Section <m>3.1.1</m>.
 
     Observe that the sum of two <m>m\times n</m> matrices is also an <m>m\times n</m> matrix. Likewise, a scalar multiple of an <m>m\times n</m> matrix is an <m>m\times n</m> matrix.  Thus 
     <ul>
@@ -241,7 +241,7 @@
     </li>
     </ul>
 
-    In addition, <xref ref="th-propertiesofaddition"/> and <xref ref="th-propertiesscalarmult"/> give us the following properties of matrix addition and scalar multiplication.  Note that these properties are analogous to the eight vector properties above.
+    Next, <xref ref="th-propertiesofaddition"/> and <xref ref="th-propertiesscalarmult"/> give us the following properties of matrix addition and scalar multiplication.  Note that these properties are analogous to the eight vector properties above.
     <ol>
     <li>
         <p> Commutative Property of Addition:  <m>\quad A+B=B+A</m>. </p>
@@ -268,6 +268,7 @@
         <p> Multiplication by <m>1</m>: <m>\quad 1A=A</m>. </p>
     </li>
     </ol>
+        Because <m>\mathbb{M}_{m,n}</m> with these two operations satisfies all of these properties, it is a vector space.
         </p>
     </example>
 
@@ -408,30 +409,18 @@
     </p>
     </li>
     </ol>
+    Because <m>\mathbb{L}</m> with these two operations satisfies all of these properties, it is a vector space.
     </p>
         </answer>
     </example>
     </subsection> 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <subsection xml:id="Subsection-Definition-of-a-Vector-Space">
         <title>Definition of a Vector Space</title>
 
     <p>
-    During <xref ref="ex-setofmatricesvectorspace"/> and <xref ref="ex-linfunctionsvectspace"/> show us that there are many times in mathematics when we encounter a set with two operations (that we call addition and scalar multiplication) such that the set is closed under the two operations, and satisfies the same eight properties as <m>\R^n</m>.  We will refer to such sets as <term>vector spaces</term>.
+    Looking at <xref ref="ex-setofmatricesvectorspace"/> and <xref ref="ex-linfunctionsvectspace"/> shows us that a set with two operations (which we will call addition and scalar multiplication) such that the set is closed under the two operations, and satisfies the same eight properties as <m>\R^n</m>.  
+    We will refer to such a set with its two operations as a <term>vector space</term>.
     </p> 
 
 
@@ -439,7 +428,7 @@
 
         <statement>
             <p>
-                Let <m>V</m> be a nonempty set.  Suppose that elements of <m>V</m> can be added together and multiplied by scalars.  The set <m>V</m>, together with operations of addition and scalar multiplication, is called a <term>vector space</term> provided that 
+                Let <m>V</m> be a nonempty set.  Suppose that elements of <m>V</m> can be added together and can be multiplied by scalars.  The set <m>V</m>, together with these operations of addition and scalar multiplication, is called a <term>vector space</term> provided that 
     <ul>
     <li>
         <p> <m>V</m> is closed under addition, </p>
@@ -504,24 +493,19 @@
     </definition>
 
     <p>
-    When scalars <m>k</m> and <m>p</m> in the above definition are restricted to real numbers, as they are in this chapter, vector space <m>V</m> may be referred to as  a <term>vector space over the real numbers</term>.
+    When scalars <m>k</m> and <m>p</m> in the above definition are required to be real numbers, as they are in this text, the vector space <m>V</m> may be called a <term>real vector space</term> or
+    <term>vector space over the real numbers</term>.
     </p> 
 
     <p>
-    We have already encountered two abstract vectors spaces before, viz.:
+    We have already encountered two real vectors spaces in <xref ref="ex-setofmatricesvectorspace"/> and <xref ref="ex-linfunctionsvectspace"/>, 
+    namely <m>\mathbb{M}_{m,n}</m> and <m>\mathbb{L}</m>. 
     </p>
-
-
-    <example xml:id="ex-MLexamplesofvectspaces">
-        <p>
-            <m>\mathbb{M}_{m,n}</m> and <m>\mathbb{L}</m> are vector spaces (eee <xref ref="ex-setofmatricesvectorspace"/> and <xref ref="ex-linfunctionsvectspace"/>).
-        </p>
-    </example>
 
     <p>
     Sets of polynomials provide an important source of examples, so we review some basic facts. A <term>polynomial with real coefficients</term> in <m>x</m> is an expression
     <me>
-    p(x) = a_0 + a_1x + a_2x^2 + \ldots + a_nx^n
+    p(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n
     </me>
     where <m>a_{0}, a_{1}, a_{2}, \ldots, a_{n}</m> are real numbers called the <term>coefficients</term> of the polynomial. 
     </p>
@@ -532,35 +516,41 @@
 
     <p> 
     If <m>p(x) \neq 0</m>, the highest power of <m>x</m> with a nonzero coefficient is called the <term>degree</term> of <m>p(x)</m> denoted as <m>\mbox{deg}(p(x))</m>. The degree of the zero polynomial is not defined.
-    </p>
-
-    <p>
-    The coefficient itself is called the <term>leading coefficient</term> of <m>p(x)</m>. Hence <m>\mbox{deg}(3 + 5x) = 1</m>, <m>\mbox{deg}(1 + x + x^{2}) = 2</m>, and <m>\mbox{deg}(4) = 0</m>. 
+    The coefficient of this highest power of <m>x</m> is called the <term>leading coefficient</term> of <m>p(x)</m>. 
+    Hence <m>\mbox{deg}(3 + 5x) = 1</m> and its leading coefficient is <m>5</m>, <m>\mbox{deg}(1 + 3x - x^{2}) = 2</m> and its leading coefficient is <m>-1</m>, and the constant polynomial <m>p(x)=4</m> had degree 0 and leading coefficient 4. 
     </p> 
 
+    <p>
+    To simplify our calculations, for the polynomial <m>p(x) = a_0 + a_1x + \cdots + a_nx^n</m>, we define <m>a_{n+1}, a_{n+2}, \ldots</m> to all be zero.
+    This means <m>a_i</m> will make sense for all non-negative values of <m>i</m>.
+    For example, <m>p(x)</m> is the zero polynomial exactly when <m>a_i=0</m> for all non-negative integers <m>i</m>.
+    Because <m>p(x)</m> is a polynomial, there are only finitely many <m>i</m> with <m>a_i \neq 0</m> and the largest such index <m>i</m> is the degree of <m>p(x)</m>.
+    </p>
 
     <p>
     Let <m>\mathbb{P}</m> denote the set of all polynomials and suppose that
     <md>
-    <mrow> p(x) \amp = a_0 + a_1x + a_2x^2 + \ldots </mrow>
-    <mrow> q(x) \amp = b_0 + b_1x + b_2x^2 + \ldots </mrow>
+    <mrow> p(x) \amp = a_0 + a_1x + a_2x^2 + \cdots + a_mx^m</mrow>
+    <mrow> q(x) \amp = b_0 + b_1x + b_2x^2 + \cdots + b_nx^n</mrow>
     </md>
     are two polynomials in <m>\mathbb{P}</m> (possibly of different degrees). Then <m>p(x)</m> and <m>q(x)</m> are called <term>equal</term> (written <m>p(x) = q(x)</m>) if and only if all the corresponding coefficients are equal---
     that is, one has <m>a_{0} = b_{0}</m>, <m>a_{1} = b_{1}</m>, <m>a_{2} = b_{2}</m>, and so on. 
-    In particular, <m>a_{0} + a_{1}x + a_{2}x^{2} + \ldots = 0</m> means <m>a_{0} = 0</m>, <m>a_{1} = 0</m>, <m>a_{2} = 0</m>, <m>\ldots</m>. 
+    In particular, <m>a_{0} + a_{1}x + \ldots + a_mx^m = 0</m> means <m>a_{0} = 0</m>, <m>a_{1} = 0</m>, <m>a_{2} = 0</m>, <m>\ldots</m>. 
     </p> 
 
     <p>
-    The set <m>\mathbb{P}</m> has an addition and scalar multiplication defined on it as follows: if <m>p(x)</m> and <m>q(x)</m> are as before and <m>k</m> is a real number,
+    The set <m>\mathbb{P}</m> has vector addition and scalar multiplication operations defined as follows: if <m>p(x)</m> and <m>q(x)</m> are as before and <m>k</m> is a real number,
     <md>
-    <mrow> p(x) + q(x) \amp = (a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2 + \ldots </mrow>
-    <mrow> kp(x) \amp = ka_0 + (ka_1)x + (ka_2)x^2 + \ldots </mrow>
+    <mrow> p(x) + q(x) \amp = (a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2 + \cdots + (a_j+b_j) x^j</mrow>
+    <mrow> kp(x) \amp = ka_0 + (ka_1)x + (ka_2)x^2 + \cdots + (k a_m) x^m </mrow>
     </md> 
+    where <m>j</m> is the larger of <m>m</m> or <m>n</m>.  
+    Notice that the degree of <m>p(x)+q(x)</m> is at most the larger of the degrees of <m>p(x)</m> and <m>q(x)</m> and
+    the degree of <m>k(p(x))</m> is exactly the degree of <m>p(x)</m>, provided <m>k \ne 0</m>.
     </p>
 
-
     <p> 
-    A ton of terminology was just introduced. They are underlined in the example below.
+    This is a ton of terminology, so we need some examples to understand it. 
     </p> 
 
     <example xml:id="ex-pisavectorspace">
@@ -571,7 +561,7 @@
         </statement>
         <answer>
             <p>
-                It is easy to see that the sum of two polynomials is again a polynomial, and that a scalar multiple of a polynomial is a polynomial.  Thus, <m>\mathbb{P}</m> is closed under addition and scalar multiplication.  The other eight vector space properties are easily verified, and we conclude that <m>\mathbb{P}</m> is a vector space.
+                It is easy to see that the sum of two polynomials is again a polynomial, and that a scalar multiple of a polynomial is a polynomial.  Thus, <m>\mathbb{P}</m> is closed under addition and scalar multiplication.  The other eight vector space properties can be verified (do one yourself), and we conclude that <m>\mathbb{P}</m> is a vector space.
         </p>
         </answer>
     </example>
@@ -624,16 +614,6 @@
     </p>
     </example>
     </subsection>
-
-
-
-
-
-
-
-
-
-
 
     <subsection xml:id="Subsection-Subspaces">
         <title>Subspaces</title>
@@ -719,7 +699,7 @@
     </theorem>
 
     <p>
-    Let us activate the theorem in a couple of examples.
+    Let us apply the theorem in a couple of examples.
     </p>
 
 
@@ -796,8 +776,6 @@
     </statement>
     </remark> 
 
-
-
     <p>
     To get used to the new terminology, let us look at an example in the context of polynomials.
     </p> 
@@ -832,7 +810,7 @@
     </example>
 
     <p>
-        The following important results provides us with a quick ways to determine that some subsets are not subspaces.
+        The following important results provides us with a quick way to determine that some subsets are not subspaces.
     </p>
 
 
@@ -846,7 +824,7 @@
 
         <proof>
             <p> 
-               Take any vector <m>\mathbf{w}</m> in <m>W</m>, and note that <m>0 \mathbf{w} = \mathbf{0}</m> is in <m>W</m> because <m>W</m> is closed under scalar multiplication.
+               Since a subspace is nonempty, there is some vector <m>\mathbf{w}</m> in <m>W</m>. Then <m>0 \mathbf{w} = \mathbf{0}</m> is in <m>W</m> because <m>W</m> is closed under scalar multiplication.
             </p>
         </proof>
     </theorem>
@@ -854,9 +832,15 @@
     <p>
         Consider lines in <m>\R^n</m>. Applying <xref ref="th-zero-in-subspace"/> shows that the only lines in <m>\R^n</m> that are subspaces are those that pass through the origin. 
         The same holds true for planes and hyperplanes.  
-        For example, the plane <m>z=3</m> in <m>\R^3</m> is not a subspace of <m>\R^3</m>, while any plane containing the origin is a subspace.
+        For example, the plane <m>z=3</m> in <m>\R^3</m> is not a subspace of <m>\R^3</m>. It turns out that any plane containing the origin is a subspace.
     </p>
 
+    <p>
+        Be warned that containing the zero vector is a necessary condition but not a sufficient condition to be a subspace.
+        That is, if a subset does not contain the zero vector, then it is not a subspace.  But if a subset does contain the zero vector, it may or may not be a subspace.
+        For example, the subset of <m>\R^2</m> given by <m>\{ (x,y) : y=x^2 \}</m>, the graph of the parabola <m>y=x^2</m>, contains the zero vector of <m>\R^2</m>, but is not a subspace since it is not closed under addition.
+        (Don't belive me? Just check!)
+    </p>
 
     <theorem xml:id="th-opposite-in-subspace">
         <statement>
@@ -871,10 +855,6 @@
     </p>
 
     </subsection>
-
-
-
-
 
     <subsection xml:id="Subsection-Linear-Combinations-and-Span">
         <title>Linear Combinations and Span</title>
@@ -891,7 +871,7 @@
                 Let <m>V</m> be a vector space and let <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_n</m> be vectors in <m>V</m>.  A vector <m>\mathbf{v}</m> is said to be a <term>linear combination</term> of vectors <m>\mathbf{v}_1, \mathbf{v}_2,\ldots, \mathbf{v}_n</m> if 
 
     <me>
-        \mathbf{v}=a_1\mathbf{v}_1+ a_2\mathbf{v}_2+\ldots + a_n\mathbf{v}_n,
+        \mathbf{v}=a_1\mathbf{v}_1+ a_2\mathbf{v}_2+\cdots + a_n\mathbf{v}_n,
     </me>
 
     for some scalars <m>a_1, a_2, \ldots ,a_n</m>.
@@ -903,18 +883,24 @@
 
         <statement>
             <p>
-                Let <m>V</m> be a vector space and let <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m> be vectors in <m>V</m>.  The set <m>S</m> of all linear combinations of
+                Let <m>V</m> be a vector space and let <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m> be vectors in <m>V</m>.  The set of all linear combinations of
                 <me>
                 \mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p
                 </me>
                 
-                is called the <term>span</term> of <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m>.  We write 
+                is called the <term>span</term> of <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m> and we write it as 
 
     <me>
-        S=\mbox{span}(\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p)
+        \mbox{span}(\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p)
     </me>
 
-    and we say that vectors <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m> <term>span</term> <m>S</m>.  Any vector in <m>S</m> is said to be <term>in the span</term> of <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m>.  The set 
+    Given some subset <m>S</m> we say that vectors <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m> <term>span</term> <m>S</m> if every vector in <m>S</m> is a linear combination of the <m>v_1,\ldots,v_p</m>.
+    That is, 
+    <me>
+        S = \mbox{span}(\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p)
+    </me>
+     
+    Any vector in <m>S</m> is said to be <term>in the span</term> of <m>\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p</m>.  The set 
     <me>
     \{\mathbf{v}_1, \mathbf{v}_2,\ldots ,\mathbf{v}_p\}
     </me>
@@ -928,8 +914,6 @@
     <p>
     We revisit the situation for some specific polynomials.
     </p> 
-
-
 
     <example xml:id="ex-inthespanpoly">
         <statement>
@@ -986,16 +970,17 @@
 
     <proof>
         <p>
-            See <xref ref="prob-spanisasubspaceabstract"/>.
+            We leave this an exercise for the reader, namely <xref ref="prob-spanisasubspaceabstract"/>.
         </p>
     </proof>
     </theorem>
 
     <p>
-        The theorem above is very useful, as it allows us to conclude that the span of any set of vectors is a subspace of the vector space in which the vectors lie.  
-        This is a powerful tool in linear algebra.  We can work with spans without having to verify all the properties of a subspace individually.
+        This theorem is used often, as it gives a quick way to show a subset of a vector space is a subspace.  
+        If we can show the subset is the span of some set of vectors, then we know the subset is a subspace without further calculation.
+        Going back to Example <xref ref="ex-deg-le-2vectorspace"/>, a quick way to show <m>\mathbb{P}^2</m> is a subspace of <m>\mathbb{P}</m> is by observing that <m>\mathbb{P}^2=\mbox{span}(1,x,x^2)</m>.
     </p>
-
+    
     <example>
         <statement>
             <p>
@@ -1263,7 +1248,7 @@
         <exercise xml:id="prob-abstractvectspacecomplex">
             <statement>
                 <p>
-                    In this problem we will check that the set <m>\mathbb{C}</m> of all complex numbers is in fact a vector space.  Let <m>z_1 = a_1 + b_1 i</m> be a complex number.  Similarly, let <m>z_2 = a_2 + b_2 i</m>, <m>z_3 = a_3 + b_3 i</m> be complex numbers, and let <m>k</m> and <m>p</m> be real number scalars.  Check that complex numbers are closed under addition and multiplication, and that they satisfy each of the vector space properties.
+                    In this problem we will check that the set <m>\mathbb{C}</m> of all complex numbers is in fact a real vector space.  Let <m>z_1 = a_1 + b_1 i</m> be a complex number.  Similarly, let <m>z_2 = a_2 + b_2 i</m>, <m>z_3 = a_3 + b_3 i</m> be complex numbers, and let <m>k</m> and <m>p</m> be real number scalars.  Check that complex numbers are closed under addition and multiplication, and that they satisfy each of the vector space properties.
                 </p>
             </statement>
         </exercise>
