@@ -558,7 +558,7 @@
                         \left[\begin{array}{cc|c}  
                             -2\amp 2\amp 2\\-3\amp 3\amp 3\\4\amp 2\amp 5
                         \end{array}\right]
-                        \xrightarrow{\text{RREF}
+                        \xrightarrow{\text{RREF}}
                         \left[\begin{array}{cc|c}  
                             1\amp 0\amp 1/2\\0\amp 1\amp 3/2\\0\amp 0\amp 0
                         \end{array}\right].
