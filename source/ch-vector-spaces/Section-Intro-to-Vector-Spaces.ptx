@@ -860,7 +860,7 @@
         <title>Linear Combinations and Span</title>
 
         <p>
-            Just as we have seen in <xref ref="Section-Linear-Combination-Equations-and-Span"/>, the concepts of linear combinations and span are fundamental in understanding the structure of vector spaces. 
+            Just as we have seen in <xref ref="Section-Linear-Combination-Equations-and-Span"/>, linear combination and span are fundamental to understanding vector spaces. 
             These concepts will be used extensively in the next section and in the rest of the text. 
         </p>
 

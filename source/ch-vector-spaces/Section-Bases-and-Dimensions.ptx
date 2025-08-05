@@ -25,6 +25,11 @@ Observe that <m>\mathbf{u}</m> can be expressed as a linear combination of the s
     \mathbf{u}=2\begin{bmatrix}1\\0\end{bmatrix}+5\begin{bmatrix}0\\1\end{bmatrix}=2\mathbf{i}+5\mathbf{j}.
 </me>
 
+Further, for the fixed vector <m>\mathbf{u}</m>, the numbers 2 and 5 are unique choice of coefficients that gives <m>\mathbf{u}</m>. 
+Put another way, the only scalars <m>x</m> and <m>y</m> so that <m>\mathbf{u}=x\mathbf{i}+y\mathbf{j}</m> are <m>x=2</m> and <m>y=5</m>.
+</p>
+
+<p>
 In fact, any vector <m>\mathbf{v}=\begin{bmatrix} a \\ b \end{bmatrix}</m> of <m>\R^2</m> can be written as a linear combination of <m>\mathbf{i}</m> and <m>\mathbf{j}</m>:
 
 <me>
@@ -45,22 +50,23 @@ This gives us an alternative way of interpreting the component notation:
  \mbox{coefficient in front of }\mathbf{i}\\\mbox{coefficient in front of } \mathbf{j}
  \end{array}
 </me>
+Again, to get vector <m>\mathbf{v}</m>, the only choice of coefficients that works are <m>a</m> and <m>b</m>.
 
- 
- We say that <m>a</m> and <m>b</m> are <term>coordinates</term> of <m>\mathbf{v}</m> with respect to <m>\{\mathbf{i}, \mathbf{j}\}</m>, 
- and <m>\begin{bmatrix} a \\ b \end{bmatrix}</m> is said to be the <term>coordinate vector</term> for <m>\mathbf{v}</m> with respect to <m>\{\mathbf{i}, \mathbf{j}\}</m>.  
+
+ We say that <m>a</m> and <m>b</m> are <term>coordinates</term> of <m>\mathbf{v}</m> with respect to <m>(\mathbf{i}, \mathbf{j})</m>, 
+ and <m>\begin{bmatrix} a \\ b \end{bmatrix}</m> is said to be the <term>coordinate vector</term> for <m>\mathbf{v}</m> with respect to <m>(\mathbf{i}, \mathbf{j})</m>.  
  Every vector <m>\mathbf{v}</m> of <m>\R^2</m> can be thus represented using <m>\mathbf{i}</m> and <m>\mathbf{j}</m>. 
  Moreover, such representation in terms of <m>\mathbf{i}</m> and <m>\mathbf{j}</m> is unique for each vector, 
  meaning that we will never have two different coordinate vectors representing the same vector. 
- We will refer to <m>\{\mathbf{i}, \mathbf{j}\}</m> as a <term>basis</term> of <m>\R^2</m>.  
+ We will refer to <m>(\mathbf{i}, \mathbf{j})</m> as a <term>basis</term> of <m>\R^2</m>.  
 </p>
 
 
 
 <p>
  The order in which the basis elements are written matters.  
- For example, <m>\mathbf{u}</m> is represented by the coordinate vector <m>\begin{bmatrix} 2 \\ 5 \end{bmatrix}</m> with respect to <m>\{\mathbf{i}, \mathbf{j}\}</m>, 
- but changing the basis to <m>\{\mathbf{j}, \mathbf{i}\}</m> would change the coordinate vector to <m>\begin{bmatrix} 5 \\ 2 \end{bmatrix}</m>. In our notation:
+ For example, <m>\mathbf{u}</m> is represented by the coordinate vectors <m>\begin{bmatrix} 2 \\ 5 \end{bmatrix}</m> with respect to <m>(\mathbf{i}, \mathbf{j})</m>, 
+ but changing the basis to <m>(\mathbf{j}, \mathbf{i})</m> would change the coordinate vectors to <m>\begin{bmatrix} 5 \\ 2 \end{bmatrix}</m>. In our notation:
  
  
 <me>
@@ -136,8 +142,8 @@ as shown below.
 </image>
 
 <p>
-If we declare <m>\{\mathbf{w}_1, \mathbf{w}_2\}</m> to be a basis of <m>\R^2</m>, 
-then we can say that the coordinate vector for <m>\mathbf{u}</m> with respect to <m>\{\mathbf{w}_1, \mathbf{w}_2\}</m> is 
+If we declare <m>(\mathbf{w}_1, \mathbf{w}_2)</m> to be a basis of <m>\R^2</m>, 
+then we can say that the coordinate vector for <m>\mathbf{u}</m> with respect to <m>(\mathbf{w}_1, \mathbf{w}_2)</m> is 
 <m>\begin{bmatrix} 2\\ 1 \end{bmatrix}</m> .
 
 
@@ -172,13 +178,15 @@ then we can say that the coordinate vector for <m>\mathbf{u}</m> with respect to
     <title>What Constitutes a Basis?</title>
 
 <p>
-Let's focus on <m>\R^n</m> and subspaces of <m>\R^n</m>.  What we establish here will easily generalize to other vector spaces.  
-Based on our previous discussion, given any vector <m>\mathbf{v}</m> of <m>\R^n</m> (or a subspace <m>V</m> of <m>\R^n</m>), 
-we want to be able to write a coordinate vector for <m>\mathbf{v}</m> with respect to the given basis of <m>\R^n</m> (or <m>V</m>).  
-</p> 
+The goal of this section is to define basis in a way that works in general, motivated by the examples of the previous section.
+To be a basis, we will need two conditions: there have to be enough basis vectors and there cannot be too many basis vectors.
+We focus on <m>\R^n</m> and subspaces of <m>\R^n</m>, but what we establish here will generalize to other vector spaces.  
+</p>
 
-<p> 
-Based on this condition, we will require that basis vectors span <m>\R^n</m> (or <m>V</m>).
+<p>
+Based on our previous discussion, given any vector <m>\mathbf{v}</m> of <m>\R^n</m> (or a subspace <m>V</m> of <m>\R^n</m>), 
+we want to be able to write  <m>\mathbf{v}</m> as a linear combination of the given basis vectors.  
+In other words, we must have that basis vectors span <m>\R^n</m> (or <m>V</m>).
 For example, consider <m>\mathbf{w}_1</m> and <m>\mathbf{w}_2</m> shown below.  
 </p>
 
@@ -206,14 +214,18 @@ For example, consider <m>\mathbf{w}_1</m> and <m>\mathbf{w}_2</m> shown below.
 </image>
 
 <p>
-The set <m>\{\mathbf{w}_1, \mathbf{w}_2\}</m> cannot be a basis for <m>\R^3</m> because <m>\mathbf{w}_1</m> and <m>\mathbf{w}_2</m> span a plane in <m>\R^3</m>, and any vector not in that plane cannot be written as a linear combination of <m>\mathbf{w}_1</m> and <m>\mathbf{w}_2</m>.
+The set <m>\{\mathbf{w}_1, \mathbf{w}_2\}</m> cannot be a basis for <m>\R^3</m> because the vertical vector <m>\mathbf{k}</m> is not a linear combniation of <m>\mathbf{w}_1</m> and <m>\mathbf{w}_2</m>.
+More generally, <m>\mathbf{w}_1</m> and <m>\mathbf{w}_2</m> span a plane in <m>\R^3</m>, and any vector not in that plane cannot be written as a linear combination of <m>\mathbf{w}_1</m> and <m>\mathbf{w}_2</m>.
 On the other hand, the plane spanned by <m>\mathbf{w}_1</m> and <m>\mathbf{w}_2</m> is a subspace of <m>\R^3</m>.  Because every vector in that plane can be written as a linear combination of <m>\mathbf{w}_1</m> and <m>\mathbf{w}_2</m>, the set <m>\{\mathbf{w}_1, \mathbf{w}_2\}</m> can potentially be a basis for the plane, provided that the set satisfies our second requirement.
 </p>
 
 <p>
-Our second requirement is that for a fixed basis of <m>\R^n</m> (or <m>V</m>), the coordinate vector for each <m>\mathbf{v}</m> in <m>\R^n</m> (or <m>V</m>) should be unique.  Uniqueness of representation in terms of the basis elements will play an important role in our future study of functions that map vector spaces to vector spaces.
+Our second requirement is that for a basis, there is only one way write a fixed vector <m>\mathbf{v}</m> as a linear combination of the basis vectors.
+In other words, the coordinate vector for each <m>\mathbf{v}</m> in <m>\R^n</m> (or <m>V</m>) should be unique.  
+Uniqueness of representation in terms of the basis elements will play an important role in our future study of functions that map vector spaces to vector spaces.
 
-The following theorem shows that the uniqueness requirement is equivalent to the requirement that the basis vectors be linearly independent.  %In other words, a basis may not contain redundant vectors.
+The following theorem shows that the uniqueness requirement is equivalent to the requirement that the basis vectors be linearly independent.  
+These equivalent ideas are ways of requiring that a basis does not contain redundant vectors.
 </p>
 
 
@@ -238,7 +250,9 @@ But
 </me>
 
 is a representation of <m>\mathbf{0}</m> in terms of <m>\mathbf{w}_1, \mathbf{w}_2,\ldots,\mathbf{w}_p</m>.  Since we are assuming that such a representation is unique, we conclude that there is no other.  This means that the vectors <m>\mathbf{w}_1, \mathbf{w}_2,\ldots,\mathbf{w}_p</m> are linearly independent.
+</p>
 
+<p>
 Conversely, suppose that vectors <m>\mathbf{w}_1, \mathbf{w}_2,\ldots,\mathbf{w}_p</m> are linearly independent.  An arbitrary element <m>\mathbf{v}</m> of <m>V</m> can be expressed as a linear combination of <m>\mathbf{w}_1, \mathbf{w}_2,\ldots,\mathbf{w}_p</m>:
 
 <me>
@@ -393,7 +407,7 @@ As a result, coordinate vectors for elements of <m>V</m> are not unique and we d
     <title>Definition of a Basis</title>
 
     <p>
-        Before we can define a basis, we need to define the concept of linear independence in an abstract vector space.
+        Before we can define a basis, we need to define linear independence in an abstract vector space.
     </p>
 
 
@@ -480,38 +494,22 @@ As a result, coordinate vectors for elements of <m>V</m> are not unique and we d
 
         <statement>
             <p>
-                Let <m>V</m> be a vector space, and let <m>\mathcal{B}=\{\mathbf{v}_1, \mathbf{v}_2,\ldots,\mathbf{v}_n\}</m> be a basis for <m>V</m>.  Then every element <m>\mathbf{v}</m> of <m>V</m> has a unique representation as linear combination of the elements of <m>\mathcal{B}</m>.
+                Let <m>V</m> be a vector space, and let <m>\mathcal{B}=\{\mathbf{v}_1, \mathbf{v}_2,\ldots,\mathbf{v}_n\}</m> be a basis for <m>V</m>.  Then every element of <m>V</m> has a unique representation as linear combination of the elements of <m>\mathcal{B}</m>.
             </p>
         </statement>
 
     <proof>
         <p>
-    By the definition of a basis, we know that <m>\mathbf{v}</m> can be written as a linear combination of <m>\mathbf{v}_1, \mathbf{v}_2,\ldots,\mathbf{v}_n</m>.  Suppose there are two such representations.  Then,
-
-    <me>
-        \mathbf{v}=a_1\mathbf{v}_1+ a_2\mathbf{v}_2+\ldots+a_n\mathbf{v}_n
-    </me>
-
-
-    <me>
-        \mathbf{v}=b_1\mathbf{v}_1+ b_2\mathbf{v}_2+\ldots+b_n\mathbf{v}_n
-    </me>
-
-    But then we have:
-    <md>
-    <mrow> a_1\mathbf{v}_1+ a_2\mathbf{v}_2+\ldots+a_n\mathbf{v}_n =b_1\mathbf{v}_1+ b_2\mathbf{v}_2+\ldots+b_n\mathbf{v}_n </mrow> 
-    <mrow> a_1\mathbf{v}_1+ a_2\mathbf{v}_2+\ldots+a_n\mathbf{v}_n-(b_1\mathbf{v}_1+ b_2\mathbf{v}_2+\ldots+b_n\mathbf{v}_n)\amp =\mathbf{0} </mrow>
-    <mrow> (a_1-b_1)\mathbf{v}_1+ (a_2-b_2)\mathbf{v}_2+\ldots+(a_n-b_n)\mathbf{v}_n\amp =\mathbf{0}  </mrow>
-    </md>
-    Because <m>\mathbf{v}_1, \mathbf{v}_2,\ldots,\mathbf{v}_n</m> are linearly independent, we have <m>a_i-b_i=0</m> for <m>1\leq i\leq n</m>. Consequently <m>a_i=b_i</m> for <m>1\leq i\leq n</m>.
-        </p>
+        This result is a special case of <xref ref="th-linindbasis"/>.  
+        By the definition of basis, we know the vectors in the basis are linearly independent and so by <xref ref="th-linindbasis"/>, every vector has a unique representation as a linear combination of basis vectors.
+       </p>
     </proof>
     </theorem>
 
 
 
 <p> 
-The prototype example is the standard one, which we showcase in the next example. It is the one we implicitly worked with so far.
+The prototypical example of a basis is the standard one, which we showcase in the next example. It is the one we implicitly worked with so far.
 </p> 
 
 <example xml:id="ex-standardbasis">
@@ -530,13 +528,14 @@ The prototype example is the standard one, which we showcase in the next example
     </statement>
 </definition>
 
-
 <p>
+Recall that <m>\mathbb{P}^n</m> is the set of all polynomials of degree <m>n</m> or less (see <xref ref="ex-pnisavectorspace"/>. 
+It too has a standard basis. 
+</p>
 
 <example xml:id="ex-stdbasisofP">
     <statement>
         <p>
-            Recall that <m>\mathbb{P}^n</m> is the set of all polynomials of degree <m>n</m> or less (see <xref ref="ex-pnisavectorspace"/>. 
             Show that
             <me>
             \lbrace 1, x, x^{2}, \dots, x^{n} \rbrace
@@ -563,8 +562,11 @@ The prototype example is the standard one, which we showcase in the next example
     </answer>
 </example>
 
-Bases are not unique.  For example, we know that vectors <m>\mathbf{i}</m> and <m>\mathbf{j}</m> form the standard basis of <m>\R^2</m>.  
-But, as we discussed in Example <xref ref="ex-spanr2"/>, vectors 
+<p>
+Bases are far from unique.  For example, we could take a basis and multiply any vector in it by a non-zero scalar and a have different basis; 
+so <m>5\mathbf{i}, -\mathbf{j}</m> is a basis of <m>\R^2</m> that differs from the standard basis of <m>\R^2</m>,
+which is <m>\mathbf{i}, \mathbf{j}</m>.
+For a more interesting example, as we discussed in Example <xref ref="ex-spanr2"/>, vectors 
 
 <me>
     \begin{bmatrix}2\\2\end{bmatrix}, \begin{bmatrix}-1\\0\end{bmatrix}
@@ -630,9 +632,10 @@ We need to express <m>\begin{bmatrix} 2\\ -10\\ 9 \end{bmatrix}</m> as a linear 
 <statement>    
 <p>
  It may seem strange to you that the coordinate vector for a vector in <m>\R^3</m> only has two components.  
- But remember that subspace <m>V</m> is a plane.  
- When viewed as a vector in the plane, 
- it  makes sense that the coordinate vector for <m>\begin{bmatrix} 2\\ -10\\ 9 \end{bmatrix}</m> only requires two components.  
+ But remember that subspace <m>V</m> is a plane and its basis has two elements.
+ As a vector in the plane, 
+  the coordinate vector for <m>\begin{bmatrix} 2\\ -10\\ 9 \end{bmatrix}</m> only requires two components, 
+  one for each basis element.  
  This issue is related to the question of dimension, which will be addressed in the next sections. 
 </p> 
 </statement>
@@ -660,30 +663,12 @@ is considered to be the same as
  
 </subsection>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <subsection xml:id="Subsection-Exploring-Dimension">
     <title>Exploring Dimension</title>
-  
 
 <p>
 A  <term>basis</term> of a vector space <m>V</m> is a subset of <m>V</m> that is linearly independent and spans <m>V</m>.  
-A basis allows us to uniquely express every element of <m>V</m> as a linear combination of the elements of the basis.  
+By <xref ref=" th-uniquerep"/>, a basis allows us to uniquely express every element of <m>V</m> as a linear combination of the elements of the basis.  
 Several questions may come to mind at this time.  Does every vector space have a basis?  We know that bases are not unique.  
 If there is more than one basis, what, if anything, do they have in common?
 </p>
@@ -717,7 +702,7 @@ What is the minimum number of vectors needed to span a line?
 </problem>
  
 <p>
-Observe also that the vectors in the given spanning set are not linearly independent, so they do not form a basis for <m>V</m>.  
+BEcause the vectors in the given spanning set are not linearly independent, so they do not form a basis for <m>V</m>.  
 </p>
 
 
@@ -750,7 +735,7 @@ Geometrically, <m>W</m> is a plane in <m>\R^3</m>.  Note that the vectors in the
 <problem>
     <statement>
         <p>
-What is the minimum number of vectors needed to span a plane? How many vectors would a basis need for a plane?
+What is the minimum number of vectors needed to span a plane? How many vectors are needed for a basis of a plane?
         </p>
     </statement>
 
@@ -827,11 +812,17 @@ We have to proceed carefully because we don't want the dimension to depend on ou
     </proof>
 </theorem>
 
+<p>
+As a very technical point, notice that in the theorem, we assumed that the vector space <m>V</m> has a basis with some finite number <m>t</m> of elements.  
+So this theorem does not apply to the vector space <m>\mathbf{P}</m> of all polynomials, which does not have a basis with finitely many elements.
+We will come back to this issue in <xref ref="Subsection-Finite-Dimensional-Vector-Spaces"/>
+</p>
+
 <definition xml:id="def-dimension">
 
     <statement>
         <p>
-            Let <m>V</m> be a subspace of a vector space <m>W</m>.  The <term>dimension</term> of <m>V</m> is the number, <m>m</m>, of elements in any basis of <m>V</m>.  We write
+            Let <m>V</m> be a subspace of a vector space <m>W</m> so that <m>V</m> has a basis with finitely many elements.  The <term>dimension</term> of <m>V</m> is the number, <m>m</m>, of elements in any basis of <m>V</m>.  We write
 
 <me>
     \mbox{dim}(V)=m.
@@ -1024,8 +1015,8 @@ Hence the set
     <title>Finite-Dimensional Vector Spaces</title>
 
     <p>
-Our definition of dimension of a vector space depends on the vector space having a basis.  
-In this section we will establish that any vector space spanned by finitely many vectors has a basis.
+Our definition of dimension of a vector space depends on the vector space having a basis with finitely many elements.  
+In this section we will establish that any vector space spanned by finitely many vectors has such a basis.
     </p>
 
 
@@ -1039,8 +1030,13 @@ In this section we will establish that any vector space spanned by finitely many
 </definition>
 
 <p>
-    Given a finite-dimensional vector space <m>V</m> we will find a basis for <m>V</m> by starting with a linearly independent subset of <m>V</m> and expanding it to a basis.  
-    The following results offer justification for this approach. 
+    As we have suggested above, the vector space of all polynomials with real coefficents, <m>\mathbf{P}</m> is not
+    finite dimensional. Most of the time, we only care about finite-dimensional vector spaces in this text.  
+</p>
+
+<p>
+    Given a finite-dimensional vector space <m>V</m> we can find a basis for <m>V</m> by starting with <em>any</em> linearly independent subset of <m>V</m> and expanding it to a basis.  
+    The following results justify this claim. 
 </p>
 
 <lemma xml:id="lemma-atmostnlinind">
@@ -1140,18 +1136,21 @@ In this section we will establish that any vector space spanned by finitely many
     <title>Coordinate Vectors Revisited</title>
 
 <p>
-Recall that in the context of <m>\R^n</m> (and subspaces of <m>\R^n</m>) the requirement that elements of a basis be linearly independent guarantees that every element of the vector space has a <em>unique</em> representation in terms of the elements of the basis.  (See Theorem <xref ref="th-linindbasis"/> of <url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0030/main">Introduction to Bases</url>)  We proved the same property for abstract vector spaces in Theorem <xref ref="th-uniquerep"/>.
+Recall that, for any vector space <m>V</m>, we proved in Theorem <xref ref="th-uniquerep"/> that every element of the vector space has a <em>unique</em> representation in terms of the elements of the basis
 </p> 
 
 <p>
-Uniqueness of representation in terms of the elements of a basis allows us to associate every element of a vector space <m>V</m> with a unique <term>coordinate vector</term> with respect to a given basis.  Coordinate vectors were first introduced in <url href="https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0030/main">Introduction to Bases</url>.  We now give a formal definition.
+Because of this uniqueness, we associate every element of <m>V</m> with a unique <term>coordinate vector</term> with respect to a given basis.  
+Although we have discussed coordinates in <m>\R^2</m> informally in <xref ref="Subsection-Coordinate-Vectors"/>, We now give a formal definition.
 </p>
 
 <definition xml:id="def-coordvector">
 
     <statement>
         <p>
-            Let <m>V</m> be a vector space, and let <m>\mathcal{B}=\{\mathbf{v}_1, \ldots ,\mathbf{v}_n\}</m> be a basis for <m>V</m>.  If <m>\mathbf{v}=a_1\mathbf{v}_1+\ldots +a_n\mathbf{v}_n</m>, then the vector in <m>\R^n</m> whose components are the coefficients <m>a_1, \ldots ,a_n</m>  is said to be the <term>coordinate vector</term> for <m>\mathbf{v}</m> with respect to <m>\mathcal{B}</m>.  We denote the coordinate vector by <m>[\mathbf{v}]_{\mathcal{B}}</m> and write:
+            Let <m>V</m> be a vector space, and let <m>\mathcal{B}=\{\mathbf{v}_1, \ldots ,\mathbf{v}_n\}</m> be a basis for <m>V</m>.  
+            If <m>\mathbf{v}=a_1\mathbf{v}_1+\ldots +a_n\mathbf{v}_n</m>, then the vector in <m>\R^n</m> whose components are the coefficients <m>a_1, \ldots ,a_n</m>  is said to be the <term>coordinate vector</term> for <m>\mathbf{v}</m> with respect to <m>\mathcal{B}</m>.  
+            We denote the coordinate vector by <m>[\mathbf{v}]_{\mathcal{B}}</m> and write:
 
 <me>
     [\mathbf{v}]_{\mathcal{B}}=\begin{bmatrix}a_1\\\vdots \\a_n\end{bmatrix}.
@@ -1163,7 +1162,9 @@ Uniqueness of representation in terms of the elements of a basis allows us to as
 <remark xml:id="coordVectorOrder">
 <statement>
     <p>
-The order of in which vectors <m>\mathbf{v}_1, \ldots ,\mathbf{v}_n</m> appear in <m>\mathcal{B}</m> of <xref ref="def-coordvector"/> is important.  Switching the order of these vectors would switch the order of the coordinate vector components.  For this reason, we will often use the term <term>ordered basis</term> to describe <m>\mathcal{B}</m> in the context of coordinate vectors.
+The order of in which vectors <m>\mathbf{v}_1, \ldots ,\mathbf{v}_n</m> appear in <m>\mathcal{B}</m> of <xref ref="def-coordvector"/> is important.  
+Switching the order of these vectors would switch the order of the coordinate vector components.  
+For this reason, we will often use the term <term>ordered basis</term> for <m>\mathcal{B}</m> to emphasize the ordering.
     </p>
 </statement>
 </remark>
@@ -1171,7 +1172,9 @@ The order of in which vectors <m>\mathbf{v}_1, \ldots ,\mathbf{v}_n</m> appear i
 
 
 <p> 
-Coordinate vectors may seem abstract as described above. In examples, however, one can nearly always pinpoint exactly what the coordinates are. Some examples will emphaize this:
+Coordinate vectors may seem abstract as described above. 
+In examples, however, one can nearly always pinpoint exactly what the coordinates are.
+Try looking again at <xref ref="init-altbasis1"/> or the following examples:
 </p> 
 
 
