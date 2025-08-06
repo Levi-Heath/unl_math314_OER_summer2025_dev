@@ -3,7 +3,19 @@
 <section xml:id="Section-Subspaces-Associated-with-Matrices" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Subspaces Associated with Matrices</title>
 
-
+<p>
+In this section, we look at three subspaces connected to an <m>m</m> by <m>n</m> matrix, call it <m>A</m>.  
+They are:
+<ol>
+    <li>the row space of <m>A</m>, that is, the span of the rows of <m>A</m> in <m>\R^n</m>, called <m>\mbox{row}(A)</m>,</li>
+    <li>the column space of <m>A</m>, that is, the span of the columns of <m>A</m> in <m>\R^m</m>, called <m>\mbox{col}(A)</m>,</li>
+    <li>the null space <m>A</m>, that is, the set of all <m>\mathbf{x}</m> in <m>\R^n</m> so that <m>A\mathbf{x}=0</m>,
+    called <m>\mbox{null}(A)</m>.</li>
+</ol>
+After we look at each of them separately, we will show that the dimensions of these three subspaces are connected.
+These dimensions give information about the matrix <m>A</m>
+and about the matrix transformation that sends <m>\mathbf{x}</m> in <m>\R^n</m> to <m>A\mathbf{x}</m> in <m>\R^m</m>.
+</p>
 
 
 <subsection xml:id="Subsection-Row-Space-of-a-Matrix">
@@ -270,7 +282,7 @@ Find two distinct bases for <m>\mbox{row}(A)</m>.
 
 
 Since the zero row contributes nothing to the span, we conclude that the nonzero rows of <m>\mbox{rref}(A)</m> span <m>\mbox{row}(\mbox{rref}(A))</m>.  
-Therefore, a basis for the row space consists of the vecotrs
+Therefore, a basis for the row space consists of the vectors
 
 <me>
 [1, 0, 3, 0, -9], \ 
@@ -802,15 +814,15 @@ We will see the geometric implications of this theorem when we study linear tran
     <title>The Image of a Matrix Transformation</title>
 
     <p>
-        In this section we will often use <m>U</m>, <m>V</m> and <m>W</m> to denote subspaces of <m>\R^n</m>, 
-        or any other finite-dimensional vector space, such as those we study in a later chaper. 
+        In this section we use <m>U</m>, <m>V</m> and <m>W</m> to denote finite-dimensional vector spaces, 
+        such as subspaces of <m>\R^n</m>. 
         </p>
 
 <definition xml:id="def-imageofT">
 
     <statement>
         <p>
-            Let <m>V</m> and <m>W</m> be vector spaces, and let <m>T:V\rightarrow W</m> be a linear transformation.  The <term>image</term> of <m>T</m>, denoted by <m>\mbox{im}(T)</m>, is the set
+            Let <m>T:V\rightarrow W</m> be a linear transformation.  The <term>image</term> of <m>T</m>, denoted by <m>\mbox{im}(T)</m>, is the set
 
 <me>
     \mbox{im}(T)=\{T(\mathbf{v}):\mathbf{v}\in V\}.
@@ -1031,16 +1043,15 @@ This definition gives us the following relationship between the rank of a linear
     <title>The Kernel of a Linear Transformation</title>
 
     <p>
-        Exactly as in the preceding section, we will often use <m>U</m>, <m>V</m> and <m>W</m> to denote subspaces of <m>\R^n</m>, 
-        or any other finite-dimensional vector space, such as those we study in a later chaper. 
-        </p>
+    Exactly as in the preceding section, we use <m>U</m>, <m>V</m> and <m>W</m> to denote finite-dimensional vector spaces, such as subspaces of <m>\R^n</m>. 
+    </p>
 
 
 <definition xml:id="def-kernel">
 
     <statement>
         <p>
-            Let <m>V</m> and <m>W</m> be vector spaces, and let <m>T:V\rightarrow W</m> be a linear transformation.  The <term>kernel</term> of <m>T</m>, denoted by <m>\mbox{ker}(T)</m>, is the set
+            Let <m>T:V\rightarrow W</m> be a linear transformation.  The <term>kernel</term> of <m>T</m>, denoted by <m>\mbox{ker}(T)</m>, is the set
 
 <me>
     \mbox{ker}(T)=\{\mathbf{v}:T(\mathbf{v})=\mathbf{0}\}.
